@@ -1,1 +1,10 @@
-
+{
+  "generatedAt": "2026-08-07T00:00:00.000Z",
+  "source": "Warte auf ersten GitHub-Actions-Lauf",
+  "timezone": "Europe/Berlin",
+  "quota": {
+    "used": null,
+    "remaining": null
+  },
+  "matches": []
+}
