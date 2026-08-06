@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090d14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="stylesheet" href="./style.css">
+<title>Mission 1000 Tennis</title>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">M1</div><div><h1>Mission 1000 Tennis</h1><p>ATP & WTA · keine Challenger</p></div></div><button id="refreshButton">Aktualisieren</button></header>
+<section class="hero card"><div><span class="eyebrow">Tagesanalyse</span><h2 id="todayTitle">Heutige Matches</h2><p>Bis zu fünf interessante Spiele mit Begründung, fairer Quote und Risiko.</p></div><div class="stats"><div><b id="matchCount">0</b><span>Matches</span></div><div><b id="pickCount">0</b><span>Top-Picks</span></div></div></section>
+<nav class="filters"><button class="active" data-filter="all">Alle</button><button data-filter="ATP">ATP</button><button data-filter="WTA">WTA</button><button data-filter="top">Top 5</button></nav>
+<main>
+<section class="card list"><div class="section-head"><div><span class="eyebrow">Spielplan</span><h3>Heute</h3></div><span id="lastUpdated" class="muted">Demo-Daten</span></div><div id="matchList"></div></section>
+<aside class="card detail"><span class="eyebrow">Matchanalyse</span><h3 id="detailTitle">Match auswählen</h3><p id="detailMeta" class="muted">Tippe auf ein Match.</p>
+<div class="prob"><div><span>Modellprognose</span><b id="probabilityText">–</b></div><div class="bar"><span id="probabilityBar"></span></div></div>
+<div class="metrics"><div><span>Faire Quote</span><b id="fairOdds">–</b></div><div><span>Marktquote</span><b id="marketOdds">–</b></div><div><span>Value</span><b id="valueText">–</b></div><div><span>Vertrauen</span><b id="confidence">–</b></div></div>
+<div class="recommend"><span>Empfehlung</span><b id="recommendation">–</b></div><div id="reasons"></div></aside>
+</main>
+<section class="card ladder"><div class="section-head"><div><span class="eyebrow">Leiter</span><h3>Zeitlich passende Folgeoptionen</h3></div></div><div id="ladderList"></div></section>
+<footer>Analysewerkzeug, keine Gewinngarantie.</footer>
+</div>
+<script src="./data.js"></script><script src="./script.js"></script>
+</body>
+</html>
