@@ -15,3 +15,4 @@ main{display:grid;grid-template-columns:1.08fr .92fr;gap:15px}.list,.detail,.lad
 .reason{display:flex;gap:9px;padding:10px 0;border-bottom:1px solid rgba(39,52,74,.72);font-size:.8rem;line-height:1.45}.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:5px;flex:none}.dot.risk{background:var(--gold)}
 .ladder{margin-top:15px}.ladder-item{display:grid;grid-template-columns:62px 1fr auto;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.8rem}.ladder-time{color:var(--muted)}.ladder-odds{font-weight:900}footer{text-align:center;color:#718096;font-size:.7rem;margin-top:18px}
 @media(max-width:820px){main{grid-template-columns:1fr}.detail{position:static}.hero{grid-template-columns:1fr}.stats{justify-content:flex-start}header{align-items:flex-start}}
+.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}.empty small{opacity:.75}
