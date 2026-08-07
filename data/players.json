@@ -1,0 +1,376 @@
+{
+  "generatedAt": "2026-08-08",
+  "source": "Mission 1000 player metadata",
+  "players": [
+    {
+      "name": "Casper Ruud",
+      "tour": "ATP",
+      "country": "NO"
+    },
+    {
+      "name": "Joao Fonseca",
+      "tour": "ATP",
+      "country": "BR"
+    },
+    {
+      "name": "João Fonseca",
+      "tour": "ATP",
+      "country": "BR"
+    },
+    {
+      "name": "Alexei Popyrin",
+      "tour": "ATP",
+      "country": "AU"
+    },
+    {
+      "name": "Thiago Agustin Tirante",
+      "tour": "ATP",
+      "country": "AR"
+    },
+    {
+      "name": "Thiago Agustín Tirante",
+      "tour": "ATP",
+      "country": "AR"
+    },
+    {
+      "name": "Jiri Lehecka",
+      "tour": "ATP",
+      "country": "CZ"
+    },
+    {
+      "name": "Jiří Lehečka",
+      "tour": "ATP",
+      "country": "CZ"
+    },
+    {
+      "name": "Rafael Jodar",
+      "tour": "ATP",
+      "country": "ES"
+    },
+    {
+      "name": "Rafael Jódar",
+      "tour": "ATP",
+      "country": "ES"
+    },
+    {
+      "name": "Nuno Borges",
+      "tour": "ATP",
+      "country": "PT"
+    },
+    {
+      "name": "Luciano Darderi",
+      "tour": "ATP",
+      "country": "IT"
+    },
+    {
+      "name": "Learner Tien",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Tommy Paul",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Jannik Sinner",
+      "tour": "ATP",
+      "country": "IT"
+    },
+    {
+      "name": "Carlos Alcaraz",
+      "tour": "ATP",
+      "country": "ES"
+    },
+    {
+      "name": "Novak Djokovic",
+      "tour": "ATP",
+      "country": "RS"
+    },
+    {
+      "name": "Novak Đoković",
+      "tour": "ATP",
+      "country": "RS"
+    },
+    {
+      "name": "Alexander Zverev",
+      "tour": "ATP",
+      "country": "DE"
+    },
+    {
+      "name": "Daniil Medvedev",
+      "tour": "ATP",
+      "country": "RU"
+    },
+    {
+      "name": "Andrey Rublev",
+      "tour": "ATP",
+      "country": "RU"
+    },
+    {
+      "name": "Hubert Hurkacz",
+      "tour": "ATP",
+      "country": "PL"
+    },
+    {
+      "name": "Tallon Griekspoor",
+      "tour": "ATP",
+      "country": "NL"
+    },
+    {
+      "name": "Matteo Arnaldi",
+      "tour": "ATP",
+      "country": "IT"
+    },
+    {
+      "name": "Alex Michelsen",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Brandon Nakashima",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Botic van de Zandschulp",
+      "tour": "ATP",
+      "country": "NL"
+    },
+    {
+      "name": "Botić van de Zandschulp",
+      "tour": "ATP",
+      "country": "NL"
+    },
+    {
+      "name": "Taylor Fritz",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Ben Shelton",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Frances Tiafoe",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Holger Rune",
+      "tour": "ATP",
+      "country": "DK"
+    },
+    {
+      "name": "Stefanos Tsitsipas",
+      "tour": "ATP",
+      "country": "GR"
+    },
+    {
+      "name": "Lorenzo Musetti",
+      "tour": "ATP",
+      "country": "IT"
+    },
+    {
+      "name": "Jack Draper",
+      "tour": "ATP",
+      "country": "GB"
+    },
+    {
+      "name": "Alex de Minaur",
+      "tour": "ATP",
+      "country": "AU"
+    },
+    {
+      "name": "Felix Auger-Aliassime",
+      "tour": "ATP",
+      "country": "CA"
+    },
+    {
+      "name": "Félix Auger-Aliassime",
+      "tour": "ATP",
+      "country": "CA"
+    },
+    {
+      "name": "Arthur Fils",
+      "tour": "ATP",
+      "country": "FR"
+    },
+    {
+      "name": "Ugo Humbert",
+      "tour": "ATP",
+      "country": "FR"
+    },
+    {
+      "name": "Sebastian Korda",
+      "tour": "ATP",
+      "country": "US"
+    },
+    {
+      "name": "Francisco Cerundolo",
+      "tour": "ATP",
+      "country": "AR"
+    },
+    {
+      "name": "Francisco Cerúndolo",
+      "tour": "ATP",
+      "country": "AR"
+    },
+    {
+      "name": "Karen Khachanov",
+      "tour": "ATP",
+      "country": "RU"
+    },
+    {
+      "name": "Denis Shapovalov",
+      "tour": "ATP",
+      "country": "CA"
+    },
+    {
+      "name": "Elina Svitolina",
+      "tour": "WTA",
+      "country": "UA"
+    },
+    {
+      "name": "Amanda Anisimova",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Iga Swiatek",
+      "tour": "WTA",
+      "country": "PL"
+    },
+    {
+      "name": "Iga Świątek",
+      "tour": "WTA",
+      "country": "PL"
+    },
+    {
+      "name": "Aryna Sabalenka",
+      "tour": "WTA",
+      "country": "BY"
+    },
+    {
+      "name": "Coco Gauff",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Jessica Pegula",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Elena Rybakina",
+      "tour": "WTA",
+      "country": "KZ"
+    },
+    {
+      "name": "Mirra Andreeva",
+      "tour": "WTA",
+      "country": "RU"
+    },
+    {
+      "name": "Leylah Fernandez",
+      "tour": "WTA",
+      "country": "CA"
+    },
+    {
+      "name": "Leylah Fernández",
+      "tour": "WTA",
+      "country": "CA"
+    },
+    {
+      "name": "Naomi Osaka",
+      "tour": "WTA",
+      "country": "JP"
+    },
+    {
+      "name": "Liudmila Samsonova",
+      "tour": "WTA",
+      "country": "RU"
+    },
+    {
+      "name": "Maya Joint",
+      "tour": "WTA",
+      "country": "AU"
+    },
+    {
+      "name": "Iva Jovic",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Iva Jović",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Alina Korneeva",
+      "tour": "WTA",
+      "country": "RU"
+    },
+    {
+      "name": "Madison Keys",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Emma Navarro",
+      "tour": "WTA",
+      "country": "US"
+    },
+    {
+      "name": "Jasmine Paolini",
+      "tour": "WTA",
+      "country": "IT"
+    },
+    {
+      "name": "Qinwen Zheng",
+      "tour": "WTA",
+      "country": "CN"
+    },
+    {
+      "name": "Daria Kasatkina",
+      "tour": "WTA",
+      "country": "AU"
+    },
+    {
+      "name": "Karolina Muchova",
+      "tour": "WTA",
+      "country": "CZ"
+    },
+    {
+      "name": "Karolína Muchová",
+      "tour": "WTA",
+      "country": "CZ"
+    },
+    {
+      "name": "Barbora Krejcikova",
+      "tour": "WTA",
+      "country": "CZ"
+    },
+    {
+      "name": "Barbora Krejčíková",
+      "tour": "WTA",
+      "country": "CZ"
+    },
+    {
+      "name": "Paula Badosa",
+      "tour": "WTA",
+      "country": "ES"
+    },
+    {
+      "name": "Ons Jabeur",
+      "tour": "WTA",
+      "country": "TN"
+    },
+    {
+      "name": "Belinda Bencic",
+      "tour": "WTA",
+      "country": "CH"
+    }
+  ]
+}
