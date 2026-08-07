@@ -47,7 +47,6 @@ function toggleFavorite(match) {
 function updateFavoriteButton(match) {
   const button = $("favoriteBtn");
   if (!button || !match) return;
-
   const active = isFavorite(match);
   button.textContent = active ? "★" : "☆";
   button.classList.toggle("active", active);
@@ -66,10 +65,7 @@ function statusText(status) {
 }
 
 function localDayString(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
 }
 
 function todayString() {
@@ -119,8 +115,7 @@ function scoreParts(match) {
   let balance = 0;
   if (pct) {
     const difference = Math.abs(pct.p1 - pct.p2);
-    const closeness = Math.max(0, 50 - difference);
-    balance = Math.round(closeness * 0.9);
+    balance = Math.round(Math.max(0, 50 - difference) * 0.9);
   }
 
   let timing = 0;
@@ -200,6 +195,72 @@ function heatLabel(value) {
   return "Ruhiger Markt";
 }
 
+function analysisMetrics(match) {
+  const pct = marketPercentages(match);
+  const confidence = marketConfidence(match);
+  const heat = heatScore(match);
+
+  if (!pct) {
+    return {
+      marketShape: "Unvollständig",
+      risk: "Nicht bewertbar",
+      balance: "Keine Daten",
+      signal: "Warten",
+      badge: "Daten fehlen",
+      text: "Für dieses Match fehlen vollständige Quoten. Eine belastbare Markt-Einordnung ist deshalb noch nicht möglich."
+    };
+  }
+
+  const gap = Math.abs(pct.p1 - pct.p2);
+  const favorite = pct.p1 >= pct.p2 ? match.player1 : match.player2;
+  const favoritePct = Math.max(pct.p1, pct.p2);
+
+  let marketShape;
+  if (gap <= 8) marketShape = "Sehr offen";
+  else if (gap <= 20) marketShape = "Leichter Favorit";
+  else if (gap <= 35) marketShape = "Klarer Favorit";
+  else marketShape = "Deutlicher Favorit";
+
+  let risk;
+  if (gap <= 10) risk = "Hoch";
+  else if (gap <= 25) risk = "Mittel";
+  else risk = "Niedriger";
+
+  let balance;
+  if (gap <= 8) balance = "Sehr hoch";
+  else if (gap <= 18) balance = "Hoch";
+  else if (gap <= 30) balance = "Mittel";
+  else balance = "Niedrig";
+
+  let signal;
+  if (heat >= 80 && confidence >= 85) signal = "Stark beobachten";
+  else if (heat >= 65) signal = "Beobachten";
+  else signal = "Kein starkes Signal";
+
+  const badge = heat >= 80 ? "Starkes Signal" : heat >= 65 ? "Beobachten" : "Neutral";
+
+  let text;
+  if (gap <= 8) {
+    text = `Der Markt bewertet ${match.player1} und ${match.player2} nahezu ausgeglichen. Das erhöht die Unsicherheit, macht das Match aber für eine spätere Leistungsanalyse besonders interessant.`;
+  } else if (gap <= 20) {
+    text = `${favorite} liegt mit rund ${favoritePct} % Marktanteil leicht vorne. Das Marktbild ist erkennbar, aber noch nicht dominant.`;
+  } else if (gap <= 35) {
+    text = `${favorite} ist mit rund ${favoritePct} % Marktanteil klar favorisiert. Die Marktseite ist deutlich, ohne dass daraus automatisch eine sichere Prognose folgt.`;
+  } else {
+    text = `${favorite} wird vom Markt mit rund ${favoritePct} % sehr deutlich favorisiert. Der Abstand ist groß, wodurch das Match weniger ausgeglichen wirkt.`;
+  }
+
+  if (confidence >= 90) {
+    text += " Die vorhandenen Marktdaten sind sehr vollständig.";
+  } else if (confidence >= 75) {
+    text += " Die vorhandenen Marktdaten sind solide.";
+  } else {
+    text += " Die Datenbasis ist noch begrenzt.";
+  }
+
+  return { marketShape, risk, balance, signal, badge, text };
+}
+
 function matchRelevant(match) {
   if (!match.startIso) return true;
   return new Date(match.startIso).getTime() > Date.now() - 4 * 60 * 60 * 1000;
@@ -215,66 +276,23 @@ function selectedMatches() {
   return all
     .filter(match => {
       if (!matchRelevant(match)) return false;
-
       if (dayFilter === "today" && match.date !== todayString()) return false;
       if (dayFilter === "tomorrow" && match.date !== tomorrowString()) return false;
-
       if (filter === "ATP" && match.tour !== "ATP") return false;
       if (filter === "WTA" && match.tour !== "WTA") return false;
       if (filter === "priced" && !marketProbabilities(match)) return false;
       if (filter === "favorites" && !isFavorite(match)) return false;
-
       return matchesSearch(match);
     })
     .sort((a, b) => {
       const favDiff = Number(isFavorite(b)) - Number(isFavorite(a));
       if (favDiff !== 0) return favDiff;
 
-      const scoreDiff = matchScore(b) - matchScore(a);
-      if (scoreDiff !== 0) return scoreDiff;
+      const heatDiff = heatScore(b) - heatScore(a);
+      if (heatDiff !== 0) return heatDiff;
 
       return new Date(a.startIso || 0) - new Date(b.startIso || 0);
     });
-}
-
-function automaticAnalysis(match) {
-  const pct = marketPercentages(match);
-  const confidence = marketConfidence(match);
-  const heat = heatScore(match);
-  const score = matchScore(match);
-
-  if (!pct) {
-    return "Für dieses Match fehlen vollständige Quoten. Deshalb wird keine Markt-Einordnung erzeugt.";
-  }
-
-  const favorite = pct.p1 >= pct.p2 ? match.player1 : match.player2;
-  const favoritePct = Math.max(pct.p1, pct.p2);
-  const gap = Math.abs(pct.p1 - pct.p2);
-
-  let marketText;
-  if (gap <= 8) {
-    marketText = "Der Markt sieht ein sehr enges Duell ohne klaren Abstand zwischen beiden Seiten.";
-  } else if (gap <= 20) {
-    marketText = `Der Markt sieht ${favorite} leicht vorne.`;
-  } else if (gap <= 35) {
-    marketText = `Der Markt sieht ${favorite} als klaren Favoriten.`;
-  } else {
-    marketText = `Der Markt sieht ${favorite} deutlich vorne.`;
-  }
-
-  let qualityText = confidence >= 85
-    ? "Die vorhandenen Marktdaten sind vollständig und konsistent genug für eine stabile Quoten-Einordnung."
-    : confidence >= 70
-      ? "Die Datenbasis ist ordentlich, aber noch nicht stark genug für eine eigene Leistungsprognose."
-      : "Die Datenbasis ist noch begrenzt.";
-
-  let interestText = heat >= 80
-    ? "Das Match gehört aktuell zu den auffälligeren Begegnungen im Markt-Radar."
-    : heat >= 65
-      ? "Das Match ist für die weitere Beobachtung interessant."
-      : "Der Markt liefert aktuell kein besonders starkes Interesse-Signal.";
-
-  return `${marketText} Marktanteil des Favoriten: ${favoritePct} %. ${qualityText} ${interestText} Match Score: ${score}/100.`;
 }
 
 function updateCountdown() {
@@ -385,6 +403,17 @@ function updateScoreBox(match) {
   }
 }
 
+function updateAnalysisEngine(match) {
+  const metrics = analysisMetrics(match);
+
+  $("marketShape").textContent = metrics.marketShape;
+  $("riskLevel").textContent = metrics.risk;
+  $("balanceLabel").textContent = metrics.balance;
+  $("signalLabel").textContent = metrics.signal;
+  $("engineBadge").textContent = metrics.badge;
+  $("analysisText").textContent = metrics.text;
+}
+
 function showDetails(match) {
   selectedMatch = match;
 
@@ -403,10 +432,9 @@ function showDetails(match) {
   $("status").textContent = statusText(match.status);
   $("detailSource").textContent = match.source || "The Odds API";
 
-  $("autoAnalysis").textContent = automaticAnalysis(match);
-
   updateProbabilityBox(match);
   updateScoreBox(match);
+  updateAnalysisEngine(match);
   updateCountdown();
   updateLiveBadge(match);
   updateFavoriteButton(match);
@@ -440,15 +468,16 @@ function renderHighlights() {
         <span>${match.start || ""}</span>
       </div>
 
-      <div class="score-chip">
-        <b>${score}</b>
-        <span>
-          <small>Match Score</small>
-          ${matchScoreTier(score)}
-        </span>
+      <div class="card-signal-row">
+        <div class="score-chip">
+          <b>${score}</b>
+          <span>
+            <small>Match Score</small>
+            ${matchScoreTier(score)}
+          </span>
+        </div>
+        <div class="heat-chip">Heat ${heat}</div>
       </div>
-
-      <div class="heat-chip">Heat ${heat}/100</div>
 
       <div class="highlight-match">
         <div><b>${match.player1}</b><span>${odd(match.odds1)}</span></div>
@@ -484,7 +513,11 @@ function updateIntelligence() {
   const heat = heatScore(top);
   const confidence = marketConfidence(top);
 
-  $("intelBadge").textContent = heat >= 80 ? "Starkes Signal" : heat >= 65 ? "Beobachten" : "Ruhiger Markt";
+  $("intelBadge").textContent =
+    heat >= 80 ? "Starkes Signal" :
+    heat >= 65 ? "Beobachten" :
+    "Ruhiger Markt";
+
   $("intelTopMatch").textContent = `${top.player1} vs. ${top.player2}`;
   $("intelHeat").textContent = `${heat}/100`;
   $("intelConfidence").textContent = `${confidence}/100`;
@@ -500,9 +533,9 @@ function updateIntelligence() {
   }
 
   $("intelText").textContent =
-    `Das aktuell auffälligste Match im Markt-Radar ist ${top.player1} gegen ${top.player2}. ` +
-    `Der Heat Score liegt bei ${heat}/100, die Daten-Confidence bei ${confidence}/100. ` +
-    `Das ist eine Markt-Einordnung und noch keine eigene Leistungsprognose.`;
+    `Das auffälligste Match im heutigen Markt-Radar ist ${top.player1} gegen ${top.player2}. ` +
+    `Heat ${heat}/100, Confidence ${confidence}/100. ` +
+    `Die Einordnung basiert ausschließlich auf den aktuell verfügbaren Marktdaten.`;
 }
 
 function render() {
@@ -510,8 +543,7 @@ function render() {
   const box = $("matches");
 
   $("count").textContent = matches.length;
-  $("priced").textContent =
-    matches.filter(match => Boolean(marketProbabilities(match))).length;
+  $("priced").textContent = matches.filter(match => Boolean(marketProbabilities(match))).length;
 
   box.innerHTML = "";
 
@@ -594,6 +626,7 @@ function render() {
       document.querySelectorAll(".card").forEach(item =>
         item.classList.remove("selected")
       );
+
       card.classList.add("selected");
       showDetails(match);
     };

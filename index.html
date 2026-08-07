@@ -65,14 +65,12 @@
     <div class="section-title">
       <div>
         <span class="tag">Mission Intelligence</span>
-        <h3 id="intelHeadline">Markt-Radar</h3>
+        <h3>Heute im Fokus</h3>
       </div>
       <span id="intelBadge" class="intel-badge">Lädt …</span>
     </div>
 
-    <p id="intelText">
-      Die stärksten Markt-Signale des Tages werden gerade ausgewertet.
-    </p>
+    <p id="intelText">Die heutigen Markt-Signale werden ausgewertet.</p>
 
     <div class="intel-grid">
       <div><span>Top Match</span><b id="intelTopMatch">–</b></div>
@@ -88,7 +86,7 @@
         <span class="tag">Fokus</span>
         <h3>Top Matches</h3>
       </div>
-      <span class="small-muted">nach Match Score</span>
+      <span class="small-muted">nach Markt-Signal</span>
     </div>
     <div id="highlights"></div>
   </section>
@@ -183,7 +181,6 @@
             <small id="book1">–</small>
           </div>
         </div>
-
         <div>
           <span id="p2">Spieler 2</span>
           <div class="quote-box">
@@ -221,12 +218,29 @@
         <small>Aus den aktuellen Quoten normalisiert. Keine eigene Prognose.</small>
       </div>
 
-      <div class="analysis-card">
-        <div class="analysis-head">
-          <span class="tag">Automatische Einordnung</span>
-          <span class="analysis-state">Marktdaten</span>
+      <div class="analysis-engine">
+        <div class="analysis-engine-head">
+          <div>
+            <span class="tag">Mission Analyse</span>
+            <h3>Marktbasierte Einordnung</h3>
+          </div>
+          <span id="engineBadge" class="engine-badge">–</span>
         </div>
-        <p id="autoAnalysis">–</p>
+
+        <div class="engine-grid">
+          <div><span>Marktlage</span><b id="marketShape">–</b></div>
+          <div><span>Risiko</span><b id="riskLevel">–</b></div>
+          <div><span>Balance</span><b id="balanceLabel">–</b></div>
+          <div><span>Signal</span><b id="signalLabel">–</b></div>
+        </div>
+
+        <div class="engine-text">
+          <p id="analysisText">–</p>
+        </div>
+
+        <div class="engine-note">
+          Noch keine Form-, Ranking-, H2H- oder Belagdaten enthalten.
+        </div>
       </div>
 
       <div class="breakdown">
@@ -242,9 +256,7 @@
           <div><span>Marktvertrauen</span><b id="marketConfidence">–</b></div>
         </div>
 
-        <p id="scoreExplanation">
-          Die Einordnung basiert aktuell nur auf den verfügbaren Quoten und Match-Metadaten.
-        </p>
+        <p id="scoreExplanation">–</p>
       </div>
 
       <div class="grid">

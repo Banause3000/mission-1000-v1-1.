@@ -18,10 +18,10 @@ button,input{font:inherit}button{cursor:pointer}
 h1,h2,h3,p{margin:0}.hidden{display:none!important}
 .app{width:min(1120px,100%);margin:auto;padding:calc(18px + env(safe-area-inset-top)) 16px 50px}
 
-.topbar,.brand,.section-title,.top,.player,.card-footer,.prob-head,.prob-row,.market>div,.analysis-head,.detail-head{
+.topbar,.brand,.section-title,.top,.player,.card-footer,.prob-head,.prob-row,.market>div,.analysis-head,.detail-head,.analysis-engine-head{
   display:flex
 }
-.topbar,.section-title,.top,.player,.card-footer,.prob-head,.prob-row,.market>div,.analysis-head,.detail-head{
+.topbar,.section-title,.top,.player,.card-footer,.prob-head,.prob-row,.market>div,.analysis-head,.detail-head,.analysis-engine-head{
   justify-content:space-between;align-items:center
 }
 .brand{align-items:center;gap:12px}
@@ -65,7 +65,7 @@ h1,h2,h3,p{margin:0}.hidden{display:none!important}
 }
 .intelligence p{color:#c7d3dc;line-height:1.55;font-size:.82rem}
 .intel-grid{grid-template-columns:repeat(4,1fr);margin-top:14px}
-.intel-badge{
+.intel-badge,.engine-badge{
   padding:6px 9px;border-radius:999px;background:rgba(77,224,127,.1);
   border:1px solid rgba(77,224,127,.3);color:#d7ffe3;font-size:.64rem;font-weight:800
 }
@@ -86,9 +86,7 @@ h1,h2,h3,p{margin:0}.hidden{display:none!important}
 .highlight-card{
   padding:14px;border:1px solid var(--line);border-radius:17px;background:rgba(5,11,17,.48)
 }
-.highlight-meta{
-  display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:.68rem
-}
+.highlight-meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:.68rem}
 .highlight-match{display:grid;gap:7px;margin-top:10px}
 .highlight-match div{display:flex;justify-content:space-between;gap:10px}
 .mini-prob{
@@ -169,7 +167,7 @@ main{display:grid;grid-template-columns:1.08fr .92fr;gap:15px}
   display:flex;align-items:center;gap:7px;background:rgba(255,87,87,.08);color:#ff7b7b;font-size:.68rem;font-weight:950
 }
 
-.score-panel,.market,.probability,.breakdown,.analysis-card{
+.score-panel,.market,.probability,.breakdown,.analysis-engine{
   margin-top:15px;padding:14px;border:1px solid var(--line);border-radius:17px;background:#08121a
 }
 .score-panel{
@@ -233,9 +231,29 @@ main{display:grid;grid-template-columns:1.08fr .92fr;gap:15px}
 #probBar2{background:linear-gradient(90deg,#2d4258,#486783)}
 .probability>small{display:block;margin-top:10px;color:var(--muted);font-size:.61rem;line-height:1.4}
 
-.analysis-card p,.breakdown p{
-  margin-top:12px;color:var(--muted);font-size:.74rem;line-height:1.55
+.analysis-engine{
+  border-color:rgba(77,224,127,.34);
+  background:linear-gradient(145deg,rgba(77,224,127,.05),#08121a)
 }
+.analysis-engine-head{align-items:flex-start;gap:12px}
+.analysis-engine-head h3{margin-top:5px}
+.engine-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px
+}
+.engine-grid>div{
+  padding:11px;border:1px solid var(--line);border-radius:13px;background:rgba(5,11,17,.48)
+}
+.engine-grid span{display:block;color:var(--muted);font-size:.64rem}
+.engine-grid b{display:block;margin-top:4px}
+.engine-text{
+  margin-top:12px;padding:12px;border-radius:14px;background:rgba(77,224,127,.045);
+  border:1px solid rgba(77,224,127,.16)
+}
+.engine-text p{color:#d4dee5;font-size:.76rem;line-height:1.58}
+.engine-note{
+  margin-top:10px;color:var(--muted);font-size:.6rem;line-height:1.4
+}
+
 .analysis-head{gap:10px}
 .analysis-state{
   padding:5px 8px;border-radius:999px;background:#0b1720;color:var(--muted);font-size:.64rem
@@ -244,6 +262,7 @@ main{display:grid;grid-template-columns:1.08fr .92fr;gap:15px}
 .breakdown-grid div{padding:11px;border:1px solid var(--line);border-radius:13px}
 .breakdown-grid span{display:block;color:var(--muted);font-size:.65rem}
 .breakdown-grid b{display:block;margin-top:4px}
+.breakdown p{margin-top:12px;color:var(--muted);font-size:.72rem;line-height:1.5}
 
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:15px}
 .grid>div{padding:11px;border:1px solid var(--line);border-radius:13px}
