@@ -467,6 +467,49 @@ function renderAI(){
   box.textContent=parts.join(" ");
 }
 
+
+async function fetchJson(path,fallback){
+  try{
+    const res=await fetch(`${path}?v=${Date.now()}`,{cache:"no-store"});
+    if(!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
+    return await res.json();
+  }catch(err){
+    console.warn(err);
+    return fallback;
+  }
+}
+
+async function load(){
+  $("statusTitle").textContent="Daten werden geladen";
+  $("statusText").textContent="Mission Control verbindet sich mit deinen JSON-Dateien.";
+
+  const [matchesPayload,rankPayload,formPayload,playerPayload]=await Promise.all([
+    fetchJson("./data/matches.json",{matches:[]}),
+    fetchJson("./data/rankings.json",{players:[]}),
+    fetchJson("./data/form.json",{players:[]}),
+    fetchJson("./data/players.json",{players:[]})
+  ]);
+
+  MATCHES=Array.isArray(matchesPayload.matches)?matchesPayload.matches:[];
+  RANKINGS=Array.isArray(rankPayload.players)?rankPayload.players:[];
+  FORMS=Array.isArray(formPayload.players)?formPayload.players:[];
+  PLAYERS=Array.isArray(playerPayload.players)?playerPayload.players:[];
+
+  activeDate=resolveActiveDate();
+  updateSystemStatus(matchesPayload);
+  renderStats();
+  renderTop();
+  renderList();
+  renderAllMatches();
+  renderWatchlist();
+  renderAI();
+  renderPlayerSearch($("playerSearch")?.value || "");
+}
+
+$("refreshBtn").onclick=load;
+$("toggleAllBtn").onclick=()=>{showAll=!showAll;renderList();};
+$("closeDetailsBtn").onclick=()=>$("detailsPanel").classList.add("hidden");
+
 document.querySelectorAll(".bottom-nav button[data-view]").forEach(button=>{
   button.onclick=()=>{
     document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
