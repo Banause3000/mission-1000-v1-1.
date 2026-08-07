@@ -1,185 +1,293 @@
-let MATCHES = [];
-let RANKINGS = [];
-let FORMS = [];
-let PLAYERS = [];
-let showAll = false;
-let activeDate = null;
-const WATCH_KEY = "mission1000-watchlist-v1";
+// Mission 1000 v2.0.0
+// Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
+
+const STATE = {
+  matches: [],
+  rankings: [],
+  forms: [],
+  players: [],
+  activeDate: null,
+  showAll: false
+};
+
+const WATCH_KEY = "mission1000-watchlist-v2";
 
 function normalizeName(value){
   return String(value || "")
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g,"")
-    .replace(/[’'`´]/g,"")
-    .replace(/[-–—]/g," ")
-    .replace(/\s+/g," ")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[’'`´]/g, "")
+    .replace(/[-–—]/g, " ")
+    .replace(/\s+/g, " ")
     .trim()
     .toLowerCase();
 }
-function odd(v){
-  const n = Number(v);
-  return Number.isFinite(n) ? n.toFixed(2).replace(".",",") : "–";
-}
+
 function dayString(date = new Date()){
   return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
 }
 
+function odd(value){
+  const n = Number(value);
+  return Number.isFinite(n) ? n.toFixed(2).replace(".", ",") : "–";
+}
 
-function getPlayerMeta(name,tour){
-  const n=normalizeName(name),t=String(tour||"").toUpperCase();
-  return PLAYERS.find(p=>
-    normalizeName(p.name)===n &&
-    (!t || String(p.tour||"").toUpperCase()===t)
+function codeToFlag(code){
+  const c = String(code || "").trim().toUpperCase();
+  if(!/^[A-Z]{2}$/.test(c)) return "🎾";
+  return String.fromCodePoint(...[...c].map(ch => 127397 + ch.charCodeAt()));
+}
+
+function playerMeta(name, tour){
+  const n = normalizeName(name);
+  const t = String(tour || "").toUpperCase();
+  return STATE.players.find(p =>
+    normalizeName(p.name) === n &&
+    (!t || String(p.tour || "").toUpperCase() === t)
   ) || null;
 }
-const COUNTRY_BY_PLAYER = {
-  "casper ruud":"NO","joao fonseca":"BR","joao fonseca":"BR","jannik sinner":"IT","carlos alcaraz":"ES",
-  "novak djokovic":"RS","alexander zverev":"DE","daniil medvedev":"RU","andrey rublev":"RU",
-  "hubert hurkacz":"PL","tallon griekspoor":"NL","matteo arnaldi":"IT","alex michelsen":"US",
-  "iva jovic":"US","alina korneeva":"RU","naomi osaka":"JP","iga swiatek":"PL",
-  "elena rybakina":"KZ","mirra andreeva":"RU","leylah fernandez":"CA","amanda anisimova":"US",
-  "liudmila samsonova":"RU","maya joint":"AU","brandon nakashima":"US","botić van de zandschulp":"NL",
-  "botic van de zandschulp":"NL"
-};
-function countryCodeToFlag(code){
-  const c=String(code||"").trim().toUpperCase();
-  if(!/^[A-Z]{2}$/.test(c)) return "🎾";
-  return String.fromCodePoint(...[...c].map(ch=>127397+ch.charCodeAt()));
-}
-function matchCountry(m,side){
-  const candidates = side===1
-    ? [m.player1Country,m.country1,m.player1_country,m.homeCountry,m.home_country]
-    : [m.player2Country,m.country2,m.player2_country,m.awayCountry,m.away_country];
-  const direct=candidates.find(Boolean);
-  if(direct) return String(direct).toUpperCase();
-  const name=normalizeName(side===1?m.player1:m.player2);
-  return COUNTRY_BY_PLAYER[name] || "";
-}
-function playerFlag(name,tour,m,side){
-  const meta=getPlayerMeta(name,tour);
-  if(meta?.country) return countryCodeToFlag(meta.country);
 
-  const direct = m ? matchCountry(m,side) : "";
-  if(direct) return countryCodeToFlag(direct);
+function directCountry(match, side){
+  const fields = side === 1
+    ? [match.player1Country, match.country1, match.player1_country, match.homeCountry, match.home_country]
+    : [match.player2Country, match.country2, match.player2_country, match.awayCountry, match.away_country];
+  return fields.find(Boolean) || "";
+}
 
-  const fallback=COUNTRY_BY_PLAYER[normalizeName(name)];
-  return countryCodeToFlag(fallback);
+function playerFlag(name, tour, match=null, side=1){
+  const meta = playerMeta(name, tour);
+  if(meta?.country) return codeToFlag(meta.country);
+
+  const direct = match ? directCountry(match, side) : "";
+  if(direct) return codeToFlag(direct);
+
+  return "🎾";
 }
-function matchKey(m){
-  return m.id || `${m.date}|${m.start}|${m.player1}|${m.player2}`;
+
+function getRank(name, tour){
+  const n = normalizeName(name);
+  const t = String(tour || "").toUpperCase();
+
+  const found = STATE.rankings.find(p =>
+    normalizeName(p.name) === n &&
+    String(p.tour || "").toUpperCase() === t
+  );
+
+  const raw = found?.rank ?? found?.ranking ?? found?.position;
+  const r = Number(raw);
+  return Number.isFinite(r) && r > 0 ? r : null;
 }
-function watchlist(){
-  try{return JSON.parse(localStorage.getItem(WATCH_KEY)||"[]")}catch{return []}
+
+function getForm(name, tour){
+  const n = normalizeName(name);
+  const t = String(tour || "").toUpperCase();
+
+  const found = STATE.forms.find(p =>
+    normalizeName(p.name) === n &&
+    String(p.tour || "").toUpperCase() === t
+  );
+
+  if(!found) return null;
+
+  const list = Array.isArray(found.lastMatches)
+    ? found.lastMatches
+    : Array.isArray(found.matches)
+      ? found.matches
+      : [];
+
+  if(!list.length) return null;
+
+  const last = list.slice(0,5);
+  const wins = last.filter(m => String(m.result || m.outcome || "").toUpperCase() === "W").length;
+
+  return {
+    wins,
+    total: last.length,
+    pct: Math.round((wins / last.length) * 100)
+  };
 }
-function isWatched(m){return watchlist().includes(matchKey(m))}
-function toggleWatch(m){
-  const key=matchKey(m),list=watchlist();
-  const next=list.includes(key)?list.filter(x=>x!==key):[...list,key];
-  localStorage.setItem(WATCH_KEY,JSON.stringify(next));
-  renderList();renderAllMatches();renderWatchlist();
-}
-function getRank(name,tour){
-  const n=normalizeName(name),t=String(tour||"").toUpperCase();
-  const p=RANKINGS.find(x=>normalizeName(x.name)===n && String(x.tour||"").toUpperCase()===t);
-  const r=Number(p?.rank);
-  return Number.isFinite(r)&&r>0?r:null;
-}
-function getForm(name,tour){
-  const n=normalizeName(name),t=String(tour||"").toUpperCase();
-  const p=FORMS.find(x=>normalizeName(x.name)===n && String(x.tour||"").toUpperCase()===t);
-  if(!p || !Array.isArray(p.lastMatches) || !p.lastMatches.length) return null;
-  const last=p.lastMatches.slice(0,5);
-  const wins=last.filter(x=>String(x.result||"").toUpperCase()==="W").length;
-  return {wins,total:last.length,pct:Math.round(wins/last.length*100)};
-}
-function market(m){
-  const a=Number(m.odds1),b=Number(m.odds2);
-  if(!Number.isFinite(a)||!Number.isFinite(b)||a<=1||b<=1) return null;
-  const x=1/a,y=1/b,total=x+y;
-  const p1=Math.round(x/total*100);
-  return {p1,p2:100-p1,overround:total};
-}
-function confidence(m){
-  const p=market(m);
-  if(!p) return 45;
-  const margin=Math.max(0,p.overround-1);
-  return Math.max(48,Math.min(97,Math.round(96-margin*260)));
-}
-function missionScore(m){
-  let s=48;
-  const mk=market(m);
-  if(mk){
-    const gap=Math.abs(mk.p1-mk.p2);
-    s+=10+Math.max(0,15-Math.round(gap/4));
+
+function market(match){
+  const a = Number(match.odds1);
+  const b = Number(match.odds2);
+
+  if(!Number.isFinite(a) || !Number.isFinite(b) || a <= 1 || b <= 1){
+    return null;
   }
-  const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
-  if(r1&&r2) s+=Math.min(10,Math.round(Math.abs(r1-r2)/8));
-  const f1=getForm(m.player1,m.tour),f2=getForm(m.player2,m.tour);
-  if(f1&&f2) s+=Math.min(10,Math.round(Math.abs(f1.pct-f2.pct)/8));
-  if(m.status==="live-or-started") s+=4;
-  return Math.min(99,s);
-}
-function resolveActiveDate(){
-  const today=dayString();
-  if(MATCHES.some(m=>m.date===today)) return today;
 
-  const dates=[...new Set(MATCHES.map(m=>m.date).filter(Boolean))].sort();
-  return dates.at(-1) || today;
+  const x = 1/a;
+  const y = 1/b;
+  const total = x+y;
+
+  return {
+    p1: Math.round((x/total)*100),
+    p2: Math.round((y/total)*100),
+    overround: total
+  };
 }
-function currentMatches(){
-  return MATCHES.filter(m=>m.date===activeDate && m.player1 && m.player2);
+
+function confidence(match){
+  const mk = market(match);
+  if(!mk) return 50;
+
+  const margin = Math.max(0, mk.overround - 1);
+  return Math.max(50, Math.min(97, Math.round(96 - margin*260)));
 }
-function scoreLabel(s){
-  if(s>=86) return "Sehr interessantes Match";
-  if(s>=72) return "Interessantes Match";
-  if(s>=60) return "Beobachten";
+
+function missionScore(match){
+  let score = 50;
+
+  const mk = market(match);
+  if(mk){
+    const gap = Math.abs(mk.p1 - mk.p2);
+    score += 9 + Math.max(0, 14 - Math.round(gap/4));
+  }
+
+  const r1 = getRank(match.player1, match.tour);
+  const r2 = getRank(match.player2, match.tour);
+  if(r1 && r2){
+    score += Math.min(10, Math.round(Math.abs(r1-r2)/8));
+  }
+
+  const f1 = getForm(match.player1, match.tour);
+  const f2 = getForm(match.player2, match.tour);
+  if(f1 && f2){
+    score += Math.min(10, Math.round(Math.abs(f1.pct-f2.pct)/8));
+  }
+
+  if(match.status === "live-or-started") score += 4;
+
+  return Math.max(0, Math.min(99, Math.round(score)));
+}
+
+function scoreLabel(score){
+  if(score >= 86) return "Sehr interessantes Match";
+  if(score >= 72) return "Interessantes Match";
+  if(score >= 60) return "Beobachten";
   return "Standard";
 }
-function setRing(element,value){
-  element.style.setProperty("--value",String(value));
-}
-function dataDateLabel(){
-  if(activeDate===dayString()) return "Heute";
-  if(!activeDate) return "–";
-  const d=new Date(`${activeDate}T12:00:00`);
-  return d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"});
-}
-function updateSystemStatus(matchesPayload){
-  const isToday=activeDate===dayString();
-  $("statusTitle").textContent=isToday ? "Mission Control online" : "Letzten verfügbaren Datenstand geladen";
-  $("statusText").textContent=isToday
-    ? "Aktuelle Matches aus deinen vorhandenen Mission-1000-Daten."
-    : "Für heute sind noch keine Matches in matches.json. Die App zeigt deshalb automatisch den neuesten verfügbaren Spieltag.";
-  $("dataDate").textContent=dataDateLabel();
 
-  if(matchesPayload?.generatedAt){
-    $("updatedAt").textContent=new Date(matchesPayload.generatedAt).toLocaleString("de-DE",{
-      day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"
-    });
-  }else{
-    $("updatedAt").textContent="Datenstand –";
+function resolveActiveDate(){
+  const today = dayString();
+
+  if(STATE.matches.some(m => m.date === today)) return today;
+
+  const dates = [...new Set(STATE.matches.map(m => m.date).filter(Boolean))].sort();
+  return dates.at(-1) || today;
+}
+
+function currentMatches(){
+  return STATE.matches.filter(m =>
+    m.date === STATE.activeDate &&
+    m.player1 &&
+    m.player2
+  );
+}
+
+function dataDateLabel(){
+  if(!STATE.activeDate) return "–";
+  if(STATE.activeDate === dayString()) return "Heute";
+
+  const d = new Date(`${STATE.activeDate}T12:00:00`);
+  if(Number.isNaN(d.getTime())) return STATE.activeDate;
+
+  return d.toLocaleDateString("de-DE", {
+    day:"2-digit",
+    month:"2-digit"
+  });
+}
+
+function setRing(element, value){
+  if(element) element.style.setProperty("--value", String(value));
+}
+
+function matchKey(match){
+  return match.id || `${match.date}|${match.start}|${match.player1}|${match.player2}`;
+}
+
+function watchlistKeys(){
+  try{
+    const parsed = JSON.parse(localStorage.getItem(WATCH_KEY) || "[]");
+    return Array.isArray(parsed) ? parsed : [];
+  }catch{
+    return [];
   }
 }
-function renderStats(){
-  const list=currentMatches();
-  $("todayCount").textContent=list.length;
-  $("liveCount").textContent=list.filter(m=>m.status==="live-or-started").length;
-  $("atpCount").textContent=list.filter(m=>String(m.tour).toUpperCase()==="ATP").length;
-  $("wtaCount").textContent=list.filter(m=>String(m.tour).toUpperCase()==="WTA").length;
 
-  const analyzed=list.filter(m=>market(m)).length;
-  const best=list.length ? Math.max(...list.map(m=>missionScore(m))) : 0;
-  $("analyzedCount").textContent=analyzed;
-  $("bestScore").textContent=best;
+function isWatched(match){
+  return watchlistKeys().includes(matchKey(match));
 }
+
+function toggleWatch(match){
+  const key = matchKey(match);
+  const current = watchlistKeys();
+  const next = current.includes(key)
+    ? current.filter(x => x !== key)
+    : [...current, key];
+
+  localStorage.setItem(WATCH_KEY, JSON.stringify(next));
+  renderMatchList();
+  renderAllMatches();
+  renderWatchlist();
+}
+
 function topMatch(){
-  return [...currentMatches()].sort((a,b)=>missionScore(b)-missionScore(a))[0] || null;
+  return [...currentMatches()]
+    .sort((a,b) => missionScore(b) - missionScore(a))[0] || null;
 }
+
+function renderStatus(payload){
+  const list = currentMatches();
+  const isToday = STATE.activeDate === dayString();
+
+  $("statusTitle").textContent = isToday
+    ? "Mission Control online"
+    : "Neuester Datenstand aktiv";
+
+  $("statusText").textContent = isToday
+    ? "Aktuelle Matches aus deinen Mission-1000-Daten."
+    : "Für heute liegen noch keine Matches vor. Es wird automatisch der neueste verfügbare Spieltag gezeigt.";
+
+  $("mcMatches").textContent = list.length;
+
+  // "Analyzed" means the app can produce a Mission Score from the match record.
+  // Every valid current match qualifies. We do NOT require rankings/form/odds.
+  $("analyzedCount").textContent = list.length;
+
+  const best = list.length
+    ? Math.max(...list.map(m => missionScore(m)))
+    : 0;
+
+  $("bestScore").textContent = best;
+  $("dataDate").textContent = dataDateLabel();
+
+  if(payload?.generatedAt){
+    $("updatedAt").textContent = new Date(payload.generatedAt).toLocaleString("de-DE", {
+      day:"2-digit",
+      month:"2-digit",
+      hour:"2-digit",
+      minute:"2-digit"
+    });
+  }else{
+    $("updatedAt").textContent = "Datenstand –";
+  }
+}
+
+function renderStats(){
+  const list = currentMatches();
+
+  $("todayCount").textContent = list.length;
+  $("liveCount").textContent = list.filter(m => m.status === "live-or-started").length;
+  $("atpCount").textContent = list.filter(m => String(m.tour).toUpperCase() === "ATP").length;
+  $("wtaCount").textContent = list.filter(m => String(m.tour).toUpperCase() === "WTA").length;
+}
+
 function renderTop(){
-  const m=topMatch();
-  if(!m){
+  const match = topMatch();
+
+  if(!match){
     $("topContent").classList.add("hidden");
     $("topEmpty").classList.remove("hidden");
     return;
@@ -188,142 +296,184 @@ function renderTop(){
   $("topContent").classList.remove("hidden");
   $("topEmpty").classList.add("hidden");
 
-  $("topMeta1").textContent=m.tour||"";
-  $("topMeta2").textContent=m.tour||"";
-  $("topPlayer1").textContent=m.player1;
-  $("topPlayer2").textContent=m.player2;
-  $("topFlag1").textContent=playerFlag(m.player1,m.tour,m,1);
-  $("topFlag2").textContent=playerFlag(m.player2,m.tour,m,2);
+  $("topMeta1").textContent = match.tour || "";
+  $("topMeta2").textContent = match.tour || "";
+  $("topPlayer1").textContent = match.player1;
+  $("topPlayer2").textContent = match.player2;
+  $("topFlag1").textContent = playerFlag(match.player1, match.tour, match, 1);
+  $("topFlag2").textContent = playerFlag(match.player2, match.tour, match, 2);
 
-  const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
-  $("topRank1").textContent=r1?`${m.tour} #${r1}`:"Ranking –";
-  $("topRank2").textContent=r2?`${m.tour} #${r2}`:"Ranking –";
+  const r1 = getRank(match.player1, match.tour);
+  const r2 = getRank(match.player2, match.tour);
 
-  $("topEvent").textContent=m.event||"Turnier";
-  $("topStart").textContent=`${dataDateLabel()} · ${m.start||"–"}`;
+  $("topRank1").textContent = r1 ? `${match.tour} #${r1}` : "Ranking –";
+  $("topRank2").textContent = r2 ? `${match.tour} #${r2}` : "Ranking –";
 
-  const sc=missionScore(m);
-  const conf=confidence(m);
-  const mk=market(m);
+  $("topEvent").textContent = match.event || "Turnier";
+  $("topStart").textContent = `${dataDateLabel()} · ${match.start || "–"}`;
 
-  $("topScore").textContent=sc;
-  setRing($("topScore").parentElement,sc);
+  const score = missionScore(match);
+  const conf = confidence(match);
+  const mk = market(match);
 
-  $("topConfidence").textContent=`${conf}%`;
-  $("confidenceBar").style.width=`${conf}%`;
-  $("confidenceLabel").textContent=conf>=88?"SEHR HOCH":conf>=76?"HOCH":"SOLIDE";
+  $("topScore").textContent = score;
+  setRing($("topScore").parentElement, score);
+
+  $("topConfidence").textContent = `${conf}%`;
+  $("confidenceBar").style.width = `${conf}%`;
+  $("confidenceLabel").textContent = conf >= 88 ? "SEHR HOCH" : conf >= 76 ? "HOCH" : "SOLIDE";
 
   if(mk){
-    const fav=mk.p1>=mk.p2?m.player1:m.player2;
-    $("marketTrend").textContent=`${fav} ↗ ${Math.max(mk.p1,mk.p2)}%`;
+    const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
+    $("marketTrend").textContent = `${fav} ↗ ${Math.max(mk.p1,mk.p2)}%`;
   }else{
-    $("marketTrend").textContent="Keine vollständige Quote";
+    $("marketTrend").textContent = "Keine vollständige Quote";
   }
 }
-function buildMatchCard(m){
-  const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
-  const el=document.createElement("article");
-  el.className="match-card with-watch";
-  el.innerHTML=`
+
+function openPlayer(player){
+  showPlayerProfile(player);
+
+  document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
+  const target = document.querySelector('.bottom-nav button[data-view="playerView"]');
+  if(target) target.classList.add("active");
+
+  document.querySelectorAll(".app-view").forEach(v => v.classList.add("hidden"));
+  $("playerView").classList.remove("hidden");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function buildMatchCard(match){
+  const r1 = getRank(match.player1, match.tour);
+  const r2 = getRank(match.player2, match.tour);
+
+  const el = document.createElement("article");
+  el.className = "match-card with-watch";
+
+  el.innerHTML = `
     <div class="time">
-      ${m.start||"–"}
-      <small>${m.status==="live-or-started"?"LIVE":dataDateLabel()}</small>
+      ${match.start || "–"}
+      <small>${match.status === "live-or-started" ? "LIVE" : dataDateLabel()}</small>
     </div>
+
     <div class="names">
-      <b data-player="1"><span class="flag-inline">${playerFlag(m.player1,m.tour,m,1)}</span>${m.player1} <span>${r1?`${m.tour} #${r1}`:""}</span></b>
-      <b data-player="2"><span class="flag-inline">${playerFlag(m.player2,m.tour,m,2)}</span>${m.player2} <span>${r2?`${m.tour} #${r2}`:""}</span></b>
+      <b data-player="1">
+        <span class="flag-inline">${playerFlag(match.player1,match.tour,match,1)}</span>
+        ${match.player1}
+        <span>${r1 ? `${match.tour} #${r1}` : ""}</span>
+      </b>
+      <b data-player="2">
+        <span class="flag-inline">${playerFlag(match.player2,match.tour,match,2)}</span>
+        ${match.player2}
+        <span>${r2 ? `${match.tour} #${r2}` : ""}</span>
+      </b>
     </div>
-    <div class="score">${missionScore(m)}</div>
-    <button class="watch-star ${isWatched(m)?"active":""}" aria-label="Watchlist">${isWatched(m)?"★":"☆"}</button>
+
+    <div class="score">${missionScore(match)}</div>
+    <button class="watch-star ${isWatched(match) ? "active" : ""}" aria-label="Watchlist">
+      ${isWatched(match) ? "★" : "☆"}
+    </button>
   `;
-  el.onclick=e=>{
-    if(e.target.closest(".watch-star")) return;
-    showDetails(m);
-  };
-  el.querySelector(".watch-star").onclick=e=>{
-    e.stopPropagation();
-    toggleWatch(m);
+
+  el.onclick = e => {
+    if(e.target.closest(".watch-star") || e.target.closest("[data-player]")) return;
+    showDetails(match);
   };
 
-  el.querySelectorAll("[data-player]").forEach(node=>{
-    node.style.cursor="pointer";
-    node.onclick=e=>{
+  el.querySelector(".watch-star").onclick = e => {
+    e.stopPropagation();
+    toggleWatch(match);
+  };
+
+  el.querySelectorAll("[data-player]").forEach(node => {
+    node.style.cursor = "pointer";
+    node.onclick = e => {
       e.stopPropagation();
-      const side=Number(node.dataset.player);
-      const player={
-        name:side===1?m.player1:m.player2,
-        tour:m.tour,
-        flag:playerFlag(side===1?m.player1:m.player2,m.tour,m,side)
-      };
-      showPlayerProfile(player);
-      document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
-      const playerButton=document.querySelector('.bottom-nav button[data-view="playerView"]');
-      if(playerButton) playerButton.classList.add("active");
-      document.querySelectorAll(".app-view").forEach(v=>v.classList.add("hidden"));
-      $("playerView").classList.remove("hidden");
-      window.scrollTo({top:0,behavior:"smooth"});
+      const side = Number(node.dataset.player);
+      const name = side === 1 ? match.player1 : match.player2;
+      openPlayer({
+        name,
+        tour:match.tour,
+        flag:playerFlag(name, match.tour, match, side)
+      });
     };
   });
 
   return el;
 }
-function renderList(){
-  const wrap=$("matchList");
-  wrap.innerHTML="";
-  let list=[...currentMatches()].sort((a,b)=>missionScore(b)-missionScore(a));
-  if(!showAll) list=list.slice(0,6);
 
-  $("listTitle").textContent=activeDate===dayString()?"Wichtige Matches":"Neuester Spieltag";
+function renderMatchList(){
+  const wrap = $("matchList");
+  wrap.innerHTML = "";
+
+  let list = [...currentMatches()]
+    .sort((a,b) => missionScore(b) - missionScore(a));
+
+  if(!STATE.showAll) list = list.slice(0,6);
+
+  $("listTitle").textContent = STATE.activeDate === dayString()
+    ? "Wichtige Matches"
+    : "Neuester Spieltag";
 
   if(!list.length){
-    wrap.innerHTML='<div class="empty">Keine Matches verfügbar.</div>';
+    wrap.innerHTML = '<div class="empty">Keine Matches verfügbar.</div>';
     return;
   }
 
-  list.forEach(m=>wrap.appendChild(buildMatchCard(m)));
-  $("toggleAllBtn").textContent=showAll?"Weniger":"Alle ansehen";
+  list.forEach(m => wrap.appendChild(buildMatchCard(m)));
+  $("toggleAllBtn").textContent = STATE.showAll ? "Weniger" : "Alle ansehen";
 }
+
 function renderAllMatches(){
-  const wrap=$("allMatchesList");
+  const wrap = $("allMatchesList");
   if(!wrap) return;
-  wrap.innerHTML="";
-  const list=[...currentMatches()].sort((a,b)=>new Date(a.startIso||0)-new Date(b.startIso||0));
+
+  wrap.innerHTML = "";
+
+  const list = [...currentMatches()]
+    .sort((a,b) => String(a.start || "").localeCompare(String(b.start || "")));
+
   if(!list.length){
-    wrap.innerHTML='<div class="empty">Keine Matches verfügbar.</div>';
+    wrap.innerHTML = '<div class="empty">Keine Matches verfügbar.</div>';
     return;
   }
-  list.forEach(m=>wrap.appendChild(buildMatchCard(m)));
+
+  list.forEach(m => wrap.appendChild(buildMatchCard(m)));
 }
+
 function renderWatchlist(){
-  const wrap=$("watchlistList");
+  const wrap = $("watchlistList");
   if(!wrap) return;
-  wrap.innerHTML="";
-  const keys=watchlist();
-  const list=MATCHES.filter(m=>keys.includes(matchKey(m)));
+
+  wrap.innerHTML = "";
+
+  const keys = watchlistKeys();
+  const list = STATE.matches.filter(m => keys.includes(matchKey(m)));
+
   if(!list.length){
-    wrap.innerHTML='<div class="empty">Noch keine Matches gespeichert. Tippe bei einem Match auf ☆.</div>';
+    wrap.innerHTML = '<div class="empty">Noch keine Matches gespeichert. Tippe bei einem Match auf ☆.</div>';
     return;
   }
-  list.sort((a,b)=>new Date(a.startIso||0)-new Date(b.startIso||0))
-      .forEach(m=>wrap.appendChild(buildMatchCard(m)));
+
+  list.forEach(m => wrap.appendChild(buildMatchCard(m)));
 }
 
 function uniquePlayers(){
-  const map=new Map();
+  const map = new Map();
 
-  MATCHES.forEach(m=>{
+  STATE.matches.forEach(m => {
     [
-      {name:m.player1,tour:m.tour,flag:playerFlag(m.player1,m.tour,m,1)},
-      {name:m.player2,tour:m.tour,flag:playerFlag(m.player2,m.tour,m,2)}
-    ].forEach(p=>{
+      {name:m.player1, tour:m.tour, flag:playerFlag(m.player1,m.tour,m,1)},
+      {name:m.player2, tour:m.tour, flag:playerFlag(m.player2,m.tour,m,2)}
+    ].forEach(p => {
       if(!p.name) return;
-      const key=`${String(p.tour||"").toUpperCase()}|${normalizeName(p.name)}`;
+      const key = `${String(p.tour || "").toUpperCase()}|${normalizeName(p.name)}`;
       if(!map.has(key)) map.set(key,p);
     });
   });
 
-  RANKINGS.forEach(p=>{
-    const key=`${String(p.tour||"").toUpperCase()}|${normalizeName(p.name)}`;
+  STATE.rankings.forEach(p => {
+    const key = `${String(p.tour || "").toUpperCase()}|${normalizeName(p.name)}`;
     if(!map.has(key)){
       map.set(key,{
         name:p.name,
@@ -333,218 +483,268 @@ function uniquePlayers(){
     }
   });
 
-  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name,"de"));
+  return [...map.values()].sort((a,b) => a.name.localeCompare(b.name,"de"));
 }
 
 function showPlayerProfile(player){
-  const box=$("playerProfile");
+  const box = $("playerProfile");
   if(!box) return;
 
-  const rank=getRank(player.name,player.tour);
-  const form=getForm(player.name,player.tour);
-  const played=MATCHES.filter(m=>
-    normalizeName(m.player1)===normalizeName(player.name) ||
-    normalizeName(m.player2)===normalizeName(player.name)
+  const rank = getRank(player.name, player.tour);
+  const form = getForm(player.name, player.tour);
+  const played = STATE.matches.filter(m =>
+    normalizeName(m.player1) === normalizeName(player.name) ||
+    normalizeName(m.player2) === normalizeName(player.name)
   ).length;
 
   box.classList.remove("empty-state");
-  box.innerHTML=`
-    <div class="profile-avatar">${player.flag||"🎾"}</div>
+  box.innerHTML = `
+    <div class="profile-avatar">${player.flag || "🎾"}</div>
     <div>
-      <span class="eyebrow">${player.tour||"TENNIS"}</span>
+      <span class="eyebrow">${player.tour || "TENNIS"}</span>
       <h3>${player.name}</h3>
-      <p>${rank?`${player.tour} #${rank}`:"Ranking noch nicht verfügbar"}</p>
+      <p>${rank ? `${player.tour} #${rank}` : "Ranking noch nicht verfügbar"}</p>
     </div>
 
     <div class="profile-metrics">
-      <article>
-        <span>RANKING</span>
-        <b>${rank?`#${rank}`:"–"}</b>
-      </article>
-      <article>
-        <span>FORM</span>
-        <b>${form?`${form.pct}%`:"–"}</b>
-      </article>
-      <article>
-        <span>MATCHES</span>
-        <b>${played}</b>
-      </article>
+      <article><span>RANKING</span><b>${rank ? `#${rank}` : "–"}</b></article>
+      <article><span>FORM</span><b>${form ? `${form.pct}%` : "–"}</b></article>
+      <article><span>MATCHES</span><b>${played}</b></article>
     </div>
   `;
 }
 
 function renderPlayerSearch(query=""){
-  const wrap=$("playerResults");
+  const wrap = $("playerResults");
   if(!wrap) return;
 
-  const q=normalizeName(query);
-  const players=uniquePlayers()
-    .filter(p=>!q || normalizeName(p.name).includes(q))
-    .slice(0,16);
+  const q = normalizeName(query);
 
-  wrap.innerHTML="";
+  const players = uniquePlayers()
+    .filter(p => !q || normalizeName(p.name).includes(q))
+    .slice(0,20);
+
+  wrap.innerHTML = "";
 
   if(!players.length){
-    wrap.innerHTML='<div class="empty">Kein Spieler gefunden.</div>';
+    wrap.innerHTML = '<div class="empty">Kein Spieler gefunden.</div>';
     return;
   }
 
-  players.forEach(p=>{
-    const row=document.createElement("div");
-    row.className="player-result";
-    const r=getRank(p.name,p.tour);
-    row.innerHTML=`
-      <span class="flag">${p.flag||"🎾"}</span>
+  players.forEach(player => {
+    const row = document.createElement("div");
+    row.className = "player-result";
+
+    const rank = getRank(player.name, player.tour);
+
+    row.innerHTML = `
+      <span class="flag">${player.flag || "🎾"}</span>
       <button type="button">
-        <strong>${p.name}</strong>
-        <small>${p.tour||""}${r?` · #${r}`:""}</small>
+        <strong>${player.name}</strong>
+        <small>${player.tour || ""}${rank ? ` · #${rank}` : ""}</small>
       </button>
     `;
-    row.querySelector("button").onclick=()=>showPlayerProfile(p);
+
+    row.querySelector("button").onclick = () => showPlayerProfile(player);
     wrap.appendChild(row);
   });
 }
 
 function renderAI(){
-  const box=$("aiReport");
+  const box = $("aiReport");
   if(!box) return;
 
-  const m=topMatch();
+  const match = topMatch();
 
-  if(!m){
-    box.textContent="Noch kein Match für einen Mission Report verfügbar.";
-    $("aiScore").textContent="0";
-    $("aiMatchTitle").textContent="–";
-    $("aiMatchMeta").textContent="–";
-    $("aiMarket").textContent="–";
-    $("aiRanking").textContent="–";
-    $("aiForm").textContent="–";
-    $("aiConfidence").textContent="–";
+  if(!match){
+    box.textContent = "Noch kein Match für einen Mission Report verfügbar.";
     return;
   }
 
-  const mk=market(m);
-  const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
-  const f1=getForm(m.player1,m.tour),f2=getForm(m.player2,m.tour);
-  const sc=missionScore(m);
-  const conf=confidence(m);
+  const mk = market(match);
+  const r1 = getRank(match.player1, match.tour);
+  const r2 = getRank(match.player2, match.tour);
+  const f1 = getForm(match.player1, match.tour);
+  const f2 = getForm(match.player2, match.tour);
+  const score = missionScore(match);
+  const conf = confidence(match);
 
-  $("aiScore").textContent=sc;
-  setRing($("aiScore").parentElement,sc);
-  $("aiMatchTitle").textContent=`${m.player1} vs. ${m.player2}`;
-  $("aiMatchMeta").textContent=`${m.tour||""} · ${m.event||"Turnier"} · ${m.start||"–"}`;
+  $("aiScore").textContent = score;
+  setRing($("aiScore").parentElement, score);
+  $("aiMatchTitle").textContent = `${match.player1} vs. ${match.player2}`;
+  $("aiMatchMeta").textContent = `${match.tour || ""} · ${match.event || "Turnier"} · ${match.start || "–"}`;
 
-  $("aiMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
-  $("aiRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
-  $("aiForm").textContent=f1&&f2?`${f1.pct}% / ${f2.pct}%`:"–";
-  $("aiConfidence").textContent=`${conf}%`;
+  $("aiMarket").textContent = mk ? `${mk.p1}% / ${mk.p2}%` : "–";
+  $("aiRanking").textContent = r1 && r2 ? `${r1} / ${r2}` : "–";
+  $("aiForm").textContent = f1 && f2 ? `${f1.pct}% / ${f2.pct}%` : "–";
+  $("aiConfidence").textContent = `${conf}%`;
 
-  let parts=[];
-  parts.push(`${playerFlag(m.player1,m.tour,m,1)} ${m.player1} trifft auf ${playerFlag(m.player2,m.tour,m,2)} ${m.player2}.`);
+  const parts = [
+    `${playerFlag(match.player1,match.tour,match,1)} ${match.player1} trifft auf ${playerFlag(match.player2,match.tour,match,2)} ${match.player2}.`
+  ];
 
   if(mk){
-    const fav=mk.p1>=mk.p2?m.player1:m.player2;
-    const pct=Math.max(mk.p1,mk.p2);
-    parts.push(`Der Markt sieht ${fav} aktuell mit rund ${pct} % vorne.`);
-  }else{
-    parts.push("Für den Marktvergleich fehlen aktuell vollständige Quoten.");
+    const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
+    parts.push(`Der Markt sieht ${fav} mit rund ${Math.max(mk.p1,mk.p2)} % vorne.`);
   }
 
-  if(r1&&r2){
-    const leader=r1<r2?m.player1:m.player2;
-    parts.push(`Das Ranking unterstützt ${leader}: Vorteil von ${Math.abs(r1-r2)} Plätzen.`);
-  }else{
-    parts.push("Der Rankingvergleich ist noch nicht vollständig.");
+  if(r1 && r2){
+    const leader = r1 < r2 ? match.player1 : match.player2;
+    parts.push(`Im Ranking liegt ${leader} ${Math.abs(r1-r2)} Plätze vor dem Gegner.`);
   }
 
-  if(f1&&f2){
-    if(f1.pct===f2.pct){
-      parts.push(`Die vorhandenen Formdaten sind mit ${f1.pct} % ausgeglichen.`);
-    }else{
-      const leader=f1.pct>f2.pct?m.player1:m.player2;
-      parts.push(`Die Formdaten sprechen aktuell eher für ${leader}.`);
-    }
-  }else{
-    parts.push("Formdaten sind noch nicht vollständig verfügbar.");
+  if(f1 && f2){
+    const leader = f1.pct === f2.pct ? null : (f1.pct > f2.pct ? match.player1 : match.player2);
+    parts.push(leader ? `Die vorhandene Form spricht eher für ${leader}.` : "Die vorhandene Form ist ausgeglichen.");
   }
 
-  parts.push(`Mission Score ${sc}/100, Confidence ${conf} %.`);
-  box.textContent=parts.join(" ");
+  parts.push(`Mission Score ${score}/100, Confidence ${conf} %.`);
+  box.textContent = parts.join(" ");
 }
 
+function showDetails(match){
+  const score = missionScore(match);
+  const mk = market(match);
+  const conf = confidence(match);
+  const r1 = getRank(match.player1, match.tour);
+  const r2 = getRank(match.player2, match.tour);
+  const f1 = getForm(match.player1, match.tour);
+  const f2 = getForm(match.player2, match.tour);
 
-async function fetchJson(path,fallback){
+  $("detailsPanel").classList.remove("hidden");
+  $("detailTitle").textContent = `${match.player1} vs. ${match.player2}`;
+  $("detailScore").textContent = score;
+  setRing($("detailScore").parentElement, score);
+  $("detailSignal").textContent = scoreLabel(score);
+
+  let text = "Die Analyse nutzt nur Daten, die tatsächlich vorhanden sind.";
+
+  if(mk){
+    const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
+    text = `Der Markt sieht ${fav} vorne.`;
+  }
+
+  if(r1 && r2){
+    text += ` Im Ranking liegt ${r1 < r2 ? match.player1 : match.player2} ${Math.abs(r1-r2)} Plätze vorn.`;
+  }
+
+  if(f1 && f2){
+    text += ` Die Formwerte liegen bei ${f1.pct} % zu ${f2.pct} %.`;
+  }
+
+  $("detailNarrative").textContent = text;
+  $("factorMarket").textContent = mk ? `${mk.p1}% / ${mk.p2}%` : "–";
+  $("factorRanking").textContent = r1 && r2 ? `${r1} / ${r2}` : "–";
+  $("factorForm").textContent = f1 && f2 ? `${f1.pct}% / ${f2.pct}%` : "–";
+  $("factorConfidence").textContent = `${conf}%`;
+
+  $("detailP1").textContent = `${playerFlag(match.player1,match.tour,match,1)} ${match.player1}`;
+  $("detailP2").textContent = `${playerFlag(match.player2,match.tour,match,2)} ${match.player2}`;
+  $("detailO1").textContent = odd(match.odds1);
+  $("detailO2").textContent = odd(match.odds2);
+  $("detailBook1").textContent = match.bookmaker1 || match.book1 || "Quote";
+  $("detailBook2").textContent = match.bookmaker2 || match.book2 || "Quote";
+
+  if(r1 && r2){
+    const leader = r1 < r2 ? match.player1 : match.player2;
+    $("moduleRanking").textContent = `#${r1} / #${r2}`;
+    $("moduleRankingText").textContent = `${leader} liegt ${Math.abs(r1-r2)} Plätze vorn`;
+  }else{
+    $("moduleRanking").textContent = "–";
+    $("moduleRankingText").textContent = "Ranking noch nicht vollständig";
+  }
+
+  if(f1 && f2){
+    const leader = f1.pct === f2.pct ? null : (f1.pct > f2.pct ? match.player1 : match.player2);
+    $("moduleForm").textContent = `${f1.pct}% / ${f2.pct}%`;
+    $("moduleFormText").textContent = leader ? `${leader} mit Formvorteil` : "Form aktuell ausgeglichen";
+  }else{
+    $("moduleForm").textContent = "–";
+    $("moduleFormText").textContent = "Formquelle noch nicht vollständig";
+  }
+
+  // Reserved for the database phase.
+  $("moduleH2H").textContent = "–";
+  $("moduleSurface").textContent = "–";
+  $("moduleServe").textContent = "–";
+  $("moduleReturn").textContent = "–";
+
+  $("detailsPanel").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+async function fetchJson(path, fallback){
   try{
-    const res=await fetch(`${path}?v=${Date.now()}`,{cache:"no-store"});
+    const res = await fetch(`${path}?v=${Date.now()}`, {cache:"no-store"});
     if(!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
     return await res.json();
-  }catch(err){
-    console.warn(err);
+  }catch(error){
+    console.warn(error);
     return fallback;
   }
 }
 
 async function load(){
-  $("statusTitle").textContent="Daten werden geladen";
-  $("statusText").textContent="Mission Control verbindet sich mit deinen JSON-Dateien.";
+  $("statusTitle").textContent = "Daten werden geladen";
+  $("statusText").textContent = "Mission Control verbindet sich mit deinen JSON-Dateien.";
 
-  const [matchesPayload,rankPayload,formPayload,playerPayload]=await Promise.all([
-    fetchJson("./data/matches.json",{matches:[]}),
-    fetchJson("./data/rankings.json",{players:[]}),
-    fetchJson("./data/form.json",{players:[]}),
-    fetchJson("./data/players.json",{players:[]})
+  const [matchesPayload, rankingsPayload, formsPayload, playersPayload] = await Promise.all([
+    fetchJson("./data/matches.json", {matches:[]}),
+    fetchJson("./data/rankings.json", {players:[]}),
+    fetchJson("./data/form.json", {players:[]}),
+    fetchJson("./data/players.json", {players:[]})
   ]);
 
-  MATCHES=Array.isArray(matchesPayload.matches)?matchesPayload.matches:[];
-  RANKINGS=Array.isArray(rankPayload.players)?rankPayload.players:[];
-  FORMS=Array.isArray(formPayload.players)?formPayload.players:[];
-  PLAYERS=Array.isArray(playerPayload.players)?playerPayload.players:[];
+  STATE.matches = Array.isArray(matchesPayload.matches) ? matchesPayload.matches : [];
+  STATE.rankings = Array.isArray(rankingsPayload.players) ? rankingsPayload.players : [];
+  STATE.forms = Array.isArray(formsPayload.players) ? formsPayload.players : [];
+  STATE.players = Array.isArray(playersPayload.players) ? playersPayload.players : [];
 
-  activeDate=resolveActiveDate();
-  updateSystemStatus(matchesPayload);
+  STATE.activeDate = resolveActiveDate();
+
+  renderStatus(matchesPayload);
   renderStats();
   renderTop();
-  renderList();
+  renderMatchList();
   renderAllMatches();
   renderWatchlist();
-  renderAI();
   renderPlayerSearch($("playerSearch")?.value || "");
+  renderAI();
 }
 
-$("refreshBtn").onclick=load;
-$("toggleAllBtn").onclick=()=>{showAll=!showAll;renderList();};
-$("closeDetailsBtn").onclick=()=>$("detailsPanel").classList.add("hidden");
+$("refreshBtn").onclick = load;
+$("toggleAllBtn").onclick = () => {
+  STATE.showAll = !STATE.showAll;
+  renderMatchList();
+};
+$("closeDetailsBtn").onclick = () => $("detailsPanel").classList.add("hidden");
 
-document.querySelectorAll(".bottom-nav button[data-view]").forEach(button=>{
-  button.onclick=()=>{
-    document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
+if($("playerSearch")){
+  $("playerSearch").addEventListener("input", event => renderPlayerSearch(event.target.value));
+}
+
+document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
+  button.onclick = () => {
+    document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
     button.classList.add("active");
-    document.querySelectorAll(".app-view").forEach(v=>v.classList.add("hidden"));
-    const view=$(button.dataset.view);
+
+    document.querySelectorAll(".app-view").forEach(view => view.classList.add("hidden"));
+
+    const view = $(button.dataset.view);
     if(view) view.classList.remove("hidden");
-    window.scrollTo({top:0,behavior:"smooth"});
+
+    window.scrollTo({top:0, behavior:"smooth"});
   };
 });
 
-
-
-if($("playerSearch")){
-  $("playerSearch").addEventListener("input",e=>renderPlayerSearch(e.target.value));
-}
-
 load();
 
-
-// v1.3.0 Cache Rescue:
-// Old cache-first service workers can keep serving a broken script forever.
-// We intentionally unregister them for now. Mission data already uses no-store.
-if ("serviceWorker" in navigator) {
+// Keep v2 free of service-worker caching while we stabilise the data layer.
+if("serviceWorker" in navigator){
   window.addEventListener("load", async () => {
-    try {
-      const registrations = await navigator.serviceWorker.getRegistrations();
-      await Promise.all(registrations.map(reg => reg.unregister()));
-      console.log("Mission 1000: old service workers removed.");
-    } catch (error) {
+    try{
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(reg => reg.unregister()));
+    }catch(error){
       console.warn("Service worker cleanup failed:", error);
     }
   });

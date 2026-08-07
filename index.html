@@ -38,17 +38,33 @@
       <article><span>WTA</span><b id="wtaCount">0</b><small>MATCHES</small></article>
     </section>
 
-    <section id="statusCard" class="system-strip">
-      <span class="pulse"></span>
-      <div class="system-main">
-        <b id="statusTitle">Daten werden geladen</b>
-        <small id="statusText">Mission Control verbindet sich mit deinen vorhandenen JSON-Daten.</small>
+    <section id="statusCard" class="mission-control">
+      <div class="mc-status">
+        <span class="pulse"></span>
+        <div>
+          <b id="statusTitle">Daten werden geladen</b>
+          <small id="statusText">Mission Control verbindet sich mit deinen JSON-Daten.</small>
+        </div>
       </div>
-      <div class="system-kpis">
-        <div><span>ANALYSIERT</span><b id="analyzedCount">0</b></div>
-        <div><span>TOP SCORE</span><b id="bestScore">0</b></div>
+
+      <div class="mc-grid">
+        <article>
+          <span>MATCHES</span>
+          <b id="mcMatches">0</b>
+        </article>
+        <article>
+          <span>ANALYSIERT</span>
+          <b id="analyzedCount">0</b>
+        </article>
+        <article>
+          <span>TOP SCORE</span>
+          <b id="bestScore">0</b>
+        </article>
+        <article>
+          <span>DATENSTAND</span>
+          <b id="dataDate">–</b>
+        </article>
       </div>
-      <span id="dataDate" class="data-date">–</span>
     </section>
 
     <section class="panel top-pick">
@@ -297,7 +313,7 @@
     <button data-view="aiView">◉<span>Mission AI</span></button>
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v1.3.0</footer>
+  <footer>Mission 1000 · Project Eclipse · v2.0.0</footer>
 </div>
 
 <script src="./script.js?v=1.2.3"></script>
