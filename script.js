@@ -1,235 +1,4 @@
-// Mission 1000 v2.2.0
-// Core refactor: one source of truth, defensive JSON loading, no invented data.
-
-const $ = id => document.getElementById(id);
-
-const STATE = {
-  matches: [],
-  rankings: [],
-  forms: [],
-  players: [],
-  h2h: [],
-  surfaces: [],
-  stats: [],
-  activeDate: null,
-  showAll: false
-};
-
-const WATCH_KEY = "mission1000-watchlist-v2";
-
-function normalizeName(value){
-  return String(value || "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[’'`´]/g, "")
-    .replace(/[-–—]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
-}
-
-function dayString(date = new Date()){
-  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
-}
-
-function odd(value){
-  const n = Number(value);
-  return Number.isFinite(n) ? n.toFixed(2).replace(".", ",") : "–";
-}
-
-function codeToFlag(code){
-  const c = String(code || "").trim().toUpperCase();
-  if(!/^[A-Z]{2}$/.test(c)) return "🎾";
-  return String.fromCodePoint(...[...c].map(ch => 127397 + ch.charCodeAt()));
-}
-
-function playerMeta(name, tour){
-  const n = normalizeName(name);
-  const t = String(tour || "").toUpperCase();
-  return STATE.players.find(p =>
-    normalizeName(p.name) === n &&
-    (!t || String(p.tour || "").toUpperCase() === t)
-  ) || null;
-}
-
-function directCountry(match, side){
-  const fields = side === 1
-    ? [match.player1Country, match.country1, match.player1_country, match.homeCountry, match.home_country]
-    : [match.player2Country, match.country2, match.player2_country, match.awayCountry, match.away_country];
-  return fields.find(Boolean) || "";
-}
-
-function playerFlag(name, tour, match=null, side=1){
-  const meta = playerMeta(name, tour);
-  if(meta?.country) return codeToFlag(meta.country);
-
-  const direct = match ? directCountry(match, side) : "";
-  if(direct) return codeToFlag(direct);
-
-  return "🎾";
-}
-
-function rankingCandidates(){
-  const src = STATE.rankings;
-  if(Array.isArray(src)) return src;
-  return [];
-}
-
-function extractRank(item){
-  if(!item || typeof item !== "object") return null;
-  const raw =
-    item.rank ??
-    item.ranking ??
-    item.position ??
-    item.pos ??
-    item.currentRank ??
-    item.current_rank ??
-    item.singlesRank ??
-    item.singles_rank;
-  const n = Number(raw);
-  return Number.isFinite(n) && n > 0 ? n : null;
-}
-
-function getRank(name, tour){
-  const n = normalizeName(name);
-  const t = String(tour || "").toUpperCase();
-
-  const found = rankingCandidates().find(p => {
-    const pname = p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
-    const ptour = String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
-    return normalizeName(pname) === n && (!ptour || !t || ptour === t);
-  });
-
-  return extractRank(found);
-}
-
-function formCandidates(){
-  const src = STATE.forms;
-  if(Array.isArray(src)) return src;
-  return [];
-}
-
-function getForm(name, tour){
-  const n = normalizeName(name);
-  const t = String(tour || "").toUpperCase();
-
-  const found = formCandidates().find(p => {
-    const pname = p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
-    const ptour = String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
-    return normalizeName(pname) === n && (!ptour || !t || ptour === t);
-  });
-
-  if(!found) return null;
-
-  const list =
-    (Array.isArray(found.lastMatches) && found.lastMatches) ||
-    (Array.isArray(found.matches) && found.matches) ||
-    (Array.isArray(found.form) && found.form) ||
-    [];
-
-  if(list.length){
-    const last = list.slice(0,5);
-    const wins = last.filter(m => {
-      if(typeof m === "string") return m.trim().toUpperCase().startsWith("W");
-      return String(m.result ?? m.outcome ?? m.wl ?? "").toUpperCase() === "W";
-    }).length;
-
-    return {
-      wins,
-      total:last.length,
-      pct:Math.round((wins/last.length)*100)
-    };
-  }
-
-  const wins = Number(found.wins ?? found.last5Wins ?? found.formWins);
-  const total = Number(found.total ?? found.last5Total ?? found.formTotal ?? 5);
-
-  if(Number.isFinite(wins) && Number.isFinite(total) && total > 0){
-    return {
-      wins,
-      total,
-      pct:Math.round((wins/total)*100)
-    };
-  }
-
-  return null;
-}
-
-function market(match){
-  const a = Number(match.odds1);
-  const b = Number(match.odds2);
-
-  if(!Number.isFinite(a) || !Number.isFinite(b) || a <= 1 || b <= 1){
-    return null;
-  }
-
-  const x = 1/a;
-  const y = 1/b;
-  const total = x+y;
-
-  return {
-    p1: Math.round((x/total)*100),
-    p2: Math.round((y/total)*100),
-    overround: total
-  };
-}
-
-
-function marketComponent(match){
-  const mk = market(match);
-  if(!mk) return {score:0,max:30,available:false};
-
-  const gap = Math.abs(mk.p1 - mk.p2);
-  const score = Math.max(8, Math.min(30, Math.round(30 - gap*0.18)));
-  return {score,max:30,available:true};
-}
-
-function rankingComponent(match){
-  const r1 = getRank(match.player1, match.tour);
-  const r2 = getRank(match.player2, match.tour);
-  if(!r1 || !r2) return {score:0,max:20,available:false};
-
-  const diff = Math.abs(r1-r2);
-  const score = Math.min(20, Math.max(4, Math.round(4 + diff/4)));
-  return {score,max:20,available:true,r1,r2,diff};
-}
-
-function formComponent(match){
-  const f1 = getForm(match.player1, match.tour);
-  const f2 = getForm(match.player2, match.tour);
-  if(!f1 || !f2) return {score:0,max:20,available:false};
-
-  const diff = Math.abs(f1.pct-f2.pct);
-  const score = Math.min(20, Math.max(5, Math.round(5 + diff/5)));
-  return {score,max:20,available:true,f1,f2,diff};
-}
-
-function scoreComponents(match){
-  return {
-    market:marketComponent(match),
-    ranking:rankingComponent(match),
-    form:formComponent(match)
-  };
-}
-
-function missionScore(match){
-  const parts=fullScoreComponents(match);
-  const modules=[
-    parts.market,parts.ranking,parts.form,
-    parts.h2h,parts.surface,parts.stats
-  ].filter(x=>x.available);
-
-  if(!modules.length) return 50;
-
-  const earned=modules.reduce((s,x)=>s+x.score,0);
-  const possible=modules.reduce((s,x)=>s+x.max,0);
-  const ratio=possible ? earned/possible : .5;
-
-  let score=Math.round(50+ratio*45);
-  if(match.status==="live-or-started") score=Math.min(99,score+2);
-
-  return Math.max(0,Math.min(99,score));
-}/ Mission 1000 v2.2.0
+// Mission 1000 v2.2.1
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -470,53 +239,46 @@ function h2hRecord(match){
     const p1=normalizeName(x.player1 ?? x.p1 ?? x.a);
     const p2=normalizeName(x.player2 ?? x.p2 ?? x.b);
     const xtour=String(x.tour||"").toUpperCase();
-    const samePair=(p1===a && p2===b) || (p1===b && p2===a);
-    return samePair && (!xtour || !tour || xtour===tour);
+    return ((p1===a && p2===b) || (p1===b && p2===a)) &&
+      (!xtour || !tour || xtour===tour);
   });
 
   if(!record) return null;
 
-  let w1=Number(record.wins1 ?? record.player1Wins ?? record.p1Wins ?? 0);
-  let w2=Number(record.wins2 ?? record.player2Wins ?? record.p2Wins ?? 0);
+  let wins1=Number(record.wins1 ?? record.player1Wins ?? record.p1Wins);
+  let wins2=Number(record.wins2 ?? record.player2Wins ?? record.p2Wins);
+  if(!Number.isFinite(wins1)||!Number.isFinite(wins2)||(wins1+wins2)<=0) return null;
 
   const storedP1=normalizeName(record.player1 ?? record.p1 ?? record.a);
-  if(storedP1 && storedP1!==a){
-    [w1,w2]=[w2,w1];
-  }
+  if(storedP1 && storedP1!==a) [wins1,wins2]=[wins2,wins1];
 
-  if(!Number.isFinite(w1) || !Number.isFinite(w2) || (w1+w2)<=0) return null;
-  return {w1,w2,total:w1+w2};
+  return {wins1,wins2,total:wins1+wins2};
 }
 
 function surfaceRecord(name,tour,surface){
   const n=normalizeName(name), t=String(tour||"").toUpperCase();
   const s=normalizeName(surface||"");
-  const player=STATE.surfaces.find(x=>{
+
+  const item=STATE.surfaces.find(x=>{
     const pname=normalizeName(x.name ?? x.player ?? x.playerName ?? x.player_name);
     const ptour=String(x.tour||"").toUpperCase();
     return pname===n && (!ptour || !t || ptour===t);
   });
-  if(!player) return null;
+  if(!item) return null;
 
-  const records=player.surfaces ?? player.surface ?? player.records ?? {};
-  const aliases={
-    hard:["hard","hardcourt","hard court"],
-    clay:["clay","sand","sandplatz"],
-    grass:["grass","rasen"],
-    indoor:["indoor","indoor hard"]
-  };
-
+  const records=item.surfaces ?? item.surface ?? item.records ?? {};
   let key=null;
-  for(const [canonical,list] of Object.entries(aliases)){
-    if(list.some(v=>s.includes(v))) key=canonical;
-  }
+  if(s.includes("hard")) key="hard";
+  else if(s.includes("clay")||s.includes("sand")) key="clay";
+  else if(s.includes("grass")||s.includes("rasen")) key="grass";
+  else if(s.includes("indoor")) key="indoor";
   if(!key) return null;
 
-  const r=records[key] ?? records[key.toUpperCase()] ?? null;
-  if(!r) return null;
+  const rec=records[key] ?? records[key.toUpperCase()];
+  if(!rec) return null;
 
-  const wins=Number(r.wins ?? r.w ?? 0);
-  const losses=Number(r.losses ?? r.l ?? 0);
+  const wins=Number(rec.wins ?? rec.w);
+  const losses=Number(rec.losses ?? rec.l);
   const total=wins+losses;
   if(!Number.isFinite(wins)||!Number.isFinite(losses)||total<=0) return null;
 
@@ -524,7 +286,7 @@ function surfaceRecord(name,tour,surface){
 }
 
 function statRecord(name,tour){
-  const n=normalizeName(name),t=String(tour||"").toUpperCase();
+  const n=normalizeName(name), t=String(tour||"").toUpperCase();
   return STATE.stats.find(x=>{
     const pname=normalizeName(x.name ?? x.player ?? x.playerName ?? x.player_name);
     const ptour=String(x.tour||"").toUpperCase();
@@ -532,123 +294,113 @@ function statRecord(name,tour){
   }) || null;
 }
 
-function numericStat(record, keys){
+function numericStat(record,keys){
   if(!record) return null;
   for(const key of keys){
-    const raw=record[key];
-    const n=Number(raw);
+    const n=Number(record[key]);
     if(Number.isFinite(n)) return n;
   }
   return null;
 }
 
-function h2hComponent(match){
-  const r=h2hRecord(match);
-  if(!r) return {score:0,max:10,available:false};
-
-  const diff=Math.abs(r.w1-r.w2);
-  const separation=diff/r.total;
-  const score=Math.max(3,Math.min(10,Math.round(3+separation*7)));
-
-  return {
-    score,max:10,available:true,
-    side:r.w1===r.w2?0:(r.w1>r.w2?1:2),
-    record:r
-  };
-}
-
-function surfaceComponent(match){
-  const surface=match.surface ?? match.court ?? match.surfaceType ?? "";
-  if(!surface) return {score:0,max:10,available:false};
-
-  const p1=surfaceRecord(match.player1,match.tour,surface);
-  const p2=surfaceRecord(match.player2,match.tour,surface);
-  if(!p1||!p2) return {score:0,max:10,available:false};
-
-  const diff=Math.abs(p1.pct-p2.pct);
-  const score=Math.max(3,Math.min(10,Math.round(3+diff/8)));
-
-  return {
-    score,max:10,available:true,
-    side:p1.pct===p2.pct?0:(p1.pct>p2.pct?1:2),
-    p1,p2,surface
-  };
-}
-
-function statsComponent(match){
-  const p1=statRecord(match.player1,match.tour);
-  const p2=statRecord(match.player2,match.tour);
-  if(!p1||!p2) return {score:0,max:10,available:false};
-
-  const keys=[
-    ["holdPct","hold_pct","hold"],
-    ["breakPct","break_pct","break"],
-    ["firstServeWonPct","first_serve_won_pct","firstServeWon"],
-    ["returnPointsWonPct","return_points_won_pct","returnWon"]
+async function loadOptionalIntelligence(){
+  const defs=[
+    ["h2h","./data/intelligence/h2h.json",{matches:[]}],
+    ["surfaces","./data/intelligence/surface.json",{players:[]}],
+    ["stats","./data/intelligence/stats.json",{players:[]}]
   ];
 
-  const diffs=[];
-  let side1=0,side2=0;
-  for(const aliases of keys){
-    const a=numericStat(p1,aliases), b=numericStat(p2,aliases);
-    if(a===null||b===null) continue;
-    diffs.push(Math.abs(a-b));
-    if(a>b) side1++;
-    else if(b>a) side2++;
-  }
+  const results=await Promise.allSettled(
+    defs.map(([,path,fallback])=>fetchJson(path,fallback))
+  );
 
-  if(!diffs.length) return {score:0,max:10,available:false};
+  results.forEach((result,index)=>{
+    const [key,,fallback]=defs[index];
+    const payload=result.status==="fulfilled" ? result.value : fallback;
 
-  const avg=diffs.reduce((s,x)=>s+x,0)/diffs.length;
-  const score=Math.max(3,Math.min(10,Math.round(3+avg/3)));
-
-  return {
-    score,max:10,available:true,
-    side:side1===side2?0:(side1>side2?1:2),
-    p1,p2
-  };
+    if(key==="h2h"){
+      STATE.h2h=
+        (Array.isArray(payload.matches)&&payload.matches) ||
+        (Array.isArray(payload.h2h)&&payload.h2h) ||
+        (Array.isArray(payload)&&payload) || [];
+    }else{
+      STATE[key]=
+        (Array.isArray(payload.players)&&payload.players) ||
+        (Array.isArray(payload.data)&&payload.data) ||
+        (Array.isArray(payload)&&payload) || [];
+    }
+  });
 }
 
-function favoredSide(match, parts){
-  let p1=0,p2=0;
+function renderOptionalCoverage(){
+  const list=currentMatches();
 
-  const mk=market(match);
-  if(mk){
-    if(mk.p1>mk.p2) p1+=30;
-    else if(mk.p2>mk.p1) p2+=30;
-  }
+  const h2hCount=list.filter(m=>h2hRecord(m)).length;
 
-  const r=parts.ranking;
-  if(r.available){
-    if(r.r1<r.r2) p1+=20; else if(r.r2<r.r1) p2+=20;
-  }
+  const surfaceCount=list.filter(m=>{
+    const surface=m.surface ?? m.court ?? m.surfaceType ?? "";
+    return surface &&
+      surfaceRecord(m.player1,m.tour,surface) &&
+      surfaceRecord(m.player2,m.tour,surface);
+  }).length;
 
-  const f=parts.form;
-  if(f.available){
-    if(f.f1.pct>f.f2.pct) p1+=20; else if(f.f2.pct>f.f1.pct) p2+=20;
-  }
+  const statsCount=list.filter(m=>
+    statRecord(m.player1,m.tour) &&
+    statRecord(m.player2,m.tour)
+  ).length;
 
-  if(parts.h2h.available){
-    if(parts.h2h.side===1) p1+=10; else if(parts.h2h.side===2) p2+=10;
-  }
-  if(parts.surface.available){
-    if(parts.surface.side===1) p1+=10; else if(parts.surface.side===2) p2+=10;
-  }
-  if(parts.stats.available){
-    if(parts.stats.side===1) p1+=10; else if(parts.stats.side===2) p2+=10;
-  }
-
-  return p1===p2 ? 0 : (p1>p2 ? 1 : 2);
+  if($("h2hCoverage")) $("h2hCoverage").textContent=list.length?`${Math.round(h2hCount/list.length*100)}%`:"0%";
+  if($("surfaceCoverage")) $("surfaceCoverage").textContent=list.length?`${Math.round(surfaceCount/list.length*100)}%`:"0%";
+  if($("statsCoverage")) $("statsCoverage").textContent=list.length?`${Math.round(statsCount/list.length*100)}%`:"0%";
 }
 
-function fullScoreComponents(match){
-  const base=scoreComponents(match);
-  return {
-    ...base,
-    h2h:h2hComponent(match),
-    surface:surfaceComponent(match),
-    stats:statsComponent(match)
-  };
+function renderOptionalDetails(match){
+  const h2h=h2hRecord(match);
+  if($("moduleH2H")){
+    if(h2h){
+      $("moduleH2H").textContent=`${h2h.wins1}:${h2h.wins2}`;
+      if($("moduleH2HText")) $("moduleH2HText").textContent=
+        h2h.wins1===h2h.wins2 ? "Direkte Duelle ausgeglichen" :
+        `${h2h.wins1>h2h.wins2?match.player1:match.player2} mit H2H-Vorteil`;
+    }else{
+      $("moduleH2H").textContent="–";
+      if($("moduleH2HText")) $("moduleH2HText").textContent="Noch keine H2H-Daten";
+    }
+  }
+
+  const surface=match.surface ?? match.court ?? match.surfaceType ?? "";
+  const s1=surface ? surfaceRecord(match.player1,match.tour,surface) : null;
+  const s2=surface ? surfaceRecord(match.player2,match.tour,surface) : null;
+
+  if($("moduleSurface")){
+    if(s1&&s2){
+      $("moduleSurface").textContent=`${s1.pct}% / ${s2.pct}%`;
+      if($("moduleSurfaceText")) $("moduleSurfaceText").textContent=`${surface}`;
+    }else{
+      $("moduleSurface").textContent="–";
+      if($("moduleSurfaceText")) $("moduleSurfaceText").textContent="Noch keine Belagdaten";
+    }
+  }
+
+  const st1=statRecord(match.player1,match.tour);
+  const st2=statRecord(match.player2,match.tour);
+
+  const hold1=numericStat(st1,["holdPct","hold_pct","hold"]);
+  const hold2=numericStat(st2,["holdPct","hold_pct","hold"]);
+  const ret1=numericStat(st1,["returnPointsWonPct","return_points_won_pct","returnWon"]);
+  const ret2=numericStat(st2,["returnPointsWonPct","return_points_won_pct","returnWon"]);
+
+  if($("moduleServe")){
+    $("moduleServe").textContent=hold1!==null&&hold2!==null ? `${hold1}% / ${hold2}%` : "–";
+    if($("moduleServeText")) $("moduleServeText").textContent=
+      hold1!==null&&hold2!==null ? "Service Hold" : "Noch keine Servicedaten";
+  }
+
+  if($("moduleReturn")){
+    $("moduleReturn").textContent=ret1!==null&&ret2!==null ? `${ret1}% / ${ret2}%` : "–";
+    if($("moduleReturnText")) $("moduleReturnText").textContent=
+      ret1!==null&&ret2!==null ? "Return-Punkte" : "Noch keine Returndaten";
+  }
 }
 
 function confidence(match){
@@ -770,19 +522,6 @@ function renderStatus(payload){
 
   $("rankingCoverage").textContent = playerSlots ? `${Math.round(rankedSlots/playerSlots*100)}%` : "0%";
   $("formCoverage").textContent = playerSlots ? `${Math.round(formSlots/playerSlots*100)}%` : "0%";
-
-  const h2hMatches=list.filter(m=>h2hRecord(m)).length;
-  const surfaceMatches=list.filter(m=>{
-    const surface=m.surface ?? m.court ?? m.surfaceType ?? "";
-    return surface &&
-      surfaceRecord(m.player1,m.tour,surface) &&
-      surfaceRecord(m.player2,m.tour,surface);
-  }).length;
-  const statsMatches=list.filter(m=>statRecord(m.player1,m.tour)&&statRecord(m.player2,m.tour)).length;
-
-  $("h2hCoverage").textContent=list.length?`${Math.round(h2hMatches/list.length*100)}%`:"0%";
-  $("surfaceCoverage").textContent=list.length?`${Math.round(surfaceMatches/list.length*100)}%`:"0%";
-  $("statsCoverage").textContent=list.length?`${Math.round(statsMatches/list.length*100)}%`:"0%";
 
   if(payload?.generatedAt){
     $("updatedAt").textContent = new Date(payload.generatedAt).toLocaleString("de-DE", {
@@ -1119,13 +858,6 @@ function renderAI(){
     parts.push(leader ? `Die vorhandene Form spricht eher für ${leader}.` : "Die vorhandene Form ist ausgeglichen.");
   }
 
-  const intel=fullScoreComponents(match);
-  if(intel.h2h.available){
-    parts.push(`H2H: ${intel.h2h.record.w1}:${intel.h2h.record.w2}.`);
-  }
-  if(intel.surface.available){
-    parts.push(`Auf ${intel.surface.surface} liegen die vorhandenen Werte bei ${intel.surface.p1.pct} % zu ${intel.surface.p2.pct} %.`);
-  }
   parts.push(`Mission Score ${score}/100, Confidence ${conf} %.`);
   box.textContent = parts.join(" ");
 }
@@ -1166,7 +898,7 @@ function showDetails(match){
   $("factorForm").textContent = f1 && f2 ? `${f1.pct}% / ${f2.pct}%` : "–";
   $("factorConfidence").textContent = `${conf}%`;
 
-  const parts = fullScoreComponents(match);
+  const parts = scoreComponents(match);
   $("scoreMarket").textContent = parts.market.available ? `${parts.market.score}/${parts.market.max}` : `0/${parts.market.max}`;
   $("scoreRanking").textContent = parts.ranking.available ? `${parts.ranking.score}/${parts.ranking.max}` : `0/${parts.ranking.max}`;
   $("scoreForm").textContent = parts.form.available ? `${parts.form.score}/${parts.form.max}` : `0/${parts.form.max}`;
@@ -1199,41 +931,13 @@ function showDetails(match){
     $("moduleFormText").textContent = "Formquelle noch nicht vollständig";
   }
 
-  if(parts.h2h.available){
-    $("moduleH2H").textContent=`${parts.h2h.record.w1}:${parts.h2h.record.w2}`;
-    $("moduleH2HText").textContent=parts.h2h.side===0
-      ? "Direkte Duelle ausgeglichen"
-      : `${parts.h2h.side===1?match.player1:match.player2} mit H2H-Vorteil`;
-  }else{
-    $("moduleH2H").textContent="–";
-    $("moduleH2HText").textContent="Noch keine H2H-Daten";
-  }
+  // Reserved for the database phase.
+  $("moduleH2H").textContent = "–";
+  $("moduleSurface").textContent = "–";
+  $("moduleServe").textContent = "–";
+  $("moduleReturn").textContent = "–";
 
-  if(parts.surface.available){
-    $("moduleSurface").textContent=`${parts.surface.p1.pct}% / ${parts.surface.p2.pct}%`;
-    $("moduleSurfaceText").textContent=`${parts.surface.surface} · ${parts.surface.side===0?"ausgeglichen":(parts.surface.side===1?match.player1:match.player2)+" im Vorteil"}`;
-  }else{
-    $("moduleSurface").textContent="–";
-    $("moduleSurfaceText").textContent="Noch keine Belagdaten";
-  }
-
-  if(parts.stats.available){
-    const s1=statRecord(match.player1,match.tour),s2=statRecord(match.player2,match.tour);
-    const hold1=numericStat(s1,["holdPct","hold_pct","hold"]);
-    const hold2=numericStat(s2,["holdPct","hold_pct","hold"]);
-    const ret1=numericStat(s1,["returnPointsWonPct","return_points_won_pct","returnWon"]);
-    const ret2=numericStat(s2,["returnPointsWonPct","return_points_won_pct","returnWon"]);
-
-    $("moduleServe").textContent=hold1!==null&&hold2!==null?`${hold1}% / ${hold2}%`:"–";
-    $("moduleServeText").textContent=hold1!==null&&hold2!==null?"Service-Hold":"Serve-Daten teilweise verfügbar";
-    $("moduleReturn").textContent=ret1!==null&&ret2!==null?`${ret1}% / ${ret2}%`:"–";
-    $("moduleReturnText").textContent=ret1!==null&&ret2!==null?"Return-Punkte":"Return-Daten teilweise verfügbar";
-  }else{
-    $("moduleServe").textContent="–";
-    $("moduleServeText").textContent="Noch keine Servicedaten";
-    $("moduleReturn").textContent="–";
-    $("moduleReturnText").textContent="Noch keine Returndaten";
-  }
+  renderOptionalDetails(match);
 
   $("detailsPanel").scrollIntoView({behavior:"smooth", block:"start"});
 }
@@ -1253,17 +957,11 @@ async function load(){
   $("statusTitle").textContent = "Daten werden geladen";
   $("statusText").textContent = "Mission Control verbindet sich mit deinen JSON-Dateien.";
 
-  const [
-    matchesPayload, rankingsPayload, formsPayload, playersPayload,
-    h2hPayload, surfacePayload, statsPayload
-  ] = await Promise.all([
+  const [matchesPayload, rankingsPayload, formsPayload, playersPayload] = await Promise.all([
     fetchJson("./data/matches.json", {matches:[]}),
     fetchJson("./data/rankings.json", {players:[]}),
     fetchJson("./data/form.json", {players:[]}),
-    fetchJson("./data/players.json", {players:[]}),
-    fetchJson("./data/intelligence/h2h.json", {matches:[]}),
-    fetchJson("./data/intelligence/surface.json", {players:[]}),
-    fetchJson("./data/intelligence/stats.json", {players:[]})
+    fetchJson("./data/players.json", {players:[]})
   ]);
 
   STATE.matches = Array.isArray(matchesPayload.matches)
@@ -1292,24 +990,6 @@ async function load(){
     (Array.isArray(playersPayload) && playersPayload) ||
     [];
 
-  STATE.h2h =
-    (Array.isArray(h2hPayload.matches) && h2hPayload.matches) ||
-    (Array.isArray(h2hPayload.h2h) && h2hPayload.h2h) ||
-    (Array.isArray(h2hPayload) && h2hPayload) ||
-    [];
-
-  STATE.surfaces =
-    (Array.isArray(surfacePayload.players) && surfacePayload.players) ||
-    (Array.isArray(surfacePayload.data) && surfacePayload.data) ||
-    (Array.isArray(surfacePayload) && surfacePayload) ||
-    [];
-
-  STATE.stats =
-    (Array.isArray(statsPayload.players) && statsPayload.players) ||
-    (Array.isArray(statsPayload.data) && statsPayload.data) ||
-    (Array.isArray(statsPayload) && statsPayload) ||
-    [];
-
   STATE.activeDate = resolveActiveDate();
 
   renderStatus(matchesPayload);
@@ -1320,6 +1000,10 @@ async function load(){
   renderWatchlist();
   renderPlayerSearch($("playerSearch")?.value || "");
   renderAI();
+
+  // Optional intelligence can fail without ever breaking the core match loader.
+  await loadOptionalIntelligence();
+  renderOptionalCoverage();
 }
 
 $("refreshBtn").onclick = load;
