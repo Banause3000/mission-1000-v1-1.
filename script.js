@@ -1,6 +1,7 @@
 let MATCHES = [];
 let RANKINGS = [];
 let FORMS = [];
+let PLAYERS = [];
 let showAll = false;
 let activeDate = null;
 const WATCH_KEY = "mission1000-watchlist-v1";
@@ -25,6 +26,14 @@ function dayString(date = new Date()){
   return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
 }
 
+
+function getPlayerMeta(name,tour){
+  const n=normalizeName(name),t=String(tour||"").toUpperCase();
+  return PLAYERS.find(p=>
+    normalizeName(p.name)===n &&
+    (!t || String(p.tour||"").toUpperCase()===t)
+  ) || null;
+}
 const COUNTRY_BY_PLAYER = {
   "casper ruud":"NO","joao fonseca":"BR","joao fonseca":"BR","jannik sinner":"IT","carlos alcaraz":"ES",
   "novak djokovic":"RS","alexander zverev":"DE","daniil medvedev":"RU","andrey rublev":"RU",
@@ -49,8 +58,14 @@ function matchCountry(m,side){
   return COUNTRY_BY_PLAYER[name] || "";
 }
 function playerFlag(name,tour,m,side){
-  const code = m ? matchCountry(m,side) : COUNTRY_BY_PLAYER[normalizeName(name)];
-  return countryCodeToFlag(code);
+  const meta=getPlayerMeta(name,tour);
+  if(meta?.country) return countryCodeToFlag(meta.country);
+
+  const direct = m ? matchCountry(m,side) : "";
+  if(direct) return countryCodeToFlag(direct);
+
+  const fallback=COUNTRY_BY_PLAYER[normalizeName(name)];
+  return countryCodeToFlag(fallback);
 }
 function matchKey(m){
   return m.id || `${m.date}|${m.start}|${m.player1}|${m.player2}`;

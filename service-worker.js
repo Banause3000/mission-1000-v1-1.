@@ -1,4 +1,4 @@
-const CACHE = "mission1000-v1.2.0";
+const CACHE = "mission1000-v1.2.1";
 const STATIC = [
   "./",
   "./index.html",
