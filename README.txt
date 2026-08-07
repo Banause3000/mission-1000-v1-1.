@@ -1,29 +1,28 @@
 MISSION 1000
-Version 0.8.2 - Sackmann Form Engine
+Version 0.8.3 - ESPN Formquellen-Test
+
+WARUM DIESE VERSION?
+Die bisher getesteten kostenlosen CSV-Quellen waren entweder blockiert (403),
+nicht erreichbar (404) oder fuer August 2026 zu alt.
+
+Diese Version testet den oeffentlich erreichbaren ESPN-Tennis-Scoreboard-Endpunkt.
+Dafuer ist kein API-Key vorgesehen.
 
 NEU HOCHLADEN:
-1. scripts/build_form_sackmann.py
-2. .github/workflows/update-form.yml
+1. scripts/build_form_espn.py
+2. .github/workflows/test-espn-form.yml
 
-Danach:
-GitHub -> Actions -> Formdaten aktualisieren -> Run workflow
+DEINE APP BLEIBT UNVERAENDERT.
+data/form.json wird nur ersetzt, wenn der Parser mindestens 10 Spieler
+aus abgeschlossenen ATP/WTA-Matches erkennt.
 
-Was der Workflow macht:
-- lädt die offiziellen ATP- und WTA-Tour-Level-Dateien für 2026 direkt von GitHub Raw
-- baut für jeden Spieler die letzten 5 Matches
-- speichert W/L, Gegner, Datum, Oberfläche, Turnier, Runde und Score
-- aktualisiert data/form.json
-- läuft zusätzlich täglich automatisch
+DANACH:
+GitHub -> Actions -> ESPN Formquelle testen -> Run workflow
 
-Wichtig:
-Die ATP-Hauptdateien enthalten Tour-Level-Main-Draw-Matches; Challenger liegen in separaten Dateien.
-Die WTA-Hauptdateien enthalten ebenfalls Tour-Level-Singles; ITF/Qualifying liegen separat.
-Damit bleibt Mission 1000 weiterhin ohne Challenger.
+Schick danach einen Screenshot.
+Wenn der Lauf gruen ist, bauen wir aus diesem Test den taeglichen Form-Workflow.
 
-Lizenz:
-Jeff Sackmann / Tennis Abstract
-CC BY-NC-SA 4.0
-Attribution erforderlich, nicht-kommerzielle Nutzung, ShareAlike.
-
-Kein Ampelsystem:
-Die App verwendet weiterhin nur W/L bzw. neutrale Textdarstellung.
+Hinweis:
+Der ESPN-Endpunkt ist ein oeffentlicher Site-API-Endpunkt, aber keine vertraglich
+garantierte Entwickler-API. Deshalb testen wir ihn erst sicher, bevor wir ihn
+dauerhaft in Mission 1000 einbauen.
