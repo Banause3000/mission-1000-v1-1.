@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-07T02:18:48.664Z",
+  "generatedAt": "2026-08-07T02:39:55.515Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "4",
-    "remaining": "496"
+    "used": "6",
+    "remaining": "494"
   },
   "matches": [
     {
@@ -17,26 +17,10 @@
       "status": "live-or-started",
       "player1": "Brandon Nakashima",
       "player2": "Titouan Droguet",
-      "odds1": 1.34,
-      "odds2": 4.75,
-      "bookmaker1": "Matchbook",
+      "odds1": 1.3,
+      "odds2": 11.25,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Coolbet",
-      "source": "The Odds API"
-    },
-    {
-      "id": "d032d043525b9b2cebd1f01b3b35ab6c",
-      "tour": "ATP",
-      "event": "ATP Canadian Open",
-      "date": "2026-08-07",
-      "start": "03:09",
-      "startIso": "2026-08-07T01:09:28Z",
-      "status": "live-or-started",
-      "player1": "Frances Tiafoe",
-      "player2": "Arthur Rinderknech",
-      "odds1": 14.5,
-      "odds2": 1.23,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "live-or-started",
       "player1": "Elina Svitolina",
       "player2": "Anastasia Potapova",
-      "odds1": 1.21,
-      "odds2": 6.7,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.1,
+      "odds2": 14,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -97,10 +81,10 @@
       "status": "upcoming",
       "player1": "Tallon Griekspoor",
       "player2": "Matteo Arnaldi",
-      "odds1": 1.71,
-      "odds2": 2.38,
+      "odds1": 1.69,
+      "odds2": 2.42,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -113,9 +97,9 @@
       "status": "upcoming",
       "player1": "Ann Li",
       "player2": "Elena Rybakina",
-      "odds1": 6.2,
+      "odds1": 5.8,
       "odds2": 1.19,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -243,7 +227,7 @@
       "player2": "Joao Fonseca",
       "odds1": 2.28,
       "odds2": 1.78,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -274,9 +258,9 @@
       "player1": "Alexei Popyrin",
       "player2": "Thiago Agustin Tirante",
       "odds1": 1.83,
-      "odds2": 2.18,
+      "odds2": 2.22,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -307,7 +291,7 @@
       "player2": "Alexandra Eala",
       "odds1": 3.2,
       "odds2": 1.44,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
