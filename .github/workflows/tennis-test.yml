@@ -1,0 +1,12 @@
+name: Tennisdaten aktualisieren
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test
+        run: echo "Mission 1000 läuft"
