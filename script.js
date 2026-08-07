@@ -3,6 +3,7 @@ let RANKINGS = [];
 let FORMS = [];
 let showAll = false;
 let activeDate = null;
+const WATCH_KEY = "mission1000-watchlist-v1";
 
 const $ = id => document.getElementById(id);
 
@@ -22,6 +23,47 @@ function odd(v){
 }
 function dayString(date = new Date()){
   return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+}
+
+const COUNTRY_BY_PLAYER = {
+  "casper ruud":"NO","joao fonseca":"BR","joao fonseca":"BR","jannik sinner":"IT","carlos alcaraz":"ES",
+  "novak djokovic":"RS","alexander zverev":"DE","daniil medvedev":"RU","andrey rublev":"RU",
+  "hubert hurkacz":"PL","tallon griekspoor":"NL","matteo arnaldi":"IT","alex michelsen":"US",
+  "iva jovic":"US","alina korneeva":"RU","naomi osaka":"JP","iga swiatek":"PL",
+  "elena rybakina":"KZ","mirra andreeva":"RU","leylah fernandez":"CA","amanda anisimova":"US",
+  "liudmila samsonova":"RU","maya joint":"AU","brandon nakashima":"US","botić van de zandschulp":"NL",
+  "botic van de zandschulp":"NL"
+};
+function countryCodeToFlag(code){
+  const c=String(code||"").trim().toUpperCase();
+  if(!/^[A-Z]{2}$/.test(c)) return "🎾";
+  return String.fromCodePoint(...[...c].map(ch=>127397+ch.charCodeAt()));
+}
+function matchCountry(m,side){
+  const candidates = side===1
+    ? [m.player1Country,m.country1,m.player1_country,m.homeCountry,m.home_country]
+    : [m.player2Country,m.country2,m.player2_country,m.awayCountry,m.away_country];
+  const direct=candidates.find(Boolean);
+  if(direct) return String(direct).toUpperCase();
+  const name=normalizeName(side===1?m.player1:m.player2);
+  return COUNTRY_BY_PLAYER[name] || "";
+}
+function playerFlag(name,tour,m,side){
+  const code = m ? matchCountry(m,side) : COUNTRY_BY_PLAYER[normalizeName(name)];
+  return countryCodeToFlag(code);
+}
+function matchKey(m){
+  return m.id || `${m.date}|${m.start}|${m.player1}|${m.player2}`;
+}
+function watchlist(){
+  try{return JSON.parse(localStorage.getItem(WATCH_KEY)||"[]")}catch{return []}
+}
+function isWatched(m){return watchlist().includes(matchKey(m))}
+function toggleWatch(m){
+  const key=matchKey(m),list=watchlist();
+  const next=list.includes(key)?list.filter(x=>x!==key):[...list,key];
+  localStorage.setItem(WATCH_KEY,JSON.stringify(next));
+  renderList();renderAllMatches();renderWatchlist();
 }
 function getRank(name,tour){
   const n=normalizeName(name),t=String(tour||"").toUpperCase();
@@ -130,6 +172,8 @@ function renderTop(){
   $("topMeta2").textContent=m.tour||"";
   $("topPlayer1").textContent=m.player1;
   $("topPlayer2").textContent=m.player2;
+  $("topFlag1").textContent=playerFlag(m.player1,m.tour,m,1);
+  $("topFlag2").textContent=playerFlag(m.player2,m.tour,m,2);
 
   const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
   $("topRank1").textContent=r1?`${m.tour} #${r1}`:"Ranking –";
@@ -156,6 +200,32 @@ function renderTop(){
     $("marketTrend").textContent="Keine vollständige Quote";
   }
 }
+function buildMatchCard(m){
+  const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
+  const el=document.createElement("article");
+  el.className="match-card with-watch";
+  el.innerHTML=`
+    <div class="time">
+      ${m.start||"–"}
+      <small>${m.status==="live-or-started"?"LIVE":dataDateLabel()}</small>
+    </div>
+    <div class="names">
+      <b><span class="flag-inline">${playerFlag(m.player1,m.tour,m,1)}</span>${m.player1} <span>${r1?`${m.tour} #${r1}`:""}</span></b>
+      <b><span class="flag-inline">${playerFlag(m.player2,m.tour,m,2)}</span>${m.player2} <span>${r2?`${m.tour} #${r2}`:""}</span></b>
+    </div>
+    <div class="score">${missionScore(m)}</div>
+    <button class="watch-star ${isWatched(m)?"active":""}" aria-label="Watchlist">${isWatched(m)?"★":"☆"}</button>
+  `;
+  el.onclick=e=>{
+    if(e.target.closest(".watch-star")) return;
+    showDetails(m);
+  };
+  el.querySelector(".watch-star").onclick=e=>{
+    e.stopPropagation();
+    toggleWatch(m);
+  };
+  return el;
+}
 function renderList(){
   const wrap=$("matchList");
   wrap.innerHTML="";
@@ -169,27 +239,62 @@ function renderList(){
     return;
   }
 
-  list.forEach(m=>{
-    const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
-    const el=document.createElement("article");
-    el.className="match-card";
-    el.innerHTML=`
-      <div class="time">
-        ${m.start||"–"}
-        <small>${m.status==="live-or-started"?"LIVE":dataDateLabel()}</small>
-      </div>
-      <div class="names">
-        <b>${m.player1} <span>${r1?`${m.tour} #${r1}`:""}</span></b>
-        <b>${m.player2} <span>${r2?`${m.tour} #${r2}`:""}</span></b>
-      </div>
-      <div class="score">${missionScore(m)}</div>
-    `;
-    el.onclick=()=>showDetails(m);
-    wrap.appendChild(el);
-  });
-
+  list.forEach(m=>wrap.appendChild(buildMatchCard(m)));
   $("toggleAllBtn").textContent=showAll?"Weniger":"Alle ansehen";
 }
+function renderAllMatches(){
+  const wrap=$("allMatchesList");
+  if(!wrap) return;
+  wrap.innerHTML="";
+  const list=[...currentMatches()].sort((a,b)=>new Date(a.startIso||0)-new Date(b.startIso||0));
+  if(!list.length){
+    wrap.innerHTML='<div class="empty">Keine Matches verfügbar.</div>';
+    return;
+  }
+  list.forEach(m=>wrap.appendChild(buildMatchCard(m)));
+}
+function renderWatchlist(){
+  const wrap=$("watchlistList");
+  if(!wrap) return;
+  wrap.innerHTML="";
+  const keys=watchlist();
+  const list=MATCHES.filter(m=>keys.includes(matchKey(m)));
+  if(!list.length){
+    wrap.innerHTML='<div class="empty">Noch keine Matches gespeichert. Tippe bei einem Match auf ☆.</div>';
+    return;
+  }
+  list.sort((a,b)=>new Date(a.startIso||0)-new Date(b.startIso||0))
+      .forEach(m=>wrap.appendChild(buildMatchCard(m)));
+}
+function renderAI(){
+  const box=$("aiReport");
+  if(!box) return;
+  const m=topMatch();
+  if(!m){
+    box.textContent="Noch kein Match für einen Mission Report verfügbar.";
+    return;
+  }
+  const mk=market(m),r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
+  const f1=getForm(m.player1,m.tour),f2=getForm(m.player2,m.tour);
+  let text=`${playerFlag(m.player1,m.tour,m,1)} ${m.player1} vs. ${playerFlag(m.player2,m.tour,m,2)} ${m.player2}. `;
+  if(mk){
+    const fav=mk.p1>=mk.p2?m.player1:m.player2;
+    text+=`Der Markt sieht ${fav} mit ${Math.max(mk.p1,mk.p2)} % vorne. `;
+  }
+  if(r1&&r2){
+    text+=`Im Ranking liegt ${r1<r2?m.player1:m.player2} ${Math.abs(r1-r2)} Plätze vor dem Gegner. `;
+  }else{
+    text+="Für mindestens einen Spieler fehlt aktuell ein Rankingwert. ";
+  }
+  if(f1&&f2){
+    text+=`Die Formwerte der letzten verfügbaren Spiele liegen bei ${f1.pct} % und ${f2.pct} %. `;
+  }else{
+    text+="Formdaten sind noch nicht vollständig verfügbar. ";
+  }
+  text+=`Mission Score: ${missionScore(m)}/100. Confidence: ${confidence(m)} %.`;
+  box.textContent=text;
+}
+
 function showDetails(m){
   const sc=missionScore(m);
   const mk=market(m);
@@ -257,10 +362,25 @@ async function load(){
   renderStats();
   renderTop();
   renderList();
+  renderAllMatches();
+  renderWatchlist();
+  renderAI();
 }
 $("refreshBtn").onclick=load;
 $("toggleAllBtn").onclick=()=>{showAll=!showAll;renderList();};
 $("closeDetailsBtn").onclick=()=>$("detailsPanel").classList.add("hidden");
+
+document.querySelectorAll(".bottom-nav button[data-view]").forEach(button=>{
+  button.onclick=()=>{
+    document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
+    button.classList.add("active");
+    document.querySelectorAll(".app-view").forEach(v=>v.classList.add("hidden"));
+    const view=$(button.dataset.view);
+    if(view) view.classList.remove("hidden");
+    window.scrollTo({top:0,behavior:"smooth"});
+  };
+});
+
 
 load();
 

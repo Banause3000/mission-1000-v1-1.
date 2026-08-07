@@ -30,6 +30,7 @@
   </header>
 
   <main>
+    <section id="dashboardView" class="app-view">
     <section class="quick-stats" aria-label="Tagesübersicht">
       <article><span>HEUTE</span><b id="todayCount">0</b><small>MATCHES</small></article>
       <article><span>LIVE</span><b id="liveCount">0</b><small>MATCHES</small></article>
@@ -62,7 +63,7 @@
       <div id="topContent">
         <div class="match-headline">
           <div class="player-side">
-            <small id="topMeta1">ATP</small>
+            <div class="player-title-row"><span id="topFlag1" class="flag">🎾</span><small id="topMeta1">ATP</small></div>
             <h3 id="topPlayer1">Spieler 1</h3>
             <span id="topRank1">Ranking –</span>
           </div>
@@ -70,7 +71,7 @@
           <div class="vs-badge">VS</div>
 
           <div class="player-side right">
-            <small id="topMeta2">ATP</small>
+            <div class="player-title-row right-row"><small id="topMeta2">ATP</small><span id="topFlag2" class="flag">🎾</span></div>
             <h3 id="topPlayer2">Spieler 2</h3>
             <span id="topRank2">Ranking –</span>
           </div>
@@ -148,17 +149,58 @@
         <article><span id="detailP2">–</span><b id="detailO2">–</b></article>
       </div>
     </section>
+      </section>
+
+    <section id="matchesView" class="app-view hidden">
+      <section class="panel subpage">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">MATCH CENTER</span>
+            <h2>Alle Matches</h2>
+          </div>
+        </div>
+        <div id="allMatchesList" class="match-list"></div>
+      </section>
+    </section>
+
+    <section id="playerView" class="app-view hidden">
+      <section class="panel subpage empty-state">
+        <span class="eyebrow">PLAYER</span>
+        <h2>Spielerprofile</h2>
+        <p>Der Player Hub wird in der nächsten Ausbaustufe mit Ranking, Form, Belag und Saisonbilanz gefüllt.</p>
+      </section>
+    </section>
+
+    <section id="watchlistView" class="app-view hidden">
+      <section class="panel subpage">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">WATCHLIST</span>
+            <h2>Meine Matches</h2>
+          </div>
+        </div>
+        <div id="watchlistList" class="match-list"></div>
+      </section>
+    </section>
+
+    <section id="aiView" class="app-view hidden">
+      <section class="panel subpage">
+        <span class="eyebrow">MISSION AI</span>
+        <h2>Mission Report</h2>
+        <div id="aiReport" class="ai-report">Daten werden ausgewertet …</div>
+      </section>
+    </section>
   </main>
 
   <nav class="bottom-nav" aria-label="Hauptnavigation">
-    <button class="active">⌂<span>Dashboard</span></button>
-    <button>◯<span>Matches</span></button>
-    <button>♙<span>Player</span></button>
-    <button>☆<span>Watchlist</span></button>
-    <button>◉<span>Mission AI</span></button>
+    <button class="active" data-view="dashboardView">⌂<span>Dashboard</span></button>
+    <button data-view="matchesView">◯<span>Matches</span></button>
+    <button data-view="playerView">♙<span>Player</span></button>
+    <button data-view="watchlistView">☆<span>Watchlist</span></button>
+    <button data-view="aiView">◉<span>Mission AI</span></button>
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v1.0.0</footer>
+  <footer>Mission 1000 · Project Eclipse · v1.1.0</footer>
 </div>
 
 <script src="./script.js"></script>
