@@ -1,4 +1,4 @@
-// Mission 1000 v2.0.0
+// Mission 1000 v2.1.0
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -66,47 +66,90 @@ function playerFlag(name, tour, match=null, side=1){
   return "🎾";
 }
 
+function rankingCandidates(){
+  const src = STATE.rankings;
+  if(Array.isArray(src)) return src;
+  return [];
+}
+
+function extractRank(item){
+  if(!item || typeof item !== "object") return null;
+  const raw =
+    item.rank ??
+    item.ranking ??
+    item.position ??
+    item.pos ??
+    item.currentRank ??
+    item.current_rank ??
+    item.singlesRank ??
+    item.singles_rank;
+  const n = Number(raw);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 function getRank(name, tour){
   const n = normalizeName(name);
   const t = String(tour || "").toUpperCase();
 
-  const found = STATE.rankings.find(p =>
-    normalizeName(p.name) === n &&
-    String(p.tour || "").toUpperCase() === t
-  );
+  const found = rankingCandidates().find(p => {
+    const pname = p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
+    const ptour = String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
+    return normalizeName(pname) === n && (!ptour || !t || ptour === t);
+  });
 
-  const raw = found?.rank ?? found?.ranking ?? found?.position;
-  const r = Number(raw);
-  return Number.isFinite(r) && r > 0 ? r : null;
+  return extractRank(found);
+}
+
+function formCandidates(){
+  const src = STATE.forms;
+  if(Array.isArray(src)) return src;
+  return [];
 }
 
 function getForm(name, tour){
   const n = normalizeName(name);
   const t = String(tour || "").toUpperCase();
 
-  const found = STATE.forms.find(p =>
-    normalizeName(p.name) === n &&
-    String(p.tour || "").toUpperCase() === t
-  );
+  const found = formCandidates().find(p => {
+    const pname = p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
+    const ptour = String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
+    return normalizeName(pname) === n && (!ptour || !t || ptour === t);
+  });
 
   if(!found) return null;
 
-  const list = Array.isArray(found.lastMatches)
-    ? found.lastMatches
-    : Array.isArray(found.matches)
-      ? found.matches
-      : [];
+  const list =
+    (Array.isArray(found.lastMatches) && found.lastMatches) ||
+    (Array.isArray(found.matches) && found.matches) ||
+    (Array.isArray(found.form) && found.form) ||
+    [];
 
-  if(!list.length) return null;
+  if(list.length){
+    const last = list.slice(0,5);
+    const wins = last.filter(m => {
+      if(typeof m === "string") return m.trim().toUpperCase().startsWith("W");
+      return String(m.result ?? m.outcome ?? m.wl ?? "").toUpperCase() === "W";
+    }).length;
 
-  const last = list.slice(0,5);
-  const wins = last.filter(m => String(m.result || m.outcome || "").toUpperCase() === "W").length;
+    return {
+      wins,
+      total:last.length,
+      pct:Math.round((wins/last.length)*100)
+    };
+  }
 
-  return {
-    wins,
-    total: last.length,
-    pct: Math.round((wins / last.length) * 100)
-  };
+  const wins = Number(found.wins ?? found.last5Wins ?? found.formWins);
+  const total = Number(found.total ?? found.last5Total ?? found.formTotal ?? 5);
+
+  if(Number.isFinite(wins) && Number.isFinite(total) && total > 0){
+    return {
+      wins,
+      total,
+      pct:Math.round((wins/total)*100)
+    };
+  }
+
+  return null;
 }
 
 function market(match){
@@ -128,6 +171,62 @@ function market(match){
   };
 }
 
+
+function marketComponent(match){
+  const mk = market(match);
+  if(!mk) return {score:0,max:30,available:false};
+
+  const gap = Math.abs(mk.p1 - mk.p2);
+  const score = Math.max(8, Math.min(30, Math.round(30 - gap*0.18)));
+  return {score,max:30,available:true};
+}
+
+function rankingComponent(match){
+  const r1 = getRank(match.player1, match.tour);
+  const r2 = getRank(match.player2, match.tour);
+  if(!r1 || !r2) return {score:0,max:20,available:false};
+
+  const diff = Math.abs(r1-r2);
+  const score = Math.min(20, Math.max(4, Math.round(4 + diff/4)));
+  return {score,max:20,available:true,r1,r2,diff};
+}
+
+function formComponent(match){
+  const f1 = getForm(match.player1, match.tour);
+  const f2 = getForm(match.player2, match.tour);
+  if(!f1 || !f2) return {score:0,max:20,available:false};
+
+  const diff = Math.abs(f1.pct-f2.pct);
+  const score = Math.min(20, Math.max(5, Math.round(5 + diff/5)));
+  return {score,max:20,available:true,f1,f2,diff};
+}
+
+function scoreComponents(match){
+  return {
+    market:marketComponent(match),
+    ranking:rankingComponent(match),
+    form:formComponent(match)
+  };
+}
+
+function missionScore(match){
+  const parts = scoreComponents(match);
+  const available = [parts.market,parts.ranking,parts.form].filter(x=>x.available);
+
+  // Until H2H/surface/stats arrive, normalize only over the components we truly have.
+  if(!available.length) return 50;
+
+  const earned = available.reduce((s,x)=>s+x.score,0);
+  const possible = available.reduce((s,x)=>s+x.max,0);
+
+  // Scale current evidence to 50..95 so missing future modules do not punish a match.
+  const ratio = possible ? earned/possible : .5;
+  let score = Math.round(50 + ratio*45);
+
+  if(match.status === "live-or-started") score = Math.min(99,score+2);
+  return Math.max(0,Math.min(99,score));
+}
+
 function confidence(match){
   const mk = market(match);
   if(!mk) return 50;
@@ -136,31 +235,7 @@ function confidence(match){
   return Math.max(50, Math.min(97, Math.round(96 - margin*260)));
 }
 
-function missionScore(match){
-  let score = 50;
 
-  const mk = market(match);
-  if(mk){
-    const gap = Math.abs(mk.p1 - mk.p2);
-    score += 9 + Math.max(0, 14 - Math.round(gap/4));
-  }
-
-  const r1 = getRank(match.player1, match.tour);
-  const r2 = getRank(match.player2, match.tour);
-  if(r1 && r2){
-    score += Math.min(10, Math.round(Math.abs(r1-r2)/8));
-  }
-
-  const f1 = getForm(match.player1, match.tour);
-  const f2 = getForm(match.player2, match.tour);
-  if(f1 && f2){
-    score += Math.min(10, Math.round(Math.abs(f1.pct-f2.pct)/8));
-  }
-
-  if(match.status === "live-or-started") score += 4;
-
-  return Math.max(0, Math.min(99, Math.round(score)));
-}
 
 function scoreLabel(score){
   if(score >= 86) return "Sehr interessantes Match";
@@ -262,6 +337,15 @@ function renderStatus(payload){
 
   $("bestScore").textContent = best;
   $("dataDate").textContent = dataDateLabel();
+
+  const playerSlots = list.length * 2;
+  const rankedSlots = list.reduce((sum,m)=>
+    sum + (getRank(m.player1,m.tour)?1:0) + (getRank(m.player2,m.tour)?1:0),0);
+  const formSlots = list.reduce((sum,m)=>
+    sum + (getForm(m.player1,m.tour)?1:0) + (getForm(m.player2,m.tour)?1:0),0);
+
+  $("rankingCoverage").textContent = playerSlots ? `${Math.round(rankedSlots/playerSlots*100)}%` : "0%";
+  $("formCoverage").textContent = playerSlots ? `${Math.round(formSlots/playerSlots*100)}%` : "0%";
 
   if(payload?.generatedAt){
     $("updatedAt").textContent = new Date(payload.generatedAt).toLocaleString("de-DE", {
@@ -638,6 +722,14 @@ function showDetails(match){
   $("factorForm").textContent = f1 && f2 ? `${f1.pct}% / ${f2.pct}%` : "–";
   $("factorConfidence").textContent = `${conf}%`;
 
+  const parts = scoreComponents(match);
+  $("scoreMarket").textContent = parts.market.available ? `${parts.market.score}/${parts.market.max}` : `0/${parts.market.max}`;
+  $("scoreRanking").textContent = parts.ranking.available ? `${parts.ranking.score}/${parts.ranking.max}` : `0/${parts.ranking.max}`;
+  $("scoreForm").textContent = parts.form.available ? `${parts.form.score}/${parts.form.max}` : `0/${parts.form.max}`;
+  $("barMarket").style.width = `${parts.market.available ? (parts.market.score/parts.market.max*100) : 0}%`;
+  $("barRanking").style.width = `${parts.ranking.available ? (parts.ranking.score/parts.ranking.max*100) : 0}%`;
+  $("barForm").style.width = `${parts.form.available ? (parts.form.score/parts.form.max*100) : 0}%`;
+
   $("detailP1").textContent = `${playerFlag(match.player1,match.tour,match,1)} ${match.player1}`;
   $("detailP2").textContent = `${playerFlag(match.player2,match.tour,match,2)} ${match.player2}`;
   $("detailO1").textContent = odd(match.odds1);
@@ -694,10 +786,31 @@ async function load(){
     fetchJson("./data/players.json", {players:[]})
   ]);
 
-  STATE.matches = Array.isArray(matchesPayload.matches) ? matchesPayload.matches : [];
-  STATE.rankings = Array.isArray(rankingsPayload.players) ? rankingsPayload.players : [];
-  STATE.forms = Array.isArray(formsPayload.players) ? formsPayload.players : [];
-  STATE.players = Array.isArray(playersPayload.players) ? playersPayload.players : [];
+  STATE.matches = Array.isArray(matchesPayload.matches)
+    ? matchesPayload.matches
+    : Array.isArray(matchesPayload)
+      ? matchesPayload
+      : [];
+
+  STATE.rankings =
+    (Array.isArray(rankingsPayload.players) && rankingsPayload.players) ||
+    (Array.isArray(rankingsPayload.rankings) && rankingsPayload.rankings) ||
+    (Array.isArray(rankingsPayload.data) && rankingsPayload.data) ||
+    (Array.isArray(rankingsPayload) && rankingsPayload) ||
+    [];
+
+  STATE.forms =
+    (Array.isArray(formsPayload.players) && formsPayload.players) ||
+    (Array.isArray(formsPayload.form) && formsPayload.form) ||
+    (Array.isArray(formsPayload.data) && formsPayload.data) ||
+    (Array.isArray(formsPayload) && formsPayload) ||
+    [];
+
+  STATE.players =
+    (Array.isArray(playersPayload.players) && playersPayload.players) ||
+    (Array.isArray(playersPayload.data) && playersPayload.data) ||
+    (Array.isArray(playersPayload) && playersPayload) ||
+    [];
 
   STATE.activeDate = resolveActiveDate();
 

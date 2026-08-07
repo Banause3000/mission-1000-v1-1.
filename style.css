@@ -655,3 +655,79 @@ body{
 .system-strip,.system-kpis,.system-main{
   /* kept only for backwards compatibility if stale HTML appears */
 }
+
+
+/* =========================================================
+   Mission 1000 v2.1.0 - Intelligence Engine
+   ========================================================= */
+
+.mc-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.score-breakdown{
+  margin-top:16px;
+  padding:15px;
+  border:1px solid #1e2c3a;
+  border-radius:17px;
+  background:#071018;
+}
+.breakdown-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:13px;
+}
+.breakdown-head small{
+  color:var(--muted);
+  font-size:.57rem;
+}
+.break-row{
+  display:grid;
+  grid-template-columns:72px 1fr 52px;
+  gap:10px;
+  align-items:center;
+  margin:10px 0;
+}
+.break-row>span{
+  color:#cbd2d9;
+  font-size:.68rem;
+}
+.break-row>i{
+  display:block;
+  height:8px;
+  border-radius:999px;
+  background:#1a2530;
+  overflow:hidden;
+}
+.break-row>i>b{
+  display:block;
+  height:100%;
+  width:0;
+  background:var(--green);
+  border-radius:999px;
+  box-shadow:0 0 12px rgba(116,242,56,.22);
+  transition:width .45s ease;
+}
+.break-row>strong{
+  text-align:right;
+  color:#e8edf2;
+  font-size:.66rem;
+}
+.break-row.pending{
+  opacity:.48;
+}
+.break-row.pending>i>b{
+  width:0!important;
+}
+
+.rank-chip{
+  color:var(--muted);
+  font-size:.58rem;
+  font-weight:600;
+}
+
+@media(max-width:430px){
+  .mc-grid{grid-template-columns:repeat(2,1fr)}
+  .break-row{grid-template-columns:64px 1fr 48px}
+}

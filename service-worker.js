@@ -1,4 +1,4 @@
-// Mission 1000 v2.0.0
+// Mission 1000 v2.1.0
 // Intentionally no persistent cache while the core/data layer is stabilised.
 self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", event => {
