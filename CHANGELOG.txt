@@ -1,10 +1,23 @@
+MISSION 1000 CHANGELOG
+
+Version 0.7.2
+- Ranking Engine in script.js integriert.
+- rankings.json als zweite Datenquelle eingebunden.
+- Ranking Card wird dynamisch in den Matchdetails erzeugt.
+- Ranking Advantage ergänzt.
+- Ranking Score 0-20 ergänzt.
+- Rankingdaten können die Marktanalyse ergänzen.
+- Rang 0 wird ausgeblendet.
+- Namensnormalisierung für Sonderzeichen ergänzt.
+- Versionsanzeige ergänzt.
+
 Version 0.7.1
+- rankings.json Datenstruktur vorbereitet.
 
-Neu:
-- Ranking-Datenstruktur vorbereitet
-- rankings.json eingeführt
-
-Geplant in Phase 7.2:
-- Anzeige der Rankings
-- Ranking Score
-- Ranking Advantage
+Phase 6
+- Mission Analyse Engine
+- Heat
+- Confidence
+- Mission Intelligence
+- Watchlist
+- Mission Control

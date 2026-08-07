@@ -1,13 +1,19 @@
 let all = [];
+let rankings = [];
 let filter = "all";
 let dayFilter = "today";
 let searchTerm = "";
 let selectedMatch = null;
 let generatedAt = null;
+let rankingsGeneratedAt = null;
 let countdownTimer = null;
 
 const $ = id => document.getElementById(id);
 const FAVORITES_KEY = "mission1000-favorites-v1";
+
+/* ------------------------------
+   FAVORITEN / WATCHLIST
+------------------------------ */
 
 function getFavorites() {
   try {
@@ -47,10 +53,15 @@ function toggleFavorite(match) {
 function updateFavoriteButton(match) {
   const button = $("favoriteBtn");
   if (!button || !match) return;
+
   const active = isFavorite(match);
   button.textContent = active ? "★" : "☆";
   button.classList.toggle("active", active);
 }
+
+/* ------------------------------
+   HILFSFUNKTIONEN
+------------------------------ */
 
 function odd(value) {
   const n = Number(value);
@@ -77,6 +88,223 @@ function tomorrowString() {
   d.setDate(d.getDate() + 1);
   return localDayString(d);
 }
+
+/* ------------------------------
+   RANKING ENGINE
+------------------------------ */
+
+function normalizeName(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[’'`´]/g, "")
+    .replace(/[-–—]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function getPlayerRanking(playerName, tour) {
+  const wantedName = normalizeName(playerName);
+  const wantedTour = String(tour || "").toUpperCase();
+
+  const player = rankings.find(item =>
+    normalizeName(item.name) === wantedName &&
+    String(item.tour || "").toUpperCase() === wantedTour
+  );
+
+  if (!player) return null;
+
+  const rank = Number(player.rank);
+
+  // rank 0 = Platzhalter / unbekannt und wird NICHT angezeigt
+  if (!Number.isFinite(rank) || rank <= 0) return null;
+
+  return rank;
+}
+
+function rankingAdvantage(match) {
+  const r1 = getPlayerRanking(match.player1, match.tour);
+  const r2 = getPlayerRanking(match.player2, match.tour);
+
+  if (!r1 || !r2) {
+    return {
+      r1,
+      r2,
+      available: false,
+      advantage: null,
+      difference: null
+    };
+  }
+
+  const difference = Math.abs(r1 - r2);
+
+  return {
+    r1,
+    r2,
+    available: true,
+    advantage: r1 < r2 ? match.player1 : r2 < r1 ? match.player2 : null,
+    difference
+  };
+}
+
+function rankingScore(match) {
+  const info = rankingAdvantage(match);
+
+  if (!info.available) return null;
+
+  const diff = info.difference;
+
+  if (diff >= 100) return 20;
+  if (diff >= 60) return 18;
+  if (diff >= 40) return 16;
+  if (diff >= 25) return 14;
+  if (diff >= 15) return 12;
+  if (diff >= 8) return 10;
+  if (diff >= 4) return 8;
+  if (diff >= 1) return 6;
+
+  return 5;
+}
+
+function ensureRankingCard() {
+  if ($("rankingCard")) return;
+
+  const breakdown = document.querySelector(".breakdown");
+
+  if (!breakdown) return;
+
+  breakdown.insertAdjacentHTML(
+    "beforebegin",
+    `
+      <div id="rankingCard" class="ranking-card" style="
+        margin-top:15px;
+        padding:14px;
+        border:1px solid #283a4e;
+        border-radius:17px;
+        background:#08121a;
+      ">
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          gap:12px;
+          margin-bottom:12px;
+        ">
+          <div>
+            <span style="
+              color:#4de07f;
+              font-weight:950;
+              letter-spacing:.14em;
+              text-transform:uppercase;
+              font-size:.68rem;
+            ">Ranking</span>
+            <h3 style="margin:5px 0 0 0;">ATP / WTA Ranking</h3>
+          </div>
+
+          <span id="rankingStatus" style="
+            padding:5px 8px;
+            border-radius:999px;
+            background:#0b1720;
+            color:#98a8b8;
+            font-size:.64rem;
+          ">Lädt …</span>
+        </div>
+
+        <div style="
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:8px;
+        ">
+          <div style="
+            padding:11px;
+            border:1px solid #283a4e;
+            border-radius:13px;
+          ">
+            <span id="rankingName1" style="
+              display:block;
+              color:#98a8b8;
+              font-size:.65rem;
+            ">Spieler 1</span>
+
+            <b id="ranking1" style="
+              display:block;
+              margin-top:4px;
+              font-size:1.15rem;
+            ">–</b>
+          </div>
+
+          <div style="
+            padding:11px;
+            border:1px solid #283a4e;
+            border-radius:13px;
+          ">
+            <span id="rankingName2" style="
+              display:block;
+              color:#98a8b8;
+              font-size:.65rem;
+            ">Spieler 2</span>
+
+            <b id="ranking2" style="
+              display:block;
+              margin-top:4px;
+              font-size:1.15rem;
+            ">–</b>
+          </div>
+        </div>
+
+        <div id="rankingSummary" style="
+          margin-top:12px;
+          padding:11px;
+          border-radius:13px;
+          background:rgba(77,224,127,.05);
+          color:#d4dee5;
+          font-size:.74rem;
+          line-height:1.5;
+        ">
+          Rankingdaten werden geladen.
+        </div>
+      </div>
+    `
+  );
+}
+
+function updateRankingCard(match) {
+  ensureRankingCard();
+
+  if (!$("rankingCard")) return;
+
+  const info = rankingAdvantage(match);
+  const score = rankingScore(match);
+
+  $("rankingName1").textContent = match.player1;
+  $("rankingName2").textContent = match.player2;
+
+  $("ranking1").textContent = info.r1 ? `#${info.r1}` : "–";
+  $("ranking2").textContent = info.r2 ? `#${info.r2}` : "–";
+
+  if (!info.available) {
+    $("rankingStatus").textContent = "Teilweise Daten";
+    $("rankingSummary").textContent =
+      "Für mindestens einen Spieler liegt noch kein gültiger Rankingwert vor. Platzhalter mit Rang 0 werden bewusst nicht angezeigt.";
+    return;
+  }
+
+  $("rankingStatus").textContent = "Ranking aktiv";
+
+  if (!info.advantage) {
+    $("rankingSummary").textContent =
+      `Beide Spieler stehen auf demselben Rankingplatz. Ranking Score: ${score}/20.`;
+    return;
+  }
+
+  $("rankingSummary").textContent =
+    `${info.advantage} hat den Rankingvorteil. Unterschied: ${info.difference} Plätze. Ranking Score: ${score}/20.`;
+}
+
+/* ------------------------------
+   MARKT ENGINE
+------------------------------ */
 
 function marketProbabilities(match) {
   const o1 = Number(match.odds1);
@@ -179,13 +407,18 @@ function heatScore(match) {
   const confidence = marketConfidence(match);
 
   let balanceBonus = 0;
+
   if (pct) {
     const gap = Math.abs(pct.p1 - pct.p2);
     balanceBonus = Math.max(0, 30 - Math.round(gap * 0.55));
   }
 
   const liveBonus = match.status === "live-or-started" ? 8 : 0;
-  return Math.min(100, Math.round(score * 0.55 + confidence * 0.25 + balanceBonus * 0.20 + liveBonus));
+
+  return Math.min(
+    100,
+    Math.round(score * 0.55 + confidence * 0.25 + balanceBonus * 0.20 + liveBonus)
+  );
 }
 
 function heatLabel(value) {
@@ -199,6 +432,7 @@ function analysisMetrics(match) {
   const pct = marketPercentages(match);
   const confidence = marketConfidence(match);
   const heat = heatScore(match);
+  const rankInfo = rankingAdvantage(match);
 
   if (!pct) {
     return {
@@ -237,29 +471,47 @@ function analysisMetrics(match) {
   else if (heat >= 65) signal = "Beobachten";
   else signal = "Kein starkes Signal";
 
-  const badge = heat >= 80 ? "Starkes Signal" : heat >= 65 ? "Beobachten" : "Neutral";
+  const badge =
+    heat >= 80 ? "Starkes Signal" :
+    heat >= 65 ? "Beobachten" :
+    "Neutral";
 
   let text;
+
   if (gap <= 8) {
-    text = `Der Markt bewertet ${match.player1} und ${match.player2} nahezu ausgeglichen. Das erhöht die Unsicherheit, macht das Match aber für eine spätere Leistungsanalyse besonders interessant.`;
+    text =
+      `Der Markt bewertet ${match.player1} und ${match.player2} nahezu ausgeglichen.`;
   } else if (gap <= 20) {
-    text = `${favorite} liegt mit rund ${favoritePct} % Marktanteil leicht vorne. Das Marktbild ist erkennbar, aber noch nicht dominant.`;
+    text =
+      `${favorite} liegt mit rund ${favoritePct} % Marktanteil leicht vorne.`;
   } else if (gap <= 35) {
-    text = `${favorite} ist mit rund ${favoritePct} % Marktanteil klar favorisiert. Die Marktseite ist deutlich, ohne dass daraus automatisch eine sichere Prognose folgt.`;
+    text =
+      `${favorite} ist mit rund ${favoritePct} % Marktanteil klar favorisiert.`;
   } else {
-    text = `${favorite} wird vom Markt mit rund ${favoritePct} % sehr deutlich favorisiert. Der Abstand ist groß, wodurch das Match weniger ausgeglichen wirkt.`;
+    text =
+      `${favorite} wird vom Markt mit rund ${favoritePct} % sehr deutlich favorisiert.`;
   }
 
-  if (confidence >= 90) {
-    text += " Die vorhandenen Marktdaten sind sehr vollständig.";
-  } else if (confidence >= 75) {
-    text += " Die vorhandenen Marktdaten sind solide.";
-  } else {
-    text += " Die Datenbasis ist noch begrenzt.";
+  if (rankInfo.available) {
+    if (rankInfo.advantage === favorite) {
+      text += ` Das Ranking stützt aktuell dieselbe Seite: ${rankInfo.advantage} liegt ${rankInfo.difference} Plätze vor dem Gegner.`;
+    } else if (rankInfo.advantage) {
+      text += ` Interessant: Der Markt favorisiert ${favorite}, das Ranking spricht dagegen für ${rankInfo.advantage} mit ${rankInfo.difference} Plätzen Vorsprung.`;
+    }
   }
+
+  text += confidence >= 90
+    ? " Die vorhandenen Marktdaten sind sehr vollständig."
+    : confidence >= 75
+      ? " Die vorhandenen Marktdaten sind solide."
+      : " Die Datenbasis ist noch begrenzt.";
 
   return { marketShape, risk, balance, signal, badge, text };
 }
+
+/* ------------------------------
+   FILTER / RENDERING
+------------------------------ */
 
 function matchRelevant(match) {
   if (!match.startIso) return true;
@@ -268,7 +520,10 @@ function matchRelevant(match) {
 
 function matchesSearch(match) {
   if (!searchTerm) return true;
-  const text = `${match.player1} ${match.player2} ${match.event} ${match.tour}`.toLowerCase();
+
+  const text =
+    `${match.player1} ${match.player2} ${match.event} ${match.tour}`.toLowerCase();
+
   return text.includes(searchTerm);
 }
 
@@ -276,12 +531,15 @@ function selectedMatches() {
   return all
     .filter(match => {
       if (!matchRelevant(match)) return false;
+
       if (dayFilter === "today" && match.date !== todayString()) return false;
       if (dayFilter === "tomorrow" && match.date !== tomorrowString()) return false;
+
       if (filter === "ATP" && match.tour !== "ATP") return false;
       if (filter === "WTA" && match.tour !== "WTA") return false;
       if (filter === "priced" && !marketProbabilities(match)) return false;
       if (filter === "favorites" && !isFavorite(match)) return false;
+
       return matchesSearch(match);
     })
     .sort((a, b) => {
@@ -326,6 +584,7 @@ function updateCountdown() {
 }
 
 function updateLiveBadge(match) {
+  if (!$("liveBadge")) return;
   $("liveBadge").classList.toggle("hidden", match.status !== "live-or-started");
 }
 
@@ -428,13 +687,15 @@ function showDetails(match) {
   $("book2").textContent = match.bookmaker2 || "–";
 
   $("event").textContent = match.event || "–";
-  $("start").textContent = `${match.date || ""} ${match.start || ""}`.trim() || "–";
+  $("start").textContent =
+    `${match.date || ""} ${match.start || ""}`.trim() || "–";
   $("status").textContent = statusText(match.status);
   $("detailSource").textContent = match.source || "The Odds API";
 
   updateProbabilityBox(match);
   updateScoreBox(match);
   updateAnalysisEngine(match);
+  updateRankingCard(match);
   updateCountdown();
   updateLiveBadge(match);
   updateFavoriteButton(match);
@@ -442,6 +703,8 @@ function showDetails(match) {
 
 function renderHighlights() {
   const box = $("highlights");
+  if (!box) return;
+
   box.innerHTML = "";
 
   const list = all
@@ -450,7 +713,8 @@ function renderHighlights() {
     .slice(0, 3);
 
   if (!list.length) {
-    box.innerHTML = '<div class="empty">Heute keine passenden Matches gefunden.</div>';
+    box.innerHTML =
+      '<div class="empty">Heute keine passenden Matches gefunden.</div>';
     return;
   }
 
@@ -503,27 +767,33 @@ function updateIntelligence() {
     $("intelHeat").textContent = "–";
     $("intelConfidence").textContent = "–";
     $("intelMarket").textContent = "–";
-    $("intelText").textContent = "Für heute liegen aktuell keine passenden Matches vor.";
+    $("intelText").textContent =
+      "Für heute liegen aktuell keine passenden Matches vor.";
     return;
   }
 
   const ranked = [...today].sort((a, b) => heatScore(b) - heatScore(a));
   const top = ranked[0];
+
   const pct = marketPercentages(top);
   const heat = heatScore(top);
   const confidence = marketConfidence(top);
+  const rankInfo = rankingAdvantage(top);
 
   $("intelBadge").textContent =
     heat >= 80 ? "Starkes Signal" :
     heat >= 65 ? "Beobachten" :
     "Ruhiger Markt";
 
-  $("intelTopMatch").textContent = `${top.player1} vs. ${top.player2}`;
+  $("intelTopMatch").textContent =
+    `${top.player1} vs. ${top.player2}`;
+
   $("intelHeat").textContent = `${heat}/100`;
   $("intelConfidence").textContent = `${confidence}/100`;
 
   if (pct) {
     const gap = Math.abs(pct.p1 - pct.p2);
+
     $("intelMarket").textContent =
       gap <= 10 ? "Sehr offen" :
       gap <= 25 ? "Leichter Favorit" :
@@ -532,10 +802,19 @@ function updateIntelligence() {
     $("intelMarket").textContent = "Unvollständig";
   }
 
-  $("intelText").textContent =
+  let text =
     `Das auffälligste Match im heutigen Markt-Radar ist ${top.player1} gegen ${top.player2}. ` +
-    `Heat ${heat}/100, Confidence ${confidence}/100. ` +
-    `Die Einordnung basiert ausschließlich auf den aktuell verfügbaren Marktdaten.`;
+    `Heat ${heat}/100, Confidence ${confidence}/100.`;
+
+  if (rankInfo.available && rankInfo.advantage) {
+    text +=
+      ` Im Ranking liegt ${rankInfo.advantage} ${rankInfo.difference} Plätze vor dem Gegner.`;
+  }
+
+  text +=
+    " Die Markt- und Ranking-Einordnung ist noch keine vollständige Leistungsprognose.";
+
+  $("intelText").textContent = text;
 }
 
 function render() {
@@ -543,12 +822,16 @@ function render() {
   const box = $("matches");
 
   $("count").textContent = matches.length;
-  $("priced").textContent = matches.filter(match => Boolean(marketProbabilities(match))).length;
+
+  $("priced").textContent =
+    matches.filter(match => Boolean(marketProbabilities(match))).length;
 
   box.innerHTML = "";
 
   if (!matches.length) {
-    box.innerHTML = '<div class="empty">Keine passenden Matches gefunden.</div>';
+    box.innerHTML =
+      '<div class="empty">Keine passenden Matches gefunden.</div>';
+
     renderHighlights();
     updateMissionControl();
     updateIntelligence();
@@ -573,9 +856,16 @@ function render() {
             <span class="tour-label">${match.tour}</span>
             <span>${match.event}</span>
           </div>
+
           <div class="card-actions">
-            ${match.status === "live-or-started" ? '<span class="mini-live"><i></i>LIVE</span>' : ""}
-            <button class="mini-favorite">${isFavorite(match) ? "★" : "☆"}</button>
+            ${match.status === "live-or-started"
+              ? '<span class="mini-live"><i></i>LIVE</span>'
+              : ""}
+
+            <button class="mini-favorite">
+              ${isFavorite(match) ? "★" : "☆"}
+            </button>
+
             <span>${match.start || ""}</span>
           </div>
         </div>
@@ -588,6 +878,7 @@ function render() {
               ${matchScoreTier(score)}
             </span>
           </div>
+
           <div class="heat-chip">Heat ${heat}</div>
         </div>
       </div>
@@ -597,6 +888,7 @@ function render() {
           <strong>${p1Fav ? "★ " : ""}${match.player1}</strong>
           <small>${match.bookmaker1 || ""}</small>
         </div>
+
         <div class="right">
           <b>${odd(match.odds1)}</b>
           <small>${pct ? `${pct.p1} %` : ""}</small>
@@ -608,6 +900,7 @@ function render() {
           <strong>${p2Fav ? "★ " : ""}${match.player2}</strong>
           <small>${match.bookmaker2 || ""}</small>
         </div>
+
         <div class="right">
           <b>${odd(match.odds2)}</b>
           <small>${pct ? `${pct.p2} %` : ""}</small>
@@ -665,59 +958,108 @@ function updateMissionControl() {
     : "–";
 }
 
+/* ------------------------------
+   DATEN LADEN
+------------------------------ */
+
+async function loadMatches() {
+  const response = await fetch(
+    `./data/matches.json?v=${Date.now()}`,
+    { cache: "no-store" }
+  );
+
+  if (!response.ok) {
+    throw new Error(`matches.json: HTTP ${response.status}`);
+  }
+
+  const payload = await response.json();
+
+  all = Array.isArray(payload.matches) ? payload.matches : [];
+  generatedAt = payload.generatedAt ? new Date(payload.generatedAt) : null;
+
+  $("source").textContent = all.length
+    ? "Aktuelle ATP- und WTA-Matches mit verfügbaren Quoten."
+    : "Aktuell wurden keine passenden Matches gefunden.";
+
+  $("updated").textContent = generatedAt
+    ? generatedAt.toLocaleString("de-DE", {
+        day: "2-digit",
+        month: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      })
+    : "Noch kein Datenlauf";
+
+  $("sysSource").textContent = payload.source || "–";
+  $("tz").textContent = payload.timezone || "Europe/Berlin";
+  $("quota").textContent = payload.quota?.remaining ?? "–";
+}
+
+async function loadRankings() {
+  try {
+    const response = await fetch(
+      `./data/rankings.json?v=${Date.now()}`,
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error(`rankings.json: HTTP ${response.status}`);
+    }
+
+    const payload = await response.json();
+
+    rankings = Array.isArray(payload.players) ? payload.players : [];
+    rankingsGeneratedAt = payload.generatedAt || null;
+
+  } catch (error) {
+    console.warn("Rankingdaten konnten nicht geladen werden:", error);
+    rankings = [];
+    rankingsGeneratedAt = null;
+  }
+}
+
 async function load() {
   $("updated").textContent = "Lädt …";
 
   try {
-    const response = await fetch(
-      `./data/matches.json?v=${Date.now()}`,
-      { cache: "no-store" }
-    );
+    await Promise.all([
+      loadMatches(),
+      loadRankings()
+    ]);
 
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-    const payload = await response.json();
-
-    all = Array.isArray(payload.matches) ? payload.matches : [];
-    generatedAt = payload.generatedAt ? new Date(payload.generatedAt) : null;
-
-    $("source").textContent = all.length
-      ? "Aktuelle ATP- und WTA-Matches mit verfügbaren Quoten."
-      : "Aktuell wurden keine passenden Matches gefunden.";
-
-    $("updated").textContent = generatedAt
-      ? generatedAt.toLocaleString("de-DE", {
-          day: "2-digit",
-          month: "2-digit",
-          hour: "2-digit",
-          minute: "2-digit"
-        })
-      : "Noch kein Datenlauf";
-
-    $("sysSource").textContent = payload.source || "–";
-    $("tz").textContent = payload.timezone || "Europe/Berlin";
-    $("quota").textContent = payload.quota?.remaining ?? "–";
     $("apiStatus").textContent = "Online";
-
     render();
+
   } catch (error) {
     all = [];
+
     $("matches").innerHTML =
-      `<div class="empty">Daten konnten nicht geladen werden.<br><br>${error.message}</div>`;
+      `<div class="empty">
+        Daten konnten nicht geladen werden.
+        <br><br>
+        ${error.message}
+      </div>`;
+
     $("updated").textContent = "Ladefehler";
     $("count").textContent = "0";
     $("priced").textContent = "0";
     $("apiStatus").textContent = "Fehler";
+
     updateMissionControl();
     updateIntelligence();
   }
 }
+
+/* ------------------------------
+   EVENTS
+------------------------------ */
 
 document.querySelectorAll("nav button").forEach(button => {
   button.onclick = () => {
     document.querySelectorAll("nav button").forEach(item =>
       item.classList.remove("active")
     );
+
     button.classList.add("active");
     filter = button.dataset.filter;
     render();
@@ -729,6 +1071,7 @@ document.querySelectorAll(".day").forEach(button => {
     document.querySelectorAll(".day").forEach(item =>
       item.classList.remove("active")
     );
+
     button.classList.add("active");
     dayFilter = button.dataset.day;
     render();
@@ -755,14 +1098,18 @@ $("closeControl").onclick = () => {
 
 $("refresh").onclick = load;
 
-$("date").textContent = new Date().toLocaleDateString("de-DE", {
-  weekday: "long",
-  day: "2-digit",
-  month: "2-digit",
-  year: "numeric"
-});
+$("date").textContent =
+  new Date().toLocaleDateString("de-DE", {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
 
-if (countdownTimer) clearInterval(countdownTimer);
+if (countdownTimer) {
+  clearInterval(countdownTimer);
+}
+
 countdownTimer = setInterval(updateCountdown, 30000);
 
 load();
