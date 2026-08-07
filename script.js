@@ -23,28 +23,19 @@ function odd(value) {
 
 function statusText(status) {
 
-  if (
-    status === "upcoming"
-  ) {
+  if (status === "upcoming") {
     return "Bevorstehend";
   }
 
-  if (
-    status === "live-or-started"
-  ) {
+  if (status === "live-or-started") {
     return "LIVE / gestartet";
   }
 
-  if (
-    status === "completed"
-  ) {
+  if (status === "completed") {
     return "Beendet";
   }
 
-  return (
-    status ||
-    "Unbekannt"
-  );
+  return status || "Unbekannt";
 }
 
 
@@ -127,7 +118,9 @@ function marketProbabilities(match) {
 function marketPercentages(match) {
 
   const probs =
-    marketProbabilities(match);
+    marketProbabilities(
+      match
+    );
 
   if (!probs) {
     return null;
@@ -148,11 +141,140 @@ function marketPercentages(match) {
 }
 
 
-function matchRelevant(match) {
+function matchScore(match) {
+
+  const pct =
+    marketPercentages(
+      match
+    );
+
+  let score = 0;
+
+
+  /*
+    1. Datenqualität
+    Beide Quoten vorhanden:
+    bis zu 30 Punkte
+  */
 
   if (
-    !match.startIso
+    Number.isFinite(
+      Number(match.odds1)
+    )
   ) {
+    score += 15;
+  }
+
+  if (
+    Number.isFinite(
+      Number(match.odds2)
+    )
+  ) {
+    score += 15;
+  }
+
+
+  /*
+    2. Ausgeglichenheit des Marktes
+    Ein 50:50 Match ist analytisch
+    interessanter als 90:10.
+    Bis zu 45 Punkte.
+  */
+
+  if (pct) {
+
+    const difference =
+      Math.abs(
+        pct.p1 -
+        pct.p2
+      );
+
+    const closeness =
+      Math.max(
+        0,
+        50 - difference
+      );
+
+    score +=
+      Math.round(
+        closeness * 0.9
+      );
+  }
+
+
+  /*
+    3. Zeitliche Relevanz
+    Heute = 15 Punkte
+    Morgen = 10 Punkte
+  */
+
+  if (
+    match.date ===
+    todayString()
+  ) {
+    score += 15;
+  }
+
+  else if (
+    match.date ===
+    tomorrowString()
+  ) {
+    score += 10;
+  }
+
+
+  /*
+    4. Turnierzuordnung vorhanden
+  */
+
+  if (
+    match.event &&
+    match.event !== "–"
+  ) {
+    score += 5;
+  }
+
+
+  /*
+    5. ATP/WTA sauber erkannt
+  */
+
+  if (
+    match.tour === "ATP" ||
+    match.tour === "WTA"
+  ) {
+    score += 5;
+  }
+
+
+  return Math.min(
+    100,
+    score
+  );
+}
+
+
+function matchScoreLabel(score) {
+
+  if (score >= 85) {
+    return "Sehr interessant";
+  }
+
+  if (score >= 70) {
+    return "Interessant";
+  }
+
+  if (score >= 55) {
+    return "Beobachten";
+  }
+
+  return "Niedrige Priorität";
+}
+
+
+function matchRelevant(match) {
+
+  if (!match.startIso) {
     return true;
   }
 
@@ -177,9 +299,7 @@ function matchRelevant(match) {
 
 function searchMatches(match) {
 
-  if (
-    !searchTerm
-  ) {
+  if (!searchTerm) {
     return true;
   }
 
@@ -204,29 +324,23 @@ function selectedMatches() {
     .filter(match => {
 
       if (
-        !matchRelevant(
-          match
-        )
+        !matchRelevant(match)
       ) {
         return false;
       }
 
 
       if (
-        dayFilter ===
-          "today" &&
-        match.date !==
-          todayString()
+        dayFilter === "today" &&
+        match.date !== todayString()
       ) {
         return false;
       }
 
 
       if (
-        dayFilter ===
-          "tomorrow" &&
-        match.date !==
-          tomorrowString()
+        dayFilter === "tomorrow" &&
+        match.date !== tomorrowString()
       ) {
         return false;
       }
@@ -249,24 +363,15 @@ function selectedMatches() {
 
 
       if (
-        filter ===
-        "priced"
+        filter === "priced" &&
+        !marketProbabilities(match)
       ) {
-
-        if (
-          !marketProbabilities(
-            match
-          )
-        ) {
-          return false;
-        }
+        return false;
       }
 
 
       if (
-        !searchMatches(
-          match
-        )
+        !searchMatches(match)
       ) {
         return false;
       }
@@ -279,21 +384,28 @@ function selectedMatches() {
     .sort(
       (a, b) => {
 
-        const dateA =
-          new Date(
-            a.startIso ||
-            0
-          );
+        const scoreA =
+          matchScore(a);
 
-        const dateB =
-          new Date(
-            b.startIso ||
-            0
+        const scoreB =
+          matchScore(b);
+
+        if (
+          scoreB !== scoreA
+        ) {
+          return (
+            scoreB -
+            scoreA
           );
+        }
 
         return (
-          dateA -
-          dateB
+          new Date(
+            a.startIso || 0
+          ) -
+          new Date(
+            b.startIso || 0
+          )
         );
       }
     );
@@ -313,9 +425,7 @@ function interestingMatches() {
       }
 
       if (
-        !matchRelevant(
-          match
-        )
+        !matchRelevant(match)
       ) {
         return false;
       }
@@ -327,28 +437,10 @@ function interestingMatches() {
       );
     })
 
-    .map(match => {
-
-      const p =
-        marketProbabilities(
-          match
-        );
-
-      return {
-        ...match,
-
-        closeness:
-          Math.abs(
-            p.p1 -
-            p.p2
-          )
-      };
-    })
-
     .sort(
       (a, b) =>
-        a.closeness -
-        b.closeness
+        matchScore(b) -
+        matchScore(a)
     )
 
     .slice(
@@ -367,16 +459,13 @@ function renderHighlights() {
     return;
   }
 
-  box.innerHTML =
-    "";
+  box.innerHTML = "";
 
   const list =
     interestingMatches();
 
 
-  if (
-    !list.length
-  ) {
+  if (!list.length) {
 
     box.innerHTML =
       `
@@ -397,6 +486,17 @@ function renderHighlights() {
         marketPercentages(
           match
         );
+
+      const score =
+        matchScore(
+          match
+        );
+
+      const label =
+        matchScoreLabel(
+          score
+        );
+
 
       const card =
         document.createElement(
@@ -466,6 +566,23 @@ function renderHighlights() {
               ? `${pct.p1} % · Markt · ${pct.p2} %`
               : "Keine Marktwahrscheinlichkeit"
           }
+
+        </div>
+
+
+        <div class="highlight-score">
+
+          <span>
+            Match Score
+          </span>
+
+          <b>
+            ${score}
+          </b>
+
+          <small>
+            ${label}
+          </small>
 
         </div>
         `;
@@ -579,43 +696,71 @@ function updateProbabilityBox(match) {
 }
 
 
-function showDetails(match) {
+function updateScoreBox(match) {
+
+  const score =
+    matchScore(
+      match
+    );
+
+  const label =
+    matchScoreLabel(
+      score
+    );
+
 
   if (
-    $("title")
+    $("matchScore")
   ) {
+    $("matchScore").textContent =
+      score;
+  }
+
+
+  if (
+    $("matchScoreLabel")
+  ) {
+    $("matchScoreLabel").textContent =
+      label;
+  }
+
+
+  if (
+    $("matchScoreBar")
+  ) {
+    $("matchScoreBar").style.width =
+      `${score}%`;
+  }
+}
+
+
+function showDetails(match) {
+
+  if ($("title")) {
     $("title").textContent =
       `${match.player1} vs. ${match.player2}`;
   }
 
 
-  if (
-    $("meta")
-  ) {
+  if ($("meta")) {
     $("meta").textContent =
       `${match.tour} · ${match.event}`;
   }
 
 
-  if (
-    $("p1")
-  ) {
+  if ($("p1")) {
     $("p1").textContent =
       match.player1;
   }
 
 
-  if (
-    $("p2")
-  ) {
+  if ($("p2")) {
     $("p2").textContent =
       match.player2;
   }
 
 
-  if (
-    $("o1")
-  ) {
+  if ($("o1")) {
     $("o1").textContent =
       odd(
         match.odds1
@@ -623,9 +768,7 @@ function showDetails(match) {
   }
 
 
-  if (
-    $("o2")
-  ) {
+  if ($("o2")) {
     $("o2").textContent =
       odd(
         match.odds2
@@ -633,50 +776,36 @@ function showDetails(match) {
   }
 
 
-  if (
-    $("book1")
-  ) {
+  if ($("book1")) {
     $("book1").textContent =
       match.bookmaker1 ||
       "–";
   }
 
 
-  if (
-    $("book2")
-  ) {
+  if ($("book2")) {
     $("book2").textContent =
       match.bookmaker2 ||
       "–";
   }
 
 
-  if (
-    $("event")
-  ) {
+  if ($("event")) {
     $("event").textContent =
       match.event ||
       "–";
   }
 
 
-  if (
-    $("start")
-  ) {
-
+  if ($("start")) {
     $("start").textContent =
-      `
-        ${match.date || ""}
-        ${match.start || ""}
-      `
+      `${match.date || ""} ${match.start || ""}`
         .trim() ||
       "–";
   }
 
 
-  if (
-    $("status")
-  ) {
+  if ($("status")) {
     $("status").textContent =
       statusText(
         match.status
@@ -684,9 +813,7 @@ function showDetails(match) {
   }
 
 
-  if (
-    $("detailSource")
-  ) {
+  if ($("detailSource")) {
     $("detailSource").textContent =
       match.source ||
       "The Odds API";
@@ -694,6 +821,10 @@ function showDetails(match) {
 
 
   updateProbabilityBox(
+    match
+  );
+
+  updateScoreBox(
     match
   );
 }
@@ -714,21 +845,16 @@ function render() {
   }
 
 
-  box.innerHTML =
-    "";
+  box.innerHTML = "";
 
 
-  if (
-    $("count")
-  ) {
+  if ($("count")) {
     $("count").textContent =
       matches.length;
   }
 
 
-  if (
-    $("priced")
-  ) {
+  if ($("priced")) {
 
     $("priced").textContent =
       matches.filter(
@@ -742,9 +868,7 @@ function render() {
   }
 
 
-  if (
-    !matches.length
-  ) {
+  if (!matches.length) {
 
     box.innerHTML =
       `
@@ -769,6 +893,25 @@ function render() {
           match
         );
 
+      const score =
+        matchScore(
+          match
+        );
+
+      const label =
+        matchScoreLabel(
+          score
+        );
+
+
+      const p1IsFav =
+        pct &&
+        pct.p1 >= pct.p2;
+
+      const p2IsFav =
+        pct &&
+        pct.p2 > pct.p1;
+
 
       const card =
         document.createElement(
@@ -782,16 +925,6 @@ function render() {
             ? " selected"
             : ""
         }`;
-
-
-      const p1IsFav =
-        pct &&
-        pct.p1 >= pct.p2;
-
-
-      const p2IsFav =
-        pct &&
-        pct.p2 > pct.p1;
 
 
       card.innerHTML =
@@ -815,6 +948,23 @@ function render() {
           <span>
             ${match.start || ""}
           </span>
+
+        </div>
+
+
+        <div class="score-chip">
+
+          <span>
+            Match Score
+          </span>
+
+          <b>
+            ${score}
+          </b>
+
+          <small>
+            ${label}
+          </small>
 
         </div>
 
@@ -959,9 +1109,7 @@ function render() {
 
 async function load() {
 
-  if (
-    $("updated")
-  ) {
+  if ($("updated")) {
     $("updated").textContent =
       "Lädt …";
   }
@@ -979,9 +1127,7 @@ async function load() {
       );
 
 
-    if (
-      !response.ok
-    ) {
+    if (!response.ok) {
 
       throw new Error(
         `HTTP ${response.status}`
@@ -1009,9 +1155,7 @@ async function load() {
         : null;
 
 
-    if (
-      $("source")
-    ) {
+    if ($("source")) {
 
       $("source").textContent =
         all.length
@@ -1020,9 +1164,7 @@ async function load() {
     }
 
 
-    if (
-      $("updated")
-    ) {
+    if ($("updated")) {
 
       $("updated").textContent =
         generated
@@ -1046,27 +1188,21 @@ async function load() {
     }
 
 
-    if (
-      $("sysSource")
-    ) {
+    if ($("sysSource")) {
       $("sysSource").textContent =
         payload.source ||
         "–";
     }
 
 
-    if (
-      $("tz")
-    ) {
+    if ($("tz")) {
       $("tz").textContent =
         payload.timezone ||
         "Europe/Berlin";
     }
 
 
-    if (
-      $("quota")
-    ) {
+    if ($("quota")) {
       $("quota").textContent =
         payload.quota
           ?.remaining ??
@@ -1081,13 +1217,10 @@ async function load() {
 
   catch(error) {
 
-    all =
-      [];
+    all = [];
 
 
-    if (
-      $("matches")
-    ) {
+    if ($("matches")) {
 
       $("matches").innerHTML =
         `
@@ -1105,25 +1238,19 @@ async function load() {
     }
 
 
-    if (
-      $("updated")
-    ) {
+    if ($("updated")) {
       $("updated").textContent =
         "Ladefehler";
     }
 
 
-    if (
-      $("count")
-    ) {
+    if ($("count")) {
       $("count").textContent =
         "0";
     }
 
 
-    if (
-      $("priced")
-    ) {
+    if ($("priced")) {
       $("priced").textContent =
         "0";
     }
@@ -1229,18 +1356,14 @@ if (search) {
 }
 
 
-if (
-  $("refresh")
-) {
+if ($("refresh")) {
 
   $("refresh").onclick =
     load;
 }
 
 
-if (
-  $("date")
-) {
+if ($("date")) {
 
   $("date").textContent =
     new Date()
