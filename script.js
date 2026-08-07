@@ -1,11 +1,13 @@
 let all = [];
 let rankings = [];
+let formData = [];
 let filter = "all";
 let dayFilter = "today";
 let searchTerm = "";
 let selectedMatch = null;
 let generatedAt = null;
 let rankingsGeneratedAt = null;
+let formGeneratedAt = null;
 let countdownTimer = null;
 
 const $ = id => document.getElementById(id);
@@ -302,6 +304,267 @@ function updateRankingCard(match) {
     `${info.advantage} hat den Rankingvorteil. Unterschied: ${info.difference} Plätze. Ranking Score: ${score}/20.`;
 }
 
+
+/* ------------------------------
+   FORM ENGINE
+------------------------------ */
+
+function getPlayerForm(playerName, tour) {
+  const wantedName = normalizeName(playerName);
+  const wantedTour = String(tour || "").toUpperCase();
+
+  const player = formData.find(item =>
+    normalizeName(item.name) === wantedName &&
+    String(item.tour || "").toUpperCase() === wantedTour
+  );
+
+  if (!player) return null;
+
+  const matches = Array.isArray(player.lastMatches) ? player.lastMatches : [];
+
+  const cleaned = matches
+    .map(item => {
+      if (typeof item === "string") {
+        const result = item.toUpperCase();
+        if (result === "W" || result === "L") return { result };
+        return null;
+      }
+
+      if (item && typeof item === "object") {
+        const result = String(item.result || "").toUpperCase();
+        if (result !== "W" && result !== "L") return null;
+
+        return {
+          result,
+          opponent: item.opponent || null,
+          date: item.date || null,
+          surface: item.surface || null
+        };
+      }
+
+      return null;
+    })
+    .filter(Boolean)
+    .slice(0, 5);
+
+  if (!cleaned.length) return null;
+
+  return {
+    name: player.name,
+    tour: player.tour,
+    matches: cleaned
+  };
+}
+
+function formScoreForPlayer(playerName, tour) {
+  const form = getPlayerForm(playerName, tour);
+  if (!form) return null;
+
+  const wins = form.matches.filter(item => item.result === "W").length;
+  const total = form.matches.length;
+
+  // Maximal 20 Punkte, rein aus den letzten bis zu 5 Ergebnissen.
+  return {
+    wins,
+    total,
+    score: Math.round((wins / total) * 20),
+    matches: form.matches
+  };
+}
+
+function formAdvantage(match) {
+  const p1 = formScoreForPlayer(match.player1, match.tour);
+  const p2 = formScoreForPlayer(match.player2, match.tour);
+
+  if (!p1 || !p2) {
+    return {
+      available: false,
+      p1,
+      p2,
+      advantage: null
+    };
+  }
+
+  let advantage = null;
+
+  if (p1.score > p2.score) advantage = match.player1;
+  else if (p2.score > p1.score) advantage = match.player2;
+
+  return {
+    available: true,
+    p1,
+    p2,
+    advantage
+  };
+}
+
+function formDots(matches) {
+  if (!Array.isArray(matches) || !matches.length) return "Keine Daten";
+
+  return matches
+    .map(item => item.result === "W" ? "● W" : "○ L")
+    .join("   ");
+}
+
+function ensureFormCard() {
+  if ($("formCard")) return;
+
+  const rankingCard = $("rankingCard");
+  const breakdown = document.querySelector(".breakdown");
+  const anchor = rankingCard || breakdown;
+
+  if (!anchor) return;
+
+  anchor.insertAdjacentHTML(
+    "afterend",
+    `
+      <div id="formCard" class="form-card" style="
+        margin-top:15px;
+        padding:14px;
+        border:1px solid #283a4e;
+        border-radius:17px;
+        background:#08121a;
+      ">
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          gap:12px;
+          margin-bottom:12px;
+        ">
+          <div>
+            <span style="
+              color:#4de07f;
+              font-weight:950;
+              letter-spacing:.14em;
+              text-transform:uppercase;
+              font-size:.68rem;
+            ">Form</span>
+            <h3 style="margin:5px 0 0 0;">Letzte Spiele</h3>
+          </div>
+
+          <span id="formStatus" style="
+            padding:5px 8px;
+            border-radius:999px;
+            background:#0b1720;
+            color:#98a8b8;
+            font-size:.64rem;
+          ">Noch keine Daten</span>
+        </div>
+
+        <div style="
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:8px;
+        ">
+          <div style="
+            padding:11px;
+            border:1px solid #283a4e;
+            border-radius:13px;
+          ">
+            <span id="formName1" style="
+              display:block;
+              color:#98a8b8;
+              font-size:.65rem;
+            ">Spieler 1</span>
+
+            <b id="formScore1" style="
+              display:block;
+              margin-top:4px;
+              font-size:1.15rem;
+            ">–</b>
+
+            <div id="formRuns1" style="
+              margin-top:8px;
+              color:#cbd5dd;
+              font-size:.68rem;
+              line-height:1.6;
+            ">Keine Daten</div>
+          </div>
+
+          <div style="
+            padding:11px;
+            border:1px solid #283a4e;
+            border-radius:13px;
+          ">
+            <span id="formName2" style="
+              display:block;
+              color:#98a8b8;
+              font-size:.65rem;
+            ">Spieler 2</span>
+
+            <b id="formScore2" style="
+              display:block;
+              margin-top:4px;
+              font-size:1.15rem;
+            ">–</b>
+
+            <div id="formRuns2" style="
+              margin-top:8px;
+              color:#cbd5dd;
+              font-size:.68rem;
+              line-height:1.6;
+            ">Keine Daten</div>
+          </div>
+        </div>
+
+        <div id="formSummary" style="
+          margin-top:12px;
+          padding:11px;
+          border-radius:13px;
+          background:rgba(77,224,127,.05);
+          color:#d4dee5;
+          font-size:.74rem;
+          line-height:1.5;
+        ">
+          Noch keine Formdaten vorhanden.
+        </div>
+      </div>
+    `
+  );
+}
+
+function updateFormCard(match) {
+  ensureFormCard();
+
+  if (!$("formCard")) return;
+
+  const info = formAdvantage(match);
+
+  $("formName1").textContent = match.player1;
+  $("formName2").textContent = match.player2;
+
+  $("formScore1").textContent =
+    info.p1 ? `${info.p1.wins}/${info.p1.total} Siege · ${info.p1.score}/20` : "–";
+
+  $("formScore2").textContent =
+    info.p2 ? `${info.p2.wins}/${info.p2.total} Siege · ${info.p2.score}/20` : "–";
+
+  $("formRuns1").textContent =
+    info.p1 ? formDots(info.p1.matches) : "Keine Formdaten";
+
+  $("formRuns2").textContent =
+    info.p2 ? formDots(info.p2.matches) : "Keine Formdaten";
+
+  if (!info.available) {
+    $("formStatus").textContent = "Noch keine Daten";
+    $("formSummary").textContent =
+      "Für mindestens einen Spieler liegen noch keine echten Formdaten vor. Es werden bewusst keine Ergebnisse erfunden.";
+    return;
+  }
+
+  $("formStatus").textContent = "Form aktiv";
+
+  if (!info.advantage) {
+    $("formSummary").textContent =
+      "Beide Spieler besitzen anhand der vorhandenen letzten Spiele denselben Form Score.";
+  } else {
+    $("formSummary").textContent =
+      `${info.advantage} besitzt aktuell den besseren Form Score aus den letzten verfügbaren Spielen.`;
+  }
+}
+
+
 /* ------------------------------
    MARKT ENGINE
 ------------------------------ */
@@ -433,6 +696,7 @@ function analysisMetrics(match) {
   const confidence = marketConfidence(match);
   const heat = heatScore(match);
   const rankInfo = rankingAdvantage(match);
+  const formInfo = formAdvantage(match);
 
   if (!pct) {
     return {
@@ -498,6 +762,12 @@ function analysisMetrics(match) {
     } else if (rankInfo.advantage) {
       text += ` Interessant: Der Markt favorisiert ${favorite}, das Ranking spricht dagegen für ${rankInfo.advantage} mit ${rankInfo.difference} Plätzen Vorsprung.`;
     }
+  }
+
+  if (formInfo.available && formInfo.advantage) {
+    text += ` Die Formdaten sprechen aktuell für ${formInfo.advantage}.`;
+  } else if (formInfo.available && !formInfo.advantage) {
+    text += " Die Formdaten ergeben aktuell keinen klaren Vorteil.";
   }
 
   text += confidence >= 90
@@ -696,6 +966,7 @@ function showDetails(match) {
   updateScoreBox(match);
   updateAnalysisEngine(match);
   updateRankingCard(match);
+  updateFormCard(match);
   updateCountdown();
   updateLiveBadge(match);
   updateFavoriteButton(match);
@@ -1018,13 +1289,38 @@ async function loadRankings() {
   }
 }
 
+
+async function loadForm() {
+  try {
+    const response = await fetch(
+      `./data/form.json?v=${Date.now()}`,
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error(`form.json: HTTP ${response.status}`);
+    }
+
+    const payload = await response.json();
+
+    formData = Array.isArray(payload.players) ? payload.players : [];
+    formGeneratedAt = payload.generatedAt || null;
+
+  } catch (error) {
+    console.warn("Formdaten konnten nicht geladen werden:", error);
+    formData = [];
+    formGeneratedAt = null;
+  }
+}
+
 async function load() {
   $("updated").textContent = "Lädt …";
 
   try {
     await Promise.all([
       loadMatches(),
-      loadRankings()
+      loadRankings(),
+      loadForm()
     ]);
 
     $("apiStatus").textContent = "Online";
