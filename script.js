@@ -210,8 +210,8 @@ function buildMatchCard(m){
       <small>${m.status==="live-or-started"?"LIVE":dataDateLabel()}</small>
     </div>
     <div class="names">
-      <b><span class="flag-inline">${playerFlag(m.player1,m.tour,m,1)}</span>${m.player1} <span>${r1?`${m.tour} #${r1}`:""}</span></b>
-      <b><span class="flag-inline">${playerFlag(m.player2,m.tour,m,2)}</span>${m.player2} <span>${r2?`${m.tour} #${r2}`:""}</span></b>
+      <b data-player="1"><span class="flag-inline">${playerFlag(m.player1,m.tour,m,1)}</span>${m.player1} <span>${r1?`${m.tour} #${r1}`:""}</span></b>
+      <b data-player="2"><span class="flag-inline">${playerFlag(m.player2,m.tour,m,2)}</span>${m.player2} <span>${r2?`${m.tour} #${r2}`:""}</span></b>
     </div>
     <div class="score">${missionScore(m)}</div>
     <button class="watch-star ${isWatched(m)?"active":""}" aria-label="Watchlist">${isWatched(m)?"★":"☆"}</button>
@@ -224,6 +224,27 @@ function buildMatchCard(m){
     e.stopPropagation();
     toggleWatch(m);
   };
+
+  el.querySelectorAll("[data-player]").forEach(node=>{
+    node.style.cursor="pointer";
+    node.onclick=e=>{
+      e.stopPropagation();
+      const side=Number(node.dataset.player);
+      const player={
+        name:side===1?m.player1:m.player2,
+        tour:m.tour,
+        flag:playerFlag(side===1?m.player1:m.player2,m.tour,m,side)
+      };
+      showPlayerProfile(player);
+      document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
+      const playerButton=document.querySelector('.bottom-nav button[data-view="playerView"]');
+      if(playerButton) playerButton.classList.add("active");
+      document.querySelectorAll(".app-view").forEach(v=>v.classList.add("hidden"));
+      $("playerView").classList.remove("hidden");
+      window.scrollTo({top:0,behavior:"smooth"});
+    };
+  });
+
   return el;
 }
 function renderList(){
@@ -266,109 +287,170 @@ function renderWatchlist(){
   list.sort((a,b)=>new Date(a.startIso||0)-new Date(b.startIso||0))
       .forEach(m=>wrap.appendChild(buildMatchCard(m)));
 }
+
+function uniquePlayers(){
+  const map=new Map();
+
+  MATCHES.forEach(m=>{
+    [
+      {name:m.player1,tour:m.tour,flag:playerFlag(m.player1,m.tour,m,1)},
+      {name:m.player2,tour:m.tour,flag:playerFlag(m.player2,m.tour,m,2)}
+    ].forEach(p=>{
+      if(!p.name) return;
+      const key=`${String(p.tour||"").toUpperCase()}|${normalizeName(p.name)}`;
+      if(!map.has(key)) map.set(key,p);
+    });
+  });
+
+  RANKINGS.forEach(p=>{
+    const key=`${String(p.tour||"").toUpperCase()}|${normalizeName(p.name)}`;
+    if(!map.has(key)){
+      map.set(key,{
+        name:p.name,
+        tour:p.tour,
+        flag:playerFlag(p.name,p.tour)
+      });
+    }
+  });
+
+  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name,"de"));
+}
+
+function showPlayerProfile(player){
+  const box=$("playerProfile");
+  if(!box) return;
+
+  const rank=getRank(player.name,player.tour);
+  const form=getForm(player.name,player.tour);
+  const played=MATCHES.filter(m=>
+    normalizeName(m.player1)===normalizeName(player.name) ||
+    normalizeName(m.player2)===normalizeName(player.name)
+  ).length;
+
+  box.classList.remove("empty-state");
+  box.innerHTML=`
+    <div class="profile-avatar">${player.flag||"🎾"}</div>
+    <div>
+      <span class="eyebrow">${player.tour||"TENNIS"}</span>
+      <h3>${player.name}</h3>
+      <p>${rank?`${player.tour} #${rank}`:"Ranking noch nicht verfügbar"}</p>
+    </div>
+
+    <div class="profile-metrics">
+      <article>
+        <span>RANKING</span>
+        <b>${rank?`#${rank}`:"–"}</b>
+      </article>
+      <article>
+        <span>FORM</span>
+        <b>${form?`${form.pct}%`:"–"}</b>
+      </article>
+      <article>
+        <span>MATCHES</span>
+        <b>${played}</b>
+      </article>
+    </div>
+  `;
+}
+
+function renderPlayerSearch(query=""){
+  const wrap=$("playerResults");
+  if(!wrap) return;
+
+  const q=normalizeName(query);
+  const players=uniquePlayers()
+    .filter(p=>!q || normalizeName(p.name).includes(q))
+    .slice(0,16);
+
+  wrap.innerHTML="";
+
+  if(!players.length){
+    wrap.innerHTML='<div class="empty">Kein Spieler gefunden.</div>';
+    return;
+  }
+
+  players.forEach(p=>{
+    const row=document.createElement("div");
+    row.className="player-result";
+    const r=getRank(p.name,p.tour);
+    row.innerHTML=`
+      <span class="flag">${p.flag||"🎾"}</span>
+      <button type="button">
+        <strong>${p.name}</strong>
+        <small>${p.tour||""}${r?` · #${r}`:""}</small>
+      </button>
+    `;
+    row.querySelector("button").onclick=()=>showPlayerProfile(p);
+    wrap.appendChild(row);
+  });
+}
+
 function renderAI(){
   const box=$("aiReport");
   if(!box) return;
+
   const m=topMatch();
+
   if(!m){
     box.textContent="Noch kein Match für einen Mission Report verfügbar.";
+    $("aiScore").textContent="0";
+    $("aiMatchTitle").textContent="–";
+    $("aiMatchMeta").textContent="–";
+    $("aiMarket").textContent="–";
+    $("aiRanking").textContent="–";
+    $("aiForm").textContent="–";
+    $("aiConfidence").textContent="–";
     return;
   }
-  const mk=market(m),r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
-  const f1=getForm(m.player1,m.tour),f2=getForm(m.player2,m.tour);
-  let text=`${playerFlag(m.player1,m.tour,m,1)} ${m.player1} vs. ${playerFlag(m.player2,m.tour,m,2)} ${m.player2}. `;
-  if(mk){
-    const fav=mk.p1>=mk.p2?m.player1:m.player2;
-    text+=`Der Markt sieht ${fav} mit ${Math.max(mk.p1,mk.p2)} % vorne. `;
-  }
-  if(r1&&r2){
-    text+=`Im Ranking liegt ${r1<r2?m.player1:m.player2} ${Math.abs(r1-r2)} Plätze vor dem Gegner. `;
-  }else{
-    text+="Für mindestens einen Spieler fehlt aktuell ein Rankingwert. ";
-  }
-  if(f1&&f2){
-    text+=`Die Formwerte der letzten verfügbaren Spiele liegen bei ${f1.pct} % und ${f2.pct} %. `;
-  }else{
-    text+="Formdaten sind noch nicht vollständig verfügbar. ";
-  }
-  text+=`Mission Score: ${missionScore(m)}/100. Confidence: ${confidence(m)} %.`;
-  box.textContent=text;
-}
 
-function showDetails(m){
-  const sc=missionScore(m);
   const mk=market(m);
-  const conf=confidence(m);
   const r1=getRank(m.player1,m.tour),r2=getRank(m.player2,m.tour);
   const f1=getForm(m.player1,m.tour),f2=getForm(m.player2,m.tour);
+  const sc=missionScore(m);
+  const conf=confidence(m);
 
-  $("detailsPanel").classList.remove("hidden");
-  $("detailTitle").textContent=`${m.player1} vs. ${m.player2}`;
-  $("detailScore").textContent=sc;
-  setRing($("detailScore").parentElement,sc);
-  $("detailSignal").textContent=scoreLabel(sc);
+  $("aiScore").textContent=sc;
+  setRing($("aiScore").parentElement,sc);
+  $("aiMatchTitle").textContent=`${m.player1} vs. ${m.player2}`;
+  $("aiMatchMeta").textContent=`${m.tour||""} · ${m.event||"Turnier"} · ${m.start||"–"}`;
 
-  let text="Die Analyse nutzt nur Daten, die in deiner App tatsächlich vorhanden sind.";
+  $("aiMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
+  $("aiRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
+  $("aiForm").textContent=f1&&f2?`${f1.pct}% / ${f2.pct}%`:"–";
+  $("aiConfidence").textContent=`${conf}%`;
+
+  let parts=[];
+  parts.push(`${playerFlag(m.player1,m.tour,m,1)} ${m.player1} trifft auf ${playerFlag(m.player2,m.tour,m,2)} ${m.player2}.`);
+
   if(mk){
     const fav=mk.p1>=mk.p2?m.player1:m.player2;
-    text=`Der Markt sieht ${fav} vorne.`;
+    const pct=Math.max(mk.p1,mk.p2);
+    parts.push(`Der Markt sieht ${fav} aktuell mit rund ${pct} % vorne.`);
+  }else{
+    parts.push("Für den Marktvergleich fehlen aktuell vollständige Quoten.");
   }
+
   if(r1&&r2){
-    text+=` Im Ranking liegt ${r1<r2?m.player1:m.player2} ${Math.abs(r1-r2)} Plätze vor dem Gegner.`;
+    const leader=r1<r2?m.player1:m.player2;
+    parts.push(`Das Ranking unterstützt ${leader}: Vorteil von ${Math.abs(r1-r2)} Plätzen.`);
+  }else{
+    parts.push("Der Rankingvergleich ist noch nicht vollständig.");
   }
+
   if(f1&&f2){
-    text+=` Die vorhandene Form liegt bei ${f1.pct}% zu ${f2.pct}%.`;
+    if(f1.pct===f2.pct){
+      parts.push(`Die vorhandenen Formdaten sind mit ${f1.pct} % ausgeglichen.`);
+    }else{
+      const leader=f1.pct>f2.pct?m.player1:m.player2;
+      parts.push(`Die Formdaten sprechen aktuell eher für ${leader}.`);
+    }
+  }else{
+    parts.push("Formdaten sind noch nicht vollständig verfügbar.");
   }
-  $("detailNarrative").textContent=text;
 
-  $("factorMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
-  $("factorRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
-  $("factorForm").textContent=f1&&f2?`${f1.pct}% / ${f2.pct}%`:"–";
-  $("factorConfidence").textContent=`${conf}%`;
-
-  $("detailP1").textContent=m.player1;
-  $("detailP2").textContent=m.player2;
-  $("detailO1").textContent=odd(m.odds1);
-  $("detailO2").textContent=odd(m.odds2);
-
-  $("detailsPanel").scrollIntoView({behavior:"smooth",block:"start"});
+  parts.push(`Mission Score ${sc}/100, Confidence ${conf} %.`);
+  box.textContent=parts.join(" ");
 }
-async function fetchJson(path,fallback){
-  try{
-    const res=await fetch(`${path}?v=${Date.now()}`,{cache:"no-store"});
-    if(!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
-    return await res.json();
-  }catch(err){
-    console.warn(err);
-    return fallback;
-  }
-}
-async function load(){
-  $("statusTitle").textContent="Daten werden geladen";
-  $("statusText").textContent="Mission Control verbindet sich mit deinen JSON-Dateien.";
-
-  const [matchesPayload,rankPayload,formPayload]=await Promise.all([
-    fetchJson("./data/matches.json",{matches:[]}),
-    fetchJson("./data/rankings.json",{players:[]}),
-    fetchJson("./data/form.json",{players:[]})
-  ]);
-
-  MATCHES=Array.isArray(matchesPayload.matches)?matchesPayload.matches:[];
-  RANKINGS=Array.isArray(rankPayload.players)?rankPayload.players:[];
-  FORMS=Array.isArray(formPayload.players)?formPayload.players:[];
-
-  activeDate=resolveActiveDate();
-  updateSystemStatus(matchesPayload);
-  renderStats();
-  renderTop();
-  renderList();
-  renderAllMatches();
-  renderWatchlist();
-  renderAI();
-}
-$("refreshBtn").onclick=load;
-$("toggleAllBtn").onclick=()=>{showAll=!showAll;renderList();};
-$("closeDetailsBtn").onclick=()=>$("detailsPanel").classList.add("hidden");
 
 document.querySelectorAll(".bottom-nav button[data-view]").forEach(button=>{
   button.onclick=()=>{
@@ -381,6 +463,11 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button=>{
   };
 });
 
+
+
+if($("playerSearch")){
+  $("playerSearch").addEventListener("input",e=>renderPlayerSearch(e.target.value));
+}
 
 load();
 

@@ -164,10 +164,26 @@
     </section>
 
     <section id="playerView" class="app-view hidden">
-      <section class="panel subpage empty-state">
-        <span class="eyebrow">PLAYER</span>
-        <h2>Spielerprofile</h2>
-        <p>Der Player Hub wird in der nächsten Ausbaustufe mit Ranking, Form, Belag und Saisonbilanz gefüllt.</p>
+      <section class="panel subpage">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">PLAYER HUB</span>
+            <h2>Spielerprofile</h2>
+          </div>
+          <span class="muted">aus vorhandenen Daten</span>
+        </div>
+
+        <div class="player-search-wrap">
+          <input id="playerSearch" class="player-search" type="search" placeholder="Spieler suchen …" autocomplete="off">
+        </div>
+
+        <div id="playerProfile" class="player-profile empty-state">
+          <div class="profile-avatar">🎾</div>
+          <h3>Noch kein Spieler gewählt</h3>
+          <p>Tippe bei einem Match auf einen Spielernamen oder suche hier nach einem Spieler.</p>
+        </div>
+
+        <div id="playerResults" class="player-results"></div>
       </section>
     </section>
 
@@ -185,9 +201,31 @@
 
     <section id="aiView" class="app-view hidden">
       <section class="panel subpage">
-        <span class="eyebrow">MISSION AI</span>
-        <h2>Mission Report</h2>
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">MISSION AI</span>
+            <h2>Mission Report</h2>
+          </div>
+          <span id="aiBadge" class="ai-badge">Analyse</span>
+        </div>
+
+        <div class="ai-score-row">
+          <div class="ring ai-ring"><b id="aiScore">0</b></div>
+          <div>
+            <span class="mini-label">TOP MATCH</span>
+            <h3 id="aiMatchTitle">–</h3>
+            <p id="aiMatchMeta">–</p>
+          </div>
+        </div>
+
         <div id="aiReport" class="ai-report">Daten werden ausgewertet …</div>
+
+        <div class="ai-factor-grid">
+          <article><span>Markt</span><b id="aiMarket">–</b></article>
+          <article><span>Ranking</span><b id="aiRanking">–</b></article>
+          <article><span>Form</span><b id="aiForm">–</b></article>
+          <article><span>Confidence</span><b id="aiConfidence">–</b></article>
+        </div>
       </section>
     </section>
   </main>
@@ -200,7 +238,7 @@
     <button data-view="aiView">◉<span>Mission AI</span></button>
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v1.1.0</footer>
+  <footer>Mission 1000 · Project Eclipse · v1.2.0</footer>
 </div>
 
 <script src="./script.js"></script>
