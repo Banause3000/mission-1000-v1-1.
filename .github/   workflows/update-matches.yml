@@ -1,7 +1,7 @@
 name: Tennisdaten aktualisieren
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: 
 
 jobs:
   test:
