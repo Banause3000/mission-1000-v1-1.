@@ -731,3 +731,12 @@ body{
   .mc-grid{grid-template-columns:repeat(2,1fr)}
   .break-row{grid-template-columns:64px 1fr 48px}
 }
+
+
+/* v2.2.0 data motor */
+.mc-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:430px){
+  .mc-grid{grid-template-columns:repeat(2,1fr)}
+}
