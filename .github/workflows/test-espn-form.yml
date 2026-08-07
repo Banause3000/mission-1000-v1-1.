@@ -1,0 +1,100 @@
+name: ESPN Formquelle testen
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-espn-form:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: Python vorbereiten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Datumsfenster berechnen
+        shell: bash
+        run: |
+          echo "FROM_DATE=$(date -u -d '35 days ago' +%Y%m%d)" >> "$GITHUB_ENV"
+          echo "TO_DATE=$(date -u +%Y%m%d)" >> "$GITHUB_ENV"
+
+      - name: ATP Daten testen
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          URL="https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard?dates=${FROM_DATE}-${TO_DATE}&limit=1000"
+
+          curl -L --fail --retry 3 \
+            -H "Accept: application/json" \
+            -A "Mission1000/0.8.3" \
+            "$URL" \
+            -o /tmp/atp.json
+
+          python - <<'PY'
+          import json
+
+          with open("/tmp/atp.json", "r", encoding="utf-8") as f:
+              payload = json.load(f)
+
+          print("ATP events:", len(payload.get("events") or []))
+
+          if "events" not in payload:
+              raise SystemExit("ATP Antwort hat kein events-Feld.")
+          PY
+
+      - name: WTA Daten testen
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          URL="https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=${FROM_DATE}-${TO_DATE}&limit=1000"
+
+          curl -L --fail --retry 3 \
+            -H "Accept: application/json" \
+            -A "Mission1000/0.8.3" \
+            "$URL" \
+            -o /tmp/wta.json
+
+          python - <<'PY'
+          import json
+
+          with open("/tmp/wta.json", "r", encoding="utf-8") as f:
+              payload = json.load(f)
+
+          print("WTA events:", len(payload.get("events") or []))
+
+          if "events" not in payload:
+              raise SystemExit("WTA Antwort hat kein events-Feld.")
+          PY
+
+      - name: Formdaten erzeugen
+        run: |
+          python scripts/build_form_espn.py \
+            /tmp/atp.json \
+            --wta \
+            /tmp/wta.json
+
+      - name: Aenderungen committen
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- data/form.json; then
+            echo "Keine Aenderungen an form.json."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/form.json
+          git commit -m "Update tennis form data from ESPN"
+          git push
