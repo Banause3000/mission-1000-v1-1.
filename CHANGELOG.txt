@@ -1,0 +1,10 @@
+Version 0.7.1
+
+Neu:
+- Ranking-Datenstruktur vorbereitet
+- rankings.json eingeführt
+
+Geplant in Phase 7.2:
+- Anzeige der Rankings
+- Ranking Score
+- Ranking Advantage
