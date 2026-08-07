@@ -43,7 +43,7 @@
       <div><span>API-Credits</span><b id="controlQuota">–</b></div>
       <div><span>Heute</span><b id="todayTotal">0 Matches</b></div>
       <div><span>Live</span><b id="liveTotal">0 Matches</b></div>
-      <div><span>Favoriten</span><b id="favTotal">0 Matches</b></div>
+      <div><span>Watchlist</span><b id="favTotal">0 Matches</b></div>
       <div><span>Datenstand</span><b id="controlUpdated">–</b></div>
     </div>
   </section>
@@ -58,6 +58,27 @@
     <div class="stats">
       <div><b id="count">0</b><span>Matches</span></div>
       <div><b id="priced">0</b><span>mit Quoten</span></div>
+    </div>
+  </section>
+
+  <section class="panel intelligence">
+    <div class="section-title">
+      <div>
+        <span class="tag">Mission Intelligence</span>
+        <h3 id="intelHeadline">Markt-Radar</h3>
+      </div>
+      <span id="intelBadge" class="intel-badge">Lädt …</span>
+    </div>
+
+    <p id="intelText">
+      Die stärksten Markt-Signale des Tages werden gerade ausgewertet.
+    </p>
+
+    <div class="intel-grid">
+      <div><span>Top Match</span><b id="intelTopMatch">–</b></div>
+      <div><span>Heat</span><b id="intelHeat">–</b></div>
+      <div><span>Confidence</span><b id="intelConfidence">–</b></div>
+      <div><span>Marktbild</span><b id="intelMarket">–</b></div>
     </div>
   </section>
 
@@ -84,7 +105,7 @@
       <button data-filter="ATP">ATP</button>
       <button data-filter="WTA">WTA</button>
       <button data-filter="priced">Mit Quoten</button>
-      <button data-filter="favorites">Favoriten</button>
+      <button data-filter="favorites">Watchlist</button>
     </nav>
 
     <input id="search" class="search" type="search" placeholder="Spieler oder Turnier suchen …" autocomplete="off">
@@ -109,7 +130,7 @@
           <h3 id="title">Match auswählen</h3>
           <p id="meta" class="small-muted">Tippe auf eine Matchkarte.</p>
         </div>
-        <button id="favoriteBtn" class="favorite-btn" title="Match merken">☆</button>
+        <button id="favoriteBtn" class="favorite-btn" title="Match beobachten">☆</button>
       </div>
 
       <div id="liveBadge" class="live-badge hidden"><span></span>LIVE</div>
@@ -134,6 +155,19 @@
         </div>
 
         <small>Interesse-Score aus verfügbaren Marktdaten. Keine Gewinnprognose.</small>
+      </div>
+
+      <div class="signal-grid">
+        <div>
+          <span>Heat</span>
+          <b id="heatScore">–</b>
+          <small id="heatLabel">–</small>
+        </div>
+        <div>
+          <span>Confidence</span>
+          <b id="confidenceScore">–</b>
+          <small>Datenqualität</small>
+        </div>
       </div>
 
       <div class="countdown-card">
@@ -185,6 +219,14 @@
         </div>
 
         <small>Aus den aktuellen Quoten normalisiert. Keine eigene Prognose.</small>
+      </div>
+
+      <div class="analysis-card">
+        <div class="analysis-head">
+          <span class="tag">Automatische Einordnung</span>
+          <span class="analysis-state">Marktdaten</span>
+        </div>
+        <p id="autoAnalysis">–</p>
       </div>
 
       <div class="breakdown">

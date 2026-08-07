@@ -45,11 +45,12 @@ function toggleFavorite(match) {
 }
 
 function updateFavoriteButton(match) {
-  if (!$("favoriteBtn") || !match) return;
+  const button = $("favoriteBtn");
+  if (!button || !match) return;
 
   const active = isFavorite(match);
-  $("favoriteBtn").textContent = active ? "★" : "☆";
-  $("favoriteBtn").classList.toggle("active", active);
+  button.textContent = active ? "★" : "☆";
+  button.classList.toggle("active", active);
 }
 
 function odd(value) {
@@ -160,10 +161,43 @@ function matchScoreTier(score) {
 
 function marketConfidence(match) {
   const probs = marketProbabilities(match);
-  if (!probs) return null;
+  if (!probs) return 0;
 
   const margin = Math.max(0, probs.overround - 1);
-  return Math.max(0, Math.min(100, 100 - Math.round(margin * 300)));
+  const marginQuality = Math.max(0, 100 - Math.round(margin * 300));
+
+  const completeness =
+    (Number.isFinite(Number(match.odds1)) ? 25 : 0) +
+    (Number.isFinite(Number(match.odds2)) ? 25 : 0) +
+    (match.bookmaker1 ? 10 : 0) +
+    (match.bookmaker2 ? 10 : 0) +
+    (match.event ? 10 : 0) +
+    (match.startIso ? 10 : 0) +
+    (match.tour ? 10 : 0);
+
+  return Math.round((marginQuality * 0.55) + (Math.min(100, completeness) * 0.45));
+}
+
+function heatScore(match) {
+  const pct = marketPercentages(match);
+  const score = matchScore(match);
+  const confidence = marketConfidence(match);
+
+  let balanceBonus = 0;
+  if (pct) {
+    const gap = Math.abs(pct.p1 - pct.p2);
+    balanceBonus = Math.max(0, 30 - Math.round(gap * 0.55));
+  }
+
+  const liveBonus = match.status === "live-or-started" ? 8 : 0;
+  return Math.min(100, Math.round(score * 0.55 + confidence * 0.25 + balanceBonus * 0.20 + liveBonus));
+}
+
+function heatLabel(value) {
+  if (value >= 85) return "Sehr heiß";
+  if (value >= 70) return "Hohe Aufmerksamkeit";
+  if (value >= 55) return "Solides Interesse";
+  return "Ruhiger Markt";
 }
 
 function matchRelevant(match) {
@@ -203,6 +237,46 @@ function selectedMatches() {
     });
 }
 
+function automaticAnalysis(match) {
+  const pct = marketPercentages(match);
+  const confidence = marketConfidence(match);
+  const heat = heatScore(match);
+  const score = matchScore(match);
+
+  if (!pct) {
+    return "Für dieses Match fehlen vollständige Quoten. Deshalb wird keine Markt-Einordnung erzeugt.";
+  }
+
+  const favorite = pct.p1 >= pct.p2 ? match.player1 : match.player2;
+  const favoritePct = Math.max(pct.p1, pct.p2);
+  const gap = Math.abs(pct.p1 - pct.p2);
+
+  let marketText;
+  if (gap <= 8) {
+    marketText = "Der Markt sieht ein sehr enges Duell ohne klaren Abstand zwischen beiden Seiten.";
+  } else if (gap <= 20) {
+    marketText = `Der Markt sieht ${favorite} leicht vorne.`;
+  } else if (gap <= 35) {
+    marketText = `Der Markt sieht ${favorite} als klaren Favoriten.`;
+  } else {
+    marketText = `Der Markt sieht ${favorite} deutlich vorne.`;
+  }
+
+  let qualityText = confidence >= 85
+    ? "Die vorhandenen Marktdaten sind vollständig und konsistent genug für eine stabile Quoten-Einordnung."
+    : confidence >= 70
+      ? "Die Datenbasis ist ordentlich, aber noch nicht stark genug für eine eigene Leistungsprognose."
+      : "Die Datenbasis ist noch begrenzt.";
+
+  let interestText = heat >= 80
+    ? "Das Match gehört aktuell zu den auffälligeren Begegnungen im Markt-Radar."
+    : heat >= 65
+      ? "Das Match ist für die weitere Beobachtung interessant."
+      : "Der Markt liefert aktuell kein besonders starkes Interesse-Signal.";
+
+  return `${marketText} Marktanteil des Favoriten: ${favoritePct} %. ${qualityText} ${interestText} Match Score: ${score}/100.`;
+}
+
 function updateCountdown() {
   if (!selectedMatch || !$("countdown")) return;
 
@@ -234,9 +308,7 @@ function updateCountdown() {
 }
 
 function updateLiveBadge(match) {
-  const badge = $("liveBadge");
-  if (!badge) return;
-  badge.classList.toggle("hidden", match.status !== "live-or-started");
+  $("liveBadge").classList.toggle("hidden", match.status !== "live-or-started");
 }
 
 function updateProbabilityBox(match) {
@@ -272,6 +344,8 @@ function updateProbabilityBox(match) {
 function updateScoreBox(match) {
   const parts = scoreParts(match);
   const score = parts.total;
+  const confidence = marketConfidence(match);
+  const heat = heatScore(match);
 
   $("matchScore").textContent = score;
   $("matchScoreLabel").textContent = matchScoreLabel(score);
@@ -280,12 +354,14 @@ function updateScoreBox(match) {
   $("scoreRingValue").textContent = score;
   $("scoreRing").style.setProperty("--score", score);
 
+  $("heatScore").textContent = `${heat}/100`;
+  $("heatLabel").textContent = heatLabel(heat);
+  $("confidenceScore").textContent = `${confidence}/100`;
+
   $("dataQuality").textContent = `${parts.dataQuality}/30`;
   $("balanceScore").textContent = `${parts.balance}/45`;
   $("timingScore").textContent = `${parts.timing}/15`;
-
-  const confidence = marketConfidence(match);
-  $("marketConfidence").textContent = confidence === null ? "–" : `${confidence}/100`;
+  $("marketConfidence").textContent = `${confidence}/100`;
 
   const pct = marketPercentages(match);
 
@@ -299,7 +375,7 @@ function updateScoreBox(match) {
 
   if (gap <= 10) {
     $("scoreExplanation").textContent =
-      "Der Markt sieht ein sehr ausgeglichenes Duell. Das macht das Match für eine spätere Detailanalyse besonders spannend.";
+      "Der Markt sieht ein sehr ausgeglichenes Duell. Das erhöht den Analysewert des Matches.";
   } else if (gap <= 25) {
     $("scoreExplanation").textContent =
       "Der Markt hat einen Favoriten, das Match bleibt aber vergleichsweise offen.";
@@ -327,6 +403,8 @@ function showDetails(match) {
   $("status").textContent = statusText(match.status);
   $("detailSource").textContent = match.source || "The Odds API";
 
+  $("autoAnalysis").textContent = automaticAnalysis(match);
+
   updateProbabilityBox(match);
   updateScoreBox(match);
   updateCountdown();
@@ -340,7 +418,7 @@ function renderHighlights() {
 
   const list = all
     .filter(m => m.date === todayString() && matchRelevant(m))
-    .sort((a, b) => matchScore(b) - matchScore(a))
+    .sort((a, b) => heatScore(b) - heatScore(a))
     .slice(0, 3);
 
   if (!list.length) {
@@ -351,6 +429,7 @@ function renderHighlights() {
   list.forEach(match => {
     const pct = marketPercentages(match);
     const score = matchScore(match);
+    const heat = heatScore(match);
 
     const card = document.createElement("div");
     card.className = "highlight-card";
@@ -369,6 +448,8 @@ function renderHighlights() {
         </span>
       </div>
 
+      <div class="heat-chip">Heat ${heat}/100</div>
+
       <div class="highlight-match">
         <div><b>${match.player1}</b><span>${odd(match.odds1)}</span></div>
         <div><b>${match.player2}</b><span>${odd(match.odds2)}</span></div>
@@ -382,6 +463,46 @@ function renderHighlights() {
     card.onclick = () => showDetails(match);
     box.appendChild(card);
   });
+}
+
+function updateIntelligence() {
+  const today = all.filter(m => m.date === todayString() && matchRelevant(m));
+
+  if (!today.length) {
+    $("intelBadge").textContent = "Keine Daten";
+    $("intelTopMatch").textContent = "–";
+    $("intelHeat").textContent = "–";
+    $("intelConfidence").textContent = "–";
+    $("intelMarket").textContent = "–";
+    $("intelText").textContent = "Für heute liegen aktuell keine passenden Matches vor.";
+    return;
+  }
+
+  const ranked = [...today].sort((a, b) => heatScore(b) - heatScore(a));
+  const top = ranked[0];
+  const pct = marketPercentages(top);
+  const heat = heatScore(top);
+  const confidence = marketConfidence(top);
+
+  $("intelBadge").textContent = heat >= 80 ? "Starkes Signal" : heat >= 65 ? "Beobachten" : "Ruhiger Markt";
+  $("intelTopMatch").textContent = `${top.player1} vs. ${top.player2}`;
+  $("intelHeat").textContent = `${heat}/100`;
+  $("intelConfidence").textContent = `${confidence}/100`;
+
+  if (pct) {
+    const gap = Math.abs(pct.p1 - pct.p2);
+    $("intelMarket").textContent =
+      gap <= 10 ? "Sehr offen" :
+      gap <= 25 ? "Leichter Favorit" :
+      "Klarer Favorit";
+  } else {
+    $("intelMarket").textContent = "Unvollständig";
+  }
+
+  $("intelText").textContent =
+    `Das aktuell auffälligste Match im Markt-Radar ist ${top.player1} gegen ${top.player2}. ` +
+    `Der Heat Score liegt bei ${heat}/100, die Daten-Confidence bei ${confidence}/100. ` +
+    `Das ist eine Markt-Einordnung und noch keine eigene Leistungsprognose.`;
 }
 
 function render() {
@@ -398,12 +519,14 @@ function render() {
     box.innerHTML = '<div class="empty">Keine passenden Matches gefunden.</div>';
     renderHighlights();
     updateMissionControl();
+    updateIntelligence();
     return;
   }
 
   matches.forEach((match, index) => {
     const pct = marketPercentages(match);
     const score = matchScore(match);
+    const heat = heatScore(match);
 
     const p1Fav = pct && pct.p1 >= pct.p2;
     const p2Fav = pct && pct.p2 > pct.p1;
@@ -420,17 +543,20 @@ function render() {
           </div>
           <div class="card-actions">
             ${match.status === "live-or-started" ? '<span class="mini-live"><i></i>LIVE</span>' : ""}
-            <button class="mini-favorite" data-fav="${matchKey(match)}">${isFavorite(match) ? "★" : "☆"}</button>
+            <button class="mini-favorite">${isFavorite(match) ? "★" : "☆"}</button>
             <span>${match.start || ""}</span>
           </div>
         </div>
 
-        <div class="score-chip">
-          <b>${score}</b>
-          <span>
-            <small>Match Score</small>
-            ${matchScoreTier(score)}
-          </span>
+        <div class="card-signal-row">
+          <div class="score-chip">
+            <b>${score}</b>
+            <span>
+              <small>Match Score</small>
+              ${matchScoreTier(score)}
+            </span>
+          </div>
+          <div class="heat-chip">Heat ${heat}</div>
         </div>
       </div>
 
@@ -472,8 +598,7 @@ function render() {
       showDetails(match);
     };
 
-    const favButton = card.querySelector(".mini-favorite");
-    favButton.onclick = event => {
+    card.querySelector(".mini-favorite").onclick = event => {
       event.stopPropagation();
       toggleFavorite(match);
     };
@@ -484,6 +609,7 @@ function render() {
   showDetails(matches[0]);
   renderHighlights();
   updateMissionControl();
+  updateIntelligence();
 }
 
 function updateMissionControl() {
@@ -494,10 +620,7 @@ function updateMissionControl() {
   $("todayTotal").textContent = `${todayMatches.length} Matches`;
   $("liveTotal").textContent = `${liveMatches.length} Matches`;
   $("favTotal").textContent = `${favoriteMatches.length} Matches`;
-
-  if ($("quota") && $("controlQuota")) {
-    $("controlQuota").textContent = $("quota").textContent || "–";
-  }
+  $("controlQuota").textContent = $("quota").textContent || "–";
 
   $("controlUpdated").textContent = generatedAt
     ? generatedAt.toLocaleString("de-DE", {
@@ -541,7 +664,6 @@ async function load() {
     $("sysSource").textContent = payload.source || "–";
     $("tz").textContent = payload.timezone || "Europe/Berlin";
     $("quota").textContent = payload.quota?.remaining ?? "–";
-
     $("apiStatus").textContent = "Online";
 
     render();
@@ -554,6 +676,7 @@ async function load() {
     $("priced").textContent = "0";
     $("apiStatus").textContent = "Fehler";
     updateMissionControl();
+    updateIntelligence();
   }
 }
 
