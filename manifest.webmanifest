@@ -1,11 +1,10 @@
 {
-  "name": "Mission 1000 Tennis",
+  "name": "Mission 1000 Tennis Intelligence",
   "short_name": "Mission 1000",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#06100d",
-  "theme_color": "#07130f",
+  "background_color": "#05080d",
+  "theme_color": "#05080d",
   "icons": [
     {
       "src": "./icon-192.png",
