@@ -1,31 +1,29 @@
 MISSION 1000
-Version 0.8.0 - Form Engine
+Version 0.8.2 - Sackmann Form Engine
 
-NEU
-- Neue Datenquelle: data/form.json
-- Formkarte in den Matchdetails
-- Bis zu 5 letzte Spiele pro Spieler
-- Form Score 0-20
-- Vergleich beider Spieler
-- Mission Analyse kann echte Formdaten berücksichtigen
-- Kein Ampel-System
-- Keine erfundenen Ergebnisse
+NEU HOCHLADEN:
+1. scripts/build_form_sackmann.py
+2. .github/workflows/update-form.yml
 
-WICHTIG
-form.json ist aktuell absichtlich leer.
-Die App zeigt daher zunächst "Noch keine Formdaten".
-Wir bauen als nächsten Schritt die automatische Quelle für echte Ergebnisse.
+Danach:
+GitHub -> Actions -> Formdaten aktualisieren -> Run workflow
 
-UPLOAD AUF GITHUB
-1. index.html ersetzen.
-2. style.css ersetzen.
-3. script.js ersetzen.
-4. data/rankings.json bleibt im data-Ordner.
-5. NEU: data/form.json in den data-Ordner laden.
-6. Committen.
-7. Auf grünes GitHub-Pages-Deployment warten.
-8. App neu laden.
+Was der Workflow macht:
+- lädt die offiziellen ATP- und WTA-Tour-Level-Dateien für 2026 direkt von GitHub Raw
+- baut für jeden Spieler die letzten 5 Matches
+- speichert W/L, Gegner, Datum, Oberfläche, Turnier, Runde und Score
+- aktualisiert data/form.json
+- läuft zusätzlich täglich automatisch
 
-ERWARTETES ERGEBNIS
-In den Matchdetails erscheint unter dem Ranking eine neue FORM-Karte.
-Da form.json noch leer ist, steht dort korrekt "Noch keine Daten".
+Wichtig:
+Die ATP-Hauptdateien enthalten Tour-Level-Main-Draw-Matches; Challenger liegen in separaten Dateien.
+Die WTA-Hauptdateien enthalten ebenfalls Tour-Level-Singles; ITF/Qualifying liegen separat.
+Damit bleibt Mission 1000 weiterhin ohne Challenger.
+
+Lizenz:
+Jeff Sackmann / Tennis Abstract
+CC BY-NC-SA 4.0
+Attribution erforderlich, nicht-kommerzielle Nutzung, ShareAlike.
+
+Kein Ampelsystem:
+Die App verwendet weiterhin nur W/L bzw. neutrale Textdarstellung.
