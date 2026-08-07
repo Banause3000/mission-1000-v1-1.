@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07130f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="stylesheet" href="./style.css">
+<title>Mission 1000 Tennis</title>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">M1</div><div><h1>Mission 1000 Tennis</h1><p>ATP & WTA · keine Challenger</p></div></div><button id="refresh">Aktualisieren</button></header>
+<section class="hero panel"><div><span class="tag">Tagesübersicht</span><h2 id="date">Heute</h2><p id="source">Live-Daten werden geladen.</p></div><div class="stats"><div><b id="count">0</b><span>Matches</span></div><div><b id="priced">0</b><span>mit Quoten</span></div></div></section>
+<nav><button class="active" data-filter="all">Alle</button><button data-filter="ATP">ATP</button><button data-filter="WTA">WTA</button><button data-filter="priced">Mit Quoten</button></nav>
+<main>
+<section class="panel list"><div class="head"><div><span class="tag">Spielplan</span><h3>Aktuelle Matches</h3></div><span id="updated" class="muted">Lädt …</span></div><div id="matches"></div></section>
+<aside class="panel detail"><span class="tag">Matchdetails</span><h3 id="title">Match auswählen</h3><p id="meta" class="muted">Tippe auf eine Karte.</p>
+<div class="market"><div><span id="p1">Spieler 1</span><b id="o1">–</b></div><div><span id="p2">Spieler 2</span><b id="o2">–</b></div></div>
+<div class="grid"><div><span>Turnier</span><b id="event">–</b></div><div><span>Start</span><b id="start">–</b></div><div><span>Status</span><b id="status">–</b></div><div><span>Quelle</span><b id="detailSource">–</b></div></div>
+<div class="note"><span>Analyse</span><b>Noch nicht freigeschaltet</b><p>Prognosen folgen erst mit belastbaren Form-, Belag-, Service- und Returndaten. Keine Fantasie-Prozente.</p></div>
+</aside>
+</main>
+<section class="panel system"><span class="tag">Systemstatus</span><div class="grid"><div><span>Quelle</span><b id="sysSource">–</b></div><div><span>Zeitzone</span><b id="tz">–</b></div><div><span>API-Credits übrig</span><b id="quota">–</b></div></div></section>
+<footer>Analysewerkzeug ohne Gewinngarantie.</footer>
+</div>
+<script src="./script.js"></script>
+</body></html>
