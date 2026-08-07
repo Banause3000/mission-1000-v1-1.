@@ -1,81 +1,80 @@
-let allMatches = [];
-let currentFilter = "all";
+let all = [];
+let filter = "all";
 
 const $ = id => document.getElementById(id);
 
-function formatOdds(value) {
-  const number = Number(value);
-  return Number.isFinite(number)
-    ? number.toFixed(2).replace(".", ",")
+const odd = value =>
+  Number.isFinite(Number(value))
+    ? Number(value).toFixed(2).replace(".", ",")
     : "–";
-}
 
-function statusLabel(value) {
+const statusText = value => {
   if (value === "upcoming") return "Bevorstehend";
   if (value === "live-or-started") return "Läuft / gestartet";
   return value || "Unbekannt";
-}
+};
 
-function filteredMatches() {
-  return allMatches.filter(match => {
-    if (currentFilter === "all") return true;
+function selectedMatches() {
+  return all.filter(match => {
+    if (filter === "all") return true;
 
-    if (currentFilter === "priced") {
+    if (filter === "priced") {
       return (
         Number.isFinite(Number(match.odds1)) &&
         Number.isFinite(Number(match.odds2))
       );
     }
 
-    return match.tour === currentFilter;
+    return match.tour === filter;
   });
 }
 
 function showDetails(match) {
-  $("detailTitle").textContent =
+  $("title").textContent =
     `${match.player1} vs. ${match.player2}`;
 
-  $("detailMeta").textContent =
+  $("meta").textContent =
     `${match.tour} · ${match.event}`;
 
-  $("detailP1").textContent = match.player1;
-  $("detailP2").textContent = match.player2;
+  $("p1").textContent = match.player1;
+  $("p2").textContent = match.player2;
 
-  $("detailO1").textContent = formatOdds(match.odds1);
-  $("detailO2").textContent = formatOdds(match.odds2);
+  $("o1").textContent = odd(match.odds1);
+  $("o2").textContent = odd(match.odds2);
 
-  $("detailEvent").textContent =
+  $("event").textContent =
     match.event || "–";
 
-  $("detailStart").textContent =
+  $("start").textContent =
     `${match.date || ""} ${match.start || ""}`.trim() || "–";
 
-  $("detailStatus").textContent =
-    statusLabel(match.status);
+  $("status").textContent =
+    statusText(match.status);
 
   $("detailSource").textContent =
     match.source || "The Odds API";
 }
 
-function renderMatches() {
-  const matches = filteredMatches();
-  const list = $("matchList");
+function render() {
+  const matches = selectedMatches();
+  const box = $("matches");
 
-  list.innerHTML = "";
+  box.innerHTML = "";
 
-  $("matchCount").textContent = matches.length;
+  $("count").textContent = matches.length;
 
-  $("pricedCount").textContent =
+  $("priced").textContent =
     matches.filter(match =>
       Number.isFinite(Number(match.odds1)) &&
       Number.isFinite(Number(match.odds2))
     ).length;
 
   if (!matches.length) {
-    list.innerHTML =
-      `<div class="empty">
+    box.innerHTML = `
+      <div class="empty">
         Für diesen Filter sind aktuell keine Matches vorhanden.
-      </div>`;
+      </div>
+    `;
     return;
   }
 
@@ -83,50 +82,50 @@ function renderMatches() {
     const card = document.createElement("article");
 
     card.className =
-      `match-card${index === 0 ? " selected" : ""}`;
+      `card${index === 0 ? " selected" : ""}`;
 
     card.innerHTML = `
-      <div class="match-head">
-        <span class="match-meta">
-          ${match.tour} · ${match.event} · ${match.start || ""}
+      <div class="top">
+        <span>
+          ${match.tour} · ${match.event} ·
+          ${match.date || ""} ${match.start || ""}
         </span>
 
-        <span class="badge">
-          ${statusLabel(match.status)}
+        <span>
+          ${statusText(match.status)}
         </span>
       </div>
 
-      <div class="player-row">
-        <span class="player">${match.player1}</span>
-        <span class="price">${formatOdds(match.odds1)}</span>
+      <div class="player">
+        <span>${match.player1}</span>
+        <b>${odd(match.odds1)}</b>
       </div>
 
-      <div class="player-row">
-        <span class="player">${match.player2}</span>
-        <span class="price">${formatOdds(match.odds2)}</span>
+      <div class="player">
+        <span>${match.player2}</span>
+        <b>${odd(match.odds2)}</b>
       </div>
     `;
 
     card.onclick = () => {
       document
-        .querySelectorAll(".match-card")
-        .forEach(item => item.classList.remove("selected"));
+        .querySelectorAll(".card")
+        .forEach(item =>
+          item.classList.remove("selected")
+        );
 
       card.classList.add("selected");
 
       showDetails(match);
     };
 
-    list.appendChild(card);
+    box.appendChild(card);
   });
 
   showDetails(matches[0]);
 }
 
-async function loadMatches() {
-  $("updatedAt").textContent =
-    "Daten werden geladen …";
-
+async function load() {
   try {
     const response = await fetch(
       `./data/matches.json?v=${Date.now()}`,
@@ -141,7 +140,7 @@ async function loadMatches() {
 
     const payload = await response.json();
 
-    allMatches =
+    all =
       Array.isArray(payload.matches)
         ? payload.matches
         : [];
@@ -151,74 +150,74 @@ async function loadMatches() {
         ? new Date(payload.generatedAt)
         : null;
 
-    $("sourceText").textContent =
-      allMatches.length
+    $("source").textContent =
+      all.length
         ? "Aktuelle ATP- und WTA-Matches mit verfügbaren Quoten."
         : "Aktuell wurden keine passenden Matches gefunden.";
 
-    $("updatedAt").textContent =
+    $("updated").textContent =
       generated
-        ? generated.toLocaleString("de-DE", {
-            day: "2-digit",
-            month: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit"
-          })
+        ? generated.toLocaleString(
+            "de-DE",
+            {
+              day: "2-digit",
+              month: "2-digit",
+              hour: "2-digit",
+              minute: "2-digit"
+            }
+          )
         : "Noch kein Datenlauf";
 
-    $("statusSource").textContent =
+    $("sysSource").textContent =
       payload.source || "–";
 
-    $("statusTimezone").textContent =
+    $("tz").textContent =
       payload.timezone || "Europe/Berlin";
 
-    $("statusQuota").textContent =
+    $("quota").textContent =
       payload.quota?.remaining ?? "–";
 
-    renderMatches();
+    render();
 
   } catch (error) {
-    allMatches = [];
+    all = [];
 
-    $("matchList").innerHTML =
-      `<div class="empty">
+    $("matches").innerHTML = `
+      <div class="empty">
         Daten konnten nicht geladen werden.<br>
         ${error.message}
-      </div>`;
+      </div>
+    `;
 
-    $("updatedAt").textContent =
-      "Ladefehler";
-
-    $("matchCount").textContent = "0";
-    $("pricedCount").textContent = "0";
+    $("updated").textContent = "Ladefehler";
+    $("count").textContent = "0";
+    $("priced").textContent = "0";
   }
 }
 
 document
-  .querySelectorAll(".filter")
+  .querySelectorAll("nav button")
   .forEach(button => {
 
     button.onclick = () => {
 
       document
-        .querySelectorAll(".filter")
+        .querySelectorAll("nav button")
         .forEach(item =>
           item.classList.remove("active")
         );
 
       button.classList.add("active");
 
-      currentFilter =
-        button.dataset.filter;
+      filter = button.dataset.filter;
 
-      renderMatches();
+      render();
     };
   });
 
-$("refreshBtn").onclick =
-  loadMatches;
+$("refresh").onclick = load;
 
-$("dateTitle").textContent =
+$("date").textContent =
   new Date().toLocaleDateString(
     "de-DE",
     {
@@ -229,4 +228,4 @@ $("dateTitle").textContent =
     }
   );
 
-loadMatches();
+load();
