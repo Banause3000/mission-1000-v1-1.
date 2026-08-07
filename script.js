@@ -529,8 +529,18 @@ if($("playerSearch")){
 
 load();
 
+
+// v1.2.3 Cache Rescue:
+// Old cache-first service workers can keep serving a broken script forever.
+// We intentionally unregister them for now. Mission data already uses no-store.
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js").catch(console.warn);
+  window.addEventListener("load", async () => {
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map(reg => reg.unregister()));
+      console.log("Mission 1000: old service workers removed.");
+    } catch (error) {
+      console.warn("Service worker cleanup failed:", error);
+    }
   });
 }
