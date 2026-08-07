@@ -410,6 +410,24 @@ p {
 }
 
 
+.mini-prob {
+
+  margin-top: 10px;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  color: var(--muted);
+
+  font-size: .65rem;
+
+  text-align: center;
+}
+
+
 .filter-area {
 
   margin:
@@ -632,6 +650,32 @@ main {
 }
 
 
+.player .right {
+
+  text-align: right;
+}
+
+
+.player .right b {
+
+  display: block;
+
+  font-size: 1.04rem;
+}
+
+
+.player .right small {
+
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--muted);
+
+  font-size: .68rem;
+}
+
+
 .card-footer {
 
   display: flex;
@@ -739,6 +783,151 @@ main {
 }
 
 
+.probability {
+
+  margin-top: 15px;
+
+  padding: 14px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius: 16px;
+
+  background:
+    #08121a;
+}
+
+
+.prob-head,
+.prob-row {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+}
+
+
+.prob-head {
+
+  margin-bottom: 12px;
+}
+
+
+.prob-head span {
+
+  color: var(--muted);
+
+  font-size: .72rem;
+}
+
+
+.prob-head strong {
+
+  color: var(--green);
+
+  font-size: .72rem;
+
+  text-align: right;
+}
+
+
+.prob-row {
+
+  font-size: .76rem;
+
+  gap: 14px;
+}
+
+
+.prob-row span {
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.prob-row b {
+
+  flex: 0 0 auto;
+}
+
+
+.prob-bar {
+
+  display: flex;
+
+  width: 100%;
+
+  height: 12px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #071018;
+
+  margin:
+    8px 0
+    10px;
+}
+
+
+#probBar1,
+#probBar2 {
+
+  display: block;
+
+  height: 100%;
+
+  transition:
+    width .25s ease;
+}
+
+
+#probBar1 {
+
+  background:
+    linear-gradient(
+      90deg,
+      #24c961,
+      #5bea8a
+    );
+}
+
+
+#probBar2 {
+
+  background:
+    linear-gradient(
+      90deg,
+      #2d4258,
+      #486783
+    );
+}
+
+
+.probability small {
+
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: .62rem;
+
+  line-height: 1.4;
+}
+
+
 .grid {
 
   display: grid;
@@ -750,6 +939,8 @@ main {
     );
 
   gap: 8px;
+
+  margin-top: 15px;
 }
 
 
@@ -821,6 +1012,8 @@ main {
     space-between;
 
   align-items: center;
+
+  gap: 10px;
 }
 
 
@@ -853,7 +1046,8 @@ main {
 
   line-height: 1.5;
 
-  font-size: .78rem;
+  font-size:
+    .78rem;
 }
 
 
@@ -1006,6 +1200,16 @@ footer {
 
   .stats div {
     flex: 1;
+  }
+
+
+  .prob-head {
+    align-items: flex-start;
+  }
+
+
+  .prob-head strong {
+    max-width: 55%;
   }
 
 }
