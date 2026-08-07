@@ -22,8 +22,31 @@
         <p>ATP & WTA · keine Challenger</p>
       </div>
     </div>
-    <button id="refresh">Aktualisieren</button>
+
+    <div class="top-actions">
+      <button id="controlBtn" class="ghost-btn">Mission Control</button>
+      <button id="refresh">Aktualisieren</button>
+    </div>
   </header>
+
+  <section id="missionControl" class="panel control-panel hidden">
+    <div class="section-title">
+      <div>
+        <span class="tag">Mission Control</span>
+        <h3>Systemübersicht</h3>
+      </div>
+      <button id="closeControl" class="icon-btn">×</button>
+    </div>
+
+    <div class="control-grid">
+      <div><span>Status</span><b id="apiStatus">Online</b></div>
+      <div><span>API-Credits</span><b id="controlQuota">–</b></div>
+      <div><span>Heute</span><b id="todayTotal">0 Matches</b></div>
+      <div><span>Live</span><b id="liveTotal">0 Matches</b></div>
+      <div><span>Favoriten</span><b id="favTotal">0 Matches</b></div>
+      <div><span>Datenstand</span><b id="controlUpdated">–</b></div>
+    </div>
+  </section>
 
   <section class="hero panel">
     <div>
@@ -61,6 +84,7 @@
       <button data-filter="ATP">ATP</button>
       <button data-filter="WTA">WTA</button>
       <button data-filter="priced">Mit Quoten</button>
+      <button data-filter="favorites">Favoriten</button>
     </nav>
 
     <input id="search" class="search" type="search" placeholder="Spieler oder Turnier suchen …" autocomplete="off">
@@ -79,9 +103,16 @@
     </section>
 
     <aside class="panel detail">
-      <span class="tag">Matchdetails</span>
-      <h3 id="title">Match auswählen</h3>
-      <p id="meta" class="small-muted">Tippe auf eine Matchkarte.</p>
+      <div class="detail-head">
+        <div>
+          <span class="tag">Matchdetails</span>
+          <h3 id="title">Match auswählen</h3>
+          <p id="meta" class="small-muted">Tippe auf eine Matchkarte.</p>
+        </div>
+        <button id="favoriteBtn" class="favorite-btn" title="Match merken">☆</button>
+      </div>
+
+      <div id="liveBadge" class="live-badge hidden"><span></span>LIVE</div>
 
       <div class="score-panel">
         <div>
@@ -132,8 +163,9 @@
         <div class="prob-head">
           <span>Markteinschätzung</span>
           <div class="fav-box">
-            <small>Marktfavorit</small>
+            <small>Favorit des Marktes</small>
             <strong id="favLabel">–</strong>
+            <b id="favPercent">–</b>
           </div>
         </div>
 
@@ -162,22 +194,10 @@
         </div>
 
         <div class="breakdown-grid">
-          <div>
-            <span>Datenqualität</span>
-            <b id="dataQuality">–</b>
-          </div>
-          <div>
-            <span>Ausgeglichenheit</span>
-            <b id="balanceScore">–</b>
-          </div>
-          <div>
-            <span>Zeitnähe</span>
-            <b id="timingScore">–</b>
-          </div>
-          <div>
-            <span>Marktvertrauen</span>
-            <b id="marketConfidence">–</b>
-          </div>
+          <div><span>Datenqualität</span><b id="dataQuality">–</b></div>
+          <div><span>Ausgeglichenheit</span><b id="balanceScore">–</b></div>
+          <div><span>Zeitnähe</span><b id="timingScore">–</b></div>
+          <div><span>Marktvertrauen</span><b id="marketConfidence">–</b></div>
         </div>
 
         <p id="scoreExplanation">

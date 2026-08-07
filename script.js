@@ -3,9 +3,54 @@ let filter = "all";
 let dayFilter = "today";
 let searchTerm = "";
 let selectedMatch = null;
+let generatedAt = null;
 let countdownTimer = null;
 
 const $ = id => document.getElementById(id);
+const FAVORITES_KEY = "mission1000-favorites-v1";
+
+function getFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveFavorites(list) {
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(list));
+}
+
+function matchKey(match) {
+  return match.id || `${match.date}|${match.start}|${match.player1}|${match.player2}`;
+}
+
+function isFavorite(match) {
+  return getFavorites().includes(matchKey(match));
+}
+
+function toggleFavorite(match) {
+  const key = matchKey(match);
+  const favorites = getFavorites();
+
+  if (favorites.includes(key)) {
+    saveFavorites(favorites.filter(item => item !== key));
+  } else {
+    saveFavorites([...favorites, key]);
+  }
+
+  updateFavoriteButton(match);
+  render();
+  updateMissionControl();
+}
+
+function updateFavoriteButton(match) {
+  if (!$("favoriteBtn") || !match) return;
+
+  const active = isFavorite(match);
+  $("favoriteBtn").textContent = active ? "★" : "☆";
+  $("favoriteBtn").classList.toggle("active", active);
+}
 
 function odd(value) {
   const n = Number(value);
@@ -85,14 +130,12 @@ function scoreParts(match) {
     (match.event && match.event !== "–" ? 5 : 0) +
     (match.tour === "ATP" || match.tour === "WTA" ? 5 : 0);
 
-  const total = Math.min(100, dataQuality + balance + timing + metadata);
-
   return {
     dataQuality,
     balance,
     timing,
     metadata,
-    total
+    total: Math.min(100, dataQuality + balance + timing + metadata)
   };
 }
 
@@ -120,8 +163,7 @@ function marketConfidence(match) {
   if (!probs) return null;
 
   const margin = Math.max(0, probs.overround - 1);
-  const quality = Math.max(0, 100 - Math.round(margin * 300));
-  return Math.min(100, quality);
+  return Math.max(0, Math.min(100, 100 - Math.round(margin * 300)));
 }
 
 function matchRelevant(match) {
@@ -131,7 +173,6 @@ function matchRelevant(match) {
 
 function matchesSearch(match) {
   if (!searchTerm) return true;
-
   const text = `${match.player1} ${match.player2} ${match.event} ${match.tour}`.toLowerCase();
   return text.includes(searchTerm);
 }
@@ -147,12 +188,14 @@ function selectedMatches() {
       if (filter === "ATP" && match.tour !== "ATP") return false;
       if (filter === "WTA" && match.tour !== "WTA") return false;
       if (filter === "priced" && !marketProbabilities(match)) return false;
+      if (filter === "favorites" && !isFavorite(match)) return false;
 
-      if (!matchesSearch(match)) return false;
-
-      return true;
+      return matchesSearch(match);
     })
     .sort((a, b) => {
+      const favDiff = Number(isFavorite(b)) - Number(isFavorite(a));
+      if (favDiff !== 0) return favDiff;
+
       const scoreDiff = matchScore(b) - matchScore(a);
       if (scoreDiff !== 0) return scoreDiff;
 
@@ -185,13 +228,15 @@ function updateCountdown() {
   const hours = Math.floor((totalMinutes % 1440) / 60);
   const minutes = totalMinutes % 60;
 
-  if (days > 0) {
-    $("countdown").textContent = `in ${days}T ${hours}h ${minutes}m`;
-  } else if (hours > 0) {
-    $("countdown").textContent = `in ${hours}h ${minutes}m`;
-  } else {
-    $("countdown").textContent = `in ${minutes} Min`;
-  }
+  if (days > 0) $("countdown").textContent = `in ${days}T ${hours}h ${minutes}m`;
+  else if (hours > 0) $("countdown").textContent = `in ${hours}h ${minutes}m`;
+  else $("countdown").textContent = `in ${minutes} Min`;
+}
+
+function updateLiveBadge(match) {
+  const badge = $("liveBadge");
+  if (!badge) return;
+  badge.classList.toggle("hidden", match.status !== "live-or-started");
 }
 
 function updateProbabilityBox(match) {
@@ -206,6 +251,7 @@ function updateProbabilityBox(match) {
     $("probBar1").style.width = "50%";
     $("probBar2").style.width = "50%";
     $("favLabel").textContent = "Keine Quote";
+    $("favPercent").textContent = "–";
     return;
   }
 
@@ -213,17 +259,22 @@ function updateProbabilityBox(match) {
   $("prob2").textContent = `${pct.p2} %`;
   $("probBar1").style.width = `${pct.p1}%`;
   $("probBar2").style.width = `${pct.p2}%`;
-  $("favLabel").textContent =
-    pct.p1 >= pct.p2 ? match.player1 : match.player2;
+
+  if (pct.p1 >= pct.p2) {
+    $("favLabel").textContent = match.player1;
+    $("favPercent").textContent = `${pct.p1} %`;
+  } else {
+    $("favLabel").textContent = match.player2;
+    $("favPercent").textContent = `${pct.p2} %`;
+  }
 }
 
 function updateScoreBox(match) {
   const parts = scoreParts(match);
   const score = parts.total;
-  const label = matchScoreLabel(score);
 
   $("matchScore").textContent = score;
-  $("matchScoreLabel").textContent = label;
+  $("matchScoreLabel").textContent = matchScoreLabel(score);
   $("scoreTier").textContent = matchScoreTier(score);
   $("matchScoreBar").style.width = `${score}%`;
   $("scoreRingValue").textContent = score;
@@ -234,8 +285,7 @@ function updateScoreBox(match) {
   $("timingScore").textContent = `${parts.timing}/15`;
 
   const confidence = marketConfidence(match);
-  $("marketConfidence").textContent =
-    confidence === null ? "–" : `${confidence}/100`;
+  $("marketConfidence").textContent = confidence === null ? "–" : `${confidence}/100`;
 
   const pct = marketPercentages(match);
 
@@ -249,13 +299,13 @@ function updateScoreBox(match) {
 
   if (gap <= 10) {
     $("scoreExplanation").textContent =
-      "Der Markt sieht ein sehr ausgeglichenes Duell. Deshalb ist das Match für eine spätere Detailanalyse besonders interessant.";
+      "Der Markt sieht ein sehr ausgeglichenes Duell. Das macht das Match für eine spätere Detailanalyse besonders spannend.";
   } else if (gap <= 25) {
     $("scoreExplanation").textContent =
-      "Der Markt hat einen erkennbaren Favoriten, das Duell bleibt aber vergleichsweise offen.";
+      "Der Markt hat einen Favoriten, das Match bleibt aber vergleichsweise offen.";
   } else {
     $("scoreExplanation").textContent =
-      "Der Markt sieht einen deutlichen Favoriten. Der Match Score beschreibt trotzdem nur Analyse-Interesse, nicht Wettsicherheit.";
+      "Der Markt sieht einen deutlichen Favoriten. Der Match Score beschreibt Analyse-Interesse, nicht Wettsicherheit.";
   }
 }
 
@@ -280,6 +330,8 @@ function showDetails(match) {
   updateProbabilityBox(match);
   updateScoreBox(match);
   updateCountdown();
+  updateLiveBadge(match);
+  updateFavoriteButton(match);
 }
 
 function renderHighlights() {
@@ -344,6 +396,8 @@ function render() {
 
   if (!matches.length) {
     box.innerHTML = '<div class="empty">Keine passenden Matches gefunden.</div>';
+    renderHighlights();
+    updateMissionControl();
     return;
   }
 
@@ -364,7 +418,11 @@ function render() {
             <span class="tour-label">${match.tour}</span>
             <span>${match.event}</span>
           </div>
-          <span>${match.start || ""}</span>
+          <div class="card-actions">
+            ${match.status === "live-or-started" ? '<span class="mini-live"><i></i>LIVE</span>' : ""}
+            <button class="mini-favorite" data-fav="${matchKey(match)}">${isFavorite(match) ? "★" : "☆"}</button>
+            <span>${match.start || ""}</span>
+          </div>
         </div>
 
         <div class="score-chip">
@@ -404,7 +462,9 @@ function render() {
       </div>
     `;
 
-    card.onclick = () => {
+    card.onclick = event => {
+      if (event.target.closest(".mini-favorite")) return;
+
       document.querySelectorAll(".card").forEach(item =>
         item.classList.remove("selected")
       );
@@ -412,11 +472,41 @@ function render() {
       showDetails(match);
     };
 
+    const favButton = card.querySelector(".mini-favorite");
+    favButton.onclick = event => {
+      event.stopPropagation();
+      toggleFavorite(match);
+    };
+
     box.appendChild(card);
   });
 
   showDetails(matches[0]);
   renderHighlights();
+  updateMissionControl();
+}
+
+function updateMissionControl() {
+  const todayMatches = all.filter(m => m.date === todayString());
+  const liveMatches = all.filter(m => m.status === "live-or-started");
+  const favoriteMatches = all.filter(m => isFavorite(m));
+
+  $("todayTotal").textContent = `${todayMatches.length} Matches`;
+  $("liveTotal").textContent = `${liveMatches.length} Matches`;
+  $("favTotal").textContent = `${favoriteMatches.length} Matches`;
+
+  if ($("quota") && $("controlQuota")) {
+    $("controlQuota").textContent = $("quota").textContent || "–";
+  }
+
+  $("controlUpdated").textContent = generatedAt
+    ? generatedAt.toLocaleString("de-DE", {
+        day: "2-digit",
+        month: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      })
+    : "–";
 }
 
 async function load() {
@@ -428,19 +518,19 @@ async function load() {
       { cache: "no-store" }
     );
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
+
     all = Array.isArray(payload.matches) ? payload.matches : [];
+    generatedAt = payload.generatedAt ? new Date(payload.generatedAt) : null;
 
     $("source").textContent = all.length
       ? "Aktuelle ATP- und WTA-Matches mit verfügbaren Quoten."
       : "Aktuell wurden keine passenden Matches gefunden.";
 
-    $("updated").textContent = payload.generatedAt
-      ? new Date(payload.generatedAt).toLocaleString("de-DE", {
+    $("updated").textContent = generatedAt
+      ? generatedAt.toLocaleString("de-DE", {
           day: "2-digit",
           month: "2-digit",
           hour: "2-digit",
@@ -452,6 +542,8 @@ async function load() {
     $("tz").textContent = payload.timezone || "Europe/Berlin";
     $("quota").textContent = payload.quota?.remaining ?? "–";
 
+    $("apiStatus").textContent = "Online";
+
     render();
   } catch (error) {
     all = [];
@@ -460,6 +552,8 @@ async function load() {
     $("updated").textContent = "Ladefehler";
     $("count").textContent = "0";
     $("priced").textContent = "0";
+    $("apiStatus").textContent = "Fehler";
+    updateMissionControl();
   }
 }
 
@@ -489,6 +583,19 @@ $("search").addEventListener("input", event => {
   searchTerm = event.target.value.trim().toLowerCase();
   render();
 });
+
+$("favoriteBtn").onclick = () => {
+  if (selectedMatch) toggleFavorite(selectedMatch);
+};
+
+$("controlBtn").onclick = () => {
+  $("missionControl").classList.remove("hidden");
+  updateMissionControl();
+};
+
+$("closeControl").onclick = () => {
+  $("missionControl").classList.add("hidden");
+};
 
 $("refresh").onclick = load;
 
