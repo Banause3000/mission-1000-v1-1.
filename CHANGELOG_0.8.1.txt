@@ -1,0 +1,9 @@
+MISSION 1000 CHANGELOG
+
+Version 0.8.1
+- Test-Workflow fuer kostenlose TennisData.App-Saison-CSV
+- Form-CSV-Parser
+- Challenger-Filter
+- Letzte-5-Matches-Generator
+- form.json wird nur bei Erfolg aktualisiert
+- Keine erfundenen Formdaten
