@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-07T09:28:54.801Z",
+  "generatedAt": "2026-08-07T09:44:17.104Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "8",
-    "remaining": "492"
+    "used": "10",
+    "remaining": "490"
   },
   "matches": [
     {
@@ -18,8 +18,8 @@
       "player1": "Iva Jović",
       "player2": "Alina Korneeva",
       "odds1": 1.56,
-      "odds2": 2.74,
-      "bookmaker1": "Betfair",
+      "odds2": 2.76,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,9 +49,9 @@
       "status": "upcoming",
       "player1": "Tallon Griekspoor",
       "player2": "Matteo Arnaldi",
-      "odds1": 1.61,
-      "odds2": 2.68,
-      "bookmaker1": "BetOnline.ag",
+      "odds1": 1.6,
+      "odds2": 2.66,
+      "bookmaker1": "Coolbet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -82,7 +82,7 @@
       "player1": "Mirra Andreeva",
       "player2": "Leylah Fernandez",
       "odds1": 1.3,
-      "odds2": 4.3,
+      "odds2": 4.4,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -97,9 +97,9 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Ben Shelton",
-      "odds1": 3.65,
+      "odds1": 3.6,
       "odds2": 1.38,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
@@ -276,7 +276,7 @@
       "odds1": 1.8,
       "odds2": 2.2,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -353,10 +353,10 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 1.26,
-      "odds2": 5,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "LeoVegas (SE)",
+      "odds1": 1.22,
+      "odds2": 5.1,
+      "bookmaker1": "888sport",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -369,10 +369,10 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Diana Shnaider",
-      "odds1": 1.45,
-      "odds2": 3.28,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.4,
+      "odds2": 3.3,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -387,7 +387,7 @@
       "player2": "Iga Swiatek",
       "odds1": 2.3,
       "odds2": 1.79,
-      "bookmaker1": "Winamax (DE)",
+      "bookmaker1": "888sport",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
