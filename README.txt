@@ -1,28 +1,36 @@
 MISSION 1000
-Version 0.8.3 - ESPN Formquellen-Test
+Project Eclipse
+Version 0.9.0
 
-WARUM DIESE VERSION?
-Die bisher getesteten kostenlosen CSV-Quellen waren entweder blockiert (403),
-nicht erreichbar (404) oder fuer August 2026 zu alt.
+UPLOAD AUF GITHUB
 
-Diese Version testet den oeffentlich erreichbaren ESPN-Tennis-Scoreboard-Endpunkt.
-Dafuer ist kein API-Key vorgesehen.
+ERSETZEN:
+- index.html
+- style.css
+- script.js
 
-NEU HOCHLADEN:
-1. scripts/build_form_espn.py
-2. .github/workflows/test-espn-form.yml
+NEU:
+- assets/images/hero.webp
 
-DEINE APP BLEIBT UNVERAENDERT.
-data/form.json wird nur ersetzt, wenn der Parser mindestens 10 Spieler
-aus abgeschlossenen ATP/WTA-Matches erkennt.
+WICHTIG:
+Deine bestehenden Dateien unter data/ NICHT durch die leeren Beispieldateien aus diesem ZIP ersetzen.
+Insbesondere data/matches.json, data/rankings.json und data/form.json auf GitHub so lassen wie sie aktuell sind.
 
-DANACH:
-GitHub -> Actions -> ESPN Formquelle testen -> Run workflow
+Das ZIP enthält leere rankings.json/form.json nur als Strukturbeispiel.
 
-Schick danach einen Screenshot.
-Wenn der Lauf gruen ist, bauen wir aus diesem Test den taeglichen Form-Workflow.
+NEUES DESIGN:
+- Project-Eclipse Hero mit Tennisspieler-Silhouette
+- Mission-1000 Branding
+- Premium Dashboard
+- Top Pick des Tages
+- Mission Score
+- Confidence
+- Markttrend
+- Match Cards
+- Matchdetails
+- feste Bottom-Navigation
 
-Hinweis:
-Der ESPN-Endpunkt ist ein oeffentlicher Site-API-Endpunkt, aber keine vertraglich
-garantierte Entwickler-API. Deshalb testen wir ihn erst sicher, bevor wir ihn
-dauerhaft in Mission 1000 einbauen.
+Die bestehende App liest weiterhin:
+data/matches.json
+data/rankings.json
+data/form.json
