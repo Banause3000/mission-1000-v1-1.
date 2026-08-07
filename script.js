@@ -168,6 +168,11 @@ function renderStats(){
   $("liveCount").textContent=list.filter(m=>m.status==="live-or-started").length;
   $("atpCount").textContent=list.filter(m=>String(m.tour).toUpperCase()==="ATP").length;
   $("wtaCount").textContent=list.filter(m=>String(m.tour).toUpperCase()==="WTA").length;
+
+  const analyzed=list.filter(m=>market(m)).length;
+  const best=list.length ? Math.max(...list.map(m=>missionScore(m))) : 0;
+  $("analyzedCount").textContent=analyzed;
+  $("bestScore").textContent=best;
 }
 function topMatch(){
   return [...currentMatches()].sort((a,b)=>missionScore(b)-missionScore(a))[0] || null;
@@ -530,7 +535,7 @@ if($("playerSearch")){
 load();
 
 
-// v1.2.3 Cache Rescue:
+// v1.3.0 Cache Rescue:
 // Old cache-first service workers can keep serving a broken script forever.
 // We intentionally unregister them for now. Mission data already uses no-store.
 if ("serviceWorker" in navigator) {

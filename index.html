@@ -40,9 +40,13 @@
 
     <section id="statusCard" class="system-strip">
       <span class="pulse"></span>
-      <div>
+      <div class="system-main">
         <b id="statusTitle">Daten werden geladen</b>
         <small id="statusText">Mission Control verbindet sich mit deinen vorhandenen JSON-Daten.</small>
+      </div>
+      <div class="system-kpis">
+        <div><span>ANALYSIERT</span><b id="analyzedCount">0</b></div>
+        <div><span>TOP SCORE</span><b id="bestScore">0</b></div>
       </div>
       <span id="dataDate" class="data-date">–</span>
     </section>
@@ -145,8 +149,63 @@
       </div>
 
       <div class="odds-grid">
-        <article><span id="detailP1">–</span><b id="detailO1">–</b></article>
-        <article><span id="detailP2">–</span><b id="detailO2">–</b></article>
+        <article>
+          <div>
+            <span id="detailP1">–</span>
+            <small id="detailBook1">Quote</small>
+          </div>
+          <b id="detailO1">–</b>
+        </article>
+        <article>
+          <div>
+            <span id="detailP2">–</span>
+            <small id="detailBook2">Quote</small>
+          </div>
+          <b id="detailO2">–</b>
+        </article>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="section-title compact">
+        <div>
+          <span class="eyebrow">INTELLIGENCE MODULES</span>
+          <h2>Analyse-Bausteine</h2>
+        </div>
+        <span class="muted">datenbereit</span>
+      </div>
+
+      <div class="module-grid">
+        <article>
+          <span>RANKING</span>
+          <b id="moduleRanking">–</b>
+          <small id="moduleRankingText">Noch keine Daten</small>
+        </article>
+        <article>
+          <span>FORM</span>
+          <b id="moduleForm">–</b>
+          <small id="moduleFormText">Noch keine Daten</small>
+        </article>
+        <article>
+          <span>H2H</span>
+          <b id="moduleH2H">–</b>
+          <small>Quelle noch nicht verbunden</small>
+        </article>
+        <article>
+          <span>BELAG</span>
+          <b id="moduleSurface">–</b>
+          <small>Quelle noch nicht verbunden</small>
+        </article>
+        <article>
+          <span>SERVICE</span>
+          <b id="moduleServe">–</b>
+          <small>Quelle noch nicht verbunden</small>
+        </article>
+        <article>
+          <span>RETURN</span>
+          <b id="moduleReturn">–</b>
+          <small>Quelle noch nicht verbunden</small>
+        </article>
       </div>
     </section>
       </section>
@@ -238,7 +297,7 @@
     <button data-view="aiView">◉<span>Mission AI</span></button>
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v1.2.3</footer>
+  <footer>Mission 1000 · Project Eclipse · v1.3.0</footer>
 </div>
 
 <script src="./script.js?v=1.2.3"></script>

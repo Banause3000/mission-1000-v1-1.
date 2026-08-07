@@ -1,4 +1,4 @@
-// Mission 1000 v1.2.3 Cache Rescue
+// Mission 1000 v1.3.0 Cache Rescue
 self.addEventListener("install", () => self.skipWaiting());
 
 self.addEventListener("activate", event => {
