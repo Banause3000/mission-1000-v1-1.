@@ -1,10 +1,232 @@
-let all=[],filter="all";const $=id=>document.getElementById(id);
-const odd=v=>Number.isFinite(Number(v))?Number(v).toFixed(2).replace(".",","):"–";
-const status=v=>v==="upcoming"?"Bevorstehend":v==="live-or-started"?"Läuft/gestartet":v||"Unbekannt";
-function selected(){return all.filter(m=>filter==="all"||filter==="priced"&&Number.isFinite(Number(m.odds1))&&Number.isFinite(Number(m.odds2))||m.tour===filter)}
-function details(m){$("title").textContent=`${m.player1} vs. ${m.player2}`;$("meta").textContent=`${m.tour} · ${m.event}`;$("p1").textContent=m.player1;$("p2").textContent=m.player2;$("o1").textContent=odd(m.odds1);$("o2").textContent=odd(m.odds2);$("event").textContent=m.event||"–";$("start").textContent=`${m.date||""} ${m.start||""}`.trim()||"–";$("status").textContent=status(m.status);$("detailSource").textContent=m.source||"The Odds API"}
-function render(){const ms=selected(),box=$("matches");box.innerHTML="";$("count").textContent=ms.length;$("priced").textContent=ms.filter(m=>Number.isFinite(Number(m.odds1))&&Number.isFinite(Number(m.odds2))).length;if(!ms.length){box.innerHTML='<div class="empty">Für diesen Filter sind aktuell keine Matches vorhanden.</div>';return}ms.forEach((m,i)=>{const c=document.createElement("article");c.className=`card${i===0?" selected":""}`;c.innerHTML=`<div class="top"><span>${m.tour} · ${m.event} · ${m.date||""} ${m.start||""}</span><span>${status(m.status)}</span></div><div class="player"><span>${m.player1}</span><b>${odd(m.odds1)}</b></div><div class="player"><span>${m.player2}</span><b>${odd(m.odds2)}</b></div>`;c.onclick=()=>{document.querySelectorAll(".card").forEach(x=>x.classList.remove("selected"));c.classList.add("selected");details(m)};box.appendChild(c)});details(ms[0])}
-async function load(){try{const r=await fetch(`./data/matches.json?v=${Date.now()}`,{cache:"no-store"});if(!r.ok)throw Error(`HTTP ${r.status}`);const p=await r.json();all=Array.isArray(p.matches)?p.matches:[];const d=p.generatedAt?new Date(p.generatedAt):null;$("source").textContent=all.length?"Live- und kommende Matches mit verfügbaren EU-Matchwinnerquoten.":"Der Datenlauf ist eingerichtet, aktuell wurden keine passenden Wettbewerbe geliefert.";$("updated").textContent=d?d.toLocaleString("de-DE",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}):"Noch kein Lauf";$("sysSource").textContent=p.source||"–";$("tz").textContent=p.timezone||"Europe/Berlin";$("quota").textContent=p.quota?.remaining??"–";render()}catch(e){all=[];$("matches").innerHTML=`<div class="empty">Daten konnten nicht geladen werden.<br>${e.message}</div>`;$("updated").textContent="Ladefehler";$("count").textContent="0";$("priced").textContent="0"}}
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
-$("refresh").onclick=load;$("date").textContent=new Date().toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"2-digit",year:"numeric"});
-if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));load();
+let allMatches = [];
+let currentFilter = "all";
+
+const $ = id => document.getElementById(id);
+
+function formatOdds(value) {
+  const number = Number(value);
+  return Number.isFinite(number)
+    ? number.toFixed(2).replace(".", ",")
+    : "–";
+}
+
+function statusLabel(value) {
+  if (value === "upcoming") return "Bevorstehend";
+  if (value === "live-or-started") return "Läuft / gestartet";
+  return value || "Unbekannt";
+}
+
+function filteredMatches() {
+  return allMatches.filter(match => {
+    if (currentFilter === "all") return true;
+
+    if (currentFilter === "priced") {
+      return (
+        Number.isFinite(Number(match.odds1)) &&
+        Number.isFinite(Number(match.odds2))
+      );
+    }
+
+    return match.tour === currentFilter;
+  });
+}
+
+function showDetails(match) {
+  $("detailTitle").textContent =
+    `${match.player1} vs. ${match.player2}`;
+
+  $("detailMeta").textContent =
+    `${match.tour} · ${match.event}`;
+
+  $("detailP1").textContent = match.player1;
+  $("detailP2").textContent = match.player2;
+
+  $("detailO1").textContent = formatOdds(match.odds1);
+  $("detailO2").textContent = formatOdds(match.odds2);
+
+  $("detailEvent").textContent =
+    match.event || "–";
+
+  $("detailStart").textContent =
+    `${match.date || ""} ${match.start || ""}`.trim() || "–";
+
+  $("detailStatus").textContent =
+    statusLabel(match.status);
+
+  $("detailSource").textContent =
+    match.source || "The Odds API";
+}
+
+function renderMatches() {
+  const matches = filteredMatches();
+  const list = $("matchList");
+
+  list.innerHTML = "";
+
+  $("matchCount").textContent = matches.length;
+
+  $("pricedCount").textContent =
+    matches.filter(match =>
+      Number.isFinite(Number(match.odds1)) &&
+      Number.isFinite(Number(match.odds2))
+    ).length;
+
+  if (!matches.length) {
+    list.innerHTML =
+      `<div class="empty">
+        Für diesen Filter sind aktuell keine Matches vorhanden.
+      </div>`;
+    return;
+  }
+
+  matches.forEach((match, index) => {
+    const card = document.createElement("article");
+
+    card.className =
+      `match-card${index === 0 ? " selected" : ""}`;
+
+    card.innerHTML = `
+      <div class="match-head">
+        <span class="match-meta">
+          ${match.tour} · ${match.event} · ${match.start || ""}
+        </span>
+
+        <span class="badge">
+          ${statusLabel(match.status)}
+        </span>
+      </div>
+
+      <div class="player-row">
+        <span class="player">${match.player1}</span>
+        <span class="price">${formatOdds(match.odds1)}</span>
+      </div>
+
+      <div class="player-row">
+        <span class="player">${match.player2}</span>
+        <span class="price">${formatOdds(match.odds2)}</span>
+      </div>
+    `;
+
+    card.onclick = () => {
+      document
+        .querySelectorAll(".match-card")
+        .forEach(item => item.classList.remove("selected"));
+
+      card.classList.add("selected");
+
+      showDetails(match);
+    };
+
+    list.appendChild(card);
+  });
+
+  showDetails(matches[0]);
+}
+
+async function loadMatches() {
+  $("updatedAt").textContent =
+    "Daten werden geladen …";
+
+  try {
+    const response = await fetch(
+      `./data/matches.json?v=${Date.now()}`,
+      {
+        cache: "no-store"
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const payload = await response.json();
+
+    allMatches =
+      Array.isArray(payload.matches)
+        ? payload.matches
+        : [];
+
+    const generated =
+      payload.generatedAt
+        ? new Date(payload.generatedAt)
+        : null;
+
+    $("sourceText").textContent =
+      allMatches.length
+        ? "Aktuelle ATP- und WTA-Matches mit verfügbaren Quoten."
+        : "Aktuell wurden keine passenden Matches gefunden.";
+
+    $("updatedAt").textContent =
+      generated
+        ? generated.toLocaleString("de-DE", {
+            day: "2-digit",
+            month: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit"
+          })
+        : "Noch kein Datenlauf";
+
+    $("statusSource").textContent =
+      payload.source || "–";
+
+    $("statusTimezone").textContent =
+      payload.timezone || "Europe/Berlin";
+
+    $("statusQuota").textContent =
+      payload.quota?.remaining ?? "–";
+
+    renderMatches();
+
+  } catch (error) {
+    allMatches = [];
+
+    $("matchList").innerHTML =
+      `<div class="empty">
+        Daten konnten nicht geladen werden.<br>
+        ${error.message}
+      </div>`;
+
+    $("updatedAt").textContent =
+      "Ladefehler";
+
+    $("matchCount").textContent = "0";
+    $("pricedCount").textContent = "0";
+  }
+}
+
+document
+  .querySelectorAll(".filter")
+  .forEach(button => {
+
+    button.onclick = () => {
+
+      document
+        .querySelectorAll(".filter")
+        .forEach(item =>
+          item.classList.remove("active")
+        );
+
+      button.classList.add("active");
+
+      currentFilter =
+        button.dataset.filter;
+
+      renderMatches();
+    };
+  });
+
+$("refreshBtn").onclick =
+  loadMatches;
+
+$("dateTitle").textContent =
+  new Date().toLocaleDateString(
+    "de-DE",
+    {
+      weekday: "long",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    }
+  );
+
+loadMatches();
