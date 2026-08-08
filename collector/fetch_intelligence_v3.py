@@ -16,7 +16,7 @@ SOURCE = ROOT / "data" / "sources"
 INTEL = ROOT / "data" / "intelligence"
 EXTERNAL = ROOT / ".external" / "tennis-source"
 
-USER_AGENT = "Mission1000-DataEngine/3.1"
+USER_AGENT = "Mission1000-DataEngine/3.2"
 
 HISTORY_YEARS = list(range(2019, 2027))
 
@@ -278,6 +278,95 @@ def dedupe_rows(rows):
         out.append(row)
     out.sort(key=lambda r: r["_date"])
     return out
+
+
+def rank_from_row(row, side):
+    candidates = [
+        row.get(f"{side}_rank"),
+        row.get(f"{side}Rank"),
+        row.get(f"{side}_ranking"),
+        row.get(f"{side}Ranking"),
+    ]
+
+    for value in candidates:
+        rank = as_int(value)
+        if rank is not None and rank > 0:
+            return rank
+
+    return None
+
+def rank_points_from_row(row, side):
+    candidates = [
+        row.get(f"{side}_rank_points"),
+        row.get(f"{side}RankPoints"),
+        row.get(f"{side}_ranking_points"),
+        row.get(f"{side}RankingPoints"),
+    ]
+
+    for value in candidates:
+        points = as_int(value)
+        if points is not None and points >= 0:
+            return points
+
+    return None
+
+def build_ranking_fallback(rows):
+    """
+    Build a ranking snapshot from the newest observed official ranking value
+    attached to each historical match row.
+
+    This is primarily a WTA fallback when the separate ranking fetcher has no
+    women's ranking source. It never invents a ranking and only uses a rank
+    explicitly present in the source match data.
+    """
+    latest = {}
+
+    for row in rows:
+        tour = row["_tour"]
+        date = row["_date"]
+
+        for side, name in [
+            ("winner", row["_winner"]),
+            ("loser", row["_loser"]),
+        ]:
+            rank = rank_from_row(row, side)
+            if not name or rank is None:
+                continue
+
+            key = (tour, name.casefold())
+            points = rank_points_from_row(row, side)
+
+            candidate = {
+                "name": name,
+                "tour": tour,
+                "rank": rank,
+                "points": points,
+                "rankingDate": date,
+                "rankingSource": "latest observed match ranking",
+            }
+
+            current = latest.get(key)
+
+            # Prefer the newest dated observation.
+            # If the date is identical, prefer the row that also contains points.
+            if (
+                current is None
+                or date > str(current.get("rankingDate") or "")
+                or (
+                    date == str(current.get("rankingDate") or "")
+                    and current.get("points") is None
+                    and points is not None
+                )
+            ):
+                latest[key] = candidate
+
+    players = list(latest.values())
+    players.sort(key=lambda p: (
+        str(p.get("tour") or ""),
+        int(p.get("rank") or 999999),
+        str(p.get("name") or "")
+    ))
+    return players
 
 def build_players(rows):
     players = {}
@@ -581,7 +670,7 @@ def build_stats(rows):
 
 def main():
     print("=" * 68)
-    print("MISSION 1000 DATA ENGINE v3.1")
+    print("MISSION 1000 DATA ENGINE v3.2")
     print("=" * 68)
 
     rows = []
@@ -617,6 +706,7 @@ def main():
     if not rows:
         raise RuntimeError("Keine Matchhistorie geladen. Data Engine bricht absichtlich ab.")
 
+    ranking_fallback = build_ranking_fallback(rows)
     players = build_players(rows)
     form = build_form(rows)
     h2h = build_h2h(rows)
@@ -628,6 +718,12 @@ def main():
         raise RuntimeError("Form Engine erzeugte 0 Spieler. Kein stilles Leerschreiben erlaubt.")
 
     now = now_iso()
+
+    save_json(SOURCE / "rankings_fallback.json", {
+        "generatedAt": now,
+        "source": "Mission 1000 Data Engine v3.2 - latest observed match rankings",
+        "players": ranking_fallback,
+    })
 
     save_json(SOURCE / "players.json", {
         "generatedAt": now,
@@ -674,6 +770,9 @@ def main():
             "total": len(rows),
         },
         "outputs": {
+            "rankingFallback": len(ranking_fallback),
+            "rankingFallbackATP": sum(1 for p in ranking_fallback if p.get("tour") == "ATP"),
+            "rankingFallbackWTA": sum(1 for p in ranking_fallback if p.get("tour") == "WTA"),
             "players": len(players),
             "form": len(form),
             "h2h": len(h2h),
@@ -687,7 +786,7 @@ def main():
     save_json(INTEL / "diagnostics.json", diagnostics)
 
     print(json.dumps(diagnostics, ensure_ascii=False, indent=2))
-    print("DATA ENGINE v3.1: OK")
+    print("DATA ENGINE v3.2: OK")
 
 if __name__ == "__main__":
     main()
