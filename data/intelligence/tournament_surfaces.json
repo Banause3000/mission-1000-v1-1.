@@ -1,0 +1,4535 @@
+{
+  "generatedAt": "2026-08-08T17:05:11.293997+00:00",
+  "source": "Mission 1000 Data Engine v3.1",
+  "events": [
+    {
+      "tour": "ATP",
+      "event": "Brisbane",
+      "normalizedEvent": "brisbane",
+      "surface": "hard",
+      "samples": 180
+    },
+    {
+      "tour": "ATP",
+      "event": "Doha",
+      "normalizedEvent": "doha",
+      "surface": "hard",
+      "samples": 267
+    },
+    {
+      "tour": "ATP",
+      "event": "Pune",
+      "normalizedEvent": "pune",
+      "surface": "hard",
+      "samples": 108
+    },
+    {
+      "tour": "ATP",
+      "event": "Auckland",
+      "normalizedEvent": "auckland",
+      "surface": "hard",
+      "samples": 186
+    },
+    {
+      "tour": "ATP",
+      "event": "Sydney",
+      "normalizedEvent": "sydney",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Australian Open",
+      "normalizedEvent": "australian open",
+      "surface": "hard",
+      "samples": 1142
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUS vs BIH",
+      "normalizedEvent": "davis cup qls r1 aus vs bih",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUT vs CHI",
+      "normalizedEvent": "davis cup qls r1 aut vs chi",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BEL vs BRA",
+      "normalizedEvent": "davis cup qls r1 bel vs bra",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CAN vs SVK",
+      "normalizedEvent": "davis cup qls r1 can vs svk",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CZE vs NED",
+      "normalizedEvent": "davis cup qls r1 cze vs ned",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GER vs HUN",
+      "normalizedEvent": "davis cup qls r1 ger vs hun",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ITA vs IND",
+      "normalizedEvent": "davis cup qls r1 ita vs ind",
+      "surface": "grass",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: JPN vs CHN",
+      "normalizedEvent": "davis cup qls r1 jpn vs chn",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: KAZ vs POR",
+      "normalizedEvent": "davis cup qls r1 kaz vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SRB vs UZB",
+      "normalizedEvent": "davis cup qls r1 srb vs uzb",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SUI vs RUS",
+      "normalizedEvent": "davis cup qls r1 sui vs rus",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs COL",
+      "normalizedEvent": "davis cup qls r1 swe vs col",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Cordoba",
+      "normalizedEvent": "cordoba",
+      "surface": "clay",
+      "samples": 162
+    },
+    {
+      "tour": "ATP",
+      "event": "Montpellier",
+      "normalizedEvent": "montpellier",
+      "surface": "hard",
+      "samples": 240
+    },
+    {
+      "tour": "ATP",
+      "event": "Sofia",
+      "normalizedEvent": "sofia",
+      "surface": "hard",
+      "samples": 135
+    },
+    {
+      "tour": "ATP",
+      "event": "Buenos Aires",
+      "normalizedEvent": "buenos aires",
+      "surface": "clay",
+      "samples": 231
+    },
+    {
+      "tour": "ATP",
+      "event": "New York",
+      "normalizedEvent": "new york",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Rotterdam",
+      "normalizedEvent": "rotterdam",
+      "surface": "hard",
+      "samples": 281
+    },
+    {
+      "tour": "ATP",
+      "event": "Delray Beach",
+      "normalizedEvent": "delray beach",
+      "surface": "hard",
+      "samples": 241
+    },
+    {
+      "tour": "ATP",
+      "event": "Marseille",
+      "normalizedEvent": "marseille",
+      "surface": "hard",
+      "samples": 194
+    },
+    {
+      "tour": "ATP",
+      "event": "Rio de Janeiro",
+      "normalizedEvent": "rio de janeiro",
+      "surface": "clay",
+      "samples": 217
+    },
+    {
+      "tour": "ATP",
+      "event": "Acapulco",
+      "normalizedEvent": "acapulco",
+      "surface": "hard",
+      "samples": 280
+    },
+    {
+      "tour": "ATP",
+      "event": "Dubai",
+      "normalizedEvent": "dubai",
+      "surface": "hard",
+      "samples": 301
+    },
+    {
+      "tour": "ATP",
+      "event": "Sao Paulo",
+      "normalizedEvent": "sao paulo",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Indian Wells Masters",
+      "normalizedEvent": "indian wells masters",
+      "surface": "hard",
+      "samples": 795
+    },
+    {
+      "tour": "ATP",
+      "event": "Miami Masters",
+      "normalizedEvent": "miami masters",
+      "surface": "hard",
+      "samples": 760
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: PER vs ESA",
+      "normalizedEvent": "davis cup g2 r1 per vs esa",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: THA vs PHI",
+      "normalizedEvent": "davis cup g2 r1 tha vs phi",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: LTU vs MAR",
+      "normalizedEvent": "davis cup g2 r1 ltu vs mar",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: ROU vs ZIM",
+      "normalizedEvent": "davis cup g2 r1 rou vs zim",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Houston",
+      "normalizedEvent": "houston",
+      "surface": "clay",
+      "samples": 162
+    },
+    {
+      "tour": "ATP",
+      "event": "Marrakech",
+      "normalizedEvent": "marrakech",
+      "surface": "clay",
+      "samples": 172
+    },
+    {
+      "tour": "ATP",
+      "event": "Monte Carlo Masters",
+      "normalizedEvent": "monte carlo masters",
+      "surface": "clay",
+      "samples": 388
+    },
+    {
+      "tour": "ATP",
+      "event": "Barcelona",
+      "normalizedEvent": "barcelona",
+      "surface": "clay",
+      "samples": 298
+    },
+    {
+      "tour": "ATP",
+      "event": "Budapest",
+      "normalizedEvent": "budapest",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Estoril",
+      "normalizedEvent": "estoril",
+      "surface": "clay",
+      "samples": 135
+    },
+    {
+      "tour": "ATP",
+      "event": "Munich",
+      "normalizedEvent": "munich",
+      "surface": "clay",
+      "samples": 203
+    },
+    {
+      "tour": "ATP",
+      "event": "Madrid Masters",
+      "normalizedEvent": "madrid masters",
+      "surface": "clay",
+      "samples": 640
+    },
+    {
+      "tour": "ATP",
+      "event": "Rome Masters",
+      "normalizedEvent": "rome masters",
+      "surface": "clay",
+      "samples": 694
+    },
+    {
+      "tour": "ATP",
+      "event": "Geneva",
+      "normalizedEvent": "geneva",
+      "surface": "clay",
+      "samples": 216
+    },
+    {
+      "tour": "ATP",
+      "event": "Lyon",
+      "normalizedEvent": "lyon",
+      "surface": "clay",
+      "samples": 135
+    },
+    {
+      "tour": "ATP",
+      "event": "Roland Garros",
+      "normalizedEvent": "roland garros",
+      "surface": "clay",
+      "samples": 1023
+    },
+    {
+      "tour": "ATP",
+      "event": "'s-Hertogenbosch",
+      "normalizedEvent": "s hertogenbosch",
+      "surface": "grass",
+      "samples": 162
+    },
+    {
+      "tour": "ATP",
+      "event": "Stuttgart",
+      "normalizedEvent": "stuttgart",
+      "surface": "grass",
+      "samples": 169
+    },
+    {
+      "tour": "ATP",
+      "event": "Halle",
+      "normalizedEvent": "halle",
+      "surface": "grass",
+      "samples": 189
+    },
+    {
+      "tour": "ATP",
+      "event": "Queen's Club",
+      "normalizedEvent": "queen s club",
+      "surface": "grass",
+      "samples": 187
+    },
+    {
+      "tour": "ATP",
+      "event": "Antalya",
+      "normalizedEvent": "antalya",
+      "surface": "hard",
+      "samples": 58
+    },
+    {
+      "tour": "ATP",
+      "event": "Eastbourne",
+      "normalizedEvent": "eastbourne",
+      "surface": "grass",
+      "samples": 163
+    },
+    {
+      "tour": "ATP",
+      "event": "Wimbledon",
+      "normalizedEvent": "wimbledon",
+      "surface": "grass",
+      "samples": 769
+    },
+    {
+      "tour": "ATP",
+      "event": "Bastad",
+      "normalizedEvent": "bastad",
+      "surface": "clay",
+      "samples": 163
+    },
+    {
+      "tour": "ATP",
+      "event": "Newport",
+      "normalizedEvent": "newport",
+      "surface": "grass",
+      "samples": 135
+    },
+    {
+      "tour": "ATP",
+      "event": "Umag",
+      "normalizedEvent": "umag",
+      "surface": "clay",
+      "samples": 189
+    },
+    {
+      "tour": "ATP",
+      "event": "Atlanta",
+      "normalizedEvent": "atlanta",
+      "surface": "hard",
+      "samples": 135
+    },
+    {
+      "tour": "ATP",
+      "event": "Gstaad",
+      "normalizedEvent": "gstaad",
+      "surface": "clay",
+      "samples": 164
+    },
+    {
+      "tour": "ATP",
+      "event": "Hamburg",
+      "normalizedEvent": "hamburg",
+      "surface": "clay",
+      "samples": 275
+    },
+    {
+      "tour": "ATP",
+      "event": "Kitzbuhel",
+      "normalizedEvent": "kitzbuhel",
+      "surface": "clay",
+      "samples": 192
+    },
+    {
+      "tour": "ATP",
+      "event": "Los Cabos",
+      "normalizedEvent": "los cabos",
+      "surface": "hard",
+      "samples": 166
+    },
+    {
+      "tour": "ATP",
+      "event": "Washington",
+      "normalizedEvent": "washington",
+      "surface": "hard",
+      "samples": 285
+    },
+    {
+      "tour": "ATP",
+      "event": "Canada Masters",
+      "normalizedEvent": "canadian open",
+      "surface": "hard",
+      "samples": 369
+    },
+    {
+      "tour": "ATP",
+      "event": "Cincinnati Masters",
+      "normalizedEvent": "cincinnati masters",
+      "surface": "hard",
+      "samples": 430
+    },
+    {
+      "tour": "ATP",
+      "event": "Winston-Salem",
+      "normalizedEvent": "winston salem",
+      "surface": "hard",
+      "samples": 329
+    },
+    {
+      "tour": "ATP",
+      "event": "Us Open",
+      "normalizedEvent": "us open",
+      "surface": "hard",
+      "samples": 1016
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: BRA vs BAR",
+      "normalizedEvent": "davis cup g1 r1 bra vs bar",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: UZB vs LBN",
+      "normalizedEvent": "davis cup g1 r1 uzb vs lbn",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: AUT vs FIN",
+      "normalizedEvent": "davis cup g1 r1 aut vs fin",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: POR vs BLR",
+      "normalizedEvent": "davis cup g1 r1 por vs blr",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: SUI vs SVK",
+      "normalizedEvent": "davis cup g1 r1 sui vs svk",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: SWE vs ISR",
+      "normalizedEvent": "davis cup g1 r1 swe vs isr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: GUA vs BOL",
+      "normalizedEvent": "davis cup g2 r1 gua vs bol",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: DEN vs TUR",
+      "normalizedEvent": "davis cup g2 r1 den vs tur",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: EGY vs SLO",
+      "normalizedEvent": "davis cup g2 r1 egy vs slo",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: NOR vs GEO",
+      "normalizedEvent": "davis cup g2 r1 nor vs geo",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: RSA vs BUL",
+      "normalizedEvent": "davis cup g2 r1 rsa vs bul",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: DOM vs URU",
+      "normalizedEvent": "davis cup g1 r1 dom vs uru",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: ECU vs VEN",
+      "normalizedEvent": "davis cup g1 r1 ecu vs ven",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: CHN vs KOR",
+      "normalizedEvent": "davis cup g1 r1 chn vs kor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: CZE vs BIH",
+      "normalizedEvent": "davis cup g1 r1 cze vs bih",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G1 R1: HUN vs UKR",
+      "normalizedEvent": "davis cup g1 r1 hun vs ukr",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: MEX vs PAR",
+      "normalizedEvent": "davis cup g2 r1 mex vs par",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: NZL vs INA",
+      "normalizedEvent": "davis cup g2 r1 nzl vs ina",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup G2 R1: TPE vs HKG",
+      "normalizedEvent": "davis cup g2 r1 tpe vs hkg",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Metz",
+      "normalizedEvent": "metz",
+      "surface": "hard",
+      "samples": 189
+    },
+    {
+      "tour": "ATP",
+      "event": "St. Petersburg",
+      "normalizedEvent": "st petersburg",
+      "surface": "hard",
+      "samples": 85
+    },
+    {
+      "tour": "ATP",
+      "event": "Laver Cup",
+      "normalizedEvent": "laver cup",
+      "surface": "hard",
+      "samples": 41
+    },
+    {
+      "tour": "ATP",
+      "event": "Chengdu",
+      "normalizedEvent": "chengdu",
+      "surface": "hard",
+      "samples": 111
+    },
+    {
+      "tour": "ATP",
+      "event": "Zhuhai",
+      "normalizedEvent": "zhuhai",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Beijing",
+      "normalizedEvent": "beijing",
+      "surface": "hard",
+      "samples": 155
+    },
+    {
+      "tour": "ATP",
+      "event": "Tokyo",
+      "normalizedEvent": "tokyo",
+      "surface": "hard",
+      "samples": 155
+    },
+    {
+      "tour": "ATP",
+      "event": "Shanghai Masters",
+      "normalizedEvent": "shanghai masters",
+      "surface": "hard",
+      "samples": 340
+    },
+    {
+      "tour": "ATP",
+      "event": "Antwerp",
+      "normalizedEvent": "antwerp",
+      "surface": "hard",
+      "samples": 162
+    },
+    {
+      "tour": "ATP",
+      "event": "Moscow",
+      "normalizedEvent": "moscow",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Stockholm",
+      "normalizedEvent": "stockholm",
+      "surface": "hard",
+      "samples": 162
+    },
+    {
+      "tour": "ATP",
+      "event": "Basel",
+      "normalizedEvent": "basel",
+      "surface": "hard",
+      "samples": 158
+    },
+    {
+      "tour": "ATP",
+      "event": "Vienna",
+      "normalizedEvent": "vienna",
+      "surface": "hard",
+      "samples": 217
+    },
+    {
+      "tour": "ATP",
+      "event": "Paris Masters",
+      "normalizedEvent": "paris masters",
+      "surface": "hard",
+      "samples": 383
+    },
+    {
+      "tour": "ATP",
+      "event": "NextGen Finals",
+      "normalizedEvent": "nextgen finals",
+      "surface": "hard",
+      "samples": 59
+    },
+    {
+      "tour": "ATP",
+      "event": "Tour Finals",
+      "normalizedEvent": "tour finals",
+      "surface": "hard",
+      "samples": 104
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs RUS",
+      "normalizedEvent": "davis cup finals rr cro vs rus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: BEL vs COL",
+      "normalizedEvent": "davis cup finals rr bel vs col",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs CAN",
+      "normalizedEvent": "davis cup finals rr ita vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs JPN",
+      "normalizedEvent": "davis cup finals rr fra vs jpn",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs RUS",
+      "normalizedEvent": "davis cup finals rr esp vs rus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ARG vs CHI",
+      "normalizedEvent": "davis cup finals rr arg vs chi",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs COL",
+      "normalizedEvent": "davis cup finals rr aus vs col",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: KAZ vs NED",
+      "normalizedEvent": "davis cup finals rr kaz vs ned",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs CAN",
+      "normalizedEvent": "davis cup finals rr usa vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SRB vs JPN",
+      "normalizedEvent": "davis cup finals rr srb vs jpn",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs ESP",
+      "normalizedEvent": "davis cup finals rr cro vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ARG vs GER",
+      "normalizedEvent": "davis cup finals rr arg vs ger",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: BEL vs AUS",
+      "normalizedEvent": "davis cup finals rr bel vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GBR vs NED",
+      "normalizedEvent": "davis cup finals rr gbr vs ned",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs ITA",
+      "normalizedEvent": "davis cup finals rr usa vs ita",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs SRB",
+      "normalizedEvent": "davis cup finals rr fra vs srb",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GER vs CHI",
+      "normalizedEvent": "davis cup finals rr ger vs chi",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GBR vs KAZ",
+      "normalizedEvent": "davis cup finals rr gbr vs kaz",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: AUS vs CAN",
+      "normalizedEvent": "davis cup finals qf aus vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ARG vs ESP",
+      "normalizedEvent": "davis cup finals qf arg vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: GBR vs GER",
+      "normalizedEvent": "davis cup finals qf gbr vs ger",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: SRB vs RUS",
+      "normalizedEvent": "davis cup finals qf srb vs rus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: GBR vs ESP",
+      "normalizedEvent": "davis cup finals sf gbr vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: RUS vs CAN",
+      "normalizedEvent": "davis cup finals sf rus vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals F: CAN vs ESP",
+      "normalizedEvent": "davis cup finals f can vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Atp Cup",
+      "normalizedEvent": "atp cup",
+      "surface": "hard",
+      "samples": 170
+    },
+    {
+      "tour": "ATP",
+      "event": "Adelaide",
+      "normalizedEvent": "adelaide",
+      "surface": "hard",
+      "samples": 136
+    },
+    {
+      "tour": "ATP",
+      "event": "ATP Rio de Janeiro",
+      "normalizedEvent": "atp rio de janeiro",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "ATP",
+      "event": "Santiago",
+      "normalizedEvent": "santiago",
+      "surface": "clay",
+      "samples": 208
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ARG vs COL",
+      "normalizedEvent": "davis cup qls r1 arg vs col",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUS vs BRA",
+      "normalizedEvent": "davis cup qls r1 aus vs bra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUT vs URU",
+      "normalizedEvent": "davis cup qls r1 aut vs uru",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BEL vs HUN",
+      "normalizedEvent": "davis cup qls r1 bel vs hun",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CRO vs IND",
+      "normalizedEvent": "davis cup qls r1 cro vs ind",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CZE vs SVK",
+      "normalizedEvent": "davis cup qls r1 cze vs svk",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GER vs BLR",
+      "normalizedEvent": "davis cup qls r1 ger vs blr",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: JPN vs ECU",
+      "normalizedEvent": "davis cup qls r1 jpn vs ecu",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: KAZ vs NED",
+      "normalizedEvent": "davis cup qls r1 kaz vs ned",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs CHI",
+      "normalizedEvent": "davis cup qls r1 swe vs chi",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: USA vs UZB",
+      "normalizedEvent": "davis cup qls r1 usa vs uzb",
+      "surface": "hard",
+      "samples": 6
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: BIH vs RSA",
+      "normalizedEvent": "davis cup wg1 po bih vs rsa",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: BOL vs DOM",
+      "normalizedEvent": "davis cup wg1 po bol vs dom",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LBN vs THA",
+      "normalizedEvent": "davis cup wg1 po lbn vs tha",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LTU vs POR",
+      "normalizedEvent": "davis cup wg1 po ltu vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: MEX vs FIN",
+      "normalizedEvent": "davis cup wg1 po mex vs fin",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: NOR vs BAR",
+      "normalizedEvent": "davis cup wg1 po nor vs bar",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: PAK vs SLO",
+      "normalizedEvent": "davis cup wg1 po pak vs slo",
+      "surface": "grass",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: PER vs SUI",
+      "normalizedEvent": "davis cup wg1 po per vs sui",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: TUR vs ISR",
+      "normalizedEvent": "davis cup wg1 po tur vs isr",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: UKR vs TPE",
+      "normalizedEvent": "davis cup wg1 po ukr vs tpe",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: VEN vs NZL",
+      "normalizedEvent": "davis cup wg1 po ven vs nzl",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: CRC vs BUL",
+      "normalizedEvent": "davis cup wg2 po crc vs bul",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: DEN vs PUR",
+      "normalizedEvent": "davis cup wg2 po den vs pur",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: ESA vs JAM",
+      "normalizedEvent": "davis cup wg2 po esa vs jam",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: GEO vs EST",
+      "normalizedEvent": "davis cup wg2 po geo vs est",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: GUA vs TUN",
+      "normalizedEvent": "davis cup wg2 po gua vs tun",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: INA vs KEN",
+      "normalizedEvent": "davis cup wg2 po ina vs ken",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: LAT vs EGY",
+      "normalizedEvent": "davis cup wg2 po lat vs egy",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: MAR vs VIE",
+      "normalizedEvent": "davis cup wg2 po mar vs vie",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: PAR vs SRI",
+      "normalizedEvent": "davis cup wg2 po par vs sri",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: PHI vs GRE",
+      "normalizedEvent": "davis cup wg2 po phi vs gre",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: POL vs HKG",
+      "normalizedEvent": "davis cup wg2 po pol vs hkg",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: SYR vs ZIM",
+      "normalizedEvent": "davis cup wg2 po syr vs zim",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Cologne 1",
+      "normalizedEvent": "cologne 1",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Sardinia",
+      "normalizedEvent": "sardinia",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Cologne 2",
+      "normalizedEvent": "cologne 2",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Nur-Sultan",
+      "normalizedEvent": "nur sultan",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Great Ocean Road Open",
+      "normalizedEvent": "great ocean road open",
+      "surface": "hard",
+      "samples": 55
+    },
+    {
+      "tour": "ATP",
+      "event": "Murray River Open",
+      "normalizedEvent": "murray river open",
+      "surface": "hard",
+      "samples": 55
+    },
+    {
+      "tour": "ATP",
+      "event": "Singapore",
+      "normalizedEvent": "singapore",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ISR vs UKR",
+      "normalizedEvent": "davis cup wg1 r1 isr vs ukr",
+      "surface": "hard",
+      "samples": 7
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: JPN vs PAK",
+      "normalizedEvent": "davis cup wg1 r1 jpn vs pak",
+      "surface": "grass",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: MEX vs BUL",
+      "normalizedEvent": "davis cup wg2 r1 mex vs bul",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: POL vs ESA",
+      "normalizedEvent": "davis cup wg2 r1 pol vs esa",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Marbella",
+      "normalizedEvent": "marbella",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Cagliari",
+      "normalizedEvent": "cagliari",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Belgrade",
+      "normalizedEvent": "belgrade",
+      "surface": "clay",
+      "samples": 81
+    },
+    {
+      "tour": "ATP",
+      "event": "Parma",
+      "normalizedEvent": "parma",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Belgrade 2",
+      "normalizedEvent": "belgrade 2",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Mallorca",
+      "normalizedEvent": "mallorca",
+      "surface": "grass",
+      "samples": 162
+    },
+    {
+      "tour": "ATP",
+      "event": "Tokyo Olympics",
+      "normalizedEvent": "tokyo olympics",
+      "surface": "hard",
+      "samples": 64
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BIH vs PER",
+      "normalizedEvent": "davis cup wg1 r1 bih vs per",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CHI vs SVK",
+      "normalizedEvent": "davis cup wg1 r1 chi vs svk",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: IND vs FIN",
+      "normalizedEvent": "davis cup wg1 r1 ind vs fin",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: KOR vs NZL",
+      "normalizedEvent": "davis cup wg1 r1 kor vs nzl",
+      "surface": "grass",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: UZB vs NOR",
+      "normalizedEvent": "davis cup wg1 r1 uzb vs nor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: BAR vs INA",
+      "normalizedEvent": "davis cup wg2 r1 bar vs ina",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: DOM vs TUN",
+      "normalizedEvent": "davis cup wg2 r1 dom vs tun",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: SLO vs PAR",
+      "normalizedEvent": "davis cup wg2 r1 slo vs par",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: SUI vs EST",
+      "normalizedEvent": "davis cup wg2 r1 sui vs est",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: THA vs DEN",
+      "normalizedEvent": "davis cup wg2 r1 tha vs den",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ARG vs BLR",
+      "normalizedEvent": "davis cup wg1 r1 arg vs blr",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BEL vs BOL",
+      "normalizedEvent": "davis cup wg1 r1 bel vs bol",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BRA vs LBN",
+      "normalizedEvent": "davis cup wg1 r1 bra vs lbn",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: NED vs URU",
+      "normalizedEvent": "davis cup wg1 r1 ned vs uru",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: POR vs ROU",
+      "normalizedEvent": "davis cup wg1 r1 por vs rou",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LTU vs GRE",
+      "normalizedEvent": "davis cup wg2 r1 ltu vs gre",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: RSA vs VEN",
+      "normalizedEvent": "davis cup wg2 r1 rsa vs ven",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: TUR vs LAT",
+      "normalizedEvent": "davis cup wg2 r1 tur vs lat",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "San Diego",
+      "normalizedEvent": "san diego",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs SWE",
+      "normalizedEvent": "davis cup finals rr can vs swe",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs CZE",
+      "normalizedEvent": "davis cup finals rr fra vs cze",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs AUS",
+      "normalizedEvent": "davis cup finals rr cro vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs ECU",
+      "normalizedEvent": "davis cup finals rr esp vs ecu",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SRB vs AUT",
+      "normalizedEvent": "davis cup finals rr srb vs aut",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: UKR vs NOR",
+      "normalizedEvent": "davis cup wg1 po ukr vs nor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: TUN vs ZIM",
+      "normalizedEvent": "davis cup wg2 po tun vs zim",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: RTF vs ECU",
+      "normalizedEvent": "davis cup finals rr rtf vs ecu",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: KAZ vs SWE",
+      "normalizedEvent": "davis cup finals rr kaz vs swe",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs GBR",
+      "normalizedEvent": "davis cup finals rr fra vs gbr",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs HUN",
+      "normalizedEvent": "davis cup finals rr aus vs hun",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs COL",
+      "normalizedEvent": "davis cup finals rr ita vs col",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SRB vs GER",
+      "normalizedEvent": "davis cup finals rr srb vs ger",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs RTF",
+      "normalizedEvent": "davis cup finals rr esp vs rtf",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs KAZ",
+      "normalizedEvent": "davis cup finals rr can vs kaz",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GBR vs CZE",
+      "normalizedEvent": "davis cup finals rr gbr vs cze",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs HUN",
+      "normalizedEvent": "davis cup finals rr cro vs hun",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs COL",
+      "normalizedEvent": "davis cup finals rr usa vs col",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GER vs AUT",
+      "normalizedEvent": "davis cup finals rr ger vs aut",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ITA vs CRO",
+      "normalizedEvent": "davis cup finals qf ita vs cro",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: SRB vs KAZ",
+      "normalizedEvent": "davis cup finals qf srb vs kaz",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: RTF vs SWE",
+      "normalizedEvent": "davis cup finals qf rtf vs swe",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: CRO vs SRB",
+      "normalizedEvent": "davis cup finals sf cro vs srb",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: RTF vs GER",
+      "normalizedEvent": "davis cup finals sf rtf vs ger",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals F: RTF vs CRO",
+      "normalizedEvent": "davis cup finals f rtf vs cro",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Adelaide 1",
+      "normalizedEvent": "adelaide 1",
+      "surface": "hard",
+      "samples": 58
+    },
+    {
+      "tour": "ATP",
+      "event": "Melbourne",
+      "normalizedEvent": "melbourne",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Adelaide 2",
+      "normalizedEvent": "adelaide 2",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "Dallas",
+      "normalizedEvent": "dallas",
+      "surface": "hard",
+      "samples": 172
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ARG vs CZE",
+      "normalizedEvent": "davis cup qls r1 arg vs cze",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUS vs HUN",
+      "normalizedEvent": "davis cup qls r1 aus vs hun",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUT vs KOR",
+      "normalizedEvent": "davis cup qls r1 aut vs kor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BEL vs FIN",
+      "normalizedEvent": "davis cup qls r1 bel vs fin",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CAN vs NED",
+      "normalizedEvent": "davis cup qls r1 can vs ned",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ESP vs ROU",
+      "normalizedEvent": "davis cup qls r1 esp vs rou",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: FRA vs ECU",
+      "normalizedEvent": "davis cup qls r1 fra vs ecu",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GER vs BRA",
+      "normalizedEvent": "davis cup qls r1 ger vs bra",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ITA vs SVK",
+      "normalizedEvent": "davis cup qls r1 ita vs svk",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: KAZ vs NOR",
+      "normalizedEvent": "davis cup qls r1 kaz vs nor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs JPN",
+      "normalizedEvent": "davis cup qls r1 swe vs jpn",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: USA vs COL",
+      "normalizedEvent": "davis cup qls r1 usa vs col",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: CHI vs SLO",
+      "normalizedEvent": "davis cup wg1 po chi vs slo",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: IND vs DEN",
+      "normalizedEvent": "davis cup wg1 po ind vs den",
+      "surface": "hard",
+      "samples": 7
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: PAK vs LTU",
+      "normalizedEvent": "davis cup wg1 po pak vs ltu",
+      "surface": "grass",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: UZB vs TUR",
+      "normalizedEvent": "davis cup wg1 po uzb vs tur",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: EGY vs CYP",
+      "normalizedEvent": "davis cup wg2 po egy vs cyp",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: GRE vs JAM",
+      "normalizedEvent": "davis cup wg2 po gre vs jam",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: HKG vs BEN",
+      "normalizedEvent": "davis cup wg2 po hkg vs ben",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ARG vs SWE",
+      "normalizedEvent": "davis cup finals rr arg vs swe",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: KOR vs CAN",
+      "normalizedEvent": "davis cup finals rr kor vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs BEL",
+      "normalizedEvent": "davis cup finals rr aus vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs CRO",
+      "normalizedEvent": "davis cup finals rr ita vs cro",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs SRB",
+      "normalizedEvent": "davis cup finals rr esp vs srb",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs GER",
+      "normalizedEvent": "davis cup finals rr fra vs ger",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs GBR",
+      "normalizedEvent": "davis cup finals rr usa vs gbr",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs SWE",
+      "normalizedEvent": "davis cup finals rr cro vs swe",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: KOR vs SRB",
+      "normalizedEvent": "davis cup finals rr kor vs srb",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs AUS",
+      "normalizedEvent": "davis cup finals rr fra vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs KAZ",
+      "normalizedEvent": "davis cup finals rr usa vs kaz",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: HUN vs UKR",
+      "normalizedEvent": "davis cup wg1 r1 hun vs ukr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs ARG",
+      "normalizedEvent": "davis cup finals rr ita vs arg",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs CAN",
+      "normalizedEvent": "davis cup finals rr esp vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GER vs BEL",
+      "normalizedEvent": "davis cup finals rr ger vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: AUT vs PAK",
+      "normalizedEvent": "davis cup wg1 r1 aut vs pak",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BIH vs MEX",
+      "normalizedEvent": "davis cup wg1 r1 bih vs mex",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BRA vs POR",
+      "normalizedEvent": "davis cup wg1 r1 bra vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CZE vs ISR",
+      "normalizedEvent": "davis cup wg1 r1 cze vs isr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: FIN vs NZL",
+      "normalizedEvent": "davis cup wg1 r1 fin vs nzl",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: IND vs NOR",
+      "normalizedEvent": "davis cup wg1 r1 ind vs nor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: JPN vs UZB",
+      "normalizedEvent": "davis cup wg1 r1 jpn vs uzb",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SVK vs ROU",
+      "normalizedEvent": "davis cup wg1 r1 svk vs rou",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: BAR vs IRL",
+      "normalizedEvent": "davis cup wg2 r1 bar vs irl",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: BOL vs THA",
+      "normalizedEvent": "davis cup wg2 r1 bol vs tha",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: DOM vs LAT",
+      "normalizedEvent": "davis cup wg2 r1 dom vs lat",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LBN vs MON",
+      "normalizedEvent": "davis cup wg2 r1 lbn vs mon",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: POL vs INA",
+      "normalizedEvent": "davis cup wg2 r1 pol vs ina",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: RSA vs BUL",
+      "normalizedEvent": "davis cup wg2 r1 rsa vs bul",
+      "surface": "clay",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: SLO vs EST",
+      "normalizedEvent": "davis cup wg2 r1 slo vs est",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: TUN vs GRE",
+      "normalizedEvent": "davis cup wg2 r1 tun vs gre",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: URU vs CHN",
+      "normalizedEvent": "davis cup wg2 r1 uru vs chn",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ARG vs CRO",
+      "normalizedEvent": "davis cup finals rr arg vs cro",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SRB vs CAN",
+      "normalizedEvent": "davis cup finals rr srb vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs BEL",
+      "normalizedEvent": "davis cup finals rr fra vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs NED",
+      "normalizedEvent": "davis cup finals rr usa vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CHI vs PER",
+      "normalizedEvent": "davis cup wg1 r1 chi vs per",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: COL vs TUR",
+      "normalizedEvent": "davis cup wg1 r1 col vs tur",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ECU vs SUI",
+      "normalizedEvent": "davis cup wg1 r1 ecu vs sui",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: DEN vs ESA",
+      "normalizedEvent": "davis cup wg2 r1 den vs esa",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LTU vs EGY",
+      "normalizedEvent": "davis cup wg2 r1 ltu vs egy",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: TPE vs HKG",
+      "normalizedEvent": "davis cup wg2 r1 tpe vs hkg",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs SWE",
+      "normalizedEvent": "davis cup finals rr ita vs swe",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs KOR",
+      "normalizedEvent": "davis cup finals rr esp vs kor",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GER vs AUS",
+      "normalizedEvent": "davis cup finals rr ger vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Seoul",
+      "normalizedEvent": "seoul",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Tel Aviv",
+      "normalizedEvent": "tel aviv",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Astana",
+      "normalizedEvent": "astana",
+      "surface": "hard",
+      "samples": 58
+    },
+    {
+      "tour": "ATP",
+      "event": "Florence",
+      "normalizedEvent": "florence",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Gijon",
+      "normalizedEvent": "gijon",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Naples",
+      "normalizedEvent": "naples",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: AUS vs NED",
+      "normalizedEvent": "davis cup finals qf aus vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: CRO vs ESP",
+      "normalizedEvent": "davis cup finals qf cro vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: GER vs CAN",
+      "normalizedEvent": "davis cup finals qf ger vs can",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ITA vs USA",
+      "normalizedEvent": "davis cup finals qf ita vs usa",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: AUS vs CRO",
+      "normalizedEvent": "davis cup finals sf aus vs cro",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: ITA vs CAN",
+      "normalizedEvent": "davis cup finals sf ita vs can",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals F: CAN vs AUS",
+      "normalizedEvent": "davis cup finals f can vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "United Cup",
+      "normalizedEvent": "united cup",
+      "surface": "hard",
+      "samples": 168
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: FRA vs HUN",
+      "normalizedEvent": "davis cup qls r1 fra vs hun",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GBR vs COL",
+      "normalizedEvent": "davis cup qls r1 gbr vs col",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GER vs SUI",
+      "normalizedEvent": "davis cup qls r1 ger vs sui",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SRB vs NOR",
+      "normalizedEvent": "davis cup qls r1 srb vs nor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs BIH",
+      "normalizedEvent": "davis cup qls r1 swe vs bih",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ARG vs FIN",
+      "normalizedEvent": "davis cup qls r1 arg vs fin",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BEL vs KOR",
+      "normalizedEvent": "davis cup qls r1 bel vs kor",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CRO vs AUT",
+      "normalizedEvent": "davis cup qls r1 cro vs aut",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CZE vs POR",
+      "normalizedEvent": "davis cup qls r1 cze vs por",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: KAZ vs CHI",
+      "normalizedEvent": "davis cup qls r1 kaz vs chi",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: NED vs SVK",
+      "normalizedEvent": "davis cup qls r1 ned vs svk",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Banja Luka",
+      "normalizedEvent": "banja luka",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SWE vs CHI",
+      "normalizedEvent": "davis cup finals rr swe vs chi",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs SUI",
+      "normalizedEvent": "davis cup finals rr fra vs sui",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SRB vs KOR",
+      "normalizedEvent": "davis cup finals rr srb vs kor",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: NED vs FIN",
+      "normalizedEvent": "davis cup finals rr ned vs fin",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs ITA",
+      "normalizedEvent": "davis cup finals rr can vs ita",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs GBR",
+      "normalizedEvent": "davis cup finals rr aus vs gbr",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ESP vs CZE",
+      "normalizedEvent": "davis cup finals rr esp vs cze",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs USA",
+      "normalizedEvent": "davis cup finals rr cro vs usa",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs FRA",
+      "normalizedEvent": "davis cup finals rr aus vs fra",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CZE vs KOR",
+      "normalizedEvent": "davis cup finals rr cze vs kor",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: NED vs USA",
+      "normalizedEvent": "davis cup finals rr ned vs usa",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: UKR vs COL",
+      "normalizedEvent": "davis cup wg1 r1 ukr vs col",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs CHI",
+      "normalizedEvent": "davis cup finals rr ita vs chi",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GBR vs SUI",
+      "normalizedEvent": "davis cup finals rr gbr vs sui",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs FIN",
+      "normalizedEvent": "davis cup finals rr cro vs fin",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: AUT vs POR",
+      "normalizedEvent": "davis cup wg1 r1 aut vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: DEN vs BRA",
+      "normalizedEvent": "davis cup wg1 r1 den vs bra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LBN vs JAM",
+      "normalizedEvent": "davis cup wg2 r1 lbn vs jam",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: MON vs ECU",
+      "normalizedEvent": "davis cup wg2 r1 mon vs ecu",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: SLO vs LUX",
+      "normalizedEvent": "davis cup wg2 r1 slo vs lux",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs CHI",
+      "normalizedEvent": "davis cup finals rr can vs chi",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs SUI",
+      "normalizedEvent": "davis cup finals rr aus vs sui",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SRB vs CZE",
+      "normalizedEvent": "davis cup finals rr srb vs cze",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs FIN",
+      "normalizedEvent": "davis cup finals rr usa vs fin",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ARG vs LTU",
+      "normalizedEvent": "davis cup wg1 r1 arg vs ltu",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BIH vs GER",
+      "normalizedEvent": "davis cup wg1 r1 bih vs ger",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BUL vs KAZ",
+      "normalizedEvent": "davis cup wg1 r1 bul vs kaz",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: GRE vs SVK",
+      "normalizedEvent": "davis cup wg1 r1 gre vs svk",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ISR vs JPN",
+      "normalizedEvent": "davis cup wg1 r1 isr vs jpn",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: PER vs NOR",
+      "normalizedEvent": "davis cup wg1 r1 per vs nor",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: ESA vs IRL",
+      "normalizedEvent": "davis cup wg2 r1 esa vs irl",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: HKG vs LAT",
+      "normalizedEvent": "davis cup wg2 r1 hkg vs lat",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: IND vs MAR",
+      "normalizedEvent": "davis cup wg2 r1 ind vs mar",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: MEX vs CHN",
+      "normalizedEvent": "davis cup wg2 r1 mex vs chn",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: PAK vs INA",
+      "normalizedEvent": "davis cup wg2 r1 pak vs ina",
+      "surface": "grass",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: URU vs EGY",
+      "normalizedEvent": "davis cup wg2 r1 uru vs egy",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GBR vs FRA",
+      "normalizedEvent": "davis cup finals rr gbr vs fra",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CRO vs NED",
+      "normalizedEvent": "davis cup finals rr cro vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: CAN vs FIN",
+      "normalizedEvent": "davis cup finals qf can vs fin",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: CZE vs AUS",
+      "normalizedEvent": "davis cup finals qf cze vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ITA vs NED",
+      "normalizedEvent": "davis cup finals qf ita vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: SRB vs GBR",
+      "normalizedEvent": "davis cup finals qf srb vs gbr",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: FIN vs AUS",
+      "normalizedEvent": "davis cup finals sf fin vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: ITA vs SRB",
+      "normalizedEvent": "davis cup finals sf ita vs srb",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals F: AUS vs ITA",
+      "normalizedEvent": "davis cup finals f aus vs ita",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Hong Kong",
+      "normalizedEvent": "hong kong",
+      "surface": "hard",
+      "samples": 132
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: UKR vs USA",
+      "normalizedEvent": "davis cup qls r1 ukr vs usa",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CAN vs KOR",
+      "normalizedEvent": "davis cup qls r1 can vs kor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: FIN vs POR",
+      "normalizedEvent": "davis cup qls r1 fin vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: HUN vs GER",
+      "normalizedEvent": "davis cup qls r1 hun vs ger",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: NED vs SUI",
+      "normalizedEvent": "davis cup qls r1 ned vs sui",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SRB vs SVK",
+      "normalizedEvent": "davis cup qls r1 srb vs svk",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs BRA",
+      "normalizedEvent": "davis cup qls r1 swe vs bra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: COL vs LUX",
+      "normalizedEvent": "davis cup wg1 po col vs lux",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: EGY vs ECU",
+      "normalizedEvent": "davis cup wg1 po egy vs ecu",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LBN vs JPN",
+      "normalizedEvent": "davis cup wg1 po lbn vs jpn",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: NOR vs LAT",
+      "normalizedEvent": "davis cup wg1 po nor vs lat",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: NZL vs TUR",
+      "normalizedEvent": "davis cup wg1 po nzl vs tur",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: UZB vs POL",
+      "normalizedEvent": "davis cup wg1 po uzb vs pol",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: CHN vs SLO",
+      "normalizedEvent": "davis cup wg2 po chn vs slo",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: ESA vs POC",
+      "normalizedEvent": "davis cup wg2 po esa vs poc",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: TUN vs CRC",
+      "normalizedEvent": "davis cup wg2 po tun vs crc",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: VIE vs RSA",
+      "normalizedEvent": "davis cup wg2 po vie vs rsa",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ARG vs KAZ",
+      "normalizedEvent": "davis cup qls r1 arg vs kaz",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CHI vs PER",
+      "normalizedEvent": "davis cup qls r1 chi vs per",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CRO vs BEL",
+      "normalizedEvent": "davis cup qls r1 cro vs bel",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CZE vs ISR",
+      "normalizedEvent": "davis cup qls r1 cze vs isr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: TPE vs FRA",
+      "normalizedEvent": "davis cup qls r1 tpe vs fra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: BUL vs BIH",
+      "normalizedEvent": "davis cup wg1 po bul vs bih",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: GRE vs ROU",
+      "normalizedEvent": "davis cup wg1 po gre vs rou",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: IRL vs AUT",
+      "normalizedEvent": "davis cup wg1 po irl vs aut",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LTU vs GEO",
+      "normalizedEvent": "davis cup wg1 po ltu vs geo",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: MEX vs DEN",
+      "normalizedEvent": "davis cup wg1 po mex vs den",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: PAK vs IND",
+      "normalizedEvent": "davis cup wg1 po pak vs ind",
+      "surface": "grass",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: BOL vs THA",
+      "normalizedEvent": "davis cup wg2 po bol vs tha",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: CYP vs MAR",
+      "normalizedEvent": "davis cup wg2 po cyp vs mar",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: HKG vs ZIM",
+      "normalizedEvent": "davis cup wg2 po hkg vs zim",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: JAM vs BAR",
+      "normalizedEvent": "davis cup wg2 po jam vs bar",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: PAR vs MON",
+      "normalizedEvent": "davis cup wg2 po par vs mon",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: TOG vs INA",
+      "normalizedEvent": "davis cup wg2 po tog vs ina",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: URU vs MDA",
+      "normalizedEvent": "davis cup wg2 po uru vs mda",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: IRI vs EST",
+      "normalizedEvent": "davis cup wg2 po iri vs est",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Bucharest",
+      "normalizedEvent": "bucharest",
+      "surface": "clay",
+      "samples": 86
+    },
+    {
+      "tour": "ATP",
+      "event": "Paris Olympics",
+      "normalizedEvent": "paris olympics",
+      "surface": "clay",
+      "samples": 64
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: NED vs BEL",
+      "normalizedEvent": "davis cup finals rr ned vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GER vs SVK",
+      "normalizedEvent": "davis cup finals rr ger vs svk",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs ARG",
+      "normalizedEvent": "davis cup finals rr can vs arg",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs BRA",
+      "normalizedEvent": "davis cup finals rr ita vs bra",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CZE vs ESP",
+      "normalizedEvent": "davis cup finals rr cze vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs CHI",
+      "normalizedEvent": "davis cup finals rr usa vs chi",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FIN vs GBR",
+      "normalizedEvent": "davis cup finals rr fin vs gbr",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: NED vs BRA",
+      "normalizedEvent": "davis cup finals rr ned vs bra",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs CZE",
+      "normalizedEvent": "davis cup finals rr aus vs cze",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs FIN",
+      "normalizedEvent": "davis cup finals rr can vs fin",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs BEL",
+      "normalizedEvent": "davis cup finals rr ita vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FRA vs ESP",
+      "normalizedEvent": "davis cup finals rr fra vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: USA vs SVK",
+      "normalizedEvent": "davis cup finals rr usa vs svk",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GBR vs ARG",
+      "normalizedEvent": "davis cup finals rr gbr vs arg",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: AUT vs TUR",
+      "normalizedEvent": "davis cup wg1 r1 aut vs tur",
+      "surface": "clay",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CRO vs LTU",
+      "normalizedEvent": "davis cup wg1 r1 cro vs ltu",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: EGY vs HUN",
+      "normalizedEvent": "davis cup wg1 r1 egy vs hun",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: NOR vs POR",
+      "normalizedEvent": "davis cup wg1 r1 nor vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: POL vs KOR",
+      "normalizedEvent": "davis cup wg1 r1 pol vs kor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SUI vs PER",
+      "normalizedEvent": "davis cup wg1 r1 sui vs per",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: BOL vs URU",
+      "normalizedEvent": "davis cup wg2 r1 bol vs uru",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: ROU vs CHN",
+      "normalizedEvent": "davis cup wg2 r1 rou vs chn",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: TUN vs IRL",
+      "normalizedEvent": "davis cup wg2 r1 tun vs irl",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: UZB vs EST",
+      "normalizedEvent": "davis cup wg2 r1 uzb vs est",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: BEL vs BRA",
+      "normalizedEvent": "davis cup finals rr bel vs bra",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CZE vs FRA",
+      "normalizedEvent": "davis cup finals rr cze vs fra",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: GER vs USA",
+      "normalizedEvent": "davis cup finals rr ger vs usa",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: FIN vs ARG",
+      "normalizedEvent": "davis cup finals rr fin vs arg",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: JPN vs COL",
+      "normalizedEvent": "davis cup wg1 r1 jpn vs col",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: KAZ vs DEN",
+      "normalizedEvent": "davis cup wg1 r1 kaz vs den",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SRB vs GRE",
+      "normalizedEvent": "davis cup wg1 r1 srb vs gre",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SWE vs IND",
+      "normalizedEvent": "davis cup wg1 r1 swe vs ind",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: TPE vs BIH",
+      "normalizedEvent": "davis cup wg1 r1 tpe vs bih",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: BAR vs PAK",
+      "normalizedEvent": "davis cup wg2 r1 bar vs pak",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: BUL vs ESA",
+      "normalizedEvent": "davis cup wg2 r1 bul vs esa",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: GEO vs MEX",
+      "normalizedEvent": "davis cup wg2 r1 geo vs mex",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: HKG vs ECU",
+      "normalizedEvent": "davis cup wg2 r1 hkg vs ecu",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LBN vs RSA",
+      "normalizedEvent": "davis cup wg2 r1 lbn vs rsa",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: MAR vs MON",
+      "normalizedEvent": "davis cup wg2 r1 mar vs mon",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: NZL vs LUX",
+      "normalizedEvent": "davis cup wg2 r1 nzl vs lux",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: TOG vs LAT",
+      "normalizedEvent": "davis cup wg2 r1 tog vs lat",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: ITA vs NED",
+      "normalizedEvent": "davis cup finals rr ita vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: AUS vs ESP",
+      "normalizedEvent": "davis cup finals rr aus vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: SVK vs CHI",
+      "normalizedEvent": "davis cup finals rr svk vs chi",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals RR: CAN vs GBR",
+      "normalizedEvent": "davis cup finals rr can vs gbr",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Hangzhou",
+      "normalizedEvent": "hangzhou",
+      "surface": "hard",
+      "samples": 55
+    },
+    {
+      "tour": "ATP",
+      "event": "Almaty",
+      "normalizedEvent": "almaty",
+      "surface": "hard",
+      "samples": 57
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: NED vs ESP",
+      "normalizedEvent": "davis cup finals qf ned vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ITA vs ARG",
+      "normalizedEvent": "davis cup finals qf ita vs arg",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: USA vs AUS",
+      "normalizedEvent": "davis cup finals qf usa vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: GER vs NED",
+      "normalizedEvent": "davis cup finals sf ger vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: ITA vs AUS",
+      "normalizedEvent": "davis cup finals sf ita vs aus",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals F: ITA vs NED",
+      "normalizedEvent": "davis cup finals f ita vs ned",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Next Gen Finals",
+      "normalizedEvent": "next gen finals",
+      "surface": "hard",
+      "samples": 29
+    },
+    {
+      "tour": "WTA",
+      "event": "Brisbane",
+      "normalizedEvent": "brisbane",
+      "surface": "hard",
+      "samples": 94
+    },
+    {
+      "tour": "WTA",
+      "event": "Auckland",
+      "normalizedEvent": "auckland",
+      "surface": "hard",
+      "samples": 62
+    },
+    {
+      "tour": "WTA",
+      "event": "Adelaide",
+      "normalizedEvent": "adelaide",
+      "surface": "hard",
+      "samples": 29
+    },
+    {
+      "tour": "WTA",
+      "event": "Hobart",
+      "normalizedEvent": "hobart",
+      "surface": "hard",
+      "samples": 62
+    },
+    {
+      "tour": "WTA",
+      "event": "Australian Open",
+      "normalizedEvent": "australian open",
+      "surface": "hard",
+      "samples": 127
+    },
+    {
+      "tour": "WTA",
+      "event": "Linz",
+      "normalizedEvent": "linz",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Singapore",
+      "normalizedEvent": "singapore",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: NOR vs ARG",
+      "normalizedEvent": "davis cup qls r1 nor vs arg",
+      "surface": "hard",
+      "samples": 8
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUS vs SWE",
+      "normalizedEvent": "davis cup qls r1 aus vs swe",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUT vs FIN",
+      "normalizedEvent": "davis cup qls r1 aut vs fin",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CRO vs SVK",
+      "normalizedEvent": "davis cup qls r1 cro vs svk",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GER vs ISR",
+      "normalizedEvent": "davis cup qls r1 ger vs isr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: JPN vs GBR",
+      "normalizedEvent": "davis cup qls r1 jpn vs gbr",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: KOR vs CZE",
+      "normalizedEvent": "davis cup qls r1 kor vs cze",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SRB vs DEN",
+      "normalizedEvent": "davis cup qls r1 srb vs den",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: USA vs TPE",
+      "normalizedEvent": "davis cup qls r1 usa vs tpe",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: COL vs BAR",
+      "normalizedEvent": "davis cup wg1 po col vs bar",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: GEO vs POL",
+      "normalizedEvent": "davis cup wg1 po geo vs pol",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LBN vs PER",
+      "normalizedEvent": "davis cup wg1 po lbn vs per",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: ROU vs BUL",
+      "normalizedEvent": "davis cup wg1 po rou vs bul",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: TUN vs UKR",
+      "normalizedEvent": "davis cup wg1 po tun vs ukr",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: UZB vs BIH",
+      "normalizedEvent": "davis cup wg1 po uzb vs bih",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: CYP vs THA",
+      "normalizedEvent": "davis cup wg2 po cyp vs tha",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: EST vs VEN",
+      "normalizedEvent": "davis cup wg2 po est vs ven",
+      "surface": "hard",
+      "samples": 6
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: KSA vs IRL",
+      "normalizedEvent": "davis cup wg2 po ksa vs irl",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: MNE vs CHN",
+      "normalizedEvent": "davis cup wg2 po mne vs chn",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: ZIM vs MAR",
+      "normalizedEvent": "davis cup wg2 po zim vs mar",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs ARG",
+      "normalizedEvent": "davis cup qls r1 swe vs arg",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CAN vs HUN",
+      "normalizedEvent": "davis cup qls r1 can vs hun",
+      "surface": "hard",
+      "samples": 8
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ISR vs GER",
+      "normalizedEvent": "davis cup qls r1 isr vs ger",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: TPE vs USA",
+      "normalizedEvent": "davis cup qls r1 tpe vs usa",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: DEN vs SRB",
+      "normalizedEvent": "davis cup qls r1 den vs srb",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: FRA vs BRA",
+      "normalizedEvent": "davis cup qls r1 fra vs bra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: ESP vs SUI",
+      "normalizedEvent": "davis cup qls r1 esp vs sui",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CZE vs KOR",
+      "normalizedEvent": "davis cup qls r1 cze vs kor",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BEL vs CHI",
+      "normalizedEvent": "davis cup qls r1 bel vs chi",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: COL vs BRB",
+      "normalizedEvent": "davis cup wg1 po col vs brb",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: IRL vs KSA",
+      "normalizedEvent": "davis cup wg2 po irl vs ksa",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: CHN vs MNE",
+      "normalizedEvent": "davis cup wg2 po chn vs mne",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: MAR vs ZIM",
+      "normalizedEvent": "davis cup wg2 po mar vs zim",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BRA vs FRA",
+      "normalizedEvent": "davis cup qls r1 bra vs fra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CHI vs BEL",
+      "normalizedEvent": "davis cup qls r1 chi vs bel",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SUI vs ESP",
+      "normalizedEvent": "davis cup qls r1 sui vs esp",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: ECU vs URU",
+      "normalizedEvent": "davis cup wg1 po ecu vs uru",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: GRE vs EGY",
+      "normalizedEvent": "davis cup wg1 po gre vs egy",
+      "surface": "clay",
+      "samples": 6
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: IND vs TOG",
+      "normalizedEvent": "davis cup wg1 po ind vs tog",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: KAZ vs PAK",
+      "normalizedEvent": "davis cup wg1 po kaz vs pak",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LUX vs LTU",
+      "normalizedEvent": "davis cup wg1 po lux vs ltu",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: MON vs POR",
+      "normalizedEvent": "davis cup wg1 po mon vs por",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: TUR vs MEX",
+      "normalizedEvent": "davis cup wg1 po tur vs mex",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: BEN vs LAT",
+      "normalizedEvent": "davis cup wg2 po ben vs lat",
+      "surface": "hard",
+      "samples": 6
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: DOM vs BOL",
+      "normalizedEvent": "davis cup wg2 po dom vs bol",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: ESA vs MDA",
+      "normalizedEvent": "davis cup wg2 po esa vs mda",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: JAM vs NZL",
+      "normalizedEvent": "davis cup wg2 po jam vs nzl",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: NAM vs HKG",
+      "normalizedEvent": "davis cup wg2 po nam vs hkg",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: RSA vs NGR",
+      "normalizedEvent": "davis cup wg2 po rsa vs ngr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: SLO vs INA",
+      "normalizedEvent": "davis cup wg2 po slo vs ina",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "WTA",
+      "event": "Abu Dhabi",
+      "normalizedEvent": "abu dhabi",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "WTA",
+      "event": "Doha",
+      "normalizedEvent": "doha",
+      "surface": "hard",
+      "samples": 110
+    },
+    {
+      "tour": "WTA",
+      "event": "Dubai",
+      "normalizedEvent": "dubai",
+      "surface": "hard",
+      "samples": 110
+    },
+    {
+      "tour": "WTA",
+      "event": "Merida",
+      "normalizedEvent": "merida",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Austin",
+      "normalizedEvent": "austin",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Indian Wells",
+      "normalizedEvent": "indian wells",
+      "surface": "hard",
+      "samples": 191
+    },
+    {
+      "tour": "WTA",
+      "event": "Miami",
+      "normalizedEvent": "miami",
+      "surface": "hard",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Charleston",
+      "normalizedEvent": "charleston",
+      "surface": "clay",
+      "samples": 47
+    },
+    {
+      "tour": "WTA",
+      "event": "Bogota",
+      "normalizedEvent": "bogota",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Stuttgart",
+      "normalizedEvent": "stuttgart",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Rouen",
+      "normalizedEvent": "rouen",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Madrid",
+      "normalizedEvent": "madrid",
+      "surface": "clay",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Rome",
+      "normalizedEvent": "rome",
+      "surface": "clay",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Strasbourg",
+      "normalizedEvent": "strasbourg",
+      "surface": "clay",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Rabat",
+      "normalizedEvent": "rabat",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Roland Garros",
+      "normalizedEvent": "roland garros",
+      "surface": "clay",
+      "samples": 127
+    },
+    {
+      "tour": "WTA",
+      "event": "Nottingham",
+      "normalizedEvent": "nottingham",
+      "surface": "grass",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Berlin",
+      "normalizedEvent": "berlin",
+      "surface": "grass",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Eastbourne",
+      "normalizedEvent": "eastbourne",
+      "surface": "grass",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Bad Homburg",
+      "normalizedEvent": "bad homburg",
+      "surface": "grass",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Wimbledon",
+      "normalizedEvent": "wimbledon",
+      "surface": "grass",
+      "samples": 127
+    },
+    {
+      "tour": "WTA",
+      "event": "Iasi",
+      "normalizedEvent": "iasi",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Hamburg",
+      "normalizedEvent": "hamburg",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Prague",
+      "normalizedEvent": "prague",
+      "surface": "clay",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Washington",
+      "normalizedEvent": "washington",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Toronto",
+      "normalizedEvent": "canadian open",
+      "surface": "hard",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Cincinnati",
+      "normalizedEvent": "cincinnati",
+      "surface": "hard",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Monterrey",
+      "normalizedEvent": "monterrey",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Cleveland",
+      "normalizedEvent": "cleveland",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Us Open",
+      "normalizedEvent": "us open",
+      "surface": "hard",
+      "samples": 127
+    },
+    {
+      "tour": "WTA",
+      "event": "Guadalajara",
+      "normalizedEvent": "guadalajara",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Sao Paulo",
+      "normalizedEvent": "sao paulo",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: CRO vs FRA",
+      "normalizedEvent": "davis cup qls r2 cro vs fra",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: GER vs JPN",
+      "normalizedEvent": "davis cup qls r2 ger vs jpn",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: HUN vs AUT",
+      "normalizedEvent": "davis cup qls r2 hun vs aut",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: NED vs ARG",
+      "normalizedEvent": "davis cup qls r2 ned vs arg",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: USA vs CZE",
+      "normalizedEvent": "davis cup qls r2 usa vs cze",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CAN vs ISR",
+      "normalizedEvent": "davis cup wg1 r1 can vs isr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: KOR vs KAZ",
+      "normalizedEvent": "davis cup wg1 r1 kor vs kaz",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: PER vs POR",
+      "normalizedEvent": "davis cup wg1 r1 per vs por",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: POL vs GBR",
+      "normalizedEvent": "davis cup wg1 r1 pol vs gbr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SRB vs TUR",
+      "normalizedEvent": "davis cup wg1 r1 srb vs tur",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SUI vs IND",
+      "normalizedEvent": "davis cup wg1 r1 sui vs ind",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SVK vs COL",
+      "normalizedEvent": "davis cup wg1 r1 svk vs col",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: SWE vs TUN",
+      "normalizedEvent": "davis cup wg1 r1 swe vs tun",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: EST vs MEX",
+      "normalizedEvent": "davis cup wg2 r1 est vs mex",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LBN vs BAR",
+      "normalizedEvent": "davis cup wg2 r1 lbn vs bar",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: PAR vs PAK",
+      "normalizedEvent": "davis cup wg2 r1 par vs pak",
+      "surface": "clay",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: SLO vs URU",
+      "normalizedEvent": "davis cup wg2 r1 slo vs uru",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: UKR vs DOM",
+      "normalizedEvent": "davis cup wg2 r1 ukr vs dom",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ISR vs CAN",
+      "normalizedEvent": "davis cup wg1 r1 isr vs can",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BUL vs FIN",
+      "normalizedEvent": "davis cup wg1 r1 bul vs fin",
+      "surface": "clay",
+      "samples": 8
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: TPE vs NOR",
+      "normalizedEvent": "davis cup wg1 r1 tpe vs nor",
+      "surface": "hard",
+      "samples": 8
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CHI vs LUX",
+      "normalizedEvent": "davis cup wg1 r1 chi vs lux",
+      "surface": "clay",
+      "samples": 6
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ECU vs BIH",
+      "normalizedEvent": "davis cup wg1 r1 ecu vs bih",
+      "surface": "clay",
+      "samples": 8
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: GRE vs BRA",
+      "normalizedEvent": "davis cup wg1 r1 gre vs bra",
+      "surface": "hard",
+      "samples": 6
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: JPN vs GER",
+      "normalizedEvent": "davis cup qls r2 jpn vs ger",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: ESP vs DEN",
+      "normalizedEvent": "davis cup qls r2 esp vs den",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: AUS vs BEL",
+      "normalizedEvent": "davis cup qls r2 aus vs bel",
+      "surface": "hard",
+      "samples": 8
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R2: DEN vs ESP",
+      "normalizedEvent": "davis cup qls r2 den vs esp",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: CYP vs MON",
+      "normalizedEvent": "davis cup wg2 r1 cyp vs mon",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: ESA vs ROU",
+      "normalizedEvent": "davis cup wg2 r1 esa vs rou",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: HKG vs UZB",
+      "normalizedEvent": "davis cup wg2 r1 hkg vs uzb",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: IRL vs CHN",
+      "normalizedEvent": "davis cup wg2 r1 irl vs chn",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: LTU vs BEN",
+      "normalizedEvent": "davis cup wg2 r1 ltu vs ben",
+      "surface": "hard",
+      "samples": 5
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: NZL vs GEO",
+      "normalizedEvent": "davis cup wg2 r1 nzl vs geo",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: RSA vs MAR",
+      "normalizedEvent": "davis cup wg2 r1 rsa vs mar",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 R1: TOG vs EGY",
+      "normalizedEvent": "davis cup wg2 r1 tog vs egy",
+      "surface": "hard",
+      "samples": 6
+    },
+    {
+      "tour": "WTA",
+      "event": "Seoul",
+      "normalizedEvent": "seoul",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "ATP",
+      "event": "Shanghai",
+      "normalizedEvent": "shanghai",
+      "surface": "hard",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Beijing",
+      "normalizedEvent": "beijing",
+      "surface": "hard",
+      "samples": 95
+    },
+    {
+      "tour": "WTA",
+      "event": "Wuhan",
+      "normalizedEvent": "wuhan",
+      "surface": "hard",
+      "samples": 55
+    },
+    {
+      "tour": "ATP",
+      "event": "Brussels",
+      "normalizedEvent": "brussels",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Tokyo",
+      "normalizedEvent": "tokyo",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Ningbo",
+      "normalizedEvent": "ningbo",
+      "surface": "hard",
+      "samples": 27
+    },
+    {
+      "tour": "WTA",
+      "event": "Pan Pacific Open",
+      "normalizedEvent": "pan pacific open",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Guangzhou",
+      "normalizedEvent": "guangzhou",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Hong Kong",
+      "normalizedEvent": "hong kong",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Jiujiang",
+      "normalizedEvent": "jiujiang",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Chennai",
+      "normalizedEvent": "chennai",
+      "surface": "hard",
+      "samples": 31
+    },
+    {
+      "tour": "WTA",
+      "event": "Riyadh Finals",
+      "normalizedEvent": "riyadh finals",
+      "surface": "hard",
+      "samples": 15
+    },
+    {
+      "tour": "ATP",
+      "event": "Athens",
+      "normalizedEvent": "athens",
+      "surface": "hard",
+      "samples": 54
+    },
+    {
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "normalizedEvent": "atp finals",
+      "surface": "hard",
+      "samples": 15
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: FRA vs BEL",
+      "normalizedEvent": "davis cup finals qf fra vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ITA vs AUT",
+      "normalizedEvent": "davis cup finals qf ita vs aut",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ARG vs GER",
+      "normalizedEvent": "davis cup finals qf arg vs ger",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals QF: ESP vs CZE",
+      "normalizedEvent": "davis cup finals qf esp vs cze",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: ITA vs BEL",
+      "normalizedEvent": "davis cup finals sf ita vs bel",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals SF: ESP vs GER",
+      "normalizedEvent": "davis cup finals sf esp vs ger",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup Finals F: ITA vs ESP",
+      "normalizedEvent": "davis cup finals f ita vs esp",
+      "surface": "hard",
+      "samples": 2
+    },
+    {
+      "tour": "ATP",
+      "event": "Next Gen ATP Finals",
+      "normalizedEvent": "next gen atp finals",
+      "surface": "hard",
+      "samples": 15
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: NOR vs GBR",
+      "normalizedEvent": "davis cup qls r1 nor vs gbr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BRA vs CAN",
+      "normalizedEvent": "davis cup qls r1 bra vs can",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: CHI vs SRB",
+      "normalizedEvent": "davis cup qls r1 chi vs srb",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: DEN vs CRO",
+      "normalizedEvent": "davis cup qls r1 den vs cro",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: GER vs PER",
+      "normalizedEvent": "davis cup qls r1 ger vs per",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: JPN vs AUT",
+      "normalizedEvent": "davis cup qls r1 jpn vs aut",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: CHN vs POR",
+      "normalizedEvent": "davis cup wg1 po chn vs por",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: ISR vs LTU",
+      "normalizedEvent": "davis cup wg1 po isr vs ltu",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: KAZ vs MON",
+      "normalizedEvent": "davis cup wg1 po kaz vs mon",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: PAR vs ROU",
+      "normalizedEvent": "davis cup wg1 po par vs rou",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: SLO vs TUR",
+      "normalizedEvent": "davis cup wg1 po slo vs tur",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: SUI vs TUN",
+      "normalizedEvent": "davis cup wg1 po sui vs tun",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: DOM vs LAT",
+      "normalizedEvent": "davis cup wg2 po dom vs lat",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: GEO vs BER",
+      "normalizedEvent": "davis cup wg2 po geo vs ber",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: PAK vs SEN",
+      "normalizedEvent": "davis cup wg2 po pak vs sen",
+      "surface": "grass",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: AUS vs ECU",
+      "normalizedEvent": "davis cup qls r1 aus vs ecu",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: BEL vs BUL",
+      "normalizedEvent": "davis cup qls r1 bel vs bul",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: FRA vs SVK",
+      "normalizedEvent": "davis cup qls r1 fra vs svk",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: KOR vs ARG",
+      "normalizedEvent": "davis cup qls r1 kor vs arg",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: NED vs IND",
+      "normalizedEvent": "davis cup qls r1 ned vs ind",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: SWE vs CZE",
+      "normalizedEvent": "davis cup qls r1 swe vs cze",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup QLS R1: USA vs HUN",
+      "normalizedEvent": "davis cup qls r1 usa vs hun",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: EGY vs POL",
+      "normalizedEvent": "davis cup wg1 po egy vs pol",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: GRE vs MEX",
+      "normalizedEvent": "davis cup wg1 po gre vs mex",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: HKG vs FIN",
+      "normalizedEvent": "davis cup wg1 po hkg vs fin",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: LUX vs UKR",
+      "normalizedEvent": "davis cup wg1 po lux vs ukr",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: MAR vs COL",
+      "normalizedEvent": "davis cup wg1 po mar vs col",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: NZL vs BIH",
+      "normalizedEvent": "davis cup wg1 po nzl vs bih",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 PO: TPE vs LBN",
+      "normalizedEvent": "davis cup wg1 po tpe vs lbn",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: BAR vs BOL",
+      "normalizedEvent": "davis cup wg2 po bar vs bol",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: BEN vs ESA",
+      "normalizedEvent": "davis cup wg2 po ben vs esa",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: CYP vs MKD",
+      "normalizedEvent": "davis cup wg2 po cyp vs mkd",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: INA vs TOG",
+      "normalizedEvent": "davis cup wg2 po ina vs tog",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: IRL vs SYR",
+      "normalizedEvent": "davis cup wg2 po irl vs syr",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: JAM vs URU",
+      "normalizedEvent": "davis cup wg2 po jam vs uru",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: NAM vs EST",
+      "normalizedEvent": "davis cup wg2 po nam vs est",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: NGR vs UZB",
+      "normalizedEvent": "davis cup wg2 po ngr vs uzb",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: RSA vs MNE",
+      "normalizedEvent": "davis cup wg2 po rsa vs mne",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG2 PO: THA vs PUR",
+      "normalizedEvent": "davis cup wg2 po tha vs pur",
+      "surface": "hard",
+      "samples": 3
+    }
+  ]
+}
