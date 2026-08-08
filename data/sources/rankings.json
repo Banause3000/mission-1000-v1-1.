@@ -1,33 +1,8 @@
 {
-  "generatedAt": "2026-08-08T00:37:17.355020+00:00",
-  "source": "Mission 1000 Data Engine",
+  "generatedAt": "2026-08-08T00:37:16.779798+00:00",
+  "rankingDate": "20251229",
+  "source": "Jeff Sackmann tennis_atp dataset",
   "players": [
-    {
-      "name": "Tallon Griekspoor",
-      "tour": "ATP",
-      "rank": 26,
-      "playerId": "134868",
-      "country": "NED",
-      "points": 1565
-    },
-    {
-      "name": "Matteo Arnaldi",
-      "tour": "ATP",
-      "rank": 61,
-      "playerId": "208286",
-      "country": "ITA",
-      "points": 873
-    },
-    {
-      "name": "Iva Jovic",
-      "tour": "WTA",
-      "rank": 0
-    },
-    {
-      "name": "Alina Korneeva",
-      "tour": "WTA",
-      "rank": 0
-    },
     {
       "tour": "ATP",
       "playerId": "207989",
@@ -227,6 +202,14 @@
       "country": "ITA",
       "rank": 25,
       "points": 1579
+    },
+    {
+      "tour": "ATP",
+      "playerId": "134868",
+      "name": "Tallon Griekspoor",
+      "country": "NED",
+      "rank": 26,
+      "points": 1565
     },
     {
       "tour": "ATP",
@@ -499,6 +482,14 @@
       "country": "USA",
       "rank": 60,
       "points": 877
+    },
+    {
+      "tour": "ATP",
+      "playerId": "208286",
+      "name": "Matteo Arnaldi",
+      "country": "ITA",
+      "rank": 61,
+      "points": 873
     },
     {
       "tour": "ATP",
@@ -6889,8 +6880,8 @@
       "playerId": "208147",
       "name": "Alexandre Aubriot",
       "country": "FRA",
-      "rank": 1658,
-      "points": 2
+      "rank": 860,
+      "points": 28
     },
     {
       "tour": "ATP",
@@ -13409,6 +13400,14 @@
       "playerId": "208874",
       "name": "Seita Watanabe",
       "country": "JPN",
+      "rank": 1658,
+      "points": 2
+    },
+    {
+      "tour": "ATP",
+      "playerId": "208147",
+      "name": "Alexandre Aubriot",
+      "country": "FRA",
       "rank": 1658,
       "points": 2
     },
