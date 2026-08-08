@@ -7,11 +7,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Mission 1000">
+
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icon-192.png">
-  <link rel="stylesheet" href="./style.css?v=1.2.3">
+
+  <link rel="stylesheet" href="./style.css?v=2.5.1">
+
   <title>Mission 1000</title>
 </head>
+
 <body>
 <div class="app-shell">
 
@@ -30,328 +34,908 @@
   </header>
 
   <main>
+
     <section id="dashboardView" class="app-view">
-    <section class="quick-stats" aria-label="Tagesübersicht">
-      <article><span>HEUTE</span><b id="todayCount">0</b><small>MATCHES</small></article>
-      <article><span>LIVE</span><b id="liveCount">0</b><small>MATCHES</small></article>
-      <article><span>ATP</span><b id="atpCount">0</b><small>MATCHES</small></article>
-      <article><span>WTA</span><b id="wtaCount">0</b><small>MATCHES</small></article>
-    </section>
 
-    <section id="statusCard" class="mission-control">
-      <div class="mc-status">
-        <span class="pulse"></span>
-        <div>
-          <b id="statusTitle">Daten werden geladen</b>
-          <small id="statusText">Mission Control verbindet sich mit deinen JSON-Daten.</small>
-        </div>
-      </div>
+      <section class="quick-stats" aria-label="Tagesübersicht">
 
-      <div class="mc-grid">
         <article>
-          <span>MATCHES</span>
-          <b id="mcMatches">0</b>
+          <span>HEUTE</span>
+          <b id="todayCount">0</b>
+          <small>MATCHES</small>
         </article>
-        <article>
-          <span>ANALYSIERT</span>
-          <b id="analyzedCount">0</b>
-        </article>
-        <article>
-          <span>TOP SCORE</span>
-          <b id="bestScore">0</b>
-        </article>
-        <article>
-          <span>DATENSTAND</span>
-          <b id="dataDate">–</b>
-        </article>
-        <article>
-          <span>RANKING</span>
-          <b id="rankingCoverage">0%</b>
-        </article>
-        <article>
-          <span>FORM</span>
-          <b id="formCoverage">0%</b>
-        </article>
-        <article>
-          <span>H2H</span>
-          <b id="h2hCoverage">0%</b>
-        </article>
-        <article>
-          <span>BELAG</span>
-          <b id="surfaceCoverage">0%</b>
-        </article>
-        <article>
-          <span>STATS</span>
-          <b id="statsCoverage">0%</b>
-        </article>
-        <article>
-          <span>DATA ENGINE</span>
-          <b id="engineStatus">READY</b>
-        </article>
-      </div>
-    </section>
 
-    <section class="panel top-pick">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">MISSION INTELLIGENCE</span>
-          <h2>Top Match</h2>
-        </div>
-        <span id="updatedAt" class="muted">–</span>
-      </div>
+        <article>
+          <span>LIVE</span>
+          <b id="liveCount">0</b>
+          <small>MATCHES</small>
+        </article>
 
-      <div id="topEmpty" class="empty hidden">
-        Für den gewählten Datenstand wurde kein Match gefunden.
-      </div>
+        <article>
+          <span>ATP</span>
+          <b id="atpCount">0</b>
+          <small>MATCHES</small>
+        </article>
 
-      <div id="topContent">
-        <div class="match-headline">
-          <div class="player-side">
-            <div class="player-title-row"><span id="topFlag1" class="flag">🎾</span><small id="topMeta1">ATP</small></div>
-            <h3 id="topPlayer1">Spieler 1</h3>
-            <span id="topRank1">Ranking –</span>
+        <article>
+          <span>WTA</span>
+          <b id="wtaCount">0</b>
+          <small>MATCHES</small>
+        </article>
+
+      </section>
+
+
+      <section id="statusCard" class="mission-control">
+
+        <div class="mc-status">
+
+          <span class="pulse"></span>
+
+          <div>
+            <b id="statusTitle">Daten werden geladen</b>
+            <small id="statusText">
+              Mission Control verbindet sich mit deinen JSON-Daten.
+            </small>
           </div>
 
-          <div class="vs-badge">VS</div>
-
-          <div class="player-side right">
-            <div class="player-title-row right-row"><small id="topMeta2">ATP</small><span id="topFlag2" class="flag">🎾</span></div>
-            <h3 id="topPlayer2">Spieler 2</h3>
-            <span id="topRank2">Ranking –</span>
-          </div>
         </div>
 
-        <div class="event-pill-row">
-          <span id="topEvent">–</span>
-          <small id="topStart">–</small>
-        </div>
 
-        <div class="intel-cards">
+        <div class="mc-grid">
+
           <article>
-            <span>MISSION SCORE</span>
-            <div class="ring"><b id="topScore">0</b></div>
-            <small>/100</small>
+            <span>MATCHES</span>
+            <b id="mcMatches">0</b>
+          </article>
+
+          <article>
+            <span>ANALYSIERT</span>
+            <b id="analyzedCount">0</b>
+          </article>
+
+          <article>
+            <span>TOP SCORE</span>
+            <b id="bestScore">0</b>
+          </article>
+
+          <article>
+            <span>DATENSTAND</span>
+            <b id="dataDate">–</b>
+          </article>
+
+          <article>
+            <span>RANKING</span>
+            <b id="rankingCoverage">0%</b>
+          </article>
+
+          <article>
+            <span>FORM</span>
+            <b id="formCoverage">0%</b>
+          </article>
+
+          <article>
+            <span>H2H</span>
+            <b id="h2hCoverage">0%</b>
+          </article>
+
+          <article>
+            <span>BELAG</span>
+            <b id="surfaceCoverage">0%</b>
+          </article>
+
+          <article>
+            <span>STATS</span>
+            <b id="statsCoverage">0%</b>
+          </article>
+
+          <article>
+            <span>DATA ENGINE</span>
+            <b id="engineStatus">READY</b>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <section class="panel top-pick">
+
+        <div class="section-title">
+
+          <div>
+            <span class="eyebrow">MISSION INTELLIGENCE</span>
+            <h2>Top Match</h2>
+          </div>
+
+          <span id="updatedAt" class="muted">–</span>
+
+        </div>
+
+
+        <div id="topEmpty" class="empty hidden">
+          Für den gewählten Datenstand wurde kein Match gefunden.
+        </div>
+
+
+        <div id="topContent">
+
+          <div class="match-headline">
+
+            <div class="player-side">
+
+              <div class="player-title-row">
+                <span id="topFlag1" class="flag">🎾</span>
+                <small id="topMeta1">ATP</small>
+              </div>
+
+              <h3 id="topPlayer1">Spieler 1</h3>
+
+              <span id="topRank1">Ranking –</span>
+
+            </div>
+
+
+            <div class="vs-badge">VS</div>
+
+
+            <div class="player-side right">
+
+              <div class="player-title-row right-row">
+                <small id="topMeta2">ATP</small>
+                <span id="topFlag2" class="flag">🎾</span>
+              </div>
+
+              <h3 id="topPlayer2">Spieler 2</h3>
+
+              <span id="topRank2">Ranking –</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="event-pill-row">
+
+            <span id="topEvent">–</span>
+
+            <small id="topStart">–</small>
+
+          </div>
+
+
+          <div class="intel-cards">
+
+            <article>
+
+              <span>MISSION SCORE</span>
+
+              <div class="ring">
+                <b id="topScore">0</b>
+              </div>
+
+              <small>/100</small>
+
+            </article>
+
+
+            <article>
+
+              <span>CONFIDENCE</span>
+
+              <b id="topConfidence" class="accent-number">0%</b>
+
+              <div class="meter">
+                <i id="confidenceBar"></i>
+              </div>
+
+              <small id="confidenceLabel">–</small>
+
+            </article>
+
+
+            <article>
+
+              <span>MARKT TREND</span>
+
+              <div class="spark">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <b id="marketTrend" class="accent-text">–</b>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="matches-section">
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="eyebrow">MATCHES</span>
+
+            <h2 id="listTitle">
+              Wichtige Matches
+            </h2>
+
+          </div>
+
+          <button id="toggleAllBtn" class="ghost-link">
+            Alle ansehen
+          </button>
+
+        </div>
+
+
+        <div
+          id="matchList"
+          class="match-list">
+        </div>
+
+      </section>
+
+
+      <section id="detailsPanel" class="panel details hidden">
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="eyebrow">
+              MATCH DETAILS
+            </span>
+
+            <h2 id="detailTitle">
+              –
+            </h2>
+
+          </div>
+
+          <button
+            id="closeDetailsBtn"
+            class="close-btn"
+            aria-label="Schließen">
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="detail-summary">
+
+          <div class="ring large">
+
+            <b id="detailScore">
+              0
+            </b>
+
+          </div>
+
+
+          <div>
+
+            <span class="mini-label">
+              MISSION SCORE
+            </span>
+
+            <h3 id="detailSignal">
+              –
+            </h3>
+
+            <p id="detailNarrative">
+              –
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="factor-grid">
+
+          <article>
+            <span>MARKT</span>
+            <b id="factorMarket">–</b>
+          </article>
+
+          <article>
+            <span>RANKING</span>
+            <b id="factorRanking">–</b>
+          </article>
+
+          <article>
+            <span>FORM</span>
+            <b id="factorForm">–</b>
           </article>
 
           <article>
             <span>CONFIDENCE</span>
-            <b id="topConfidence" class="accent-number">0%</b>
-            <div class="meter"><i id="confidenceBar"></i></div>
-            <small id="confidenceLabel">–</small>
+            <b id="factorConfidence">–</b>
+          </article>
+
+        </div>
+
+
+        <div class="score-breakdown">
+
+          <div class="breakdown-head">
+
+            <span class="eyebrow">
+              MISSION SCORE 3.0
+            </span>
+
+            <small>
+              nur verfügbare Daten
+            </small>
+
+          </div>
+
+
+          <div class="break-row">
+
+            <span>Markt</span>
+
+            <i>
+              <b id="barMarket"></b>
+            </i>
+
+            <strong id="scoreMarket">
+              0/25
+            </strong>
+
+          </div>
+
+
+          <div class="break-row">
+
+            <span>Ranking</span>
+
+            <i>
+              <b id="barRanking"></b>
+            </i>
+
+            <strong id="scoreRanking">
+              0/20
+            </strong>
+
+          </div>
+
+
+          <div class="break-row">
+
+            <span>Form</span>
+
+            <i>
+              <b id="barForm"></b>
+            </i>
+
+            <strong id="scoreForm">
+              0/20
+            </strong>
+
+          </div>
+
+
+          <div class="break-row pending">
+
+            <span>H2H</span>
+
+            <i>
+              <b></b>
+            </i>
+
+            <strong>
+              –/10
+            </strong>
+
+          </div>
+
+
+          <div class="break-row pending">
+
+            <span>Belag</span>
+
+            <i>
+              <b></b>
+            </i>
+
+            <strong>
+              –/10
+            </strong>
+
+          </div>
+
+
+          <div class="break-row pending">
+
+            <span>Stats</span>
+
+            <i>
+              <b></b>
+            </i>
+
+            <strong>
+              –/15
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="odds-grid">
+
+          <article>
+
+            <div>
+
+              <span id="detailP1">
+                –
+              </span>
+
+              <small id="detailBook1">
+                Quote
+              </small>
+
+            </div>
+
+            <b id="detailO1">
+              –
+            </b>
+
+          </article>
+
+
+          <article>
+
+            <div>
+
+              <span id="detailP2">
+                –
+              </span>
+
+              <small id="detailBook2">
+                Quote
+              </small>
+
+            </div>
+
+            <b id="detailO2">
+              –
+            </b>
+
+          </article>
+
+        </div>
+
+
+        <div class="detail-divider"></div>
+
+
+        <div class="section-title compact">
+
+          <div>
+
+            <span class="eyebrow">
+              INTELLIGENCE MODULES
+            </span>
+
+            <h2>
+              Analyse-Bausteine
+            </h2>
+
+          </div>
+
+          <span class="muted">
+            datenbereit
+          </span>
+
+        </div>
+
+
+        <div class="module-grid">
+
+          <article>
+
+            <span>
+              RANKING
+            </span>
+
+            <b id="moduleRanking">
+              –
+            </b>
+
+            <small id="moduleRankingText">
+              Noch keine Daten
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              FORM
+            </span>
+
+            <b id="moduleForm">
+              –
+            </b>
+
+            <small id="moduleFormText">
+              Noch keine Daten
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              H2H
+            </span>
+
+            <b id="moduleH2H">
+              –
+            </b>
+
+            <small id="moduleH2HText">
+              Noch keine Daten
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              BELAG
+            </span>
+
+            <b id="moduleSurface">
+              –
+            </b>
+
+            <small id="moduleSurfaceText">
+              Noch keine Daten
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              SERVICE
+            </span>
+
+            <b id="moduleServe">
+              –
+            </b>
+
+            <small id="moduleServeText">
+              Noch keine Daten
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              RETURN
+            </span>
+
+            <b id="moduleReturn">
+              –
+            </b>
+
+            <small id="moduleReturnText">
+              Noch keine Daten
+            </small>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <section id="matchesView" class="app-view hidden">
+
+      <section class="panel subpage">
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="eyebrow">
+              MATCH CENTER
+            </span>
+
+            <h2>
+              Alle Matches
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div
+          id="allMatchesList"
+          class="match-list">
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <section id="playerView" class="app-view hidden">
+
+      <section class="panel subpage">
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="eyebrow">
+              PLAYER HUB
+            </span>
+
+            <h2>
+              Spielerprofile
+            </h2>
+
+          </div>
+
+          <span class="muted">
+            aus vorhandenen Daten
+          </span>
+
+        </div>
+
+
+        <div class="player-search-wrap">
+
+          <input
+            id="playerSearch"
+            class="player-search"
+            type="search"
+            placeholder="Spieler suchen …"
+            autocomplete="off">
+
+        </div>
+
+
+        <div
+          id="playerProfile"
+          class="player-profile empty-state">
+
+          <div class="profile-avatar">
+            🎾
+          </div>
+
+          <h3>
+            Noch kein Spieler gewählt
+          </h3>
+
+          <p>
+            Tippe bei einem Match auf einen Spielernamen oder suche hier nach einem Spieler.
+          </p>
+
+        </div>
+
+
+        <div
+          id="playerResults"
+          class="player-results">
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <section id="watchlistView" class="app-view hidden">
+
+      <section class="panel subpage">
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="eyebrow">
+              WATCHLIST
+            </span>
+
+            <h2>
+              Meine Matches
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="watchlistList"
+          class="match-list">
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <section id="aiView" class="app-view hidden">
+
+      <section class="panel subpage">
+
+        <div class="section-title">
+
+          <div>
+
+            <span class="eyebrow">
+              MISSION AI
+            </span>
+
+            <h2>
+              Mission Report
+            </h2>
+
+          </div>
+
+          <span
+            id="aiBadge"
+            class="ai-badge">
+            Analyse
+          </span>
+
+        </div>
+
+
+        <div class="ai-score-row">
+
+          <div class="ring ai-ring">
+            <b id="aiScore">0</b>
+          </div>
+
+
+          <div>
+
+            <span class="mini-label">
+              TOP MATCH
+            </span>
+
+            <h3 id="aiMatchTitle">
+              –
+            </h3>
+
+            <p id="aiMatchMeta">
+              –
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="aiReport"
+          class="ai-report">
+
+          Daten werden ausgewertet …
+
+        </div>
+
+
+        <div class="ai-factor-grid">
+
+          <article>
+            <span>Markt</span>
+            <b id="aiMarket">–</b>
           </article>
 
           <article>
-            <span>MARKT TREND</span>
-            <div class="spark">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </div>
-            <b id="marketTrend" class="accent-text">–</b>
+            <span>Ranking</span>
+            <b id="aiRanking">–</b>
           </article>
+
+          <article>
+            <span>Form</span>
+            <b id="aiForm">–</b>
+          </article>
+
+          <article>
+            <span>Confidence</span>
+            <b id="aiConfidence">–</b>
+          </article>
+
         </div>
-      </div>
-    </section>
 
-    <section class="matches-section">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">MATCHES</span>
-          <h2 id="listTitle">Wichtige Matches</h2>
-        </div>
-        <button id="toggleAllBtn" class="ghost-link">Alle ansehen</button>
-      </div>
-
-      <div id="matchList" class="match-list"></div>
-    </section>
-
-    <section id="detailsPanel" class="panel details hidden">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">MATCH DETAILS</span>
-          <h2 id="detailTitle">–</h2>
-        </div>
-        <button id="closeDetailsBtn" class="close-btn" aria-label="Schließen">×</button>
-      </div>
-
-      <div class="detail-summary">
-        <div class="ring large"><b id="detailScore">0</b></div>
-        <div>
-          <span class="mini-label">MISSION SCORE</span>
-          <h3 id="detailSignal">–</h3>
-          <p id="detailNarrative">–</p>
-        </div>
-      </div>
-
-      <div class="factor-grid">
-        <article><span>MARKT</span><b id="factorMarket">–</b></article>
-        <article><span>RANKING</span><b id="factorRanking">–</b></article>
-        <article><span>FORM</span><b id="factorForm">–</b></article>
-        <article><span>CONFIDENCE</span><b id="factorConfidence">–</b></article>
-      </div>
-      <div class="score-breakdown">
-        <div class="breakdown-head">
-          <span class="eyebrow">MISSION SCORE 3.0</span>
-          <small>nur verfügbare Daten</small>
-        </div>
-        <div class="break-row"><span>Markt</span><i><b id="barMarket"></b></i><strong id="scoreMarket">0/30</strong></div>
-        <div class="break-row"><span>Ranking</span><i><b id="barRanking"></b></i><strong id="scoreRanking">0/20</strong></div>
-        <div class="break-row"><span>Form</span><i><b id="barForm"></b></i><strong id="scoreForm">0/20</strong></div>
-        <div class="break-row pending"><span>H2H</span><i><b></b></i><strong>–/10</strong></div>
-        <div class="break-row pending"><span>Belag</span><i><b></b></i><strong>–/10</strong></div>
-        <div class="break-row pending"><span>Stats</span><i><b></b></i><strong>–/10</strong></div>
-      </div>
-
-      <div class="odds-grid">
-        <article>
-          <div>
-            <span id="detailP1">–</span>
-            <small id="detailBook1">Quote</small>
-          </div>
-          <b id="detailO1">–</b>
-        </article>
-        <article>
-          <div>
-            <span id="detailP2">–</span>
-            <small id="detailBook2">Quote</small>
-          </div>
-          <b id="detailO2">–</b>
-        </article>
-      </div>
-
-      <div class="detail-divider"></div>
-
-      <div class="section-title compact">
-        <div>
-          <span class="eyebrow">INTELLIGENCE MODULES</span>
-          <h2>Analyse-Bausteine</h2>
-        </div>
-        <span class="muted">datenbereit</span>
-      </div>
-
-      <div class="module-grid">
-        <article>
-          <span>RANKING</span>
-          <b id="moduleRanking">–</b>
-          <small id="moduleRankingText">Noch keine Daten</small>
-        </article>
-        <article>
-          <span>FORM</span>
-          <b id="moduleForm">–</b>
-          <small id="moduleFormText">Noch keine Daten</small>
-        </article>
-        <article>
-          <span>H2H</span>
-          <b id="moduleH2H">–</b>
-          <small id="moduleH2HText">Noch keine Daten</small>
-        </article>
-        <article>
-          <span>BELAG</span>
-          <b id="moduleSurface">–</b>
-          <small id="moduleSurfaceText">Noch keine Daten</small>
-        </article>
-        <article>
-          <span>SERVICE</span>
-          <b id="moduleServe">–</b>
-          <small id="moduleServeText">Noch keine Daten</small>
-        </article>
-        <article>
-          <span>RETURN</span>
-          <b id="moduleReturn">–</b>
-          <small id="moduleReturnText">Noch keine Daten</small>
-        </article>
-      </div>
-    </section>
       </section>
 
-    <section id="matchesView" class="app-view hidden">
-      <section class="panel subpage">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">MATCH CENTER</span>
-            <h2>Alle Matches</h2>
-          </div>
-        </div>
-        <div id="allMatchesList" class="match-list"></div>
-      </section>
     </section>
 
-    <section id="playerView" class="app-view hidden">
-      <section class="panel subpage">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">PLAYER HUB</span>
-            <h2>Spielerprofile</h2>
-          </div>
-          <span class="muted">aus vorhandenen Daten</span>
-        </div>
-
-        <div class="player-search-wrap">
-          <input id="playerSearch" class="player-search" type="search" placeholder="Spieler suchen …" autocomplete="off">
-        </div>
-
-        <div id="playerProfile" class="player-profile empty-state">
-          <div class="profile-avatar">🎾</div>
-          <h3>Noch kein Spieler gewählt</h3>
-          <p>Tippe bei einem Match auf einen Spielernamen oder suche hier nach einem Spieler.</p>
-        </div>
-
-        <div id="playerResults" class="player-results"></div>
-      </section>
-    </section>
-
-    <section id="watchlistView" class="app-view hidden">
-      <section class="panel subpage">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">WATCHLIST</span>
-            <h2>Meine Matches</h2>
-          </div>
-        </div>
-        <div id="watchlistList" class="match-list"></div>
-      </section>
-    </section>
-
-    <section id="aiView" class="app-view hidden">
-      <section class="panel subpage">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">MISSION AI</span>
-            <h2>Mission Report</h2>
-          </div>
-          <span id="aiBadge" class="ai-badge">Analyse</span>
-        </div>
-
-        <div class="ai-score-row">
-          <div class="ring ai-ring"><b id="aiScore">0</b></div>
-          <div>
-            <span class="mini-label">TOP MATCH</span>
-            <h3 id="aiMatchTitle">–</h3>
-            <p id="aiMatchMeta">–</p>
-          </div>
-        </div>
-
-        <div id="aiReport" class="ai-report">Daten werden ausgewertet …</div>
-
-        <div class="ai-factor-grid">
-          <article><span>Markt</span><b id="aiMarket">–</b></article>
-          <article><span>Ranking</span><b id="aiRanking">–</b></article>
-          <article><span>Form</span><b id="aiForm">–</b></article>
-          <article><span>Confidence</span><b id="aiConfidence">–</b></article>
-        </div>
-      </section>
-    </section>
   </main>
 
-  <nav class="bottom-nav" aria-label="Hauptnavigation">
-    <button class="active" data-view="dashboardView">⌂<span>Dashboard</span></button>
-    <button data-view="matchesView">◯<span>Matches</span></button>
-    <button data-view="playerView">♙<span>Player</span></button>
-    <button data-view="watchlistView">☆<span>Watchlist</span></button>
-    <button data-view="aiView">◉<span>Mission AI</span></button>
+
+  <nav
+    class="bottom-nav"
+    aria-label="Hauptnavigation">
+
+    <button
+      class="active"
+      data-view="dashboardView">
+
+      ⌂
+      <span>Dashboard</span>
+
+    </button>
+
+
+    <button
+      data-view="matchesView">
+
+      ◯
+      <span>Matches</span>
+
+    </button>
+
+
+    <button
+      data-view="playerView">
+
+      ♙
+      <span>Player</span>
+
+    </button>
+
+
+    <button
+      data-view="watchlistView">
+
+      ☆
+      <span>Watchlist</span>
+
+    </button>
+
+
+    <button
+      data-view="aiView">
+
+      ◉
+      <span>Mission AI</span>
+
+    </button>
+
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v2.5.0</footer>
+
+  <footer>
+    Mission 1000 · Project Eclipse · v2.5.1
+  </footer>
+
 </div>
 
-<script src="./script.js?v=1.2.3"></script>
+
+<script src="./script.js?v=2.5.1"></script>
+
 </body>
 </html>
