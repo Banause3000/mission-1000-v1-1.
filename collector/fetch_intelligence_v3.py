@@ -7,6 +7,7 @@ import json
 import os
 import re
 import urllib.request
+import html
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,7 +17,7 @@ SOURCE = ROOT / "data" / "sources"
 INTEL = ROOT / "data" / "intelligence"
 EXTERNAL = ROOT / ".external" / "tennis-source"
 
-USER_AGENT = "Mission1000-DataEngine/3.2"
+USER_AGENT = "Mission1000-DataEngine/3.3"
 
 HISTORY_YEARS = list(range(2019, 2027))
 
@@ -108,6 +109,11 @@ def is_real_match(row):
     if score in {"W/O", "WO", "WALKOVER"}:
         return False
     return True
+
+def normalize_player_name(value):
+    text = str(value or "").strip()
+    text = re.sub(r"\s+", " ", text)
+    return text
 
 def normalize_event_name(value):
     text = str(value or "").casefold()
@@ -450,6 +456,296 @@ def build_form(rows):
 
     return players
 
+
+def _slug_name(value):
+    text = str(value or "").casefold()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return text.strip("-")
+
+def _plain_html(text):
+    text = re.sub(r"<script\b[^>]*>.*?</script>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<[^>]+>", " ", text)
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+def _fetch_html(url):
+    req = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "Mozilla/5.0 Mission1000-H2H/3.3",
+            "Accept-Language": "en-US,en;q=0.9",
+        }
+    )
+    with urllib.request.urlopen(req, timeout=35) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+def _wta_player_directory():
+    """
+    Resolve WTA profile IDs from the official player directory.
+    The public links use /players/<numeric-id>/<slug>.
+    """
+    try:
+        page = _fetch_html("https://www.wtatennis.com/players")
+    except Exception as exc:
+        print("WTA Player Directory optional nicht geladen:", exc)
+        return {}
+
+    directory = {}
+    for pid, slug in re.findall(r'/players/(\d+)/([a-z0-9-]+)', page, flags=re.I):
+        key = slug.strip("-").casefold()
+        if key:
+            directory[key] = pid
+
+    print("WTA Profil-IDs gefunden:", len(directory))
+    return directory
+
+def _json_payloads_from_html(page):
+    payloads = []
+    for block in re.findall(r'<script[^>]*>(.*?)</script>', page, flags=re.I | re.S):
+        raw = html.unescape(block.strip())
+        if not raw:
+            continue
+
+        candidates = [raw]
+        m = re.search(r'(\{.*\})', raw, flags=re.S)
+        if m:
+            candidates.append(m.group(1))
+
+        for candidate in candidates:
+            try:
+                payloads.append(json.loads(candidate))
+                break
+            except Exception:
+                pass
+    return payloads
+
+def _name_from_value(value):
+    if isinstance(value, str):
+        return value
+    if isinstance(value, dict):
+        for key in ("name","fullName","playerName","displayName"):
+            if value.get(key):
+                return str(value[key])
+        first = value.get("firstName") or value.get("firstname") or ""
+        last = value.get("lastName") or value.get("lastname") or ""
+        if first or last:
+            return f"{first} {last}".strip()
+    return ""
+
+def _field(obj, names):
+    if not isinstance(obj, dict):
+        return None
+    lower = {str(k).casefold(): k for k in obj.keys()}
+    for name in names:
+        key = lower.get(name.casefold())
+        if key is not None:
+            return obj.get(key)
+    return None
+
+def _extract_official_pair_meetings(payload, player1, player2):
+    """
+    Walk arbitrary WTA page JSON and collect match-like objects.
+    This is intentionally schema-tolerant because the WTA site can rename fields.
+    """
+    p1 = player1.casefold()
+    p2 = player2.casefold()
+    found = []
+
+    def same(value, target):
+        return normalize_player_name(_name_from_value(value)).casefold() == normalize_player_name(target).casefold()
+
+    def walk(node):
+        if isinstance(node, dict):
+            values = list(node.values())
+
+            winner = _field(node, ["winner","winnerName","winningPlayer","matchWinner"])
+            loser = _field(node, ["loser","loserName","losingPlayer","matchLoser"])
+
+            direct_result = (
+                winner is not None and loser is not None and
+                ((same(winner, player1) and same(loser, player2)) or
+                 (same(winner, player2) and same(loser, player1)))
+            )
+
+            pa = _field(node, ["player1","playerA","homePlayer","firstPlayer"])
+            pb = _field(node, ["player2","playerB","awayPlayer","secondPlayer"])
+            pair_object = (
+                pa is not None and pb is not None and
+                ((same(pa, player1) and same(pb, player2)) or
+                 (same(pa, player2) and same(pb, player1)))
+            )
+
+            if direct_result:
+                win_name = normalize_player_name(_name_from_value(winner))
+                lose_name = normalize_player_name(_name_from_value(loser))
+                found.append({
+                    "winner": win_name,
+                    "loser": lose_name,
+                    "date": str(_field(node, ["date","matchDate","startDate","startTime"]) or ""),
+                    "event": str(_field(node, ["tournament","tournamentName","event","eventName"]) or ""),
+                    "surface": str(_field(node, ["surface","courtSurface"]) or ""),
+                    "score": str(_field(node, ["score","result","matchScore"]) or ""),
+                })
+            elif pair_object:
+                # Sometimes participants and winner are separated as IDs/names.
+                result = str(_field(node, ["winnerName","winner","resultWinner","winningPlayerName"]) or "")
+                if result:
+                    result_name = normalize_player_name(_name_from_value(result))
+                    if result_name.casefold() in {normalize_player_name(player1).casefold(), normalize_player_name(player2).casefold()}:
+                        other = player2 if result_name.casefold() == normalize_player_name(player1).casefold() else player1
+                        found.append({
+                            "winner": result_name,
+                            "loser": other,
+                            "date": str(_field(node, ["date","matchDate","startDate","startTime"]) or ""),
+                            "event": str(_field(node, ["tournament","tournamentName","event","eventName"]) or ""),
+                            "surface": str(_field(node, ["surface","courtSurface"]) or ""),
+                            "score": str(_field(node, ["score","result","matchScore"]) or ""),
+                        })
+
+            for value in values:
+                walk(value)
+
+        elif isinstance(node, list):
+            for value in node:
+                walk(value)
+
+    walk(payload)
+
+    # Remove duplicate representations of the same match.
+    unique = {}
+    for item in found:
+        key = (
+            item["winner"].casefold(),
+            item["loser"].casefold(),
+            item["date"][:10],
+            item["event"].casefold(),
+            item["score"].casefold(),
+        )
+        unique[key] = item
+    return list(unique.values())
+
+def _official_wta_h2h(player1, player2, directory):
+    id1 = directory.get(_slug_name(player1))
+    id2 = directory.get(_slug_name(player2))
+    if not id1 or not id2:
+        return None
+
+    url = f"https://www.wtatennis.com/head-to-head/{id1}/{id2}"
+    try:
+        page = _fetch_html(url)
+    except Exception as exc:
+        print(f"WTA H2H optional fehlgeschlagen {player1} / {player2}: {exc}")
+        return None
+
+    meetings = []
+    for payload in _json_payloads_from_html(page):
+        meetings.extend(_extract_official_pair_meetings(payload, player1, player2))
+
+    # Deduplicate after combining script payloads.
+    unique = {}
+    for m in meetings:
+        key = (
+            m.get("winner","").casefold(),
+            m.get("loser","").casefold(),
+            m.get("date","")[:10],
+            m.get("event","").casefold(),
+            m.get("score","").casefold(),
+        )
+        unique[key] = m
+    meetings = list(unique.values())
+
+    if not meetings:
+        return None
+
+    p1wins = sum(1 for m in meetings if normalize_player_name(m["winner"]).casefold() == normalize_player_name(player1).casefold())
+    p2wins = sum(1 for m in meetings if normalize_player_name(m["winner"]).casefold() == normalize_player_name(player2).casefold())
+
+    meetings.sort(key=lambda m: m.get("date") or "", reverse=True)
+
+    return {
+        "tour": "WTA",
+        "player1": player1,
+        "player2": player2,
+        "wins1": p1wins,
+        "wins2": p2wins,
+        "meetings": p1wins + p2wins,
+        "lastMeeting": meetings[0] if meetings else None,
+        "recentMeetings": meetings[:5],
+        "source": "WTA Official H2H"
+    }
+
+def supplement_current_wta_h2h(h2h):
+    """
+    Only query official WTA H2H for today's/current feed pairs that are missing
+    from our historical database. This keeps requests tiny and targeted.
+    """
+    matches_path = ROOT / "data" / "matches.json"
+    if not matches_path.exists():
+        return h2h
+
+    try:
+        payload = json.loads(matches_path.read_text(encoding="utf-8"))
+        current = payload.get("matches", []) if isinstance(payload, dict) else payload
+    except Exception as exc:
+        print("Current matches für WTA H2H nicht lesbar:", exc)
+        return h2h
+
+    directory = None
+
+    def existing_record(a, b):
+        aa = normalize_player_name(a).casefold()
+        bb = normalize_player_name(b).casefold()
+        for rec in h2h:
+            x = normalize_player_name(rec.get("player1")).casefold()
+            y = normalize_player_name(rec.get("player2")).casefold()
+            if {x, y} == {aa, bb}:
+                return rec
+        return None
+
+    checked = set()
+    added = 0
+
+    for match in current:
+        if str(match.get("tour") or "").upper() != "WTA":
+            continue
+
+        p1 = normalize_player_name(match.get("player1"))
+        p2 = normalize_player_name(match.get("player2"))
+        if not p1 or not p2:
+            continue
+
+        pair = tuple(sorted([p1.casefold(), p2.casefold()]))
+        if pair in checked:
+            continue
+        checked.add(pair)
+
+        # Do not waste a request when history already has 2+ meetings.
+        present = existing_record(p1, p2)
+        if present and int(present.get("meetings") or 0) >= 2:
+            continue
+
+        if directory is None:
+            directory = _wta_player_directory()
+            if not directory:
+                break
+
+        official = _official_wta_h2h(p1, p2, directory)
+        if not official:
+            continue
+
+        if present:
+            # Official H2H wins when it is deeper than local history.
+            if int(official.get("meetings") or 0) > int(present.get("meetings") or 0):
+                h2h.remove(present)
+                h2h.append(official)
+                added += 1
+        else:
+            h2h.append(official)
+            added += 1
+
+    print("WTA Official H2H ergänzt/ersetzt:", added)
+    return h2h
+
 def build_h2h(rows):
     pairs = {}
 
@@ -670,7 +966,7 @@ def build_stats(rows):
 
 def main():
     print("=" * 68)
-    print("MISSION 1000 DATA ENGINE v3.2")
+    print("MISSION 1000 DATA ENGINE v3.3")
     print("=" * 68)
 
     rows = []
@@ -710,6 +1006,7 @@ def main():
     players = build_players(rows)
     form = build_form(rows)
     h2h = build_h2h(rows)
+    h2h = supplement_current_wta_h2h(h2h)
     surface = build_surface(rows)
     stats = build_stats(rows)
     tournament_surfaces = build_tournament_surfaces(rows)
@@ -786,7 +1083,7 @@ def main():
     save_json(INTEL / "diagnostics.json", diagnostics)
 
     print(json.dumps(diagnostics, ensure_ascii=False, indent=2))
-    print("DATA ENGINE v3.2: OK")
+    print("DATA ENGINE v3.3: OK")
 
 if __name__ == "__main__":
     main()
