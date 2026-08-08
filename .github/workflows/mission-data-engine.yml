@@ -21,6 +21,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: ATP Rankings laden
+        run: |
+          python collector/fetch_rankings.py
+
       - name: Mission Database bauen
         run: |
           python collector/build_database.py
@@ -31,7 +35,7 @@ jobs:
           set -euo pipefail
 
           if git diff --quiet -- data; then
-            echo "Keine Datenänderungen."
+            echo "Keine Änderungen."
             exit 0
           fi
 
@@ -39,5 +43,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data
-          git commit -m "Build Mission 1000 database"
+          git commit -m "Mission Data Engine Update"
           git push
