@@ -21,17 +21,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: ATP Rankings laden
+      - name: Mission Engine starten
         run: |
-          python collector/fetch_rankings.py
-
-      - name: Form Collector testen
-        run: |
-          python collector/fetch_form.py
-
-      - name: Mission Database bauen
-        run: |
-          python collector/build_database.py
+          python collector/mission_engine.py
 
       - name: Änderungen committen
         shell: bash
