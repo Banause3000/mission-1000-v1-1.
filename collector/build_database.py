@@ -70,6 +70,7 @@ def main():
     h2h_src = load_json(SOURCE/"h2h.json", {"matches":[]})
     surface_src = load_json(SOURCE/"surface.json", {"players":[]})
     stats_src = load_json(SOURCE/"stats.json", {"players":[]})
+    tournament_surface_src = load_json(SOURCE/"tournament_surfaces.json", {"events":[]})
 
     # Existing app DB is also used as fallback/input.
     ranking_existing = load_json(DATA/"rankings.json", {"players":[]})
@@ -113,8 +114,15 @@ def main():
     })
     save_json(INTEL/"stats.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine",
+        "source": "Mission 1000 Data Engine v3.1",
         "players": stats
+    })
+
+    events = tournament_surface_src.get("events", []) if isinstance(tournament_surface_src, dict) else []
+    save_json(INTEL/"tournament_surfaces.json", {
+        "generatedAt": now,
+        "source": "Mission 1000 Data Engine v3.1",
+        "events": events
     })
 
     print(f"rankings: {len(rankings)}")
@@ -123,6 +131,7 @@ def main():
     print(f"h2h: {len(h2h)}")
     print(f"surface: {len(surfaces)}")
     print(f"stats: {len(stats)}")
+    print(f"tournament surfaces: {len(events)}")
 
 if __name__ == "__main__":
     main()
