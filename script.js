@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.4
+// Mission 1000 v2.6.5
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -1463,14 +1463,23 @@ function showDetails(match){
   $("detailsPanel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-async function fetchJson(path, fallback){
+async function fetchJson(path, fallback, timeoutMs=10000){
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+
   try{
-    const res = await fetch(`${path}?v=${Date.now()}`, {cache:"no-store"});
+    const res = await fetch(`${path}?v=${Date.now()}`, {
+      cache:"no-store",
+      signal:controller.signal
+    });
+
     if(!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
     return await res.json();
   }catch(error){
-    console.warn(error);
+    console.warn(`Mission 1000 fetch failed: ${path}`, error);
     return fallback;
+  }finally{
+    clearTimeout(timer);
   }
 }
 
@@ -1551,7 +1560,7 @@ async function load(){
   $("statusTitle").textContent = "Intelligence wird geladen";
   $("statusText").textContent = "Ranking, Form und Spielerprofile werden ergänzt.";
 
-  const [rankingResult, formResult, playersResult] = await Promise.all([
+  const [rankingResult, formResult] = await Promise.all([
     fetchBestJson(
       ["./data/rankings.json", "./data/sources/rankings.json"],
       {players:[]}
@@ -1559,16 +1568,11 @@ async function load(){
     fetchBestJson(
       ["./data/form.json", "./data/sources/form.json"],
       {players:[]}
-    ),
-    fetchBestJson(
-      ["./data/players.json", "./data/sources/players.json"],
-      {players:[]}
     )
   ]);
 
   const rankingsPayload = rankingResult.payload;
   const formsPayload = formResult.payload;
-  const playersPayload = playersResult.payload;
 
   STATE.rankings =
     (Array.isArray(rankingsPayload.players) && rankingsPayload.players) ||
@@ -1584,24 +1588,42 @@ async function load(){
     (Array.isArray(formsPayload) && formsPayload) ||
     [];
 
-  STATE.players =
-    (Array.isArray(playersPayload.players) && playersPayload.players) ||
-    (Array.isArray(playersPayload.data) && playersPayload.data) ||
-    (Array.isArray(playersPayload) && playersPayload) ||
-    [];
-
   console.info("Mission 1000 Core Intelligence", {
     rankings: STATE.rankings.length,
     form: STATE.forms.length,
-    players: STATE.players.length,
     rankingPath: rankingResult.path,
-    formPath: formResult.path,
-    playersPath: playersResult.path
+    formPath: formResult.path
   });
 
+  // Show ranking/form immediately. Never wait for the very large players.json.
   renderEverything(matchesPayload);
 
-  $("statusTitle").textContent = "Mission Intelligence wird geladen";
+  // Player metadata/flags load in the background and cannot block analysis.
+  fetchBestJson(
+    ["./data/players.json", "./data/sources/players.json"],
+    {players:[]}
+  ).then(playersResult => {
+    const playersPayload = playersResult.payload;
+
+    STATE.players =
+      (Array.isArray(playersPayload.players) && playersPayload.players) ||
+      (Array.isArray(playersPayload.data) && playersPayload.data) ||
+      (Array.isArray(playersPayload) && playersPayload) ||
+      [];
+
+    console.info("Mission 1000 Player Metadata", {
+      players: STATE.players.length,
+      path: playersResult.path
+    });
+
+    // Flags/player search may improve after background metadata arrives.
+    renderMatchList();
+    renderAllMatches();
+    renderWatchlist();
+    renderPlayerSearch($("playerSearch")?.value || "");
+  }).catch(error => console.warn("Player metadata background load failed", error));
+
+  $("statusTitle").textContent = "Analyse-Daten werden geladen";
   $("statusText").textContent = "H2H, Belag sowie Serve- und Return-Daten werden ergänzt.";
 
   await loadOptionalIntelligence();
@@ -1651,7 +1673,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.4 Match Availability Fix aktiv");
+console.info("Mission 1000 v2.6.5 Fast Loader Fix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
