@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import csv, io, json, re, urllib.request
+
+import csv
+import io
+import json
+import re
+import subprocess
+import sys
+import tempfile
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -9,19 +17,28 @@ DATA = ROOT / "data"
 SOURCE = DATA / "sources"
 SOURCE.mkdir(parents=True, exist_ok=True)
 
-UA = "Mozilla/5.0 Mission1000/4.2"
+UA = "Mozilla/5.0 Mission1000-RankingCollector/4.3"
 
 ATP_PLAYERS = "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_players.csv"
 ATP_RANKINGS = "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_rankings_20s.csv"
 
-# IMPORTANT:
-# Jeff Sackmann's WTA repo does not expose the old wta_players.csv /
-# wta_rankings_20s.csv URLs we previously assumed. It DOES expose the
-# current-season match file. That file contains winner/loser names,
-# countries, ranks and ranking points for each match.
-WTA_MATCHES = "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_matches_2026.csv"
+# Official WTA weekly numeric rankings PDF.
+WTA_PDF = "https://wtafiles.wtatennis.com/pdf/rankings/Singles_Numeric.pdf"
 
-def fetch(url):
+def ensure_pypdf():
+    try:
+        import pypdf
+        return pypdf
+    except Exception:
+        print("pypdf fehlt -> installiere pypdf ...")
+        subprocess.run(
+            [sys.executable, "-m", "pip", "install", "--quiet", "pypdf>=5,<7"],
+            check=True
+        )
+        import pypdf
+        return pypdf
+
+def fetch_text(url):
     print("Lade:", url)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=45) as r:
@@ -30,6 +47,22 @@ def fetch(url):
         raise RuntimeError("Leere Antwort")
     print("OK:", url)
     return text
+
+def fetch_bytes(url):
+    print("Lade:", url)
+    req = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": UA,
+            "Accept": "application/pdf,*/*;q=0.8"
+        }
+    )
+    with urllib.request.urlopen(req, timeout=60) as r:
+        data = r.read()
+    if not data or not data.startswith(b"%PDF"):
+        raise RuntimeError("WTA PDF wurde nicht als gültige PDF geliefert")
+    print("OK:", url, f"({len(data)} Bytes)")
+    return data
 
 def rows(text):
     return list(csv.DictReader(io.StringIO(text)))
@@ -53,27 +86,25 @@ def save(path, payload):
     tmp.replace(path)
 
 def atp_snapshot():
-    ptxt = fetch(ATP_PLAYERS)
-    rtxt = fetch(ATP_RANKINGS)
+    ptxt = fetch_text(ATP_PLAYERS)
+    rtxt = fetch_text(ATP_RANKINGS)
 
     players = {}
     for r in rows(ptxt):
         pid = clean(r.get("player_id"))
         if not pid:
             continue
-        first = r.get("name_first") if "name_first" in r else r.get("first_name")
-        last  = r.get("name_last") if "name_last" in r else r.get("last_name")
         players[pid] = {
-            "name": clean(f"{first or ''} {last or ''}"),
-            "country": clean(r.get("ioc") or r.get("country_code"))
+            "name": clean(f"{r.get('name_first','')} {r.get('name_last','')}"),
+            "country": clean(r.get("ioc"))
         }
 
     parsed = []
     for r in rows(rtxt):
         date = clean(r.get("ranking_date"))
-        rank = num(r.get("rank") or r.get("ranking"))
-        pid = clean(r.get("player") or r.get("player_id"))
-        pts = num(r.get("points") or r.get("ranking_points"))
+        rank = num(r.get("rank"))
+        pid = clean(r.get("player"))
+        pts = num(r.get("points"))
         if date and rank and pid:
             parsed.append((date, rank, pid, pts))
 
@@ -82,6 +113,7 @@ def atp_snapshot():
 
     latest = max(x[0] for x in parsed)
     out = []
+
     for date, rank, pid, pts in parsed:
         if date != latest:
             continue
@@ -96,70 +128,153 @@ def atp_snapshot():
             "rank": rank,
             "points": pts,
             "rankingDate": latest,
-            "rankingSource": "weekly-ranking"
+            "rankingSource": "ATP weekly CSV"
         })
 
     out.sort(key=lambda x: x["rank"])
     print(f"ATP: {len(out)} @ {latest}")
     return latest, out
 
+def wta_name(pdf_name):
+    # Official PDF format: SURNAME, FIRSTNAME
+    raw = clean(pdf_name)
+    if "," not in raw:
+        return raw.title()
+
+    surname, given = [clean(x) for x in raw.split(",", 1)]
+
+    def pretty(part):
+        # Keep apostrophes/hyphens while making ALL CAPS readable.
+        return " ".join(
+            "-".join(piece.capitalize() for piece in token.split("-"))
+            for token in part.split()
+        )
+
+    return clean(f"{pretty(given)} {pretty(surname)}")
+
+def is_rank_line(line):
+    return bool(re.fullmatch(r"\d{1,4}", clean(line)))
+
+def is_prior_line(line):
+    return bool(re.fullmatch(r"\(\d{1,4}\)|\(-\)|-", clean(line)))
+
+def is_name_line(line):
+    text = clean(line)
+    if "," not in text:
+        return False
+    if len(text) < 4 or len(text) > 80:
+        return False
+    # Avoid tournament/header lines containing commas.
+    if any(word in text.upper() for word in (
+        "WTA SINGLES", "AS OF:", "PRINTED:", "PAGE ", "RANK PRIOR"
+    )):
+        return False
+    return bool(re.search(r"[A-ZÀ-ÖØ-Þ]", text))
+
 def wta_snapshot():
-    text = fetch(WTA_MATCHES)
-    data = rows(text)
-    if not data:
-        raise RuntimeError("WTA 2026 Matchdatei leer")
+    pypdf = ensure_pypdf()
+    pdf = fetch_bytes(WTA_PDF)
 
-    # Latest observed ranking for every player.
-    # Sort key: tournament date, then match number.
-    latest = {}
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as fh:
+        fh.write(pdf)
+        pdf_path = Path(fh.name)
 
-    def absorb(r, side):
-        name = clean(r.get(f"{side}_name"))
-        rank = num(r.get(f"{side}_rank"))
-        if not name or not rank:
-            return
+    try:
+        reader = pypdf.PdfReader(str(pdf_path))
+        text = "\n".join((page.extract_text() or "") for page in reader.pages)
+    finally:
+        try:
+            pdf_path.unlink()
+        except Exception:
+            pass
 
-        date = clean(r.get("tourney_date"))
-        match_num = num(r.get("match_num")) or 0
-        key = norm_name(name)
-        candidate = {
+    if "WTA Singles Rankings" not in text:
+        raise RuntimeError("WTA PDF Text konnte nicht sinnvoll extrahiert werden")
+
+    date_match = re.search(
+        r"As of:\s*(\d{1,2}\s+[A-Za-z]+\s+\d{4})",
+        text
+    )
+    ranking_date_text = date_match.group(1) if date_match else ""
+
+    try:
+        ranking_date = datetime.strptime(
+            ranking_date_text, "%d %B %Y"
+        ).date().isoformat()
+    except Exception:
+        ranking_date = datetime.now(timezone.utc).date().isoformat()
+
+    lines = [clean(x) for x in text.splitlines() if clean(x)]
+    parsed = []
+
+    i = 0
+    while i < len(lines) - 4:
+        if not is_rank_line(lines[i]) or not is_prior_line(lines[i+1]) or not is_name_line(lines[i+2]):
+            i += 1
+            continue
+
+        rank = num(lines[i])
+        prior = lines[i+1]
+        raw_name = lines[i+2]
+        j = i + 3
+
+        country = ""
+        if j < len(lines) and re.fullmatch(r"[A-Z]{3}", lines[j]):
+            country = lines[j]
+            j += 1
+
+        if j >= len(lines):
+            break
+
+        points = num(lines[j])
+
+        # Sanity checks: points are numeric and rank is realistic.
+        if not rank or not points or not (1 <= rank <= 2000):
+            i += 1
+            continue
+
+        parsed.append({
             "tour": "WTA",
-            "playerId": clean(r.get(f"{side}_id")),
-            "name": name,
-            "country": clean(r.get(f"{side}_ioc")),
+            "name": wta_name(raw_name),
+            "country": country,
             "rank": rank,
-            "points": num(r.get(f"{side}_rank_points")),
-            "rankingDate": date,
-            "rankingSource": "latest-2026-match",
-            "_sort": (date, match_num)
-        }
+            "priorRank": num(prior.strip("()")) if prior not in {"-", "(-)"} else None,
+            "points": points,
+            "rankingDate": ranking_date,
+            "rankingSource": "WTA official Singles_Numeric.pdf"
+        })
 
-        old = latest.get(key)
-        if old is None or candidate["_sort"] > old["_sort"]:
-            latest[key] = candidate
+        i = j + 1
 
-    for r in data:
-        absorb(r, "winner")
-        absorb(r, "loser")
+    # De-duplicate by rank/name.
+    dedup = {}
+    for p in parsed:
+        key = (p["rank"], norm_name(p["name"]))
+        dedup[key] = p
 
-    out = []
-    for p in latest.values():
-        p.pop("_sort", None)
-        out.append(p)
+    out = list(dedup.values())
+    out.sort(key=lambda p: p["rank"])
 
-    out.sort(key=lambda x: x["rank"])
-    if len(out) < 50:
-        raise RuntimeError(f"WTA: nur {len(out)} Spieler extrahiert")
+    # Strong sanity checks so bad parsing never silently overwrites good data.
+    if len(out) < 500:
+        raise RuntimeError(f"WTA PDF Parser fand nur {len(out)} Rankings")
+    if not any(p["rank"] == 1 for p in out):
+        raise RuntimeError("WTA PDF Parser fand keine #1")
+    if not any(norm_name(p["name"]) == "jessicapegula" for p in out):
+        raise RuntimeError("WTA PDF Parser fand Jessica Pegula nicht")
 
-    newest_date = max(clean(r.get("tourney_date")) for r in data if clean(r.get("tourney_date")))
-    print(f"WTA: {len(out)} Spieler aus 2026 Matchdaten; neuestes Turnierdatum {newest_date}")
-    return newest_date, out
+    print(f"WTA: {len(out)} @ {ranking_date}")
+    print("WTA Top 5:")
+    for p in out[:5]:
+        print(f"  #{p['rank']} {p['name']} ({p['country'] or '-'}) {p['points']}")
+
+    return ranking_date, out
 
 def main():
-    print("=" * 68)
-    print("MISSION 1000 RANKING COLLECTOR v4.2")
-    print("WTA MATCH-RANK FALLBACK")
-    print("=" * 68)
+    print("=" * 70)
+    print("MISSION 1000 RANKING COLLECTOR v4.3")
+    print("OFFICIAL WTA PDF")
+    print("=" * 70)
 
     existing_path = SOURCE / "rankings.json"
     existing = []
@@ -180,20 +295,20 @@ def main():
         combined += p
         dates["ATP"] = d
         success.add("ATP")
-    except Exception as e:
-        warnings.append("ATP: " + str(e))
-        print("ATP FEHLER:", e)
+    except Exception as exc:
+        print("ATP FEHLER:", exc)
+        warnings.append("ATP: " + str(exc))
 
     try:
         d, p = wta_snapshot()
         combined += p
         dates["WTA"] = d
         success.add("WTA")
-    except Exception as e:
-        warnings.append("WTA: " + str(e))
-        print("WTA FEHLER:", e)
+    except Exception as exc:
+        print("WTA FEHLER:", exc)
+        warnings.append("WTA: " + str(exc))
 
-    # Do not wipe a tour if its source is temporarily unavailable.
+    # Preserve old rankings only for tours whose fresh fetch failed.
     for p in existing:
         tour = clean(p.get("tour")).upper()
         if tour and tour not in success:
@@ -213,27 +328,31 @@ def main():
         old = dedup.get(key)
         if old is None:
             dedup[key] = p
-        else:
-            # Prefer newest observed date; otherwise lower rank.
-            nd = clean(p.get("rankingDate"))
-            od = clean(old.get("rankingDate"))
-            if nd > od or (nd == od and rank < (num(old.get("rank")) or 999999)):
-                dedup[key] = p
+            continue
+
+        nd = clean(p.get("rankingDate"))
+        od = clean(old.get("rankingDate"))
+        if nd > od or (nd == od and rank < (num(old.get("rank")) or 999999)):
+            dedup[key] = p
 
     players = list(dedup.values())
-    players.sort(key=lambda p: (clean(p.get("tour")), num(p.get("rank")) or 999999))
+    players.sort(key=lambda p: (
+        clean(p.get("tour")),
+        num(p.get("rank")) or 999999,
+        clean(p.get("name"))
+    ))
 
-    payload = {
+    save(SOURCE / "rankings.json", {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "source": "Mission 1000 Ranking Collector v4.2",
+        "source": "Mission 1000 Ranking Collector v4.3",
         "rankingDates": dates,
-        "notes": {
-            "WTA": "Latest observed 2026 match ranking from Jeff Sackmann current-season match data."
+        "sources": {
+            "ATP": [ATP_PLAYERS, ATP_RANKINGS],
+            "WTA": WTA_PDF
         },
         "warnings": warnings,
         "players": players
-    }
-    save(SOURCE / "rankings.json", payload)
+    })
 
     print()
     print("FERTIG")
@@ -241,6 +360,12 @@ def main():
     print("ATP:", sum(1 for p in players if p.get("tour") == "ATP"))
     print("WTA:", sum(1 for p in players if p.get("tour") == "WTA"))
     print("Ranking-Daten:", dates)
+
+    # For quick visual validation in GitHub Actions.
+    for target in ("Jessica Pegula", "Diana Shnaider", "Iga Swiatek", "Marta Kostyuk"):
+        p = next((x for x in players if x.get("tour") == "WTA" and norm_name(x.get("name")) == norm_name(target)), None)
+        print(target + ":", f"#{p['rank']}" if p else "NICHT GEFUNDEN")
+
     if warnings:
         print("WARNUNGEN:", warnings)
 
