@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.2
+// Mission 1000 v2.6.3
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -458,11 +458,12 @@ async function loadOptionalIntelligence(){
     (Array.isArray(eventSurfacePayload) && eventSurfacePayload) ||
     [];
 
-  console.info("Mission 1000 Intelligence v2.6.1", {
+  console.info("Mission 1000 Intelligence v2.6.3", {
     h2h: STATE.h2h.length,
     surfacePlayers: STATE.surfaces.length,
     stats: STATE.stats.length,
-    tournamentSurfaces: STATE.tournamentSurfaces.length
+    tournamentSurfaces: STATE.tournamentSurfaces.length,
+    tournamentSurfacePath: eventSurfaceResult.path
   });
 }
 
@@ -1428,7 +1429,7 @@ function payloadCount(payload){
   if(Array.isArray(payload)) return payload.length;
   if(!payload || typeof payload !== "object") return 0;
 
-  for(const key of ["matches","players","rankings","form","h2h","data"]){
+  for(const key of ["matches","players","rankings","form","h2h","events","data"]){
     if(Array.isArray(payload[key])) return payload[key].length;
   }
 
@@ -1601,7 +1602,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.2 Matching Fix aktiv");
+console.info("Mission 1000 v2.6.3 Surface Loader Fix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
