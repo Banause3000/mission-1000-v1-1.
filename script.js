@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.5
+// Mission 1000 v2.6.6
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -17,6 +17,7 @@ const STATE = {
 };
 
 const WATCH_KEY = "mission1000-watchlist-v2";
+let LOAD_RUNNING = false;
 
 function normalizeName(value){
   return String(value || "")
@@ -1101,6 +1102,13 @@ function renderTop(){
 function openPlayer(player){
   showPlayerProfile(player);
 
+  if(!STATE.players.length){
+    ensurePlayerMeta().then(() => showPlayerProfile({
+      ...player,
+      flag:playerFlag(player.name,player.tour)
+    }));
+  }
+
   document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
   const target = document.querySelector('.bottom-nav button[data-view="playerView"]');
   if(target) target.classList.add("active");
@@ -1532,9 +1540,54 @@ function renderEverything(matchesPayload){
   renderOptionalCoverage();
 }
 
-async function load(){
 
-  $("statusTitle").textContent = "Matches werden geladen";
+let PLAYER_META_LOADING = null;
+
+async function ensurePlayerMeta(){
+  if(STATE.players.length) return STATE.players;
+  if(PLAYER_META_LOADING) return PLAYER_META_LOADING;
+
+  PLAYER_META_LOADING = (async () => {
+    const playersResult = await fetchBestJson(
+      ["./data/players.json", "./data/sources/players.json"],
+      {players:[]}
+    );
+
+    const playersPayload = playersResult.payload;
+
+    STATE.players =
+      (Array.isArray(playersPayload.players) && playersPayload.players) ||
+      (Array.isArray(playersPayload.data) && playersPayload.data) ||
+      (Array.isArray(playersPayload) && playersPayload) ||
+      [];
+
+    console.info("Mission 1000 Player Metadata lazy-loaded", {
+      players: STATE.players.length,
+      path: playersResult.path
+    });
+
+    return STATE.players;
+  })().catch(error => {
+    console.warn("Player metadata lazy load failed", error);
+    return [];
+  }).finally(() => {
+    PLAYER_META_LOADING = null;
+  });
+
+  return PLAYER_META_LOADING;
+}
+
+async function load(){
+  if(LOAD_RUNNING) return;
+  LOAD_RUNNING = true;
+
+  if($("refreshBtn")){
+    $("refreshBtn").disabled = true;
+    $("refreshBtn").textContent = "Lädt…";
+  }
+
+  try{
+    $("statusTitle").textContent = "Matches werden geladen";
   $("statusText").textContent = "Mission Control lädt zuerst den aktuellen Spieltag.";
 
   const matchesResult = await fetchBestJson(
@@ -1598,30 +1651,9 @@ async function load(){
   // Show ranking/form immediately. Never wait for the very large players.json.
   renderEverything(matchesPayload);
 
-  // Player metadata/flags load in the background and cannot block analysis.
-  fetchBestJson(
-    ["./data/players.json", "./data/sources/players.json"],
-    {players:[]}
-  ).then(playersResult => {
-    const playersPayload = playersResult.payload;
-
-    STATE.players =
-      (Array.isArray(playersPayload.players) && playersPayload.players) ||
-      (Array.isArray(playersPayload.data) && playersPayload.data) ||
-      (Array.isArray(playersPayload) && playersPayload) ||
-      [];
-
-    console.info("Mission 1000 Player Metadata", {
-      players: STATE.players.length,
-      path: playersResult.path
-    });
-
-    // Flags/player search may improve after background metadata arrives.
-    renderMatchList();
-    renderAllMatches();
-    renderWatchlist();
-    renderPlayerSearch($("playerSearch")?.value || "");
-  }).catch(error => console.warn("Player metadata background load failed", error));
+  // IMPORTANT: players.json has >66k records and JSON parsing can freeze
+  // mobile Safari even when the Promise is not awaited. Therefore it is NOT
+  // loaded during app startup. It is lazy-loaded only when the Player tab is opened.
 
   $("statusTitle").textContent = "Analyse-Daten werden geladen";
   $("statusText").textContent = "H2H, Belag sowie Serve- und Return-Daten werden ergänzt.";
@@ -1646,6 +1678,17 @@ async function load(){
   if($("engineStatus")){
     $("engineStatus").textContent = loaded.length >= 4 ? "ONLINE" : "PARTIAL";
   }
+  }catch(error){
+    console.error("Mission 1000 load failed", error);
+    if($("statusTitle")) $("statusTitle").textContent = "Ladefehler";
+    if($("statusText")) $("statusText").textContent = "Ein Datenmodul konnte nicht geladen werden. Navigation bleibt verfügbar.";
+  }finally{
+    LOAD_RUNNING = false;
+    if($("refreshBtn")){
+      $("refreshBtn").disabled = false;
+      $("refreshBtn").textContent = "Aktualisieren";
+    }
+  }
 }
 
 $("refreshBtn").onclick = load;
@@ -1660,7 +1703,7 @@ if($("playerSearch")){
 }
 
 document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
-  button.onclick = () => {
+  button.onclick = async () => {
     document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
     button.classList.add("active");
 
@@ -1669,11 +1712,20 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
     const view = $(button.dataset.view);
     if(view) view.classList.remove("hidden");
 
+    // Heavy player metadata is loaded only on demand.
+    if(button.dataset.view === "playerView" && !STATE.players.length){
+      const wrap = $("playerResults");
+      if(wrap) wrap.innerHTML = '<div class="empty">Spielerdaten werden geladen…</div>';
+
+      await ensurePlayerMeta();
+      renderPlayerSearch($("playerSearch")?.value || "");
+    }
+
     window.scrollTo({top:0, behavior:"smooth"});
   };
 });
 
-console.info("Mission 1000 v2.6.5 Fast Loader Fix aktiv");
+console.info("Mission 1000 v2.6.6 UI Unblock Fix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
