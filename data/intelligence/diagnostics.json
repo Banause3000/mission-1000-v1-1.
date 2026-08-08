@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T21:46:22.461336+00:00",
+  "generatedAt": "2026-08-08T21:56:30.632276+00:00",
   "sources": [
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2019.csv",
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2020.csv",
@@ -22,7 +22,7 @@
     "rankingFallbackWTA": 0,
     "players": 1440,
     "form": 1445,
-    "h2h": 15562,
+    "h2h": 15558,
     "surface": 1433,
     "stats": 820,
     "tournamentSurfaces": 647
