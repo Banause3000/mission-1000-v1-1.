@@ -17,7 +17,7 @@ SOURCE = ROOT / "data" / "sources"
 INTEL = ROOT / "data" / "intelligence"
 EXTERNAL = ROOT / ".external" / "tennis-source"
 
-USER_AGENT = "Mission1000-DataEngine/3.3"
+USER_AGENT = "Mission1000-DataEngine/3.3.1"
 
 HISTORY_YEARS = list(range(2019, 2027))
 
@@ -674,6 +674,125 @@ def _official_wta_h2h(player1, player2, directory):
         "source": "WTA Official H2H"
     }
 
+
+def debug_pegula_shnaider_h2h(directory):
+    p1 = "Jessica Pegula"
+    p2 = "Diana Shnaider"
+
+    id1 = directory.get(_slug_name(p1))
+    id2 = directory.get(_slug_name(p2))
+
+    print("=" * 64)
+    print("WTA H2H DEBUG: PEGULA vs SHNAIDER")
+    print("=" * 64)
+    print("Pegula Profil-ID:", id1 or "NICHT GEFUNDEN")
+    print("Shnaider Profil-ID:", id2 or "NICHT GEFUNDEN")
+
+    if not id1 or not id2:
+        print("DEBUG STOP: Mindestens eine Profil-ID fehlt.")
+        return
+
+    # Probe multiple public WTA URL patterns. We are not assuming one of them is
+    # correct; this debug is meant to reveal which public route actually returns
+    # usable H2H content from GitHub Actions.
+    urls = [
+        f"https://www.wtatennis.com/head-to-head/{id1}/{id2}",
+        f"https://www.wtatennis.com/head-to-head/{id2}/{id1}",
+        f"https://www.wtatennis.com/players/{id1}/{_slug_name(p1)}",
+        f"https://www.wtatennis.com/players/{id2}/{_slug_name(p2)}",
+    ]
+
+    for url in urls:
+        print()
+        print("H2H Request:", url)
+
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": "Mozilla/5.0 Mission1000-H2H-Debug/3.3.1",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+                }
+            )
+
+            with urllib.request.urlopen(req, timeout=35) as response:
+                raw = response.read()
+                status = getattr(response, "status", None)
+                final_url = response.geturl()
+                content_type = response.headers.get("Content-Type", "")
+
+            text = raw.decode("utf-8", errors="replace")
+
+            print("HTTP Status:", status)
+            print("Final URL:", final_url)
+            print("Content-Type:", content_type)
+            print("Bytes:", len(raw))
+
+            markers = {
+                "Jessica Pegula": "jessica pegula" in text.casefold(),
+                "Diana Shnaider": "diana shnaider" in text.casefold(),
+                "Head to Head": "head to head" in text.casefold(),
+                "headToHead": "headtohead" in text.casefold(),
+                "__NEXT_DATA__": "__next_data__" in text.casefold(),
+                "apollo": "apollo" in text.casefold(),
+                "3 - 0": "3 - 0" in text,
+                "4 - 0": "4 - 0" in text,
+            }
+
+            print("Marker:")
+            for key, value in markers.items():
+                print(f"  {key}: {value}")
+
+            payloads = _json_payloads_from_html(text)
+            print("JSON-Script-Payloads:", len(payloads))
+
+            meetings = []
+            for payload in payloads:
+                meetings.extend(
+                    _extract_official_pair_meetings(payload, p1, p2)
+                )
+
+            unique = {}
+            for item in meetings:
+                key = (
+                    item.get("winner","").casefold(),
+                    item.get("loser","").casefold(),
+                    item.get("date","")[:10],
+                    item.get("event","").casefold(),
+                    item.get("score","").casefold(),
+                )
+                unique[key] = item
+
+            meetings = list(unique.values())
+            print("Gefundene Matches:", len(meetings))
+
+            for index, meeting in enumerate(meetings[:10], 1):
+                print(
+                    f"  Match {index}: "
+                    f"{meeting.get('winner','?')} d. {meeting.get('loser','?')} | "
+                    f"{meeting.get('date','?')} | "
+                    f"{meeting.get('event','?')} | "
+                    f"{meeting.get('surface','?')} | "
+                    f"{meeting.get('score','?')}"
+                )
+
+            # Print short snippets around useful markers, but never dump the whole
+            # page into the workflow log.
+            lower = text.casefold()
+            for token in ("headtohead", "head to head", "jessica pegula", "diana shnaider"):
+                pos = lower.find(token)
+                if pos >= 0:
+                    snippet = re.sub(r"\s+", " ", text[max(0,pos-180):pos+500])
+                    print(f"Snippet [{token}]:", snippet[:700])
+
+        except Exception as exc:
+            print("REQUEST FEHLER:", type(exc).__name__, str(exc))
+
+    print("=" * 64)
+    print("WTA H2H DEBUG ENDE")
+    print("=" * 64)
+
 def supplement_current_wta_h2h(h2h):
     """
     Only query official WTA H2H for today's/current feed pairs that are missing
@@ -728,6 +847,10 @@ def supplement_current_wta_h2h(h2h):
             directory = _wta_player_directory()
             if not directory:
                 break
+
+            # TEMPORARY DEBUG: diagnose the official H2H route/parser with one
+            # known WTA pair before changing production H2H logic.
+            debug_pegula_shnaider_h2h(directory)
 
         official = _official_wta_h2h(p1, p2, directory)
         if not official:
@@ -966,7 +1089,7 @@ def build_stats(rows):
 
 def main():
     print("=" * 68)
-    print("MISSION 1000 DATA ENGINE v3.3")
+    print("MISSION 1000 DATA ENGINE v3.3.1 H2H DEBUG")
     print("=" * 68)
 
     rows = []
@@ -1083,7 +1206,7 @@ def main():
     save_json(INTEL / "diagnostics.json", diagnostics)
 
     print(json.dumps(diagnostics, ensure_ascii=False, indent=2))
-    print("DATA ENGINE v3.3: OK")
+    print("DATA ENGINE v3.3.1: OK")
 
 if __name__ == "__main__":
     main()
