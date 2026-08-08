@@ -37,7 +37,7 @@ jobs:
 
       - name: Intelligence aktualisieren
         run: |
-          python collector/fetch_intelligence_v6_1_h2h_safe_diag.py
+          python collector/fetch_intelligence_v6_2_final_safe_h2h.py
 
       - name: Datenbank erstellen
         run: |
