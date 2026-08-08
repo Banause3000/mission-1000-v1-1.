@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.3
+// Mission 1000 v2.6.4
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -866,18 +866,53 @@ function matchStartMs(match){
   return null;
 }
 
-function isRecommendationEligible(match){
-  const status = String(match.status || "").toLowerCase();
+function statusKey(match){
+  return String(match.status || "").trim().toLowerCase();
+}
 
-  if(["finished","completed","cancelled","canceled","retired","walkover"].includes(status)){
+function isConfirmedEnded(match){
+  const status=statusKey(match);
+  return [
+    "finished","completed","complete","ended",
+    "cancelled","canceled","retired","walkover"
+  ].includes(status);
+}
+
+function isConfirmedLive(match){
+  const status=statusKey(match);
+  return [
+    "live","inplay","in-play","in_progress","in-progress",
+    "live-or-started","started"
+  ].includes(status);
+}
+
+function isVisibleMatch(match){
+  if(isConfirmedEnded(match)) return false;
+
+  // If our feed explicitly knows it is live, we keep it out of the pre-match app.
+  if(isConfirmedLive(match)) return false;
+
+  const start=matchStartMs(match);
+
+  // Scheduled tennis starts move all the time. Do NOT delete a match merely
+  // because the original clock time has passed. Keep it accessible for up to
+  // 4 hours so delayed matches can still be opened and analysed.
+  if(start!==null && Date.now()>start + 4*60*60*1000){
     return false;
   }
 
-  const start = matchStartMs(match);
+  return true;
+}
 
-  // Pregame analysis only: once the scheduled start is 15 min in the past,
-  // the match disappears from Top Match / important recommendations.
-  if(start !== null && Date.now() > start + 15 * 60 * 1000){
+function isRecommendationEligible(match){
+  if(!isVisibleMatch(match)) return false;
+
+  const start=matchStartMs(match);
+
+  // Recommendations are stricter than visibility:
+  // once the scheduled start has passed, the match can still be opened in
+  // Matches, but it is no longer promoted as Top Match / Mission AI.
+  if(start!==null && Date.now()>start + 5*60*1000){
     return false;
   }
 
@@ -898,8 +933,12 @@ function currentMatches(){
     m.date === STATE.activeDate &&
     m.player1 &&
     m.player2 &&
-    isRecommendationEligible(m)
+    isVisibleMatch(m)
   );
+}
+
+function recommendationMatches(){
+  return currentMatches().filter(isRecommendationEligible);
 }
 
 function dataDateLabel(){
@@ -950,7 +989,7 @@ function toggleWatch(match){
 }
 
 function topMatch(){
-  return [...currentMatches()]
+  return [...recommendationMatches()]
     .sort((a,b) => missionScore(b) - missionScore(a))[0] || null;
 }
 
@@ -1078,10 +1117,17 @@ function buildMatchCard(match){
   const el = document.createElement("article");
   el.className = "match-card with-watch";
 
+  const startMs=matchStartMs(match);
+  const delayedButVisible=
+    startMs!==null &&
+    Date.now()>startMs + 5*60*1000 &&
+    !isConfirmedLive(match) &&
+    !isConfirmedEnded(match);
+
   el.innerHTML = `
     <div class="time">
       ${match.start || "–"}
-      <small>${match.status === "live-or-started" ? "LIVE" : dataDateLabel()}</small>
+      <small>${delayedButVisible ? "START OFFEN" : (isConfirmedLive(match) ? "LIVE" : dataDateLabel())}</small>
     </div>
 
     <div class="names">
@@ -1134,7 +1180,7 @@ function renderMatchList(){
   const wrap = $("matchList");
   wrap.innerHTML = "";
 
-  let list = [...currentMatches()]
+  let list = [...recommendationMatches()]
     .sort((a,b) => missionScore(b) - missionScore(a));
 
   if(!STATE.showAll) list = list.slice(0,6);
@@ -1144,7 +1190,10 @@ function renderMatchList(){
     : "Neuester Spieltag";
 
   if(!list.length){
-    wrap.innerHTML = '<div class="empty">Keine Matches verfügbar.</div>';
+    const visible=currentMatches().length;
+    wrap.innerHTML = visible
+      ? '<div class="empty">Keine neuen Pre-Match-Empfehlungen. Weitere heutige Matches findest du im MATCHES-Tab.</div>'
+      : '<div class="empty">Keine Matches verfügbar.</div>';
     return;
   }
 
@@ -1602,7 +1651,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.3 Surface Loader Fix aktiv");
+console.info("Mission 1000 v2.6.4 Match Availability Fix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
