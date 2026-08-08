@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.1
+// Mission 1000 v2.6.2
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -28,6 +28,82 @@ function normalizeName(value){
     .trim()
     .toLowerCase();
 }
+
+function nameParts(value){
+  return normalizeName(value)
+    .replace(/\./g," ")
+    .split(" ")
+    .filter(Boolean);
+}
+
+function surnameKey(value){
+  const parts=nameParts(value);
+  return parts.at(-1) || "";
+}
+
+function firstInitial(value){
+  const parts=nameParts(value);
+  return parts[0]?.[0] || "";
+}
+
+function compactName(value){
+  return normalizeName(value).replace(/[^a-z0-9]/g,"");
+}
+
+function playerNameMatches(a,b){
+  const A=normalizeName(a);
+  const B=normalizeName(b);
+
+  if(!A || !B) return false;
+  if(A===B) return true;
+  if(compactName(A)===compactName(B)) return true;
+
+  const aParts=nameParts(A);
+  const bParts=nameParts(B);
+
+  // Handles feeds like "Pegula, Jessica" after punctuation cleanup or
+  // shortened names such as "J Pegula" / "Jessica Pegula".
+  const sameSurname=surnameKey(A)===surnameKey(B);
+  const sameInitial=firstInitial(A)===firstInitial(B);
+
+  if(sameSurname && sameInitial) return true;
+
+  // A reversed "surname firstname" form is also accepted.
+  if(aParts.length>=2 && bParts.length>=2){
+    const aReverse=[...aParts].reverse().join(" ");
+    if(aReverse===B) return true;
+
+    const bReverse=[...bParts].reverse().join(" ");
+    if(bReverse===A) return true;
+  }
+
+  return false;
+}
+
+function findPlayerRecord(list,name,tour){
+  if(!Array.isArray(list)) return null;
+
+  const t=String(tour||"").toUpperCase();
+
+  // Pass 1: exact normalized match
+  let found=list.find(p=>{
+    const pname=p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
+    const ptour=String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
+    return normalizeName(pname)===normalizeName(name) && (!ptour || !t || ptour===t);
+  });
+  if(found) return found;
+
+  // Pass 2: tolerant player-name matching
+  const candidates=list.filter(p=>{
+    const pname=p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
+    const ptour=String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
+    return playerNameMatches(pname,name) && (!ptour || !t || ptour===t);
+  });
+
+  // Avoid guessing when more than one player could match.
+  return candidates.length===1 ? candidates[0] : null;
+}
+
 
 function dayString(date = new Date()){
   return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
@@ -71,12 +147,7 @@ function codeToFlag(code){
 }
 
 function playerMeta(name, tour){
-  const n = normalizeName(name);
-  const t = String(tour || "").toUpperCase();
-  return STATE.players.find(p =>
-    normalizeName(p.name) === n &&
-    (!t || String(p.tour || "").toUpperCase() === t)
-  ) || null;
+  return findPlayerRecord(STATE.players,name,tour);
 }
 
 function directCountry(match, side){
@@ -118,16 +189,7 @@ function extractRank(item){
 }
 
 function getRank(name, tour){
-  const n = normalizeName(name);
-  const t = String(tour || "").toUpperCase();
-
-  const found = rankingCandidates().find(p => {
-    const pname = p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
-    const ptour = String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
-    return normalizeName(pname) === n && (!ptour || !t || ptour === t);
-  });
-
-  return extractRank(found);
+  return extractRank(findPlayerRecord(rankingCandidates(),name,tour));
 }
 
 function formCandidates(){
@@ -137,14 +199,7 @@ function formCandidates(){
 }
 
 function getForm(name, tour){
-  const n = normalizeName(name);
-  const t = String(tour || "").toUpperCase();
-
-  const found = formCandidates().find(p => {
-    const pname = p.name ?? p.player ?? p.playerName ?? p.player_name ?? p.fullName ?? p.full_name;
-    const ptour = String(p.tour ?? p.type ?? p.league ?? "").toUpperCase();
-    return normalizeName(pname) === n && (!ptour || !t || ptour === t);
-  });
+  const found = findPlayerRecord(formCandidates(),name,tour);
 
   if(!found) return null;
 
@@ -259,46 +314,61 @@ function missionScore(match){
 
 
 function h2hRecord(match){
-  const a=normalizeName(match.player1), b=normalizeName(match.player2);
   const tour=String(match.tour||"").toUpperCase();
 
-  const record=STATE.h2h.find(x=>{
-    const p1=normalizeName(x.player1 ?? x.p1 ?? x.a);
-    const p2=normalizeName(x.player2 ?? x.p2 ?? x.b);
+  const matches=STATE.h2h.filter(x=>{
+    const p1=x.player1 ?? x.p1 ?? x.a;
+    const p2=x.player2 ?? x.p2 ?? x.b;
     const xtour=String(x.tour||"").toUpperCase();
-    return ((p1===a && p2===b) || (p1===b && p2===a)) &&
-      (!xtour || !tour || xtour===tour);
+
+    const direct=
+      playerNameMatches(p1,match.player1) &&
+      playerNameMatches(p2,match.player2);
+
+    const reverse=
+      playerNameMatches(p1,match.player2) &&
+      playerNameMatches(p2,match.player1);
+
+    return (direct || reverse) && (!xtour || !tour || xtour===tour);
   });
 
-  if(!record) return null;
+  if(matches.length!==1) return null;
+
+  const record=matches[0];
 
   let wins1=Number(record.wins1 ?? record.player1Wins ?? record.p1Wins);
   let wins2=Number(record.wins2 ?? record.player2Wins ?? record.p2Wins);
-  if(!Number.isFinite(wins1)||!Number.isFinite(wins2)||(wins1+wins2)<=0) return null;
 
-  const storedP1=normalizeName(record.player1 ?? record.p1 ?? record.a);
-  if(storedP1 && storedP1!==a) [wins1,wins2]=[wins2,wins1];
+  if(!Number.isFinite(wins1)||!Number.isFinite(wins2)||(wins1+wins2)<=0){
+    return null;
+  }
 
-  return {wins1,wins2,total:wins1+wins2};
+  const storedP1=record.player1 ?? record.p1 ?? record.a;
+
+  if(!playerNameMatches(storedP1,match.player1)){
+    [wins1,wins2]=[wins2,wins1];
+  }
+
+  return {
+    wins1,
+    wins2,
+    total:wins1+wins2,
+    recentMeetings:Array.isArray(record.recentMeetings) ? record.recentMeetings : []
+  };
 }
 
 function surfaceRecord(name,tour,surface){
-  const n=normalizeName(name), t=String(tour||"").toUpperCase();
   const s=normalizeName(surface||"");
-
-  const item=STATE.surfaces.find(x=>{
-    const pname=normalizeName(x.name ?? x.player ?? x.playerName ?? x.player_name);
-    const ptour=String(x.tour||"").toUpperCase();
-    return pname===n && (!ptour || !t || ptour===t);
-  });
+  const item=findPlayerRecord(STATE.surfaces,name,tour);
   if(!item) return null;
 
   const records=item.surfaces ?? item.surface ?? item.records ?? {};
+
   let key=null;
   if(s.includes("hard")) key="hard";
   else if(s.includes("clay")||s.includes("sand")) key="clay";
   else if(s.includes("grass")||s.includes("rasen")) key="grass";
-  else if(s.includes("indoor")) key="indoor";
+  else if(s.includes("indoor")||s.includes("carpet")) key="indoor";
   if(!key) return null;
 
   const rec=records[key] ?? records[key.toUpperCase()];
@@ -306,19 +376,26 @@ function surfaceRecord(name,tour,surface){
 
   const wins=Number(rec.wins ?? rec.w);
   const losses=Number(rec.losses ?? rec.l);
-  const total=wins+losses;
-  if(!Number.isFinite(wins)||!Number.isFinite(losses)||total<=0) return null;
+  const total=Number(rec.total ?? (wins+losses));
 
-  return {wins,losses,total,pct:Math.round(wins/total*100)};
+  if(!Number.isFinite(wins)||!Number.isFinite(losses)||!Number.isFinite(total)||total<=0){
+    return null;
+  }
+
+  const pctValue=Number(rec.winPct ?? rec.pct);
+  const pct=Number.isFinite(pctValue) ? Math.round(pctValue) : Math.round(wins/total*100);
+
+  return {
+    wins,
+    losses,
+    total,
+    pct,
+    period:rec.period || null
+  };
 }
 
 function statRecord(name,tour){
-  const n=normalizeName(name), t=String(tour||"").toUpperCase();
-  return STATE.stats.find(x=>{
-    const pname=normalizeName(x.name ?? x.player ?? x.playerName ?? x.player_name);
-    const ptour=String(x.tour||"").toUpperCase();
-    return pname===n && (!ptour || !t || ptour===t);
-  }) || null;
+  return findPlayerRecord(STATE.stats,name,tour);
 }
 
 function numericStat(record,keys){
@@ -697,28 +774,81 @@ function scoreLabel(score){
 
 
 function normalizeEvent(value){
-  return normalizeName(value)
-    .replace(/\bnational bank open presented by rogers\b/g,"canadian open")
-    .replace(/\brogers cup\b/g,"canadian open")
-    .replace(/\bcanada masters\b/g,"canadian open")
-    .replace(/\btoronto\b/g,"canadian open")
-    .replace(/\bmontreal\b/g,"canadian open");
+  let event=normalizeName(value)
+    .replace(/\b20\d{2}\b/g," ")
+    .replace(/\batp\b/g," ")
+    .replace(/\bwta\b/g," ")
+    .replace(/\bmasters\b/g," ")
+    .replace(/\b1000\b/g," ")
+    .replace(/\b500\b/g," ")
+    .replace(/\b250\b/g," ")
+    .replace(/\bmen singles\b/g," ")
+    .replace(/\bwomen singles\b/g," ")
+    .replace(/\bsingles\b/g," ")
+    .replace(/\bpresented by rogers\b/g," ")
+    .replace(/\bcanada\b/g," ")
+    .replace(/\bcanadian open\b/g," canadian open ")
+    .replace(/\bnational bank open\b/g," canadian open ")
+    .replace(/\brogers cup\b/g," canadian open ")
+    .replace(/\btoronto\b/g," canadian open ")
+    .replace(/\bmontreal\b/g," canadian open ")
+    .replace(/\s+/g," ")
+    .trim();
+
+  return event;
+}
+
+function eventTokens(value){
+  return normalizeEvent(value)
+    .split(" ")
+    .filter(token=>token.length>2);
+}
+
+function eventSimilarity(a,b){
+  const A=new Set(eventTokens(a));
+  const B=new Set(eventTokens(b));
+
+  if(!A.size || !B.size) return 0;
+
+  let shared=0;
+  for(const token of A){
+    if(B.has(token)) shared++;
+  }
+
+  return shared/Math.max(A.size,B.size);
 }
 
 function inferredSurface(match){
-  const direct = match.surface ?? match.court ?? match.surfaceType ?? "";
+  const direct=match.surface ?? match.court ?? match.surfaceType ?? "";
   if(direct) return direct;
 
-  const tour = String(match.tour || "").toUpperCase();
-  const event = normalizeEvent(match.event || "");
+  const tour=String(match.tour||"").toUpperCase();
+  const target=normalizeEvent(match.event||"");
 
-  const found = STATE.tournamentSurfaces.find(item => {
-    const itemTour = String(item.tour || "").toUpperCase();
-    const itemEvent = normalizeEvent(item.normalizedEvent ?? item.event ?? "");
-    return itemEvent === event && (!itemTour || !tour || itemTour === tour);
-  });
+  if(!target) return "";
 
-  return found?.surface || "";
+  const candidates=STATE.tournamentSurfaces
+    .filter(item=>{
+      const itemTour=String(item.tour||"").toUpperCase();
+      return !itemTour || !tour || itemTour===tour;
+    })
+    .map(item=>({
+      item,
+      normalized:normalizeEvent(item.normalizedEvent ?? item.event ?? ""),
+      similarity:eventSimilarity(target,item.normalizedEvent ?? item.event ?? "")
+    }));
+
+  // Exact normalized event is always preferred.
+  const exact=candidates.find(x=>x.normalized===target);
+  if(exact) return exact.item.surface||"";
+
+  // Otherwise use a strong token match only.
+  const best=[...candidates].sort((a,b)=>b.similarity-a.similarity)[0];
+  if(best && best.similarity>=0.66){
+    return best.item.surface||"";
+  }
+
+  return "";
 }
 
 function matchStartMs(match){
@@ -1471,7 +1601,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.1 Data Quality aktiv");
+console.info("Mission 1000 v2.6.2 Matching Fix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
