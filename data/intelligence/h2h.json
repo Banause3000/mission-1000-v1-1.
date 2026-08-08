@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T22:06:00.220718+00:00",
+  "generatedAt": "2026-08-08T22:27:47.431498+00:00",
   "source": "Mission 1000 Data Engine",
   "matches": [
     {
@@ -350016,32 +350016,6 @@
     },
     {
       "tour": "WTA",
-      "player1": "Aryna Sabalenka",
-      "player2": "Ekaterina Alexandrova",
-      "wins1": 0,
-      "wins2": 1,
-      "meetings": 1,
-      "lastMeeting": {
-        "date": "20250210",
-        "event": "Doha",
-        "surface": "Hard",
-        "winner": "Ekaterina Alexandrova",
-        "loser": "Aryna Sabalenka",
-        "score": "3-6 6-3 7-6(5)"
-      },
-      "recentMeetings": [
-        {
-          "date": "20250210",
-          "event": "Doha",
-          "surface": "Hard",
-          "winner": "Ekaterina Alexandrova",
-          "loser": "Aryna Sabalenka",
-          "score": "3-6 6-3 7-6(5)"
-        }
-      ]
-    },
-    {
-      "tour": "WTA",
       "player1": "Elena Gabriela Ruse",
       "player2": "Maria Sakkari",
       "wins1": 0,
@@ -380058,32 +380032,6 @@
     },
     {
       "tour": "WTA",
-      "player1": "Elena Rybakina",
-      "player2": "Liudmila Samsonova",
-      "wins1": 1,
-      "wins2": 0,
-      "meetings": 1,
-      "lastMeeting": {
-        "date": "20250519",
-        "event": "Strasbourg",
-        "surface": "Clay",
-        "winner": "Elena Rybakina",
-        "loser": "Liudmila Samsonova",
-        "score": "6-1 6-7(2) 6-1"
-      },
-      "recentMeetings": [
-        {
-          "date": "20250519",
-          "event": "Strasbourg",
-          "surface": "Clay",
-          "winner": "Elena Rybakina",
-          "loser": "Liudmila Samsonova",
-          "score": "6-1 6-7(2) 6-1"
-        }
-      ]
-    },
-    {
-      "tour": "WTA",
       "player1": "Beatriz Haddad Maia",
       "player2": "Elena Rybakina",
       "wins1": 0,
@@ -407469,32 +407417,6 @@
           "winner": "Naomi Osaka",
           "loser": "Anastasija Sevastova",
           "score": "6-1 6-0"
-        }
-      ]
-    },
-    {
-      "tour": "WTA",
-      "player1": "Amanda Anisimova",
-      "player2": "Elina Svitolina",
-      "wins1": 0,
-      "wins2": 1,
-      "meetings": 1,
-      "lastMeeting": {
-        "date": "20250804",
-        "event": "Toronto",
-        "surface": "Hard",
-        "winner": "Elina Svitolina",
-        "loser": "Amanda Anisimova",
-        "score": "6-4 6-1"
-      },
-      "recentMeetings": [
-        {
-          "date": "20250804",
-          "event": "Toronto",
-          "surface": "Hard",
-          "winner": "Elina Svitolina",
-          "loser": "Amanda Anisimova",
-          "score": "6-4 6-1"
         }
       ]
     },
@@ -471661,6 +471583,66 @@
           "score": "7-6(3) 6-1 6-3"
         }
       ]
+    },
+    {
+      "tour": "WTA",
+      "player1": "Marta Kostyuk",
+      "player2": "Iga Swiatek",
+      "wins1": 1,
+      "wins2": 4,
+      "meetings": 5,
+      "lastMeeting": null,
+      "recentMeetings": [],
+      "source": "TennisRatio H2H (verified exact-pair prose)",
+      "sourceUrl": "https://www.tennisratio.com/h2h-compare/iga-swiatek-vs-marta-kostyuk.html"
+    },
+    {
+      "tour": "WTA",
+      "player1": "Jessica Pegula",
+      "player2": "Diana Shnaider",
+      "wins1": 4,
+      "wins2": 0,
+      "meetings": 4,
+      "lastMeeting": null,
+      "recentMeetings": [],
+      "source": "TennisRatio H2H (verified exact-pair prose)",
+      "sourceUrl": "https://www.tennisratio.com/h2h-compare/diana-shnaider-vs-jessica-pegula.html"
+    },
+    {
+      "tour": "WTA",
+      "player1": "Aryna Sabalenka",
+      "player2": "Ekaterina Alexandrova",
+      "wins1": 5,
+      "wins2": 4,
+      "meetings": 9,
+      "lastMeeting": null,
+      "recentMeetings": [],
+      "source": "TennisRatio H2H (verified exact-pair prose)",
+      "sourceUrl": "https://www.tennisratio.com/h2h-compare/aryna-sabalenka-vs-ekaterina-alexandrova.html"
+    },
+    {
+      "tour": "WTA",
+      "player1": "Elina Svitolina",
+      "player2": "Amanda Anisimova",
+      "wins1": 4,
+      "wins2": 1,
+      "meetings": 5,
+      "lastMeeting": null,
+      "recentMeetings": [],
+      "source": "TennisRatio H2H (verified exact-pair prose)",
+      "sourceUrl": "https://www.tennisratio.com/h2h-compare/amanda-anisimova-vs-elina-svitolina.html"
+    },
+    {
+      "tour": "WTA",
+      "player1": "Liudmila Samsonova",
+      "player2": "Elena Rybakina",
+      "wins1": 4,
+      "wins2": 2,
+      "meetings": 6,
+      "lastMeeting": null,
+      "recentMeetings": [],
+      "source": "TennisRatio H2H (verified exact-pair prose)",
+      "sourceUrl": "https://www.tennisratio.com/h2h-compare/elena-rybakina-vs-liudmila-samsonova.html"
     }
   ]
 }
