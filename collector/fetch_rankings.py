@@ -1,249 +1,303 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
 import csv
 import io
 import json
+import re
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data"
+SOURCE = DATA / "sources"
 
-OUT_RANKINGS = ROOT / "data" / "sources" / "rankings.json"
-OUT_PLAYERS = ROOT / "data" / "sources" / "players.json"
+SOURCE.mkdir(parents=True, exist_ok=True)
 
-BASE_URL = "https://raw.githubusercontent.com/Kadantte/tennis_atp/master"
+USER_AGENT = "Mission1000-RankingCollector/4.0"
 
-RANKINGS_URL = f"{BASE_URL}/atp_rankings_20s.csv"
-PLAYERS_URL = f"{BASE_URL}/atp_players.csv"
+ATP_PLAYERS_URLS = [
+    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_players.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_players.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/refs/heads/master/atp_players.csv",
+]
 
+ATP_RANKING_URLS = [
+    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_rankings_20s.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_rankings_20s.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/refs/heads/master/atp_rankings_20s.csv",
+]
 
-def download(url):
-    print(f"Lade: {url}")
+WTA_PLAYERS_URLS = [
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_players.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/refs/heads/master/wta_players.csv",
+]
 
-    request = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": "Mission1000-DataEngine/1.0"
-        }
-    )
+WTA_RANKING_URLS = [
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_rankings_20s.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/refs/heads/master/wta_rankings_20s.csv",
+]
 
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return response.read().decode("utf-8-sig")
-
-
-def load_players(csv_text):
-    players = {}
-
-    reader = csv.DictReader(io.StringIO(csv_text))
-
-    for row in reader:
-        player_id = str(
-            row.get("player_id")
-            or row.get("player")
-            or ""
-        ).strip()
-
-        if not player_id:
-            continue
-
-        first_name = str(
-            row.get("name_first")
-            or row.get("first_name")
-            or ""
-        ).strip()
-
-        last_name = str(
-            row.get("name_last")
-            or row.get("last_name")
-            or ""
-        ).strip()
-
-        name = f"{first_name} {last_name}".strip()
-
-        if not name:
-            continue
-
-        country = str(
-            row.get("ioc")
-            or row.get("country_code")
-            or ""
-        ).strip()
-
-        hand = str(
-            row.get("hand")
-            or ""
-        ).strip()
-
-        height_raw = str(
-            row.get("height")
-            or ""
-        ).strip()
-
+def download_first(urls):
+    errors = []
+    for url in urls:
+        print("Lade:", url)
         try:
-            height = int(float(height_raw)) if height_raw else None
-        except ValueError:
-            height = None
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=35) as response:
+                text = response.read().decode("utf-8-sig", errors="replace")
+            if not text.strip():
+                raise RuntimeError("leere Antwort")
+            print("OK:", url)
+            return text, url
+        except Exception as exc:
+            errors.append(f"{url}: {exc}")
+            print("FEHLER:", exc)
+    raise RuntimeError("Keine Quelle erreichbar:\n" + "\n".join(errors))
 
-        dob = str(
-            row.get("dob")
-            or row.get("birth_date")
-            or ""
-        ).strip()
+def clean(value):
+    return str(value or "").strip()
 
-        players[player_id] = {
-            "playerId": player_id,
-            "name": name,
-            "tour": "ATP",
-            "country": country,
-            "hand": hand or None,
-            "height": height,
-            "dob": dob or None
-        }
+def as_int(value):
+    try:
+        raw = clean(value)
+        if raw == "":
+            return None
+        return int(float(raw))
+    except Exception:
+        return None
 
-    return players
+def normalize_name(first, last):
+    return re.sub(r"\s+", " ", f"{clean(first)} {clean(last)}").strip()
 
+def parse_rows(text):
+    # Most Sackmann files have headers. If a mirror ever strips them,
+    # the caller can still fall back to positional parsing.
+    sample = text[:4096]
+    try:
+        has_header = csv.Sniffer().has_header(sample)
+    except Exception:
+        has_header = True
 
-def load_latest_rankings(csv_text, players):
-    reader = csv.DictReader(io.StringIO(csv_text))
+    if has_header:
+        return list(csv.DictReader(io.StringIO(text)))
 
-    rows = []
-    latest_date = None
+    return list(csv.reader(io.StringIO(text)))
 
-    for row in reader:
-        ranking_date = str(
-            row.get("ranking_date")
-            or row.get("date")
-            or ""
-        ).strip()
+def player_map(text, tour):
+    rows = parse_rows(text)
+    result = {}
 
-        if not ranking_date:
-            continue
+    if rows and isinstance(rows[0], dict):
+        for row in rows:
+            pid = clean(
+                row.get("player_id")
+                or row.get("player")
+                or row.get("id")
+            )
+            if not pid:
+                continue
 
-        if latest_date is None or ranking_date > latest_date:
-            latest_date = ranking_date
+            first = row.get("name_first") or row.get("first_name") or row.get("first")
+            last = row.get("name_last") or row.get("last_name") or row.get("last")
+            name = normalize_name(first, last)
 
-        rows.append(row)
+            result[pid] = {
+                "playerId": pid,
+                "name": name,
+                "country": clean(row.get("ioc") or row.get("country_code") or row.get("country")),
+                "tour": tour,
+            }
+        return result
 
-    if latest_date is None:
-        raise RuntimeError("Keine Ranking-Daten gefunden.")
-
-    print(f"Neuester Ranking-Stand: {latest_date}")
-
-    rankings = []
-
+    # Sackmann positional player schema:
+    # player_id, name_first, name_last, hand, dob, ioc, ...
     for row in rows:
-        ranking_date = str(
-            row.get("ranking_date")
-            or row.get("date")
-            or ""
-        ).strip()
+        if not isinstance(row, list) or len(row) < 3:
+            continue
+        pid = clean(row[0])
+        if not pid or not pid.isdigit():
+            continue
+        result[pid] = {
+            "playerId": pid,
+            "name": normalize_name(row[1], row[2]),
+            "country": clean(row[5]) if len(row) > 5 else "",
+            "tour": tour,
+        }
 
-        if ranking_date != latest_date:
+    return result
+
+def ranking_rows(text):
+    rows = parse_rows(text)
+
+    if rows and isinstance(rows[0], dict):
+        parsed = []
+        for row in rows:
+            parsed.append({
+                "rankingDate": clean(row.get("ranking_date") or row.get("date")),
+                "rank": as_int(row.get("rank") or row.get("ranking")),
+                "playerId": clean(row.get("player") or row.get("player_id")),
+                "points": as_int(row.get("points") or row.get("ranking_points")),
+            })
+        return parsed
+
+    # Sackmann ranking schema:
+    # ranking_date, rank, player, points, ...
+    parsed = []
+    for row in rows:
+        if not isinstance(row, list) or len(row) < 3:
+            continue
+        date = clean(row[0])
+        rank = as_int(row[1])
+        pid = clean(row[2])
+        points = as_int(row[3]) if len(row) > 3 else None
+        if date and rank and pid:
+            parsed.append({
+                "rankingDate": date,
+                "rank": rank,
+                "playerId": pid,
+                "points": points,
+            })
+    return parsed
+
+def newest_snapshot(players_text, rankings_text, tour):
+    players = player_map(players_text, tour)
+    rankings = ranking_rows(rankings_text)
+
+    valid = [
+        row for row in rankings
+        if row["rankingDate"] and row["rank"] and row["playerId"]
+    ]
+
+    if not valid:
+        raise RuntimeError(f"{tour}: keine Rankingzeilen gefunden")
+
+    newest = max(row["rankingDate"] for row in valid)
+
+    # There can occasionally be duplicate rows for the same player/date.
+    by_player = {}
+    for row in valid:
+        if row["rankingDate"] != newest:
             continue
 
-        player_id = str(
-            row.get("player")
-            or row.get("player_id")
-            or ""
-        ).strip()
-
-        try:
-            rank = int(
-                row.get("rank")
-                or row.get("ranking")
-            )
-        except (ValueError, TypeError):
+        meta = players.get(row["playerId"])
+        if not meta or not meta.get("name"):
             continue
 
-        try:
-            points = int(
-                row.get("points")
-                or row.get("ranking_points")
-                or 0
-            )
-        except (ValueError, TypeError):
-            points = 0
+        candidate = {
+            "tour": tour,
+            "playerId": row["playerId"],
+            "name": meta["name"],
+            "country": meta.get("country") or "",
+            "rank": row["rank"],
+            "points": row["points"],
+            "rankingDate": newest,
+        }
 
-        player = players.get(player_id)
+        old = by_player.get(row["playerId"])
+        if old is None or candidate["rank"] < old["rank"]:
+            by_player[row["playerId"]] = candidate
 
-        if not player:
-            continue
+    snapshot = list(by_player.values())
+    snapshot.sort(key=lambda p: (p["rank"], p["name"]))
 
-        rankings.append({
-            "tour": "ATP",
-            "playerId": player_id,
-            "name": player["name"],
-            "country": player["country"],
-            "rank": rank,
-            "points": points
-        })
+    if not snapshot:
+        raise RuntimeError(f"{tour}: neuester Ranking-Stand {newest} enthält keine zuordenbaren Spieler")
 
-    rankings.sort(key=lambda x: x["rank"])
-
-    return latest_date, rankings
-
+    return newest, snapshot
 
 def save_json(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(path)
 
-    path.write_text(
-        json.dumps(
-            payload,
-            ensure_ascii=False,
-            indent=2
-        ),
-        encoding="utf-8"
-    )
+def collect_tour(tour):
+    if tour == "ATP":
+        player_urls = ATP_PLAYERS_URLS
+        ranking_urls = ATP_RANKING_URLS
+    else:
+        player_urls = WTA_PLAYERS_URLS
+        ranking_urls = WTA_RANKING_URLS
 
+    players_text, player_source = download_first(player_urls)
+    rankings_text, ranking_source = download_first(ranking_urls)
+    ranking_date, players = newest_snapshot(players_text, rankings_text, tour)
+
+    print(f"{tour}: {len(players)} Rankings @ {ranking_date}")
+
+    return {
+        "tour": tour,
+        "rankingDate": ranking_date,
+        "players": players,
+        "sources": [player_source, ranking_source],
+    }
 
 def main():
-    print("MISSION 1000")
-    print("ATP Ranking Collector")
-    print("---------------------")
+    print("=" * 64)
+    print("MISSION 1000 ATP + WTA RANKING COLLECTOR v4")
+    print("=" * 64)
 
-    players_csv = download(PLAYERS_URL)
-    rankings_csv = download(RANKINGS_URL)
+    collected = []
+    errors = []
 
-    players = load_players(players_csv)
+    for tour in ("ATP", "WTA"):
+        try:
+            collected.append(collect_tour(tour))
+        except Exception as exc:
+            errors.append(f"{tour}: {exc}")
+            print(f"{tour} FEHLER:", exc)
 
-    print(f"{len(players)} ATP-Spieler gefunden.")
+    if not collected:
+        raise SystemExit("Kein Ranking-Feed konnte geladen werden.\n" + "\n".join(errors))
 
-    ranking_date, rankings = load_latest_rankings(
-        rankings_csv,
-        players
-    )
+    merged = []
+    ranking_dates = {}
+    sources = []
+
+    for item in collected:
+        merged.extend(item["players"])
+        ranking_dates[item["tour"]] = item["rankingDate"]
+        sources.extend(item["sources"])
+
+    # If one tour fails, never erase an already-existing tour from rankings.json.
+    existing_path = SOURCE / "rankings.json"
+    if existing_path.exists():
+        try:
+            existing = json.loads(existing_path.read_text(encoding="utf-8"))
+            existing_players = existing.get("players", []) if isinstance(existing, dict) else []
+        except Exception:
+            existing_players = []
+
+        collected_tours = {item["tour"] for item in collected}
+        preserved = [
+            p for p in existing_players
+            if str(p.get("tour") or "").upper() not in collected_tours
+        ]
+        merged.extend(preserved)
 
     now = datetime.now(timezone.utc).isoformat()
 
-    ranking_payload = {
+    save_json(SOURCE / "rankings.json", {
         "generatedAt": now,
-        "rankingDate": ranking_date,
-        "source": "Jeff Sackmann tennis_atp dataset",
-        "players": rankings
-    }
-
-    player_payload = {
-        "generatedAt": now,
-        "source": "Jeff Sackmann tennis_atp dataset",
-        "players": list(players.values())
-    }
-
-    save_json(
-        OUT_RANKINGS,
-        ranking_payload
-    )
-
-    save_json(
-        OUT_PLAYERS,
-        player_payload
-    )
+        "source": "Mission 1000 Ranking Collector v4",
+        "rankingDates": ranking_dates,
+        "sources": sources,
+        "players": merged,
+    })
 
     print()
     print("FERTIG")
-    print(f"Rankings gespeichert: {len(rankings)}")
-    print(f"Spieler gespeichert: {len(players)}")
-    print(f"Ranking-Datum: {ranking_date}")
+    print("Rankings gesamt:", len(merged))
+    print("ATP:", sum(1 for p in merged if p.get("tour") == "ATP"))
+    print("WTA:", sum(1 for p in merged if p.get("tour") == "WTA"))
+    print("Ranking-Daten:", ranking_dates)
 
+    if errors:
+        print("WARNUNGEN:")
+        for error in errors:
+            print("-", error)
 
 if __name__ == "__main__":
     main()
