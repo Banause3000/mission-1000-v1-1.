@@ -1,4 +1,4 @@
-// Mission 1000 v2.2.1
+// Mission 1000 v2.3.0
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -352,6 +352,10 @@ function renderOptionalCoverage(){
   if($("h2hCoverage")) $("h2hCoverage").textContent=list.length?`${Math.round(h2hCount/list.length*100)}%`:"0%";
   if($("surfaceCoverage")) $("surfaceCoverage").textContent=list.length?`${Math.round(surfaceCount/list.length*100)}%`:"0%";
   if($("statsCoverage")) $("statsCoverage").textContent=list.length?`${Math.round(statsCount/list.length*100)}%`:"0%";
+  if($("engineStatus")){
+    const anyIntel = STATE.h2h.length || STATE.surfaces.length || STATE.stats.length || STATE.rankings.length || STATE.forms.length;
+    $("engineStatus").textContent = anyIntel ? "ONLINE" : "READY";
+  }
 }
 
 function renderOptionalDetails(match){
