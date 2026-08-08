@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T17:05:10.553009+00:00",
+  "generatedAt": "2026-08-08T17:47:34.236383+00:00",
   "sources": [
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2019.csv",
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2020.csv",
@@ -17,6 +17,9 @@
     "total": 24889
   },
   "outputs": {
+    "rankingFallback": 880,
+    "rankingFallbackATP": 880,
+    "rankingFallbackWTA": 0,
     "players": 1440,
     "form": 1445,
     "h2h": 15558,
