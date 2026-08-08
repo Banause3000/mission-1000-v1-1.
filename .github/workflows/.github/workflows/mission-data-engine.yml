@@ -1,1 +1,43 @@
+name: Mission Data Engine
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build-database:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: Python vorbereiten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Mission Database bauen
+        run: |
+          python collector/build_database.py
+
+      - name: Änderungen committen
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- data; then
+            echo "Keine Datenänderungen."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data
+          git commit -m "Build Mission 1000 database"
+          git push
