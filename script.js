@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.0
+// Mission 1000 v2.6.1
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -11,6 +11,7 @@ const STATE = {
   h2h: [],
   surfaces: [],
   stats: [],
+  tournamentSurfaces: [],
   activeDate: null,
   showAll: false
 };
@@ -331,7 +332,7 @@ function numericStat(record,keys){
 
 async function loadOptionalIntelligence(){
 
-  const [h2hResult, surfaceResult, statsResult] = await Promise.all([
+  const [h2hResult, surfaceResult, statsResult, eventSurfaceResult] = await Promise.all([
     fetchBestJson(
       ["./data/intelligence/h2h.json", "./data/sources/h2h.json"],
       {matches:[]}
@@ -343,12 +344,17 @@ async function loadOptionalIntelligence(){
     fetchBestJson(
       ["./data/intelligence/stats.json", "./data/sources/stats.json"],
       {players:[]}
+    ),
+    fetchBestJson(
+      ["./data/intelligence/tournament_surfaces.json", "./data/sources/tournament_surfaces.json"],
+      {events:[]}
     )
   ]);
 
   const h2hPayload = h2hResult.payload;
   const surfacePayload = surfaceResult.payload;
   const statsPayload = statsResult.payload;
+  const eventSurfacePayload = eventSurfaceResult.payload;
 
   STATE.h2h =
     (Array.isArray(h2hPayload.matches) && h2hPayload.matches) ||
@@ -369,13 +375,17 @@ async function loadOptionalIntelligence(){
     (Array.isArray(statsPayload) && statsPayload) ||
     [];
 
-  console.info("Mission 1000 Intelligence", {
+  STATE.tournamentSurfaces =
+    (Array.isArray(eventSurfacePayload.events) && eventSurfacePayload.events) ||
+    (Array.isArray(eventSurfacePayload.data) && eventSurfacePayload.data) ||
+    (Array.isArray(eventSurfacePayload) && eventSurfacePayload) ||
+    [];
+
+  console.info("Mission 1000 Intelligence v2.6.1", {
     h2h: STATE.h2h.length,
-    surface: STATE.surfaces.length,
+    surfacePlayers: STATE.surfaces.length,
     stats: STATE.stats.length,
-    h2hPath: h2hResult.path,
-    surfacePath: surfaceResult.path,
-    statsPath: statsResult.path
+    tournamentSurfaces: STATE.tournamentSurfaces.length
   });
 }
 
@@ -385,7 +395,7 @@ function renderOptionalCoverage(){
   const h2hCount=list.filter(m=>h2hRecord(m)).length;
 
   const surfaceCount=list.filter(m=>{
-    const surface=m.surface ?? m.court ?? m.surfaceType ?? "";
+    const surface=inferredSurface(m);
     return surface &&
       surfaceRecord(m.player1,m.tour,surface) &&
       surfaceRecord(m.player2,m.tour,surface);
@@ -419,7 +429,7 @@ function renderOptionalDetails(match){
     }
   }
 
-  const surface=match.surface ?? match.court ?? match.surfaceType ?? "";
+  const surface=inferredSurface(match);
   const s1=surface ? surfaceRecord(match.player1,match.tour,surface) : null;
   const s2=surface ? surfaceRecord(match.player2,match.tour,surface) : null;
 
@@ -472,7 +482,7 @@ function missionScoreV3(match){
   const formPart = formComponent(match);
 
   const h2h = h2hRecord(match);
-  const surfaceName = match.surface ?? match.court ?? match.surfaceType ?? "";
+  const surfaceName = inferredSurface(match);
   const surface1 = surfaceName ? surfaceRecord(match.player1,match.tour,surfaceName) : null;
   const surface2 = surfaceName ? surfaceRecord(match.player2,match.tour,surfaceName) : null;
   const stats1 = statRecord(match.player1,match.tour);
@@ -685,6 +695,64 @@ function scoreLabel(score){
   return "Standard";
 }
 
+
+function normalizeEvent(value){
+  return normalizeName(value)
+    .replace(/\bnational bank open presented by rogers\b/g,"canadian open")
+    .replace(/\brogers cup\b/g,"canadian open")
+    .replace(/\bcanada masters\b/g,"canadian open")
+    .replace(/\btoronto\b/g,"canadian open")
+    .replace(/\bmontreal\b/g,"canadian open");
+}
+
+function inferredSurface(match){
+  const direct = match.surface ?? match.court ?? match.surfaceType ?? "";
+  if(direct) return direct;
+
+  const tour = String(match.tour || "").toUpperCase();
+  const event = normalizeEvent(match.event || "");
+
+  const found = STATE.tournamentSurfaces.find(item => {
+    const itemTour = String(item.tour || "").toUpperCase();
+    const itemEvent = normalizeEvent(item.normalizedEvent ?? item.event ?? "");
+    return itemEvent === event && (!itemTour || !tour || itemTour === tour);
+  });
+
+  return found?.surface || "";
+}
+
+function matchStartMs(match){
+  if(match.startIso){
+    const ms = Date.parse(match.startIso);
+    if(Number.isFinite(ms)) return ms;
+  }
+
+  if(match.date && match.start){
+    const ms = Date.parse(`${match.date}T${match.start}:00`);
+    if(Number.isFinite(ms)) return ms;
+  }
+
+  return null;
+}
+
+function isRecommendationEligible(match){
+  const status = String(match.status || "").toLowerCase();
+
+  if(["finished","completed","cancelled","canceled","retired","walkover"].includes(status)){
+    return false;
+  }
+
+  const start = matchStartMs(match);
+
+  // Pregame analysis only: once the scheduled start is 15 min in the past,
+  // the match disappears from Top Match / important recommendations.
+  if(start !== null && Date.now() > start + 15 * 60 * 1000){
+    return false;
+  }
+
+  return true;
+}
+
 function resolveActiveDate(){
   const today = dayString();
 
@@ -698,7 +766,8 @@ function currentMatches(){
   return STATE.matches.filter(m =>
     m.date === STATE.activeDate &&
     m.player1 &&
-    m.player2
+    m.player2 &&
+    isRecommendationEligible(m)
   );
 }
 
@@ -1402,7 +1471,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.0 Data Bridge aktiv");
+console.info("Mission 1000 v2.6.1 Data Quality aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
