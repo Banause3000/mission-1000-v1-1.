@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-08T01:58:11.747786+00:00",
-  "source": "Mission 1000 Data Engine",
+  "generatedAt": "2026-08-08T01:58:11.255558+00:00",
+  "source": "Mission 1000 Data Engine v3",
   "players": [
     {
       "name": "Taylor Fritz",
@@ -147,13 +147,13 @@
       "returnPointsWonPct": 30.1
     },
     {
-      "name": "Alex de Minaur",
+      "name": "Alex De Minaur",
       "tour": "ATP",
-      "matchesWithStats": 37,
-      "holdPct": 82.2,
-      "breakPct": 25.7,
+      "matchesWithStats": 105,
+      "holdPct": 83.8,
+      "breakPct": 27.9,
       "firstServeWonPct": 72.7,
-      "returnPointsWonPct": 39.7
+      "returnPointsWonPct": 40.5
     },
     {
       "name": "Tomas Martin Etcheverry",
@@ -172,6 +172,15 @@
       "breakPct": 18.8,
       "firstServeWonPct": 76.6,
       "returnPointsWonPct": 36.4
+    },
+    {
+      "name": "Alex de Minaur",
+      "tour": "ATP",
+      "matchesWithStats": 37,
+      "holdPct": 82.2,
+      "breakPct": 25.7,
+      "firstServeWonPct": 72.7,
+      "returnPointsWonPct": 39.7
     },
     {
       "name": "Daniel Masur",
@@ -1011,13 +1020,13 @@
       "returnPointsWonPct": 39.1
     },
     {
-      "name": "Botic van de Zandschulp",
+      "name": "Botic Van De Zandschulp",
       "tour": "ATP",
-      "matchesWithStats": 15,
-      "holdPct": 77.1,
-      "breakPct": 23.3,
-      "firstServeWonPct": 72.0,
-      "returnPointsWonPct": 38.0
+      "matchesWithStats": 58,
+      "holdPct": 79.6,
+      "breakPct": 20.4,
+      "firstServeWonPct": 73.6,
+      "returnPointsWonPct": 37.1
     },
     {
       "name": "Jenson Brooksby",
@@ -1290,13 +1299,13 @@
       "returnPointsWonPct": 31.3
     },
     {
-      "name": "Jesper de Jong",
+      "name": "Jesper De Jong",
       "tour": "ATP",
-      "matchesWithStats": 13,
-      "holdPct": 83.1,
-      "breakPct": 17.7,
-      "firstServeWonPct": 73.9,
-      "returnPointsWonPct": 33.0
+      "matchesWithStats": 36,
+      "holdPct": 79.0,
+      "breakPct": 18.1,
+      "firstServeWonPct": 72.9,
+      "returnPointsWonPct": 35.1
     },
     {
       "name": "Christopher Eubanks",
@@ -1360,6 +1369,15 @@
       "breakPct": 18.2,
       "firstServeWonPct": 67.6,
       "returnPointsWonPct": 35.8
+    },
+    {
+      "name": "Jesper de Jong",
+      "tour": "ATP",
+      "matchesWithStats": 13,
+      "holdPct": 83.1,
+      "breakPct": 17.7,
+      "firstServeWonPct": 73.9,
+      "returnPointsWonPct": 33.0
     },
     {
       "name": "Ethan Quinn",
@@ -1452,12 +1470,12 @@
       "returnPointsWonPct": 41.9
     },
     {
-      "name": "Mackenzie McDonald",
+      "name": "Mackenzie Mcdonald",
       "tour": "ATP",
-      "matchesWithStats": 11,
-      "holdPct": 79.9,
-      "breakPct": 17.2,
-      "firstServeWonPct": 69.0,
+      "matchesWithStats": 32,
+      "holdPct": 76.2,
+      "breakPct": 17.1,
+      "firstServeWonPct": 67.4,
       "returnPointsWonPct": 33.4
     },
     {
@@ -1632,6 +1650,15 @@
       "returnPointsWonPct": 34.5
     },
     {
+      "name": "Botic van de Zandschulp",
+      "tour": "ATP",
+      "matchesWithStats": 15,
+      "holdPct": 77.1,
+      "breakPct": 23.3,
+      "firstServeWonPct": 72.0,
+      "returnPointsWonPct": 38.0
+    },
+    {
       "name": "Abdullah Shelbayh",
       "tour": "ATP",
       "matchesWithStats": 1,
@@ -1693,6 +1720,15 @@
       "breakPct": 20.8,
       "firstServeWonPct": 71.3,
       "returnPointsWonPct": 36.5
+    },
+    {
+      "name": "Mackenzie McDonald",
+      "tour": "ATP",
+      "matchesWithStats": 11,
+      "holdPct": 79.9,
+      "breakPct": 17.2,
+      "firstServeWonPct": 69.0,
+      "returnPointsWonPct": 33.4
     },
     {
       "name": "Giulio Zeppieri",

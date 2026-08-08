@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-08T01:58:11.255558+00:00",
+  "sources": [
+    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2026.csv",
+    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2025.csv",
+    "buildoak/tennis-xgboost-autoresearch:data/extension"
+  ],
+  "rows": {
+    "ATP": 6155,
+    "WTA": 2758,
+    "total": 8913
+  },
+  "outputs": {
+    "players": 980,
+    "form": 986,
+    "h2h": 6323,
+    "surface": 986,
+    "stats": 351
+  },
+  "status": "OK"
+}

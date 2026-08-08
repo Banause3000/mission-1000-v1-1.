@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-08T01:58:11.747786+00:00",
-  "source": "Mission 1000 Data Engine",
+  "generatedAt": "2026-08-08T01:58:11.255558+00:00",
+  "source": "Mission 1000 Data Engine v3",
   "players": [
     {
       "name": "Taylor Fritz",
@@ -351,20 +351,26 @@
       }
     },
     {
-      "name": "Alex de Minaur",
+      "name": "Alex De Minaur",
       "tour": "ATP",
       "surfaces": {
         "hard": {
-          "wins": 23,
-          "losses": 10,
-          "total": 33,
-          "winPct": 69.7
+          "wins": 65,
+          "losses": 24,
+          "total": 89,
+          "winPct": 73.0
         },
         "clay": {
-          "wins": 4,
+          "wins": 18,
+          "losses": 11,
+          "total": 29,
+          "winPct": 62.1
+        },
+        "grass": {
+          "wins": 3,
           "losses": 2,
-          "total": 6,
-          "winPct": 66.7
+          "total": 5,
+          "winPct": 60.0
         }
       }
     },
@@ -413,6 +419,24 @@
           "losses": 4,
           "total": 10,
           "winPct": 60.0
+        }
+      }
+    },
+    {
+      "name": "Alex de Minaur",
+      "tour": "ATP",
+      "surfaces": {
+        "hard": {
+          "wins": 23,
+          "losses": 10,
+          "total": 33,
+          "winPct": 69.7
+        },
+        "clay": {
+          "wins": 4,
+          "losses": 2,
+          "total": 6,
+          "winPct": 66.7
         }
       }
     },
@@ -2529,26 +2553,26 @@
       }
     },
     {
-      "name": "McCartney Kessler",
+      "name": "Mccartney Kessler",
       "tour": "WTA",
       "surfaces": {
         "hard": {
-          "wins": 1,
-          "losses": 2,
-          "total": 3,
-          "winPct": 33.3
+          "wins": 27,
+          "losses": 17,
+          "total": 44,
+          "winPct": 61.4
         },
         "clay": {
           "wins": 0,
-          "losses": 1,
-          "total": 1,
+          "losses": 4,
+          "total": 4,
           "winPct": 0.0
         },
         "grass": {
-          "wins": 0,
-          "losses": 1,
-          "total": 1,
-          "winPct": 0.0
+          "wins": 5,
+          "losses": 0,
+          "total": 5,
+          "winPct": 100.0
         }
       }
     },
@@ -4413,20 +4437,26 @@
       }
     },
     {
-      "name": "Botic van de Zandschulp",
+      "name": "Botic Van De Zandschulp",
       "tour": "ATP",
       "surfaces": {
         "hard": {
-          "wins": 9,
-          "losses": 5,
-          "total": 14,
-          "winPct": 64.3
+          "wins": 20,
+          "losses": 25,
+          "total": 45,
+          "winPct": 44.4
         },
         "clay": {
-          "wins": 0,
+          "wins": 11,
+          "losses": 10,
+          "total": 21,
+          "winPct": 52.4
+        },
+        "grass": {
+          "wins": 1,
           "losses": 1,
-          "total": 1,
-          "winPct": 0.0
+          "total": 2,
+          "winPct": 50.0
         }
       }
     },
@@ -5757,20 +5787,44 @@
       }
     },
     {
-      "name": "Caty Mcnally",
+      "name": "Caty McNally",
       "tour": "WTA",
       "surfaces": {
         "hard": {
-          "wins": 7,
-          "losses": 9,
-          "total": 16,
-          "winPct": 43.8
+          "wins": 1,
+          "losses": 2,
+          "total": 3,
+          "winPct": 33.3
         },
-        "clay": {
+        "grass": {
           "wins": 1,
           "losses": 1,
           "total": 2,
           "winPct": 50.0
+        }
+      }
+    },
+    {
+      "name": "McCartney Kessler",
+      "tour": "WTA",
+      "surfaces": {
+        "hard": {
+          "wins": 1,
+          "losses": 2,
+          "total": 3,
+          "winPct": 33.3
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 1,
+          "total": 1,
+          "winPct": 0.0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 1,
+          "total": 1,
+          "winPct": 0.0
         }
       }
     },
@@ -6237,26 +6291,26 @@
       }
     },
     {
-      "name": "Jesper de Jong",
+      "name": "Jesper De Jong",
       "tour": "ATP",
       "surfaces": {
         "hard": {
-          "wins": 2,
-          "losses": 7,
-          "total": 9,
-          "winPct": 22.2
+          "wins": 7,
+          "losses": 10,
+          "total": 17,
+          "winPct": 41.2
         },
         "clay": {
-          "wins": 4,
-          "losses": 2,
-          "total": 6,
-          "winPct": 66.7
+          "wins": 13,
+          "losses": 10,
+          "total": 23,
+          "winPct": 56.5
         },
         "grass": {
-          "wins": 0,
-          "losses": 1,
-          "total": 1,
-          "winPct": 0.0
+          "wins": 1,
+          "losses": 3,
+          "total": 4,
+          "winPct": 25.0
         }
       }
     },
@@ -6373,6 +6427,30 @@
       "tour": "ATP",
       "surfaces": {
         "hard": {
+          "wins": 0,
+          "losses": 1,
+          "total": 1,
+          "winPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Jesper de Jong",
+      "tour": "ATP",
+      "surfaces": {
+        "hard": {
+          "wins": 2,
+          "losses": 7,
+          "total": 9,
+          "winPct": 22.2
+        },
+        "clay": {
+          "wins": 4,
+          "losses": 2,
+          "total": 6,
+          "winPct": 66.7
+        },
+        "grass": {
           "wins": 0,
           "losses": 1,
           "total": 1,
@@ -6987,20 +7065,26 @@
       }
     },
     {
-      "name": "Mackenzie McDonald",
+      "name": "Mackenzie Mcdonald",
       "tour": "ATP",
       "surfaces": {
         "hard": {
-          "wins": 3,
-          "losses": 7,
-          "total": 10,
-          "winPct": 30.0
+          "wins": 8,
+          "losses": 16,
+          "total": 24,
+          "winPct": 33.3
+        },
+        "clay": {
+          "wins": 2,
+          "losses": 3,
+          "total": 5,
+          "winPct": 40.0
         },
         "grass": {
-          "wins": 1,
-          "losses": 1,
-          "total": 2,
-          "winPct": 50.0
+          "wins": 2,
+          "losses": 3,
+          "total": 5,
+          "winPct": 40.0
         }
       }
     },
@@ -7841,6 +7925,24 @@
           "losses": 3,
           "total": 3,
           "winPct": 0.0
+        }
+      }
+    },
+    {
+      "name": "Mackenzie McDonald",
+      "tour": "ATP",
+      "surfaces": {
+        "hard": {
+          "wins": 3,
+          "losses": 7,
+          "total": 10,
+          "winPct": 30.0
+        },
+        "grass": {
+          "wins": 1,
+          "losses": 1,
+          "total": 2,
+          "winPct": 50.0
         }
       }
     },
@@ -9621,6 +9723,24 @@
       }
     },
     {
+      "name": "Botic van de Zandschulp",
+      "tour": "ATP",
+      "surfaces": {
+        "hard": {
+          "wins": 9,
+          "losses": 5,
+          "total": 14,
+          "winPct": 64.3
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 1,
+          "total": 1,
+          "winPct": 0.0
+        }
+      }
+    },
+    {
       "name": "Abdullah Shelbayh",
       "tour": "ATP",
       "surfaces": {
@@ -9869,6 +9989,24 @@
           "losses": 4,
           "total": 12,
           "winPct": 66.7
+        }
+      }
+    },
+    {
+      "name": "Caty Mcnally",
+      "tour": "WTA",
+      "surfaces": {
+        "hard": {
+          "wins": 7,
+          "losses": 9,
+          "total": 16,
+          "winPct": 43.8
+        },
+        "clay": {
+          "wins": 1,
+          "losses": 1,
+          "total": 2,
+          "winPct": 50.0
         }
       }
     },
