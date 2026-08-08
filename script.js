@@ -1,4 +1,4 @@
-// Mission 1000 v2.5.3
+// Mission 1000 v2.6.0
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -330,31 +330,52 @@ function numericStat(record,keys){
 }
 
 async function loadOptionalIntelligence(){
-  const defs=[
-    ["h2h","./data/intelligence/h2h.json",{matches:[]}],
-    ["surfaces","./data/intelligence/surface.json",{players:[]}],
-    ["stats","./data/intelligence/stats.json",{players:[]}]
-  ];
 
-  const results=await Promise.allSettled(
-    defs.map(([,path,fallback])=>fetchJson(path,fallback))
-  );
+  const [h2hResult, surfaceResult, statsResult] = await Promise.all([
+    fetchBestJson(
+      ["./data/intelligence/h2h.json", "./data/sources/h2h.json"],
+      {matches:[]}
+    ),
+    fetchBestJson(
+      ["./data/intelligence/surface.json", "./data/sources/surface.json"],
+      {players:[]}
+    ),
+    fetchBestJson(
+      ["./data/intelligence/stats.json", "./data/sources/stats.json"],
+      {players:[]}
+    )
+  ]);
 
-  results.forEach((result,index)=>{
-    const [key,,fallback]=defs[index];
-    const payload=result.status==="fulfilled" ? result.value : fallback;
+  const h2hPayload = h2hResult.payload;
+  const surfacePayload = surfaceResult.payload;
+  const statsPayload = statsResult.payload;
 
-    if(key==="h2h"){
-      STATE.h2h=
-        (Array.isArray(payload.matches)&&payload.matches) ||
-        (Array.isArray(payload.h2h)&&payload.h2h) ||
-        (Array.isArray(payload)&&payload) || [];
-    }else{
-      STATE[key]=
-        (Array.isArray(payload.players)&&payload.players) ||
-        (Array.isArray(payload.data)&&payload.data) ||
-        (Array.isArray(payload)&&payload) || [];
-    }
+  STATE.h2h =
+    (Array.isArray(h2hPayload.matches) && h2hPayload.matches) ||
+    (Array.isArray(h2hPayload.h2h) && h2hPayload.h2h) ||
+    (Array.isArray(h2hPayload.data) && h2hPayload.data) ||
+    (Array.isArray(h2hPayload) && h2hPayload) ||
+    [];
+
+  STATE.surfaces =
+    (Array.isArray(surfacePayload.players) && surfacePayload.players) ||
+    (Array.isArray(surfacePayload.data) && surfacePayload.data) ||
+    (Array.isArray(surfacePayload) && surfacePayload) ||
+    [];
+
+  STATE.stats =
+    (Array.isArray(statsPayload.players) && statsPayload.players) ||
+    (Array.isArray(statsPayload.data) && statsPayload.data) ||
+    (Array.isArray(statsPayload) && statsPayload) ||
+    [];
+
+  console.info("Mission 1000 Intelligence", {
+    h2h: STATE.h2h.length,
+    surface: STATE.surfaces.length,
+    stats: STATE.stats.length,
+    h2hPath: h2hResult.path,
+    surfacePath: surfaceResult.path,
+    statsPath: statsResult.path
   });
 }
 
@@ -1204,57 +1225,101 @@ async function fetchJson(path, fallback){
   }
 }
 
-async function load(){
-  $("statusTitle").textContent = "Matches werden geladen";
-  $("statusText").textContent = "Mission Control lädt zuerst den Spieltag. Zusatzdaten folgen danach.";
+function payloadCount(payload){
+  if(Array.isArray(payload)) return payload.length;
+  if(!payload || typeof payload !== "object") return 0;
 
-  // IMPORTANT: matches.json is the critical path.
-  // Never wait for large ranking/player/form files before showing matches.
-  const matchesPayload = await fetchJson("./data/matches.json", {matches:[]});
+  for(const key of ["matches","players","rankings","form","h2h","data"]){
+    if(Array.isArray(payload[key])) return payload[key].length;
+  }
 
-  STATE.matches = Array.isArray(matchesPayload.matches)
-    ? matchesPayload.matches
-    : Array.isArray(matchesPayload)
-      ? matchesPayload
-      : [];
+  return 0;
+}
 
+async function fetchBestJson(paths, fallback){
+  let bestPayload = fallback;
+  let bestCount = payloadCount(fallback);
+  let bestPath = null;
+
+  for(const path of paths){
+    const payload = await fetchJson(path, fallback);
+    const count = payloadCount(payload);
+
+    if(count > bestCount){
+      bestPayload = payload;
+      bestCount = count;
+      bestPath = path;
+    }
+
+    if(count > 0){
+      console.info(`Mission 1000: ${path} -> ${count} Datensätze`);
+      return {payload, path, count};
+    }
+  }
+
+  console.warn("Mission 1000: keine gefüllte Quelle gefunden", paths);
+  return {payload:bestPayload, path:bestPath, count:bestCount};
+}
+
+function renderEverything(matchesPayload){
   STATE.activeDate = resolveActiveDate();
-
-  // Render immediately with matches + market data.
-  renderStatus(matchesPayload);
+  renderStatus(matchesPayload || {});
   renderStats();
   renderTop();
   renderMatchList();
   renderAllMatches();
   renderWatchlist();
+  renderPlayerSearch($("playerSearch")?.value || "");
   renderAI();
+  renderOptionalCoverage();
+}
 
-  $("statusTitle").textContent = STATE.matches.length
-    ? "Mission Control online"
-    : "Keine Matchdaten gefunden";
+async function load(){
 
-  $("statusText").textContent = STATE.matches.length
-    ? "Matches sind geladen. Ranking, Form und Intelligence werden im Hintergrund ergänzt."
-    : "matches.json konnte nicht gelesen werden oder enthält keine Matches.";
+  $("statusTitle").textContent = "Matches werden geladen";
+  $("statusText").textContent = "Mission Control lädt zuerst den aktuellen Spieltag.";
 
-  // Secondary data must NEVER block the dashboard.
-  const [rankingsResult, formsResult, playersResult] = await Promise.allSettled([
-    fetchJson("./data/rankings.json", {players:[]}),
-    fetchJson("./data/form.json", {players:[]}),
-    fetchJson("./data/players.json", {players:[]})
+  const matchesResult = await fetchBestJson(
+    ["./data/matches.json"],
+    {matches:[]}
+  );
+
+  const matchesPayload = matchesResult.payload;
+
+  STATE.matches =
+    (Array.isArray(matchesPayload.matches) && matchesPayload.matches) ||
+    (Array.isArray(matchesPayload) && matchesPayload) ||
+    [];
+
+  renderEverything(matchesPayload);
+
+  if(!STATE.matches.length){
+    $("statusTitle").textContent = "Keine Matchdaten gefunden";
+    $("statusText").textContent = "data/matches.json enthält aktuell keine verwertbaren Matches.";
+    return;
+  }
+
+  $("statusTitle").textContent = "Intelligence wird geladen";
+  $("statusText").textContent = "Ranking, Form und Spielerprofile werden ergänzt.";
+
+  const [rankingResult, formResult, playersResult] = await Promise.all([
+    fetchBestJson(
+      ["./data/rankings.json", "./data/sources/rankings.json"],
+      {players:[]}
+    ),
+    fetchBestJson(
+      ["./data/form.json", "./data/sources/form.json"],
+      {players:[]}
+    ),
+    fetchBestJson(
+      ["./data/players.json", "./data/sources/players.json"],
+      {players:[]}
+    )
   ]);
 
-  const rankingsPayload = rankingsResult.status === "fulfilled"
-    ? rankingsResult.value
-    : {players:[]};
-
-  const formsPayload = formsResult.status === "fulfilled"
-    ? formsResult.value
-    : {players:[]};
-
-  const playersPayload = playersResult.status === "fulfilled"
-    ? playersResult.value
-    : {players:[]};
+  const rankingsPayload = rankingResult.payload;
+  const formsPayload = formResult.payload;
+  const playersPayload = playersResult.payload;
 
   STATE.rankings =
     (Array.isArray(rankingsPayload.players) && rankingsPayload.players) ||
@@ -1276,20 +1341,40 @@ async function load(){
     (Array.isArray(playersPayload) && playersPayload) ||
     [];
 
-  // Load H2H/surface/stats independently. Failure here is harmless.
+  console.info("Mission 1000 Core Intelligence", {
+    rankings: STATE.rankings.length,
+    form: STATE.forms.length,
+    players: STATE.players.length,
+    rankingPath: rankingResult.path,
+    formPath: formResult.path,
+    playersPath: playersResult.path
+  });
+
+  renderEverything(matchesPayload);
+
+  $("statusTitle").textContent = "Mission Intelligence wird geladen";
+  $("statusText").textContent = "H2H, Belag sowie Serve- und Return-Daten werden ergänzt.";
+
   await loadOptionalIntelligence();
 
-  // Re-render with all enrichment that actually arrived.
-  STATE.activeDate = resolveActiveDate();
-  renderStatus(matchesPayload);
-  renderStats();
-  renderTop();
-  renderMatchList();
-  renderAllMatches();
-  renderWatchlist();
-  renderPlayerSearch($("playerSearch")?.value || "");
-  renderAI();
-  renderOptionalCoverage();
+  renderEverything(matchesPayload);
+
+  const loaded = [
+    STATE.rankings.length ? "Ranking" : null,
+    STATE.forms.length ? "Form" : null,
+    STATE.h2h.length ? "H2H" : null,
+    STATE.surfaces.length ? "Belag" : null,
+    STATE.stats.length ? "Stats" : null
+  ].filter(Boolean);
+
+  $("statusTitle").textContent = "Mission Control online";
+  $("statusText").textContent = loaded.length
+    ? `Geladen: ${loaded.join(", ")}.`
+    : "Matches sind geladen, Intelligence-Daten fehlen aktuell.";
+
+  if($("engineStatus")){
+    $("engineStatus").textContent = loaded.length >= 4 ? "ONLINE" : "PARTIAL";
+  }
 }
 
 $("refreshBtn").onclick = load;
@@ -1317,6 +1402,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
+console.info("Mission 1000 v2.6.0 Data Bridge aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
