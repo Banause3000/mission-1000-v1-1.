@@ -25,6 +25,10 @@ jobs:
         run: |
           python collector/fetch_rankings.py
 
+      - name: Form Collector testen
+        run: |
+          python collector/fetch_form.py
+
       - name: Mission Database bauen
         run: |
           python collector/build_database.py
