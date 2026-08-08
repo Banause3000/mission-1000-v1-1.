@@ -65,6 +65,7 @@ def main():
     # Optional manually supplied source files.
     # Later, source-specific fetchers can populate these automatically.
     ranking_src = load_json(SOURCE/"rankings.json", {"players":[]})
+    ranking_fallback_src = load_json(SOURCE/"rankings_fallback.json", {"players":[]})
     form_src = load_json(SOURCE/"form.json", {"players":[]})
     players_src = load_json(SOURCE/"players.json", {"players":[]})
     h2h_src = load_json(SOURCE/"h2h.json", {"matches":[]})
@@ -77,7 +78,11 @@ def main():
     form_existing = load_json(DATA/"form.json", {"players":[]})
     players_existing = load_json(DATA/"players.json", {"players":[]})
 
-    rankings = merge_players(players_from(ranking_existing), players_from(ranking_src))
+    rankings = merge_players(
+        players_from(ranking_fallback_src),
+        players_from(ranking_existing),
+        players_from(ranking_src)
+    )
     forms = merge_players(players_from(form_existing), players_from(form_src))
     players = merge_players(players_from(players_existing), players_from(players_src))
 
@@ -89,7 +94,7 @@ def main():
 
     save_json(DATA/"rankings.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine",
+        "source": "Mission 1000 Data Engine v3.2",
         "players": rankings
     })
     save_json(DATA/"form.json", {
@@ -126,6 +131,8 @@ def main():
     })
 
     print(f"rankings: {len(rankings)}")
+    print(f"rankings ATP: {sum(1 for p in rankings if str(p.get('tour') or '').upper() == 'ATP')}")
+    print(f"rankings WTA: {sum(1 for p in rankings if str(p.get('tour') or '').upper() == 'WTA')}")
     print(f"form: {len(forms)}")
     print(f"players: {len(players)}")
     print(f"h2h: {len(h2h)}")
