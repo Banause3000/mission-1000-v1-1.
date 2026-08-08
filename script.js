@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.6
+// Mission 1000 v2.6.7
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -148,7 +148,12 @@ function codeToFlag(code){
 }
 
 function playerMeta(name, tour){
-  return findPlayerRecord(STATE.players,name,tour);
+  // Ranking records already contain name/tour/country for ATP and WTA.
+  // Prefer them so flags/profiles work without loading the 66k players.json.
+  return (
+    findPlayerRecord(STATE.rankings,name,tour) ||
+    findPlayerRecord(STATE.players,name,tour)
+  );
 }
 
 function directCountry(match, side){
@@ -1100,14 +1105,10 @@ function renderTop(){
 }
 
 function openPlayer(player){
-  showPlayerProfile(player);
-
-  if(!STATE.players.length){
-    ensurePlayerMeta().then(() => showPlayerProfile({
-      ...player,
-      flag:playerFlag(player.name,player.tour)
-    }));
-  }
+  showPlayerProfile({
+    ...player,
+    flag:player.flag || playerFlag(player.name,player.tour)
+  });
 
   document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
   const target = document.querySelector('.bottom-nav button[data-view="playerView"]');
@@ -1246,29 +1247,45 @@ function renderWatchlist(){
 function uniquePlayers(){
   const map = new Map();
 
-  STATE.matches.forEach(m => {
-    [
-      {name:m.player1, tour:m.tour, flag:playerFlag(m.player1,m.tour,m,1)},
-      {name:m.player2, tour:m.tour, flag:playerFlag(m.player2,m.tour,m,2)}
-    ].forEach(p => {
-      if(!p.name) return;
-      const key = `${String(p.tour || "").toUpperCase()}|${normalizeName(p.name)}`;
-      if(!map.has(key)) map.set(key,p);
-    });
-  });
-
+  // Rankings are now the primary player directory.
+  // This gives us ATP + WTA names, rank and country without players.json.
   STATE.rankings.forEach(p => {
-    const key = `${String(p.tour || "").toUpperCase()}|${normalizeName(p.name)}`;
+    if(!p?.name) return;
+
+    const tour=String(p.tour || "").toUpperCase();
+    const key=`${tour}|${normalizeName(p.name)}`;
+
     if(!map.has(key)){
       map.set(key,{
         name:p.name,
-        tour:p.tour,
-        flag:playerFlag(p.name,p.tour)
+        tour,
+        flag:p.country ? codeToFlag(p.country) : "🎾"
       });
     }
   });
 
-  return [...map.values()].sort((a,b) => a.name.localeCompare(b.name,"de"));
+  // Add any match player who is not in the ranking file.
+  STATE.matches.forEach(m => {
+    [
+      {name:m.player1,tour:m.tour,side:1},
+      {name:m.player2,tour:m.tour,side:2}
+    ].forEach(p => {
+      if(!p.name) return;
+
+      const tour=String(p.tour || "").toUpperCase();
+      const key=`${tour}|${normalizeName(p.name)}`;
+
+      if(!map.has(key)){
+        map.set(key,{
+          name:p.name,
+          tour,
+          flag:playerFlag(p.name,tour,m,p.side)
+        });
+      }
+    });
+  });
+
+  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name,"de"));
 }
 
 function showPlayerProfile(player){
@@ -1304,8 +1321,9 @@ function renderPlayerSearch(query=""){
   if(!wrap) return;
 
   const q = normalizeName(query);
+  const all=uniquePlayers();
 
-  const players = uniquePlayers()
+  const players = all
     .filter(p => !q || normalizeName(p.name).includes(q))
     .slice(0,20);
 
@@ -1541,41 +1559,6 @@ function renderEverything(matchesPayload){
 }
 
 
-let PLAYER_META_LOADING = null;
-
-async function ensurePlayerMeta(){
-  if(STATE.players.length) return STATE.players;
-  if(PLAYER_META_LOADING) return PLAYER_META_LOADING;
-
-  PLAYER_META_LOADING = (async () => {
-    const playersResult = await fetchBestJson(
-      ["./data/players.json", "./data/sources/players.json"],
-      {players:[]}
-    );
-
-    const playersPayload = playersResult.payload;
-
-    STATE.players =
-      (Array.isArray(playersPayload.players) && playersPayload.players) ||
-      (Array.isArray(playersPayload.data) && playersPayload.data) ||
-      (Array.isArray(playersPayload) && playersPayload) ||
-      [];
-
-    console.info("Mission 1000 Player Metadata lazy-loaded", {
-      players: STATE.players.length,
-      path: playersResult.path
-    });
-
-    return STATE.players;
-  })().catch(error => {
-    console.warn("Player metadata lazy load failed", error);
-    return [];
-  }).finally(() => {
-    PLAYER_META_LOADING = null;
-  });
-
-  return PLAYER_META_LOADING;
-}
 
 async function load(){
   if(LOAD_RUNNING) return;
@@ -1703,7 +1686,7 @@ if($("playerSearch")){
 }
 
 document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
-  button.onclick = async () => {
+  button.onclick = () => {
     document.querySelectorAll(".bottom-nav button").forEach(b => b.classList.remove("active"));
     button.classList.add("active");
 
@@ -1712,12 +1695,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
     const view = $(button.dataset.view);
     if(view) view.classList.remove("hidden");
 
-    // Heavy player metadata is loaded only on demand.
-    if(button.dataset.view === "playerView" && !STATE.players.length){
-      const wrap = $("playerResults");
-      if(wrap) wrap.innerHTML = '<div class="empty">Spielerdaten werden geladen…</div>';
-
-      await ensurePlayerMeta();
+    if(button.dataset.view === "playerView"){
       renderPlayerSearch($("playerSearch")?.value || "");
     }
 
@@ -1725,7 +1703,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.6 UI Unblock Fix aktiv");
+console.info("Mission 1000 v2.6.7 Player Search Fix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
