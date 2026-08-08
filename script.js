@@ -1,4 +1,4 @@
-// Mission 1000 v2.3.0
+// Mission 1000 v2.5.0
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -407,15 +407,229 @@ function renderOptionalDetails(match){
   }
 }
 
-function confidence(match){
-  const mk = market(match);
-  if(!mk) return 50;
 
-  const margin = Math.max(0, mk.overround - 1);
-  return Math.max(50, Math.min(97, Math.round(96 - margin*260)));
+
+
+
+function clamp(value,min,max){
+  return Math.max(min,Math.min(max,value));
 }
 
+function sideName(match,side){
+  return side===1 ? match.player1 : side===2 ? match.player2 : null;
+}
 
+function missionScoreV3(match){
+  const marketPart = marketComponent(match);
+  const rankingPart = rankingComponent(match);
+  const formPart = formComponent(match);
+
+  const h2h = h2hRecord(match);
+  const surfaceName = match.surface ?? match.court ?? match.surfaceType ?? "";
+  const surface1 = surfaceName ? surfaceRecord(match.player1,match.tour,surfaceName) : null;
+  const surface2 = surfaceName ? surfaceRecord(match.player2,match.tour,surfaceName) : null;
+  const stats1 = statRecord(match.player1,match.tour);
+  const stats2 = statRecord(match.player2,match.tour);
+
+  const components = [];
+
+  // Markt: max 25
+  if(marketPart.available){
+    const mk = market(match);
+    const gap = Math.abs(mk.p1-mk.p2);
+    const score = clamp(Math.round(10 + gap*0.25),10,25);
+    const side = mk.p1===mk.p2 ? 0 : (mk.p1>mk.p2 ? 1 : 2);
+    components.push({
+      key:"market",
+      label:"Markt",
+      score,
+      max:25,
+      side,
+      available:true,
+      detail:`${mk.p1}% / ${mk.p2}%`
+    });
+  }else{
+    components.push({key:"market",label:"Markt",score:0,max:25,side:0,available:false,detail:"–"});
+  }
+
+  // Ranking: max 20
+  const r1=getRank(match.player1,match.tour);
+  const r2=getRank(match.player2,match.tour);
+  if(r1 && r2){
+    const diff=Math.abs(r1-r2);
+    const score=clamp(Math.round(6 + diff/3),6,20);
+    const side=r1===r2 ? 0 : (r1<r2 ? 1 : 2);
+    components.push({
+      key:"ranking",
+      label:"Ranking",
+      score,
+      max:20,
+      side,
+      available:true,
+      detail:`#${r1} / #${r2}`
+    });
+  }else{
+    components.push({key:"ranking",label:"Ranking",score:0,max:20,side:0,available:false,detail:"–"});
+  }
+
+  // Form: max 20
+  const f1=getForm(match.player1,match.tour);
+  const f2=getForm(match.player2,match.tour);
+  if(f1 && f2){
+    const diff=Math.abs(f1.pct-f2.pct);
+    const score=clamp(Math.round(6 + diff*0.18),6,20);
+    const side=f1.pct===f2.pct ? 0 : (f1.pct>f2.pct ? 1 : 2);
+    components.push({
+      key:"form",
+      label:"Form",
+      score,
+      max:20,
+      side,
+      available:true,
+      detail:`${f1.pct}% / ${f2.pct}%`
+    });
+  }else{
+    components.push({key:"form",label:"Form",score:0,max:20,side:0,available:false,detail:"–"});
+  }
+
+  // H2H: max 10
+  if(h2h){
+    const share1=h2h.wins1/h2h.total;
+    const share2=h2h.wins2/h2h.total;
+    const diff=Math.abs(share1-share2);
+    const score=clamp(Math.round(3 + diff*10),3,10);
+    const side=h2h.wins1===h2h.wins2 ? 0 : (h2h.wins1>h2h.wins2 ? 1 : 2);
+    components.push({
+      key:"h2h",
+      label:"H2H",
+      score,
+      max:10,
+      side,
+      available:true,
+      detail:`${h2h.wins1}:${h2h.wins2}`
+    });
+  }else{
+    components.push({key:"h2h",label:"H2H",score:0,max:10,side:0,available:false,detail:"–"});
+  }
+
+  // Belag: max 10
+  if(surface1 && surface2){
+    const diff=Math.abs(surface1.pct-surface2.pct);
+    const score=clamp(Math.round(3 + diff*0.12),3,10);
+    const side=surface1.pct===surface2.pct ? 0 : (surface1.pct>surface2.pct ? 1 : 2);
+    components.push({
+      key:"surface",
+      label:"Belag",
+      score,
+      max:10,
+      side,
+      available:true,
+      detail:`${surface1.pct}% / ${surface2.pct}%`
+    });
+  }else{
+    components.push({key:"surface",label:"Belag",score:0,max:10,side:0,available:false,detail:"–"});
+  }
+
+  // Stats: max 15
+  const statKeys = [
+    ["holdPct","hold_pct","hold"],
+    ["breakPct","break_pct","break"],
+    ["firstServeWonPct","first_serve_won_pct","firstServeWon"],
+    ["returnPointsWonPct","return_points_won_pct","returnWon"]
+  ];
+
+  if(stats1 && stats2){
+    let p1wins=0,p2wins=0,diffs=[];
+    for(const aliases of statKeys){
+      const a=numericStat(stats1,aliases);
+      const b=numericStat(stats2,aliases);
+      if(a===null || b===null) continue;
+      diffs.push(Math.abs(a-b));
+      if(a>b) p1wins++;
+      else if(b>a) p2wins++;
+    }
+
+    if(diffs.length){
+      const avg=diffs.reduce((s,x)=>s+x,0)/diffs.length;
+      const score=clamp(Math.round(5 + avg*0.7),5,15);
+      const side=p1wins===p2wins ? 0 : (p1wins>p2wins ? 1 : 2);
+      components.push({
+        key:"stats",
+        label:"Stats",
+        score,
+        max:15,
+        side,
+        available:true,
+        detail:`${diffs.length} Werte`
+      });
+    }else{
+      components.push({key:"stats",label:"Stats",score:0,max:15,side:0,available:false,detail:"–"});
+    }
+  }else{
+    components.push({key:"stats",label:"Stats",score:0,max:15,side:0,available:false,detail:"–"});
+  }
+
+  const available=components.filter(c=>c.available);
+  const availableMax=available.reduce((s,c)=>s+c.max,0);
+  const evidence=Math.round(availableMax/100*100);
+
+  // Determine consensus direction and punish contradictions.
+  let support1=0,support2=0;
+  for(const c of available){
+    if(c.side===1) support1 += c.score;
+    if(c.side===2) support2 += c.score;
+  }
+
+  const winnerSide = support1===support2 ? 0 : (support1>support2 ? 1 : 2);
+  const supporting = available.filter(c=>c.side===winnerSide && winnerSide!==0);
+  const opposing = available.filter(c=>c.side!==0 && c.side!==winnerSide);
+
+  const supportScore=supporting.reduce((s,c)=>s+c.score,0);
+  const opposeScore=opposing.reduce((s,c)=>s+c.score,0);
+  const directional=Math.max(0,supportScore-opposeScore);
+
+  // Confidence depends on evidence + agreement, not just odds.
+  const agreementDen=supportScore+opposeScore;
+  const agreement=agreementDen ? supportScore/agreementDen : .5;
+  const confidence=clamp(Math.round(45 + evidence*0.35 + agreement*20),45,97);
+
+  // Score reflects evidence depth and directional strength.
+  // Market-only can no longer generate 90+.
+  const score=clamp(
+    Math.round(45 + evidence*0.25 + directional*0.35 + agreement*10),
+    45,
+    97
+  );
+
+  return {
+    score,
+    confidence,
+    evidence,
+    winnerSide,
+    winnerName:sideName(match,winnerSide),
+    components
+  };
+}
+
+function missionScore(match){
+  return missionScoreV3(match).score;
+}
+
+function confidence(match){
+  return missionScoreV3(match).confidence;
+}
+
+function evidenceLabel(value){
+  if(value>=85) return "Sehr hohe Datentiefe";
+  if(value>=65) return "Hohe Datentiefe";
+  if(value>=45) return "Mittlere Datentiefe";
+  if(value>=25) return "Niedrige Datentiefe";
+  return "Sehr niedrige Datentiefe";
+}
+
+function componentByKey(report,key){
+  return report.components.find(c=>c.key===key) || null;
+}
 
 function scoreLabel(score){
   if(score >= 86) return "Sehr interessantes Match";
@@ -576,8 +790,9 @@ function renderTop(){
   $("topEvent").textContent = match.event || "Turnier";
   $("topStart").textContent = `${dataDateLabel()} · ${match.start || "–"}`;
 
-  const score = missionScore(match);
-  const conf = confidence(match);
+  const report = missionScoreV3(match);
+  const score = report.score;
+  const conf = report.confidence;
   const mk = market(match);
 
   $("topScore").textContent = score;
@@ -587,11 +802,13 @@ function renderTop(){
   $("confidenceBar").style.width = `${conf}%`;
   $("confidenceLabel").textContent = conf >= 88 ? "SEHR HOCH" : conf >= 76 ? "HOCH" : "SOLIDE";
 
-  if(mk){
+  if(report.winnerName){
+    $("marketTrend").textContent = `${report.winnerName} · ${report.evidence}% Daten`;
+  }else if(mk){
     const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
     $("marketTrend").textContent = `${fav} ↗ ${Math.max(mk.p1,mk.p2)}%`;
   }else{
-    $("marketTrend").textContent = "Keine vollständige Quote";
+    $("marketTrend").textContent = "Analyse noch offen";
   }
 }
 
@@ -815,135 +1032,139 @@ function renderPlayerSearch(query=""){
 }
 
 function renderAI(){
-  const box = $("aiReport");
+  const box=$("aiReport");
   if(!box) return;
 
-  const match = topMatch();
-
+  const match=topMatch();
   if(!match){
-    box.textContent = "Noch kein Match für einen Mission Report verfügbar.";
+    box.textContent="Noch kein Match für einen Mission Report verfügbar.";
     return;
   }
 
-  const mk = market(match);
-  const r1 = getRank(match.player1, match.tour);
-  const r2 = getRank(match.player2, match.tour);
-  const f1 = getForm(match.player1, match.tour);
-  const f2 = getForm(match.player2, match.tour);
-  const score = missionScore(match);
-  const conf = confidence(match);
+  const report=missionScoreV3(match);
+  const r1=getRank(match.player1,match.tour);
+  const r2=getRank(match.player2,match.tour);
+  const f1=getForm(match.player1,match.tour);
+  const f2=getForm(match.player2,match.tour);
+  const mk=market(match);
 
-  $("aiScore").textContent = score;
-  setRing($("aiScore").parentElement, score);
-  $("aiMatchTitle").textContent = `${match.player1} vs. ${match.player2}`;
-  $("aiMatchMeta").textContent = `${match.tour || ""} · ${match.event || "Turnier"} · ${match.start || "–"}`;
+  $("aiScore").textContent=report.score;
+  setRing($("aiScore").parentElement,report.score);
+  $("aiMatchTitle").textContent=`${match.player1} vs. ${match.player2}`;
+  $("aiMatchMeta").textContent=`${match.tour||""} · ${match.event||"Turnier"} · ${match.start||"–"}`;
+  $("aiMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
+  $("aiRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
+  $("aiForm").textContent=f1&&f2?`${f1.pct}% / ${f2.pct}%`:"–";
+  $("aiConfidence").textContent=`${report.confidence}%`;
 
-  $("aiMarket").textContent = mk ? `${mk.p1}% / ${mk.p2}%` : "–";
-  $("aiRanking").textContent = r1 && r2 ? `${r1} / ${r2}` : "–";
-  $("aiForm").textContent = f1 && f2 ? `${f1.pct}% / ${f2.pct}%` : "–";
-  $("aiConfidence").textContent = `${conf}%`;
+  const parts=[];
+  parts.push(`${playerFlag(match.player1,match.tour,match,1)} ${match.player1} trifft auf ${playerFlag(match.player2,match.tour,match,2)} ${match.player2}.`);
 
-  const parts = [
-    `${playerFlag(match.player1,match.tour,match,1)} ${match.player1} trifft auf ${playerFlag(match.player2,match.tour,match,2)} ${match.player2}.`
-  ];
-
-  if(mk){
-    const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
-    parts.push(`Der Markt sieht ${fav} mit rund ${Math.max(mk.p1,mk.p2)} % vorne.`);
+  if(report.winnerName){
+    parts.push(`Die aktuelle Datenlage spricht insgesamt eher für ${report.winnerName}.`);
+  }else{
+    parts.push("Die verfügbaren Faktoren ergeben aktuell keinen klaren Gesamtsieger.");
   }
 
-  if(r1 && r2){
-    const leader = r1 < r2 ? match.player1 : match.player2;
-    parts.push(`Im Ranking liegt ${leader} ${Math.abs(r1-r2)} Plätze vor dem Gegner.`);
+  const strongest=[...report.components]
+    .filter(c=>c.available && c.side!==0)
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,3);
+
+  if(strongest.length){
+    parts.push(`Stärkste Faktoren: ${strongest.map(c=>`${c.label} ${c.score}/${c.max}`).join(", ")}.`);
   }
 
-  if(f1 && f2){
-    const leader = f1.pct === f2.pct ? null : (f1.pct > f2.pct ? match.player1 : match.player2);
-    parts.push(leader ? `Die vorhandene Form spricht eher für ${leader}.` : "Die vorhandene Form ist ausgeglichen.");
-  }
-
-  parts.push(`Mission Score ${score}/100, Confidence ${conf} %.`);
-  box.textContent = parts.join(" ");
+  parts.push(`${evidenceLabel(report.evidence)} (${report.evidence} %). Mission Score ${report.score}/100, Confidence ${report.confidence} %.`);
+  box.textContent=parts.join(" ");
 }
 
 function showDetails(match){
-  const score = missionScore(match);
-  const mk = market(match);
-  const conf = confidence(match);
-  const r1 = getRank(match.player1, match.tour);
-  const r2 = getRank(match.player2, match.tour);
-  const f1 = getForm(match.player1, match.tour);
-  const f2 = getForm(match.player2, match.tour);
+  const report=missionScoreV3(match);
+  const score=report.score;
+  const mk=market(match);
+  const r1=getRank(match.player1,match.tour);
+  const r2=getRank(match.player2,match.tour);
+  const f1=getForm(match.player1,match.tour);
+  const f2=getForm(match.player2,match.tour);
 
   $("detailsPanel").classList.remove("hidden");
-  $("detailTitle").textContent = `${match.player1} vs. ${match.player2}`;
-  $("detailScore").textContent = score;
-  setRing($("detailScore").parentElement, score);
-  $("detailSignal").textContent = scoreLabel(score);
+  $("detailTitle").textContent=`${match.player1} vs. ${match.player2}`;
+  $("detailScore").textContent=score;
+  setRing($("detailScore").parentElement,score);
 
-  let text = "Die Analyse nutzt nur Daten, die tatsächlich vorhanden sind.";
+  $("detailSignal").textContent=report.winnerName
+    ? `${scoreLabel(score)} · ${report.winnerName}`
+    : scoreLabel(score);
 
-  if(mk){
-    const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
-    text = `Der Markt sieht ${fav} vorne.`;
+  let narrative=report.winnerName
+    ? `Die Gesamtdaten sprechen aktuell eher für ${report.winnerName}.`
+    : "Die verfügbaren Faktoren sind aktuell weitgehend ausgeglichen.";
+
+  narrative += ` ${evidenceLabel(report.evidence)} mit ${report.evidence} % Datenabdeckung.`;
+  $("detailNarrative").textContent=narrative;
+
+  $("factorMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
+  $("factorRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
+  $("factorForm").textContent=f1&&f2?`${f1.pct}% / ${f2.pct}%`:"–";
+  $("factorConfidence").textContent=`${report.confidence}%`;
+
+  const map=[
+    ["market","scoreMarket","barMarket"],
+    ["ranking","scoreRanking","barRanking"],
+    ["form","scoreForm","barForm"]
+  ];
+
+  for(const [key,scoreId,barId] of map){
+    const c=componentByKey(report,key);
+    if(!c) continue;
+    $(scoreId).textContent=c.available ? `${c.score}/${c.max}` : `0/${c.max}`;
+    $(barId).style.width=c.available ? `${c.score/c.max*100}%` : "0%";
   }
 
-  if(r1 && r2){
-    text += ` Im Ranking liegt ${r1 < r2 ? match.player1 : match.player2} ${Math.abs(r1-r2)} Plätze vorn.`;
-  }
+  $("detailP1").textContent=`${playerFlag(match.player1,match.tour,match,1)} ${match.player1}`;
+  $("detailP2").textContent=`${playerFlag(match.player2,match.tour,match,2)} ${match.player2}`;
+  $("detailO1").textContent=odd(match.odds1);
+  $("detailO2").textContent=odd(match.odds2);
+  $("detailBook1").textContent=match.bookmaker1||match.book1||"Quote";
+  $("detailBook2").textContent=match.bookmaker2||match.book2||"Quote";
 
-  if(f1 && f2){
-    text += ` Die Formwerte liegen bei ${f1.pct} % zu ${f2.pct} %.`;
-  }
-
-  $("detailNarrative").textContent = text;
-  $("factorMarket").textContent = mk ? `${mk.p1}% / ${mk.p2}%` : "–";
-  $("factorRanking").textContent = r1 && r2 ? `${r1} / ${r2}` : "–";
-  $("factorForm").textContent = f1 && f2 ? `${f1.pct}% / ${f2.pct}%` : "–";
-  $("factorConfidence").textContent = `${conf}%`;
-
-  const parts = scoreComponents(match);
-  $("scoreMarket").textContent = parts.market.available ? `${parts.market.score}/${parts.market.max}` : `0/${parts.market.max}`;
-  $("scoreRanking").textContent = parts.ranking.available ? `${parts.ranking.score}/${parts.ranking.max}` : `0/${parts.ranking.max}`;
-  $("scoreForm").textContent = parts.form.available ? `${parts.form.score}/${parts.form.max}` : `0/${parts.form.max}`;
-  $("barMarket").style.width = `${parts.market.available ? (parts.market.score/parts.market.max*100) : 0}%`;
-  $("barRanking").style.width = `${parts.ranking.available ? (parts.ranking.score/parts.ranking.max*100) : 0}%`;
-  $("barForm").style.width = `${parts.form.available ? (parts.form.score/parts.form.max*100) : 0}%`;
-
-  $("detailP1").textContent = `${playerFlag(match.player1,match.tour,match,1)} ${match.player1}`;
-  $("detailP2").textContent = `${playerFlag(match.player2,match.tour,match,2)} ${match.player2}`;
-  $("detailO1").textContent = odd(match.odds1);
-  $("detailO2").textContent = odd(match.odds2);
-  $("detailBook1").textContent = match.bookmaker1 || match.book1 || "Quote";
-  $("detailBook2").textContent = match.bookmaker2 || match.book2 || "Quote";
-
-  if(r1 && r2){
-    const leader = r1 < r2 ? match.player1 : match.player2;
-    $("moduleRanking").textContent = `#${r1} / #${r2}`;
-    $("moduleRankingText").textContent = `${leader} liegt ${Math.abs(r1-r2)} Plätze vorn`;
+  if(r1&&r2){
+    $("moduleRanking").textContent=`#${r1} / #${r2}`;
+    $("moduleRankingText").textContent=`${r1<r2?match.player1:match.player2} liegt ${Math.abs(r1-r2)} Plätze vorn`;
   }else{
-    $("moduleRanking").textContent = "–";
-    $("moduleRankingText").textContent = "Ranking noch nicht vollständig";
+    $("moduleRanking").textContent="–";
+    $("moduleRankingText").textContent="Ranking noch nicht vollständig";
   }
 
-  if(f1 && f2){
-    const leader = f1.pct === f2.pct ? null : (f1.pct > f2.pct ? match.player1 : match.player2);
-    $("moduleForm").textContent = `${f1.pct}% / ${f2.pct}%`;
-    $("moduleFormText").textContent = leader ? `${leader} mit Formvorteil` : "Form aktuell ausgeglichen";
+  if(f1&&f2){
+    $("moduleForm").textContent=`${f1.pct}% / ${f2.pct}%`;
+    $("moduleFormText").textContent=f1.pct===f2.pct
+      ? "Form aktuell ausgeglichen"
+      : `${f1.pct>f2.pct?match.player1:match.player2} mit Formvorteil`;
   }else{
-    $("moduleForm").textContent = "–";
-    $("moduleFormText").textContent = "Formquelle noch nicht vollständig";
+    $("moduleForm").textContent="–";
+    $("moduleFormText").textContent="Form noch nicht vollständig";
   }
-
-  // Reserved for the database phase.
-  $("moduleH2H").textContent = "–";
-  $("moduleSurface").textContent = "–";
-  $("moduleServe").textContent = "–";
-  $("moduleReturn").textContent = "–";
 
   renderOptionalDetails(match);
 
-  $("detailsPanel").scrollIntoView({behavior:"smooth", block:"start"});
+  // Upgrade H2H/Surface/Stats text with Mission Score component strength.
+  const h2hC=componentByKey(report,"h2h");
+  const surfC=componentByKey(report,"surface");
+  const statsC=componentByKey(report,"stats");
+
+  if(h2hC?.available && $("moduleH2HText")){
+    $("moduleH2HText").textContent += ` · Score ${h2hC.score}/${h2hC.max}`;
+  }
+  if(surfC?.available && $("moduleSurfaceText")){
+    $("moduleSurfaceText").textContent += ` · Score ${surfC.score}/${surfC.max}`;
+  }
+  if(statsC?.available){
+    if($("moduleServeText")) $("moduleServeText").textContent += ` · Stats ${statsC.score}/${statsC.max}`;
+  }
+
+  $("detailsPanel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 async function fetchJson(path, fallback){
