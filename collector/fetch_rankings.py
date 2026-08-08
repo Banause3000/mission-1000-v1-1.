@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-
-import csv
-import io
-import json
-import re
-import urllib.request
+import csv, io, json, re, urllib.request
 from datetime import datetime, timezone
-from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,385 +9,231 @@ DATA = ROOT / "data"
 SOURCE = DATA / "sources"
 SOURCE.mkdir(parents=True, exist_ok=True)
 
-USER_AGENT = "Mozilla/5.0 Mission1000-RankingCollector/4.1"
+UA = "Mozilla/5.0 Mission1000/4.2"
 
-ATP_PLAYERS_URLS = [
-    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_players.csv",
-    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_players.csv",
-]
-ATP_RANKING_URLS = [
-    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_rankings_20s.csv",
-    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_rankings_20s.csv",
-]
+ATP_PLAYERS = "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_players.csv"
+ATP_RANKINGS = "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_rankings_20s.csv"
 
-WTA_OFFICIAL_URL = "https://www.wtatennis.com/rankings/singles"
-ESPN_WTA_URL = "https://www.espn.com/tennis/rankings/_/type/wta"
+# IMPORTANT:
+# Jeff Sackmann's WTA repo does not expose the old wta_players.csv /
+# wta_rankings_20s.csv URLs we previously assumed. It DOES expose the
+# current-season match file. That file contains winner/loser names,
+# countries, ranks and ranking points for each match.
+WTA_MATCHES = "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_matches_2026.csv"
 
-def fetch_text(url):
+def fetch(url):
     print("Lade:", url)
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept-Language": "en-US,en;q=0.9",
-            "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=40) as response:
-        raw = response.read()
-    text = raw.decode("utf-8", errors="replace")
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=45) as r:
+        text = r.read().decode("utf-8", errors="replace")
     if not text.strip():
-        raise RuntimeError("leere Antwort")
+        raise RuntimeError("Leere Antwort")
     print("OK:", url)
     return text
 
-def download_first(urls):
-    errors = []
-    for url in urls:
-        try:
-            return fetch_text(url), url
-        except Exception as exc:
-            print("FEHLER:", exc)
-            errors.append(f"{url}: {exc}")
-    raise RuntimeError("Keine Quelle erreichbar:\n" + "\n".join(errors))
+def rows(text):
+    return list(csv.DictReader(io.StringIO(text)))
 
-def clean(value):
-    return re.sub(r"\s+", " ", str(value or "")).strip()
+def clean(v):
+    return re.sub(r"\s+", " ", str(v or "")).strip()
 
-def as_int(value):
+def num(v):
     try:
-        raw = clean(value).replace(",", "")
-        if not raw:
-            return None
-        return int(float(raw))
+        s = clean(v).replace(",", "")
+        return int(float(s)) if s else None
     except Exception:
         return None
 
-def parse_csv(text):
-    return list(csv.DictReader(io.StringIO(text)))
+def norm_name(v):
+    return re.sub(r"[^a-z0-9]", "", clean(v).casefold())
+
+def save(path, payload):
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(path)
 
 def atp_snapshot():
-    players_text, psrc = download_first(ATP_PLAYERS_URLS)
-    rankings_text, rsrc = download_first(ATP_RANKING_URLS)
+    ptxt = fetch(ATP_PLAYERS)
+    rtxt = fetch(ATP_RANKINGS)
 
     players = {}
-    for row in parse_csv(players_text):
-        pid = clean(row.get("player_id") or row.get("player") or row.get("id"))
+    for r in rows(ptxt):
+        pid = clean(r.get("player_id"))
         if not pid:
             continue
-        name = clean(f"{row.get('name_first','')} {row.get('name_last','')}")
+        first = r.get("name_first") if "name_first" in r else r.get("first_name")
+        last  = r.get("name_last") if "name_last" in r else r.get("last_name")
         players[pid] = {
-            "name": name,
-            "country": clean(row.get("ioc")),
+            "name": clean(f"{first or ''} {last or ''}"),
+            "country": clean(r.get("ioc") or r.get("country_code"))
         }
 
-    rows = parse_csv(rankings_text)
     parsed = []
-    for row in rows:
-        date = clean(row.get("ranking_date") or row.get("date"))
-        rank = as_int(row.get("rank"))
-        pid = clean(row.get("player") or row.get("player_id"))
-        points = as_int(row.get("points"))
+    for r in rows(rtxt):
+        date = clean(r.get("ranking_date"))
+        rank = num(r.get("rank") or r.get("ranking"))
+        pid = clean(r.get("player") or r.get("player_id"))
+        pts = num(r.get("points") or r.get("ranking_points"))
         if date and rank and pid:
-            parsed.append((date, rank, pid, points))
+            parsed.append((date, rank, pid, pts))
 
     if not parsed:
-        raise RuntimeError("ATP: keine Rankingzeilen")
+        raise RuntimeError("ATP: keine Rankingdaten")
 
-    newest = max(x[0] for x in parsed)
+    latest = max(x[0] for x in parsed)
     out = []
-    seen = set()
-
-    for date, rank, pid, points in parsed:
-        if date != newest or pid in seen:
+    for date, rank, pid, pts in parsed:
+        if date != latest:
             continue
         meta = players.get(pid)
         if not meta or not meta["name"]:
             continue
-        seen.add(pid)
         out.append({
             "tour": "ATP",
             "playerId": pid,
             "name": meta["name"],
             "country": meta["country"],
             "rank": rank,
-            "points": points,
-            "rankingDate": newest,
+            "points": pts,
+            "rankingDate": latest,
+            "rankingSource": "weekly-ranking"
         })
 
     out.sort(key=lambda x: x["rank"])
-    print(f"ATP: {len(out)} Rankings @ {newest}")
-    return newest, out, [psrc, rsrc]
-
-def walk_json(node, found):
-    if isinstance(node, dict):
-        keys = {str(k).lower(): k for k in node.keys()}
-
-        rank_key = next((keys[k] for k in ("rank","ranking","currentrank","current_rank") if k in keys), None)
-        points_key = next((keys[k] for k in ("points","rankingpoints","ranking_points") if k in keys), None)
-        name_key = next((keys[k] for k in ("name","playername","player_name","fullname","full_name") if k in keys), None)
-
-        if rank_key and name_key:
-            rank = as_int(node.get(rank_key))
-            name = clean(node.get(name_key))
-            if rank and name and 1 <= rank <= 2000:
-                country = ""
-                for ck in ("country","countrycode","country_code","ioc","nationality"):
-                    if ck in keys:
-                        country = clean(node.get(keys[ck]))
-                        break
-                points = as_int(node.get(points_key)) if points_key else None
-                found.append({
-                    "tour": "WTA",
-                    "name": name,
-                    "country": country,
-                    "rank": rank,
-                    "points": points,
-                })
-
-        for value in node.values():
-            walk_json(value, found)
-
-    elif isinstance(node, list):
-        for value in node:
-            walk_json(value, found)
-
-def extract_json_scripts(html):
-    blocks = re.findall(
-        r'<script[^>]*>(.*?)</script>',
-        html,
-        flags=re.I | re.S
-    )
-    payloads = []
-    for block in blocks:
-        text = block.strip()
-        if not text:
-            continue
-
-        candidates = [text]
-
-        m = re.search(r'({.*})', text, flags=re.S)
-        if m:
-            candidates.append(m.group(1))
-
-        for candidate in candidates:
-            try:
-                payloads.append(json.loads(candidate))
-                break
-            except Exception:
-                continue
-
-    return payloads
-
-def dedupe_rankings(rows):
-    best = {}
-    for row in rows:
-        rank = as_int(row.get("rank"))
-        name = clean(row.get("name"))
-        if not rank or not name:
-            continue
-
-        key = re.sub(r"[^a-z0-9]", "", name.casefold())
-        if not key:
-            continue
-
-        current = best.get(key)
-        if current is None or rank < current["rank"]:
-            best[key] = {
-                "tour": "WTA",
-                "name": name,
-                "country": clean(row.get("country")),
-                "rank": rank,
-                "points": as_int(row.get("points")),
-            }
-
-    result = list(best.values())
-    result.sort(key=lambda x: x["rank"])
-    return result
-
-def wta_from_official():
-    html = fetch_text(WTA_OFFICIAL_URL)
-
-    found = []
-    for payload in extract_json_scripts(html):
-        walk_json(payload, found)
-
-    rows = dedupe_rankings(found)
-
-    # The official page must give us a meaningful ranking table.
-    if len(rows) < 20:
-        raise RuntimeError(f"WTA official parse ergab nur {len(rows)} Spieler")
-
-    print(f"WTA official: {len(rows)} Rankings")
-    return rows, WTA_OFFICIAL_URL
-
-class TableParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.rows = []
-        self.in_tr = False
-        self.in_cell = False
-        self.current_row = []
-        self.current_cell = []
-
-    def handle_starttag(self, tag, attrs):
-        if tag == "tr":
-            self.in_tr = True
-            self.current_row = []
-        elif tag in ("td","th") and self.in_tr:
-            self.in_cell = True
-            self.current_cell = []
-
-    def handle_data(self, data):
-        if self.in_cell:
-            self.current_cell.append(data)
-
-    def handle_endtag(self, tag):
-        if tag in ("td","th") and self.in_cell:
-            self.current_row.append(clean(" ".join(self.current_cell)))
-            self.in_cell = False
-        elif tag == "tr" and self.in_tr:
-            if self.current_row:
-                self.rows.append(self.current_row)
-            self.in_tr = False
-
-def wta_from_espn():
-    html = fetch_text(ESPN_WTA_URL)
-    parser = TableParser()
-    parser.feed(html)
-
-    found = []
-    for row in parser.rows:
-        if len(row) < 2:
-            continue
-
-        rank = as_int(row[0])
-        if not rank or rank > 2000:
-            continue
-
-        # ESPN typically renders: RK, NAME, POINTS, AGE
-        name = clean(row[1])
-        points = as_int(row[2]) if len(row) > 2 else None
-
-        if not name or name.lower() in {"name","player"}:
-            continue
-
-        found.append({
-            "tour": "WTA",
-            "name": name,
-            "country": "",
-            "rank": rank,
-            "points": points,
-        })
-
-    rows = dedupe_rankings(found)
-    if len(rows) < 20:
-        raise RuntimeError(f"ESPN parse ergab nur {len(rows)} Spieler")
-
-    print(f"WTA ESPN fallback: {len(rows)} Rankings")
-    return rows, ESPN_WTA_URL
+    print(f"ATP: {len(out)} @ {latest}")
+    return latest, out
 
 def wta_snapshot():
-    errors = []
+    text = fetch(WTA_MATCHES)
+    data = rows(text)
+    if not data:
+        raise RuntimeError("WTA 2026 Matchdatei leer")
 
-    try:
-        rows, source = wta_from_official()
-        return rows, source
-    except Exception as exc:
-        print("WTA OFFICIAL FEHLER:", exc)
-        errors.append(str(exc))
+    # Latest observed ranking for every player.
+    # Sort key: tournament date, then match number.
+    latest = {}
 
-    try:
-        rows, source = wta_from_espn()
-        return rows, source
-    except Exception as exc:
-        print("WTA ESPN FEHLER:", exc)
-        errors.append(str(exc))
+    def absorb(r, side):
+        name = clean(r.get(f"{side}_name"))
+        rank = num(r.get(f"{side}_rank"))
+        if not name or not rank:
+            return
 
-    raise RuntimeError("WTA Ranking konnte nicht geladen werden: " + " | ".join(errors))
+        date = clean(r.get("tourney_date"))
+        match_num = num(r.get("match_num")) or 0
+        key = norm_name(name)
+        candidate = {
+            "tour": "WTA",
+            "playerId": clean(r.get(f"{side}_id")),
+            "name": name,
+            "country": clean(r.get(f"{side}_ioc")),
+            "rank": rank,
+            "points": num(r.get(f"{side}_rank_points")),
+            "rankingDate": date,
+            "rankingSource": "latest-2026-match",
+            "_sort": (date, match_num)
+        }
 
-def save_json(path, payload):
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    tmp.replace(path)
+        old = latest.get(key)
+        if old is None or candidate["_sort"] > old["_sort"]:
+            latest[key] = candidate
+
+    for r in data:
+        absorb(r, "winner")
+        absorb(r, "loser")
+
+    out = []
+    for p in latest.values():
+        p.pop("_sort", None)
+        out.append(p)
+
+    out.sort(key=lambda x: x["rank"])
+    if len(out) < 50:
+        raise RuntimeError(f"WTA: nur {len(out)} Spieler extrahiert")
+
+    newest_date = max(clean(r.get("tourney_date")) for r in data if clean(r.get("tourney_date")))
+    print(f"WTA: {len(out)} Spieler aus 2026 Matchdaten; neuestes Turnierdatum {newest_date}")
+    return newest_date, out
 
 def main():
-    print("=" * 64)
-    print("MISSION 1000 RANKING COLLECTOR v4.1")
-    print("=" * 64)
+    print("=" * 68)
+    print("MISSION 1000 RANKING COLLECTOR v4.2")
+    print("WTA MATCH-RANK FALLBACK")
+    print("=" * 68)
 
     existing_path = SOURCE / "rankings.json"
-    existing_players = []
-
+    existing = []
     if existing_path.exists():
         try:
-            payload = json.loads(existing_path.read_text(encoding="utf-8"))
-            existing_players = payload.get("players", []) if isinstance(payload, dict) else []
+            obj = json.loads(existing_path.read_text(encoding="utf-8"))
+            existing = obj.get("players", []) if isinstance(obj, dict) else []
         except Exception:
-            existing_players = []
+            pass
 
-    merged = []
+    combined = []
     dates = {}
-    sources = []
-    collected_tours = set()
+    success = set()
+    warnings = []
 
-    # ATP
     try:
-        atp_date, atp_players, atp_sources = atp_snapshot()
-        merged.extend(atp_players)
-        dates["ATP"] = atp_date
-        sources.extend(atp_sources)
-        collected_tours.add("ATP")
-    except Exception as exc:
-        print("ATP FEHLER:", exc)
+        d, p = atp_snapshot()
+        combined += p
+        dates["ATP"] = d
+        success.add("ATP")
+    except Exception as e:
+        warnings.append("ATP: " + str(e))
+        print("ATP FEHLER:", e)
 
-    # WTA
     try:
-        wta_players, wta_source = wta_snapshot()
-        today = datetime.now(timezone.utc).date().isoformat()
-        for player in wta_players:
-            player["rankingDate"] = today
-        merged.extend(wta_players)
-        dates["WTA"] = today
-        sources.append(wta_source)
-        collected_tours.add("WTA")
-    except Exception as exc:
-        print("WTA FEHLER:", exc)
+        d, p = wta_snapshot()
+        combined += p
+        dates["WTA"] = d
+        success.add("WTA")
+    except Exception as e:
+        warnings.append("WTA: " + str(e))
+        print("WTA FEHLER:", e)
 
-    # Preserve previous data for a tour only if today's fetch for that tour failed.
-    for player in existing_players:
-        tour = str(player.get("tour") or "").upper()
-        if tour and tour not in collected_tours:
-            merged.append(player)
+    # Do not wipe a tour if its source is temporarily unavailable.
+    for p in existing:
+        tour = clean(p.get("tour")).upper()
+        if tour and tour not in success:
+            combined.append(p)
 
-    if not merged:
-        raise SystemExit("Keine Rankings verfügbar")
+    if not combined:
+        raise SystemExit("Keine Rankingdaten verfügbar")
 
-    # Final de-duplication by tour + normalized name.
-    final = {}
-    for player in merged:
-        tour = str(player.get("tour") or "").upper()
-        name = clean(player.get("name"))
-        rank = as_int(player.get("rank"))
+    dedup = {}
+    for p in combined:
+        tour = clean(p.get("tour")).upper()
+        name = clean(p.get("name"))
+        rank = num(p.get("rank"))
         if not tour or not name or not rank:
             continue
-        key = (tour, re.sub(r"[^a-z0-9]", "", name.casefold()))
-        current = final.get(key)
-        if current is None or rank < as_int(current.get("rank")):
-            final[key] = player
+        key = (tour, norm_name(name))
+        old = dedup.get(key)
+        if old is None:
+            dedup[key] = p
+        else:
+            # Prefer newest observed date; otherwise lower rank.
+            nd = clean(p.get("rankingDate"))
+            od = clean(old.get("rankingDate"))
+            if nd > od or (nd == od and rank < (num(old.get("rank")) or 999999)):
+                dedup[key] = p
 
-    players = list(final.values())
-    players.sort(key=lambda p: (p.get("tour",""), as_int(p.get("rank")) or 999999, p.get("name","")))
+    players = list(dedup.values())
+    players.sort(key=lambda p: (clean(p.get("tour")), num(p.get("rank")) or 999999))
 
-    now = datetime.now(timezone.utc).isoformat()
-
-    save_json(SOURCE / "rankings.json", {
-        "generatedAt": now,
-        "source": "Mission 1000 Ranking Collector v4.1",
+    payload = {
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "source": "Mission 1000 Ranking Collector v4.2",
         "rankingDates": dates,
-        "sources": sources,
-        "players": players,
-    })
+        "notes": {
+            "WTA": "Latest observed 2026 match ranking from Jeff Sackmann current-season match data."
+        },
+        "warnings": warnings,
+        "players": players
+    }
+    save(SOURCE / "rankings.json", payload)
 
     print()
     print("FERTIG")
@@ -401,6 +241,8 @@ def main():
     print("ATP:", sum(1 for p in players if p.get("tour") == "ATP"))
     print("WTA:", sum(1 for p in players if p.get("tour") == "WTA"))
     print("Ranking-Daten:", dates)
+    if warnings:
+        print("WARNUNGEN:", warnings)
 
 if __name__ == "__main__":
     main()
