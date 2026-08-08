@@ -9,35 +9,65 @@ permissions:
   contents: write
 
 jobs:
-  build-database:
+  mission-engine:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repository laden
+      - name: Repository auschecken
         uses: actions/checkout@v4
 
-      - name: Python vorbereiten
+      - name: Python installieren
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Mission Engine starten
+      - name: Abhängigkeiten installieren
         run: |
-          python collector/mission_engine.py
+          python -m pip install --upgrade pip
+
+      - name: Externe Tennisdaten laden
+        run: |
+          rm -rf .external
+          mkdir -p .external
+          git clone --depth 1 https://github.com/buildoak/tennis-xgboost-autoresearch.git .external/tennis-source
+
+      - name: Rankings aktualisieren
+        run: |
+          python collector/fetch_rankings.py
+
+      - name: Intelligence aktualisieren
+        run: |
+          python collector/fetch_intelligence_v3.py
+
+      - name: Datenbank erstellen
+        run: |
+          python collector/build_database.py
+
+      - name: Prüfen ob Formdaten vorhanden sind
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          form = json.loads(Path("data/form.json").read_text(encoding="utf-8"))
+
+          players = form.get("players", [])
+
+          print("Form-Spieler:", len(players))
+
+          if len(players) == 0:
+              raise SystemExit("FEHLER: form.json enthält keine Spieler.")
+          PY
 
       - name: Änderungen committen
-        shell: bash
         run: |
-          set -euo pipefail
-
-          if git diff --quiet -- data; then
-            echo "Keine Änderungen."
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data
+
+          git diff --cached --quiet && exit 0
+
           git commit -m "Mission Data Engine Update"
+
           git push
