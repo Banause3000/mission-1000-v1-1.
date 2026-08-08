@@ -16,17 +16,19 @@ SOURCE = ROOT / "data" / "sources"
 INTEL = ROOT / "data" / "intelligence"
 EXTERNAL = ROOT / ".external" / "tennis-source"
 
-USER_AGENT = "Mission1000-DataEngine/3.0"
+USER_AGENT = "Mission1000-DataEngine/3.1"
 
-ATP_URLS = [
-    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2026.csv",
-    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_2026.csv",
+HISTORY_YEARS = list(range(2019, 2027))
+
+ATP_URL_TEMPLATES = [
+    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_{year}.csv",
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_{year}.csv",
 ]
 
-ATP_PREV_URLS = [
-    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2025.csv",
-    "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_2025.csv",
+WTA_URL_TEMPLATES = [
+    "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_matches_{year}.csv",
 ]
+
 
 SURFACE_KEYS = {
     "HARD": "hard",
@@ -88,6 +90,69 @@ def download_first(urls):
             errors.append(f"{url}: {exc}")
             print(f"FEHLER: {exc}")
     raise RuntimeError("Keine ATP-Quelle erreichbar:\n" + "\n".join(errors))
+
+
+def download_year(tour, year):
+    templates = ATP_URL_TEMPLATES if tour == "ATP" else WTA_URL_TEMPLATES
+    urls = [template.format(year=year) for template in templates]
+    try:
+        text, url = download_first(urls)
+        return parse_csv_text(text, tour, url), url
+    except Exception as exc:
+        print(f"{tour} {year} optional nicht geladen: {exc}")
+        return [], None
+
+def is_real_match(row):
+    score = str(row.get("score") or row.get("Score") or "").strip().upper()
+    # Walkovers are not useful for form/H2H strength and can distort records.
+    if score in {"W/O", "WO", "WALKOVER"}:
+        return False
+    return True
+
+def normalize_event_name(value):
+    text = str(value or "").casefold()
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    aliases = {
+        "national bank open presented by rogers": "canadian open",
+        "rogers cup": "canadian open",
+        "canada masters": "canadian open",
+        "montreal": "canadian open",
+        "toronto": "canadian open",
+    }
+    for old, new in aliases.items():
+        text = text.replace(old, new)
+    return re.sub(r"\s+", " ", text).strip()
+
+def build_tournament_surfaces(rows):
+    votes = defaultdict(lambda: defaultdict(int))
+    labels = {}
+
+    for row in rows:
+        event = row["_event"]
+        raw_surface = str(row["_surface"] or "").upper().strip()
+        surface = SURFACE_KEYS.get(raw_surface)
+        if not event or not surface:
+            continue
+
+        key = (row["_tour"], normalize_event_name(event))
+        votes[key][surface] += 1
+        labels[key] = event
+
+    events = []
+    for (tour, normalized), surface_votes in votes.items():
+        if not surface_votes:
+            continue
+
+        surface = max(surface_votes.items(), key=lambda item: item[1])[0]
+        events.append({
+            "tour": tour,
+            "event": labels.get((tour, normalized), normalized),
+            "normalizedEvent": normalized,
+            "surface": surface,
+            "samples": sum(surface_votes.values())
+        })
+
+    return events
 
 def row_tour(row, path_hint=""):
     direct = str(row.get("tour") or row.get("Tour") or row.get("circuit") or "").upper().strip()
@@ -258,6 +323,9 @@ def build_form(rows):
     history = defaultdict(list)
 
     for row in rows:
+        if not is_real_match(row):
+            continue
+
         base = {
             "date": row["_date"],
             "surface": row["_surface"],
@@ -297,6 +365,9 @@ def build_h2h(rows):
     pairs = {}
 
     for row in rows:
+        if not is_real_match(row):
+            continue
+
         tour = row["_tour"]
         winner = row["_winner"]
         loser = row["_loser"]
@@ -311,6 +382,7 @@ def build_h2h(rows):
             "wins2": 0,
             "meetings": 0,
             "lastMeeting": None,
+            "recentMeetings": [],
         })
 
         if winner.casefold() == rec["player1"].casefold():
@@ -319,7 +391,8 @@ def build_h2h(rows):
             rec["wins2"] += 1
 
         rec["meetings"] += 1
-        rec["lastMeeting"] = {
+
+        meeting = {
             "date": row["_date"],
             "event": row["_event"],
             "surface": row["_surface"],
@@ -328,33 +401,89 @@ def build_h2h(rows):
             "score": row.get("score") or row.get("Score") or "",
         }
 
+        rec["recentMeetings"].append(meeting)
+        rec["recentMeetings"] = sorted(
+            rec["recentMeetings"],
+            key=lambda item: item.get("date") or "",
+            reverse=True
+        )[:5]
+
+        rec["lastMeeting"] = rec["recentMeetings"][0]
+
     return list(pairs.values())
 
 def build_surface(rows):
-    agg = defaultdict(lambda: defaultdict(lambda: {"wins": 0, "losses": 0}))
+    agg_all = defaultdict(lambda: defaultdict(lambda: {"wins": 0, "losses": 0}))
+    agg_recent = defaultdict(lambda: defaultdict(lambda: {"wins": 0, "losses": 0}))
+
+    valid_dates = [r["_date"] for r in rows if len(r["_date"]) == 8 and r["_date"].isdigit()]
+    newest = max(valid_dates) if valid_dates else ""
+    cutoff = ""
+    if newest:
+        year = int(newest[:4]) - 2
+        cutoff = f"{year:04d}{newest[4:]}"
 
     for row in rows:
+        if not is_real_match(row):
+            continue
+
         raw = str(row["_surface"] or "").upper().strip()
         key = SURFACE_KEYS.get(raw)
         if not key:
             continue
 
-        agg[(row["_tour"], row["_winner"])][key]["wins"] += 1
-        agg[(row["_tour"], row["_loser"])][key]["losses"] += 1
+        player_keys = [
+            ((row["_tour"], row["_winner"]), "wins"),
+            ((row["_tour"], row["_loser"]), "losses"),
+        ]
+
+        for player_key, result_key in player_keys:
+            agg_all[player_key][key][result_key] += 1
+            if not cutoff or row["_date"] >= cutoff:
+                agg_recent[player_key][key][result_key] += 1
 
     players = []
-    for (tour, name), surfaces in agg.items():
+    all_player_keys = set(agg_all.keys()) | set(agg_recent.keys())
+
+    for tour, name in all_player_keys:
         payload = {}
-        for surface, rec in surfaces.items():
-            total = rec["wins"] + rec["losses"]
+        surface_names = set(agg_all[(tour, name)].keys()) | set(agg_recent[(tour, name)].keys())
+
+        for surface in surface_names:
+            career = agg_all[(tour, name)][surface]
+            recent = agg_recent[(tour, name)][surface]
+
+            career_total = career["wins"] + career["losses"]
+            recent_total = recent["wins"] + recent["losses"]
+
+            # Prefer the recent sample if we have enough matches.
+            chosen = recent if recent_total >= 5 else career
+            total = chosen["wins"] + chosen["losses"]
+
             payload[surface] = {
-                **rec,
+                "wins": chosen["wins"],
+                "losses": chosen["losses"],
                 "total": total,
-                "winPct": round(rec["wins"] / total * 100, 1) if total else None,
+                "winPct": round(chosen["wins"] / total * 100, 1) if total else None,
+                "period": "24m" if recent_total >= 5 else "career",
+                "recent": {
+                    "wins": recent["wins"],
+                    "losses": recent["losses"],
+                    "total": recent_total,
+                    "winPct": round(recent["wins"] / recent_total * 100, 1) if recent_total else None,
+                },
+                "career": {
+                    "wins": career["wins"],
+                    "losses": career["losses"],
+                    "total": career_total,
+                    "winPct": round(career["wins"] / career_total * 100, 1) if career_total else None,
+                }
             }
+
         players.append({"name": name, "tour": tour, "surfaces": payload})
 
     return players
+
 
 def stat_value(row, side, keys):
     prefixes = [f"{side}_", f"{side}"]
@@ -452,24 +581,23 @@ def build_stats(rows):
 
 def main():
     print("=" * 68)
-    print("MISSION 1000 DATA ENGINE v3")
+    print("MISSION 1000 DATA ENGINE v3.1")
     print("=" * 68)
 
     rows = []
     sources = []
 
-    # ATP 2026
-    atp_2026, atp_2026_url = download_first(ATP_URLS)
-    rows.extend(parse_csv_text(atp_2026, "ATP", atp_2026_url))
-    sources.append(atp_2026_url)
+    # Multi-year Tour history. This greatly improves H2H and surface samples.
+    for year in HISTORY_YEARS:
+        year_rows, url = download_year("ATP", year)
+        rows.extend(year_rows)
+        if url:
+            sources.append(url)
 
-    # ATP 2025 gives the form/surface engine more history.
-    try:
-        atp_2025, atp_2025_url = download_first(ATP_PREV_URLS)
-        rows.extend(parse_csv_text(atp_2025, "ATP", atp_2025_url))
-        sources.append(atp_2025_url)
-    except Exception as exc:
-        print(f"ATP 2025 optional nicht geladen: {exc}")
+        year_rows, url = download_year("WTA", year)
+        rows.extend(year_rows)
+        if url:
+            sources.append(url)
 
     # Current WTA/ATP extension dataset cloned by the workflow.
     ext_rows = scan_extension_rows()
@@ -494,6 +622,7 @@ def main():
     h2h = build_h2h(rows)
     surface = build_surface(rows)
     stats = build_stats(rows)
+    tournament_surfaces = build_tournament_surfaces(rows)
 
     if not form:
         raise RuntimeError("Form Engine erzeugte 0 Spieler. Kein stilles Leerschreiben erlaubt.")
@@ -502,32 +631,38 @@ def main():
 
     save_json(SOURCE / "players.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine v3",
+        "source": "Mission 1000 Data Engine v3.1",
         "players": players,
     })
 
     save_json(SOURCE / "form.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine v3",
+        "source": "Mission 1000 Data Engine v3.1",
         "players": form,
     })
 
     save_json(SOURCE / "h2h.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine v3",
+        "source": "Mission 1000 Data Engine v3.1",
         "matches": h2h,
     })
 
     save_json(SOURCE / "surface.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine v3",
+        "source": "Mission 1000 Data Engine v3.1",
         "players": surface,
     })
 
     save_json(SOURCE / "stats.json", {
         "generatedAt": now,
-        "source": "Mission 1000 Data Engine v3",
+        "source": "Mission 1000 Data Engine v3.1",
         "players": stats,
+    })
+
+    save_json(SOURCE / "tournament_surfaces.json", {
+        "generatedAt": now,
+        "source": "Mission 1000 Data Engine v3.1",
+        "events": tournament_surfaces,
     })
 
     diagnostics = {
@@ -544,6 +679,7 @@ def main():
             "h2h": len(h2h),
             "surface": len(surface),
             "stats": len(stats),
+            "tournamentSurfaces": len(tournament_surfaces),
         },
         "status": "OK",
     }
@@ -551,7 +687,7 @@ def main():
     save_json(INTEL / "diagnostics.json", diagnostics)
 
     print(json.dumps(diagnostics, ensure_ascii=False, indent=2))
-    print("DATA ENGINE v3: OK")
+    print("DATA ENGINE v3.1: OK")
 
 if __name__ == "__main__":
     main()
