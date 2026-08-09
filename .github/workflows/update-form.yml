@@ -1,9 +1,9 @@
-name: Formdaten aktualisieren
+name: Update Form
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 5 * * *"
+    - cron: "30 4 * * *"
 
 permissions:
   contents: write
@@ -21,37 +21,80 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: ATP 2026 laden
+      - name: Abhängigkeiten installieren
         run: |
-          curl -L --fail --retry 3 \
-            "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_2026.csv" \
-            -o /tmp/atp_matches_2026.csv
+          python -m pip install --upgrade pip
 
-      - name: WTA 2026 laden
+      - name: Externe Tennisdaten laden
         run: |
-          curl -L --fail --retry 3 \
-            "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master/wta_matches_2026.csv" \
-            -o /tmp/wta_matches_2026.csv
+          rm -rf .external/tennis-xgboost-autoresearch
+          mkdir -p .external
+          git clone --depth 1 https://github.com/buildoak/tennis-xgboost-autoresearch.git .external/tennis-xgboost-autoresearch
+          test -d .external/tennis-xgboost-autoresearch/data/extension
+          echo "Externe Tennisdaten: OK"
 
-      - name: Formdaten erzeugen
+      - name: Form und Intelligence aktualisieren
         run: |
-          python scripts/build_form_sackmann.py \
-            /tmp/atp_matches_2026.csv \
-            /tmp/wta_matches_2026.csv
+          test -f collector/fetch_intelligence_v6_3_verified_h2h.py
+          python collector/fetch_intelligence_v6_3_verified_h2h.py
+
+      - name: Datenbank erstellen
+        run: |
+          test -f collector/build_database.py
+          python collector/build_database.py
+
+      - name: Formdaten validieren
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          candidates = [
+              Path("data/form.json"),
+              Path("data/sources/form.json"),
+          ]
+
+          valid = []
+          for path in candidates:
+              if not path.exists():
+                  continue
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              players = payload.get("players", []) if isinstance(payload, dict) else []
+              if isinstance(players, list) and len(players) > 0:
+                  valid.append((path, len(players)))
+
+          if not valid:
+              raise SystemExit("FEHLER: Keine gültigen Formdaten erzeugt.")
+
+          for path, count in valid:
+              print(f"FORM VALID: {path} -> {count} Spieler")
+
+          root_form = Path("data/form.json")
+          if not root_form.exists():
+              source_form = Path("data/sources/form.json")
+              if source_form.exists():
+                  root_form.write_text(source_form.read_text(encoding="utf-8"), encoding="utf-8")
+                  print("data/form.json aus data/sources/form.json aktualisiert.")
+
+          payload = json.loads(root_form.read_text(encoding="utf-8"))
+          players = payload.get("players", [])
+          if not isinstance(players, list) or len(players) == 0:
+              raise SystemExit("FEHLER: data/form.json ist leer oder ungültig.")
+
+          print(f"FINAL FORM CHECK: {len(players)} Spieler")
+          PY
 
       - name: Änderungen committen
-        shell: bash
         run: |
-          set -e
-
-          if git diff --quiet -- data/form.json; then
-            echo "Keine Änderungen."
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/form.json
-          git commit -m "Update form data"
+          git add data/form.json data/sources/form.json data/sources/players.json data/sources/h2h.json data/sources/surface.json data/sources/stats.json data/sources/rankings_fallback.json data/intelligence data/players.json data/rankings.json 2>/dev/null || true
+
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen vorhanden."
+            exit 0
+          fi
+
+          git commit -m "Update tennis form and intelligence data"
           git push
