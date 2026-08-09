@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T22:27:46.382078+00:00",
+  "generatedAt": "2026-08-09T06:32:15.302884+00:00",
   "source": "Mission 1000 Data Engine v6.3",
   "matches": [
     {
@@ -350016,6 +350016,32 @@
     },
     {
       "tour": "WTA",
+      "player1": "Aryna Sabalenka",
+      "player2": "Ekaterina Alexandrova",
+      "wins1": 0,
+      "wins2": 1,
+      "meetings": 1,
+      "lastMeeting": {
+        "date": "20250210",
+        "event": "Doha",
+        "surface": "Hard",
+        "winner": "Ekaterina Alexandrova",
+        "loser": "Aryna Sabalenka",
+        "score": "3-6 6-3 7-6(5)"
+      },
+      "recentMeetings": [
+        {
+          "date": "20250210",
+          "event": "Doha",
+          "surface": "Hard",
+          "winner": "Ekaterina Alexandrova",
+          "loser": "Aryna Sabalenka",
+          "score": "3-6 6-3 7-6(5)"
+        }
+      ]
+    },
+    {
+      "tour": "WTA",
       "player1": "Elena Gabriela Ruse",
       "player2": "Maria Sakkari",
       "wins1": 0,
@@ -471601,8 +471627,8 @@
       "player1": "Jessica Pegula",
       "player2": "Diana Shnaider",
       "wins1": 4,
-      "wins2": 0,
-      "meetings": 4,
+      "wins2": 1,
+      "meetings": 5,
       "lastMeeting": null,
       "recentMeetings": [],
       "source": "TennisRatio H2H (verified exact-pair prose)",
@@ -471610,23 +471636,11 @@
     },
     {
       "tour": "WTA",
-      "player1": "Aryna Sabalenka",
-      "player2": "Ekaterina Alexandrova",
-      "wins1": 5,
-      "wins2": 4,
-      "meetings": 9,
-      "lastMeeting": null,
-      "recentMeetings": [],
-      "source": "TennisRatio H2H (verified exact-pair prose)",
-      "sourceUrl": "https://www.tennisratio.com/h2h-compare/aryna-sabalenka-vs-ekaterina-alexandrova.html"
-    },
-    {
-      "tour": "WTA",
       "player1": "Elina Svitolina",
       "player2": "Amanda Anisimova",
-      "wins1": 4,
+      "wins1": 5,
       "wins2": 1,
-      "meetings": 5,
+      "meetings": 6,
       "lastMeeting": null,
       "recentMeetings": [],
       "source": "TennisRatio H2H (verified exact-pair prose)",
