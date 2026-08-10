@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T08:24:02.907606+00:00",
+  "generatedAt": "2026-08-10T06:30:31.110503+00:00",
   "source": "Mission 1000 Data Engine v6.3",
   "matches": [
     {
@@ -389045,12 +389045,24 @@
       "player1": "Liudmila Samsonova",
       "player2": "Elena Rybakina",
       "wins1": 4,
-      "wins2": 2,
-      "meetings": 6,
+      "wins2": 3,
+      "meetings": 7,
       "lastMeeting": null,
       "recentMeetings": [],
       "source": "TennisRatio H2H (verified exact-pair prose)",
       "sourceUrl": "https://www.tennisratio.com/h2h-compare/elena-rybakina-vs-liudmila-samsonova.html"
+    },
+    {
+      "tour": "WTA",
+      "player1": "Leylah Fernandez",
+      "player2": "Naomi Osaka",
+      "wins1": 1,
+      "wins2": 2,
+      "meetings": 3,
+      "lastMeeting": null,
+      "recentMeetings": [],
+      "source": "TennisRatio H2H (verified exact-pair prose)",
+      "sourceUrl": "https://www.tennisratio.com/h2h-compare/leylah-fernandez-vs-naomi-osaka.html"
     }
   ]
 }
