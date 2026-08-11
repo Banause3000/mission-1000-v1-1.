@@ -1,4 +1,4 @@
-// Mission 1000 v2.8.0 Market Intelligence
+// Mission 1000 v2.8.1 Market Intelligence Logic Fix
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -303,6 +303,31 @@ function scoreComponents(match){
 
 
 // Mission Market Engine 5.0: sporting view first, odds only for later value context.
+function setWinProbabilityFromMatch(matchPct){
+  // Best-of-3 relation under an iid set model:
+  // P(match) = q² * (3 - 2q), where q is set-win probability.
+  // Binary search avoids fragile closed-form approximations.
+  const target=clamp(Number(matchPct)/100,.001,.999);
+  let lo=.001, hi=.999;
+  for(let i=0;i<60;i++){
+    const q=(lo+hi)/2;
+    const pm=q*q*(3-2*q);
+    if(pm<target) lo=q; else hi=q;
+  }
+  return (lo+hi)/2;
+}
+
+function marketPickTier(prob){
+  if(prob>=72) return "STARKER SPORTLICHER PICK";
+  if(prob>=65) return "INTERESSANTER PICK";
+  if(prob>=60) return "LEICHTE TENDENZ";
+  return "KEIN KLARER PICK";
+}
+
+// Mission Market Engine 5.1:
+// 1) sporting data determines probabilities;
+// 2) market odds are context only;
+// 3) mutually exclusive markets are mathematically coherent.
 function missionMarketEngine(match, report){
   const sporting=report.components.filter(c=>c.available && c.key!=="market");
   let a=0,b=0,max=0;
@@ -311,45 +336,110 @@ function missionMarketEngine(match, report){
     if(c.side===1) a+=c.score;
     if(c.side===2) b+=c.score;
   }
-  const coverage=max ? Math.round(max/85*100) : 0;
+
+  const coverage=max ? clamp(Math.round(max/85*100),0,100) : 0;
   const total=a+b;
   const edge=total ? (a-b)/total : 0;
+
+  // Conservative sporting match estimate. No bookmaker probability enters here.
   const p1=clamp(Math.round(50+edge*34),22,78);
   const p2=100-p1;
-  const favorite=p1>=p2?1:2, dog=favorite===1?2:1;
-  const favP=Math.max(p1,p2), dogP=Math.min(p1,p2);
-  // Approximation from match probability, intentionally conservative until point/set model exists.
-  const dogSet=clamp(Math.round(dogP + (100-dogP)*0.31),45,76);
-  const fav20=clamp(Math.round((favP/100)*(1-dogSet/100)*100+8),20,65);
-  const threeSets=clamp(Math.round(100-fav20-(clamp(Math.round((dogP/100)*(1-(clamp(Math.round(favP+(100-favP)*.31),45,76))/100)*100+8),15,55))),25,58);
+  const favorite=p1>=p2?1:2;
+  const dog=favorite===1?2:1;
+  const favP=Math.max(p1,p2);
+  const dogP=Math.min(p1,p2);
+
+  // Convert match probability into coherent BO3 set-market probabilities.
+  const qFav=setWinProbabilityFromMatch(favP);
+  const fav20=clamp(Math.round(qFav*qFav*100),1,99);
+  const dog20=clamp(Math.round((1-qFav)*(1-qFav)*100),1,99);
+  const dogSet=100-fav20;               // exact complement of favorite 2:0
+  const favSet=100-dog20;
+  const threeSets=clamp(100-fav20-dog20,1,99);
 
   const available=new Set(sporting.map(c=>c.key));
   const reasons=[];
   const risks=[];
   const sideLabel=i=>sideName(match,i);
-  const ordered=[...sporting].filter(c=>c.side).sort((x,y)=>(y.score/y.max)-(x.score/x.max));
-  ordered.slice(0,3).forEach(c=>reasons.push(`${c.label}: Vorteil ${sideLabel(c.side)} (${c.detail})`));
-  const serve=componentByKey(report,"serve"), ret=componentByKey(report,"return"), form=componentByKey(report,"form"), surface=componentByKey(report,"surface");
-  if(serve?.available && serve.side===favorite) risks.push(`${sideLabel(favorite)} kann über den Aufschlag viele kurze Punkte kontrollieren.`);
-  if(ret?.available && ret.side===dog) risks.push(`${sideLabel(dog)} besitzt Return-Potenzial, um den Favoriten unter Druck zu setzen.`);
-  if(form?.available && form.side===0) risks.push("Die aktuelle Form trennt beide kaum.");
-  if(surface?.available && surface.side===dog) risks.push(`${sideLabel(dog)} hat auf diesem Belag bessere Vergleichswerte.`);
-  if(!available.has("h2h")) risks.push("Kein belastbares H2H verfügbar.");
-  if(!available.has("serve") || !available.has("return")) risks.push("Service-/Return-Daten sind unvollständig.");
 
-  let best={label:"KEIN KLARER MARKT",prob:null,side:0,type:"pass"};
-  if(coverage>=60){
-    // Prefer protection when favourite edge is modest; ML only on a genuinely strong sporting edge.
-    if(favP>=68) best={label:`${sideLabel(favorite)} · Match-Sieg`,prob:favP,side:favorite,type:"ml"};
-    else if(dogSet>=60) best={label:`${sideLabel(dog)} +1,5 Sätze`,prob:dogSet,side:dog,type:"sethc"};
-    else if(threeSets>=44) best={label:"Über 2,5 Sätze / 3 Sätze",prob:threeSets,side:0,type:"over"};
+  // Use relative component strength, not just raw points.
+  const ordered=[...sporting]
+    .filter(c=>c.side)
+    .sort((x,y)=>(y.score/y.max)-(x.score/x.max));
+
+  ordered.slice(0,4).forEach(c=>{
+    reasons.push(`${c.label}: Vorteil ${sideLabel(c.side)} (${c.detail})`);
+  });
+
+  const serve=componentByKey(report,"serve");
+  const ret=componentByKey(report,"return");
+  const form=componentByKey(report,"form");
+  const surface=componentByKey(report,"surface");
+  const h2h=componentByKey(report,"h2h");
+
+  if(surface?.available && surface.side===dog){
+    risks.push(`${sideLabel(dog)} hat auf diesem Belag bessere Vergleichswerte.`);
   }
-  const alt = best.type!=="ml" && favP>=58 ? `${sideLabel(favorite)} Match-Sieg · ca. ${favP}%` :
-              best.type!=="sethc" ? `${sideLabel(dog)} +1,5 Sätze · ca. ${dogSet}%` :
-              `3 Sätze · ca. ${threeSets}%`;
-  const avoid = fav20<48 ? `${sideLabel(favorite)} 2:0 (${fav20}% Modellschätzung)` : "Kein deutlicher Warnmarkt";
-  return {p1,p2,favorite,dog,favP,dogP,dogSet,fav20,threeSets,coverage,best,alt,avoid,reasons,risks};
+  if(serve?.available && serve.side===dog){
+    risks.push(`${sideLabel(dog)} besitzt den stärkeren Service-Hold.`);
+  }
+  if(ret?.available && ret.side===dog){
+    risks.push(`${sideLabel(dog)} kann über den Return zusätzlichen Druck erzeugen.`);
+  }
+  if(form?.available && form.side===0){
+    risks.push("Die aktuelle Form trennt beide kaum.");
+  }
+  if(h2h?.available && h2h.side===0){
+    risks.push("Das direkte Duell ist ausgeglichen.");
+  }
+  if(!available.has("h2h")) risks.push("Kein belastbares H2H verfügbar.");
+  if(!available.has("serve") || !available.has("return")){
+    risks.push("Service-/Return-Daten sind unvollständig.");
+  }
+
+  // Main pick logic:
+  // - ML only with at least 63% sporting probability.
+  // - Dog +1.5 only when the coherent model gives >=65%.
+  // - pick the safer eligible sporting angle, never a <50% outcome.
+  const candidates=[];
+  if(favP>=63){
+    candidates.push({
+      label:`${sideLabel(favorite)} · Match-Sieg`,
+      prob:favP, side:favorite, type:"ml"
+    });
+  }
+  if(dogSet>=65){
+    candidates.push({
+      label:`${sideLabel(dog)} +1,5 Sätze`,
+      prob:dogSet, side:dog, type:"sethc"
+    });
+  }
+
+  candidates.sort((x,y)=>y.prob-x.prob);
+  let best=candidates[0] || {label:"KEIN KLARER PRE-MATCH-PICK",prob:null,side:0,type:"pass"};
+  best={...best,tier:best.prob!==null?marketPickTier(best.prob):"KEIN KLARER PICK"};
+
+  // Alternatives are informational, not automatically recommendations.
+  const altOptions=[];
+  if(best.type!=="ml") altOptions.push(`${sideLabel(favorite)} Match-Sieg · ca. ${favP}%`);
+  if(best.type!=="sethc") altOptions.push(`${sideLabel(dog)} +1,5 Sätze · ca. ${dogSet}%`);
+  altOptions.push(`3 Sätze · ca. ${threeSets}%`);
+  const alt=altOptions.join(" · ");
+
+  const avoid =
+    fav20<50
+      ? `${sideLabel(favorite)} 2:0 · nur ca. ${fav20}%`
+      : dog20<35
+        ? `${sideLabel(dog)} 2:0 · nur ca. ${dog20}%`
+        : "Kein einzelner Ergebnis-Markt fällt extrem negativ auf.";
+
+  return {
+    p1,p2,favorite,dog,favP,dogP,
+    dogSet,favSet,fav20,dog20,threeSets,
+    coverage,best,alt,avoid,reasons,risks
+  };
 }
+
 function missionScore(match){
   const parts = scoreComponents(match);
   const available = [parts.market,parts.ranking,parts.form].filter(x=>x.available);
@@ -664,23 +754,44 @@ function missionScoreV3(match){
   add("serve","Service",10,hold1,hold2,hold1!==null&&hold2!==null?`${hold1}% / ${hold2}%`:"–",diff=>clamp(Math.round(3+diff*.55),3,10));
   add("return","Return",10,ret1,ret2,ret1!==null&&ret2!==null?`${ret1}% / ${ret2}%`:"–",diff=>clamp(Math.round(3+diff*.8),3,10));
 
-  const available=components.filter(c=>c.available);
-  const availableMax=available.reduce((sum,c)=>sum+c.max,0);
-  const evidence=clamp(Math.round(availableMax),0,100);
+  // IMPORTANT: bookmaker market is display/value context only.
+  // Sporting winner, score and analysis quality are calculated without it.
+  const sporting=components.filter(c=>c.available && c.key!=="market");
+  const sportingMax=sporting.reduce((sum,c)=>sum+c.max,0);
+  const evidence=clamp(Math.round((sportingMax/85)*100),0,100);
+
   let support1=0,support2=0;
-  for(const c of available){ if(c.side===1) support1+=c.score; else if(c.side===2) support2+=c.score; }
+  for(const c of sporting){
+    if(c.side===1) support1+=c.score;
+    else if(c.side===2) support2+=c.score;
+  }
+
   const rawWinner=support1===support2?0:(support1>support2?1:2);
   const directional=Math.abs(support1-support2);
   const totalDirectional=support1+support2;
   const agreement=totalDirectional?Math.max(support1,support2)/totalDirectional:.5;
 
-  // A visible pick requires both enough data and a real directional edge.
-  const pickEligible=evidence>=55 && directional>=7 && agreement>=.58;
+  // A visible sporting direction requires enough real data and separation.
+  const pickEligible=evidence>=55 && directional>=6 && agreement>=.57;
   const winnerSide=pickEligible?rawWinner:0;
-  const confidence=clamp(Math.round(40+evidence*.30+agreement*22+Math.min(12,directional*.45)),40,92);
-  const score=clamp(Math.round(42+evidence*.22+agreement*18+Math.min(20,directional*.55)),42,96);
 
-  return {score,confidence,evidence,winnerSide,winnerName:sideName(match,winnerSide),rawWinnerSide:rawWinner,directional,agreement,components};
+  // Analysis quality is NOT a win probability.
+  // Keep it conservative so "81%" cannot be mistaken for "81% chance to win".
+  const confidence=clamp(
+    Math.round(35 + evidence*.28 + agreement*18 + Math.min(8,directional*.25)),
+    40,88
+  );
+
+  const score=clamp(
+    Math.round(40 + evidence*.20 + agreement*16 + Math.min(18,directional*.45)),
+    40,94
+  );
+
+  return {
+    score,confidence,evidence,winnerSide,
+    winnerName:sideName(match,winnerSide),
+    rawWinnerSide:rawWinner,directional,agreement,components
+  };
 }
 
 function missionScore(match){
@@ -1361,11 +1472,11 @@ function showDetails(match){
   const engine=missionMarketEngine(match,report);
   $("missionPick").textContent=engine.best.label;
   $("missionPickReason").textContent=engine.best.prob!==null
-    ? `Modellschätzung ca. ${engine.best.prob}% · sportliche Datenabdeckung ${engine.coverage}%. Quote entscheidet NICHT über den Pick.`
-    : `Sportliche Datenabdeckung ${engine.coverage}%. Aktuell kein Markt mit ausreichendem Abstand.`;
+    ? `${engine.best.tier} · sportliche Modellschätzung ca. ${engine.best.prob}% · Datenabdeckung ${engine.coverage}%. Marktquote ist nur Kontext.`
+    : `Sportliche Datenabdeckung ${engine.coverage}%. Kein Markt erreicht aktuell unsere Mindestschwelle.`;
   pickBox?.classList.toggle("no-pick",engine.best.type==="pass");
   if($("probMatch")) $("probMatch").textContent=`${match.player1} ${engine.p1}% · ${match.player2} ${engine.p2}%`;
-  if($("probSetHc")) $("probSetHc").textContent=`${sideName(match,engine.dog)} +1,5 · ca. ${engine.dogSet}%`;
+  if($("probSetHc")) $("probSetHc").textContent=`${sideName(match,engine.dog)} +1,5 Sätze · ca. ${engine.dogSet}%`;
   if($("probTwoZero")) $("probTwoZero").textContent=`${sideName(match,engine.favorite)} 2:0 · ca. ${engine.fav20}%`;
   if($("probThree")) $("probThree").textContent=`3 Sätze · ca. ${engine.threeSets}%`;
   if($("marketAlternative")) $("marketAlternative").textContent=engine.alt;
