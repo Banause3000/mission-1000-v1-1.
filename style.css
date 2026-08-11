@@ -740,3 +740,11 @@ body{
 @media(max-width:430px){
   .mc-grid{grid-template-columns:repeat(2,1fr)}
 }
+
+/* v2.7.0 Mission Pick */
+.mission-pick-box{margin:18px 0;padding:16px 18px;border:1px solid rgba(113,255,42,.45);border-radius:18px;background:linear-gradient(135deg,rgba(113,255,42,.10),rgba(0,0,0,.08));display:grid;gap:5px}
+.mission-pick-box span{font-size:.68rem;letter-spacing:.14em;color:#71ff2a;font-weight:800}
+.mission-pick-box strong{font-size:1.05rem;color:#f4f7f8}
+.mission-pick-box small{font-size:.72rem;color:#98a5b2;line-height:1.45}
+.mission-pick-box.no-pick{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.025)}
+.mission-pick-box.no-pick span{color:#98a5b2}
