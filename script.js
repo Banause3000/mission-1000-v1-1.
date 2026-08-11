@@ -1,4 +1,4 @@
-// Mission 1000 v2.8.1 Market Intelligence Logic Fix
+// Mission 1000 v2.8.2 Chance / Pick Quality / Value separation
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -1454,12 +1454,20 @@ function showDetails(match){
 
   $("detailsPanel").classList.remove("hidden");
   $("detailTitle").textContent=`${match.player1} vs. ${match.player2}`;
-  $("detailScore").textContent=score;
-  setRing($("detailScore").parentElement,score);
+
+  const engine=missionMarketEngine(match,report);
+  const sportChance=engine.favP;
+  $("detailSportChance").textContent=`${sportChance}%`;
+  setRing($("detailSportChance").parentElement,sportChance);
+
+  const quality = engine.best.type === "pass" ? "Keine klare Kante"
+    : engine.best.prob >= 72 && report.confidence >= 80 ? "Starker Pick"
+    : engine.best.prob >= 65 && report.confidence >= 70 ? "Interessanter Pick"
+    : "Leichte Tendenz";
 
   $("detailSignal").textContent=report.winnerName
-    ? `${scoreLabel(score)} · ${report.winnerName}`
-    : scoreLabel(score);
+    ? `${quality} · ${report.winnerName}`
+    : quality;
 
   let narrative=report.winnerName
     ? `Die Gesamtdaten sprechen aktuell eher für ${report.winnerName}.`
@@ -1469,11 +1477,22 @@ function showDetails(match){
   $("detailNarrative").textContent=narrative;
 
   const pickBox=$("missionPickBox");
-  const engine=missionMarketEngine(match,report);
   $("missionPick").textContent=engine.best.label;
+
+  let valueText="Value nicht berechenbar: passende Marktquote fehlt.";
+  if(engine.best.type==="ml" && engine.best.side){
+    const rawOdd=Number(engine.best.side===1?match.odds1:match.odds2);
+    if(Number.isFinite(rawOdd) && rawOdd>1 && engine.best.prob!==null){
+      const fairOdd=100/engine.best.prob;
+      const edgePct=Math.round((engine.best.prob/100*rawOdd-1)*100);
+      valueText = edgePct>0
+        ? `Value +${edgePct}% · faire Quote ca. ${fairOdd.toFixed(2).replace(".",",")}`
+        : `Kein Value (${edgePct}%) · faire Quote ca. ${fairOdd.toFixed(2).replace(".",",")}`;
+    }
+  }
   $("missionPickReason").textContent=engine.best.prob!==null
-    ? `${engine.best.tier} · sportliche Modellschätzung ca. ${engine.best.prob}% · Datenabdeckung ${engine.coverage}%. Marktquote ist nur Kontext.`
-    : `Sportliche Datenabdeckung ${engine.coverage}%. Kein Markt erreicht aktuell unsere Mindestschwelle.`;
+    ? `${quality.toUpperCase()} · sportliche Sieg-/Marktchance ca. ${engine.best.prob}% · ${valueText} · Analysequalität ${report.confidence}%.`
+    : `Keine klare Kante · Analysequalität ${report.confidence}% · sportliche Datenabdeckung ${engine.coverage}%.`;
   pickBox?.classList.toggle("no-pick",engine.best.type==="pass");
   if($("probMatch")) $("probMatch").textContent=`${match.player1} ${engine.p1}% · ${match.player2} ${engine.p2}%`;
   if($("probSetHc")) $("probSetHc").textContent=`${sideName(match,engine.dog)} +1,5 Sätze · ca. ${engine.dogSet}%`;
