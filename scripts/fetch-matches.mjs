@@ -128,6 +128,36 @@ for (const sport of tennisSports) {
 
 const matches = [];
 
+function normName(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/gi, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function matchupKey(match) {
+  const names = [normName(match.player1), normName(match.player2)].sort();
+  return `${String(match.tour || "").toUpperCase()}|${names.join("|")}`;
+}
+
+function chooseScheduleVersion(a, b) {
+  const now = Date.now();
+  const ta = Date.parse(a.startIso || "") || 0;
+  const tb = Date.parse(b.startIso || "") || 0;
+  const aFuture = ta >= now - 30 * 60 * 1000;
+  const bFuture = tb >= now - 30 * 60 * 1000;
+
+  // If one version is still upcoming and the other is a stale old time,
+  // prefer the upcoming version. This matters after rain delays/reschedules.
+  if (aFuture !== bFuture) return bFuture ? b : a;
+
+  // When both are future/past, prefer the later published start. Delayed
+  // tennis matches are much more commonly moved back than forward.
+  return tb >= ta ? b : a;
+}
+
 let creditsRemaining = sportResponse.remaining;
 let creditsUsed = sportResponse.used;
 
@@ -187,15 +217,23 @@ for (const sport of tennisSports) {
   }
 }
 
-// Doppelte Events entfernen
-const uniqueMatches = [
-  ...new Map(
-    matches.map(match => [match.id, match])
-  ).values()
-].sort(
-  (a, b) =>
-    new Date(a.startIso) - new Date(b.startIso)
-);
+// Doppelte/stale Event-Versionen entfernen. The Odds API can temporarily
+// expose an old event id/time after a rain delay. We dedupe by PLAYERS, not id.
+const byMatchup = new Map();
+for (const match of matches) {
+  const key = matchupKey(match);
+  const existing = byMatchup.get(key);
+  byMatchup.set(key, existing ? chooseScheduleVersion(existing, match) : match);
+}
+
+const now = Date.now();
+const horizon = now + 72 * 60 * 60 * 1000;
+const uniqueMatches = [...byMatchup.values()]
+  .filter(match => {
+    const t = Date.parse(match.startIso || "");
+    return Number.isFinite(t) && t <= horizon && t >= now - 8 * 60 * 60 * 1000;
+  })
+  .sort((a, b) => new Date(a.startIso) - new Date(b.startIso));
 
 const output = {
   generatedAt: new Date().toISOString(),
