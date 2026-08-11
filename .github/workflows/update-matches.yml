@@ -1,9 +1,16 @@
 name: Tennisdaten aktualisieren
 
-"on": workflow_dispatch
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "7,37 * * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: mission1000-matches
+  cancel-in-progress: true
 
 jobs:
   update:
