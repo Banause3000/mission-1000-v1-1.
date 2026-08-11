@@ -1,4 +1,4 @@
-// Mission 1000 v2.8.2 Chance / Pick Quality / Value separation
+// Mission 1000 v2.8.3 Surface Recognition Fix
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -867,15 +867,53 @@ function eventSimilarity(a,b){
   return shared/Math.max(A.size,B.size);
 }
 
+function canonicalSurface(value){
+  const s=normalizeName(value||"");
+  if(!s) return "";
+  if(s.includes("hard")) return "hard";
+  if(s.includes("clay") || s.includes("sand")) return "clay";
+  if(s.includes("grass") || s.includes("rasen")) return "grass";
+  if(s.includes("carpet")) return "indoor";
+  if(s.includes("indoor")) return "indoor";
+  return "";
+}
+
+function knownTournamentSurface(eventName){
+  const e=normalizeEvent(eventName||"");
+  if(!e) return "";
+
+  // Robust fallback map: tournament names may arrive from different feeds
+  // with ATP/WTA/Open/Masters qualifiers. We intentionally match stable
+  // location/event tokens instead of exact full names.
+  const rules=[
+    // HARD
+    {surface:"hard", keys:["cincinnati","canadian open","montreal","toronto","us open","washington","winston salem","indian wells","miami","acapulco","delray beach","dubai","doha","auckland","brisbane","adelaide","australian open","beijing","shanghai","tokyo","basel","vienna","paris masters","paris bercy","rotterdam","stockholm","antwerp","metz","sofia","astana","almaty"]},
+
+    // CLAY
+    {surface:"clay", keys:["roland garros","french open","rome","roma","madrid","monte carlo","barcelona","hamburg","munich","muenchen","buenos aires","rio de janeiro","santiago","geneva","lyon","estoril","bastad","gstaad","kitzbuhel","kitzbuehel","umag"]},
+
+    // GRASS
+    {surface:"grass", keys:["wimbledon","halle","queens","queen s","stuttgart","eastbourne","nottingham","s hertogenbosch","hertogenbosch","bad homburg","berlin grass"]},
+  ];
+
+  for(const rule of rules){
+    if(rule.keys.some(key=>e.includes(normalizeEvent(key)))) return rule.surface;
+  }
+  return "";
+}
+
 function inferredSurface(match){
-  const direct=match.surface ?? match.court ?? match.surfaceType ?? "";
+  // 1) Match payload wins if it contains a usable court/surface.
+  const direct=canonicalSurface(match.surface ?? match.court ?? match.surfaceType ?? "");
   if(direct) return direct;
 
   const tour=String(match.tour||"").toUpperCase();
-  const target=normalizeEvent(match.event||"");
+  const rawEvent=match.event||"";
+  const target=normalizeEvent(rawEvent);
 
   if(!target) return "";
 
+  // 2) Tournament-surface intelligence file.
   const candidates=STATE.tournamentSurfaces
     .filter(item=>{
       const itemTour=String(item.tour||"").toUpperCase();
@@ -887,17 +925,22 @@ function inferredSurface(match){
       similarity:eventSimilarity(target,item.normalizedEvent ?? item.event ?? "")
     }));
 
-  // Exact normalized event is always preferred.
   const exact=candidates.find(x=>x.normalized===target);
-  if(exact) return exact.item.surface||"";
-
-  // Otherwise use a strong token match only.
-  const best=[...candidates].sort((a,b)=>b.similarity-a.similarity)[0];
-  if(best && best.similarity>=0.66){
-    return best.item.surface||"";
+  if(exact){
+    const surface=canonicalSurface(exact.item.surface);
+    if(surface) return surface;
   }
 
-  return "";
+  const best=[...candidates].sort((a,b)=>b.similarity-a.similarity)[0];
+  if(best && best.similarity>=0.55){
+    const surface=canonicalSurface(best.item.surface);
+    if(surface) return surface;
+  }
+
+  // 3) Last-resort known tournament mapping.
+  // This fixes feed-name variants such as:
+  // "ATP Cincinnati Open", "Cincinnati Open", "ATP Canadian Open", etc.
+  return knownTournamentSurface(rawEvent);
 }
 
 function matchStartMs(match){
