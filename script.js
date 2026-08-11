@@ -1,4 +1,4 @@
-// Mission 1000 v2.6.7
+// Mission 1000 v2.7.1 Mobile Freeze Hotfix
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -417,7 +417,7 @@ async function loadOptionalIntelligence(){
 
   const [h2hResult, surfaceResult, statsResult, eventSurfaceResult] = await Promise.all([
     fetchBestJson(
-      ["./data/intelligence/h2h.json", "./data/sources/h2h.json"],
+      ["./data/intelligence/h2h-lite.json"],
       {matches:[]}
     ),
     fetchBestJson(
@@ -1537,6 +1537,8 @@ async function load(){
   $("statusTitle").textContent = "Analyse-Daten werden geladen";
   $("statusText").textContent = "H2H, Belag sowie Serve- und Return-Daten werden ergänzt.";
 
+  // Give iOS Safari a frame to paint and keep taps responsive before optional JSON work.
+  await new Promise(resolve => setTimeout(resolve, 30));
   await loadOptionalIntelligence();
 
   renderEverything(matchesPayload);
@@ -1599,7 +1601,7 @@ document.querySelectorAll(".bottom-nav button[data-view]").forEach(button => {
   };
 });
 
-console.info("Mission 1000 v2.6.7 Player Search Fix aktiv");
+console.info("Mission 1000 v2.7.1 Mobile Freeze Hotfix aktiv");
 load();
 
 // Keep v2 free of service-worker caching while we stabilise the data layer.
