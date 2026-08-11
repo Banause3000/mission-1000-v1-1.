@@ -464,7 +464,7 @@ async function loadOptionalIntelligence(){
     (Array.isArray(eventSurfacePayload) && eventSurfacePayload) ||
     [];
 
-  console.info("Mission 1000 Intelligence v2.6.3", {
+  console.info("Mission 1000 Intelligence v2.7.0", {
     h2h: STATE.h2h.length,
     surfacePlayers: STATE.surfaces.length,
     stats: STATE.stats.length,
@@ -561,195 +561,76 @@ function sideName(match,side){
 }
 
 function missionScoreV3(match){
-  const marketPart = marketComponent(match);
-  const rankingPart = rankingComponent(match);
-  const formPart = formComponent(match);
-
-  const h2h = h2hRecord(match);
-  const surfaceName = inferredSurface(match);
-  const surface1 = surfaceName ? surfaceRecord(match.player1,match.tour,surfaceName) : null;
-  const surface2 = surfaceName ? surfaceRecord(match.player2,match.tour,surfaceName) : null;
-  const stats1 = statRecord(match.player1,match.tour);
-  const stats2 = statRecord(match.player2,match.tour);
-
-  const components = [];
-
-  // Markt: max 25
-  if(marketPart.available){
-    const mk = market(match);
-    const gap = Math.abs(mk.p1-mk.p2);
-    const score = clamp(Math.round(10 + gap*0.25),10,25);
-    const side = mk.p1===mk.p2 ? 0 : (mk.p1>mk.p2 ? 1 : 2);
-    components.push({
-      key:"market",
-      label:"Markt",
-      score,
-      max:25,
-      side,
-      available:true,
-      detail:`${mk.p1}% / ${mk.p2}%`
-    });
-  }else{
-    components.push({key:"market",label:"Markt",score:0,max:25,side:0,available:false,detail:"–"});
-  }
-
-  // Ranking: max 20
+  const mk=market(match);
   const r1=getRank(match.player1,match.tour);
   const r2=getRank(match.player2,match.tour);
-  if(r1 && r2){
-    const diff=Math.abs(r1-r2);
-    const score=clamp(Math.round(6 + diff/3),6,20);
-    const side=r1===r2 ? 0 : (r1<r2 ? 1 : 2);
-    components.push({
-      key:"ranking",
-      label:"Ranking",
-      score,
-      max:20,
-      side,
-      available:true,
-      detail:`#${r1} / #${r2}`
-    });
-  }else{
-    components.push({key:"ranking",label:"Ranking",score:0,max:20,side:0,available:false,detail:"–"});
-  }
-
-  // Form: max 20
   const f1=getForm(match.player1,match.tour);
   const f2=getForm(match.player2,match.tour);
-  if(f1 && f2){
-    const diff=Math.abs(f1.pct-f2.pct);
-    const score=clamp(Math.round(6 + diff*0.18),6,20);
-    const side=f1.pct===f2.pct ? 0 : (f1.pct>f2.pct ? 1 : 2);
-    components.push({
-      key:"form",
-      label:"Form",
-      score,
-      max:20,
-      side,
-      available:true,
-      detail:`${f1.pct}% / ${f2.pct}%`
-    });
-  }else{
-    components.push({key:"form",label:"Form",score:0,max:20,side:0,available:false,detail:"–"});
-  }
+  const h2h=h2hRecord(match);
+  const surfaceName=inferredSurface(match);
+  const surface1=surfaceName ? surfaceRecord(match.player1,match.tour,surfaceName) : null;
+  const surface2=surfaceName ? surfaceRecord(match.player2,match.tour,surfaceName) : null;
+  const stats1=statRecord(match.player1,match.tour);
+  const stats2=statRecord(match.player2,match.tour);
+  const hold1=numericStat(stats1,["holdPct","hold_pct","hold"]);
+  const hold2=numericStat(stats2,["holdPct","hold_pct","hold"]);
+  const ret1=numericStat(stats1,["returnPointsWonPct","return_points_won_pct","returnWon"]);
+  const ret2=numericStat(stats2,["returnPointsWonPct","return_points_won_pct","returnWon"]);
 
-  // H2H: max 10
+  const components=[];
+  const add=(key,label,max,a,b,detail,scoreFn)=>{
+    if(a===null || b===null || a===undefined || b===undefined || !Number.isFinite(Number(a)) || !Number.isFinite(Number(b))){
+      components.push({key,label,score:0,max,side:0,available:false,detail:"–"});
+      return;
+    }
+    a=Number(a); b=Number(b);
+    const side=a===b?0:(a>b?1:2);
+    const diff=Math.abs(a-b);
+    components.push({key,label,score:scoreFn(diff,a,b),max,side,available:true,detail});
+  };
+
+  // Weighting 100 total: FORM is intentionally the strongest performance input.
+  if(mk){
+    const gap=Math.abs(mk.p1-mk.p2);
+    components.push({key:"market",label:"Markt",score:clamp(Math.round(5+gap*.20),5,15),max:15,side:mk.p1===mk.p2?0:(mk.p1>mk.p2?1:2),available:true,detail:`${mk.p1}% / ${mk.p2}%`});
+  }else components.push({key:"market",label:"Markt",score:0,max:15,side:0,available:false,detail:"–"});
+
+  if(r1&&r2){
+    const side=r1===r2?0:(r1<r2?1:2), diff=Math.abs(r1-r2);
+    components.push({key:"ranking",label:"Ranking",score:clamp(Math.round(5+diff/3),5,15),max:15,side,available:true,detail:`#${r1} / #${r2}`});
+  }else components.push({key:"ranking",label:"Ranking",score:0,max:15,side:0,available:false,detail:"–"});
+
+  if(f1&&f2){
+    const diff=Math.abs(f1.pct-f2.pct), side=f1.pct===f2.pct?0:(f1.pct>f2.pct?1:2);
+    components.push({key:"form",label:"Form",score:clamp(Math.round(8+diff*.55),8,25),max:25,side,available:true,detail:`${f1.pct}% / ${f2.pct}%`});
+  }else components.push({key:"form",label:"Form",score:0,max:25,side:0,available:false,detail:"–"});
+
   if(h2h){
-    const share1=h2h.wins1/h2h.total;
-    const share2=h2h.wins2/h2h.total;
-    const diff=Math.abs(share1-share2);
-    const score=clamp(Math.round(3 + diff*10),3,10);
-    const side=h2h.wins1===h2h.wins2 ? 0 : (h2h.wins1>h2h.wins2 ? 1 : 2);
-    components.push({
-      key:"h2h",
-      label:"H2H",
-      score,
-      max:10,
-      side,
-      available:true,
-      detail:`${h2h.wins1}:${h2h.wins2}`
-    });
-  }else{
-    components.push({key:"h2h",label:"H2H",score:0,max:10,side:0,available:false,detail:"–"});
-  }
+    const diff=Math.abs(h2h.wins1-h2h.wins2)/Math.max(1,h2h.total);
+    components.push({key:"h2h",label:"H2H",score:clamp(Math.round(5+diff*10),5,15),max:15,side:h2h.wins1===h2h.wins2?0:(h2h.wins1>h2h.wins2?1:2),available:true,detail:`${h2h.wins1}:${h2h.wins2}`});
+  }else components.push({key:"h2h",label:"H2H",score:0,max:15,side:0,available:false,detail:"–"});
 
-  // Belag: max 10
-  if(surface1 && surface2){
-    const diff=Math.abs(surface1.pct-surface2.pct);
-    const score=clamp(Math.round(3 + diff*0.12),3,10);
-    const side=surface1.pct===surface2.pct ? 0 : (surface1.pct>surface2.pct ? 1 : 2);
-    components.push({
-      key:"surface",
-      label:"Belag",
-      score,
-      max:10,
-      side,
-      available:true,
-      detail:`${surface1.pct}% / ${surface2.pct}%`
-    });
-  }else{
-    components.push({key:"surface",label:"Belag",score:0,max:10,side:0,available:false,detail:"–"});
-  }
-
-  // Stats: max 15
-  const statKeys = [
-    ["holdPct","hold_pct","hold"],
-    ["breakPct","break_pct","break"],
-    ["firstServeWonPct","first_serve_won_pct","firstServeWon"],
-    ["returnPointsWonPct","return_points_won_pct","returnWon"]
-  ];
-
-  if(stats1 && stats2){
-    let p1wins=0,p2wins=0,diffs=[];
-    for(const aliases of statKeys){
-      const a=numericStat(stats1,aliases);
-      const b=numericStat(stats2,aliases);
-      if(a===null || b===null) continue;
-      diffs.push(Math.abs(a-b));
-      if(a>b) p1wins++;
-      else if(b>a) p2wins++;
-    }
-
-    if(diffs.length){
-      const avg=diffs.reduce((s,x)=>s+x,0)/diffs.length;
-      const score=clamp(Math.round(5 + avg*0.7),5,15);
-      const side=p1wins===p2wins ? 0 : (p1wins>p2wins ? 1 : 2);
-      components.push({
-        key:"stats",
-        label:"Stats",
-        score,
-        max:15,
-        side,
-        available:true,
-        detail:`${diffs.length} Werte`
-      });
-    }else{
-      components.push({key:"stats",label:"Stats",score:0,max:15,side:0,available:false,detail:"–"});
-    }
-  }else{
-    components.push({key:"stats",label:"Stats",score:0,max:15,side:0,available:false,detail:"–"});
-  }
+  add("surface","Belag",10,surface1?.pct,surface2?.pct,surface1&&surface2?`${surface1.pct}% / ${surface2.pct}%`:"–",diff=>clamp(Math.round(3+diff*.25),3,10));
+  add("serve","Service",10,hold1,hold2,hold1!==null&&hold2!==null?`${hold1}% / ${hold2}%`:"–",diff=>clamp(Math.round(3+diff*.55),3,10));
+  add("return","Return",10,ret1,ret2,ret1!==null&&ret2!==null?`${ret1}% / ${ret2}%`:"–",diff=>clamp(Math.round(3+diff*.8),3,10));
 
   const available=components.filter(c=>c.available);
-  const availableMax=available.reduce((s,c)=>s+c.max,0);
-  const evidence=Math.round(availableMax/100*100);
-
-  // Determine consensus direction and punish contradictions.
+  const availableMax=available.reduce((sum,c)=>sum+c.max,0);
+  const evidence=clamp(Math.round(availableMax),0,100);
   let support1=0,support2=0;
-  for(const c of available){
-    if(c.side===1) support1 += c.score;
-    if(c.side===2) support2 += c.score;
-  }
+  for(const c of available){ if(c.side===1) support1+=c.score; else if(c.side===2) support2+=c.score; }
+  const rawWinner=support1===support2?0:(support1>support2?1:2);
+  const directional=Math.abs(support1-support2);
+  const totalDirectional=support1+support2;
+  const agreement=totalDirectional?Math.max(support1,support2)/totalDirectional:.5;
 
-  const winnerSide = support1===support2 ? 0 : (support1>support2 ? 1 : 2);
-  const supporting = available.filter(c=>c.side===winnerSide && winnerSide!==0);
-  const opposing = available.filter(c=>c.side!==0 && c.side!==winnerSide);
+  // A visible pick requires both enough data and a real directional edge.
+  const pickEligible=evidence>=55 && directional>=7 && agreement>=.58;
+  const winnerSide=pickEligible?rawWinner:0;
+  const confidence=clamp(Math.round(40+evidence*.30+agreement*22+Math.min(12,directional*.45)),40,92);
+  const score=clamp(Math.round(42+evidence*.22+agreement*18+Math.min(20,directional*.55)),42,96);
 
-  const supportScore=supporting.reduce((s,c)=>s+c.score,0);
-  const opposeScore=opposing.reduce((s,c)=>s+c.score,0);
-  const directional=Math.max(0,supportScore-opposeScore);
-
-  // Confidence depends on evidence + agreement, not just odds.
-  const agreementDen=supportScore+opposeScore;
-  const agreement=agreementDen ? supportScore/agreementDen : .5;
-  const confidence=clamp(Math.round(45 + evidence*0.35 + agreement*20),45,97);
-
-  // Score reflects evidence depth and directional strength.
-  // Market-only can no longer generate 90+.
-  const score=clamp(
-    Math.round(45 + evidence*0.25 + directional*0.35 + agreement*10),
-    45,
-    97
-  );
-
-  return {
-    score,
-    confidence,
-    evidence,
-    winnerSide,
-    winnerName:sideName(match,winnerSide),
-    components
-  };
+  return {score,confidence,evidence,winnerSide,winnerName:sideName(match,winnerSide),rawWinnerSide:rawWinner,directional,agreement,components};
 }
 
 function missionScore(match){
@@ -1095,7 +976,7 @@ function renderTop(){
   $("confidenceLabel").textContent = conf >= 88 ? "SEHR HOCH" : conf >= 76 ? "HOCH" : "SOLIDE";
 
   if(report.winnerName){
-    $("marketTrend").textContent = `${report.winnerName} · ${report.evidence}% Daten`;
+    $("marketTrend").textContent = `MISSION PICK: ${report.winnerName} · ${report.evidence}% Daten`;
   }else if(mk){
     const fav = mk.p1 >= mk.p2 ? match.player1 : match.player2;
     $("marketTrend").textContent = `${fav} ↗ ${Math.max(mk.p1,mk.p2)}%`;
@@ -1426,6 +1307,17 @@ function showDetails(match){
   narrative += ` ${evidenceLabel(report.evidence)} mit ${report.evidence} % Datenabdeckung.`;
   $("detailNarrative").textContent=narrative;
 
+  const pickBox=$("missionPickBox");
+  if(report.winnerName){
+    $("missionPick").textContent=`${report.winnerName} · Match-Sieg`;
+    $("missionPickReason").textContent=`${report.evidence}% Datenabdeckung · ${report.confidence}% Analyse-Confidence. Form, H2H, Belag, Service und Return fließen getrennt ein.`;
+    pickBox?.classList.remove("no-pick");
+  }else{
+    $("missionPick").textContent="KEIN KLARER TIPP";
+    $("missionPickReason").textContent=`Die Faktoren widersprechen sich zu stark oder die Datenabdeckung ist zu niedrig (${report.evidence}%).`;
+    pickBox?.classList.add("no-pick");
+  }
+
   $("factorMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
   $("factorRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
   $("factorForm").textContent=f1&&f2?`${f1.pct}% / ${f2.pct}%`:"–";
@@ -1434,7 +1326,11 @@ function showDetails(match){
   const map=[
     ["market","scoreMarket","barMarket"],
     ["ranking","scoreRanking","barRanking"],
-    ["form","scoreForm","barForm"]
+    ["form","scoreForm","barForm"],
+    ["h2h","scoreH2H","barH2H"],
+    ["surface","scoreSurface","barSurface"],
+    ["serve","scoreServe","barServe"],
+    ["return","scoreReturn","barReturn"]
   ];
 
   for(const [key,scoreId,barId] of map){
