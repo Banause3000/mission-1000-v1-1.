@@ -1,4 +1,4 @@
-// Mission 1000 v2.7.1 Mobile Freeze Hotfix
+// Mission 1000 v2.8.0 Market Intelligence
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -300,6 +300,56 @@ function scoreComponents(match){
   };
 }
 
+
+
+// Mission Market Engine 5.0: sporting view first, odds only for later value context.
+function missionMarketEngine(match, report){
+  const sporting=report.components.filter(c=>c.available && c.key!=="market");
+  let a=0,b=0,max=0;
+  for(const c of sporting){
+    max+=c.max;
+    if(c.side===1) a+=c.score;
+    if(c.side===2) b+=c.score;
+  }
+  const coverage=max ? Math.round(max/85*100) : 0;
+  const total=a+b;
+  const edge=total ? (a-b)/total : 0;
+  const p1=clamp(Math.round(50+edge*34),22,78);
+  const p2=100-p1;
+  const favorite=p1>=p2?1:2, dog=favorite===1?2:1;
+  const favP=Math.max(p1,p2), dogP=Math.min(p1,p2);
+  // Approximation from match probability, intentionally conservative until point/set model exists.
+  const dogSet=clamp(Math.round(dogP + (100-dogP)*0.31),45,76);
+  const fav20=clamp(Math.round((favP/100)*(1-dogSet/100)*100+8),20,65);
+  const threeSets=clamp(Math.round(100-fav20-(clamp(Math.round((dogP/100)*(1-(clamp(Math.round(favP+(100-favP)*.31),45,76))/100)*100+8),15,55))),25,58);
+
+  const available=new Set(sporting.map(c=>c.key));
+  const reasons=[];
+  const risks=[];
+  const sideLabel=i=>sideName(match,i);
+  const ordered=[...sporting].filter(c=>c.side).sort((x,y)=>(y.score/y.max)-(x.score/x.max));
+  ordered.slice(0,3).forEach(c=>reasons.push(`${c.label}: Vorteil ${sideLabel(c.side)} (${c.detail})`));
+  const serve=componentByKey(report,"serve"), ret=componentByKey(report,"return"), form=componentByKey(report,"form"), surface=componentByKey(report,"surface");
+  if(serve?.available && serve.side===favorite) risks.push(`${sideLabel(favorite)} kann über den Aufschlag viele kurze Punkte kontrollieren.`);
+  if(ret?.available && ret.side===dog) risks.push(`${sideLabel(dog)} besitzt Return-Potenzial, um den Favoriten unter Druck zu setzen.`);
+  if(form?.available && form.side===0) risks.push("Die aktuelle Form trennt beide kaum.");
+  if(surface?.available && surface.side===dog) risks.push(`${sideLabel(dog)} hat auf diesem Belag bessere Vergleichswerte.`);
+  if(!available.has("h2h")) risks.push("Kein belastbares H2H verfügbar.");
+  if(!available.has("serve") || !available.has("return")) risks.push("Service-/Return-Daten sind unvollständig.");
+
+  let best={label:"KEIN KLARER MARKT",prob:null,side:0,type:"pass"};
+  if(coverage>=60){
+    // Prefer protection when favourite edge is modest; ML only on a genuinely strong sporting edge.
+    if(favP>=68) best={label:`${sideLabel(favorite)} · Match-Sieg`,prob:favP,side:favorite,type:"ml"};
+    else if(dogSet>=60) best={label:`${sideLabel(dog)} +1,5 Sätze`,prob:dogSet,side:dog,type:"sethc"};
+    else if(threeSets>=44) best={label:"Über 2,5 Sätze / 3 Sätze",prob:threeSets,side:0,type:"over"};
+  }
+  const alt = best.type!=="ml" && favP>=58 ? `${sideLabel(favorite)} Match-Sieg · ca. ${favP}%` :
+              best.type!=="sethc" ? `${sideLabel(dog)} +1,5 Sätze · ca. ${dogSet}%` :
+              `3 Sätze · ca. ${threeSets}%`;
+  const avoid = fav20<48 ? `${sideLabel(favorite)} 2:0 (${fav20}% Modellschätzung)` : "Kein deutlicher Warnmarkt";
+  return {p1,p2,favorite,dog,favP,dogP,dogSet,fav20,threeSets,coverage,best,alt,avoid,reasons,risks};
+}
 function missionScore(match){
   const parts = scoreComponents(match);
   const available = [parts.market,parts.ranking,parts.form].filter(x=>x.available);
@@ -1308,15 +1358,20 @@ function showDetails(match){
   $("detailNarrative").textContent=narrative;
 
   const pickBox=$("missionPickBox");
-  if(report.winnerName){
-    $("missionPick").textContent=`${report.winnerName} · Match-Sieg`;
-    $("missionPickReason").textContent=`${report.evidence}% Datenabdeckung · ${report.confidence}% Analyse-Confidence. Form, H2H, Belag, Service und Return fließen getrennt ein.`;
-    pickBox?.classList.remove("no-pick");
-  }else{
-    $("missionPick").textContent="KEIN KLARER TIPP";
-    $("missionPickReason").textContent=`Die Faktoren widersprechen sich zu stark oder die Datenabdeckung ist zu niedrig (${report.evidence}%).`;
-    pickBox?.classList.add("no-pick");
-  }
+  const engine=missionMarketEngine(match,report);
+  $("missionPick").textContent=engine.best.label;
+  $("missionPickReason").textContent=engine.best.prob!==null
+    ? `Modellschätzung ca. ${engine.best.prob}% · sportliche Datenabdeckung ${engine.coverage}%. Quote entscheidet NICHT über den Pick.`
+    : `Sportliche Datenabdeckung ${engine.coverage}%. Aktuell kein Markt mit ausreichendem Abstand.`;
+  pickBox?.classList.toggle("no-pick",engine.best.type==="pass");
+  if($("probMatch")) $("probMatch").textContent=`${match.player1} ${engine.p1}% · ${match.player2} ${engine.p2}%`;
+  if($("probSetHc")) $("probSetHc").textContent=`${sideName(match,engine.dog)} +1,5 · ca. ${engine.dogSet}%`;
+  if($("probTwoZero")) $("probTwoZero").textContent=`${sideName(match,engine.favorite)} 2:0 · ca. ${engine.fav20}%`;
+  if($("probThree")) $("probThree").textContent=`3 Sätze · ca. ${engine.threeSets}%`;
+  if($("marketAlternative")) $("marketAlternative").textContent=engine.alt;
+  if($("marketAvoid")) $("marketAvoid").textContent=engine.avoid;
+  if($("whyPick")) $("whyPick").innerHTML=engine.reasons.length?engine.reasons.map(x=>`<li>${x}</li>`).join(""):"<li>Zu wenige belastbare Faktoren.</li>";
+  if($("pickRisks")) $("pickRisks").innerHTML=engine.risks.length?engine.risks.map(x=>`<li>${x}</li>`).join(""):"<li>Keine zusätzlichen Risikofaktoren erkannt.</li>";
 
   $("factorMarket").textContent=mk?`${mk.p1}% / ${mk.p2}%`:"–";
   $("factorRanking").textContent=r1&&r2?`${r1} / ${r2}`:"–";
