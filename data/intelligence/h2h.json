@@ -383020,11 +383020,11 @@
     },
     {
       "tour": "ATP",
-      "player1": "Arthur Fils",
-      "player2": "Rafael Jodar",
+      "player1": "Rafael Jodar",
+      "player2": "Arthur Fils",
       "wins1": 1,
-      "wins2": 0,
-      "meetings": 1,
+      "wins2": 1,
+      "meetings": 2,
       "lastMeeting": {
         "date": "20260413",
         "event": "Barcelona",
@@ -383035,6 +383035,14 @@
       },
       "recentMeetings": [
         {
+          "date": "20260731",
+          "event": "Washington",
+          "surface": "Hard",
+          "winner": "Rafael Jodar",
+          "loser": "Arthur Fils",
+          "score": "H2H result verified; score omitted"
+        },
+        {
           "date": "20260413",
           "event": "Barcelona",
           "surface": "Clay",
@@ -383042,7 +383050,8 @@
           "loser": "Rafael Jodar",
           "score": "3-6 6-3 6-2"
         }
-      ]
+      ],
+      "source": "ATP official H2H verified 2026-08-11"
     },
     {
       "tour": "ATP",
