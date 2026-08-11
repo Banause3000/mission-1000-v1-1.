@@ -181,6 +181,12 @@
         </div>
       </div>
 
+      <div id="missionPickBox" class="mission-pick-box">
+        <span>MISSION PICK</span>
+        <strong id="missionPick">Analyse läuft…</strong>
+        <small id="missionPickReason">Nur bei ausreichender Datenlage wird ein Tipp angezeigt.</small>
+      </div>
+
       <div class="factor-grid">
         <article><span>MARKT</span><b id="factorMarket">–</b></article>
         <article><span>RANKING</span><b id="factorRanking">–</b></article>
@@ -189,15 +195,16 @@
       </div>
       <div class="score-breakdown">
         <div class="breakdown-head">
-          <span class="eyebrow">MISSION SCORE 3.0</span>
+          <span class="eyebrow">MISSION SCORE 4.0</span>
           <small>nur verfügbare Daten</small>
         </div>
         <div class="break-row"><span>Markt</span><i><b id="barMarket"></b></i><strong id="scoreMarket">0/30</strong></div>
         <div class="break-row"><span>Ranking</span><i><b id="barRanking"></b></i><strong id="scoreRanking">0/20</strong></div>
         <div class="break-row"><span>Form</span><i><b id="barForm"></b></i><strong id="scoreForm">0/20</strong></div>
-        <div class="break-row pending"><span>H2H</span><i><b></b></i><strong>–/10</strong></div>
-        <div class="break-row pending"><span>Belag</span><i><b></b></i><strong>–/10</strong></div>
-        <div class="break-row pending"><span>Stats</span><i><b></b></i><strong>–/10</strong></div>
+        <div class="break-row"><span>H2H</span><i><b id="barH2H"></b></i><strong id="scoreH2H">0/15</strong></div>
+        <div class="break-row"><span>Belag</span><i><b id="barSurface"></b></i><strong id="scoreSurface">0/10</strong></div>
+        <div class="break-row"><span>Service</span><i><b id="barServe"></b></i><strong id="scoreServe">0/10</strong></div>
+        <div class="break-row"><span>Return</span><i><b id="barReturn"></b></i><strong id="scoreReturn">0/10</strong></div>
       </div>
 
       <div class="odds-grid">
@@ -349,7 +356,7 @@
     <button data-view="aiView">◉<span>Mission AI</span></button>
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v2.6.7</footer>
+  <footer>Mission 1000 · Project Eclipse · v2.7.0</footer>
 </div>
 
 <script src="./script.js?v=2.6.7"></script>
