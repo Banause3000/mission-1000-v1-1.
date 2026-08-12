@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-08-12T08:50:14.930762+00:00",
+  "generatedAt": "2026-08-12T08:50:44.127835+00:00",
   "source": "Mission 1000 Data Engine v3.1",
   "players": [
     {
       "name": "Kei Nishikori",
       "tour": "ATP",
-      "matchesWithStats": 136,
-      "holdPct": 77.2,
-      "breakPct": 24.7,
-      "firstServeWonPct": 66.9,
-      "returnPointsWonPct": 38.7
+      "matchesWithStats": 125,
+      "holdPct": 77.0,
+      "breakPct": 24.9,
+      "firstServeWonPct": 66.7,
+      "returnPointsWonPct": 38.8
     },
     {
       "name": "Daniil Medvedev",
       "tour": "ATP",
-      "matchesWithStats": 536,
+      "matchesWithStats": 503,
       "holdPct": 84.3,
       "breakPct": 28.6,
       "firstServeWonPct": 75.8,
@@ -39,13 +39,13 @@
       "returnPointsWonPct": 34.6
     },
     {
-      "name": "Alex de Minaur",
+      "name": "Alex De Minaur",
       "tour": "ATP",
-      "matchesWithStats": 37,
-      "holdPct": 82.2,
-      "breakPct": 25.7,
-      "firstServeWonPct": 72.7,
-      "returnPointsWonPct": 39.7
+      "matchesWithStats": 444,
+      "holdPct": 80.6,
+      "breakPct": 27.5,
+      "firstServeWonPct": 71.6,
+      "returnPointsWonPct": 40.1
     },
     {
       "name": "Milos Raonic",
@@ -68,29 +68,29 @@
     {
       "name": "Grigor Dimitrov",
       "tour": "ATP",
-      "matchesWithStats": 346,
-      "holdPct": 83.3,
-      "breakPct": 22.7,
+      "matchesWithStats": 327,
+      "holdPct": 83.2,
+      "breakPct": 23.0,
       "firstServeWonPct": 75.7,
-      "returnPointsWonPct": 37.5
+      "returnPointsWonPct": 37.7
     },
     {
       "name": "Taro Daniel",
       "tour": "ATP",
-      "matchesWithStats": 153,
+      "matchesWithStats": 152,
       "holdPct": 74.0,
       "breakPct": 19.2,
-      "firstServeWonPct": 68.2,
+      "firstServeWonPct": 68.1,
       "returnPointsWonPct": 35.2
     },
     {
       "name": "Jordan Thompson",
       "tour": "ATP",
-      "matchesWithStats": 287,
-      "holdPct": 80.2,
-      "breakPct": 18.2,
+      "matchesWithStats": 272,
+      "holdPct": 80.1,
+      "breakPct": 18.4,
       "firstServeWonPct": 72.2,
-      "returnPointsWonPct": 35.3
+      "returnPointsWonPct": 35.4
     },
     {
       "name": "Andy Murray",
@@ -104,20 +104,20 @@
     {
       "name": "Miomir Kecmanovic",
       "tour": "ATP",
-      "matchesWithStats": 374,
-      "holdPct": 78.7,
-      "breakPct": 21.5,
-      "firstServeWonPct": 70.6,
-      "returnPointsWonPct": 36.8
+      "matchesWithStats": 355,
+      "holdPct": 78.8,
+      "breakPct": 21.6,
+      "firstServeWonPct": 70.5,
+      "returnPointsWonPct": 36.9
     },
     {
       "name": "Nick Kyrgios",
       "tour": "ATP",
-      "matchesWithStats": 119,
-      "holdPct": 89.8,
-      "breakPct": 15.1,
-      "firstServeWonPct": 78.4,
-      "returnPointsWonPct": 31.7
+      "matchesWithStats": 114,
+      "holdPct": 90.1,
+      "breakPct": 15.3,
+      "firstServeWonPct": 78.5,
+      "returnPointsWonPct": 31.9
     },
     {
       "name": "Kyle Edmund",
@@ -149,10 +149,10 @@
     {
       "name": "Thanasi Kokkinakis",
       "tour": "ATP",
-      "matchesWithStats": 113,
-      "holdPct": 84.6,
+      "matchesWithStats": 112,
+      "holdPct": 84.7,
       "breakPct": 15.2,
-      "firstServeWonPct": 75.9,
+      "firstServeWonPct": 76.0,
       "returnPointsWonPct": 33.4
     },
     {
@@ -167,20 +167,20 @@
     {
       "name": "Alexei Popyrin",
       "tour": "ATP",
-      "matchesWithStats": 275,
-      "holdPct": 82.4,
-      "breakPct": 15.3,
-      "firstServeWonPct": 74.5,
+      "matchesWithStats": 260,
+      "holdPct": 82.7,
+      "breakPct": 15.4,
+      "firstServeWonPct": 74.7,
       "returnPointsWonPct": 33.7
     },
     {
       "name": "James Duckworth",
       "tour": "ATP",
-      "matchesWithStats": 140,
+      "matchesWithStats": 136,
       "holdPct": 79.6,
-      "breakPct": 14.6,
+      "breakPct": 14.9,
       "firstServeWonPct": 72.1,
-      "returnPointsWonPct": 33.0
+      "returnPointsWonPct": 33.1
     },
     {
       "name": "Leonardo Mayer",
@@ -221,20 +221,20 @@
     {
       "name": "Ugo Humbert",
       "tour": "ATP",
-      "matchesWithStats": 347,
-      "holdPct": 82.7,
-      "breakPct": 19.3,
+      "matchesWithStats": 328,
+      "holdPct": 82.8,
+      "breakPct": 19.2,
       "firstServeWonPct": 73.7,
       "returnPointsWonPct": 35.5
     },
     {
       "name": "Yoshihito Nishioka",
       "tour": "ATP",
-      "matchesWithStats": 244,
-      "holdPct": 74.4,
-      "breakPct": 21.0,
-      "firstServeWonPct": 65.0,
-      "returnPointsWonPct": 36.3
+      "matchesWithStats": 234,
+      "holdPct": 74.3,
+      "breakPct": 21.2,
+      "firstServeWonPct": 64.9,
+      "returnPointsWonPct": 36.4
     },
     {
       "name": "Tennys Sandgren",
@@ -248,19 +248,19 @@
     {
       "name": "Taylor Fritz",
       "tour": "ATP",
-      "matchesWithStats": 486,
-      "holdPct": 86.4,
-      "breakPct": 19.5,
-      "firstServeWonPct": 77.7,
-      "returnPointsWonPct": 35.8
+      "matchesWithStats": 452,
+      "holdPct": 86.2,
+      "breakPct": 19.8,
+      "firstServeWonPct": 77.6,
+      "returnPointsWonPct": 35.9
     },
     {
       "name": "Roberto Bautista Agut",
       "tour": "ATP",
-      "matchesWithStats": 354,
-      "holdPct": 79.9,
+      "matchesWithStats": 336,
+      "holdPct": 80.2,
       "breakPct": 24.0,
-      "firstServeWonPct": 69.5,
+      "firstServeWonPct": 69.7,
       "returnPointsWonPct": 38.4
     },
     {
@@ -275,11 +275,11 @@
     {
       "name": "Novak Djokovic",
       "tour": "ATP",
-      "matchesWithStats": 415,
-      "holdPct": 87.7,
-      "breakPct": 29.8,
-      "firstServeWonPct": 76.4,
-      "returnPointsWonPct": 41.3
+      "matchesWithStats": 385,
+      "holdPct": 87.6,
+      "breakPct": 30.2,
+      "firstServeWonPct": 76.3,
+      "returnPointsWonPct": 41.5
     },
     {
       "name": "Marco Cecchinato",
@@ -293,28 +293,28 @@
     {
       "name": "Nikoloz Basilashvili",
       "tour": "ATP",
-      "matchesWithStats": 203,
+      "matchesWithStats": 199,
       "holdPct": 73.8,
-      "breakPct": 20.8,
-      "firstServeWonPct": 69.7,
+      "breakPct": 20.9,
+      "firstServeWonPct": 69.6,
       "returnPointsWonPct": 36.4
     },
     {
       "name": "Stan Wawrinka",
       "tour": "ATP",
-      "matchesWithStats": 224,
+      "matchesWithStats": 214,
       "holdPct": 83.0,
-      "breakPct": 17.4,
+      "breakPct": 17.7,
       "firstServeWonPct": 75.3,
-      "returnPointsWonPct": 34.3
+      "returnPointsWonPct": 34.5
     },
     {
       "name": "Dusan Lajovic",
       "tour": "ATP",
-      "matchesWithStats": 272,
-      "holdPct": 74.9,
+      "matchesWithStats": 262,
+      "holdPct": 75.1,
       "breakPct": 21.3,
-      "firstServeWonPct": 66.5,
+      "firstServeWonPct": 66.6,
       "returnPointsWonPct": 36.8
     },
     {
@@ -329,17 +329,17 @@
     {
       "name": "Marton Fucsovics",
       "tour": "ATP",
-      "matchesWithStats": 283,
-      "holdPct": 77.2,
-      "breakPct": 23.8,
+      "matchesWithStats": 270,
+      "holdPct": 77.3,
+      "breakPct": 23.6,
       "firstServeWonPct": 70.3,
-      "returnPointsWonPct": 38.3
+      "returnPointsWonPct": 38.2
     },
     {
       "name": "Andrey Rublev",
       "tour": "ATP",
-      "matchesWithStats": 512,
-      "holdPct": 84.6,
+      "matchesWithStats": 491,
+      "holdPct": 84.7,
       "breakPct": 23.9,
       "firstServeWonPct": 76.3,
       "returnPointsWonPct": 38.5
@@ -347,9 +347,9 @@
     {
       "name": "Nicolas Jarry",
       "tour": "ATP",
-      "matchesWithStats": 199,
+      "matchesWithStats": 186,
       "holdPct": 84.2,
-      "breakPct": 14.6,
+      "breakPct": 14.7,
       "firstServeWonPct": 74.9,
       "returnPointsWonPct": 33.4
     },
@@ -392,10 +392,10 @@
     {
       "name": "Damir Dzumhur",
       "tour": "ATP",
-      "matchesWithStats": 151,
-      "holdPct": 70.3,
-      "breakPct": 22.5,
-      "firstServeWonPct": 63.5,
+      "matchesWithStats": 131,
+      "holdPct": 70.0,
+      "breakPct": 22.3,
+      "firstServeWonPct": 63.6,
       "returnPointsWonPct": 37.9
     },
     {
@@ -428,10 +428,10 @@
     {
       "name": "Karen Khachanov",
       "tour": "ATP",
-      "matchesWithStats": 420,
+      "matchesWithStats": 399,
       "holdPct": 82.7,
-      "breakPct": 21.1,
-      "firstServeWonPct": 73.5,
+      "breakPct": 21.2,
+      "firstServeWonPct": 73.4,
       "returnPointsWonPct": 36.8
     },
     {
@@ -455,29 +455,29 @@
     {
       "name": "Matteo Berrettini",
       "tour": "ATP",
-      "matchesWithStats": 311,
+      "matchesWithStats": 295,
       "holdPct": 88.5,
-      "breakPct": 18.0,
+      "breakPct": 18.1,
       "firstServeWonPct": 78.0,
       "returnPointsWonPct": 34.8
     },
     {
       "name": "David Goffin",
       "tour": "ATP",
-      "matchesWithStats": 268,
-      "holdPct": 74.4,
+      "matchesWithStats": 253,
+      "holdPct": 74.7,
       "breakPct": 26.0,
-      "firstServeWonPct": 70.5,
+      "firstServeWonPct": 70.6,
       "returnPointsWonPct": 39.1
     },
     {
       "name": "Adrian Mannarino",
       "tour": "ATP",
-      "matchesWithStats": 349,
-      "holdPct": 78.1,
-      "breakPct": 21.1,
-      "firstServeWonPct": 70.4,
-      "returnPointsWonPct": 36.4
+      "matchesWithStats": 337,
+      "holdPct": 77.8,
+      "breakPct": 20.9,
+      "firstServeWonPct": 70.3,
+      "returnPointsWonPct": 36.3
     },
     {
       "name": "Guido Pella",
@@ -581,11 +581,11 @@
     {
       "name": "Jaume Munar",
       "tour": "ATP",
-      "matchesWithStats": 298,
-      "holdPct": 75.2,
-      "breakPct": 24.9,
-      "firstServeWonPct": 68.9,
-      "returnPointsWonPct": 39.1
+      "matchesWithStats": 266,
+      "holdPct": 74.8,
+      "breakPct": 24.5,
+      "firstServeWonPct": 68.6,
+      "returnPointsWonPct": 39.0
     },
     {
       "name": "Benoit Paire",
@@ -617,8 +617,8 @@
     {
       "name": "Laslo Djere",
       "tour": "ATP",
-      "matchesWithStats": 288,
-      "holdPct": 78.7,
+      "matchesWithStats": 277,
+      "holdPct": 78.8,
       "breakPct": 21.2,
       "firstServeWonPct": 71.0,
       "returnPointsWonPct": 36.4
@@ -653,11 +653,11 @@
     {
       "name": "Michael Mmoh",
       "tour": "ATP",
-      "matchesWithStats": 61,
-      "holdPct": 76.7,
-      "breakPct": 20.7,
-      "firstServeWonPct": 69.1,
-      "returnPointsWonPct": 36.3
+      "matchesWithStats": 58,
+      "holdPct": 76.4,
+      "breakPct": 21.0,
+      "firstServeWonPct": 68.8,
+      "returnPointsWonPct": 36.4
     },
     {
       "name": "Ramkumar Ramanathan",
@@ -716,11 +716,11 @@
     {
       "name": "Hubert Hurkacz",
       "tour": "ATP",
-      "matchesWithStats": 390,
-      "holdPct": 87.0,
-      "breakPct": 17.3,
-      "firstServeWonPct": 77.2,
-      "returnPointsWonPct": 34.8
+      "matchesWithStats": 368,
+      "holdPct": 86.9,
+      "breakPct": 17.4,
+      "firstServeWonPct": 77.1,
+      "returnPointsWonPct": 34.9
     },
     {
       "name": "Antoine Hoang",
@@ -734,19 +734,19 @@
     {
       "name": "Thiago Monteiro",
       "tour": "ATP",
-      "matchesWithStats": 158,
-      "holdPct": 81.3,
-      "breakPct": 15.6,
-      "firstServeWonPct": 72.4,
-      "returnPointsWonPct": 33.1
+      "matchesWithStats": 155,
+      "holdPct": 81.5,
+      "breakPct": 15.8,
+      "firstServeWonPct": 72.5,
+      "returnPointsWonPct": 33.2
     },
     {
       "name": "Roberto Carballes Baena",
       "tour": "ATP",
-      "matchesWithStats": 239,
-      "holdPct": 73.1,
-      "breakPct": 23.2,
-      "firstServeWonPct": 66.3,
+      "matchesWithStats": 232,
+      "holdPct": 73.0,
+      "breakPct": 23.4,
+      "firstServeWonPct": 66.2,
       "returnPointsWonPct": 37.9
     },
     {
@@ -797,27 +797,27 @@
     {
       "name": "Cameron Norrie",
       "tour": "ATP",
-      "matchesWithStats": 429,
-      "holdPct": 80.2,
-      "breakPct": 23.6,
+      "matchesWithStats": 399,
+      "holdPct": 80.1,
+      "breakPct": 23.8,
       "firstServeWonPct": 70.4,
-      "returnPointsWonPct": 37.7
+      "returnPointsWonPct": 37.8
     },
     {
       "name": "Pablo Carreno Busta",
       "tour": "ATP",
-      "matchesWithStats": 257,
-      "holdPct": 81.1,
-      "breakPct": 22.7,
-      "firstServeWonPct": 70.2,
-      "returnPointsWonPct": 37.1
+      "matchesWithStats": 244,
+      "holdPct": 81.4,
+      "breakPct": 22.9,
+      "firstServeWonPct": 70.3,
+      "returnPointsWonPct": 37.2
     },
     {
       "name": "Fabio Fognini",
       "tour": "ATP",
-      "matchesWithStats": 211,
-      "holdPct": 72.2,
-      "breakPct": 23.9,
+      "matchesWithStats": 208,
+      "holdPct": 72.3,
+      "breakPct": 24.0,
       "firstServeWonPct": 67.8,
       "returnPointsWonPct": 37.7
     },
@@ -860,10 +860,10 @@
     {
       "name": "Denis Shapovalov",
       "tour": "ATP",
-      "matchesWithStats": 362,
-      "holdPct": 83.0,
-      "breakPct": 20.7,
-      "firstServeWonPct": 75.4,
+      "matchesWithStats": 347,
+      "holdPct": 83.3,
+      "breakPct": 20.6,
+      "firstServeWonPct": 75.6,
       "returnPointsWonPct": 36.2
     },
     {
@@ -876,13 +876,13 @@
       "returnPointsWonPct": 32.4
     },
     {
-      "name": "Mackenzie McDonald",
+      "name": "Mackenzie Mcdonald",
       "tour": "ATP",
-      "matchesWithStats": 11,
-      "holdPct": 79.9,
-      "breakPct": 17.2,
-      "firstServeWonPct": 69.0,
-      "returnPointsWonPct": 33.4
+      "matchesWithStats": 234,
+      "holdPct": 76.6,
+      "breakPct": 22.1,
+      "firstServeWonPct": 68.5,
+      "returnPointsWonPct": 37.1
     },
     {
       "name": "Pablo Cuevas",
@@ -914,11 +914,11 @@
     {
       "name": "Stefanos Tsitsipas",
       "tour": "ATP",
-      "matchesWithStats": 493,
-      "holdPct": 86.8,
-      "breakPct": 21.0,
+      "matchesWithStats": 472,
+      "holdPct": 86.9,
+      "breakPct": 20.9,
       "firstServeWonPct": 76.3,
-      "returnPointsWonPct": 36.1
+      "returnPointsWonPct": 36.0
     },
     {
       "name": "Guido Andreozzi",
@@ -950,10 +950,10 @@
     {
       "name": "Reilly Opelka",
       "tour": "ATP",
-      "matchesWithStats": 248,
+      "matchesWithStats": 226,
       "holdPct": 89.9,
-      "breakPct": 9.5,
-      "firstServeWonPct": 79.4,
+      "breakPct": 9.6,
+      "firstServeWonPct": 79.5,
       "returnPointsWonPct": 28.2
     },
     {
@@ -977,11 +977,11 @@
     {
       "name": "Frances Tiafoe",
       "tour": "ATP",
-      "matchesWithStats": 394,
-      "holdPct": 81.9,
-      "breakPct": 20.0,
-      "firstServeWonPct": 73.4,
-      "returnPointsWonPct": 35.9
+      "matchesWithStats": 377,
+      "holdPct": 82.0,
+      "breakPct": 20.1,
+      "firstServeWonPct": 73.3,
+      "returnPointsWonPct": 36.0
     },
     {
       "name": "Rafael Nadal",
@@ -1004,29 +1004,29 @@
     {
       "name": "Alexander Zverev",
       "tour": "ATP",
-      "matchesWithStats": 528,
+      "matchesWithStats": 500,
       "holdPct": 85.4,
       "breakPct": 24.5,
-      "firstServeWonPct": 75.2,
+      "firstServeWonPct": 75.3,
       "returnPointsWonPct": 38.4
     },
     {
       "name": "Marin Cilic",
       "tour": "ATP",
-      "matchesWithStats": 237,
-      "holdPct": 83.3,
-      "breakPct": 18.9,
+      "matchesWithStats": 229,
+      "holdPct": 83.4,
+      "breakPct": 19.4,
       "firstServeWonPct": 77.5,
-      "returnPointsWonPct": 35.7
+      "returnPointsWonPct": 36.0
     },
     {
       "name": "Borna Coric",
       "tour": "ATP",
-      "matchesWithStats": 198,
-      "holdPct": 81.1,
-      "breakPct": 17.8,
+      "matchesWithStats": 193,
+      "holdPct": 81.2,
+      "breakPct": 18.0,
       "firstServeWonPct": 73.1,
-      "returnPointsWonPct": 35.0
+      "returnPointsWonPct": 35.1
     },
     {
       "name": "Filip Krajinovic",
@@ -1040,11 +1040,11 @@
     {
       "name": "Gael Monfils",
       "tour": "ATP",
-      "matchesWithStats": 263,
-      "holdPct": 81.3,
-      "breakPct": 22.9,
+      "matchesWithStats": 249,
+      "holdPct": 81.4,
+      "breakPct": 23.1,
       "firstServeWonPct": 73.6,
-      "returnPointsWonPct": 37.5
+      "returnPointsWonPct": 37.6
     },
     {
       "name": "Mitchell Krueger",
@@ -1058,19 +1058,19 @@
     {
       "name": "Daniel Evans",
       "tour": "ATP",
-      "matchesWithStats": 264,
+      "matchesWithStats": 262,
       "holdPct": 77.5,
       "breakPct": 22.4,
-      "firstServeWonPct": 70.5,
+      "firstServeWonPct": 70.6,
       "returnPointsWonPct": 37.3
     },
     {
       "name": "Kamil Majchrzak",
       "tour": "ATP",
-      "matchesWithStats": 111,
-      "holdPct": 79.2,
-      "breakPct": 19.3,
-      "firstServeWonPct": 71.8,
+      "matchesWithStats": 96,
+      "holdPct": 79.0,
+      "breakPct": 19.0,
+      "firstServeWonPct": 71.4,
       "returnPointsWonPct": 35.9
     },
     {
@@ -1085,10 +1085,10 @@
     {
       "name": "Lloyd Harris",
       "tour": "ATP",
-      "matchesWithStats": 145,
-      "holdPct": 81.9,
-      "breakPct": 16.5,
-      "firstServeWonPct": 74.8,
+      "matchesWithStats": 143,
+      "holdPct": 82.0,
+      "breakPct": 16.2,
+      "firstServeWonPct": 74.9,
       "returnPointsWonPct": 33.5
     },
     {
@@ -1103,11 +1103,11 @@
     {
       "name": "Christopher Eubanks",
       "tour": "ATP",
-      "matchesWithStats": 105,
+      "matchesWithStats": 104,
       "holdPct": 84.7,
-      "breakPct": 11.5,
-      "firstServeWonPct": 73.7,
-      "returnPointsWonPct": 30.4
+      "breakPct": 11.6,
+      "firstServeWonPct": 73.6,
+      "returnPointsWonPct": 30.5
     },
     {
       "name": "Stefano Travaglia",
@@ -1211,11 +1211,11 @@
     {
       "name": "Bernard Tomic",
       "tour": "ATP",
-      "matchesWithStats": 30,
-      "holdPct": 72.9,
-      "breakPct": 14.2,
-      "firstServeWonPct": 68.5,
-      "returnPointsWonPct": 31.6
+      "matchesWithStats": 28,
+      "holdPct": 72.8,
+      "breakPct": 13.7,
+      "firstServeWonPct": 68.2,
+      "returnPointsWonPct": 31.4
     },
     {
       "name": "Janko Tipsarevic",
@@ -1229,7 +1229,7 @@
     {
       "name": "Cristian Garin",
       "tour": "ATP",
-      "matchesWithStats": 243,
+      "matchesWithStats": 241,
       "holdPct": 76.2,
       "breakPct": 23.7,
       "firstServeWonPct": 69.6,
@@ -1238,9 +1238,9 @@
     {
       "name": "Mikhail Kukushkin",
       "tour": "ATP",
-      "matchesWithStats": 100,
-      "holdPct": 74.2,
-      "breakPct": 19.7,
+      "matchesWithStats": 99,
+      "holdPct": 74.1,
+      "breakPct": 19.8,
       "firstServeWonPct": 65.1,
       "returnPointsWonPct": 35.4
     },
@@ -1283,11 +1283,11 @@
     {
       "name": "Nerman Fatic",
       "tour": "ATP",
-      "matchesWithStats": 4,
-      "holdPct": 71.1,
-      "breakPct": 21.7,
-      "firstServeWonPct": 63.0,
-      "returnPointsWonPct": 34.5
+      "matchesWithStats": 3,
+      "holdPct": 67.6,
+      "breakPct": 25.7,
+      "firstServeWonPct": 62.3,
+      "returnPointsWonPct": 37.7
     },
     {
       "name": "Jurij Rodionov",
@@ -1355,11 +1355,11 @@
     {
       "name": "Tallon Griekspoor",
       "tour": "ATP",
-      "matchesWithStats": 275,
-      "holdPct": 83.9,
-      "breakPct": 14.7,
-      "firstServeWonPct": 74.3,
-      "returnPointsWonPct": 32.6
+      "matchesWithStats": 252,
+      "holdPct": 84.0,
+      "breakPct": 14.6,
+      "firstServeWonPct": 74.4,
+      "returnPointsWonPct": 32.7
     },
     {
       "name": "Lukas Rosol",
@@ -1373,20 +1373,20 @@
     {
       "name": "Jiri Lehecka",
       "tour": "ATP",
-      "matchesWithStats": 247,
-      "holdPct": 82.7,
-      "breakPct": 19.4,
+      "matchesWithStats": 223,
+      "holdPct": 82.6,
+      "breakPct": 19.0,
       "firstServeWonPct": 73.2,
-      "returnPointsWonPct": 35.4
+      "returnPointsWonPct": 35.2
     },
     {
       "name": "Zsombor Piros",
       "tour": "ATP",
-      "matchesWithStats": 10,
-      "holdPct": 60.8,
-      "breakPct": 29.3,
-      "firstServeWonPct": 60.2,
-      "returnPointsWonPct": 39.0
+      "matchesWithStats": 9,
+      "holdPct": 63.6,
+      "breakPct": 28.7,
+      "firstServeWonPct": 60.9,
+      "returnPointsWonPct": 38.9
     },
     {
       "name": "Peter Nagy",
@@ -1427,20 +1427,20 @@
     {
       "name": "Yibing Wu",
       "tour": "ATP",
-      "matchesWithStats": 59,
-      "holdPct": 77.3,
+      "matchesWithStats": 56,
+      "holdPct": 77.7,
       "breakPct": 18.2,
-      "firstServeWonPct": 67.9,
-      "returnPointsWonPct": 34.8
+      "firstServeWonPct": 68.2,
+      "returnPointsWonPct": 34.9
     },
     {
       "name": "Alexander Bublik",
       "tour": "ATP",
-      "matchesWithStats": 387,
-      "holdPct": 81.9,
-      "breakPct": 17.9,
+      "matchesWithStats": 363,
+      "holdPct": 81.8,
+      "breakPct": 18.1,
       "firstServeWonPct": 77.3,
-      "returnPointsWonPct": 34.7
+      "returnPointsWonPct": 34.8
     },
     {
       "name": "Sanjar Fayziev",
@@ -1472,20 +1472,20 @@
     {
       "name": "Elias Ymer",
       "tour": "ATP",
-      "matchesWithStats": 70,
-      "holdPct": 71.2,
-      "breakPct": 22.4,
-      "firstServeWonPct": 69.2,
-      "returnPointsWonPct": 37.1
+      "matchesWithStats": 69,
+      "holdPct": 71.4,
+      "breakPct": 22.3,
+      "firstServeWonPct": 69.3,
+      "returnPointsWonPct": 37.0
     },
     {
       "name": "Daniel Elahi Galan",
       "tour": "ATP",
-      "matchesWithStats": 122,
+      "matchesWithStats": 121,
       "holdPct": 73.8,
-      "breakPct": 20.6,
-      "firstServeWonPct": 68.1,
-      "returnPointsWonPct": 36.5
+      "breakPct": 20.7,
+      "firstServeWonPct": 68.0,
+      "returnPointsWonPct": 36.6
     },
     {
       "name": "Mikael Ymer",
@@ -1535,8 +1535,8 @@
     {
       "name": "Lorenzo Sonego",
       "tour": "ATP",
-      "matchesWithStats": 366,
-      "holdPct": 82.4,
+      "matchesWithStats": 345,
+      "holdPct": 82.5,
       "breakPct": 17.6,
       "firstServeWonPct": 72.6,
       "returnPointsWonPct": 34.6
@@ -1562,20 +1562,20 @@
     {
       "name": "Thiago Seyboth Wild",
       "tour": "ATP",
-      "matchesWithStats": 98,
-      "holdPct": 77.4,
-      "breakPct": 18.3,
+      "matchesWithStats": 92,
+      "holdPct": 77.7,
+      "breakPct": 18.4,
       "firstServeWonPct": 69.3,
       "returnPointsWonPct": 35.1
     },
     {
       "name": "Hugo Dellien",
       "tour": "ATP",
-      "matchesWithStats": 97,
-      "holdPct": 69.2,
+      "matchesWithStats": 94,
+      "holdPct": 69.3,
       "breakPct": 20.8,
-      "firstServeWonPct": 63.0,
-      "returnPointsWonPct": 36.9
+      "firstServeWonPct": 63.1,
+      "returnPointsWonPct": 36.8
     },
     {
       "name": "Andrej Martin",
@@ -1688,11 +1688,11 @@
     {
       "name": "Francisco Cerundolo",
       "tour": "ATP",
-      "matchesWithStats": 303,
-      "holdPct": 76.3,
-      "breakPct": 28.0,
-      "firstServeWonPct": 67.7,
-      "returnPointsWonPct": 40.0
+      "matchesWithStats": 277,
+      "holdPct": 76.1,
+      "breakPct": 27.9,
+      "firstServeWonPct": 67.6,
+      "returnPointsWonPct": 39.9
     },
     {
       "name": "Brayden Schnur",
@@ -1796,11 +1796,11 @@
     {
       "name": "Yosuke Watanuki",
       "tour": "ATP",
-      "matchesWithStats": 46,
-      "holdPct": 81.9,
+      "matchesWithStats": 42,
+      "holdPct": 81.8,
       "breakPct": 16.6,
-      "firstServeWonPct": 76.6,
-      "returnPointsWonPct": 34.9
+      "firstServeWonPct": 76.5,
+      "returnPointsWonPct": 34.8
     },
     {
       "name": "Gregoire Barrere",
@@ -1814,11 +1814,11 @@
     {
       "name": "Constant Lestienne",
       "tour": "ATP",
-      "matchesWithStats": 58,
-      "holdPct": 66.6,
-      "breakPct": 21.4,
+      "matchesWithStats": 57,
+      "holdPct": 67.0,
+      "breakPct": 21.6,
       "firstServeWonPct": 66.0,
-      "returnPointsWonPct": 36.4
+      "returnPointsWonPct": 36.5
     },
     {
       "name": "Egor Gerasimov",
@@ -1832,11 +1832,11 @@
     {
       "name": "Casper Ruud",
       "tour": "ATP",
-      "matchesWithStats": 458,
-      "holdPct": 84.2,
-      "breakPct": 23.7,
-      "firstServeWonPct": 72.7,
-      "returnPointsWonPct": 37.6
+      "matchesWithStats": 437,
+      "holdPct": 84.1,
+      "breakPct": 23.8,
+      "firstServeWonPct": 72.6,
+      "returnPointsWonPct": 37.7
     },
     {
       "name": "Gerardo Lopez Villasenor",
@@ -1859,20 +1859,20 @@
     {
       "name": "Emilio Nava",
       "tour": "ATP",
-      "matchesWithStats": 47,
-      "holdPct": 77.3,
-      "breakPct": 12.5,
-      "firstServeWonPct": 71.5,
-      "returnPointsWonPct": 32.0
+      "matchesWithStats": 45,
+      "holdPct": 77.0,
+      "breakPct": 13.0,
+      "firstServeWonPct": 71.3,
+      "returnPointsWonPct": 31.9
     },
     {
       "name": "Corentin Moutet",
       "tour": "ATP",
-      "matchesWithStats": 232,
-      "holdPct": 74.3,
-      "breakPct": 23.7,
-      "firstServeWonPct": 66.0,
-      "returnPointsWonPct": 38.3
+      "matchesWithStats": 212,
+      "holdPct": 73.8,
+      "breakPct": 23.6,
+      "firstServeWonPct": 65.7,
+      "returnPointsWonPct": 38.2
     },
     {
       "name": "Mohamed Safwat",
@@ -1895,11 +1895,11 @@
     {
       "name": "Pedro Martinez",
       "tour": "ATP",
-      "matchesWithStats": 223,
-      "holdPct": 71.2,
-      "breakPct": 22.8,
-      "firstServeWonPct": 64.7,
-      "returnPointsWonPct": 37.6
+      "matchesWithStats": 207,
+      "holdPct": 71.4,
+      "breakPct": 23.2,
+      "firstServeWonPct": 64.6,
+      "returnPointsWonPct": 37.9
     },
     {
       "name": "Pedro Sakamoto",
@@ -1913,11 +1913,11 @@
     {
       "name": "Marcos Giron",
       "tour": "ATP",
-      "matchesWithStats": 312,
+      "matchesWithStats": 285,
       "holdPct": 79.1,
-      "breakPct": 19.3,
-      "firstServeWonPct": 71.2,
-      "returnPointsWonPct": 35.7
+      "breakPct": 19.1,
+      "firstServeWonPct": 71.5,
+      "returnPointsWonPct": 35.5
     },
     {
       "name": "Donald Young",
@@ -1976,11 +1976,11 @@
     {
       "name": "Alejandro Davidovich Fokina",
       "tour": "ATP",
-      "matchesWithStats": 342,
-      "holdPct": 76.4,
+      "matchesWithStats": 321,
+      "holdPct": 76.3,
       "breakPct": 25.3,
       "firstServeWonPct": 66.9,
-      "returnPointsWonPct": 38.6
+      "returnPointsWonPct": 38.7
     },
     {
       "name": "Lucas Catarina",
@@ -2003,11 +2003,11 @@
     {
       "name": "Jannik Sinner",
       "tour": "ATP",
-      "matchesWithStats": 468,
-      "holdPct": 87.0,
-      "breakPct": 28.8,
-      "firstServeWonPct": 75.9,
-      "returnPointsWonPct": 40.9
+      "matchesWithStats": 441,
+      "holdPct": 86.8,
+      "breakPct": 28.6,
+      "firstServeWonPct": 75.8,
+      "returnPointsWonPct": 40.7
     },
     {
       "name": "Mate Valkusz",
@@ -2120,19 +2120,19 @@
     {
       "name": "Tommy Paul",
       "tour": "ATP",
-      "matchesWithStats": 373,
-      "holdPct": 80.8,
-      "breakPct": 25.3,
+      "matchesWithStats": 351,
+      "holdPct": 80.7,
+      "breakPct": 25.4,
       "firstServeWonPct": 71.5,
       "returnPointsWonPct": 38.8
     },
     {
       "name": "Alexandre Muller",
       "tour": "ATP",
-      "matchesWithStats": 158,
-      "holdPct": 74.0,
-      "breakPct": 20.0,
-      "firstServeWonPct": 66.8,
+      "matchesWithStats": 128,
+      "holdPct": 73.3,
+      "breakPct": 20.1,
+      "firstServeWonPct": 66.6,
       "returnPointsWonPct": 36.1
     },
     {
@@ -2147,11 +2147,11 @@
     {
       "name": "Quentin Halys",
       "tour": "ATP",
-      "matchesWithStats": 145,
-      "holdPct": 83.2,
-      "breakPct": 14.3,
-      "firstServeWonPct": 77.8,
-      "returnPointsWonPct": 32.7
+      "matchesWithStats": 126,
+      "holdPct": 83.9,
+      "breakPct": 14.2,
+      "firstServeWonPct": 78.2,
+      "returnPointsWonPct": 32.6
     },
     {
       "name": "Alexey Vatutin",
@@ -2165,11 +2165,11 @@
     {
       "name": "Yannick Hanfmann",
       "tour": "ATP",
-      "matchesWithStats": 183,
-      "holdPct": 79.3,
-      "breakPct": 20.0,
-      "firstServeWonPct": 69.5,
-      "returnPointsWonPct": 36.5
+      "matchesWithStats": 174,
+      "holdPct": 78.9,
+      "breakPct": 19.8,
+      "firstServeWonPct": 69.3,
+      "returnPointsWonPct": 36.4
     },
     {
       "name": "Thiemo De Bakker",
@@ -2399,29 +2399,29 @@
     {
       "name": "Sumit Nagal",
       "tour": "ATP",
-      "matchesWithStats": 43,
-      "holdPct": 65.8,
+      "matchesWithStats": 42,
+      "holdPct": 65.1,
       "breakPct": 18.6,
-      "firstServeWonPct": 61.2,
-      "returnPointsWonPct": 35.8
+      "firstServeWonPct": 60.8,
+      "returnPointsWonPct": 35.7
     },
     {
       "name": "Daniel Altmaier",
       "tour": "ATP",
-      "matchesWithStats": 208,
-      "holdPct": 76.8,
-      "breakPct": 17.4,
-      "firstServeWonPct": 70.3,
-      "returnPointsWonPct": 34.4
+      "matchesWithStats": 189,
+      "holdPct": 76.5,
+      "breakPct": 17.8,
+      "firstServeWonPct": 70.1,
+      "returnPointsWonPct": 34.7
     },
     {
       "name": "Sebastian Ofner",
       "tour": "ATP",
-      "matchesWithStats": 121,
-      "holdPct": 78.6,
-      "breakPct": 17.6,
-      "firstServeWonPct": 73.9,
-      "returnPointsWonPct": 34.4
+      "matchesWithStats": 107,
+      "holdPct": 78.0,
+      "breakPct": 17.8,
+      "firstServeWonPct": 73.5,
+      "returnPointsWonPct": 34.6
     },
     {
       "name": "Lucas Miedler",
@@ -2489,19 +2489,19 @@
     {
       "name": "Zachary Svajda",
       "tour": "ATP",
-      "matchesWithStats": 39,
-      "holdPct": 72.7,
-      "breakPct": 18.4,
-      "firstServeWonPct": 68.5,
-      "returnPointsWonPct": 34.5
+      "matchesWithStats": 37,
+      "holdPct": 73.1,
+      "breakPct": 17.6,
+      "firstServeWonPct": 68.6,
+      "returnPointsWonPct": 34.3
     },
     {
       "name": "Jenson Brooksby",
       "tour": "ATP",
-      "matchesWithStats": 137,
+      "matchesWithStats": 128,
       "holdPct": 75.9,
-      "breakPct": 24.8,
-      "firstServeWonPct": 67.6,
+      "breakPct": 24.9,
+      "firstServeWonPct": 67.5,
       "returnPointsWonPct": 38.6
     },
     {
@@ -2570,11 +2570,11 @@
     {
       "name": "Zhizhen Zhang",
       "tour": "ATP",
-      "matchesWithStats": 141,
-      "holdPct": 81.5,
-      "breakPct": 15.9,
-      "firstServeWonPct": 72.5,
-      "returnPointsWonPct": 33.0
+      "matchesWithStats": 132,
+      "holdPct": 81.4,
+      "breakPct": 16.1,
+      "firstServeWonPct": 72.3,
+      "returnPointsWonPct": 33.2
     },
     {
       "name": "Go Soeda",
@@ -2633,20 +2633,20 @@
     {
       "name": "Borna Gojo",
       "tour": "ATP",
-      "matchesWithStats": 43,
-      "holdPct": 82.1,
-      "breakPct": 15.8,
-      "firstServeWonPct": 74.3,
-      "returnPointsWonPct": 33.6
+      "matchesWithStats": 41,
+      "holdPct": 82.5,
+      "breakPct": 15.7,
+      "firstServeWonPct": 74.5,
+      "returnPointsWonPct": 33.5
     },
     {
-      "name": "Botic van de Zandschulp",
+      "name": "Botic Van De Zandschulp",
       "tour": "ATP",
-      "matchesWithStats": 15,
-      "holdPct": 77.1,
-      "breakPct": 23.3,
-      "firstServeWonPct": 72.0,
-      "returnPointsWonPct": 38.0
+      "matchesWithStats": 239,
+      "holdPct": 77.6,
+      "breakPct": 22.0,
+      "firstServeWonPct": 71.7,
+      "returnPointsWonPct": 37.5
     },
     {
       "name": "Nikola Mektic",
@@ -2696,11 +2696,11 @@
     {
       "name": "Viktor Durasovic",
       "tour": "ATP",
-      "matchesWithStats": 17,
-      "holdPct": 67.1,
-      "breakPct": 14.5,
-      "firstServeWonPct": 68.0,
-      "returnPointsWonPct": 30.1
+      "matchesWithStats": 15,
+      "holdPct": 67.9,
+      "breakPct": 13.7,
+      "firstServeWonPct": 67.6,
+      "returnPointsWonPct": 29.6
     },
     {
       "name": "Kacper Zuk",
@@ -2759,20 +2759,20 @@
     {
       "name": "Hugo Gaston",
       "tour": "ATP",
-      "matchesWithStats": 137,
-      "holdPct": 69.7,
-      "breakPct": 22.5,
-      "firstServeWonPct": 65.6,
-      "returnPointsWonPct": 37.1
+      "matchesWithStats": 125,
+      "holdPct": 69.3,
+      "breakPct": 22.7,
+      "firstServeWonPct": 65.3,
+      "returnPointsWonPct": 37.3
     },
     {
       "name": "Alejandro Tabilo",
       "tour": "ATP",
-      "matchesWithStats": 181,
-      "holdPct": 80.9,
-      "breakPct": 19.5,
-      "firstServeWonPct": 72.1,
-      "returnPointsWonPct": 35.7
+      "matchesWithStats": 166,
+      "holdPct": 80.8,
+      "breakPct": 20.0,
+      "firstServeWonPct": 72.2,
+      "returnPointsWonPct": 35.9
     },
     {
       "name": "Christopher Oconnell",
@@ -2822,11 +2822,11 @@
     {
       "name": "Carlos Taberner",
       "tour": "ATP",
-      "matchesWithStats": 51,
-      "holdPct": 71.3,
-      "breakPct": 25.6,
-      "firstServeWonPct": 67.2,
-      "returnPointsWonPct": 38.1
+      "matchesWithStats": 44,
+      "holdPct": 70.6,
+      "breakPct": 24.9,
+      "firstServeWonPct": 66.7,
+      "returnPointsWonPct": 37.6
     },
     {
       "name": "Juan Pablo Ficovich",
@@ -2840,8 +2840,8 @@
     {
       "name": "Federico Coria",
       "tour": "ATP",
-      "matchesWithStats": 133,
-      "holdPct": 67.2,
+      "matchesWithStats": 132,
+      "holdPct": 67.3,
       "breakPct": 26.5,
       "firstServeWonPct": 63.0,
       "returnPointsWonPct": 39.4
@@ -2849,7 +2849,7 @@
     {
       "name": "Emil Ruusuvuori",
       "tour": "ATP",
-      "matchesWithStats": 205,
+      "matchesWithStats": 202,
       "holdPct": 77.9,
       "breakPct": 22.5,
       "firstServeWonPct": 70.0,
@@ -2912,11 +2912,11 @@
     {
       "name": "Brandon Nakashima",
       "tour": "ATP",
-      "matchesWithStats": 283,
-      "holdPct": 85.1,
-      "breakPct": 17.4,
-      "firstServeWonPct": 75.0,
-      "returnPointsWonPct": 34.9
+      "matchesWithStats": 260,
+      "holdPct": 85.4,
+      "breakPct": 17.2,
+      "firstServeWonPct": 74.9,
+      "returnPointsWonPct": 34.8
     },
     {
       "name": "Emilio Gomez",
@@ -2939,19 +2939,19 @@
     {
       "name": "Harold Mayot",
       "tour": "ATP",
-      "matchesWithStats": 28,
+      "matchesWithStats": 25,
       "holdPct": 77.2,
-      "breakPct": 16.5,
-      "firstServeWonPct": 68.4,
-      "returnPointsWonPct": 34.8
+      "breakPct": 15.9,
+      "firstServeWonPct": 68.3,
+      "returnPointsWonPct": 34.3
     },
     {
       "name": "Carlos Alcaraz",
       "tour": "ATP",
-      "matchesWithStats": 393,
-      "holdPct": 85.2,
-      "breakPct": 31.1,
-      "firstServeWonPct": 72.4,
+      "matchesWithStats": 368,
+      "holdPct": 84.9,
+      "breakPct": 31.0,
+      "firstServeWonPct": 72.3,
       "returnPointsWonPct": 41.7
     },
     {
@@ -2966,10 +2966,10 @@
     {
       "name": "Lorenzo Musetti",
       "tour": "ATP",
-      "matchesWithStats": 365,
-      "holdPct": 80.0,
-      "breakPct": 23.8,
-      "firstServeWonPct": 70.0,
+      "matchesWithStats": 325,
+      "holdPct": 79.4,
+      "breakPct": 23.7,
+      "firstServeWonPct": 69.9,
       "returnPointsWonPct": 38.0
     },
     {
@@ -2984,11 +2984,11 @@
     {
       "name": "Tomas Barrios Vera",
       "tour": "ATP",
-      "matchesWithStats": 35,
-      "holdPct": 67.4,
-      "breakPct": 14.5,
+      "matchesWithStats": 32,
+      "holdPct": 67.6,
+      "breakPct": 14.6,
       "firstServeWonPct": 63.6,
-      "returnPointsWonPct": 34.0
+      "returnPointsWonPct": 33.6
     },
     {
       "name": "Juan Pablo Varillas",
@@ -3137,11 +3137,11 @@
     {
       "name": "Otto Virtanen",
       "tour": "ATP",
-      "matchesWithStats": 40,
-      "holdPct": 77.6,
-      "breakPct": 17.6,
-      "firstServeWonPct": 71.6,
-      "returnPointsWonPct": 34.6
+      "matchesWithStats": 36,
+      "holdPct": 78.0,
+      "breakPct": 17.2,
+      "firstServeWonPct": 71.8,
+      "returnPointsWonPct": 34.3
     },
     {
       "name": "Harri Heliovaara",
@@ -3227,11 +3227,11 @@
     {
       "name": "Daniel Cukierman",
       "tour": "ATP",
-      "matchesWithStats": 4,
-      "holdPct": 63.2,
-      "breakPct": 20.0,
-      "firstServeWonPct": 61.1,
-      "returnPointsWonPct": 36.2
+      "matchesWithStats": 3,
+      "holdPct": 67.7,
+      "breakPct": 25.0,
+      "firstServeWonPct": 63.2,
+      "returnPointsWonPct": 39.2
     },
     {
       "name": "Ben Patael",
@@ -3326,11 +3326,11 @@
     {
       "name": "Sebastian Korda",
       "tour": "ATP",
-      "matchesWithStats": 285,
-      "holdPct": 82.3,
-      "breakPct": 22.6,
-      "firstServeWonPct": 73.1,
-      "returnPointsWonPct": 37.5
+      "matchesWithStats": 263,
+      "holdPct": 82.2,
+      "breakPct": 22.9,
+      "firstServeWonPct": 72.9,
+      "returnPointsWonPct": 37.6
     },
     {
       "name": "Maxime Cressy",
@@ -3371,38 +3371,38 @@
     {
       "name": "Arthur Rinderknech",
       "tour": "ATP",
-      "matchesWithStats": 258,
-      "holdPct": 84.2,
+      "matchesWithStats": 229,
+      "holdPct": 84.0,
       "breakPct": 15.1,
-      "firstServeWonPct": 75.5,
+      "firstServeWonPct": 75.6,
       "returnPointsWonPct": 32.8
     },
     {
       "name": "Tomas Machac",
       "tour": "ATP",
-      "matchesWithStats": 173,
-      "holdPct": 80.4,
-      "breakPct": 22.9,
-      "firstServeWonPct": 70.2,
+      "matchesWithStats": 150,
+      "holdPct": 79.8,
+      "breakPct": 22.8,
+      "firstServeWonPct": 69.8,
       "returnPointsWonPct": 37.0
     },
     {
       "name": "Benjamin Bonzi",
       "tour": "ATP",
-      "matchesWithStats": 154,
-      "holdPct": 80.5,
-      "breakPct": 18.6,
-      "firstServeWonPct": 71.3,
-      "returnPointsWonPct": 35.5
+      "matchesWithStats": 138,
+      "holdPct": 80.4,
+      "breakPct": 18.9,
+      "firstServeWonPct": 71.7,
+      "returnPointsWonPct": 35.7
     },
     {
       "name": "Aleksandar Vukic",
       "tour": "ATP",
-      "matchesWithStats": 162,
-      "holdPct": 79.4,
+      "matchesWithStats": 144,
+      "holdPct": 79.5,
       "breakPct": 14.9,
       "firstServeWonPct": 73.2,
-      "returnPointsWonPct": 33.1
+      "returnPointsWonPct": 33.0
     },
     {
       "name": "Andrea Pellegrino",
@@ -3416,20 +3416,20 @@
     {
       "name": "Giulio Zeppieri",
       "tour": "ATP",
-      "matchesWithStats": 29,
-      "holdPct": 76.7,
-      "breakPct": 16.8,
-      "firstServeWonPct": 69.9,
-      "returnPointsWonPct": 34.0
+      "matchesWithStats": 27,
+      "holdPct": 77.8,
+      "breakPct": 16.9,
+      "firstServeWonPct": 70.4,
+      "returnPointsWonPct": 34.1
     },
     {
       "name": "Roman Safiullin",
       "tour": "ATP",
-      "matchesWithStats": 142,
-      "holdPct": 79.7,
-      "breakPct": 20.5,
-      "firstServeWonPct": 72.6,
-      "returnPointsWonPct": 36.2
+      "matchesWithStats": 129,
+      "holdPct": 80.0,
+      "breakPct": 20.6,
+      "firstServeWonPct": 72.7,
+      "returnPointsWonPct": 36.4
     },
     {
       "name": "Aslan Karatsev",
@@ -3452,20 +3452,20 @@
     {
       "name": "Zizou Bergs",
       "tour": "ATP",
-      "matchesWithStats": 156,
-      "holdPct": 79.3,
-      "breakPct": 19.6,
-      "firstServeWonPct": 71.9,
-      "returnPointsWonPct": 36.3
+      "matchesWithStats": 128,
+      "holdPct": 79.4,
+      "breakPct": 19.0,
+      "firstServeWonPct": 71.8,
+      "returnPointsWonPct": 36.0
     },
     {
       "name": "Luca Nardi",
       "tour": "ATP",
-      "matchesWithStats": 66,
-      "holdPct": 71.3,
-      "breakPct": 16.4,
-      "firstServeWonPct": 67.4,
-      "returnPointsWonPct": 33.8
+      "matchesWithStats": 60,
+      "holdPct": 71.4,
+      "breakPct": 16.6,
+      "firstServeWonPct": 67.3,
+      "returnPointsWonPct": 34.0
     },
     {
       "name": "Timofey Skatov",
@@ -3488,11 +3488,11 @@
     {
       "name": "Vitaliy Sachko",
       "tour": "ATP",
-      "matchesWithStats": 17,
-      "holdPct": 74.0,
-      "breakPct": 13.9,
-      "firstServeWonPct": 67.4,
-      "returnPointsWonPct": 32.4
+      "matchesWithStats": 12,
+      "holdPct": 71.4,
+      "breakPct": 13.2,
+      "firstServeWonPct": 66.5,
+      "returnPointsWonPct": 32.6
     },
     {
       "name": "Jonas Forejtek",
@@ -3533,11 +3533,11 @@
     {
       "name": "Tomas Martin Etcheverry",
       "tour": "ATP",
-      "matchesWithStats": 244,
-      "holdPct": 80.4,
-      "breakPct": 19.9,
+      "matchesWithStats": 221,
+      "holdPct": 80.5,
+      "breakPct": 20.1,
       "firstServeWonPct": 71.1,
-      "returnPointsWonPct": 36.2
+      "returnPointsWonPct": 36.3
     },
     {
       "name": "Marsel Ilhan",
@@ -3551,11 +3551,11 @@
     {
       "name": "Hugo Grenier",
       "tour": "ATP",
-      "matchesWithStats": 27,
-      "holdPct": 73.1,
-      "breakPct": 17.5,
-      "firstServeWonPct": 69.7,
-      "returnPointsWonPct": 34.0
+      "matchesWithStats": 26,
+      "holdPct": 73.2,
+      "breakPct": 17.2,
+      "firstServeWonPct": 69.8,
+      "returnPointsWonPct": 33.8
     },
     {
       "name": "Alex Molcan",
@@ -3578,20 +3578,20 @@
     {
       "name": "Tristan Schoolkate",
       "tour": "ATP",
-      "matchesWithStats": 30,
-      "holdPct": 78.1,
-      "breakPct": 12.7,
-      "firstServeWonPct": 74.9,
-      "returnPointsWonPct": 32.5
+      "matchesWithStats": 24,
+      "holdPct": 78.4,
+      "breakPct": 13.1,
+      "firstServeWonPct": 75.6,
+      "returnPointsWonPct": 32.7
     },
     {
       "name": "Dane Sweeny",
       "tour": "ATP",
-      "matchesWithStats": 10,
-      "holdPct": 74.8,
-      "breakPct": 13.6,
-      "firstServeWonPct": 67.7,
-      "returnPointsWonPct": 30.7
+      "matchesWithStats": 9,
+      "holdPct": 74.3,
+      "breakPct": 14.9,
+      "firstServeWonPct": 66.5,
+      "returnPointsWonPct": 31.6
     },
     {
       "name": "Thomas Fancutt",
@@ -3614,11 +3614,11 @@
     {
       "name": "Li Tu",
       "tour": "ATP",
-      "matchesWithStats": 15,
-      "holdPct": 73.3,
-      "breakPct": 11.9,
-      "firstServeWonPct": 70.6,
-      "returnPointsWonPct": 31.0
+      "matchesWithStats": 14,
+      "holdPct": 75.1,
+      "breakPct": 12.4,
+      "firstServeWonPct": 70.9,
+      "returnPointsWonPct": 31.1
     },
     {
       "name": "Harry Bourchier",
@@ -3632,11 +3632,11 @@
     {
       "name": "Juan Manuel Cerundolo",
       "tour": "ATP",
-      "matchesWithStats": 78,
-      "holdPct": 72.5,
-      "breakPct": 20.7,
-      "firstServeWonPct": 65.7,
-      "returnPointsWonPct": 36.9
+      "matchesWithStats": 73,
+      "holdPct": 71.5,
+      "breakPct": 21.5,
+      "firstServeWonPct": 65.2,
+      "returnPointsWonPct": 37.2
     },
     {
       "name": "Joao Menezes",
@@ -3668,29 +3668,29 @@
     {
       "name": "Shintaro Mochizuki",
       "tour": "ATP",
-      "matchesWithStats": 37,
-      "holdPct": 66.5,
-      "breakPct": 18.7,
-      "firstServeWonPct": 67.1,
-      "returnPointsWonPct": 36.1
+      "matchesWithStats": 32,
+      "holdPct": 67.2,
+      "breakPct": 17.9,
+      "firstServeWonPct": 67.0,
+      "returnPointsWonPct": 35.6
     },
     {
       "name": "Thiago Agustin Tirante",
       "tour": "ATP",
-      "matchesWithStats": 46,
-      "holdPct": 80.1,
-      "breakPct": 20.1,
-      "firstServeWonPct": 71.9,
-      "returnPointsWonPct": 35.9
+      "matchesWithStats": 44,
+      "holdPct": 80.2,
+      "breakPct": 19.9,
+      "firstServeWonPct": 71.8,
+      "returnPointsWonPct": 35.8
     },
     {
       "name": "Holger Rune",
       "tour": "ATP",
-      "matchesWithStats": 291,
+      "matchesWithStats": 271,
       "holdPct": 82.7,
-      "breakPct": 21.6,
+      "breakPct": 21.4,
       "firstServeWonPct": 72.4,
-      "returnPointsWonPct": 36.8
+      "returnPointsWonPct": 36.7
     },
     {
       "name": "Lukas Klein",
@@ -3749,11 +3749,11 @@
     {
       "name": "Sebastian Baez",
       "tour": "ATP",
-      "matchesWithStats": 263,
-      "holdPct": 73.2,
-      "breakPct": 26.9,
-      "firstServeWonPct": 63.8,
-      "returnPointsWonPct": 39.6
+      "matchesWithStats": 245,
+      "holdPct": 73.5,
+      "breakPct": 26.5,
+      "firstServeWonPct": 63.9,
+      "returnPointsWonPct": 39.4
     },
     {
       "name": "Gonzalo Lama",
@@ -3767,38 +3767,38 @@
     {
       "name": "Jack Draper",
       "tour": "ATP",
-      "matchesWithStats": 196,
-      "holdPct": 85.1,
-      "breakPct": 24.6,
+      "matchesWithStats": 177,
+      "holdPct": 84.7,
+      "breakPct": 24.0,
       "firstServeWonPct": 76.7,
-      "returnPointsWonPct": 37.9
+      "returnPointsWonPct": 37.6
     },
     {
       "name": "Nuno Borges",
       "tour": "ATP",
-      "matchesWithStats": 190,
-      "holdPct": 79.4,
-      "breakPct": 17.7,
-      "firstServeWonPct": 70.9,
-      "returnPointsWonPct": 35.3
+      "matchesWithStats": 163,
+      "holdPct": 79.0,
+      "breakPct": 18.1,
+      "firstServeWonPct": 70.7,
+      "returnPointsWonPct": 35.7
     },
     {
       "name": "Arthur Cazaux",
       "tour": "ATP",
-      "matchesWithStats": 74,
-      "holdPct": 82.6,
-      "breakPct": 15.8,
-      "firstServeWonPct": 74.9,
-      "returnPointsWonPct": 33.5
+      "matchesWithStats": 63,
+      "holdPct": 82.7,
+      "breakPct": 16.1,
+      "firstServeWonPct": 75.1,
+      "returnPointsWonPct": 33.6
     },
     {
       "name": "Dominic Stricker",
       "tour": "ATP",
-      "matchesWithStats": 59,
-      "holdPct": 81.1,
-      "breakPct": 14.4,
-      "firstServeWonPct": 76.4,
-      "returnPointsWonPct": 33.9
+      "matchesWithStats": 55,
+      "holdPct": 81.4,
+      "breakPct": 14.3,
+      "firstServeWonPct": 76.5,
+      "returnPointsWonPct": 34.0
     },
     {
       "name": "Raul Brancaccio",
@@ -3812,20 +3812,20 @@
     {
       "name": "Flavio Cobolli",
       "tour": "ATP",
-      "matchesWithStats": 190,
-      "holdPct": 77.8,
-      "breakPct": 21.7,
-      "firstServeWonPct": 70.3,
-      "returnPointsWonPct": 36.7
+      "matchesWithStats": 167,
+      "holdPct": 78.3,
+      "breakPct": 21.5,
+      "firstServeWonPct": 70.8,
+      "returnPointsWonPct": 36.6
     },
     {
       "name": "Hamad Medjedovic",
       "tour": "ATP",
-      "matchesWithStats": 100,
+      "matchesWithStats": 85,
       "holdPct": 82.2,
-      "breakPct": 17.0,
-      "firstServeWonPct": 73.0,
-      "returnPointsWonPct": 34.7
+      "breakPct": 17.3,
+      "firstServeWonPct": 72.9,
+      "returnPointsWonPct": 34.8
     },
     {
       "name": "Marko Topo",
@@ -3848,29 +3848,29 @@
     {
       "name": "Daniel Masur",
       "tour": "ATP",
-      "matchesWithStats": 2,
-      "holdPct": 74.3,
-      "breakPct": 5.7,
-      "firstServeWonPct": 66.4,
-      "returnPointsWonPct": 30.7
+      "matchesWithStats": 1,
+      "holdPct": 81.0,
+      "breakPct": 4.8,
+      "firstServeWonPct": 71.2,
+      "returnPointsWonPct": 30.5
     },
     {
       "name": "Leandro Riedi",
       "tour": "ATP",
-      "matchesWithStats": 21,
-      "holdPct": 75.4,
-      "breakPct": 19.5,
-      "firstServeWonPct": 68.7,
-      "returnPointsWonPct": 36.0
+      "matchesWithStats": 17,
+      "holdPct": 76.5,
+      "breakPct": 16.3,
+      "firstServeWonPct": 68.9,
+      "returnPointsWonPct": 34.1
     },
     {
       "name": "Vit Kopriva",
       "tour": "ATP",
-      "matchesWithStats": 75,
-      "holdPct": 71.8,
-      "breakPct": 23.6,
-      "firstServeWonPct": 67.7,
-      "returnPointsWonPct": 37.4
+      "matchesWithStats": 63,
+      "holdPct": 72.3,
+      "breakPct": 24.3,
+      "firstServeWonPct": 67.9,
+      "returnPointsWonPct": 37.7
     },
     {
       "name": "Johan Nikles",
@@ -4109,11 +4109,11 @@
     {
       "name": "Jerome Kym",
       "tour": "ATP",
-      "matchesWithStats": 11,
-      "holdPct": 87.8,
-      "breakPct": 12.5,
-      "firstServeWonPct": 74.8,
-      "returnPointsWonPct": 33.2
+      "matchesWithStats": 8,
+      "holdPct": 87.1,
+      "breakPct": 14.4,
+      "firstServeWonPct": 77.0,
+      "returnPointsWonPct": 33.1
     },
     {
       "name": "Siim Troost",
@@ -4136,11 +4136,11 @@
     {
       "name": "August Holmgren",
       "tour": "ATP",
-      "matchesWithStats": 10,
-      "holdPct": 86.4,
-      "breakPct": 12.8,
-      "firstServeWonPct": 79.4,
-      "returnPointsWonPct": 32.0
+      "matchesWithStats": 9,
+      "holdPct": 86.5,
+      "breakPct": 13.4,
+      "firstServeWonPct": 79.2,
+      "returnPointsWonPct": 32.3
     },
     {
       "name": "Kasidit Samrej",
@@ -4208,11 +4208,11 @@
     {
       "name": "Hady Habib",
       "tour": "ATP",
-      "matchesWithStats": 12,
-      "holdPct": 75.5,
-      "breakPct": 9.7,
-      "firstServeWonPct": 71.9,
-      "returnPointsWonPct": 30.4
+      "matchesWithStats": 10,
+      "holdPct": 71.1,
+      "breakPct": 9.5,
+      "firstServeWonPct": 70.5,
+      "returnPointsWonPct": 30.0
     },
     {
       "name": "Matheus Pucinelli De Almeida",
@@ -4280,11 +4280,11 @@
     {
       "name": "Vilius Gaubas",
       "tour": "ATP",
-      "matchesWithStats": 17,
-      "holdPct": 71.2,
-      "breakPct": 25.5,
-      "firstServeWonPct": 61.7,
-      "returnPointsWonPct": 39.1
+      "matchesWithStats": 14,
+      "holdPct": 73.4,
+      "breakPct": 24.3,
+      "firstServeWonPct": 63.3,
+      "returnPointsWonPct": 38.6
     },
     {
       "name": "Philip Henning",
@@ -4343,11 +4343,11 @@
     {
       "name": "Andrea Vavassori",
       "tour": "ATP",
-      "matchesWithStats": 29,
-      "holdPct": 78.0,
-      "breakPct": 16.7,
-      "firstServeWonPct": 71.8,
-      "returnPointsWonPct": 33.1
+      "matchesWithStats": 26,
+      "holdPct": 77.4,
+      "breakPct": 16.8,
+      "firstServeWonPct": 70.9,
+      "returnPointsWonPct": 33.3
     },
     {
       "name": "Leo Borg",
@@ -4397,11 +4397,11 @@
     {
       "name": "Fabian Marozsan",
       "tour": "ATP",
-      "matchesWithStats": 166,
-      "holdPct": 79.4,
-      "breakPct": 20.4,
-      "firstServeWonPct": 70.4,
-      "returnPointsWonPct": 36.2
+      "matchesWithStats": 142,
+      "holdPct": 78.9,
+      "breakPct": 20.0,
+      "firstServeWonPct": 70.1,
+      "returnPointsWonPct": 36.1
     },
     {
       "name": "Jan Zielinski",
@@ -4433,11 +4433,11 @@
     {
       "name": "Rinky Hijikata",
       "tour": "ATP",
-      "matchesWithStats": 119,
-      "holdPct": 72.8,
-      "breakPct": 19.6,
-      "firstServeWonPct": 68.0,
-      "returnPointsWonPct": 35.6
+      "matchesWithStats": 104,
+      "holdPct": 73.2,
+      "breakPct": 19.8,
+      "firstServeWonPct": 68.4,
+      "returnPointsWonPct": 35.8
     },
     {
       "name": "Caleb Chakravarthi",
@@ -4451,11 +4451,11 @@
     {
       "name": "Juncheng Shang",
       "tour": "ATP",
-      "matchesWithStats": 94,
-      "holdPct": 80.5,
-      "breakPct": 18.9,
-      "firstServeWonPct": 70.6,
-      "returnPointsWonPct": 34.9
+      "matchesWithStats": 82,
+      "holdPct": 79.5,
+      "breakPct": 18.8,
+      "firstServeWonPct": 70.1,
+      "returnPointsWonPct": 35.0
     },
     {
       "name": "Juan Alejandro Hernandez Serrano",
@@ -4622,11 +4622,11 @@
     {
       "name": "Coleman Wong",
       "tour": "ATP",
-      "matchesWithStats": 40,
-      "holdPct": 80.6,
-      "breakPct": 18.3,
+      "matchesWithStats": 29,
+      "holdPct": 80.1,
+      "breakPct": 18.0,
       "firstServeWonPct": 73.0,
-      "returnPointsWonPct": 34.3
+      "returnPointsWonPct": 34.2
     },
     {
       "name": "Delmas Ntcha",
@@ -4667,11 +4667,11 @@
     {
       "name": "Manuel Guinard",
       "tour": "ATP",
-      "matchesWithStats": 14,
-      "holdPct": 70.7,
-      "breakPct": 23.1,
-      "firstServeWonPct": 66.9,
-      "returnPointsWonPct": 37.6
+      "matchesWithStats": 13,
+      "holdPct": 71.0,
+      "breakPct": 23.0,
+      "firstServeWonPct": 66.6,
+      "returnPointsWonPct": 37.7
     },
     {
       "name": "Nicolas Alvarez Varona",
@@ -4703,29 +4703,29 @@
     {
       "name": "Francesco Passaro",
       "tour": "ATP",
-      "matchesWithStats": 43,
-      "holdPct": 75.7,
-      "breakPct": 18.0,
-      "firstServeWonPct": 68.8,
-      "returnPointsWonPct": 35.2
+      "matchesWithStats": 35,
+      "holdPct": 75.9,
+      "breakPct": 17.2,
+      "firstServeWonPct": 68.4,
+      "returnPointsWonPct": 34.5
     },
     {
       "name": "Matteo Arnaldi",
       "tour": "ATP",
-      "matchesWithStats": 166,
-      "holdPct": 78.7,
-      "breakPct": 19.9,
-      "firstServeWonPct": 70.6,
-      "returnPointsWonPct": 36.3
+      "matchesWithStats": 144,
+      "holdPct": 78.1,
+      "breakPct": 19.7,
+      "firstServeWonPct": 70.5,
+      "returnPointsWonPct": 36.2
     },
     {
       "name": "Camilo Ugo Carabelli",
       "tour": "ATP",
-      "matchesWithStats": 98,
-      "holdPct": 71.4,
+      "matchesWithStats": 81,
+      "holdPct": 71.3,
       "breakPct": 19.8,
-      "firstServeWonPct": 66.3,
-      "returnPointsWonPct": 36.0
+      "firstServeWonPct": 66.7,
+      "returnPointsWonPct": 36.1
     },
     {
       "name": "Santiago Fa Rodriguez Taverna",
@@ -4773,13 +4773,13 @@
       "returnPointsWonPct": 30.2
     },
     {
-      "name": "Jesper de Jong",
+      "name": "Jesper De Jong",
       "tour": "ATP",
-      "matchesWithStats": 13,
-      "holdPct": 83.1,
+      "matchesWithStats": 46,
+      "holdPct": 77.2,
       "breakPct": 17.7,
-      "firstServeWonPct": 73.9,
-      "returnPointsWonPct": 33.0
+      "firstServeWonPct": 71.8,
+      "returnPointsWonPct": 34.6
     },
     {
       "name": "Henri Squire",
@@ -4838,29 +4838,29 @@
     {
       "name": "Ben Shelton",
       "tour": "ATP",
-      "matchesWithStats": 232,
-      "holdPct": 87.4,
-      "breakPct": 15.4,
-      "firstServeWonPct": 75.6,
-      "returnPointsWonPct": 32.8
+      "matchesWithStats": 213,
+      "holdPct": 87.7,
+      "breakPct": 15.2,
+      "firstServeWonPct": 75.8,
+      "returnPointsWonPct": 32.7
     },
     {
       "name": "Filip Misolic",
       "tour": "ATP",
-      "matchesWithStats": 38,
-      "holdPct": 75.4,
-      "breakPct": 17.5,
-      "firstServeWonPct": 69.1,
-      "returnPointsWonPct": 34.6
+      "matchesWithStats": 35,
+      "holdPct": 74.1,
+      "breakPct": 18.6,
+      "firstServeWonPct": 68.7,
+      "returnPointsWonPct": 35.3
     },
     {
       "name": "Ivan Gakhov",
       "tour": "ATP",
-      "matchesWithStats": 6,
-      "holdPct": 62.9,
-      "breakPct": 14.9,
-      "firstServeWonPct": 65.2,
-      "returnPointsWonPct": 33.5
+      "matchesWithStats": 5,
+      "holdPct": 66.1,
+      "breakPct": 16.7,
+      "firstServeWonPct": 65.3,
+      "returnPointsWonPct": 34.5
     },
     {
       "name": "Hernan Casanova",
@@ -4883,29 +4883,29 @@
     {
       "name": "Alexander Shevchenko",
       "tour": "ATP",
-      "matchesWithStats": 142,
-      "holdPct": 72.7,
-      "breakPct": 18.9,
-      "firstServeWonPct": 68.0,
+      "matchesWithStats": 131,
+      "holdPct": 73.3,
+      "breakPct": 19.1,
+      "firstServeWonPct": 68.2,
       "returnPointsWonPct": 35.7
     },
     {
       "name": "Dino Prizmic",
       "tour": "ATP",
-      "matchesWithStats": 42,
-      "holdPct": 76.3,
-      "breakPct": 22.5,
-      "firstServeWonPct": 69.8,
-      "returnPointsWonPct": 37.7
+      "matchesWithStats": 35,
+      "holdPct": 76.5,
+      "breakPct": 22.4,
+      "firstServeWonPct": 69.3,
+      "returnPointsWonPct": 37.6
     },
     {
       "name": "Mili Poljicak",
       "tour": "ATP",
-      "matchesWithStats": 4,
-      "holdPct": 68.1,
-      "breakPct": 8.3,
-      "firstServeWonPct": 69.2,
-      "returnPointsWonPct": 32.3
+      "matchesWithStats": 3,
+      "holdPct": 68.4,
+      "breakPct": 10.3,
+      "firstServeWonPct": 68.9,
+      "returnPointsWonPct": 33.7
     },
     {
       "name": "Rodrigo Pacheco Mendez",
@@ -4946,20 +4946,20 @@
     {
       "name": "Brandon Holt",
       "tour": "ATP",
-      "matchesWithStats": 23,
-      "holdPct": 72.5,
-      "breakPct": 17.5,
+      "matchesWithStats": 18,
+      "holdPct": 73.3,
+      "breakPct": 16.5,
       "firstServeWonPct": 66.5,
-      "returnPointsWonPct": 33.8
+      "returnPointsWonPct": 33.5
     },
     {
       "name": "Learner Tien",
       "tour": "ATP",
-      "matchesWithStats": 127,
-      "holdPct": 77.2,
-      "breakPct": 23.3,
-      "firstServeWonPct": 69.2,
-      "returnPointsWonPct": 37.6
+      "matchesWithStats": 97,
+      "holdPct": 77.5,
+      "breakPct": 23.2,
+      "firstServeWonPct": 69.4,
+      "returnPointsWonPct": 37.5
     },
     {
       "name": "Facundo Mena",
@@ -4982,11 +4982,11 @@
     {
       "name": "Aleksandar Kovacevic",
       "tour": "ATP",
-      "matchesWithStats": 124,
-      "holdPct": 83.1,
-      "breakPct": 12.9,
-      "firstServeWonPct": 76.0,
-      "returnPointsWonPct": 31.5
+      "matchesWithStats": 107,
+      "holdPct": 83.0,
+      "breakPct": 13.6,
+      "firstServeWonPct": 75.8,
+      "returnPointsWonPct": 31.9
     },
     {
       "name": "Hiroki Moriya",
@@ -5054,20 +5054,20 @@
     {
       "name": "Martin Landaluce",
       "tour": "ATP",
-      "matchesWithStats": 30,
-      "holdPct": 75.0,
-      "breakPct": 17.2,
-      "firstServeWonPct": 71.3,
-      "returnPointsWonPct": 33.6
+      "matchesWithStats": 26,
+      "holdPct": 75.7,
+      "breakPct": 17.3,
+      "firstServeWonPct": 71.0,
+      "returnPointsWonPct": 33.8
     },
     {
       "name": "Luca Van Assche",
       "tour": "ATP",
-      "matchesWithStats": 68,
-      "holdPct": 74.4,
-      "breakPct": 19.1,
-      "firstServeWonPct": 68.2,
-      "returnPointsWonPct": 36.4
+      "matchesWithStats": 67,
+      "holdPct": 74.2,
+      "breakPct": 19.3,
+      "firstServeWonPct": 68.1,
+      "returnPointsWonPct": 36.5
     },
     {
       "name": "Gilles Arnaud Bailly",
@@ -5081,20 +5081,20 @@
     {
       "name": "Arthur Fils",
       "tour": "ATP",
-      "matchesWithStats": 182,
-      "holdPct": 82.1,
-      "breakPct": 20.9,
-      "firstServeWonPct": 73.8,
-      "returnPointsWonPct": 36.5
+      "matchesWithStats": 168,
+      "holdPct": 82.5,
+      "breakPct": 20.5,
+      "firstServeWonPct": 74.0,
+      "returnPointsWonPct": 36.3
     },
     {
       "name": "Stefanos Sakellaridis",
       "tour": "ATP",
-      "matchesWithStats": 9,
-      "holdPct": 79.2,
-      "breakPct": 11.1,
-      "firstServeWonPct": 70.5,
-      "returnPointsWonPct": 28.8
+      "matchesWithStats": 7,
+      "holdPct": 77.9,
+      "breakPct": 14.3,
+      "firstServeWonPct": 69.5,
+      "returnPointsWonPct": 29.7
     },
     {
       "name": "Daniel Michalski",
@@ -5108,11 +5108,11 @@
     {
       "name": "Dalibor Svrcina",
       "tour": "ATP",
-      "matchesWithStats": 22,
-      "holdPct": 63.3,
-      "breakPct": 28.9,
-      "firstServeWonPct": 60.3,
-      "returnPointsWonPct": 39.4
+      "matchesWithStats": 20,
+      "holdPct": 64.4,
+      "breakPct": 29.3,
+      "firstServeWonPct": 61.0,
+      "returnPointsWonPct": 39.6
     },
     {
       "name": "Manas Dhamne",
@@ -5135,11 +5135,11 @@
     {
       "name": "Mattia Bellucci",
       "tour": "ATP",
-      "matchesWithStats": 69,
-      "holdPct": 77.0,
-      "breakPct": 16.4,
-      "firstServeWonPct": 70.8,
-      "returnPointsWonPct": 34.6
+      "matchesWithStats": 58,
+      "holdPct": 78.2,
+      "breakPct": 16.2,
+      "firstServeWonPct": 71.7,
+      "returnPointsWonPct": 34.3
     },
     {
       "name": "Yu Hsiou Hsu",
@@ -5171,10 +5171,10 @@
     {
       "name": "Luciano Darderi",
       "tour": "ATP",
-      "matchesWithStats": 168,
-      "holdPct": 78.0,
+      "matchesWithStats": 141,
+      "holdPct": 77.8,
       "breakPct": 21.9,
-      "firstServeWonPct": 71.6,
+      "firstServeWonPct": 71.3,
       "returnPointsWonPct": 36.9
     },
     {
@@ -5189,10 +5189,10 @@
     {
       "name": "Gabriel Diallo",
       "tour": "ATP",
-      "matchesWithStats": 124,
-      "holdPct": 82.1,
-      "breakPct": 17.5,
-      "firstServeWonPct": 72.3,
+      "matchesWithStats": 92,
+      "holdPct": 81.2,
+      "breakPct": 17.7,
+      "firstServeWonPct": 72.1,
       "returnPointsWonPct": 34.8
     },
     {
@@ -5243,11 +5243,11 @@
     {
       "name": "Joao Fonseca",
       "tour": "ATP",
-      "matchesWithStats": 93,
-      "holdPct": 83.1,
+      "matchesWithStats": 79,
+      "holdPct": 83.0,
       "breakPct": 20.8,
-      "firstServeWonPct": 72.1,
-      "returnPointsWonPct": 36.5
+      "firstServeWonPct": 71.9,
+      "returnPointsWonPct": 36.4
     },
     {
       "name": "Jacopo Berrettini",
@@ -5297,11 +5297,11 @@
     {
       "name": "Valentin Vacherot",
       "tour": "ATP",
-      "matchesWithStats": 55,
-      "holdPct": 84.4,
-      "breakPct": 20.2,
-      "firstServeWonPct": 73.6,
-      "returnPointsWonPct": 35.5
+      "matchesWithStats": 43,
+      "holdPct": 83.5,
+      "breakPct": 20.5,
+      "firstServeWonPct": 73.9,
+      "returnPointsWonPct": 35.7
     },
     {
       "name": "Daniel Rincon",
@@ -5324,11 +5324,11 @@
     {
       "name": "Pablo Llamas Ruiz",
       "tour": "ATP",
-      "matchesWithStats": 20,
-      "holdPct": 76.1,
-      "breakPct": 24.7,
-      "firstServeWonPct": 65.1,
-      "returnPointsWonPct": 39.0
+      "matchesWithStats": 16,
+      "holdPct": 75.0,
+      "breakPct": 22.7,
+      "firstServeWonPct": 65.0,
+      "returnPointsWonPct": 38.0
     },
     {
       "name": "Oriol Roca Batalla",
@@ -5369,11 +5369,11 @@
     {
       "name": "Giovanni Mpetshi Perricard",
       "tour": "ATP",
-      "matchesWithStats": 122,
+      "matchesWithStats": 94,
       "holdPct": 88.0,
-      "breakPct": 8.7,
-      "firstServeWonPct": 78.0,
-      "returnPointsWonPct": 27.0
+      "breakPct": 8.9,
+      "firstServeWonPct": 78.1,
+      "returnPointsWonPct": 27.2
     },
     {
       "name": "Louis Wessels",
@@ -5387,19 +5387,19 @@
     {
       "name": "Jan Choinski",
       "tour": "ATP",
-      "matchesWithStats": 14,
-      "holdPct": 76.0,
-      "breakPct": 15.2,
-      "firstServeWonPct": 67.0,
-      "returnPointsWonPct": 32.9
+      "matchesWithStats": 13,
+      "holdPct": 75.7,
+      "breakPct": 15.4,
+      "firstServeWonPct": 66.5,
+      "returnPointsWonPct": 33.0
     },
     {
       "name": "Alex Michelsen",
       "tour": "ATP",
-      "matchesWithStats": 178,
-      "holdPct": 79.0,
-      "breakPct": 20.2,
-      "firstServeWonPct": 69.8,
+      "matchesWithStats": 158,
+      "holdPct": 79.3,
+      "breakPct": 20.5,
+      "firstServeWonPct": 70.0,
       "returnPointsWonPct": 36.4
     },
     {
@@ -5423,20 +5423,20 @@
     {
       "name": "Ethan Quinn",
       "tour": "ATP",
-      "matchesWithStats": 65,
-      "holdPct": 78.4,
-      "breakPct": 16.0,
-      "firstServeWonPct": 70.3,
-      "returnPointsWonPct": 34.6
+      "matchesWithStats": 55,
+      "holdPct": 78.0,
+      "breakPct": 16.5,
+      "firstServeWonPct": 71.1,
+      "returnPointsWonPct": 34.5
     },
     {
       "name": "Eliot Spizzirri",
       "tour": "ATP",
-      "matchesWithStats": 30,
-      "holdPct": 78.8,
-      "breakPct": 21.1,
-      "firstServeWonPct": 70.2,
-      "returnPointsWonPct": 37.2
+      "matchesWithStats": 21,
+      "holdPct": 79.3,
+      "breakPct": 22.6,
+      "firstServeWonPct": 70.9,
+      "returnPointsWonPct": 37.9
     },
     {
       "name": "Skander Mansouri",
@@ -5468,29 +5468,29 @@
     {
       "name": "Nicolas Moreno De Alboran",
       "tour": "ATP",
-      "matchesWithStats": 19,
-      "holdPct": 83.0,
+      "matchesWithStats": 18,
+      "holdPct": 83.6,
       "breakPct": 9.9,
-      "firstServeWonPct": 70.8,
-      "returnPointsWonPct": 30.8
+      "firstServeWonPct": 71.2,
+      "returnPointsWonPct": 30.9
     },
     {
       "name": "Titouan Droguet",
       "tour": "ATP",
-      "matchesWithStats": 18,
-      "holdPct": 81.8,
-      "breakPct": 21.1,
-      "firstServeWonPct": 71.5,
-      "returnPointsWonPct": 36.1
+      "matchesWithStats": 15,
+      "holdPct": 82.8,
+      "breakPct": 18.4,
+      "firstServeWonPct": 72.4,
+      "returnPointsWonPct": 35.3
     },
     {
       "name": "Jakub Mensik",
       "tour": "ATP",
-      "matchesWithStats": 158,
-      "holdPct": 83.8,
-      "breakPct": 19.9,
-      "firstServeWonPct": 77.1,
-      "returnPointsWonPct": 36.2
+      "matchesWithStats": 128,
+      "holdPct": 83.3,
+      "breakPct": 19.6,
+      "firstServeWonPct": 76.7,
+      "returnPointsWonPct": 36.0
     },
     {
       "name": "Philip Sekulic",
@@ -5531,20 +5531,20 @@
     {
       "name": "Terence Atmane",
       "tour": "ATP",
-      "matchesWithStats": 59,
-      "holdPct": 77.8,
-      "breakPct": 18.1,
+      "matchesWithStats": 53,
+      "holdPct": 78.6,
+      "breakPct": 17.7,
       "firstServeWonPct": 73.9,
-      "returnPointsWonPct": 33.8
+      "returnPointsWonPct": 33.6
     },
     {
       "name": "Yi Zhou",
       "tour": "ATP",
-      "matchesWithStats": 15,
-      "holdPct": 75.7,
-      "breakPct": 16.8,
-      "firstServeWonPct": 71.7,
-      "returnPointsWonPct": 34.4
+      "matchesWithStats": 13,
+      "holdPct": 75.6,
+      "breakPct": 18.8,
+      "firstServeWonPct": 71.1,
+      "returnPointsWonPct": 34.9
     },
     {
       "name": "Ye Cong Mo",
@@ -5594,20 +5594,20 @@
     {
       "name": "Mark Lajal",
       "tour": "ATP",
-      "matchesWithStats": 11,
-      "holdPct": 82.6,
-      "breakPct": 17.5,
-      "firstServeWonPct": 72.8,
-      "returnPointsWonPct": 35.5
+      "matchesWithStats": 9,
+      "holdPct": 81.0,
+      "breakPct": 16.2,
+      "firstServeWonPct": 72.5,
+      "returnPointsWonPct": 34.9
     },
     {
       "name": "Alexander Blockx",
       "tour": "ATP",
-      "matchesWithStats": 38,
-      "holdPct": 85.1,
-      "breakPct": 14.8,
-      "firstServeWonPct": 74.1,
-      "returnPointsWonPct": 34.5
+      "matchesWithStats": 30,
+      "holdPct": 86.1,
+      "breakPct": 15.5,
+      "firstServeWonPct": 75.7,
+      "returnPointsWonPct": 34.8
     },
     {
       "name": "Matteo Martineau",
@@ -5630,10 +5630,10 @@
     {
       "name": "Billy Harris",
       "tour": "ATP",
-      "matchesWithStats": 37,
-      "holdPct": 80.4,
-      "breakPct": 13.2,
-      "firstServeWonPct": 70.8,
+      "matchesWithStats": 31,
+      "holdPct": 81.6,
+      "breakPct": 13.4,
+      "firstServeWonPct": 70.9,
       "returnPointsWonPct": 32.0
     },
     {
@@ -5666,11 +5666,11 @@
     {
       "name": "Adam Walton",
       "tour": "ATP",
-      "matchesWithStats": 72,
-      "holdPct": 80.0,
-      "breakPct": 16.3,
-      "firstServeWonPct": 71.0,
-      "returnPointsWonPct": 33.9
+      "matchesWithStats": 60,
+      "holdPct": 80.2,
+      "breakPct": 16.2,
+      "firstServeWonPct": 70.6,
+      "returnPointsWonPct": 33.6
     },
     {
       "name": "Omar Jasika",
@@ -5693,11 +5693,11 @@
     {
       "name": "Ugo Blanchet",
       "tour": "ATP",
-      "matchesWithStats": 18,
-      "holdPct": 73.8,
-      "breakPct": 17.4,
-      "firstServeWonPct": 68.9,
-      "returnPointsWonPct": 33.5
+      "matchesWithStats": 13,
+      "holdPct": 74.1,
+      "breakPct": 18.4,
+      "firstServeWonPct": 69.7,
+      "returnPointsWonPct": 34.2
     },
     {
       "name": "Viacheslav Bielinskyi",
@@ -5720,11 +5720,11 @@
     {
       "name": "Eero Vasa",
       "tour": "ATP",
-      "matchesWithStats": 5,
-      "holdPct": 77.6,
-      "breakPct": 16.0,
-      "firstServeWonPct": 67.1,
-      "returnPointsWonPct": 32.3
+      "matchesWithStats": 4,
+      "holdPct": 73.2,
+      "breakPct": 9.5,
+      "firstServeWonPct": 64.4,
+      "returnPointsWonPct": 29.1
     },
     {
       "name": "Lukas Pokorny",
@@ -5756,11 +5756,11 @@
     {
       "name": "Alex Knaff",
       "tour": "ATP",
-      "matchesWithStats": 5,
-      "holdPct": 81.8,
-      "breakPct": 24.5,
-      "firstServeWonPct": 67.0,
-      "returnPointsWonPct": 37.6
+      "matchesWithStats": 4,
+      "holdPct": 78.7,
+      "breakPct": 28.3,
+      "firstServeWonPct": 69.3,
+      "returnPointsWonPct": 39.0
     },
     {
       "name": "Adria Soriano Barrera",
@@ -5774,20 +5774,20 @@
     {
       "name": "Alvaro Guillen Meza",
       "tour": "ATP",
-      "matchesWithStats": 5,
-      "holdPct": 66.7,
-      "breakPct": 33.3,
-      "firstServeWonPct": 66.1,
-      "returnPointsWonPct": 43.2
+      "matchesWithStats": 2,
+      "holdPct": 60.0,
+      "breakPct": 30.8,
+      "firstServeWonPct": 59.5,
+      "returnPointsWonPct": 41.6
     },
     {
       "name": "Andres Andrade",
       "tour": "ATP",
-      "matchesWithStats": 5,
-      "holdPct": 75.0,
-      "breakPct": 26.5,
-      "firstServeWonPct": 69.7,
-      "returnPointsWonPct": 40.4
+      "matchesWithStats": 3,
+      "holdPct": 77.8,
+      "breakPct": 29.6,
+      "firstServeWonPct": 72.8,
+      "returnPointsWonPct": 40.6
     },
     {
       "name": "Michael Bassem Sobhy",
@@ -5810,11 +5810,11 @@
     {
       "name": "Nicolai Budkov Kjaer",
       "tour": "ATP",
-      "matchesWithStats": 20,
-      "holdPct": 76.2,
-      "breakPct": 22.9,
-      "firstServeWonPct": 71.3,
-      "returnPointsWonPct": 35.3
+      "matchesWithStats": 14,
+      "holdPct": 72.6,
+      "breakPct": 20.7,
+      "firstServeWonPct": 69.9,
+      "returnPointsWonPct": 34.6
     },
     {
       "name": "Davis Rolis",
@@ -5909,11 +5909,11 @@
     {
       "name": "Moez Echargui",
       "tour": "ATP",
-      "matchesWithStats": 6,
-      "holdPct": 82.9,
-      "breakPct": 11.3,
-      "firstServeWonPct": 72.2,
-      "returnPointsWonPct": 30.8
+      "matchesWithStats": 5,
+      "holdPct": 83.3,
+      "breakPct": 11.7,
+      "firstServeWonPct": 73.9,
+      "returnPointsWonPct": 31.4
     },
     {
       "name": "Jesse Flores",
@@ -5963,11 +5963,11 @@
     {
       "name": "Ignacio Buse",
       "tour": "ATP",
-      "matchesWithStats": 30,
-      "holdPct": 78.6,
-      "breakPct": 21.0,
+      "matchesWithStats": 29,
+      "holdPct": 78.9,
+      "breakPct": 21.8,
       "firstServeWonPct": 71.2,
-      "returnPointsWonPct": 36.5
+      "returnPointsWonPct": 36.7
     },
     {
       "name": "Joris De Loore",
@@ -5981,20 +5981,20 @@
     {
       "name": "Orel Kimhi",
       "tour": "ATP",
-      "matchesWithStats": 3,
-      "holdPct": 66.7,
-      "breakPct": 23.3,
-      "firstServeWonPct": 62.6,
-      "returnPointsWonPct": 31.6
+      "matchesWithStats": 1,
+      "holdPct": 88.9,
+      "breakPct": 11.1,
+      "firstServeWonPct": 70.8,
+      "returnPointsWonPct": 29.8
     },
     {
       "name": "Yanaki Milev",
       "tour": "ATP",
-      "matchesWithStats": 4,
-      "holdPct": 65.9,
-      "breakPct": 22.7,
-      "firstServeWonPct": 64.5,
-      "returnPointsWonPct": 40.1
+      "matchesWithStats": 3,
+      "holdPct": 69.4,
+      "breakPct": 27.8,
+      "firstServeWonPct": 66.7,
+      "returnPointsWonPct": 42.3
     },
     {
       "name": "Petr Nesterov",
@@ -6008,11 +6008,11 @@
     {
       "name": "Andrej Nedic",
       "tour": "ATP",
-      "matchesWithStats": 2,
-      "holdPct": 71.4,
-      "breakPct": 19.0,
-      "firstServeWonPct": 61.9,
-      "returnPointsWonPct": 36.0
+      "matchesWithStats": 1,
+      "holdPct": 77.8,
+      "breakPct": 11.1,
+      "firstServeWonPct": 69.2,
+      "returnPointsWonPct": 38.0
     },
     {
       "name": "Nicholas David Ionel",
@@ -6080,11 +6080,11 @@
     {
       "name": "Elmer Moller",
       "tour": "ATP",
-      "matchesWithStats": 19,
-      "holdPct": 56.7,
-      "breakPct": 22.4,
-      "firstServeWonPct": 60.5,
-      "returnPointsWonPct": 38.7
+      "matchesWithStats": 14,
+      "holdPct": 57.9,
+      "breakPct": 23.3,
+      "firstServeWonPct": 61.3,
+      "returnPointsWonPct": 39.3
     },
     {
       "name": "N Sriram Balaji",
@@ -6260,38 +6260,38 @@
     {
       "name": "Roman Andres Burruchaga",
       "tour": "ATP",
-      "matchesWithStats": 25,
-      "holdPct": 71.0,
-      "breakPct": 30.1,
-      "firstServeWonPct": 65.1,
-      "returnPointsWonPct": 41.5
+      "matchesWithStats": 23,
+      "holdPct": 71.2,
+      "breakPct": 29.7,
+      "firstServeWonPct": 65.4,
+      "returnPointsWonPct": 41.3
     },
     {
       "name": "Mariano Navone",
       "tour": "ATP",
-      "matchesWithStats": 126,
-      "holdPct": 71.2,
-      "breakPct": 28.7,
-      "firstServeWonPct": 64.4,
-      "returnPointsWonPct": 40.6
+      "matchesWithStats": 108,
+      "holdPct": 70.6,
+      "breakPct": 29.5,
+      "firstServeWonPct": 64.1,
+      "returnPointsWonPct": 41.0
     },
     {
       "name": "Francisco Comesana",
       "tour": "ATP",
-      "matchesWithStats": 83,
-      "holdPct": 77.4,
-      "breakPct": 17.0,
-      "firstServeWonPct": 72.6,
-      "returnPointsWonPct": 35.4
+      "matchesWithStats": 68,
+      "holdPct": 77.9,
+      "breakPct": 16.4,
+      "firstServeWonPct": 73.1,
+      "returnPointsWonPct": 35.0
     },
     {
       "name": "Federico Agustin Gomez",
       "tour": "ATP",
-      "matchesWithStats": 10,
-      "holdPct": 73.9,
-      "breakPct": 13.1,
-      "firstServeWonPct": 69.0,
-      "returnPointsWonPct": 30.9
+      "matchesWithStats": 8,
+      "holdPct": 73.6,
+      "breakPct": 15.2,
+      "firstServeWonPct": 68.5,
+      "returnPointsWonPct": 32.7
     },
     {
       "name": "Adam Neff",
@@ -6341,20 +6341,20 @@
     {
       "name": "Martin Damm",
       "tour": "ATP",
-      "matchesWithStats": 18,
-      "holdPct": 88.5,
-      "breakPct": 10.7,
-      "firstServeWonPct": 78.0,
-      "returnPointsWonPct": 29.1
+      "matchesWithStats": 16,
+      "holdPct": 87.7,
+      "breakPct": 11.2,
+      "firstServeWonPct": 77.7,
+      "returnPointsWonPct": 29.9
     },
     {
       "name": "Darwin Blanch",
       "tour": "ATP",
-      "matchesWithStats": 10,
-      "holdPct": 75.6,
-      "breakPct": 8.9,
-      "firstServeWonPct": 69.9,
-      "returnPointsWonPct": 28.1
+      "matchesWithStats": 7,
+      "holdPct": 71.8,
+      "breakPct": 9.9,
+      "firstServeWonPct": 68.2,
+      "returnPointsWonPct": 28.4
     },
     {
       "name": "David Jorda Sanchis",
@@ -6368,29 +6368,29 @@
     {
       "name": "Jaime Faria",
       "tour": "ATP",
-      "matchesWithStats": 22,
-      "holdPct": 75.6,
-      "breakPct": 16.8,
-      "firstServeWonPct": 72.5,
-      "returnPointsWonPct": 34.4
+      "matchesWithStats": 21,
+      "holdPct": 77.3,
+      "breakPct": 16.5,
+      "firstServeWonPct": 72.9,
+      "returnPointsWonPct": 34.1
     },
     {
       "name": "Matteo Gigante",
       "tour": "ATP",
-      "matchesWithStats": 17,
-      "holdPct": 77.7,
-      "breakPct": 19.6,
-      "firstServeWonPct": 71.4,
-      "returnPointsWonPct": 37.2
+      "matchesWithStats": 13,
+      "holdPct": 76.7,
+      "breakPct": 20.5,
+      "firstServeWonPct": 71.9,
+      "returnPointsWonPct": 37.3
     },
     {
       "name": "Alejandro Moro Canas",
       "tour": "ATP",
-      "matchesWithStats": 5,
-      "holdPct": 72.7,
-      "breakPct": 12.7,
+      "matchesWithStats": 4,
+      "holdPct": 73.3,
+      "breakPct": 13.3,
       "firstServeWonPct": 64.4,
-      "returnPointsWonPct": 27.2
+      "returnPointsWonPct": 28.3
     },
     {
       "name": "Javier Barranco Cosano",
@@ -6440,11 +6440,11 @@
     {
       "name": "Jacob Fearnley",
       "tour": "ATP",
-      "matchesWithStats": 61,
-      "holdPct": 74.8,
-      "breakPct": 21.1,
-      "firstServeWonPct": 70.7,
-      "returnPointsWonPct": 36.2
+      "matchesWithStats": 46,
+      "holdPct": 75.0,
+      "breakPct": 20.7,
+      "firstServeWonPct": 70.5,
+      "returnPointsWonPct": 35.9
     },
     {
       "name": "Henry Searle",
@@ -6467,11 +6467,11 @@
     {
       "name": "Matej Dodig",
       "tour": "ATP",
-      "matchesWithStats": 4,
-      "holdPct": 76.1,
-      "breakPct": 10.2,
-      "firstServeWonPct": 70.4,
-      "returnPointsWonPct": 30.3
+      "matchesWithStats": 3,
+      "holdPct": 79.4,
+      "breakPct": 11.1,
+      "firstServeWonPct": 70.5,
+      "returnPointsWonPct": 30.1
     },
     {
       "name": "Luka Mikrut",
@@ -6503,20 +6503,20 @@
     {
       "name": "Kyrian Jacquet",
       "tour": "ATP",
-      "matchesWithStats": 9,
-      "holdPct": 83.1,
-      "breakPct": 18.8,
-      "firstServeWonPct": 74.1,
-      "returnPointsWonPct": 35.5
+      "matchesWithStats": 6,
+      "holdPct": 79.8,
+      "breakPct": 16.8,
+      "firstServeWonPct": 72.7,
+      "returnPointsWonPct": 34.5
     },
     {
       "name": "Raphael Collignon",
       "tour": "ATP",
-      "matchesWithStats": 41,
-      "holdPct": 79.0,
-      "breakPct": 19.0,
-      "firstServeWonPct": 73.2,
-      "returnPointsWonPct": 35.0
+      "matchesWithStats": 29,
+      "holdPct": 79.6,
+      "breakPct": 15.6,
+      "firstServeWonPct": 73.7,
+      "returnPointsWonPct": 34.2
     },
     {
       "name": "Cezar Cretu",
@@ -6665,11 +6665,11 @@
     {
       "name": "Justin Engel",
       "tour": "ATP",
-      "matchesWithStats": 23,
-      "holdPct": 83.0,
-      "breakPct": 11.1,
-      "firstServeWonPct": 74.2,
-      "returnPointsWonPct": 30.7
+      "matchesWithStats": 15,
+      "holdPct": 80.4,
+      "breakPct": 10.9,
+      "firstServeWonPct": 71.8,
+      "returnPointsWonPct": 30.5
     },
     {
       "name": "Branko Djuric",
@@ -6692,47 +6692,11 @@
     {
       "name": "Nishesh Basavareddy",
       "tour": "ATP",
-      "matchesWithStats": 43,
-      "holdPct": 74.8,
-      "breakPct": 16.5,
-      "firstServeWonPct": 70.4,
-      "returnPointsWonPct": 33.3
-    },
-    {
-      "name": "Felix Auger-Aliassime",
-      "tour": "ATP",
-      "matchesWithStats": 77,
-      "holdPct": 85.8,
-      "breakPct": 18.8,
-      "firstServeWonPct": 76.6,
-      "returnPointsWonPct": 36.4
-    },
-    {
-      "name": "Christopher O'Connell",
-      "tour": "ATP",
       "matchesWithStats": 33,
-      "holdPct": 77.5,
-      "breakPct": 16.7,
-      "firstServeWonPct": 69.0,
-      "returnPointsWonPct": 34.0
-    },
-    {
-      "name": "Marc-Andrea Huesler",
-      "tour": "ATP",
-      "matchesWithStats": 2,
-      "holdPct": 79.2,
-      "breakPct": 12.5,
-      "firstServeWonPct": 77.0,
-      "returnPointsWonPct": 34.4
-    },
-    {
-      "name": "Yunchaokete Bu",
-      "tour": "ATP",
-      "matchesWithStats": 39,
-      "holdPct": 80.6,
-      "breakPct": 17.6,
-      "firstServeWonPct": 73.5,
-      "returnPointsWonPct": 34.6
+      "holdPct": 74.9,
+      "breakPct": 16.3,
+      "firstServeWonPct": 70.1,
+      "returnPointsWonPct": 33.5
     },
     {
       "name": "Isaac Becroft",
@@ -6744,22 +6708,13 @@
       "returnPointsWonPct": 31.4
     },
     {
-      "name": "Jan-Lennard Struff",
-      "tour": "ATP",
-      "matchesWithStats": 39,
-      "holdPct": 79.6,
-      "breakPct": 15.6,
-      "firstServeWonPct": 74.4,
-      "returnPointsWonPct": 34.9
-    },
-    {
       "name": "Tristan Boyer",
       "tour": "ATP",
-      "matchesWithStats": 18,
-      "holdPct": 76.7,
-      "breakPct": 17.4,
-      "firstServeWonPct": 70.9,
-      "returnPointsWonPct": 34.7
+      "matchesWithStats": 14,
+      "holdPct": 77.7,
+      "breakPct": 15.5,
+      "firstServeWonPct": 71.0,
+      "returnPointsWonPct": 34.0
     },
     {
       "name": "Gauthier Onclin",
@@ -6791,11 +6746,11 @@
     {
       "name": "James Trotter",
       "tour": "ATP",
-      "matchesWithStats": 3,
+      "matchesWithStats": 2,
       "holdPct": 77.8,
       "breakPct": 0.0,
-      "firstServeWonPct": 68.3,
-      "returnPointsWonPct": 18.8
+      "firstServeWonPct": 65.5,
+      "returnPointsWonPct": 18.9
     },
     {
       "name": "Arthur Gea",
@@ -6807,58 +6762,31 @@
       "returnPointsWonPct": 34.5
     },
     {
-      "name": "Pierre-Hugues Herbert",
-      "tour": "ATP",
-      "matchesWithStats": 11,
-      "holdPct": 77.5,
-      "breakPct": 18.4,
-      "firstServeWonPct": 74.8,
-      "returnPointsWonPct": 33.2
-    },
-    {
-      "name": "Abdullah Shelbayh",
-      "tour": "ATP",
-      "matchesWithStats": 1,
-      "holdPct": 60.0,
-      "breakPct": 18.2,
-      "firstServeWonPct": 58.8,
-      "returnPointsWonPct": 31.7
-    },
-    {
-      "name": "Chun-Hsin Tseng",
-      "tour": "ATP",
-      "matchesWithStats": 18,
-      "holdPct": 73.3,
-      "breakPct": 20.1,
-      "firstServeWonPct": 67.5,
-      "returnPointsWonPct": 35.6
-    },
-    {
       "name": "Colton Smith",
       "tour": "ATP",
-      "matchesWithStats": 12,
-      "holdPct": 70.3,
-      "breakPct": 21.1,
-      "firstServeWonPct": 67.1,
-      "returnPointsWonPct": 36.9
+      "matchesWithStats": 10,
+      "holdPct": 71.1,
+      "breakPct": 18.0,
+      "firstServeWonPct": 67.5,
+      "returnPointsWonPct": 35.0
     },
     {
       "name": "Federico Cina",
       "tour": "ATP",
-      "matchesWithStats": 14,
-      "holdPct": 73.5,
-      "breakPct": 11.8,
-      "firstServeWonPct": 67.7,
-      "returnPointsWonPct": 31.7
+      "matchesWithStats": 9,
+      "holdPct": 72.0,
+      "breakPct": 12.0,
+      "firstServeWonPct": 67.1,
+      "returnPointsWonPct": 31.4
     },
     {
       "name": "Rei Sakamoto",
       "tour": "ATP",
-      "matchesWithStats": 10,
-      "holdPct": 79.5,
-      "breakPct": 7.9,
-      "firstServeWonPct": 68.3,
-      "returnPointsWonPct": 28.3
+      "matchesWithStats": 6,
+      "holdPct": 78.8,
+      "breakPct": 8.1,
+      "firstServeWonPct": 68.8,
+      "returnPointsWonPct": 28.9
     },
     {
       "name": "Corentin Denolly",
@@ -6888,18 +6816,9 @@
       "returnPointsWonPct": 32.9
     },
     {
-      "name": "Diego Dedura-Palomero",
-      "tour": "ATP",
-      "matchesWithStats": 3,
-      "holdPct": 65.2,
-      "breakPct": 4.3,
-      "firstServeWonPct": 64.6,
-      "returnPointsWonPct": 31.8
-    },
-    {
       "name": "Karue Sell",
       "tour": "ATP",
-      "matchesWithStats": 2,
+      "matchesWithStats": 1,
       "holdPct": 28.6,
       "breakPct": 0.0,
       "firstServeWonPct": 36.8,
@@ -6908,19 +6827,19 @@
     {
       "name": "Valentin Royer",
       "tour": "ATP",
-      "matchesWithStats": 40,
+      "matchesWithStats": 34,
       "holdPct": 80.2,
-      "breakPct": 16.0,
-      "firstServeWonPct": 70.3,
-      "returnPointsWonPct": 33.4
+      "breakPct": 16.1,
+      "firstServeWonPct": 70.5,
+      "returnPointsWonPct": 33.5
     },
     {
       "name": "Clement Tabur",
       "tour": "ATP",
-      "matchesWithStats": 8,
-      "holdPct": 86.3,
-      "breakPct": 13.5,
-      "firstServeWonPct": 73.7,
+      "matchesWithStats": 5,
+      "holdPct": 82.7,
+      "breakPct": 14.1,
+      "firstServeWonPct": 71.2,
       "returnPointsWonPct": 34.9
     },
     {
@@ -6998,20 +6917,11 @@
     {
       "name": "Alan Magadan",
       "tour": "ATP",
-      "matchesWithStats": 2,
+      "matchesWithStats": 1,
       "holdPct": 70.0,
       "breakPct": 10.0,
       "firstServeWonPct": 80.0,
       "returnPointsWonPct": 37.6
-    },
-    {
-      "name": "Alex Hernandez",
-      "tour": "ATP",
-      "matchesWithStats": 2,
-      "holdPct": 72.0,
-      "breakPct": 13.0,
-      "firstServeWonPct": 65.0,
-      "returnPointsWonPct": 33.1
     },
     {
       "name": "Murphy Cassone",
@@ -7043,101 +6953,29 @@
     {
       "name": "Liam Draxl",
       "tour": "ATP",
-      "matchesWithStats": 5,
-      "holdPct": 64.6,
-      "breakPct": 21.2,
-      "firstServeWonPct": 66.2,
-      "returnPointsWonPct": 37.1
+      "matchesWithStats": 4,
+      "holdPct": 63.0,
+      "breakPct": 18.2,
+      "firstServeWonPct": 64.0,
+      "returnPointsWonPct": 35.3
     },
     {
       "name": "Stefan Dostanic",
       "tour": "ATP",
-      "matchesWithStats": 6,
+      "matchesWithStats": 3,
       "holdPct": 81.0,
       "breakPct": 18.6,
-      "firstServeWonPct": 67.6,
-      "returnPointsWonPct": 36.4
+      "firstServeWonPct": 68.2,
+      "returnPointsWonPct": 36.3
     },
     {
       "name": "Dhakshineswar Suresh",
       "tour": "ATP",
-      "matchesWithStats": 2,
+      "matchesWithStats": 1,
       "holdPct": 66.7,
       "breakPct": 0.0,
       "firstServeWonPct": 64.1,
       "returnPointsWonPct": 28.8
-    },
-    {
-      "name": "Soonwoo Kwon",
-      "tour": "ATP",
-      "matchesWithStats": 1,
-      "holdPct": 100.0,
-      "breakPct": 57.1,
-      "firstServeWonPct": 88.9,
-      "returnPointsWonPct": 29.5
-    },
-    {
-      "name": "Cleeve Harper",
-      "tour": "ATP",
-      "matchesWithStats": 1,
-      "holdPct": 70.0,
-      "breakPct": 50.0,
-      "firstServeWonPct": 68.0,
-      "returnPointsWonPct": 46.4
-    },
-    {
-      "name": "Ivan Ivanov",
-      "tour": "ATP",
-      "matchesWithStats": 3,
-      "holdPct": 61.5,
-      "breakPct": 0.0,
-      "firstServeWonPct": 59.0,
-      "returnPointsWonPct": 28.3
-    },
-    {
-      "name": "Alexander Vasilev",
-      "tour": "ATP",
-      "matchesWithStats": 2,
-      "holdPct": 90.9,
-      "breakPct": 23.8,
-      "firstServeWonPct": 73.4,
-      "returnPointsWonPct": 39.9
-    },
-    {
-      "name": "Tung-Lin Wu",
-      "tour": "ATP",
-      "matchesWithStats": 2,
-      "holdPct": 75.0,
-      "breakPct": 14.3,
-      "firstServeWonPct": 68.9,
-      "returnPointsWonPct": 30.0
-    },
-    {
-      "name": "Aaron Gil Garcia",
-      "tour": "ATP",
-      "matchesWithStats": 1,
-      "holdPct": 57.1,
-      "breakPct": 14.3,
-      "firstServeWonPct": 66.7,
-      "returnPointsWonPct": 38.6
-    },
-    {
-      "name": "Daniel Antonio Nunez",
-      "tour": "ATP",
-      "matchesWithStats": 1,
-      "holdPct": 63.6,
-      "breakPct": 27.3,
-      "firstServeWonPct": 64.7,
-      "returnPointsWonPct": 40.6
-    },
-    {
-      "name": "Louis Van Herck",
-      "tour": "ATP",
-      "matchesWithStats": 1,
-      "holdPct": 72.7,
-      "breakPct": 36.4,
-      "firstServeWonPct": 71.4,
-      "returnPointsWonPct": 40.5
     },
     {
       "name": "Amir Omarkhanov",
@@ -7167,9 +7005,18 @@
       "returnPointsWonPct": 28.6
     },
     {
+      "name": "Ivan Ivanov",
+      "tour": "ATP",
+      "matchesWithStats": 1,
+      "holdPct": 66.7,
+      "breakPct": 0.0,
+      "firstServeWonPct": 62.9,
+      "returnPointsWonPct": 28.6
+    },
+    {
       "name": "Dan Added",
       "tour": "ATP",
-      "matchesWithStats": 2,
+      "matchesWithStats": 1,
       "holdPct": 28.6,
       "breakPct": 0.0,
       "firstServeWonPct": 55.2,
@@ -7178,11 +7025,11 @@
     {
       "name": "Rafael Jodar",
       "tour": "ATP",
-      "matchesWithStats": 35,
-      "holdPct": 76.7,
-      "breakPct": 31.0,
-      "firstServeWonPct": 68.3,
-      "returnPointsWonPct": 40.5
+      "matchesWithStats": 32,
+      "holdPct": 78.1,
+      "breakPct": 30.1,
+      "firstServeWonPct": 68.4,
+      "returnPointsWonPct": 40.4
     },
     {
       "name": "James Watt",
