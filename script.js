@@ -1,4 +1,4 @@
-// Mission 1000 v2.8.3 Surface Recognition Fix
+// Mission 1000 v2.9.0 Tipico Available Markets
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -322,6 +322,108 @@ function marketPickTier(prob){
   if(prob>=65) return "INTERESSANTER PICK";
   if(prob>=60) return "LEICHTE TENDENZ";
   return "KEIN KLARER PICK";
+}
+
+
+function tipicoMarketData(match){
+  const tm=match?.tipicoMarkets;
+  if(!tm || typeof tm!=="object") return null;
+  return tm;
+}
+
+function tipicoHasMarket(match,key){
+  const tm=tipicoMarketData(match);
+  if(!tm) return false;
+  const rows=tm[key];
+  return Array.isArray(rows) && rows.length>0;
+}
+
+function tipicoH2HPrice(match,side){
+  const tm=tipicoMarketData(match);
+  const rows=tm?.h2h;
+  if(!Array.isArray(rows)) return null;
+  const name=sideName(match,side);
+  const row=rows.find(x=>normalizeName(x.name)===normalizeName(name));
+  const p=Number(row?.price);
+  return Number.isFinite(p)&&p>1?p:null;
+}
+
+function tipicoMarketSummary(match){
+  const tm=tipicoMarketData(match);
+  if(!tm) return {
+    loaded:false,
+    labels:["Noch keine Tipico-Marktdaten geladen"],
+    h2h:false,spreads:false,totals:false
+  };
+  const labels=[];
+  if(Array.isArray(tm.h2h)&&tm.h2h.length) labels.push("Match-Sieg");
+  if(Array.isArray(tm.spreads)&&tm.spreads.length) labels.push("Game-Handicap");
+  if(Array.isArray(tm.totals)&&tm.totals.length) labels.push("Games Über/Unter");
+  return {
+    loaded:true,
+    labels:labels.length?labels:["Keine Tipico-Märkte im Feed"],
+    h2h:!!tm.h2h?.length,
+    spreads:!!tm.spreads?.length,
+    totals:!!tm.totals?.length
+  };
+}
+
+function formatTipicoRows(rows,match,key){
+  if(!Array.isArray(rows)||!rows.length) return "nicht verfügbar";
+  if(key==="h2h"){
+    return rows.map(r=>`${r.name} ${Number(r.price).toFixed(2).replace(".",",")}`).join(" · ");
+  }
+  if(key==="spreads"){
+    return rows.slice(0,6).map(r=>{
+      const point=Number(r.point);
+      const ptxt=Number.isFinite(point)?`${point>0?"+":""}${point}`:"";
+      return `${r.name} ${ptxt} @ ${Number(r.price).toFixed(2).replace(".",",")}`;
+    }).join(" · ");
+  }
+  if(key==="totals"){
+    return rows.slice(0,6).map(r=>{
+      const point=Number(r.point);
+      return `${r.name} ${Number.isFinite(point)?point:""} @ ${Number(r.price).toFixed(2).replace(".",",")}`;
+    }).join(" · ");
+  }
+  return "–";
+}
+
+function chooseTipicoAvailablePick(match,engine,report){
+  const summary=tipicoMarketSummary(match);
+
+  // Before a manual advanced-market refresh, fall back to known ML availability
+  // from the ordinary match feed. We do NOT pretend set markets are available.
+  const h2hAvailable = summary.loaded ? summary.h2h : !!(match.odds1 && match.odds2);
+  const candidates=[];
+
+  if(h2hAvailable && engine.favP>=63){
+    const side=engine.favorite;
+    const tipicoOdd=tipicoH2HPrice(match,side);
+    const fallbackOdd=Number(side===1?match.odds1:match.odds2);
+    const odd=tipicoOdd || (Number.isFinite(fallbackOdd)?fallbackOdd:null);
+    candidates.push({
+      label:`${sideName(match,side)} · Match-Sieg`,
+      prob:engine.favP,
+      side,
+      type:"ml",
+      market:"Match-Sieg",
+      odd,
+      source:tipicoOdd?"Tipico":"Marktfeed"
+    });
+  }
+
+  // The current provider can expose GAME spreads/totals for tennis.
+  // We display them, but do not manufacture a model probability from set data.
+  // Set handicap/first-set markets remain model information only unless a future
+  // data source exposes the matching live market & price.
+  candidates.sort((a,b)=>b.prob-a.prob);
+  const best=candidates[0] || {
+    label:"KEIN KLARER VERFÜGBARER PICK",
+    prob:null,side:0,type:"pass",market:null,odd:null,source:null
+  };
+  best.tier=best.prob!==null?marketPickTier(best.prob):"KEIN KLARER PICK";
+  return {best,summary};
 }
 
 // Mission Market Engine 5.1:
@@ -1499,17 +1601,20 @@ function showDetails(match){
   $("detailTitle").textContent=`${match.player1} vs. ${match.player2}`;
 
   const engine=missionMarketEngine(match,report);
+  const tipicoChoice=chooseTipicoAvailablePick(match,engine,report);
+  const displayBest=tipicoChoice.best.type!=="pass" ? tipicoChoice.best : engine.best;
   const sportChance=engine.favP;
   $("detailSportChance").textContent=`${sportChance}%`;
   setRing($("detailSportChance").parentElement,sportChance);
 
-  const quality = engine.best.type === "pass" ? "Keine klare Kante"
-    : engine.best.prob >= 72 && report.confidence >= 80 ? "Starker Pick"
-    : engine.best.prob >= 65 && report.confidence >= 70 ? "Interessanter Pick"
+  const quality = displayBest.type === "pass" ? "Keine klare Kante"
+    : displayBest.prob >= 72 && report.confidence >= 80 ? "Starker Pick"
+    : displayBest.prob >= 65 && report.confidence >= 70 ? "Interessanter Pick"
     : "Leichte Tendenz";
 
-  $("detailSignal").textContent=report.winnerName
-    ? `${quality} · ${report.winnerName}`
+  const displayName=displayBest.side?sideName(match,displayBest.side):report.winnerName;
+  $("detailSignal").textContent=displayName
+    ? `${quality} · ${displayName}`
     : quality;
 
   let narrative=report.winnerName
@@ -1520,28 +1625,39 @@ function showDetails(match){
   $("detailNarrative").textContent=narrative;
 
   const pickBox=$("missionPickBox");
-  $("missionPick").textContent=engine.best.label;
+  $("missionPick").textContent=displayBest.label;
 
   let valueText="Value nicht berechenbar: passende Marktquote fehlt.";
-  if(engine.best.type==="ml" && engine.best.side){
-    const rawOdd=Number(engine.best.side===1?match.odds1:match.odds2);
-    if(Number.isFinite(rawOdd) && rawOdd>1 && engine.best.prob!==null){
-      const fairOdd=100/engine.best.prob;
-      const edgePct=Math.round((engine.best.prob/100*rawOdd-1)*100);
+  if(displayBest.type==="ml" && displayBest.side){
+    const rawOdd=Number(displayBest.odd || (displayBest.side===1?match.odds1:match.odds2));
+    if(Number.isFinite(rawOdd) && rawOdd>1 && displayBest.prob!==null){
+      const fairOdd=100/displayBest.prob;
+      const edgePct=Math.round((displayBest.prob/100*rawOdd-1)*100);
       valueText = edgePct>0
         ? `Value +${edgePct}% · faire Quote ca. ${fairOdd.toFixed(2).replace(".",",")}`
         : `Kein Value (${edgePct}%) · faire Quote ca. ${fairOdd.toFixed(2).replace(".",",")}`;
+      if(displayBest.source==="Tipico") valueText += " · Tipico-Quote";
     }
   }
-  $("missionPickReason").textContent=engine.best.prob!==null
-    ? `${quality.toUpperCase()} · sportliche Sieg-/Marktchance ca. ${engine.best.prob}% · ${valueText} · Analysequalität ${report.confidence}%.`
-    : `Keine klare Kante · Analysequalität ${report.confidence}% · sportliche Datenabdeckung ${engine.coverage}%.`;
-  pickBox?.classList.toggle("no-pick",engine.best.type==="pass");
+
+  const availabilityNote=tipicoChoice.summary.loaded
+    ? `Tipico verfügbar: ${tipicoChoice.summary.labels.join(", ")}.`
+    : "Tipico-Spezialmärkte noch nicht synchronisiert; Match-Sieg aus Standardfeed.";
+
+  $("missionPickReason").textContent=displayBest.prob!==null
+    ? `${quality.toUpperCase()} · sportliche Chance ca. ${displayBest.prob}% · ${valueText} · Analysequalität ${report.confidence}%. ${availabilityNote}`
+    : `Kein klarer Pick unter den aktuell verfügbaren Märkten · Analysequalität ${report.confidence}%. ${availabilityNote}`;
+  pickBox?.classList.toggle("no-pick",displayBest.type==="pass");
+
+  if($("tipicoAvailable")) $("tipicoAvailable").textContent=tipicoChoice.summary.labels.join(" · ");
+  if($("tipicoH2H")) $("tipicoH2H").textContent=formatTipicoRows(tipicoMarketData(match)?.h2h,match,"h2h");
+  if($("tipicoSpreads")) $("tipicoSpreads").textContent=formatTipicoRows(tipicoMarketData(match)?.spreads,match,"spreads");
+  if($("tipicoTotals")) $("tipicoTotals").textContent=formatTipicoRows(tipicoMarketData(match)?.totals,match,"totals");
   if($("probMatch")) $("probMatch").textContent=`${match.player1} ${engine.p1}% · ${match.player2} ${engine.p2}%`;
   if($("probSetHc")) $("probSetHc").textContent=`${sideName(match,engine.dog)} +1,5 Sätze · ca. ${engine.dogSet}%`;
   if($("probTwoZero")) $("probTwoZero").textContent=`${sideName(match,engine.favorite)} 2:0 · ca. ${engine.fav20}%`;
   if($("probThree")) $("probThree").textContent=`3 Sätze · ca. ${engine.threeSets}%`;
-  if($("marketAlternative")) $("marketAlternative").textContent=engine.alt;
+  if($("marketAlternative")) $("marketAlternative").textContent=`MODELL: ${engine.alt}`;
   if($("marketAvoid")) $("marketAvoid").textContent=engine.avoid;
   if($("whyPick")) $("whyPick").innerHTML=engine.reasons.length?engine.reasons.map(x=>`<li>${x}</li>`).join(""):"<li>Zu wenige belastbare Faktoren.</li>";
   if($("pickRisks")) $("pickRisks").innerHTML=engine.risks.length?engine.risks.map(x=>`<li>${x}</li>`).join(""):"<li>Keine zusätzlichen Risikofaktoren erkannt.</li>";

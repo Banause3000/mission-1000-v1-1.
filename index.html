@@ -187,8 +187,19 @@
         <small id="missionPickReason">Nur bei ausreichender Datenlage wird ein Tipp angezeigt.</small>
       </div>
 
+      <div class="market-intel-v5 tipico-market-box">
+        <div class="breakdown-head"><span class="eyebrow">TIPICO · VERFÜGBARE MÄRKTE</span><small>aus dem aktuellen Odds-Feed</small></div>
+        <div class="market-prob-grid">
+          <article><span>AKTUELL VERFÜGBAR</span><b id="tipicoAvailable">–</b></article>
+          <article><span>MATCH-SIEG</span><b id="tipicoH2H">–</b></article>
+          <article><span>GAME-HANDICAP</span><b id="tipicoSpreads">–</b></article>
+          <article><span>GAMES ÜBER/UNTER</span><b id="tipicoTotals">–</b></article>
+        </div>
+        <p class="model-note">Mission Pick berücksichtigt nur Märkte, die im Feed als verfügbar erkannt werden. Game-Handicap und Games-Total werden angezeigt, aber erst empfohlen, sobald dafür ein eigenes belastbares Game-Modell vorhanden ist. Satzmärkte bleiben separat als Modellinformation sichtbar, solange der Datenprovider keine passende Tipico-Quote liefert.</p>
+      </div>
+
       <div class="market-intel-v5">
-        <div class="breakdown-head"><span class="eyebrow">MARKET INTELLIGENCE 5.0</span><small>sportliche Schätzung · nicht quotengesteuert</small></div>
+        <div class="breakdown-head"><span class="eyebrow">MARKET INTELLIGENCE 5.1</span><small>interne Sportmodell-Märkte · unabhängig von Verfügbarkeit</small></div>
         <div class="market-prob-grid">
           <article><span>MATCH-SIEG</span><b id="probMatch">–</b></article>
           <article><span>+1,5 SÄTZE</span><b id="probSetHc">–</b></article>
@@ -375,9 +386,9 @@
     <button data-view="aiView">◉<span>Mission AI</span></button>
   </nav>
 
-  <footer>Mission 1000 · Project Eclipse · v2.8.3</footer>
+  <footer>Mission 1000 · Project Eclipse · v2.9.0</footer>
 </div>
 
-<script src="./script.js?v=2.8.3"></script>
+<script src="./script.js?v=2.9.0"></script>
 </body>
 </html>
