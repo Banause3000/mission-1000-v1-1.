@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-12T15:42:38.403Z",
+  "generatedAt": "2026-08-12T15:44:40.443Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "72",
-    "remaining": "428"
+    "used": "84",
+    "remaining": "416"
   },
   "tipicoAdvancedSync": true,
   "matches": [
@@ -759,7 +759,7 @@
       "status": "upcoming",
       "player1": "Corentin Moutet",
       "player2": "Hubert Hurkacz",
-      "odds1": 3.05,
+      "odds1": 3,
       "odds2": 1.46,
       "bookmaker1": "Coolbet",
       "bookmaker2": "1xBet",
