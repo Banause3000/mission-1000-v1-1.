@@ -1,4 +1,4 @@
-// Mission 1000 v2.9.0 Tipico Available Markets
+// Mission 1000 v2.9.1 Automatic Tipico Markets
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -352,7 +352,7 @@ function tipicoMarketSummary(match){
   const tm=tipicoMarketData(match);
   if(!tm) return {
     loaded:false,
-    labels:["Noch keine Tipico-Marktdaten geladen"],
+    labels:["Tipico vom Datenprovider für dieses Match nicht geliefert"],
     h2h:false,spreads:false,totals:false
   };
   const labels=[];
@@ -369,7 +369,7 @@ function tipicoMarketSummary(match){
 }
 
 function formatTipicoRows(rows,match,key){
-  if(!Array.isArray(rows)||!rows.length) return "nicht verfügbar";
+  if(!Array.isArray(rows)||!rows.length) return "vom Tipico-Feed nicht bestätigt";
   if(key==="h2h"){
     return rows.map(r=>`${r.name} ${Number(r.price).toFixed(2).replace(".",",")}`).join(" · ");
   }
