@@ -8,7 +8,6 @@ if (!API_KEY) {
 
 const API = "https://api.the-odds-api.com/v4";
 const TIME_ZONE = "Europe/Berlin";
-const ADVANCED_TIPICO = true; // v2.9.1: automatische Läufe synchronisieren Featured Markets mit
 
 let previousMatches = [];
 try {
@@ -18,9 +17,7 @@ try {
   previousMatches = [];
 }
 
-console.log(
-  "Automatischer Lauf: h2h + spreads + totals werden synchronisiert; Tipico wird erkannt, wenn der Provider Tipico für das Match liefert."
-);
+console.log("Automatischer Lauf: Tennis-Matches und Match-Sieg-Quoten werden synchronisiert.");
 
 function istTennis(sport) {
   const text =
@@ -105,25 +102,6 @@ function besteQuoten(event) {
   return result;
 }
 
-function tipicoMarkets(event) {
-  const bookmaker = (event.bookmakers || []).find(b =>
-    b.key === "tipico_de" || String(b.title || "").toLowerCase().includes("tipico")
-  );
-
-  if (!bookmaker) return null;
-
-  const out = {};
-  for (const market of bookmaker.markets || []) {
-    if (!["h2h","spreads","totals"].includes(market.key)) continue;
-    out[market.key] = (market.outcomes || []).map(o => ({
-      name: o.name,
-      price: Number(o.price),
-      ...(o.point !== undefined ? { point: Number(o.point) } : {})
-    })).filter(o => Number.isFinite(o.price));
-  }
-
-  return Object.keys(out).length ? out : null;
-}
 
 async function laden(url) {
   const response = await fetch(url);
@@ -203,7 +181,7 @@ for (const sport of tennisSports) {
   url.searchParams.set("regions", "eu");
   url.searchParams.set(
     "markets",
-    "h2h,spreads,totals"
+    "h2h"
   );
   url.searchParams.set("oddsFormat", "decimal");
   url.searchParams.set("dateFormat", "iso");
@@ -223,13 +201,6 @@ for (const sport of tennisSports) {
     const q1 = quoten.get(event.home_team);
     const q2 = quoten.get(event.away_team);
 
-    const freshTipico = tipicoMarkets(event);
-    const previous = previousMatches.find(old => matchupKey(old) === matchupKey({
-      tour: tour(sport),
-      player1: event.home_team,
-      player2: event.away_team
-    }));
-    const retainedTipico = freshTipico || previous?.tipicoMarkets || null;
 
     matches.push({
       id: event.id,
@@ -255,7 +226,6 @@ for (const sport of tennisSports) {
       bookmaker1: q1?.bookmaker ?? null,
       bookmaker2: q2?.bookmaker ?? null,
 
-      tipicoMarkets: retainedTipico,
 
       source: "The Odds API"
     });
@@ -292,7 +262,6 @@ const output = {
     remaining: creditsRemaining
   },
 
-  tipicoAdvancedSync: ADVANCED_TIPICO,
 
   matches: uniqueMatches
 };
