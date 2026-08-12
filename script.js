@@ -1,4 +1,4 @@
-// Mission 1000 v2.9.1 Automatic Tipico Markets
+// Mission 1000 v2.9.2 Bookmaker Independent
 // Core refactor: one source of truth, defensive JSON loading, no invented data.
 
 const $ = id => document.getElementById(id);
@@ -325,106 +325,6 @@ function marketPickTier(prob){
 }
 
 
-function tipicoMarketData(match){
-  const tm=match?.tipicoMarkets;
-  if(!tm || typeof tm!=="object") return null;
-  return tm;
-}
-
-function tipicoHasMarket(match,key){
-  const tm=tipicoMarketData(match);
-  if(!tm) return false;
-  const rows=tm[key];
-  return Array.isArray(rows) && rows.length>0;
-}
-
-function tipicoH2HPrice(match,side){
-  const tm=tipicoMarketData(match);
-  const rows=tm?.h2h;
-  if(!Array.isArray(rows)) return null;
-  const name=sideName(match,side);
-  const row=rows.find(x=>normalizeName(x.name)===normalizeName(name));
-  const p=Number(row?.price);
-  return Number.isFinite(p)&&p>1?p:null;
-}
-
-function tipicoMarketSummary(match){
-  const tm=tipicoMarketData(match);
-  if(!tm) return {
-    loaded:false,
-    labels:["Tipico vom Datenprovider für dieses Match nicht geliefert"],
-    h2h:false,spreads:false,totals:false
-  };
-  const labels=[];
-  if(Array.isArray(tm.h2h)&&tm.h2h.length) labels.push("Match-Sieg");
-  if(Array.isArray(tm.spreads)&&tm.spreads.length) labels.push("Game-Handicap");
-  if(Array.isArray(tm.totals)&&tm.totals.length) labels.push("Games Über/Unter");
-  return {
-    loaded:true,
-    labels:labels.length?labels:["Keine Tipico-Märkte im Feed"],
-    h2h:!!tm.h2h?.length,
-    spreads:!!tm.spreads?.length,
-    totals:!!tm.totals?.length
-  };
-}
-
-function formatTipicoRows(rows,match,key){
-  if(!Array.isArray(rows)||!rows.length) return "vom Tipico-Feed nicht bestätigt";
-  if(key==="h2h"){
-    return rows.map(r=>`${r.name} ${Number(r.price).toFixed(2).replace(".",",")}`).join(" · ");
-  }
-  if(key==="spreads"){
-    return rows.slice(0,6).map(r=>{
-      const point=Number(r.point);
-      const ptxt=Number.isFinite(point)?`${point>0?"+":""}${point}`:"";
-      return `${r.name} ${ptxt} @ ${Number(r.price).toFixed(2).replace(".",",")}`;
-    }).join(" · ");
-  }
-  if(key==="totals"){
-    return rows.slice(0,6).map(r=>{
-      const point=Number(r.point);
-      return `${r.name} ${Number.isFinite(point)?point:""} @ ${Number(r.price).toFixed(2).replace(".",",")}`;
-    }).join(" · ");
-  }
-  return "–";
-}
-
-function chooseTipicoAvailablePick(match,engine,report){
-  const summary=tipicoMarketSummary(match);
-
-  // Before a manual advanced-market refresh, fall back to known ML availability
-  // from the ordinary match feed. We do NOT pretend set markets are available.
-  const h2hAvailable = summary.loaded ? summary.h2h : !!(match.odds1 && match.odds2);
-  const candidates=[];
-
-  if(h2hAvailable && engine.favP>=63){
-    const side=engine.favorite;
-    const tipicoOdd=tipicoH2HPrice(match,side);
-    const fallbackOdd=Number(side===1?match.odds1:match.odds2);
-    const odd=tipicoOdd || (Number.isFinite(fallbackOdd)?fallbackOdd:null);
-    candidates.push({
-      label:`${sideName(match,side)} · Match-Sieg`,
-      prob:engine.favP,
-      side,
-      type:"ml",
-      market:"Match-Sieg",
-      odd,
-      source:tipicoOdd?"Tipico":"Marktfeed"
-    });
-  }
-
-  // The current provider can expose GAME spreads/totals for tennis.
-  // We display them, but do not manufacture a model probability from set data.
-  // Set handicap/first-set markets remain model information only unless a future
-  // data source exposes the matching live market & price.
-  candidates.sort((a,b)=>b.prob-a.prob);
-  const best=candidates[0] || {
-    label:"KEIN KLARER VERFÜGBARER PICK",
-    prob:null,side:0,type:"pass",market:null,odd:null,source:null
-  };
-  best.tier=best.prob!==null?marketPickTier(best.prob):"KEIN KLARER PICK";
-  return {best,summary};
-}
 
 // Mission Market Engine 5.1:
 // 1) sporting data determines probabilities;
@@ -1601,8 +1501,7 @@ function showDetails(match){
   $("detailTitle").textContent=`${match.player1} vs. ${match.player2}`;
 
   const engine=missionMarketEngine(match,report);
-  const tipicoChoice=chooseTipicoAvailablePick(match,engine,report);
-  const displayBest=tipicoChoice.best.type!=="pass" ? tipicoChoice.best : engine.best;
+  const displayBest=engine.best;
   const sportChance=engine.favP;
   $("detailSportChance").textContent=`${sportChance}%`;
   setRing($("detailSportChance").parentElement,sportChance);
@@ -1636,23 +1535,14 @@ function showDetails(match){
       valueText = edgePct>0
         ? `Value +${edgePct}% · faire Quote ca. ${fairOdd.toFixed(2).replace(".",",")}`
         : `Kein Value (${edgePct}%) · faire Quote ca. ${fairOdd.toFixed(2).replace(".",",")}`;
-      if(displayBest.source==="Tipico") valueText += " · Tipico-Quote";
     }
   }
 
-  const availabilityNote=tipicoChoice.summary.loaded
-    ? `Tipico verfügbar: ${tipicoChoice.summary.labels.join(", ")}.`
-    : "Tipico-Spezialmärkte noch nicht synchronisiert; Match-Sieg aus Standardfeed.";
-
   $("missionPickReason").textContent=displayBest.prob!==null
-    ? `${quality.toUpperCase()} · sportliche Chance ca. ${displayBest.prob}% · ${valueText} · Analysequalität ${report.confidence}%. ${availabilityNote}`
-    : `Kein klarer Pick unter den aktuell verfügbaren Märkten · Analysequalität ${report.confidence}%. ${availabilityNote}`;
+    ? `${quality.toUpperCase()} · sportliche Chance ca. ${displayBest.prob}% · ${valueText} · Analysequalität ${report.confidence}%.`
+    : `Kein klarer sportlicher Pre-Match-Pick · Analysequalität ${report.confidence}%.`;
   pickBox?.classList.toggle("no-pick",displayBest.type==="pass");
 
-  if($("tipicoAvailable")) $("tipicoAvailable").textContent=tipicoChoice.summary.labels.join(" · ");
-  if($("tipicoH2H")) $("tipicoH2H").textContent=formatTipicoRows(tipicoMarketData(match)?.h2h,match,"h2h");
-  if($("tipicoSpreads")) $("tipicoSpreads").textContent=formatTipicoRows(tipicoMarketData(match)?.spreads,match,"spreads");
-  if($("tipicoTotals")) $("tipicoTotals").textContent=formatTipicoRows(tipicoMarketData(match)?.totals,match,"totals");
   if($("probMatch")) $("probMatch").textContent=`${match.player1} ${engine.p1}% · ${match.player2} ${engine.p2}%`;
   if($("probSetHc")) $("probSetHc").textContent=`${sideName(match,engine.dog)} +1,5 Sätze · ca. ${engine.dogSet}%`;
   if($("probTwoZero")) $("probTwoZero").textContent=`${sideName(match,engine.favorite)} 2:0 · ca. ${engine.fav20}%`;
