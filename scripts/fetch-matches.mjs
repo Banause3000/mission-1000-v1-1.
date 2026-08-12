@@ -8,7 +8,7 @@ if (!API_KEY) {
 
 const API = "https://api.the-odds-api.com/v4";
 const TIME_ZONE = "Europe/Berlin";
-const ADVANCED_TIPICO = process.env.GITHUB_EVENT_NAME === "workflow_dispatch";
+const ADVANCED_TIPICO = true; // v2.9.1: automatische Läufe synchronisieren Featured Markets mit
 
 let previousMatches = [];
 try {
@@ -19,9 +19,7 @@ try {
 }
 
 console.log(
-  ADVANCED_TIPICO
-    ? "Manueller Lauf: Tipico + h2h/spreads/totals werden synchronisiert."
-    : "Zeitplan-Lauf: ressourcenschonend nur h2h; vorhandene Tipico-Spezialmärkte bleiben erhalten."
+  "Automatischer Lauf: h2h + spreads + totals werden synchronisiert; Tipico wird erkannt, wenn der Provider Tipico für das Match liefert."
 );
 
 function istTennis(sport) {
@@ -205,7 +203,7 @@ for (const sport of tennisSports) {
   url.searchParams.set("regions", "eu");
   url.searchParams.set(
     "markets",
-    ADVANCED_TIPICO ? "h2h,spreads,totals" : "h2h"
+    "h2h,spreads,totals"
   );
   url.searchParams.set("oddsFormat", "decimal");
   url.searchParams.set("dateFormat", "iso");
