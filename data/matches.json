@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-18T19:35:59.428Z",
+  "generatedAt": "2026-08-18T20:01:50.624Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "269",
-    "remaining": "231"
+    "used": "271",
+    "remaining": "229"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Brandon Nakashima",
       "player2": "Daniil Medvedev",
-      "odds1": 1.6,
-      "odds2": 3.44,
-      "bookmaker1": "Betsson",
-      "bookmaker2": "Pinnacle",
+      "odds1": 4.67,
+      "odds2": 1.27,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -33,10 +33,10 @@
       "status": "live-or-started",
       "player1": "Coco Gauff",
       "player2": "Ann Li",
-      "odds1": 1.08,
-      "odds2": 17.5,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
+      "odds1": 1.09,
+      "odds2": 21.63,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -49,8 +49,8 @@
       "status": "live-or-started",
       "player1": "Marta Kostyuk",
       "player2": "Sloane Stephens",
-      "odds1": 1.32,
-      "odds2": 8,
+      "odds1": 1.2,
+      "odds2": 18.5,
       "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -65,9 +65,9 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 2.02,
+      "odds1": 1.98,
       "odds2": 2.02,
-      "bookmaker1": "GTbets",
+      "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,10 +81,10 @@
       "status": "upcoming",
       "player1": "Jaime Faria",
       "player2": "Adam Walton",
-      "odds1": 1.73,
-      "odds2": 2.36,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "odds1": 1.72,
+      "odds2": 2.38,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -114,9 +114,9 @@
       "player1": "Aryna Sabalenka",
       "player2": "Xinyu Wang",
       "odds1": 1.11,
-      "odds2": 10,
+      "odds2": 10.1,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -129,8 +129,8 @@
       "status": "upcoming",
       "player1": "Learner Tien",
       "player2": "Frances Tiafoe",
-      "odds1": 1.86,
-      "odds2": 2.14,
+      "odds1": 1.87,
+      "odds2": 2.12,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -145,9 +145,9 @@
       "status": "upcoming",
       "player1": "Marie Bouzkova",
       "player2": "Iva Jović",
-      "odds1": 2.72,
+      "odds1": 2.74,
       "odds2": 1.57,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -193,7 +193,7 @@
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Diane Parry",
-      "odds1": 1.05,
+      "odds1": 1.04,
       "odds2": 20,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -225,7 +225,7 @@
       "status": "upcoming",
       "player1": "Madison Keys",
       "player2": "Xiyu Wang",
-      "odds1": 1.32,
+      "odds1": 1.33,
       "odds2": 4.14,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
@@ -289,8 +289,8 @@
       "status": "upcoming",
       "player1": "Rafael Jodar",
       "player2": "Flavio Cobolli",
-      "odds1": 1.37,
-      "odds2": 3.6,
+      "odds1": 1.36,
+      "odds2": 3.7,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -305,8 +305,8 @@
       "status": "upcoming",
       "player1": "Thiago Agustin Tirante",
       "player2": "Jakub Mensik",
-      "odds1": 2.98,
-      "odds2": 1.49,
+      "odds1": 2.96,
+      "odds2": 1.5,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
