@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-18T20:01:50.624Z",
+  "generatedAt": "2026-08-18T20:56:25.016Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "271",
-    "remaining": "229"
+    "used": "273",
+    "remaining": "227"
   },
   "matches": [
     {
@@ -17,26 +17,10 @@
       "status": "live-or-started",
       "player1": "Brandon Nakashima",
       "player2": "Daniil Medvedev",
-      "odds1": 4.67,
-      "odds2": 1.27,
+      "odds1": 21.51,
+      "odds2": 1.22,
       "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
-    {
-      "id": "13bf3e03d1e397890164af81472035c1",
-      "tour": "WTA",
-      "event": "WTA Cincinnati Open",
-      "date": "2026-08-18",
-      "start": "21:07",
-      "startIso": "2026-08-18T19:07:09Z",
-      "status": "live-or-started",
-      "player1": "Coco Gauff",
-      "player2": "Ann Li",
-      "odds1": 1.09,
-      "odds2": 21.63,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -49,25 +33,9 @@
       "status": "live-or-started",
       "player1": "Marta Kostyuk",
       "player2": "Sloane Stephens",
-      "odds1": 1.2,
-      "odds2": 18.5,
+      "odds1": 1.21,
+      "odds2": 34,
       "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
-    {
-      "id": "e3618339794d8bbb4c7252afa6cc4540",
-      "tour": "WTA",
-      "event": "WTA Cincinnati Open",
-      "date": "2026-08-18",
-      "start": "22:30",
-      "startIso": "2026-08-18T20:30:00Z",
-      "status": "upcoming",
-      "player1": "Sara Bejlek",
-      "player2": "Ekaterina Alexandrova",
-      "odds1": 1.98,
-      "odds2": 2.02,
-      "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,10 +49,26 @@
       "status": "upcoming",
       "player1": "Jaime Faria",
       "player2": "Adam Walton",
-      "odds1": 1.72,
-      "odds2": 2.38,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.75,
+      "odds2": 2.4,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "BetOnline.ag",
+      "source": "The Odds API"
+    },
+    {
+      "id": "e3618339794d8bbb4c7252afa6cc4540",
+      "tour": "WTA",
+      "event": "WTA Cincinnati Open",
+      "date": "2026-08-18",
+      "start": "23:17",
+      "startIso": "2026-08-18T21:17:31Z",
+      "status": "upcoming",
+      "player1": "Sara Bejlek",
+      "player2": "Ekaterina Alexandrova",
+      "odds1": 1.94,
+      "odds2": 2.04,
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,7 +81,7 @@
       "status": "upcoming",
       "player1": "Juan Manuel Cerundolo",
       "player2": "Felix Auger-Aliassime",
-      "odds1": 5.3,
+      "odds1": 5.4,
       "odds2": 1.22,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
@@ -114,9 +98,9 @@
       "player1": "Aryna Sabalenka",
       "player2": "Xinyu Wang",
       "odds1": 1.11,
-      "odds2": 10.1,
+      "odds2": 10,
       "bookmaker1": "GTbets",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -129,8 +113,8 @@
       "status": "upcoming",
       "player1": "Learner Tien",
       "player2": "Frances Tiafoe",
-      "odds1": 1.87,
-      "odds2": 2.12,
+      "odds1": 1.84,
+      "odds2": 2.16,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -148,7 +132,7 @@
       "odds1": 2.74,
       "odds2": 1.57,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -162,9 +146,9 @@
       "player1": "Linda Noskova",
       "player2": "Amanda Anisimova",
       "odds1": 1.88,
-      "odds2": 2.1,
+      "odds2": 2.12,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -225,8 +209,8 @@
       "status": "upcoming",
       "player1": "Madison Keys",
       "player2": "Xiyu Wang",
-      "odds1": 1.33,
-      "odds2": 4.14,
+      "odds1": 1.31,
+      "odds2": 4.03,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -241,8 +225,8 @@
       "status": "upcoming",
       "player1": "Arthur Fils",
       "player2": "Alex de Minaur",
-      "odds1": 1.6,
-      "odds2": 2.62,
+      "odds1": 1.61,
+      "odds2": 2.6,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -258,9 +242,9 @@
       "player1": "Alexander Zverev",
       "player2": "Tommy Paul",
       "odds1": 1.45,
-      "odds2": 3.2,
+      "odds2": 3.25,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -273,10 +257,10 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Christopher O'Connell",
-      "odds1": 1.13,
-      "odds2": 7.16,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "1xBet",
+      "odds1": 1.12,
+      "odds2": 8,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -292,7 +276,7 @@
       "odds1": 1.36,
       "odds2": 3.7,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
