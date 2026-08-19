@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-19T05:06:15.636Z",
+  "generatedAt": "2026-08-19T06:02:26.132Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "283",
-    "remaining": "217"
+    "used": "285",
+    "remaining": "215"
   },
   "matches": [
     {
@@ -18,7 +18,7 @@
       "player1": "Rafael Jodar",
       "player2": "Flavio Cobolli",
       "odds1": 1.35,
-      "odds2": 3.75,
+      "odds2": 3.8,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -34,7 +34,7 @@
       "player1": "Iga Swiatek",
       "player2": "Diane Parry",
       "odds1": 1.05,
-      "odds2": 19,
+      "odds2": 18.5,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,7 +49,7 @@
       "status": "upcoming",
       "player1": "Thiago Agustin Tirante",
       "player2": "Jakub Mensik",
-      "odds1": 3,
+      "odds1": 2.98,
       "odds2": 1.49,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -82,8 +82,8 @@
       "player1": "Alexander Zverev",
       "player2": "Tommy Paul",
       "odds1": 1.39,
-      "odds2": 3.5,
-      "bookmaker1": "Betfair",
+      "odds2": 3.55,
+      "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -97,10 +97,10 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Mirra Andreeva",
-      "odds1": 2.12,
-      "odds2": 1.85,
+      "odds1": 2.16,
+      "odds2": 1.83,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -113,7 +113,7 @@
       "status": "upcoming",
       "player1": "Arthur Fils",
       "player2": "Alex de Minaur",
-      "odds1": 1.6,
+      "odds1": 1.61,
       "odds2": 2.6,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -129,7 +129,7 @@
       "status": "upcoming",
       "player1": "Linda Noskova",
       "player2": "Amanda Anisimova",
-      "odds1": 1.89,
+      "odds1": 1.9,
       "odds2": 2.1,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -152,6 +152,22 @@
       "source": "The Odds API"
     },
     {
+      "id": "f38e2b71e6566ef46ab086766a3d7eaf",
+      "tour": "WTA",
+      "event": "WTA Cincinnati Open",
+      "date": "2026-08-19",
+      "start": "21:00",
+      "startIso": "2026-08-19T19:00:00Z",
+      "status": "upcoming",
+      "player1": "Coco Gauff",
+      "player2": "Marie Bouzkova",
+      "odds1": 1.32,
+      "odds2": 3.9,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "Coolbet",
+      "source": "The Odds API"
+    },
+    {
       "id": "05b6e3c71e45e07766cfabdb4e8a4bc4",
       "tour": "ATP",
       "event": "ATP Cincinnati Open",
@@ -161,10 +177,10 @@
       "status": "upcoming",
       "player1": "Nuno Borges",
       "player2": "Brandon Nakashima",
-      "odds1": 2.46,
+      "odds1": 2.48,
       "odds2": 1.67,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -177,7 +193,7 @@
       "status": "upcoming",
       "player1": "Jaime Faria",
       "player2": "Lorenzo Musetti",
-      "odds1": 3.25,
+      "odds1": 3.3,
       "odds2": 1.42,
       "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
@@ -226,7 +242,7 @@
       "player1": "Aryna Sabalenka",
       "player2": "Sara Bejlek",
       "odds1": 1.18,
-      "odds2": 6,
+      "odds2": 6.2,
       "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
