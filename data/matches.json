@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-08-19T03:15:00.720Z",
+  "generatedAt": "2026-08-19T05:06:15.636Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "281",
-    "remaining": "219"
+    "used": "283",
+    "remaining": "217"
   },
   "matches": [
-    {
-      "id": "ea09ce3125148fa80ea0a1bff9546c79",
-      "tour": "WTA",
-      "event": "WTA Cincinnati Open",
-      "date": "2026-08-19",
-      "start": "02:58",
-      "startIso": "2026-08-19T00:58:35Z",
-      "status": "live-or-started",
-      "player1": "Marie Bouzkova",
-      "player2": "Iva Jović",
-      "odds1": 2.05,
-      "odds2": 9.6,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Matchbook",
-      "source": "The Odds API"
-    },
     {
       "id": "2932c93a0e7e835909cf7cc0756f4a22",
       "tour": "ATP",
@@ -50,7 +34,7 @@
       "player1": "Iga Swiatek",
       "player2": "Diane Parry",
       "odds1": 1.05,
-      "odds2": 20,
+      "odds2": 19,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -66,7 +50,7 @@
       "player1": "Thiago Agustin Tirante",
       "player2": "Jakub Mensik",
       "odds1": 3,
-      "odds2": 1.48,
+      "odds2": 1.49,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -81,8 +65,8 @@
       "status": "upcoming",
       "player1": "Sorana Cirstea",
       "player2": "Jessica Pegula",
-      "odds1": 3.65,
-      "odds2": 1.37,
+      "odds1": 3.7,
+      "odds2": 1.35,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -97,9 +81,9 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Tommy Paul",
-      "odds1": 1.4,
+      "odds1": 1.39,
       "odds2": 3.5,
-      "bookmaker1": "1xBet",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -113,10 +97,10 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Mirra Andreeva",
-      "odds1": 2.09,
-      "odds2": 1.87,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Matchbook",
+      "odds1": 2.12,
+      "odds2": 1.85,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -129,8 +113,8 @@
       "status": "upcoming",
       "player1": "Arthur Fils",
       "player2": "Alex de Minaur",
-      "odds1": 1.61,
-      "odds2": 2.58,
+      "odds1": 1.6,
+      "odds2": 2.6,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -177,8 +161,8 @@
       "status": "upcoming",
       "player1": "Nuno Borges",
       "player2": "Brandon Nakashima",
-      "odds1": 2.44,
-      "odds2": 1.68,
+      "odds1": 2.46,
+      "odds2": 1.67,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -193,9 +177,9 @@
       "status": "upcoming",
       "player1": "Jaime Faria",
       "player2": "Lorenzo Musetti",
-      "odds1": 3.12,
+      "odds1": 3.25,
       "odds2": 1.42,
-      "bookmaker1": "1xBet",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
@@ -210,7 +194,7 @@
       "player1": "Taylor Fritz",
       "player2": "Christopher O'Connell",
       "odds1": 1.12,
-      "odds2": 8.8,
+      "odds2": 9.4,
       "bookmaker1": "LeoVegas (SE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -226,7 +210,7 @@
       "player1": "Madison Keys",
       "player2": "Xiyu Wang",
       "odds1": 1.32,
-      "odds2": 4.5,
+      "odds2": 4.6,
       "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -241,9 +225,9 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Sara Bejlek",
-      "odds1": 1.22,
-      "odds2": 5.7,
-      "bookmaker1": "GTbets",
+      "odds1": 1.18,
+      "odds2": 6,
+      "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
