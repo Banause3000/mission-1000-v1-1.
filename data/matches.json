@@ -1,42 +1,26 @@
 {
-  "generatedAt": "2026-08-20T19:20:01.207Z",
+  "generatedAt": "2026-08-20T20:58:44.546Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "331",
-    "remaining": "169"
+    "used": "333",
+    "remaining": "167"
   },
   "matches": [
-    {
-      "id": "ca239b620063e8e7fb89c5f54af37d1a",
-      "tour": "WTA",
-      "event": "WTA Cincinnati Open",
-      "date": "2026-08-20",
-      "start": "19:09",
-      "startIso": "2026-08-20T17:09:47Z",
-      "status": "live-or-started",
-      "player1": "Amanda Anisimova",
-      "player2": "Jessica Pegula",
-      "odds1": 2.58,
-      "odds2": 3.03,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Coolbet",
-      "source": "The Odds API"
-    },
     {
       "id": "bb9787ba2c218ec246a382bd949b4927",
       "tour": "ATP",
       "event": "ATP Cincinnati Open",
       "date": "2026-08-20",
-      "start": "22:00",
-      "startIso": "2026-08-20T20:00:00Z",
-      "status": "upcoming",
+      "start": "21:00",
+      "startIso": "2026-08-20T19:00:00Z",
+      "status": "live-or-started",
       "player1": "Tommy Paul",
       "player2": "Flavio Cobolli",
-      "odds1": 1.68,
-      "odds2": 2.46,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.75,
+      "odds2": 2.45,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Unibet (SE)",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Elena Rybakina",
-      "odds1": 1.71,
-      "odds2": 2.42,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Betfair",
+      "odds1": 1.7,
+      "odds2": 2.4,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -66,7 +50,7 @@
       "player1": "Thiago Agustin Tirante",
       "player2": "Arthur Fils",
       "odds1": 4,
-      "odds2": 1.32,
+      "odds2": 1.31,
       "bookmaker1": "Winamax (DE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -82,9 +66,9 @@
       "player1": "Sara Bejlek",
       "player2": "Madison Keys",
       "odds1": 3,
-      "odds2": 1.5,
-      "bookmaker1": "Unibet (SE)",
-      "bookmaker2": "Betfair",
+      "odds2": 1.52,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -97,7 +81,7 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Brandon Nakashima",
-      "odds1": 1.58,
+      "odds1": 1.57,
       "odds2": 2.7,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
