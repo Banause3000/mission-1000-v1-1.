@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-08-20T23:02:26.328Z",
+  "generatedAt": "2026-08-20T23:56:06.899Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "337",
-    "remaining": "163"
+    "used": "339",
+    "remaining": "161"
   },
   "matches": [
-    {
-      "id": "54eaf1dd290172b41a93a0e0f75c0dd4",
-      "tour": "WTA",
-      "event": "WTA Cincinnati Open",
-      "date": "2026-08-21",
-      "start": "01:10",
-      "startIso": "2026-08-20T23:10:00Z",
-      "status": "upcoming",
-      "player1": "Iga Swiatek",
-      "player2": "Elena Rybakina",
-      "odds1": 1.69,
-      "odds2": 2.46,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "d735e9ce6b96a917e05902e225210b92",
       "tour": "ATP",
@@ -33,10 +17,10 @@
       "status": "upcoming",
       "player1": "Thiago Agustin Tirante",
       "player2": "Arthur Fils",
-      "odds1": 4.1,
+      "odds1": 4.3,
       "odds2": 1.31,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -81,7 +65,7 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 1.93,
+      "odds1": 1.92,
       "odds2": 2.06,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
