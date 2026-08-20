@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-20T12:00:31.693Z",
+  "generatedAt": "2026-08-20T14:18:54.020Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "323",
-    "remaining": "177"
+    "used": "325",
+    "remaining": "175"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Amanda Anisimova",
       "player2": "Jessica Pegula",
-      "odds1": 2.16,
-      "odds2": 1.86,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 2.24,
+      "odds2": 1.81,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -34,9 +34,9 @@
       "player1": "Tommy Paul",
       "player2": "Flavio Cobolli",
       "odds1": 1.67,
-      "odds2": 2.48,
+      "odds2": 2.5,
       "bookmaker1": "888sport",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Elena Rybakina",
-      "odds1": 1.72,
-      "odds2": 2.38,
+      "odds1": 1.7,
+      "odds2": 2.4,
       "bookmaker1": "Betfair",
-      "bookmaker2": "PMU (FR)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -82,7 +82,7 @@
       "player1": "Coco Gauff",
       "player2": "Marta Kostyuk",
       "odds1": 1.8,
-      "odds2": 2.22,
+      "odds2": 2.2,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -97,7 +97,7 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Madison Keys",
-      "odds1": 3.1,
+      "odds1": 3,
       "odds2": 1.49,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
@@ -113,9 +113,9 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Brandon Nakashima",
-      "odds1": 1.57,
-      "odds2": 2.74,
-      "bookmaker1": "BetOnline.ag",
+      "odds1": 1.58,
+      "odds2": 2.7,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -130,7 +130,7 @@
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
       "odds1": 1.92,
-      "odds2": 2.06,
+      "odds2": 2.08,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
