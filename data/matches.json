@@ -1,39 +1,23 @@
 {
-  "generatedAt": "2026-08-20T22:00:09.518Z",
+  "generatedAt": "2026-08-20T23:02:26.328Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "335",
-    "remaining": "165"
+    "used": "337",
+    "remaining": "163"
   },
   "matches": [
-    {
-      "id": "bb9787ba2c218ec246a382bd949b4927",
-      "tour": "ATP",
-      "event": "ATP Cincinnati Open",
-      "date": "2026-08-20",
-      "start": "21:00",
-      "startIso": "2026-08-20T19:00:00Z",
-      "status": "live-or-started",
-      "player1": "Tommy Paul",
-      "player2": "Flavio Cobolli",
-      "odds1": 50,
-      "odds2": 2.05,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
     {
       "id": "54eaf1dd290172b41a93a0e0f75c0dd4",
       "tour": "WTA",
       "event": "WTA Cincinnati Open",
       "date": "2026-08-21",
-      "start": "01:00",
-      "startIso": "2026-08-20T23:00:00Z",
+      "start": "01:10",
+      "startIso": "2026-08-20T23:10:00Z",
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Elena Rybakina",
-      "odds1": 1.71,
+      "odds1": 1.69,
       "odds2": 2.46,
       "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
@@ -65,10 +49,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Madison Keys",
-      "odds1": 2.94,
-      "odds2": 1.52,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "1xBet",
+      "odds1": 2.98,
+      "odds2": 1.5,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,8 +81,8 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 1.94,
-      "odds2": 2.04,
+      "odds1": 1.93,
+      "odds2": 2.06,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
