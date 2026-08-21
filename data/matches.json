@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-21T05:17:05.958Z",
+  "generatedAt": "2026-08-21T08:01:19.822Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "343",
-    "remaining": "157"
+    "used": "345",
+    "remaining": "155"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Madison Keys",
-      "odds1": 2.9,
-      "odds2": 1.52,
-      "bookmaker1": "Betfair",
+      "odds1": 2.87,
+      "odds2": 1.53,
+      "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Brandon Nakashima",
-      "odds1": 1.57,
-      "odds2": 2.7,
-      "bookmaker1": "Betfair",
+      "odds1": 1.6,
+      "odds2": 2.66,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,9 +49,9 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 1.93,
+      "odds1": 1.92,
       "odds2": 2.06,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,10 +81,10 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 3.02,
-      "odds2": 1.5,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "William Hill",
+      "odds1": 3.15,
+      "odds2": 1.45,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -97,10 +97,10 @@
       "status": "upcoming",
       "player1": "Flavio Cobolli",
       "player2": "Arthur Fils",
-      "odds1": 3.74,
+      "odds1": 3.75,
       "odds2": 1.36,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "1xBet",
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
