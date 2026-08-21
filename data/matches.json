@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-08-21T21:57:21.654Z",
+  "generatedAt": "2026-08-21T22:57:20.113Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "365",
-    "remaining": "135"
+    "used": "367",
+    "remaining": "133"
   },
   "matches": [
-    {
-      "id": "37c7b865cc8d98a31b31d331e2376c96",
-      "tour": "ATP",
-      "event": "ATP Cincinnati Open",
-      "date": "2026-08-21",
-      "start": "22:05",
-      "startIso": "2026-08-21T20:05:31Z",
-      "status": "live-or-started",
-      "player1": "Taylor Fritz",
-      "player2": "Brandon Nakashima",
-      "odds1": 1.88,
-      "odds2": 3.02,
-      "bookmaker1": "Betclic (FR)",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
     {
       "id": "6a59e4127323e705e0f7d9068774d6e7",
       "tour": "ATP",
@@ -33,8 +17,8 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 1.97,
-      "odds2": 2.02,
+      "odds1": 1.99,
+      "odds2": 1.99,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -51,8 +35,8 @@
       "player2": "Marta Kostyuk",
       "odds1": 1.78,
       "odds2": 2.28,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
