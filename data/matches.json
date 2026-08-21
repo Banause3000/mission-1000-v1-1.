@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-21T14:08:26.229Z",
+  "generatedAt": "2026-08-21T16:01:35.727Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "353",
-    "remaining": "147"
+    "used": "355",
+    "remaining": "145"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Madison Keys",
-      "odds1": 2.94,
-      "odds2": 1.51,
-      "bookmaker1": "Betfair",
+      "odds1": 2.81,
+      "odds2": 1.54,
+      "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -34,7 +34,7 @@
       "player1": "Taylor Fritz",
       "player2": "Brandon Nakashima",
       "odds1": 1.56,
-      "odds2": 2.72,
+      "odds2": 2.74,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 1.92,
-      "odds2": 2.06,
+      "odds1": 1.91,
+      "odds2": 2.08,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -66,7 +66,7 @@
       "player1": "Coco Gauff",
       "player2": "Marta Kostyuk",
       "odds1": 1.77,
-      "odds2": 2.28,
+      "odds2": 2.26,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -81,7 +81,7 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 3.3,
+      "odds1": 3.35,
       "odds2": 1.45,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -98,9 +98,9 @@
       "player1": "Flavio Cobolli",
       "player2": "Arthur Fils",
       "odds1": 3.6,
-      "odds2": 1.37,
+      "odds2": 1.38,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     }
   ]
