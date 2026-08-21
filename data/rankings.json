@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T05:56:43.702635+00:00",
+  "generatedAt": "2026-08-21T05:52:56.177607+00:00",
   "source": "Mission 1000 Data Engine v3.2",
   "players": [
     {
@@ -51,6 +51,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "USA",
       "playerId": "210097"
+    },
+    {
+      "name": "Felix Auger-Aliassime",
+      "tour": "ATP",
+      "rank": 5,
+      "points": 4190,
+      "rankingDate": "20260106",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Felix Auger Aliassime",
@@ -851,6 +859,14 @@
       "playerId": "105902"
     },
     {
+      "name": "Jan-Lennard Struff",
+      "tour": "ATP",
+      "rank": 82,
+      "points": 711,
+      "rankingDate": "20260106",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Giovanni Mpetshi Perricard",
       "tour": "ATP",
       "rank": 58,
@@ -939,6 +955,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "USA",
       "playerId": "200516"
+    },
+    {
+      "name": "Yunchaokete Bu",
+      "tour": "ATP",
+      "rank": 89,
+      "points": 721,
+      "rankingDate": "20250924",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Quentin Halys",
@@ -1091,6 +1115,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "ARG",
       "playerId": "207681"
+    },
+    {
+      "name": "Christopher O'Connell",
+      "tour": "ATP",
+      "rank": 103,
+      "points": 644,
+      "rankingDate": "20250924",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Ilya Ivashka",
@@ -1445,6 +1477,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "CZE",
       "playerId": "144645"
+    },
+    {
+      "name": "Chun-Hsin Tseng",
+      "tour": "ATP",
+      "rank": 120,
+      "points": 531,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Jan Choinski",
@@ -1894,6 +1934,14 @@
       "rank": 142,
       "points": 442,
       "rankingDate": "20220523",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Pierre-Hugues Herbert",
+      "tour": "ATP",
+      "rank": 142,
+      "points": 431,
+      "rankingDate": "20250727",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -2883,6 +2931,16 @@
       "rankingSource": "latest observed match ranking"
     },
     {
+      "name": "Dan Added",
+      "tour": "ATP",
+      "rank": 201,
+      "points": 293,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "FRA",
+      "playerId": "200385"
+    },
+    {
       "name": "Felipe Meligeni Alves",
       "tour": "ATP",
       "rank": 225,
@@ -3041,16 +3099,6 @@
       "rankingSource": "ATP weekly CSV",
       "country": "ARG",
       "playerId": "106044"
-    },
-    {
-      "name": "Dan Added",
-      "tour": "ATP",
-      "rank": 201,
-      "points": 293,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "FRA",
-      "playerId": "200385"
     },
     {
       "name": "Enzo Couacaud",
@@ -3284,6 +3332,14 @@
       "rank": 221,
       "points": 299,
       "rankingDate": "20210918",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Marc-Andrea Huesler",
+      "tour": "ATP",
+      "rank": 222,
+      "points": 248,
+      "rankingDate": "20250912",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -3733,6 +3789,14 @@
       "playerId": "105077"
     },
     {
+      "name": "Albert Ramos-Vinolas",
+      "tour": "ATP",
+      "rank": 251,
+      "points": 224,
+      "rankingDate": "20250526",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Christian Harrison",
       "tour": "ATP",
       "rank": 251,
@@ -3941,6 +4005,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "ROU",
       "playerId": "207660"
+    },
+    {
+      "name": "Abdullah Shelbayh",
+      "tour": "ATP",
+      "rank": 267,
+      "points": 201,
+      "rankingDate": "20250217",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Abedallah Shelbayh",
@@ -4301,6 +4373,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "JPN",
       "playerId": "200677"
+    },
+    {
+      "name": "Tung-Lin Wu",
+      "tour": "ATP",
+      "rank": 291,
+      "points": 179,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Matheus Pucinelli De Almeida",
@@ -4979,6 +5059,14 @@
       "playerId": "124154"
     },
     {
+      "name": "Roberto Cid Subervi",
+      "tour": "ATP",
+      "rank": 367,
+      "points": 136,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Carlos Gimeno Valero",
       "tour": "ATP",
       "rank": 369,
@@ -4992,6 +5080,14 @@
       "rank": 371,
       "points": 131,
       "rankingDate": "20240202",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Diego Dedura-Palomero",
+      "tour": "ATP",
+      "rank": 372,
+      "points": 130,
+      "rankingDate": "20250519",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -5141,6 +5237,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "HUN",
       "playerId": "200218"
+    },
+    {
+      "name": "Khumoyun Sultanov",
+      "tour": "ATP",
+      "rank": 403,
+      "points": 122,
+      "rankingDate": "20250913",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Martin Cuevas",
@@ -5555,6 +5659,14 @@
       "rankingSource": "latest observed match ranking"
     },
     {
+      "name": "Soonwoo Kwon",
+      "tour": "ATP",
+      "rank": 478,
+      "points": 89,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Ergi Kirkin",
       "tour": "ATP",
       "rank": 552,
@@ -5681,6 +5793,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "UZB",
       "playerId": "200672"
+    },
+    {
+      "name": "Alex Hernandez",
+      "tour": "ATP",
+      "rank": 493,
+      "points": 82,
+      "rankingDate": "20250714",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Ernesto Escobedo",
@@ -5830,6 +5950,14 @@
       "rank": 542,
       "points": 63,
       "rankingDate": "20210830",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Fares Zakaria",
+      "tour": "ATP",
+      "rank": 543,
+      "points": 72,
+      "rankingDate": "20250913",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -6071,6 +6199,16 @@
       "playerId": "209362"
     },
     {
+      "name": "Luis Carlos Alvarez",
+      "tour": "ATP",
+      "rank": 615,
+      "points": 59,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "MEX",
+      "playerId": "210545"
+    },
+    {
       "name": "Zhe Li",
       "tour": "ATP",
       "rank": 1095,
@@ -6309,6 +6447,14 @@
       "playerId": "200321"
     },
     {
+      "name": "Sanhui Shin",
+      "tour": "ATP",
+      "rank": 665,
+      "points": 44,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Ye Cong Mo",
       "tour": "ATP",
       "rank": 641,
@@ -6337,6 +6483,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "IRL",
       "playerId": "210686"
+    },
+    {
+      "name": "Tsung-Hao Huang",
+      "tour": "ATP",
+      "rank": 680,
+      "points": 42,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Skander Mansouri",
@@ -6655,16 +6809,6 @@
       "playerId": "209278"
     },
     {
-      "name": "Luis Carlos Alvarez",
-      "tour": "ATP",
-      "rank": 615,
-      "points": 59,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "MEX",
-      "playerId": "210545"
-    },
-    {
       "name": "Matija Pecotic",
       "tour": "ATP",
       "rank": 1844,
@@ -6753,6 +6897,16 @@
       "points": 26,
       "rankingDate": "20230731",
       "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Joaquin Aguilar Cardozo",
+      "tour": "ATP",
+      "rank": 599,
+      "points": 62,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "URU",
+      "playerId": "212051"
     },
     {
       "name": "Petros Tsitsipas",
@@ -6885,6 +7039,16 @@
       "rankingSource": "latest observed match ranking"
     },
     {
+      "name": "Menelaos Efstathiou",
+      "tour": "ATP",
+      "rank": 789,
+      "points": 35,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "CYP",
+      "playerId": "144949"
+    },
+    {
       "name": "Jurabek Karimov",
       "tour": "ATP",
       "rank": 873,
@@ -6921,6 +7085,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "EGY",
       "playerId": "105747"
+    },
+    {
+      "name": "Karim-Mohamed Maamoun",
+      "tour": "ATP",
+      "rank": 882,
+      "points": 20,
+      "rankingDate": "20250201",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Mert Naci Turker",
@@ -7005,6 +7177,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "EST",
       "playerId": "210312"
+    },
+    {
+      "name": "M Rifki Fitriadi",
+      "tour": "ATP",
+      "rank": 943,
+      "points": 17,
+      "rankingDate": "20250201",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Taym Al Azmeh",
@@ -7287,6 +7467,14 @@
       "playerId": "106175"
     },
     {
+      "name": "Ricardo Rodriguez - Pace",
+      "tour": "ATP",
+      "rank": 1114,
+      "points": 10,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Hugo Nys",
       "tour": "ATP",
       "rank": 1117,
@@ -7399,16 +7587,6 @@
       "playerId": "206716"
     },
     {
-      "name": "Menelaos Efstathiou",
-      "tour": "ATP",
-      "rank": 789,
-      "points": 35,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "CYP",
-      "playerId": "144949"
-    },
-    {
       "name": "Alexander Zgirovsky",
       "tour": "ATP",
       "rank": 1628,
@@ -7499,6 +7677,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "SLO",
       "playerId": "210753"
+    },
+    {
+      "name": "Osgar O'Hoisin",
+      "tour": "ATP",
+      "rank": 1288,
+      "points": 6,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Osgar Ohoisin",
@@ -7697,6 +7883,14 @@
       "playerId": "127143"
     },
     {
+      "name": "Alex Santino Nuñez Vera",
+      "tour": "ATP",
+      "rank": 1562,
+      "points": 3,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Federico Zeballos",
       "tour": "ATP",
       "rank": 1430,
@@ -7817,6 +8011,16 @@
       "rankingSource": "ATP weekly CSV",
       "country": "MNE",
       "playerId": "210188"
+    },
+    {
+      "name": "Ammar Alhogbani",
+      "tour": "ATP",
+      "rank": 1115,
+      "points": 12,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "USA",
+      "playerId": "205831"
     },
     {
       "name": "Devin Badenhorst",
@@ -8063,210 +8267,6 @@
       "rankingSource": "ATP weekly CSV",
       "country": "DOM",
       "playerId": "210476"
-    },
-    {
-      "name": "Felix Auger-Aliassime",
-      "tour": "ATP",
-      "rank": 5,
-      "points": 4190,
-      "rankingDate": "20260106",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Jan-Lennard Struff",
-      "tour": "ATP",
-      "rank": 82,
-      "points": 711,
-      "rankingDate": "20260106",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Yunchaokete Bu",
-      "tour": "ATP",
-      "rank": 89,
-      "points": 721,
-      "rankingDate": "20250924",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Christopher O'Connell",
-      "tour": "ATP",
-      "rank": 103,
-      "points": 644,
-      "rankingDate": "20250924",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Chun-Hsin Tseng",
-      "tour": "ATP",
-      "rank": 120,
-      "points": 531,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Pierre-Hugues Herbert",
-      "tour": "ATP",
-      "rank": 142,
-      "points": 431,
-      "rankingDate": "20250727",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Marc-Andrea Huesler",
-      "tour": "ATP",
-      "rank": 222,
-      "points": 248,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Albert Ramos-Vinolas",
-      "tour": "ATP",
-      "rank": 251,
-      "points": 224,
-      "rankingDate": "20250526",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Abdullah Shelbayh",
-      "tour": "ATP",
-      "rank": 267,
-      "points": 201,
-      "rankingDate": "20250217",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Tung-Lin Wu",
-      "tour": "ATP",
-      "rank": 291,
-      "points": 179,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Roberto Cid Subervi",
-      "tour": "ATP",
-      "rank": 367,
-      "points": 136,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Diego Dedura-Palomero",
-      "tour": "ATP",
-      "rank": 372,
-      "points": 130,
-      "rankingDate": "20250519",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Khumoyun Sultanov",
-      "tour": "ATP",
-      "rank": 403,
-      "points": 122,
-      "rankingDate": "20250913",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Soonwoo Kwon",
-      "tour": "ATP",
-      "rank": 478,
-      "points": 89,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Alex Hernandez",
-      "tour": "ATP",
-      "rank": 493,
-      "points": 82,
-      "rankingDate": "20250714",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Fares Zakaria",
-      "tour": "ATP",
-      "rank": 543,
-      "points": 72,
-      "rankingDate": "20250913",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Sanhui Shin",
-      "tour": "ATP",
-      "rank": 665,
-      "points": 44,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Tsung-Hao Huang",
-      "tour": "ATP",
-      "rank": 680,
-      "points": 42,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Joaquin Aguilar Cardozo",
-      "tour": "ATP",
-      "rank": 599,
-      "points": 62,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "URU",
-      "playerId": "212051"
-    },
-    {
-      "name": "Karim-Mohamed Maamoun",
-      "tour": "ATP",
-      "rank": 882,
-      "points": 20,
-      "rankingDate": "20250201",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "M Rifki Fitriadi",
-      "tour": "ATP",
-      "rank": 943,
-      "points": 17,
-      "rankingDate": "20250201",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Ricardo Rodriguez - Pace",
-      "tour": "ATP",
-      "rank": 1114,
-      "points": 10,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Osgar O'Hoisin",
-      "tour": "ATP",
-      "rank": 1288,
-      "points": 6,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Alex Santino Nuñez Vera",
-      "tour": "ATP",
-      "rank": 1562,
-      "points": 3,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Ammar Alhogbani",
-      "tour": "ATP",
-      "rank": 1115,
-      "points": 12,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "USA",
-      "playerId": "205831"
     },
     {
       "name": "Iva Jovic",
