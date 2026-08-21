@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-21T11:02:59.773Z",
+  "generatedAt": "2026-08-21T11:59:35.548Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "349",
-    "remaining": "151"
+    "used": "351",
+    "remaining": "149"
   },
   "matches": [
     {
@@ -65,7 +65,7 @@
       "status": "upcoming",
       "player1": "Coco Gauff",
       "player2": "Marta Kostyuk",
-      "odds1": 1.75,
+      "odds1": 1.78,
       "odds2": 2.28,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -99,7 +99,7 @@
       "player2": "Arthur Fils",
       "odds1": 3.7,
       "odds2": 1.36,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Unibet (FR)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
