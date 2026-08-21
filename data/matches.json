@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-21T08:01:19.822Z",
+  "generatedAt": "2026-08-21T09:56:11.908Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "345",
-    "remaining": "155"
+    "used": "347",
+    "remaining": "153"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Madison Keys",
-      "odds1": 2.87,
-      "odds2": 1.53,
-      "bookmaker1": "GTbets",
+      "odds1": 2.88,
+      "odds2": 1.52,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Brandon Nakashima",
-      "odds1": 1.6,
-      "odds2": 2.66,
-      "bookmaker1": "Pinnacle",
+      "odds1": 1.58,
+      "odds2": 2.74,
+      "bookmaker1": "Winamax (DE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,9 +49,9 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 1.92,
+      "odds1": 1.91,
       "odds2": 2.06,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,7 +81,7 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 3.15,
+      "odds1": 3.25,
       "odds2": 1.45,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
