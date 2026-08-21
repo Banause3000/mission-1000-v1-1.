@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T05:52:56.177607+00:00",
+  "generatedAt": "2026-08-21T05:59:11.165354+00:00",
   "source": "Mission 1000 Data Engine v3.1",
   "events": [
     {
@@ -7,14 +7,14 @@
       "event": "Brisbane",
       "normalizedEvent": "brisbane",
       "surface": "hard",
-      "samples": 180
+      "samples": 120
     },
     {
       "tour": "ATP",
       "event": "Doha",
       "normalizedEvent": "doha",
       "surface": "hard",
-      "samples": 267
+      "samples": 228
     },
     {
       "tour": "ATP",
@@ -28,7 +28,7 @@
       "event": "Auckland",
       "normalizedEvent": "auckland",
       "surface": "hard",
-      "samples": 186
+      "samples": 162
     },
     {
       "tour": "ATP",
@@ -42,7 +42,7 @@
       "event": "Australian Open",
       "normalizedEvent": "australian open",
       "surface": "hard",
-      "samples": 1142
+      "samples": 1016
     },
     {
       "tour": "ATP",
@@ -140,7 +140,7 @@
       "event": "Montpellier",
       "normalizedEvent": "montpellier",
       "surface": "hard",
-      "samples": 240
+      "samples": 216
     },
     {
       "tour": "ATP",
@@ -154,7 +154,7 @@
       "event": "Buenos Aires",
       "normalizedEvent": "buenos aires",
       "surface": "clay",
-      "samples": 231
+      "samples": 216
     },
     {
       "tour": "ATP",
@@ -168,42 +168,42 @@
       "event": "Rotterdam",
       "normalizedEvent": "rotterdam",
       "surface": "hard",
-      "samples": 281
+      "samples": 248
     },
     {
       "tour": "ATP",
       "event": "Delray Beach",
       "normalizedEvent": "delray beach",
       "surface": "hard",
-      "samples": 241
+      "samples": 224
     },
     {
       "tour": "ATP",
       "event": "Marseille",
       "normalizedEvent": "marseille",
       "surface": "hard",
-      "samples": 194
+      "samples": 189
     },
     {
       "tour": "ATP",
       "event": "Rio de Janeiro",
       "normalizedEvent": "rio de janeiro",
       "surface": "clay",
-      "samples": 217
+      "samples": 182
     },
     {
       "tour": "ATP",
       "event": "Acapulco",
       "normalizedEvent": "acapulco",
       "surface": "hard",
-      "samples": 280
+      "samples": 248
     },
     {
       "tour": "ATP",
       "event": "Dubai",
       "normalizedEvent": "dubai",
       "surface": "hard",
-      "samples": 301
+      "samples": 262
     },
     {
       "tour": "ATP",
@@ -217,14 +217,14 @@
       "event": "Indian Wells Masters",
       "normalizedEvent": "indian wells masters",
       "surface": "hard",
-      "samples": 795
+      "samples": 665
     },
     {
       "tour": "ATP",
       "event": "Miami Masters",
       "normalizedEvent": "miami masters",
       "surface": "hard",
-      "samples": 760
+      "samples": 665
     },
     {
       "tour": "ATP",
@@ -266,21 +266,21 @@
       "event": "Marrakech",
       "normalizedEvent": "marrakech",
       "surface": "clay",
-      "samples": 172
+      "samples": 170
     },
     {
       "tour": "ATP",
       "event": "Monte Carlo Masters",
       "normalizedEvent": "monte carlo masters",
       "surface": "clay",
-      "samples": 388
+      "samples": 385
     },
     {
       "tour": "ATP",
       "event": "Barcelona",
       "normalizedEvent": "barcelona",
       "surface": "clay",
-      "samples": 298
+      "samples": 297
     },
     {
       "tour": "ATP",
@@ -301,28 +301,28 @@
       "event": "Munich",
       "normalizedEvent": "munich",
       "surface": "clay",
-      "samples": 203
+      "samples": 197
     },
     {
       "tour": "ATP",
       "event": "Madrid Masters",
       "normalizedEvent": "madrid masters",
       "surface": "clay",
-      "samples": 640
+      "samples": 545
     },
     {
       "tour": "ATP",
       "event": "Rome Masters",
       "normalizedEvent": "rome masters",
       "surface": "clay",
-      "samples": 694
+      "samples": 599
     },
     {
       "tour": "ATP",
       "event": "Geneva",
       "normalizedEvent": "geneva",
       "surface": "clay",
-      "samples": 216
+      "samples": 189
     },
     {
       "tour": "ATP",
@@ -336,35 +336,35 @@
       "event": "Roland Garros",
       "normalizedEvent": "roland garros",
       "surface": "clay",
-      "samples": 1023
+      "samples": 1016
     },
     {
       "tour": "ATP",
-      "event": "'s-Hertogenbosch",
+      "event": "s Hertogenbosch",
       "normalizedEvent": "s hertogenbosch",
       "surface": "grass",
-      "samples": 162
+      "samples": 135
     },
     {
       "tour": "ATP",
       "event": "Stuttgart",
       "normalizedEvent": "stuttgart",
       "surface": "grass",
-      "samples": 169
+      "samples": 162
     },
     {
       "tour": "ATP",
       "event": "Halle",
       "normalizedEvent": "halle",
       "surface": "grass",
-      "samples": 189
+      "samples": 186
     },
     {
       "tour": "ATP",
       "event": "Queen's Club",
       "normalizedEvent": "queen s club",
       "surface": "grass",
-      "samples": 187
+      "samples": 186
     },
     {
       "tour": "ATP",
@@ -378,21 +378,21 @@
       "event": "Eastbourne",
       "normalizedEvent": "eastbourne",
       "surface": "grass",
-      "samples": 163
+      "samples": 162
     },
     {
       "tour": "ATP",
       "event": "Wimbledon",
       "normalizedEvent": "wimbledon",
       "surface": "grass",
-      "samples": 769
+      "samples": 762
     },
     {
       "tour": "ATP",
       "event": "Bastad",
       "normalizedEvent": "bastad",
       "surface": "clay",
-      "samples": 163
+      "samples": 162
     },
     {
       "tour": "ATP",
@@ -406,7 +406,7 @@
       "event": "Umag",
       "normalizedEvent": "umag",
       "surface": "clay",
-      "samples": 189
+      "samples": 162
     },
     {
       "tour": "ATP",
@@ -420,63 +420,63 @@
       "event": "Gstaad",
       "normalizedEvent": "gstaad",
       "surface": "clay",
-      "samples": 164
+      "samples": 162
     },
     {
       "tour": "ATP",
       "event": "Hamburg",
       "normalizedEvent": "hamburg",
       "surface": "clay",
-      "samples": 275
+      "samples": 244
     },
     {
       "tour": "ATP",
       "event": "Kitzbuhel",
       "normalizedEvent": "kitzbuhel",
       "surface": "clay",
-      "samples": 192
+      "samples": 189
     },
     {
       "tour": "ATP",
       "event": "Los Cabos",
       "normalizedEvent": "los cabos",
       "surface": "hard",
-      "samples": 166
+      "samples": 162
     },
     {
       "tour": "ATP",
       "event": "Washington",
       "normalizedEvent": "washington",
       "surface": "hard",
-      "samples": 285
+      "samples": 282
     },
     {
       "tour": "ATP",
       "event": "Canada Masters",
       "normalizedEvent": "canadian open",
       "surface": "hard",
-      "samples": 369
+      "samples": 362
     },
     {
       "tour": "ATP",
       "event": "Cincinnati Masters",
       "normalizedEvent": "cincinnati masters",
       "surface": "hard",
-      "samples": 430
+      "samples": 425
     },
     {
       "tour": "ATP",
       "event": "Winston-Salem",
       "normalizedEvent": "winston salem",
       "surface": "hard",
-      "samples": 329
+      "samples": 282
     },
     {
       "tour": "ATP",
       "event": "Us Open",
       "normalizedEvent": "us open",
       "surface": "hard",
-      "samples": 1016
+      "samples": 889
     },
     {
       "tour": "ATP",
@@ -616,7 +616,7 @@
       "event": "Metz",
       "normalizedEvent": "metz",
       "surface": "hard",
-      "samples": 189
+      "samples": 162
     },
     {
       "tour": "ATP",
@@ -637,7 +637,7 @@
       "event": "Chengdu",
       "normalizedEvent": "chengdu",
       "surface": "hard",
-      "samples": 111
+      "samples": 108
     },
     {
       "tour": "ATP",
@@ -651,7 +651,7 @@
       "event": "Beijing",
       "normalizedEvent": "beijing",
       "surface": "hard",
-      "samples": 155
+      "samples": 124
     },
     {
       "tour": "ATP",
@@ -693,7 +693,7 @@
       "event": "Basel",
       "normalizedEvent": "basel",
       "surface": "hard",
-      "samples": 158
+      "samples": 155
     },
     {
       "tour": "ATP",
@@ -707,7 +707,7 @@
       "event": "Paris Masters",
       "normalizedEvent": "paris masters",
       "surface": "hard",
-      "samples": 383
+      "samples": 377
     },
     {
       "tour": "ATP",
@@ -910,7 +910,7 @@
       "event": "Adelaide",
       "normalizedEvent": "adelaide",
       "surface": "hard",
-      "samples": 136
+      "samples": 108
     },
     {
       "tour": "ATP",
@@ -924,7 +924,7 @@
       "event": "Santiago",
       "normalizedEvent": "santiago",
       "surface": "clay",
-      "samples": 208
+      "samples": 189
     },
     {
       "tour": "ATP",
@@ -1281,7 +1281,7 @@
       "event": "Mallorca",
       "normalizedEvent": "mallorca",
       "surface": "grass",
-      "samples": 162
+      "samples": 135
     },
     {
       "tour": "ATP",
@@ -1624,7 +1624,7 @@
       "event": "Dallas",
       "normalizedEvent": "dallas",
       "surface": "hard",
-      "samples": 172
+      "samples": 143
     },
     {
       "tour": "ATP",
@@ -2170,7 +2170,7 @@
       "event": "United Cup",
       "normalizedEvent": "united cup",
       "surface": "hard",
-      "samples": 168
+      "samples": 122
     },
     {
       "tour": "ATP",
@@ -2576,7 +2576,7 @@
       "event": "Hong Kong",
       "normalizedEvent": "hong kong",
       "surface": "hard",
-      "samples": 132
+      "samples": 81
     },
     {
       "tour": "ATP",
@@ -2835,7 +2835,7 @@
       "event": "Bucharest",
       "normalizedEvent": "bucharest",
       "surface": "clay",
-      "samples": 86
+      "samples": 81
     },
     {
       "tour": "ATP",
@@ -3164,14 +3164,14 @@
       "event": "Hangzhou",
       "normalizedEvent": "hangzhou",
       "surface": "hard",
-      "samples": 55
+      "samples": 54
     },
     {
       "tour": "ATP",
       "event": "Almaty",
       "normalizedEvent": "almaty",
       "surface": "hard",
-      "samples": 57
+      "samples": 54
     },
     {
       "tour": "ATP",
@@ -3223,60 +3223,11 @@
       "samples": 29
     },
     {
-      "tour": "WTA",
-      "event": "Brisbane",
-      "normalizedEvent": "brisbane",
-      "surface": "hard",
-      "samples": 94
-    },
-    {
-      "tour": "WTA",
-      "event": "Auckland",
-      "normalizedEvent": "auckland",
-      "surface": "hard",
-      "samples": 62
-    },
-    {
-      "tour": "WTA",
-      "event": "Adelaide",
-      "normalizedEvent": "adelaide",
-      "surface": "hard",
-      "samples": 29
-    },
-    {
-      "tour": "WTA",
-      "event": "Hobart",
-      "normalizedEvent": "hobart",
-      "surface": "hard",
-      "samples": 62
-    },
-    {
-      "tour": "WTA",
-      "event": "Australian Open",
-      "normalizedEvent": "australian open",
-      "surface": "hard",
-      "samples": 127
-    },
-    {
-      "tour": "WTA",
-      "event": "Linz",
-      "normalizedEvent": "linz",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Singapore",
-      "normalizedEvent": "singapore",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
       "tour": "ATP",
       "event": "Davis Cup QLS R1: NOR vs ARG",
       "normalizedEvent": "davis cup qls r1 nor vs arg",
       "surface": "hard",
-      "samples": 8
+      "samples": 4
     },
     {
       "tour": "ATP",
@@ -3346,7 +3297,7 @@
       "event": "Davis Cup WG1 PO: GEO vs POL",
       "normalizedEvent": "davis cup wg1 po geo vs pol",
       "surface": "hard",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3374,21 +3325,21 @@
       "event": "Davis Cup WG1 PO: UZB vs BIH",
       "normalizedEvent": "davis cup wg1 po uzb vs bih",
       "surface": "hard",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 PO: CYP vs THA",
       "normalizedEvent": "davis cup wg2 po cyp vs tha",
       "surface": "clay",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 PO: EST vs VEN",
       "normalizedEvent": "davis cup wg2 po est vs ven",
       "surface": "hard",
-      "samples": 6
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3413,8 +3364,8 @@
     },
     {
       "tour": "ATP",
-      "event": "Davis Cup QLS R1: SWE vs ARG",
-      "normalizedEvent": "davis cup qls r1 swe vs arg",
+      "event": "Davis Cup QLS R1: BRA vs FRA",
+      "normalizedEvent": "davis cup qls r1 bra vs fra",
       "surface": "hard",
       "samples": 3
     },
@@ -3423,91 +3374,7 @@
       "event": "Davis Cup QLS R1: CAN vs HUN",
       "normalizedEvent": "davis cup qls r1 can vs hun",
       "surface": "hard",
-      "samples": 8
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: ISR vs GER",
-      "normalizedEvent": "davis cup qls r1 isr vs ger",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: TPE vs USA",
-      "normalizedEvent": "davis cup qls r1 tpe vs usa",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: DEN vs SRB",
-      "normalizedEvent": "davis cup qls r1 den vs srb",
-      "surface": "hard",
       "samples": 4
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: FRA vs BRA",
-      "normalizedEvent": "davis cup qls r1 fra vs bra",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: ESP vs SUI",
-      "normalizedEvent": "davis cup qls r1 esp vs sui",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: CZE vs KOR",
-      "normalizedEvent": "davis cup qls r1 cze vs kor",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: BEL vs CHI",
-      "normalizedEvent": "davis cup qls r1 bel vs chi",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 PO: COL vs BRB",
-      "normalizedEvent": "davis cup wg1 po col vs brb",
-      "surface": "clay",
-      "samples": 4
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG2 PO: IRL vs KSA",
-      "normalizedEvent": "davis cup wg2 po irl vs ksa",
-      "surface": "hard",
-      "samples": 4
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG2 PO: CHN vs MNE",
-      "normalizedEvent": "davis cup wg2 po chn vs mne",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG2 PO: MAR vs ZIM",
-      "normalizedEvent": "davis cup wg2 po mar vs zim",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R1: BRA vs FRA",
-      "normalizedEvent": "davis cup qls r1 bra vs fra",
-      "surface": "hard",
-      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3535,14 +3402,14 @@
       "event": "Davis Cup WG1 PO: GRE vs EGY",
       "normalizedEvent": "davis cup wg1 po gre vs egy",
       "surface": "clay",
-      "samples": 6
+      "samples": 4
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG1 PO: IND vs TOG",
       "normalizedEvent": "davis cup wg1 po ind vs tog",
       "surface": "hard",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3570,21 +3437,21 @@
       "event": "Davis Cup WG1 PO: TUR vs MEX",
       "normalizedEvent": "davis cup wg1 po tur vs mex",
       "surface": "hard",
-      "samples": 5
+      "samples": 4
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 PO: BEN vs LAT",
       "normalizedEvent": "davis cup wg2 po ben vs lat",
       "surface": "hard",
-      "samples": 6
+      "samples": 4
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 PO: DOM vs BOL",
       "normalizedEvent": "davis cup wg2 po dom vs bol",
       "surface": "hard",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3619,231 +3486,7 @@
       "event": "Davis Cup WG2 PO: SLO vs INA",
       "normalizedEvent": "davis cup wg2 po slo vs ina",
       "surface": "clay",
-      "samples": 4
-    },
-    {
-      "tour": "WTA",
-      "event": "Abu Dhabi",
-      "normalizedEvent": "abu dhabi",
-      "surface": "hard",
-      "samples": 54
-    },
-    {
-      "tour": "WTA",
-      "event": "Doha",
-      "normalizedEvent": "doha",
-      "surface": "hard",
-      "samples": 110
-    },
-    {
-      "tour": "WTA",
-      "event": "Dubai",
-      "normalizedEvent": "dubai",
-      "surface": "hard",
-      "samples": 110
-    },
-    {
-      "tour": "WTA",
-      "event": "Merida",
-      "normalizedEvent": "merida",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Austin",
-      "normalizedEvent": "austin",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Indian Wells",
-      "normalizedEvent": "indian wells",
-      "surface": "hard",
-      "samples": 191
-    },
-    {
-      "tour": "WTA",
-      "event": "Miami",
-      "normalizedEvent": "miami",
-      "surface": "hard",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Charleston",
-      "normalizedEvent": "charleston",
-      "surface": "clay",
-      "samples": 47
-    },
-    {
-      "tour": "WTA",
-      "event": "Bogota",
-      "normalizedEvent": "bogota",
-      "surface": "clay",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Stuttgart",
-      "normalizedEvent": "stuttgart",
-      "surface": "clay",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Rouen",
-      "normalizedEvent": "rouen",
-      "surface": "clay",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Madrid",
-      "normalizedEvent": "madrid",
-      "surface": "clay",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Rome",
-      "normalizedEvent": "rome",
-      "surface": "clay",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Strasbourg",
-      "normalizedEvent": "strasbourg",
-      "surface": "clay",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Rabat",
-      "normalizedEvent": "rabat",
-      "surface": "clay",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Roland Garros",
-      "normalizedEvent": "roland garros",
-      "surface": "clay",
-      "samples": 127
-    },
-    {
-      "tour": "WTA",
-      "event": "Nottingham",
-      "normalizedEvent": "nottingham",
-      "surface": "grass",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Berlin",
-      "normalizedEvent": "berlin",
-      "surface": "grass",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Eastbourne",
-      "normalizedEvent": "eastbourne",
-      "surface": "grass",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Bad Homburg",
-      "normalizedEvent": "bad homburg",
-      "surface": "grass",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Wimbledon",
-      "normalizedEvent": "wimbledon",
-      "surface": "grass",
-      "samples": 127
-    },
-    {
-      "tour": "WTA",
-      "event": "Iasi",
-      "normalizedEvent": "iasi",
-      "surface": "clay",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Hamburg",
-      "normalizedEvent": "hamburg",
-      "surface": "clay",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Prague",
-      "normalizedEvent": "prague",
-      "surface": "clay",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Washington",
-      "normalizedEvent": "washington",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Toronto",
-      "normalizedEvent": "canadian open",
-      "surface": "hard",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Cincinnati",
-      "normalizedEvent": "cincinnati",
-      "surface": "hard",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Monterrey",
-      "normalizedEvent": "monterrey",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Cleveland",
-      "normalizedEvent": "cleveland",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Us Open",
-      "normalizedEvent": "us open",
-      "surface": "hard",
-      "samples": 127
-    },
-    {
-      "tour": "WTA",
-      "event": "Guadalajara",
-      "normalizedEvent": "guadalajara",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Sao Paulo",
-      "normalizedEvent": "sao paulo",
-      "surface": "hard",
-      "samples": 31
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3892,7 +3535,7 @@
       "event": "Davis Cup WG1 R1: KOR vs KAZ",
       "normalizedEvent": "davis cup wg1 r1 kor vs kaz",
       "surface": "hard",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3920,7 +3563,7 @@
       "event": "Davis Cup WG1 R1: SUI vs IND",
       "normalizedEvent": "davis cup wg1 r1 sui vs ind",
       "surface": "hard",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3941,7 +3584,7 @@
       "event": "Davis Cup WG2 R1: EST vs MEX",
       "normalizedEvent": "davis cup wg2 r1 est vs mex",
       "surface": "hard",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -3955,84 +3598,28 @@
       "event": "Davis Cup WG2 R1: PAR vs PAK",
       "normalizedEvent": "davis cup wg2 r1 par vs pak",
       "surface": "clay",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 R1: SLO vs URU",
       "normalizedEvent": "davis cup wg2 r1 slo vs uru",
       "surface": "hard",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 R1: UKR vs DOM",
       "normalizedEvent": "davis cup wg2 r1 ukr vs dom",
       "surface": "clay",
-      "samples": 4
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 R1: ISR vs CAN",
-      "normalizedEvent": "davis cup wg1 r1 isr vs can",
-      "surface": "hard",
       "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 R1: BUL vs FIN",
-      "normalizedEvent": "davis cup wg1 r1 bul vs fin",
-      "surface": "clay",
-      "samples": 8
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 R1: TPE vs NOR",
-      "normalizedEvent": "davis cup wg1 r1 tpe vs nor",
-      "surface": "hard",
-      "samples": 8
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 R1: CHI vs LUX",
-      "normalizedEvent": "davis cup wg1 r1 chi vs lux",
-      "surface": "clay",
-      "samples": 6
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 R1: ECU vs BIH",
-      "normalizedEvent": "davis cup wg1 r1 ecu vs bih",
-      "surface": "clay",
-      "samples": 8
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup WG1 R1: GRE vs BRA",
-      "normalizedEvent": "davis cup wg1 r1 gre vs bra",
-      "surface": "hard",
-      "samples": 6
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R2: JPN vs GER",
-      "normalizedEvent": "davis cup qls r2 jpn vs ger",
-      "surface": "hard",
-      "samples": 3
-    },
-    {
-      "tour": "ATP",
-      "event": "Davis Cup QLS R2: ESP vs DEN",
-      "normalizedEvent": "davis cup qls r2 esp vs den",
-      "surface": "clay",
-      "samples": 4
     },
     {
       "tour": "ATP",
       "event": "Davis Cup QLS R2: AUS vs BEL",
       "normalizedEvent": "davis cup qls r2 aus vs bel",
       "surface": "hard",
-      "samples": 8
+      "samples": 4
     },
     {
       "tour": "ATP",
@@ -4043,10 +3630,45 @@
     },
     {
       "tour": "ATP",
+      "event": "Davis Cup WG1 R1: BUL vs FIN",
+      "normalizedEvent": "davis cup wg1 r1 bul vs fin",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: CHI vs LUX",
+      "normalizedEvent": "davis cup wg1 r1 chi vs lux",
+      "surface": "clay",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: ECU vs BIH",
+      "normalizedEvent": "davis cup wg1 r1 ecu vs bih",
+      "surface": "clay",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: GRE vs BRA",
+      "normalizedEvent": "davis cup wg1 r1 gre vs bra",
+      "surface": "hard",
+      "samples": 3
+    },
+    {
+      "tour": "ATP",
+      "event": "Davis Cup WG1 R1: TPE vs NOR",
+      "normalizedEvent": "davis cup wg1 r1 tpe vs nor",
+      "surface": "hard",
+      "samples": 4
+    },
+    {
+      "tour": "ATP",
       "event": "Davis Cup WG2 R1: CYP vs MON",
       "normalizedEvent": "davis cup wg2 r1 cyp vs mon",
       "surface": "hard",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -4060,21 +3682,21 @@
       "event": "Davis Cup WG2 R1: HKG vs UZB",
       "normalizedEvent": "davis cup wg2 r1 hkg vs uzb",
       "surface": "hard",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 R1: IRL vs CHN",
       "normalizedEvent": "davis cup wg2 r1 irl vs chn",
       "surface": "hard",
-      "samples": 4
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Davis Cup WG2 R1: LTU vs BEN",
       "normalizedEvent": "davis cup wg2 r1 ltu vs ben",
       "surface": "hard",
-      "samples": 5
+      "samples": 3
     },
     {
       "tour": "ATP",
@@ -4095,112 +3717,21 @@
       "event": "Davis Cup WG2 R1: TOG vs EGY",
       "normalizedEvent": "davis cup wg2 r1 tog vs egy",
       "surface": "hard",
-      "samples": 6
-    },
-    {
-      "tour": "WTA",
-      "event": "Seoul",
-      "normalizedEvent": "seoul",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "ATP",
-      "event": "Shanghai",
-      "normalizedEvent": "shanghai",
-      "surface": "hard",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Beijing",
-      "normalizedEvent": "beijing",
-      "surface": "hard",
-      "samples": 95
-    },
-    {
-      "tour": "WTA",
-      "event": "Wuhan",
-      "normalizedEvent": "wuhan",
-      "surface": "hard",
-      "samples": 55
+      "samples": 3
     },
     {
       "tour": "ATP",
       "event": "Brussels",
       "normalizedEvent": "brussels",
       "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Tokyo",
-      "normalizedEvent": "tokyo",
-      "surface": "hard",
       "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Ningbo",
-      "normalizedEvent": "ningbo",
-      "surface": "hard",
-      "samples": 27
-    },
-    {
-      "tour": "WTA",
-      "event": "Pan Pacific Open",
-      "normalizedEvent": "pan pacific open",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Guangzhou",
-      "normalizedEvent": "guangzhou",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Hong Kong",
-      "normalizedEvent": "hong kong",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Jiujiang",
-      "normalizedEvent": "jiujiang",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Chennai",
-      "normalizedEvent": "chennai",
-      "surface": "hard",
-      "samples": 31
-    },
-    {
-      "tour": "WTA",
-      "event": "Riyadh Finals",
-      "normalizedEvent": "riyadh finals",
-      "surface": "hard",
-      "samples": 15
     },
     {
       "tour": "ATP",
       "event": "Athens",
       "normalizedEvent": "athens",
       "surface": "hard",
-      "samples": 54
-    },
-    {
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "normalizedEvent": "atp finals",
-      "surface": "hard",
-      "samples": 15
+      "samples": 27
     },
     {
       "tour": "ATP",
@@ -4221,7 +3752,7 @@
       "event": "Davis Cup Finals QF: ARG vs GER",
       "normalizedEvent": "davis cup finals qf arg vs ger",
       "surface": "hard",
-      "samples": 3
+      "samples": 2
     },
     {
       "tour": "ATP",
@@ -4242,7 +3773,7 @@
       "event": "Davis Cup Finals SF: ESP vs GER",
       "normalizedEvent": "davis cup finals sf esp vs ger",
       "surface": "hard",
-      "samples": 3
+      "samples": 2
     },
     {
       "tour": "ATP",
@@ -4250,13 +3781,6 @@
       "normalizedEvent": "davis cup finals f ita vs esp",
       "surface": "hard",
       "samples": 2
-    },
-    {
-      "tour": "ATP",
-      "event": "Next Gen ATP Finals",
-      "normalizedEvent": "next gen atp finals",
-      "surface": "hard",
-      "samples": 15
     },
     {
       "tour": "ATP",
