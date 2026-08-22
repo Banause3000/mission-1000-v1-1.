@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-22T05:02:09.459Z",
+  "generatedAt": "2026-08-22T05:59:34.310Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "373",
-    "remaining": "127"
+    "used": "375",
+    "remaining": "125"
   },
   "matches": [
     {
@@ -18,7 +18,7 @@
       "player1": "Flavio Cobolli",
       "player2": "Arthur Fils",
       "odds1": 3.26,
-      "odds2": 1.42,
+      "odds2": 1.43,
       "bookmaker1": "BetOnline.ag",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.89,
-      "odds2": 2.11,
+      "odds1": 1.92,
+      "odds2": 2.06,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -65,9 +65,9 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Coco Gauff",
-      "odds1": 4.33,
+      "odds1": 4.3,
       "odds2": 1.29,
-      "bookmaker1": "Pinnacle",
+      "bookmaker1": "Betfair",
       "bookmaker2": "888sport",
       "source": "The Odds API"
     }
