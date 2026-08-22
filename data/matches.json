@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-22T07:47:11.341Z",
+  "generatedAt": "2026-08-22T09:03:10.488Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "377",
-    "remaining": "123"
+    "used": "379",
+    "remaining": "121"
   },
   "matches": [
     {
@@ -20,7 +20,7 @@
       "odds1": 3.55,
       "odds2": 1.39,
       "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -33,7 +33,7 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 3.15,
+      "odds1": 3.1,
       "odds2": 1.47,
       "bookmaker1": "Winamax (DE)",
       "bookmaker2": "Betfair",
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.96,
-      "odds2": 2.05,
+      "odds1": 1.94,
+      "odds2": 2.06,
       "bookmaker1": "Betfair",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -66,7 +66,7 @@
       "player1": "Sara Bejlek",
       "player2": "Coco Gauff",
       "odds1": 4.5,
-      "odds2": 1.27,
+      "odds2": 1.29,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
