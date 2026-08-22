@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-22T14:53:36.504Z",
+  "generatedAt": "2026-08-22T15:50:09.657Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "389",
-    "remaining": "111"
+    "used": "391",
+    "remaining": "109"
   },
   "matches": [
     {
@@ -49,7 +49,7 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.94,
+      "odds1": 1.93,
       "odds2": 2.04,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -68,7 +68,7 @@
       "odds1": 4.8,
       "odds2": 1.26,
       "bookmaker1": "Betfair",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
