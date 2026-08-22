@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-08-22T03:11:04.309Z",
+  "generatedAt": "2026-08-22T05:02:09.459Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "371",
-    "remaining": "129"
+    "used": "373",
+    "remaining": "127"
   },
   "matches": [
-    {
-      "id": "cd3a7bf8bc485d82e14b0a129efb6355",
-      "tour": "WTA",
-      "event": "WTA Cincinnati Open",
-      "date": "2026-08-22",
-      "start": "03:47",
-      "startIso": "2026-08-22T01:47:58Z",
-      "status": "live-or-started",
-      "player1": "Coco Gauff",
-      "player2": "Marta Kostyuk",
-      "odds1": 1.03,
-      "odds2": 50,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "cf6e6abb36c3b5c36d339a46afce1c05",
       "tour": "ATP",
@@ -33,9 +17,9 @@
       "status": "upcoming",
       "player1": "Flavio Cobolli",
       "player2": "Arthur Fils",
-      "odds1": 3.42,
-      "odds2": 1.4,
-      "bookmaker1": "GTbets",
+      "odds1": 3.26,
+      "odds2": 1.42,
+      "bookmaker1": "BetOnline.ag",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -65,10 +49,26 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.88,
-      "odds2": 2.12,
+      "odds1": 1.89,
+      "odds2": 2.11,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
+      "source": "The Odds API"
+    },
+    {
+      "id": "f4cffdce3d1effa9d1e21997f18c98f7",
+      "tour": "WTA",
+      "event": "WTA Cincinnati Open",
+      "date": "2026-08-23",
+      "start": "01:30",
+      "startIso": "2026-08-22T23:30:00Z",
+      "status": "upcoming",
+      "player1": "Sara Bejlek",
+      "player2": "Coco Gauff",
+      "odds1": 4.33,
+      "odds2": 1.29,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     }
   ]
