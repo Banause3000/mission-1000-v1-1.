@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-22T19:03:50.509Z",
+  "generatedAt": "2026-08-22T19:50:03.556Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "397",
-    "remaining": "103"
+    "used": "399",
+    "remaining": "101"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "live-or-started",
       "player1": "Flavio Cobolli",
       "player2": "Arthur Fils",
-      "odds1": 18.75,
-      "odds2": 1.19,
-      "bookmaker1": "Coolbet",
+      "odds1": 23.14,
+      "odds2": 1.04,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
@@ -28,14 +28,14 @@
       "tour": "WTA",
       "event": "WTA Cincinnati Open",
       "date": "2026-08-22",
-      "start": "21:00",
-      "startIso": "2026-08-22T19:00:00Z",
-      "status": "live-or-started",
+      "start": "22:07",
+      "startIso": "2026-08-22T20:07:03Z",
+      "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 3.25,
+      "odds1": 3.4,
       "odds2": 1.44,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "William Hill",
       "source": "The Odds API"
     },
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.94,
-      "odds2": 2.04,
+      "odds1": 1.92,
+      "odds2": 2.06,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
