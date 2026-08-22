@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-22T16:56:27.039Z",
+  "generatedAt": "2026-08-22T17:53:05.852Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "393",
-    "remaining": "107"
+    "used": "395",
+    "remaining": "105"
   },
   "matches": [
     {
@@ -12,15 +12,15 @@
       "tour": "ATP",
       "event": "ATP Cincinnati Open",
       "date": "2026-08-22",
-      "start": "19:30",
-      "startIso": "2026-08-22T17:30:00Z",
-      "status": "upcoming",
+      "start": "19:46",
+      "startIso": "2026-08-22T17:46:24Z",
+      "status": "live-or-started",
       "player1": "Flavio Cobolli",
       "player2": "Arthur Fils",
-      "odds1": 3.45,
-      "odds2": 1.41,
+      "odds1": 3.3,
+      "odds2": 1.42,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,7 +49,7 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.94,
+      "odds1": 1.95,
       "odds2": 2.04,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -66,9 +66,9 @@
       "player1": "Sara Bejlek",
       "player2": "Coco Gauff",
       "odds1": 4.8,
-      "odds2": 1.25,
+      "odds2": 1.26,
       "bookmaker1": "Betfair",
-      "bookmaker2": "888sport",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     }
   ]
