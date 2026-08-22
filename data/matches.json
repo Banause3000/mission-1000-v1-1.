@@ -1,42 +1,26 @@
 {
-  "generatedAt": "2026-08-22T19:50:03.556Z",
+  "generatedAt": "2026-08-22T20:55:12.375Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "399",
-    "remaining": "101"
+    "used": "401",
+    "remaining": "99"
   },
   "matches": [
-    {
-      "id": "cf6e6abb36c3b5c36d339a46afce1c05",
-      "tour": "ATP",
-      "event": "ATP Cincinnati Open",
-      "date": "2026-08-22",
-      "start": "19:30",
-      "startIso": "2026-08-22T17:30:00Z",
-      "status": "live-or-started",
-      "player1": "Flavio Cobolli",
-      "player2": "Arthur Fils",
-      "odds1": 23.14,
-      "odds2": 1.04,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
     {
       "id": "bd6afffed6b65fe0d05a95ad67d70c32",
       "tour": "WTA",
       "event": "WTA Cincinnati Open",
       "date": "2026-08-22",
-      "start": "22:07",
-      "startIso": "2026-08-22T20:07:03Z",
-      "status": "upcoming",
+      "start": "21:58",
+      "startIso": "2026-08-22T19:58:11Z",
+      "status": "live-or-started",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 3.4,
-      "odds2": 1.44,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "William Hill",
+      "odds1": 3.47,
+      "odds2": 1.43,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Betclic (FR)",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
-      "odds1": 1.92,
+      "odds1": 1.93,
       "odds2": 2.06,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -65,10 +49,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Coco Gauff",
-      "odds1": 5,
+      "odds1": 4.8,
       "odds2": 1.25,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Unibet (NL)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
