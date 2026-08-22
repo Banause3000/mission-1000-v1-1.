@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-22T21:51:42.424Z",
+  "generatedAt": "2026-08-22T22:54:27.971Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "403",
-    "remaining": "97"
+    "used": "405",
+    "remaining": "95"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Jessica Pegula",
       "player2": "Iga Swiatek",
-      "odds1": 2.31,
-      "odds2": 2.3,
+      "odds1": 1.45,
+      "odds2": 19,
       "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -28,14 +28,14 @@
       "tour": "ATP",
       "event": "ATP Cincinnati Open",
       "date": "2026-08-23",
-      "start": "00:00",
-      "startIso": "2026-08-22T22:00:00Z",
+      "start": "01:00",
+      "startIso": "2026-08-22T23:00:00Z",
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Frances Tiafoe",
       "odds1": 1.94,
-      "odds2": 2.04,
-      "bookmaker1": "Betfair",
+      "odds2": 2.08,
+      "bookmaker1": "Unibet (NL)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Coco Gauff",
-      "odds1": 4.8,
+      "odds1": 5,
       "odds2": 1.26,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     }
   ]
