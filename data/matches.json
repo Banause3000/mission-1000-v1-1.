@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-23T15:53:22.657Z",
+  "generatedAt": "2026-08-23T16:59:12.459Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "431",
-    "remaining": "69"
+    "used": "434",
+    "remaining": "66"
   },
   "matches": [
     {
@@ -19,7 +19,7 @@
       "player2": "Frances Tiafoe",
       "odds1": 1.51,
       "odds2": 2.94,
-      "bookmaker1": "GTbets",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -33,8 +33,8 @@
       "status": "upcoming",
       "player1": "Panna Udvardy",
       "player2": "Darja Vidmanova",
-      "odds1": 2.96,
-      "odds2": 1.48,
+      "odds1": 2.88,
+      "odds2": 1.52,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Maria Timofeeva",
       "player2": "Kamilla Rakhimova",
-      "odds1": 2.4,
-      "odds2": 1.68,
+      "odds1": 2.5,
+      "odds2": 1.65,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -66,7 +66,7 @@
       "player1": "Anna Bondár",
       "player2": "Liang En-shuo",
       "odds1": 1.36,
-      "odds2": 3.95,
+      "odds2": 3.75,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -81,8 +81,8 @@
       "status": "upcoming",
       "player1": "Maya Joint",
       "player2": "Yulia Putintseva",
-      "odds1": 2.16,
-      "odds2": 1.81,
+      "odds1": 2.24,
+      "odds2": 1.79,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -97,8 +97,8 @@
       "status": "upcoming",
       "player1": "Coco Gauff",
       "player2": "Jessica Pegula",
-      "odds1": 1.69,
-      "odds2": 2.42,
+      "odds1": 1.68,
+      "odds2": 2.44,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -145,10 +145,10 @@
       "status": "upcoming",
       "player1": "Mayar Sherif",
       "player2": "Oleksandra Oliynykova",
-      "odds1": 1.97,
-      "odds2": 2.02,
+      "odds1": 1.96,
+      "odds2": 2.04,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -177,10 +177,10 @@
       "status": "upcoming",
       "player1": "Alycia Parks",
       "player2": "Petra Marcinko",
-      "odds1": 2.13,
-      "odds2": 1.81,
-      "bookmaker1": "BetOnline.ag",
-      "bookmaker2": "Betfair",
+      "odds1": 2.14,
+      "odds2": 1.82,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -193,10 +193,10 @@
       "status": "upcoming",
       "player1": "Clara Tauson",
       "player2": "Renata Zarazua",
-      "odds1": 1.37,
-      "odds2": 3.7,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.32,
+      "odds2": 3.8,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -210,7 +210,7 @@
       "player1": "Janice Tjen",
       "player2": "Dayana Yastremska",
       "odds1": 1.71,
-      "odds2": 2.4,
+      "odds2": 2.39,
       "bookmaker1": "Betfair",
       "bookmaker2": "Pinnacle",
       "source": "The Odds API"
@@ -225,9 +225,9 @@
       "status": "upcoming",
       "player1": "Diane Parry",
       "player2": "Donna Vekic",
-      "odds1": 2.39,
-      "odds2": 1.67,
-      "bookmaker1": "Pinnacle",
+      "odds1": 2.42,
+      "odds2": 1.68,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
