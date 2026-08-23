@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-23T09:57:06.781Z",
+  "generatedAt": "2026-08-23T10:56:00.620Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "419",
-    "remaining": "81"
+    "used": "421",
+    "remaining": "79"
   },
   "matches": [
     {
@@ -18,7 +18,7 @@
       "player1": "Arthur Fils",
       "player2": "Frances Tiafoe",
       "odds1": 1.53,
-      "odds2": 2.86,
+      "odds2": 2.88,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -33,10 +33,10 @@
       "status": "upcoming",
       "player1": "Coco Gauff",
       "player2": "Jessica Pegula",
-      "odds1": 1.73,
-      "odds2": 2.36,
+      "odds1": 1.7,
+      "odds2": 2.4,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
