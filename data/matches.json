@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-23T19:04:00.475Z",
+  "generatedAt": "2026-08-23T19:48:18.848Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "440",
-    "remaining": "60"
+    "used": "443",
+    "remaining": "57"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Arthur Fils",
       "player2": "Frances Tiafoe",
-      "odds1": 1.51,
-      "odds2": 2.94,
+      "odds1": 1.54,
+      "odds2": 2.87,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -33,7 +33,7 @@
       "status": "upcoming",
       "player1": "Panna Udvardy",
       "player2": "Darja Vidmanova",
-      "odds1": 2.9,
+      "odds1": 2.88,
       "odds2": 1.52,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -81,7 +81,7 @@
       "status": "upcoming",
       "player1": "Maya Joint",
       "player2": "Yulia Putintseva",
-      "odds1": 2.28,
+      "odds1": 2.3,
       "odds2": 1.79,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -130,7 +130,7 @@
       "player1": "Lilli Tagger",
       "player2": "Yuliia Starodubtseva",
       "odds1": 1.52,
-      "odds2": 2.8,
+      "odds2": 2.84,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -152,22 +152,6 @@
       "source": "The Odds API"
     },
     {
-      "id": "6d7441d7f1a19377e9b47a5e13307fbc",
-      "tour": "WTA",
-      "event": "WTA Monterrey Open",
-      "date": "2026-08-24",
-      "start": "18:00",
-      "startIso": "2026-08-24T16:00:00Z",
-      "status": "upcoming",
-      "player1": "Alycia Parks",
-      "player2": "Petra Marcinko",
-      "odds1": 2.14,
-      "odds2": 1.82,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
-      "source": "The Odds API"
-    },
-    {
       "id": "337f3257c6c42060c1bcff0324510611",
       "tour": "WTA",
       "event": "WTA Monterrey Open",
@@ -184,12 +168,28 @@
       "source": "The Odds API"
     },
     {
+      "id": "6d7441d7f1a19377e9b47a5e13307fbc",
+      "tour": "WTA",
+      "event": "WTA Monterrey Open",
+      "date": "2026-08-24",
+      "start": "21:00",
+      "startIso": "2026-08-24T19:00:00Z",
+      "status": "upcoming",
+      "player1": "Alycia Parks",
+      "player2": "Petra Marcinko",
+      "odds1": 2.14,
+      "odds2": 1.82,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
+      "source": "The Odds API"
+    },
+    {
       "id": "c77ccf050ec2c2259c05223ea870752c",
       "tour": "WTA",
       "event": "WTA Monterrey Open",
       "date": "2026-08-24",
-      "start": "18:00",
-      "startIso": "2026-08-24T16:00:00Z",
+      "start": "21:00",
+      "startIso": "2026-08-24T19:00:00Z",
       "status": "upcoming",
       "player1": "Clara Tauson",
       "player2": "Renata Zarazua",
@@ -204,8 +204,8 @@
       "tour": "WTA",
       "event": "WTA Monterrey Open",
       "date": "2026-08-24",
-      "start": "18:00",
-      "startIso": "2026-08-24T16:00:00Z",
+      "start": "21:00",
+      "startIso": "2026-08-24T19:00:00Z",
       "status": "upcoming",
       "player1": "Janice Tjen",
       "player2": "Dayana Yastremska",
@@ -220,8 +220,8 @@
       "tour": "WTA",
       "event": "WTA Monterrey Open",
       "date": "2026-08-24",
-      "start": "18:00",
-      "startIso": "2026-08-24T16:00:00Z",
+      "start": "21:00",
+      "startIso": "2026-08-24T19:00:00Z",
       "status": "upcoming",
       "player1": "Diane Parry",
       "player2": "Donna Vekic",
