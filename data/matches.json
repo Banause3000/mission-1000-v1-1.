@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-23T11:51:42.606Z",
+  "generatedAt": "2026-08-23T13:46:28.903Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "423",
-    "remaining": "77"
+    "used": "425",
+    "remaining": "75"
   },
   "matches": [
     {
@@ -19,7 +19,7 @@
       "player2": "Frances Tiafoe",
       "odds1": 1.51,
       "odds2": 2.92,
-      "bookmaker1": "Pinnacle",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -33,10 +33,10 @@
       "status": "upcoming",
       "player1": "Coco Gauff",
       "player2": "Jessica Pegula",
-      "odds1": 1.68,
-      "odds2": 2.48,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "odds1": 1.72,
+      "odds2": 2.38,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     }
   ]
