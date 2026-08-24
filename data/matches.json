@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-08-24T03:34:40.986Z",
+  "generatedAt": "2026-08-24T05:26:19.843Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "454",
-    "remaining": "46"
+    "used": "455",
+    "remaining": "45"
   },
   "matches": [
-    {
-      "id": "cd0f1d7a48eb34525fc34d60243f44cf",
-      "tour": "WTA",
-      "event": "WTA Monterrey Open",
-      "date": "2026-08-24",
-      "start": "05:13",
-      "startIso": "2026-08-24T03:13:00Z",
-      "status": "live-or-started",
-      "player1": "Antonia Ruzic",
-      "player2": "Nikola Bartunkova",
-      "odds1": 5.2,
-      "odds2": 1.24,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
     {
       "id": "34e1beeeb2680340a4f302875127c326",
       "tour": "WTA",
@@ -33,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Mayar Sherif",
       "player2": "Oleksandra Oliynykova",
-      "odds1": 2.15,
-      "odds2": 2.01,
-      "bookmaker1": "Winamax (DE)",
-      "bookmaker2": "GTbets",
+      "odds1": 12,
+      "odds2": 1.42,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -49,7 +33,7 @@
       "status": "upcoming",
       "player1": "Maria Camila Osorio Serrano",
       "player2": "Ann Li",
-      "odds1": 1.97,
+      "odds1": 1.96,
       "odds2": 2.06,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -84,7 +68,7 @@
       "odds1": 1.69,
       "odds2": 2.4,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -98,9 +82,9 @@
       "player1": "Clara Tauson",
       "player2": "Renata Zarazua",
       "odds1": 1.36,
-      "odds2": 3.61,
+      "odds2": 3.7,
       "bookmaker1": "Betfair",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -114,7 +98,7 @@
       "player1": "Diane Parry",
       "player2": "Donna Vekic",
       "odds1": 2.48,
-      "odds2": 1.67,
+      "odds2": 1.68,
       "bookmaker1": "Unibet (NL)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
