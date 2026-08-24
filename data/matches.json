@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-24T11:54:45.599Z",
+  "generatedAt": "2026-08-24T14:26:48.962Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "458",
-    "remaining": "42"
+    "used": "459",
+    "remaining": "41"
   },
   "matches": [
     {
@@ -17,7 +17,7 @@
       "status": "upcoming",
       "player1": "Maria Camila Osorio Serrano",
       "player2": "Ann Li",
-      "odds1": 1.96,
+      "odds1": 1.98,
       "odds2": 2.06,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -34,7 +34,7 @@
       "player1": "Alycia Parks",
       "player2": "Petra Marcinko",
       "odds1": 2.12,
-      "odds2": 1.91,
+      "odds2": 1.94,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -50,9 +50,9 @@
       "player1": "Janice Tjen",
       "player2": "Dayana Yastremska",
       "odds1": 1.62,
-      "odds2": 2.72,
+      "odds2": 2.78,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Clara Tauson",
       "player2": "Renata Zarazua",
-      "odds1": 1.33,
-      "odds2": 3.95,
+      "odds1": 1.35,
+      "odds2": 3.8,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -81,8 +81,8 @@
       "status": "upcoming",
       "player1": "Diane Parry",
       "player2": "Donna Vekic",
-      "odds1": 2.4,
-      "odds2": 1.68,
+      "odds1": 2.42,
+      "odds2": 1.7,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -98,9 +98,9 @@
       "player1": "Anhelina Kalinina",
       "player2": "Maya Joint",
       "odds1": 2.05,
-      "odds2": 1.88,
+      "odds2": 1.98,
       "bookmaker1": "Marathon Bet",
-      "bookmaker2": "Unibet (SE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -113,9 +113,9 @@
       "status": "upcoming",
       "player1": "Cristina Bucsa",
       "player2": "Anna Bondár",
-      "odds1": 2,
+      "odds1": 2.15,
       "odds2": 1.85,
-      "bookmaker1": "Marathon Bet",
+      "bookmaker1": "Winamax (DE)",
       "bookmaker2": "888sport",
       "source": "The Odds API"
     },
@@ -129,10 +129,10 @@
       "status": "upcoming",
       "player1": "Darja Vidmanova",
       "player2": "Kimberly Birrell",
-      "odds1": 1.67,
-      "odds2": 2.46,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Marathon Bet",
+      "odds1": 1.7,
+      "odds2": 2.38,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     },
     {
@@ -145,9 +145,9 @@
       "status": "upcoming",
       "player1": "Shuai Zhang",
       "player2": "Maria Timofeeva",
-      "odds1": 1.8,
+      "odds1": 1.82,
       "odds2": 2.23,
-      "bookmaker1": "888sport",
+      "bookmaker1": "Winamax (DE)",
       "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
