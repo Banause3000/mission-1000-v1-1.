@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-08-24T19:45:14.889Z",
+  "generatedAt": "2026-08-24T21:14:51.227Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "462",
-    "remaining": "38"
+    "used": "463",
+    "remaining": "37"
   },
   "matches": [
     {
       "id": "337f3257c6c42060c1bcff0324510611",
       "tour": "WTA",
       "event": "WTA Monterrey Open",
-      "date": "2026-08-24",
-      "start": "23:00",
-      "startIso": "2026-08-24T21:00:00Z",
+      "date": "2026-08-25",
+      "start": "00:00",
+      "startIso": "2026-08-24T22:00:00Z",
       "status": "upcoming",
       "player1": "Maria Camila Osorio Serrano",
       "player2": "Ann Li",
-      "odds1": 2.04,
-      "odds2": 1.94,
+      "odds1": 2.8,
+      "odds2": 1.87,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -34,7 +34,7 @@
       "player1": "Alycia Parks",
       "player2": "Petra Marcinko",
       "odds1": 2.12,
-      "odds2": 1.91,
+      "odds2": 1.93,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Janice Tjen",
       "player2": "Dayana Yastremska",
-      "odds1": 1.53,
-      "odds2": 2.86,
+      "odds1": 1.51,
+      "odds2": 2.94,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -65,9 +65,9 @@
       "status": "upcoming",
       "player1": "Clara Tauson",
       "player2": "Renata Zarazua",
-      "odds1": 1.37,
-      "odds2": 3.65,
-      "bookmaker1": "Matchbook",
+      "odds1": 1.36,
+      "odds2": 3.7,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,9 +81,9 @@
       "status": "upcoming",
       "player1": "Diane Parry",
       "player2": "Donna Vekic",
-      "odds1": 2.4,
+      "odds1": 2.38,
       "odds2": 1.71,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -161,7 +161,7 @@
       "status": "upcoming",
       "player1": "Nikola Bartunkova",
       "player2": "Anastasia Potapova",
-      "odds1": 1.63,
+      "odds1": 1.64,
       "odds2": 2.57,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
