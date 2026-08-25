@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-25T18:00:06.755Z",
+  "generatedAt": "2026-08-25T19:47:31.994Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "474",
-    "remaining": "26"
+    "used": "475",
+    "remaining": "25"
   },
   "matches": [
     {
@@ -17,7 +17,7 @@
       "status": "upcoming",
       "player1": "Cristina Bucsa",
       "player2": "Anna Bondár",
-      "odds1": 2.28,
+      "odds1": 2.3,
       "odds2": 1.81,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Shuai Zhang",
       "player2": "Maria Timofeeva",
-      "odds1": 1.89,
+      "odds1": 1.9,
       "odds2": 2.1,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -81,10 +81,10 @@
       "status": "upcoming",
       "player1": "Panna Udvardy",
       "player2": "Maya Joint",
-      "odds1": 3.3,
-      "odds2": 1.43,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "odds1": 3.25,
+      "odds2": 1.46,
+      "bookmaker1": "LeoVegas (SE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -98,7 +98,7 @@
       "player1": "Oleksandra Oliynykova",
       "player2": "Diane Parry",
       "odds1": 3.5,
-      "odds2": 1.39,
+      "odds2": 1.38,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -114,7 +114,7 @@
       "player1": "Nikola Bartunkova",
       "player2": "Anastasia Potapova",
       "odds1": 1.63,
-      "odds2": 2.74,
+      "odds2": 2.8,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -129,7 +129,7 @@
       "status": "upcoming",
       "player1": "Maja Chwalinska",
       "player2": "Alycia Parks",
-      "odds1": 1.6,
+      "odds1": 1.58,
       "odds2": 2.65,
       "bookmaker1": "Betfair",
       "bookmaker2": "Unibet (NL)",
@@ -145,10 +145,10 @@
       "status": "upcoming",
       "player1": "Ekaterina Alexandrova",
       "player2": "Clara Tauson",
-      "odds1": 2,
-      "odds2": 1.96,
+      "odds1": 2.02,
+      "odds2": 1.92,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Unibet (SE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
