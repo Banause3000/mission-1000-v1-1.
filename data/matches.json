@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-26T11:58:55.531Z",
+  "generatedAt": "2026-08-26T14:28:55.023Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "484",
-    "remaining": "16"
+    "used": "485",
+    "remaining": "15"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Maria Timofeeva",
       "player2": "Ann Li",
-      "odds1": 2.8,
-      "odds2": 1.54,
+      "odds1": 2.7,
+      "odds2": 1.58,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -34,7 +34,7 @@
       "player1": "Cristina Bucsa",
       "player2": "Darja Vidmanova",
       "odds1": 2.3,
-      "odds2": 1.77,
+      "odds2": 1.8,
       "bookmaker1": "Marathon Bet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Panna Udvardy",
       "player2": "Elise Mertens",
-      "odds1": 4.8,
+      "odds1": 4.7,
       "odds2": 1.25,
       "bookmaker1": "Betfair",
-      "bookmaker2": "LeoVegas (SE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -66,9 +66,9 @@
       "player1": "Maja Chwalinska",
       "player2": "Alycia Parks",
       "odds1": 1.64,
-      "odds2": 2.53,
+      "odds2": 2.56,
       "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -81,7 +81,7 @@
       "status": "upcoming",
       "player1": "Ekaterina Alexandrova",
       "player2": "Clara Tauson",
-      "odds1": 2.08,
+      "odds1": 2.1,
       "odds2": 1.89,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
