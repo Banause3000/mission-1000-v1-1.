@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-26T10:07:59.851Z",
+  "generatedAt": "2026-08-26T11:58:55.531Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "483",
-    "remaining": "17"
+    "used": "484",
+    "remaining": "16"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Maria Timofeeva",
       "player2": "Ann Li",
-      "odds1": 2.74,
-      "odds2": 1.53,
+      "odds1": 2.8,
+      "odds2": 1.54,
       "bookmaker1": "Betfair",
-      "bookmaker2": "William Hill",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Cristina Bucsa",
       "player2": "Darja Vidmanova",
-      "odds1": 2.32,
-      "odds2": 1.74,
-      "bookmaker1": "GTbets",
+      "odds1": 2.3,
+      "odds2": 1.77,
+      "bookmaker1": "Marathon Bet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Panna Udvardy",
       "player2": "Elise Mertens",
-      "odds1": 4.95,
+      "odds1": 4.8,
       "odds2": 1.25,
-      "bookmaker1": "Betclic (FR)",
-      "bookmaker2": "Betfair",
+      "bookmaker1": "Betfair",
+      "bookmaker2": "LeoVegas (SE)",
       "source": "The Odds API"
     },
     {
@@ -67,7 +67,7 @@
       "player2": "Alycia Parks",
       "odds1": 1.64,
       "odds2": 2.53,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
@@ -76,13 +76,13 @@
       "tour": "WTA",
       "event": "WTA Monterrey Open",
       "date": "2026-08-27",
-      "start": "04:40",
-      "startIso": "2026-08-27T02:40:00Z",
+      "start": "05:00",
+      "startIso": "2026-08-27T03:00:00Z",
       "status": "upcoming",
       "player1": "Ekaterina Alexandrova",
       "player2": "Clara Tauson",
-      "odds1": 2.1,
-      "odds2": 1.88,
+      "odds1": 2.08,
+      "odds2": 1.89,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
