@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-28T22:41:47.832Z",
+  "generatedAt": "2026-08-28T23:11:39.671Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "497",
-    "remaining": "3"
+    "used": "500",
+    "remaining": "0"
   },
   "matches": [
     {
@@ -12,15 +12,15 @@
       "tour": "WTA",
       "event": "WTA Monterrey Open",
       "date": "2026-08-29",
-      "start": "01:00",
-      "startIso": "2026-08-28T23:00:00Z",
-      "status": "upcoming",
+      "start": "01:03",
+      "startIso": "2026-08-28T23:03:10Z",
+      "status": "live-or-started",
       "player1": "Diane Parry",
       "player2": "Ann Li",
-      "odds1": 2.45,
-      "odds2": 1.69,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "odds1": 2.5,
+      "odds2": 1.66,
+      "bookmaker1": "Nordic Bet",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -33,7 +33,7 @@
       "status": "upcoming",
       "player1": "Nikola Bartunkova",
       "player2": "Elise Mertens",
-      "odds1": 2.44,
+      "odds1": 2.46,
       "odds2": 1.75,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -69,6 +69,22 @@
       "odds2": 3.55,
       "bookmaker1": "GTbets",
       "bookmaker2": "1xBet",
+      "source": "The Odds API"
+    },
+    {
+      "id": "4d4aae300d0439af50c11b7279bb9247",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-08-30",
+      "start": "17:00",
+      "startIso": "2026-08-30T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Stefanos Tsitsipas",
+      "player2": "Arthur Fils",
+      "odds1": 4.9,
+      "odds2": 1.25,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     },
     {
@@ -114,9 +130,9 @@
       "player1": "Kamil Majchrzak",
       "player2": "Hamad Medjedovic",
       "odds1": 1.88,
-      "odds2": 2.08,
+      "odds2": 2.1,
       "bookmaker1": "1xBet",
-      "bookmaker2": "Coolbet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -164,7 +180,7 @@
       "odds1": 2.02,
       "odds2": 1.94,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -196,7 +212,7 @@
       "odds1": 1.12,
       "odds2": 8,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -241,10 +257,10 @@
       "status": "upcoming",
       "player1": "Fabian Marozsan",
       "player2": "Michael Zheng",
-      "odds1": 2.2,
-      "odds2": 1.81,
+      "odds1": 2.22,
+      "odds2": 1.8,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -264,22 +280,6 @@
       "source": "The Odds API"
     },
     {
-      "id": "4d4aae300d0439af50c11b7279bb9247",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-08-30",
-      "start": "18:40",
-      "startIso": "2026-08-30T16:40:00Z",
-      "status": "upcoming",
-      "player1": "Stefanos Tsitsipas",
-      "player2": "Arthur Fils",
-      "odds1": 4.9,
-      "odds2": 1.25,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "888sport",
-      "source": "The Odds API"
-    },
-    {
       "id": "fbb58c1c60dcf71195f3e8e09e49fba5",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -291,7 +291,7 @@
       "player2": "Terence Atmane",
       "odds1": 2.52,
       "odds2": 1.61,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
@@ -306,9 +306,25 @@
       "player1": "Toby Samuel",
       "player2": "Tomas Machac",
       "odds1": 1.9,
-      "odds2": 2.05,
+      "odds2": 2.28,
       "bookmaker1": "1xBet",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "c6ad371fda3cb7bacecc9bedb7f36787",
+      "tour": "WTA",
+      "event": "WTA US Open",
+      "date": "2026-08-30",
+      "start": "18:40",
+      "startIso": "2026-08-30T16:40:00Z",
+      "status": "upcoming",
+      "player1": "Ashlyn Krueger",
+      "player2": "Amanda Anisimova",
+      "odds1": 6,
+      "odds2": 1.19,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -321,9 +337,9 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Hugo Gaston",
-      "odds1": 1.04,
-      "odds2": 21,
-      "bookmaker1": "888sport",
+      "odds1": 1.07,
+      "odds2": 38,
+      "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -338,9 +354,25 @@
       "player1": "Thiago Agustin Tirante",
       "player2": "Adrian Mannarino",
       "odds1": 1.43,
-      "odds2": 3.35,
+      "odds2": 3.45,
       "bookmaker1": "GTbets",
       "bookmaker2": "Matchbook",
+      "source": "The Odds API"
+    },
+    {
+      "id": "aa7350af51feb2a06a42fe07cbab10df",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-08-30",
+      "start": "19:50",
+      "startIso": "2026-08-30T17:50:00Z",
+      "status": "upcoming",
+      "player1": "Aleksandar Vukic",
+      "player2": "Rei Sakamoto",
+      "odds1": 2.41,
+      "odds2": 1.66,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -449,7 +481,7 @@
       "status": "upcoming",
       "player1": "Sebastian Gorzny",
       "player2": "Raphael Collignon",
-      "odds1": 9.55,
+      "odds1": 9.65,
       "odds2": 1.11,
       "bookmaker1": "1xBet",
       "bookmaker2": "Unibet (NL)",
@@ -492,8 +524,8 @@
       "tour": "WTA",
       "event": "WTA US Open",
       "date": "2026-08-30",
-      "start": "22:00",
-      "startIso": "2026-08-30T20:00:00Z",
+      "start": "21:30",
+      "startIso": "2026-08-30T19:30:00Z",
       "status": "upcoming",
       "player1": "Kimberly Birrell",
       "player2": "Petra Marcinko",
@@ -513,9 +545,9 @@
       "status": "upcoming",
       "player1": "Alex Michelsen",
       "player2": "Federico Cinà",
-      "odds1": 1.33,
-      "odds2": 3.79,
-      "bookmaker1": "888sport",
+      "odds1": 1.3,
+      "odds2": 4.09,
+      "bookmaker1": "1xBet",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -548,7 +580,7 @@
       "odds1": 5.7,
       "odds2": 1.2,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     },
     {
@@ -657,8 +689,8 @@
       "status": "upcoming",
       "player1": "Alex Molcan",
       "player2": "Benjamin Bonzi",
-      "odds1": 3.06,
-      "odds2": 1.45,
+      "odds1": 2.99,
+      "odds2": 1.47,
       "bookmaker1": "1xBet",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -744,22 +776,6 @@
       "source": "The Odds API"
     },
     {
-      "id": "ae612ea5d9e3cbcb76f15629a05834bc",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Ben Shelton",
-      "player2": "Tallon Griekspoor",
-      "odds1": 1.2,
-      "odds2": 7.25,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "1xBet",
-      "source": "The Odds API"
-    },
-    {
       "id": "e5302319ac0f9d8353d1540a1a645a6e",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -786,7 +802,7 @@
       "player1": "Brandon Nakashima",
       "player2": "Sebastian Baez",
       "odds1": 1.2,
-      "odds2": 6.15,
+      "odds2": 6.18,
       "bookmaker1": "GTbets",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -808,22 +824,6 @@
       "source": "The Odds API"
     },
     {
-      "id": "506ba8811c1c5163baacbffbba7d601a",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Roman Safiullin",
-      "player2": "Carlos Alcaraz",
-      "odds1": 6.03,
-      "odds2": 1.19,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
-    {
       "id": "6724e024ab6eca23771d7bd4db0a626d",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -835,7 +835,7 @@
       "player2": "Carlos Taberner",
       "odds1": 1.05,
       "odds2": 22,
-      "bookmaker1": "Winamax (DE)",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -866,7 +866,7 @@
       "player1": "Dane Sweeny",
       "player2": "Corentin Moutet",
       "odds1": 4.21,
-      "odds2": 1.32,
+      "odds2": 1.33,
       "bookmaker1": "1xBet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -932,7 +932,7 @@
       "odds1": 1.04,
       "odds2": 22,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -977,9 +977,9 @@
       "status": "upcoming",
       "player1": "Filip Misolic",
       "player2": "Francisco Cerundolo",
-      "odds1": 10.5,
+      "odds1": 11,
       "odds2": 1.08,
-      "bookmaker1": "Coolbet",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -1000,22 +1000,6 @@
       "source": "The Odds API"
     },
     {
-      "id": "3e181ee7743dbff33254383299b50587",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Martin Damm Jr.",
-      "player2": "Frances Tiafoe",
-      "odds1": 4.21,
-      "odds2": 1.29,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "888sport",
-      "source": "The Odds API"
-    },
-    {
       "id": "aa9bc2a56a023039dcd7df50552350cb",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -1025,7 +1009,7 @@
       "status": "upcoming",
       "player1": "Jesper De Jong",
       "player2": "Francesco Passaro",
-      "odds1": 1.94,
+      "odds1": 1.96,
       "odds2": 2.14,
       "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
@@ -1042,9 +1026,9 @@
       "player1": "Jurij Rodionov",
       "player2": "Giovanni Mpetshi Perricard",
       "odds1": 2.51,
-      "odds2": 1.53,
+      "odds2": 1.7,
       "bookmaker1": "GTbets",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -1122,7 +1106,7 @@
       "player1": "Juncheng Shang",
       "player2": "Marco Trungelliti",
       "odds1": 1.49,
-      "odds2": 2.89,
+      "odds2": 2.95,
       "bookmaker1": "Winamax (DE)",
       "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
@@ -1153,9 +1137,9 @@
       "status": "upcoming",
       "player1": "Nuno Borges",
       "player2": "Learner Tien",
-      "odds1": 2.84,
+      "odds1": 2.9,
       "odds2": 1.54,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -1202,9 +1186,9 @@
       "player1": "Nishesh Basavareddy",
       "player2": "Tristan Schoolkate",
       "odds1": 1.62,
-      "odds2": 2.86,
+      "odds2": 2.51,
       "bookmaker1": "1xBet",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -1218,7 +1202,7 @@
       "player1": "Rafael Jodar",
       "player2": "Thanasi Kokkinakis",
       "odds1": 1.14,
-      "odds2": 8,
+      "odds2": 7.95,
       "bookmaker1": "BetOnline.ag",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -1240,22 +1224,6 @@
       "source": "The Odds API"
     },
     {
-      "id": "c6ad371fda3cb7bacecc9bedb7f36787",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Ashlyn Krueger",
-      "player2": "Amanda Anisimova",
-      "odds1": 6,
-      "odds2": 1.19,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
-    {
       "id": "06c7fa974a90073abbab94e2deffc370",
       "tour": "WTA",
       "event": "WTA US Open",
@@ -1269,22 +1237,6 @@
       "odds2": 1.46,
       "bookmaker1": "Coolbet",
       "bookmaker2": "GTbets",
-      "source": "The Odds API"
-    },
-    {
-      "id": "eeb0a5a091fdf0d9cb61dc0e32240abb",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Naomi Osaka",
-      "player2": "Anastasia Zakharova",
-      "odds1": 1.12,
-      "odds2": 9.2,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -1333,22 +1285,6 @@
       "odds2": 1.64,
       "bookmaker1": "Coolbet",
       "bookmaker2": "GTbets",
-      "source": "The Odds API"
-    },
-    {
-      "id": "fad951e69f6b575d053e64836092c462",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Aryna Sabalenka",
-      "player2": "Maria Camila Osorio Serrano",
-      "odds1": 1.1,
-      "odds2": 13.5,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -1490,7 +1426,7 @@
       "player1": "Elisabetta Cocciaretto",
       "player2": "Katerina Siniakova",
       "odds1": 2.65,
-      "odds2": 1.54,
+      "odds2": 1.55,
       "bookmaker1": "Coolbet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -1541,22 +1477,6 @@
       "odds2": 1.1,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
-      "source": "The Odds API"
-    },
-    {
-      "id": "9226354251854b8c72d187aa2c5a6a80",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-08-31",
-      "start": "17:00",
-      "startIso": "2026-08-31T15:00:00Z",
-      "status": "upcoming",
-      "player1": "Iga Swiatek",
-      "player2": "Xiyu Wang",
-      "odds1": 1.09,
-      "odds2": 9.4,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -1617,10 +1537,10 @@
       "status": "upcoming",
       "player1": "Julia Grabher",
       "player2": "Sorana Cirstea",
-      "odds1": 9.5,
-      "odds2": 1.08,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "GTbets",
+      "odds1": 10,
+      "odds2": 1.09,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -1714,9 +1634,9 @@
       "player1": "Maja Chwalinska",
       "player2": "Taylor Townsend",
       "odds1": 3,
-      "odds2": 1.47,
+      "odds2": 1.48,
       "bookmaker1": "GTbets",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -1730,9 +1650,9 @@
       "player1": "Mananchaya Sawangkaew",
       "player2": "Panna Udvardy",
       "odds1": 1.64,
-      "odds2": 2.52,
+      "odds2": 2.48,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -1764,6 +1684,70 @@
       "odds1": 1.96,
       "odds2": 2.02,
       "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "fad951e69f6b575d053e64836092c462",
+      "tour": "WTA",
+      "event": "WTA US Open",
+      "date": "2026-08-31",
+      "start": "17:30",
+      "startIso": "2026-08-31T15:30:00Z",
+      "status": "upcoming",
+      "player1": "Aryna Sabalenka",
+      "player2": "Maria Camila Osorio Serrano",
+      "odds1": 1.1,
+      "odds2": 13.5,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Matchbook",
+      "source": "The Odds API"
+    },
+    {
+      "id": "506ba8811c1c5163baacbffbba7d601a",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-08-31",
+      "start": "18:40",
+      "startIso": "2026-08-31T16:40:00Z",
+      "status": "upcoming",
+      "player1": "Roman Safiullin",
+      "player2": "Carlos Alcaraz",
+      "odds1": 6.03,
+      "odds2": 1.2,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "ae612ea5d9e3cbcb76f15629a05834bc",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-01",
+      "start": "01:00",
+      "startIso": "2026-08-31T23:00:00Z",
+      "status": "upcoming",
+      "player1": "Ben Shelton",
+      "player2": "Tallon Griekspoor",
+      "odds1": 1.2,
+      "odds2": 7.25,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "1xBet",
+      "source": "The Odds API"
+    },
+    {
+      "id": "9226354251854b8c72d187aa2c5a6a80",
+      "tour": "WTA",
+      "event": "WTA US Open",
+      "date": "2026-09-01",
+      "start": "01:00",
+      "startIso": "2026-08-31T23:00:00Z",
+      "status": "upcoming",
+      "player1": "Iga Swiatek",
+      "player2": "Xiyu Wang",
+      "odds1": 1.09,
+      "odds2": 9.2,
+      "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
