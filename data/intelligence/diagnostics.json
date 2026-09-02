@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T04:37:26.479848+00:00",
+  "generatedAt": "2026-09-02T04:29:19.750288+00:00",
   "sources": [
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2019.csv",
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2020.csv",
@@ -8,23 +8,24 @@
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2023.csv",
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2024.csv",
     "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2025.csv",
-    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2026.csv"
+    "https://raw.githubusercontent.com/Kadantte/tennis_atp/master/atp_matches_2026.csv",
+    "buildoak/tennis-xgboost-autoresearch:data/extension"
   ],
   "rows": {
-    "ATP": 20368,
-    "WTA": 0,
-    "total": 20368
+    "ATP": 22131,
+    "WTA": 2758,
+    "total": 24889
   },
   "outputs": {
-    "rankingFallback": 855,
-    "rankingFallbackATP": 855,
+    "rankingFallback": 880,
+    "rankingFallbackATP": 880,
     "rankingFallbackWTA": 0,
-    "players": 999,
-    "form": 998,
-    "h2h": 12865,
-    "surface": 986,
-    "stats": 799,
-    "tournamentSurfaces": 579
+    "players": 1440,
+    "form": 1445,
+    "h2h": 15562,
+    "surface": 1433,
+    "stats": 820,
+    "tournamentSurfaces": 647
   },
   "status": "OK"
 }
