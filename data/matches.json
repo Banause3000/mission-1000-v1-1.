@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-03T13:20:44.488Z",
+  "generatedAt": "2026-09-03T13:46:15.330Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "234",
-    "remaining": "266"
+    "used": "236",
+    "remaining": "264"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Luciano Darderi",
       "player2": "Dalibor Svrcina",
-      "odds1": 1.76,
-      "odds2": 2.31,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.77,
+      "odds2": 2.29,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Jan-Lennard Struff",
       "player2": "Francisco Cerundolo",
-      "odds1": 2.46,
-      "odds2": 1.67,
+      "odds1": 2.48,
+      "odds2": 1.68,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -66,7 +66,7 @@
       "player1": "Anastasia Potapova",
       "player2": "Leolia Jeanjean",
       "odds1": 1.29,
-      "odds2": 4.3,
+      "odds2": 4.4,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -209,7 +209,7 @@
       "status": "upcoming",
       "player1": "Oleksandra Oliynykova",
       "player2": "Alexandra Eala",
-      "odds1": 8.8,
+      "odds1": 8.6,
       "odds2": 1.12,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
@@ -257,7 +257,7 @@
       "status": "upcoming",
       "player1": "Alexei Popyrin",
       "player2": "Alejandro Tabilo",
-      "odds1": 2.52,
+      "odds1": 2.54,
       "odds2": 1.64,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -338,7 +338,7 @@
       "player1": "Maria Sakkari",
       "player2": "Yuliia Starodubtseva",
       "odds1": 1.58,
-      "odds2": 2.68,
+      "odds2": 2.7,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -354,9 +354,9 @@
       "player1": "Nikola Bartunkova",
       "player2": "Tatjana Maria",
       "odds1": 1.43,
-      "odds2": 3.3,
+      "odds2": 3.35,
       "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -369,8 +369,8 @@
       "status": "upcoming",
       "player1": "Zachary Svajda",
       "player2": "Arthur Gea",
-      "odds1": 1.89,
-      "odds2": 2.1,
+      "odds1": 1.91,
+      "odds2": 2.08,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -385,10 +385,10 @@
       "status": "upcoming",
       "player1": "Benjamin Bonzi",
       "player2": "Ignacio Buse",
-      "odds1": 2.2,
-      "odds2": 1.82,
+      "odds1": 2.16,
+      "odds2": 1.85,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -401,7 +401,7 @@
       "status": "upcoming",
       "player1": "Bu Yunchaokete",
       "player2": "Michael Zheng",
-      "odds1": 2.74,
+      "odds1": 2.72,
       "odds2": 1.56,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -529,10 +529,10 @@
       "status": "upcoming",
       "player1": "Alex Michelsen",
       "player2": "Daniel Merida Aguilar",
-      "odds1": 1.64,
-      "odds2": 2.5,
+      "odds1": 1.65,
+      "odds2": 2.49,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -545,7 +545,7 @@
       "status": "upcoming",
       "player1": "Alexander Bublik",
       "player2": "Tommy Paul",
-      "odds1": 2.62,
+      "odds1": 2.6,
       "odds2": 1.61,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -562,9 +562,9 @@
       "player1": "Daniil Medvedev",
       "player2": "Arthur Rinderknech",
       "odds1": 1.4,
-      "odds2": 3.45,
+      "odds2": 3.35,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "LeoVegas (SE)",
       "source": "The Odds API"
     },
     {
@@ -578,7 +578,7 @@
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
       "odds1": 1.29,
-      "odds2": 4.3,
+      "odds2": 4.2,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -609,9 +609,9 @@
       "status": "upcoming",
       "player1": "Valentin Vacherot",
       "player2": "Frances Tiafoe",
-      "odds1": 2.7,
-      "odds2": 1.56,
-      "bookmaker1": "Coolbet",
+      "odds1": 2.74,
+      "odds2": 1.53,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -625,9 +625,9 @@
       "status": "upcoming",
       "player1": "Jiri Lehecka",
       "player2": "Stefanos Tsitsipas",
-      "odds1": 1.53,
-      "odds2": 2.86,
-      "bookmaker1": "Betfair",
+      "odds1": 1.51,
+      "odds2": 2.88,
+      "bookmaker1": "BetOnline.ag",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -641,9 +641,9 @@
       "status": "upcoming",
       "player1": "Tomas Martin Etcheverry",
       "player2": "Mariano Navone",
-      "odds1": 2.06,
-      "odds2": 1.9,
-      "bookmaker1": "Matchbook",
+      "odds1": 2.02,
+      "odds2": 1.92,
+      "bookmaker1": "Coolbet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -674,7 +674,7 @@
       "player1": "Elina Svitolina",
       "player2": "Anna Kalinskaya",
       "odds1": 1.4,
-      "odds2": 3.3,
+      "odds2": 3.5,
       "bookmaker1": "Coolbet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -706,7 +706,7 @@
       "player1": "Taylor Townsend",
       "player2": "Diana Shnaider",
       "odds1": 2.46,
-      "odds2": 1.67,
+      "odds2": 1.64,
       "bookmaker1": "Nordic Bet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -722,7 +722,7 @@
       "player1": "Marta Kostyuk",
       "player2": "Ekaterina Alexandrova",
       "odds1": 1.39,
-      "odds2": 3.7,
+      "odds2": 3.75,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -770,7 +770,7 @@
       "player1": "Jessica Pegula",
       "player2": "Leylah Fernandez",
       "odds1": 1.22,
-      "odds2": 6,
+      "odds2": 5.9,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
