@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-09-04T02:19:08.618Z",
+  "generatedAt": "2026-09-04T02:44:27.637Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "286",
-    "remaining": "214"
+    "used": "288",
+    "remaining": "212"
   },
   "matches": [
-    {
-      "id": "e2e596914b5f8addcac5350db8f0880b",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-09-04",
-      "start": "01:28",
-      "startIso": "2026-09-03T23:28:48Z",
-      "status": "live-or-started",
-      "player1": "Bu Yunchaokete",
-      "player2": "Michael Zheng",
-      "odds1": 36,
-      "odds2": 1.04,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
     {
       "id": "81d5598e13c2fcfce4989d037947f018",
       "tour": "ATP",
@@ -33,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Alexander Zverev",
       "player2": "Quentin Halys",
-      "odds1": 1.1,
-      "odds2": 11,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.13,
+      "odds2": 9.5,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "live-or-started",
       "player1": "Jessica Bouzas Maneiro",
       "player2": "Elena Rybakina",
-      "odds1": 12.44,
-      "odds2": 1.1,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Unibet (SE)",
+      "odds1": 50,
+      "odds2": 1.06,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -114,7 +98,7 @@
       "player1": "Jessica Pegula",
       "player2": "Leylah Fernandez",
       "odds1": 1.18,
-      "odds2": 6.2,
+      "odds2": 6.4,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -369,7 +353,7 @@
       "status": "upcoming",
       "player1": "Naomi Osaka",
       "player2": "Elise Mertens",
-      "odds1": 1.35,
+      "odds1": 1.37,
       "odds2": 3.75,
       "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
