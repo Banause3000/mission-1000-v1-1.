@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-04T03:44:46.127Z",
+  "generatedAt": "2026-09-04T04:19:45.344Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "292",
-    "remaining": "208"
+    "used": "294",
+    "remaining": "206"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Alexander Zverev",
       "player2": "Quentin Halys",
-      "odds1": 1.66,
-      "odds2": 3.81,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.28,
+      "odds2": 4.5,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -36,7 +36,7 @@
       "odds1": 1.07,
       "odds2": 15,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -50,7 +50,7 @@
       "player1": "Marta Kostyuk",
       "player2": "Ekaterina Alexandrova",
       "odds1": 1.34,
-      "odds2": 3.8,
+      "odds2": 3.85,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -116,7 +116,7 @@
       "odds1": 1.38,
       "odds2": 3.6,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -194,7 +194,7 @@
       "player1": "Tomas Martin Etcheverry",
       "player2": "Mariano Navone",
       "odds1": 2.04,
-      "odds2": 1.95,
+      "odds2": 1.94,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -210,9 +210,9 @@
       "player1": "Alex Michelsen",
       "player2": "Daniel Merida Aguilar",
       "odds1": 1.68,
-      "odds2": 2.45,
+      "odds2": 2.46,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -241,10 +241,10 @@
       "status": "upcoming",
       "player1": "Valentin Vacherot",
       "player2": "Frances Tiafoe",
-      "odds1": 2.9,
-      "odds2": 1.53,
+      "odds1": 2.88,
+      "odds2": 1.52,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -296,6 +296,22 @@
       "source": "The Odds API"
     },
     {
+      "id": "86a04b4a1a3485f3d6912825a9d0dde7",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-05",
+      "start": "17:00",
+      "startIso": "2026-09-05T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Michael Zheng",
+      "player2": "Arthur Gea",
+      "odds1": 1.67,
+      "odds2": 2.6,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Coolbet",
+      "source": "The Odds API"
+    },
+    {
       "id": "2b34ae91d8c12ab0edcd7aaf19c74e07",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -338,7 +354,7 @@
       "player1": "Taylor Fritz",
       "player2": "Francisco Cerundolo",
       "odds1": 1.23,
-      "odds2": 5.5,
+      "odds2": 5.6,
       "bookmaker1": "1xBet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -353,9 +369,9 @@
       "status": "upcoming",
       "player1": "Anastasia Potapova",
       "player2": "Amanda Anisimova",
-      "odds1": 4.75,
+      "odds1": 4.8,
       "odds2": 1.24,
-      "bookmaker1": "Coolbet",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
@@ -402,7 +418,7 @@
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
       "odds1": 1.56,
-      "odds2": 2.7,
+      "odds2": 2.65,
       "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
       "source": "The Odds API"
