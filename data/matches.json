@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-04T23:16:35.951Z",
+  "generatedAt": "2026-09-04T23:41:33.024Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "370",
-    "remaining": "130"
+    "used": "372",
+    "remaining": "128"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "live-or-started",
       "player1": "Jiri Lehecka",
       "player2": "Stefanos Tsitsipas",
-      "odds1": 2.25,
-      "odds2": 2.11,
-      "bookmaker1": "Nordic Bet",
+      "odds1": 10.5,
+      "odds2": 1.34,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
@@ -33,10 +33,10 @@
       "status": "live-or-started",
       "player1": "Tomas Martin Etcheverry",
       "player2": "Mariano Navone",
-      "odds1": 1.47,
-      "odds2": 3.6,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.11,
+      "odds2": 10,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,10 +49,10 @@
       "status": "live-or-started",
       "player1": "Alex Michelsen",
       "player2": "Daniel Merida Aguilar",
-      "odds1": 1.66,
-      "odds2": 2.62,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "William Hill",
+      "odds1": 1.44,
+      "odds2": 3.5,
+      "bookmaker1": "Nordic Bet",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "live-or-started",
       "player1": "Valentin Vacherot",
       "player2": "Frances Tiafoe",
-      "odds1": 2.7,
-      "odds2": 1.64,
-      "bookmaker1": "BetOnline.ag",
-      "bookmaker2": "Unibet (NL)",
+      "odds1": 5.4,
+      "odds2": 1.28,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -76,8 +76,8 @@
       "tour": "ATP",
       "event": "ATP US Open",
       "date": "2026-09-05",
-      "start": "02:20",
-      "startIso": "2026-09-05T00:20:00Z",
+      "start": "02:40",
+      "startIso": "2026-09-05T00:40:00Z",
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
@@ -130,7 +130,7 @@
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
       "odds1": 1.66,
-      "odds2": 2.48,
+      "odds2": 2.46,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -321,7 +321,7 @@
       "status": "upcoming",
       "player1": "Naomi Osaka",
       "player2": "Elise Mertens",
-      "odds1": 1.38,
+      "odds1": 1.39,
       "odds2": 3.5,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -386,9 +386,9 @@
       "player1": "Aryna Sabalenka",
       "player2": "Taylor Townsend",
       "odds1": 1.16,
-      "odds2": 6.4,
+      "odds2": 6,
       "bookmaker1": "Coolbet",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
