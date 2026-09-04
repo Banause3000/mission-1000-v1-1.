@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-04T01:15:48.835Z",
+  "generatedAt": "2026-09-04T01:45:08.675Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "282",
-    "remaining": "218"
+    "used": "284",
+    "remaining": "216"
   },
   "matches": [
     {
@@ -17,42 +17,10 @@
       "status": "live-or-started",
       "player1": "Zizou Bergs",
       "player2": "Jesper De Jong",
-      "odds1": 1.16,
-      "odds2": 9,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "MyBookie.ag",
-      "source": "The Odds API"
-    },
-    {
-      "id": "93f7500d41836f113c7cb2101d9408cd",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-09-04",
-      "start": "01:05",
-      "startIso": "2026-09-03T23:05:09Z",
-      "status": "live-or-started",
-      "player1": "Gael Monfils",
-      "player2": "Learner Tien",
-      "odds1": 75,
-      "odds2": 1.05,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
-    {
-      "id": "5f40099abeed800144b49aca282fc0b5",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-09-04",
-      "start": "01:11",
-      "startIso": "2026-09-03T23:11:00Z",
-      "status": "live-or-started",
-      "player1": "Paula Badosa",
-      "player2": "Coco Gauff",
-      "odds1": 34,
-      "odds2": 1.14,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.2,
+      "odds2": 7.6,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +33,10 @@
       "status": "live-or-started",
       "player1": "Bu Yunchaokete",
       "player2": "Michael Zheng",
-      "odds1": 3.8,
-      "odds2": 1.75,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
+      "odds1": 8.75,
+      "odds2": 1.16,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -76,15 +44,15 @@
       "tour": "ATP",
       "event": "ATP US Open",
       "date": "2026-09-04",
-      "start": "03:20",
-      "startIso": "2026-09-04T01:20:00Z",
-      "status": "upcoming",
+      "start": "03:36",
+      "startIso": "2026-09-04T01:36:58Z",
+      "status": "live-or-started",
       "player1": "Alexander Zverev",
       "player2": "Quentin Halys",
       "odds1": 1.18,
-      "odds2": 7.4,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Betfair",
+      "odds2": 6.8,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -92,15 +60,15 @@
       "tour": "WTA",
       "event": "WTA US Open",
       "date": "2026-09-04",
-      "start": "03:25",
-      "startIso": "2026-09-04T01:25:00Z",
-      "status": "upcoming",
+      "start": "03:45",
+      "startIso": "2026-09-04T01:45:00Z",
+      "status": "live-or-started",
       "player1": "Jessica Bouzas Maneiro",
       "player2": "Elena Rybakina",
-      "odds1": 6.2,
-      "odds2": 1.18,
+      "odds1": 5.7,
+      "odds2": 1.21,
       "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -129,9 +97,9 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 1.34,
-      "odds2": 3.8,
-      "bookmaker1": "Matchbook",
+      "odds1": 1.33,
+      "odds2": 3.9,
+      "bookmaker1": "Coolbet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -162,8 +130,8 @@
       "player1": "Jessica Pegula",
       "player2": "Leylah Fernandez",
       "odds1": 1.18,
-      "odds2": 6,
-      "bookmaker1": "Coolbet",
+      "odds2": 6.2,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -180,7 +148,7 @@
       "odds1": 2.56,
       "odds2": 1.64,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -194,7 +162,7 @@
       "player1": "Daniil Medvedev",
       "player2": "Arthur Rinderknech",
       "odds1": 1.38,
-      "odds2": 3.55,
+      "odds2": 3.6,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -290,9 +258,9 @@
       "player1": "Alex Michelsen",
       "player2": "Daniel Merida Aguilar",
       "odds1": 1.68,
-      "odds2": 2.46,
+      "odds2": 2.45,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     },
     {
@@ -305,10 +273,10 @@
       "status": "upcoming",
       "player1": "Jiri Lehecka",
       "player2": "Stefanos Tsitsipas",
-      "odds1": 1.6,
-      "odds2": 2.64,
+      "odds1": 1.58,
+      "odds2": 2.68,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
