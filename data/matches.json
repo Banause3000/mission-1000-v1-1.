@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-09-04T06:24:30.854Z",
+  "generatedAt": "2026-09-04T06:49:13.317Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "302",
-    "remaining": "198"
+    "used": "304",
+    "remaining": "196"
   },
   "matches": [
-    {
-      "id": "81d5598e13c2fcfce4989d037947f018",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-09-04",
-      "start": "03:36",
-      "startIso": "2026-09-04T01:36:58Z",
-      "status": "live-or-started",
-      "player1": "Alexander Zverev",
-      "player2": "Quentin Halys",
-      "odds1": 1.13,
-      "odds2": 32,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "3128919869debdeee933524aa2c96595",
       "tour": "WTA",
@@ -49,8 +33,8 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 1.34,
-      "odds2": 3.85,
+      "odds1": 1.33,
+      "odds2": 3.9,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -66,8 +50,8 @@
       "player1": "Jasmine Paolini",
       "player2": "Sorana Cirstea",
       "odds1": 2.64,
-      "odds2": 1.59,
-      "bookmaker1": "Betfair",
+      "odds2": 1.6,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,9 +65,9 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Leylah Fernandez",
-      "odds1": 1.18,
-      "odds2": 6.4,
-      "bookmaker1": "Betfair",
+      "odds1": 1.17,
+      "odds2": 6.2,
+      "bookmaker1": "Coolbet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -114,7 +98,7 @@
       "player1": "Daniil Medvedev",
       "player2": "Arthur Rinderknech",
       "odds1": 1.38,
-      "odds2": 3.55,
+      "odds2": 3.6,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -210,9 +194,9 @@
       "player1": "Alex Michelsen",
       "player2": "Daniel Merida Aguilar",
       "odds1": 1.68,
-      "odds2": 2.45,
+      "odds2": 2.46,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -225,9 +209,9 @@
       "status": "upcoming",
       "player1": "Jiri Lehecka",
       "player2": "Stefanos Tsitsipas",
-      "odds1": 1.6,
-      "odds2": 2.64,
-      "bookmaker1": "Matchbook",
+      "odds1": 1.59,
+      "odds2": 2.66,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -241,8 +225,8 @@
       "status": "upcoming",
       "player1": "Valentin Vacherot",
       "player2": "Frances Tiafoe",
-      "odds1": 2.88,
-      "odds2": 1.52,
+      "odds1": 2.84,
+      "odds2": 1.53,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -259,7 +243,7 @@
       "player2": "Denis Shapovalov",
       "odds1": 1.28,
       "odds2": 4.5,
-      "bookmaker1": "1xBet",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -273,10 +257,26 @@
       "status": "upcoming",
       "player1": "Elina Svitolina",
       "player2": "Anna Kalinskaya",
-      "odds1": 1.41,
+      "odds1": 1.4,
       "odds2": 3.4,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
+      "source": "The Odds API"
+    },
+    {
+      "id": "3d5afab1d52da647661a3eee7aa06b85",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-05",
+      "start": "17:00",
+      "startIso": "2026-09-05T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Alexander Zverev",
+      "player2": "Alejandro Tabilo",
+      "odds1": 1.17,
+      "odds2": 5.7,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -289,10 +289,10 @@
       "status": "upcoming",
       "player1": "Alexander Blockx",
       "player2": "Flavio Cobolli",
-      "odds1": 2.08,
-      "odds2": 2,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "888sport",
+      "odds1": 2.07,
+      "odds2": 1.87,
+      "bookmaker1": "Unibet (NL)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -321,10 +321,10 @@
       "status": "upcoming",
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
-      "odds1": 1.46,
+      "odds1": 1.52,
       "odds2": 2.9,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "Coolbet",
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Tipico",
       "source": "The Odds API"
     },
     {
@@ -338,9 +338,9 @@
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
       "odds1": 2.6,
-      "odds2": 1.67,
+      "odds2": 1.62,
       "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "William Hill",
       "source": "The Odds API"
     },
     {
@@ -355,7 +355,7 @@
       "player2": "Dane Sweeny",
       "odds1": 1.23,
       "odds2": 5.99,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -370,7 +370,7 @@
       "player1": "Taylor Fritz",
       "player2": "Francisco Cerundolo",
       "odds1": 1.21,
-      "odds2": 5.6,
+      "odds2": 5.7,
       "bookmaker1": "GTbets",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -465,7 +465,7 @@
       "status": "upcoming",
       "player1": "Naomi Osaka",
       "player2": "Elise Mertens",
-      "odds1": 1.39,
+      "odds1": 1.41,
       "odds2": 3.75,
       "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
@@ -497,10 +497,10 @@
       "status": "upcoming",
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
-      "odds1": 1.56,
-      "odds2": 2.7,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.62,
+      "odds2": 2.66,
+      "bookmaker1": "William Hill",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -514,7 +514,7 @@
       "player1": "Mirra Andreeva",
       "player2": "Nikola Bartunkova",
       "odds1": 1.27,
-      "odds2": 4.1,
+      "odds2": 4.7,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
