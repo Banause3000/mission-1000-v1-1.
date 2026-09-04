@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-04T00:27:23.480Z",
+  "generatedAt": "2026-09-04T00:48:49.409Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "278",
-    "remaining": "222"
+    "used": "280",
+    "remaining": "220"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Botic van de Zandschulp",
       "player2": "Alex de Minaur",
-      "odds1": 1.16,
-      "odds2": 8,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.08,
+      "odds2": 55,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -33,10 +33,10 @@
       "status": "live-or-started",
       "player1": "Maria Sakkari",
       "player2": "Yuliia Starodubtseva",
-      "odds1": 4.75,
-      "odds2": 2.65,
-      "bookmaker1": "William Hill",
-      "bookmaker2": "Pinnacle",
+      "odds1": 10.75,
+      "odds2": 1.17,
+      "bookmaker1": "MyBookie.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,10 +49,10 @@
       "status": "live-or-started",
       "player1": "Zizou Bergs",
       "player2": "Jesper De Jong",
-      "odds1": 1.52,
-      "odds2": 3.9,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.44,
+      "odds2": 4.55,
+      "bookmaker1": "888sport",
+      "bookmaker2": "MyBookie.ag",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "live-or-started",
       "player1": "Zachary Svajda",
       "player2": "Arthur Gea",
-      "odds1": 4.7,
-      "odds2": 1.5,
+      "odds1": 15,
+      "odds2": 1.2,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Coolbet",
+      "bookmaker2": "MyBookie.ag",
       "source": "The Odds API"
     },
     {
@@ -82,9 +82,9 @@
       "player1": "Iva Jović",
       "player2": "Francesca Jones",
       "odds1": 1.03,
-      "odds2": 34.23,
+      "odds2": 42,
       "bookmaker1": "Pinnacle",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,10 +97,10 @@
       "status": "live-or-started",
       "player1": "Gael Monfils",
       "player2": "Learner Tien",
-      "odds1": 12.5,
-      "odds2": 1.11,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
+      "odds1": 26,
+      "odds2": 1.03,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -113,10 +113,10 @@
       "status": "live-or-started",
       "player1": "Paula Badosa",
       "player2": "Coco Gauff",
-      "odds1": 24,
-      "odds2": 1.09,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "MyBookie.ag",
+      "odds1": 48.97,
+      "odds2": 1.13,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -129,25 +129,9 @@
       "status": "live-or-started",
       "player1": "Bu Yunchaokete",
       "player2": "Michael Zheng",
-      "odds1": 5.3,
-      "odds2": 1.25,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
-    {
-      "id": "81d5598e13c2fcfce4989d037947f018",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-09-04",
-      "start": "02:40",
-      "startIso": "2026-09-04T00:40:00Z",
-      "status": "upcoming",
-      "player1": "Alexander Zverev",
-      "player2": "Quentin Halys",
-      "odds1": 1.18,
-      "odds2": 7,
-      "bookmaker1": "GTbets",
+      "odds1": 2.56,
+      "odds2": 1.66,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -158,12 +142,28 @@
       "date": "2026-09-04",
       "start": "02:40",
       "startIso": "2026-09-04T00:40:00Z",
-      "status": "upcoming",
+      "status": "live-or-started",
       "player1": "Jessica Bouzas Maneiro",
       "player2": "Elena Rybakina",
-      "odds1": 6,
+      "odds1": 6.2,
       "odds2": 1.19,
       "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "81d5598e13c2fcfce4989d037947f018",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-04",
+      "start": "02:55",
+      "startIso": "2026-09-04T00:55:00Z",
+      "status": "upcoming",
+      "player1": "Alexander Zverev",
+      "player2": "Quentin Halys",
+      "odds1": 1.18,
+      "odds2": 7,
+      "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -370,7 +370,7 @@
       "player1": "Jiri Lehecka",
       "player2": "Stefanos Tsitsipas",
       "odds1": 1.6,
-      "odds2": 2.62,
+      "odds2": 2.64,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
