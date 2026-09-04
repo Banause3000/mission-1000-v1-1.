@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-04T11:18:46.556Z",
+  "generatedAt": "2026-09-04T11:44:32.955Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "322",
-    "remaining": "178"
+    "used": "324",
+    "remaining": "176"
   },
   "matches": [
     {
@@ -49,9 +49,9 @@
       "status": "upcoming",
       "player1": "Jasmine Paolini",
       "player2": "Sorana Cirstea",
-      "odds1": 2.65,
-      "odds2": 1.6,
-      "bookmaker1": "BetOnline.ag",
+      "odds1": 2.62,
+      "odds2": 1.61,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -66,9 +66,9 @@
       "player1": "Jessica Pegula",
       "player2": "Leylah Fernandez",
       "odds1": 1.18,
-      "odds2": 6.4,
+      "odds2": 6.2,
       "bookmaker1": "Coolbet",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,8 +97,8 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Arthur Rinderknech",
-      "odds1": 1.36,
-      "odds2": 3.7,
+      "odds1": 1.37,
+      "odds2": 3.65,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -129,9 +129,9 @@
       "status": "upcoming",
       "player1": "Taylor Townsend",
       "player2": "Diana Shnaider",
-      "odds1": 2.5,
+      "odds1": 2.51,
       "odds2": 1.65,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "BetOnline.ag",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -177,9 +177,9 @@
       "status": "upcoming",
       "player1": "Tomas Martin Etcheverry",
       "player2": "Mariano Navone",
-      "odds1": 2.01,
+      "odds1": 2,
       "odds2": 2.02,
-      "bookmaker1": "GTbets",
+      "bookmaker1": "1xBet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -225,8 +225,8 @@
       "status": "upcoming",
       "player1": "Valentin Vacherot",
       "player2": "Frances Tiafoe",
-      "odds1": 2.62,
-      "odds2": 1.61,
+      "odds1": 2.64,
+      "odds2": 1.6,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -273,7 +273,7 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Tabilo",
-      "odds1": 1.17,
+      "odds1": 1.18,
       "odds2": 6.2,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -337,10 +337,10 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
-      "odds1": 2.85,
-      "odds2": 1.52,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "Matchbook",
+      "odds1": 2.89,
+      "odds2": 1.51,
+      "bookmaker1": "BetOnline.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -372,7 +372,7 @@
       "odds1": 1.17,
       "odds2": 6.6,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -498,7 +498,7 @@
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
       "odds1": 1.64,
-      "odds2": 2.5,
+      "odds2": 2.48,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
