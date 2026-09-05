@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T13:41:57.422Z",
+  "generatedAt": "2026-09-05T14:17:31.161Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "428",
-    "remaining": "72"
+    "used": "430",
+    "remaining": "70"
   },
   "matches": [
     {
@@ -20,7 +20,7 @@
       "odds1": 6,
       "odds2": 1.19,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
-      "odds1": 1.63,
-      "odds2": 2.54,
-      "bookmaker1": "Betfair",
+      "odds1": 1.67,
+      "odds2": 2.48,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -50,8 +50,8 @@
       "player1": "Taylor Fritz",
       "player2": "Francisco Cerundolo",
       "odds1": 1.15,
-      "odds2": 7.6,
-      "bookmaker1": "GTbets",
+      "odds2": 7.4,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -65,8 +65,8 @@
       "status": "upcoming",
       "player1": "Alexander Blockx",
       "player2": "Flavio Cobolli",
-      "odds1": 2,
-      "odds2": 1.98,
+      "odds1": 2.02,
+      "odds2": 1.97,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -97,8 +97,8 @@
       "status": "upcoming",
       "player1": "Mirra Andreeva",
       "player2": "Nikola Bartunkova",
-      "odds1": 1.26,
-      "odds2": 4.7,
+      "odds1": 1.25,
+      "odds2": 4.8,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -114,7 +114,7 @@
       "player1": "Michael Zheng",
       "player2": "Arthur Gea",
       "odds1": 1.71,
-      "odds2": 2.36,
+      "odds2": 2.38,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -132,7 +132,7 @@
       "odds1": 1.53,
       "odds2": 2.86,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -177,7 +177,7 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
-      "odds1": 2.88,
+      "odds1": 2.86,
       "odds2": 1.53,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -209,8 +209,8 @@
       "status": "upcoming",
       "player1": "Iva Jović",
       "player2": "Alexandra Eala",
-      "odds1": 1.89,
-      "odds2": 2.1,
+      "odds1": 1.87,
+      "odds2": 2.12,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -258,9 +258,9 @@
       "player1": "Jakub Mensik",
       "player2": "Learner Tien",
       "odds1": 2.22,
-      "odds2": 1.81,
+      "odds2": 1.8,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -290,9 +290,9 @@
       "player1": "Ben Shelton",
       "player2": "Stefanos Tsitsipas",
       "odds1": 1.4,
-      "odds2": 3.35,
+      "odds2": 3.4,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -308,7 +308,7 @@
       "odds1": 5.7,
       "odds2": 1.2,
       "bookmaker1": "Betfair",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     },
     {
@@ -321,8 +321,8 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Frances Tiafoe",
-      "odds1": 1.7,
-      "odds2": 2.38,
+      "odds1": 1.69,
+      "odds2": 2.4,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -337,8 +337,8 @@
       "status": "upcoming",
       "player1": "Anna Kalinskaya",
       "player2": "Emma Navarro",
-      "odds1": 2.02,
-      "odds2": 1.95,
+      "odds1": 2.04,
+      "odds2": 1.94,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
