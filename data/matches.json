@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T01:44:57.491Z",
+  "generatedAt": "2026-09-05T02:18:26.203Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "380",
-    "remaining": "120"
+    "used": "382",
+    "remaining": "118"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Elina Svitolina",
       "player2": "Anna Kalinskaya",
-      "odds1": 1.63,
-      "odds2": 3.4,
+      "odds1": 2.8,
+      "odds2": 1.96,
       "bookmaker1": "Betfair",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -28,13 +28,13 @@
       "tour": "ATP",
       "event": "ATP US Open",
       "date": "2026-09-05",
-      "start": "03:55",
-      "startIso": "2026-09-05T01:55:00Z",
+      "start": "04:25",
+      "startIso": "2026-09-05T02:25:00Z",
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
-      "odds1": 1.27,
-      "odds2": 4.6,
+      "odds1": 1.26,
+      "odds2": 4.8,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -98,7 +98,7 @@
       "player1": "Alexander Blockx",
       "player2": "Flavio Cobolli",
       "odds1": 2.04,
-      "odds2": 1.93,
+      "odds2": 1.94,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -241,7 +241,7 @@
       "status": "upcoming",
       "player1": "Iva Jović",
       "player2": "Alexandra Eala",
-      "odds1": 1.87,
+      "odds1": 1.88,
       "odds2": 2.1,
       "bookmaker1": "Betfair",
       "bookmaker2": "888sport",
@@ -296,6 +296,22 @@
       "source": "The Odds API"
     },
     {
+      "id": "b180b0500ee5847e0612dba80f23f8eb",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-06",
+      "start": "17:00",
+      "startIso": "2026-09-06T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Alex Michelsen",
+      "player2": "Tomas Martin Etcheverry",
+      "odds1": 1.33,
+      "odds2": 3.75,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
       "id": "375c143a5d5ad4155ac566ee0fe3acf4",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -305,10 +321,26 @@
       "status": "upcoming",
       "player1": "Tommy Paul",
       "player2": "Carlos Alcaraz",
-      "odds1": 4.75,
-      "odds2": 1.29,
-      "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "888sport",
+      "odds1": 5.4,
+      "odds2": 1.27,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "GTbets",
+      "source": "The Odds API"
+    },
+    {
+      "id": "419c98e83aff032b1ef5c65b5a84cabf",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-06",
+      "start": "17:00",
+      "startIso": "2026-09-06T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Daniil Medvedev",
+      "player2": "Frances Tiafoe",
+      "odds1": 1.81,
+      "odds2": 2.18,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -321,10 +353,10 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Taylor Townsend",
-      "odds1": 1.16,
-      "odds2": 6.25,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.27,
+      "odds2": 5.5,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -353,9 +385,9 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Linda Noskova",
-      "odds1": 1.84,
+      "odds1": 1.83,
       "odds2": 2.16,
-      "bookmaker1": "Coolbet",
+      "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
