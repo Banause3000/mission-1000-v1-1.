@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T12:47:06.850Z",
+  "generatedAt": "2026-09-05T13:17:13.960Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "424",
-    "remaining": "76"
+    "used": "426",
+    "remaining": "74"
   },
   "matches": [
     {
@@ -20,7 +20,7 @@
       "odds1": 6.2,
       "odds2": 1.18,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Coolbet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,9 +49,9 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Francisco Cerundolo",
-      "odds1": 1.16,
+      "odds1": 1.15,
       "odds2": 7.4,
-      "bookmaker1": "BetOnline.ag",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -98,7 +98,7 @@
       "player1": "Mirra Andreeva",
       "player2": "Nikola Bartunkova",
       "odds1": 1.26,
-      "odds2": 4.8,
+      "odds2": 4.7,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -113,10 +113,10 @@
       "status": "upcoming",
       "player1": "Michael Zheng",
       "player2": "Arthur Gea",
-      "odds1": 1.74,
-      "odds2": 2.38,
-      "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "Betfair",
+      "odds1": 1.71,
+      "odds2": 2.4,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -130,7 +130,7 @@
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
       "odds1": 1.53,
-      "odds2": 2.88,
+      "odds2": 2.86,
       "bookmaker1": "BetOnline.ag",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -145,7 +145,7 @@
       "status": "upcoming",
       "player1": "Luciano Darderi",
       "player2": "Dane Sweeny",
-      "odds1": 1.31,
+      "odds1": 1.3,
       "odds2": 4.41,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
@@ -177,9 +177,9 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
-      "odds1": 2.85,
+      "odds1": 2.86,
       "odds2": 1.53,
-      "bookmaker1": "Winamax (DE)",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -193,7 +193,7 @@
       "status": "upcoming",
       "player1": "Yuliia Starodubtseva",
       "player2": "Elena Rybakina",
-      "odds1": 9.4,
+      "odds1": 9.6,
       "odds2": 1.11,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -241,10 +241,10 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Tabilo",
-      "odds1": 1.2,
-      "odds2": 5.8,
+      "odds1": 1.19,
+      "odds2": 6,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -289,9 +289,9 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Stefanos Tsitsipas",
-      "odds1": 1.41,
+      "odds1": 1.4,
       "odds2": 3.35,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -322,9 +322,9 @@
       "player1": "Daniil Medvedev",
       "player2": "Frances Tiafoe",
       "odds1": 1.7,
-      "odds2": 2.4,
+      "odds2": 2.38,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -337,8 +337,8 @@
       "status": "upcoming",
       "player1": "Anna Kalinskaya",
       "player2": "Emma Navarro",
-      "odds1": 1.99,
-      "odds2": 1.99,
+      "odds1": 2,
+      "odds2": 1.96,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -385,7 +385,7 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Linda Noskova",
-      "odds1": 1.77,
+      "odds1": 1.76,
       "odds2": 2.28,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
