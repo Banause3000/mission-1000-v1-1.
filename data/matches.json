@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T04:18:39.520Z",
+  "generatedAt": "2026-09-05T04:43:41.140Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "390",
-    "remaining": "110"
+    "used": "392",
+    "remaining": "108"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
-      "odds1": 1.07,
-      "odds2": 15.5,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.45,
+      "odds2": 5.26,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -84,7 +84,7 @@
       "odds1": 2.06,
       "odds2": 1.93,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -130,9 +130,9 @@
       "player1": "Michael Zheng",
       "player2": "Arthur Gea",
       "odds1": 1.69,
-      "odds2": 2.43,
+      "odds2": 2.44,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -179,7 +179,7 @@
       "player2": "Coco Gauff",
       "odds1": 23,
       "odds2": 1.04,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -305,9 +305,9 @@
       "status": "upcoming",
       "player1": "Tommy Paul",
       "player2": "Carlos Alcaraz",
-      "odds1": 5.5,
-      "odds2": 1.23,
-      "bookmaker1": "Betfair",
+      "odds1": 5.6,
+      "odds2": 1.2,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -321,10 +321,26 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Frances Tiafoe",
-      "odds1": 1.81,
-      "odds2": 2.22,
-      "bookmaker1": "GTbets",
+      "odds1": 1.77,
+      "odds2": 2.28,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "b4fab41af0c83dc99c4e9d1fc815ddce",
+      "tour": "WTA",
+      "event": "WTA US Open",
+      "date": "2026-09-06",
+      "start": "17:00",
+      "startIso": "2026-09-06T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Anna Kalinskaya",
+      "player2": "Emma Navarro",
+      "odds1": 2,
+      "odds2": 2.02,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -369,9 +385,9 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Linda Noskova",
-      "odds1": 1.73,
+      "odds1": 1.74,
       "odds2": 2.32,
-      "bookmaker1": "GTbets",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
