@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-09-05T06:22:35.886Z",
+  "generatedAt": "2026-09-05T06:45:47.754Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "398",
-    "remaining": "102"
+    "used": "400",
+    "remaining": "100"
   },
   "matches": [
-    {
-      "id": "33c32753620466a1bdfc7d867baccbe4",
-      "tour": "ATP",
-      "event": "ATP US Open",
-      "date": "2026-09-05",
-      "start": "03:00",
-      "startIso": "2026-09-05T01:00:00Z",
-      "status": "live-or-started",
-      "player1": "Ben Shelton",
-      "player2": "Denis Shapovalov",
-      "odds1": 1.02,
-      "odds2": 34,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "811da4dad7fb3fd34c840fd6937478c1",
       "tour": "WTA",
@@ -34,9 +18,9 @@
       "player1": "Anastasia Potapova",
       "player2": "Amanda Anisimova",
       "odds1": 6,
-      "odds2": 1.19,
+      "odds2": 1.18,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -49,9 +33,9 @@
       "status": "upcoming",
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
-      "odds1": 1.67,
+      "odds1": 1.65,
       "odds2": 2.48,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -66,7 +50,7 @@
       "player1": "Taylor Fritz",
       "player2": "Francisco Cerundolo",
       "odds1": 1.17,
-      "odds2": 6.6,
+      "odds2": 6.8,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -81,10 +65,10 @@
       "status": "upcoming",
       "player1": "Alexander Blockx",
       "player2": "Flavio Cobolli",
-      "odds1": 2.04,
+      "odds1": 2.06,
       "odds2": 1.93,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -114,7 +98,7 @@
       "player1": "Mirra Andreeva",
       "player2": "Nikola Bartunkova",
       "odds1": 1.27,
-      "odds2": 5,
+      "odds2": 5.1,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -145,8 +129,8 @@
       "status": "upcoming",
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
-      "odds1": 1.52,
-      "odds2": 2.92,
+      "odds1": 1.51,
+      "odds2": 2.94,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -193,7 +177,7 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
-      "odds1": 2.94,
+      "odds1": 2.92,
       "odds2": 1.51,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -226,9 +210,9 @@
       "player1": "Iva Jović",
       "player2": "Alexandra Eala",
       "odds1": 1.91,
-      "odds2": 2.1,
+      "odds2": 2.08,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Tipico",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -260,7 +244,7 @@
       "odds1": 1.18,
       "odds2": 6.4,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -274,7 +258,7 @@
       "player1": "Jakub Mensik",
       "player2": "Learner Tien",
       "odds1": 2.22,
-      "odds2": 1.79,
+      "odds2": 1.8,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -296,6 +280,22 @@
       "source": "The Odds API"
     },
     {
+      "id": "cd7707c7355231c6b8dc1818643983c5",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-06",
+      "start": "17:00",
+      "startIso": "2026-09-06T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Ben Shelton",
+      "player2": "Stefanos Tsitsipas",
+      "odds1": 1.4,
+      "odds2": 3.35,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Coolbet",
+      "source": "The Odds API"
+    },
+    {
       "id": "375c143a5d5ad4155ac566ee0fe3acf4",
       "tour": "ATP",
       "event": "ATP US Open",
@@ -306,7 +306,7 @@
       "player1": "Tommy Paul",
       "player2": "Carlos Alcaraz",
       "odds1": 6,
-      "odds2": 1.2,
+      "odds2": 1.21,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -337,8 +337,8 @@
       "status": "upcoming",
       "player1": "Anna Kalinskaya",
       "player2": "Emma Navarro",
-      "odds1": 2,
-      "odds2": 1.94,
+      "odds1": 2.02,
+      "odds2": 1.93,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
