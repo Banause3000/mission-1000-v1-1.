@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T09:17:45.818Z",
+  "generatedAt": "2026-09-05T09:42:24.821Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "410",
-    "remaining": "90"
+    "used": "412",
+    "remaining": "88"
   },
   "matches": [
     {
@@ -34,9 +34,9 @@
       "player1": "Madison Keys",
       "player2": "Qinwen Zheng",
       "odds1": 1.69,
-      "odds2": 2.42,
+      "odds2": 2.44,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -81,7 +81,7 @@
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Marie Bouzkova",
-      "odds1": 1.23,
+      "odds1": 1.2,
       "odds2": 6.8,
       "bookmaker1": "1xBet",
       "bookmaker2": "Matchbook",
@@ -129,7 +129,7 @@
       "status": "upcoming",
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
-      "odds1": 1.55,
+      "odds1": 1.54,
       "odds2": 2.8,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -164,7 +164,7 @@
       "odds1": 22,
       "odds2": 1.04,
       "bookmaker1": "Betfair",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -193,7 +193,7 @@
       "status": "upcoming",
       "player1": "Yuliia Starodubtseva",
       "player2": "Elena Rybakina",
-      "odds1": 10,
+      "odds1": 10.5,
       "odds2": 1.1,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -209,10 +209,10 @@
       "status": "upcoming",
       "player1": "Iva Jović",
       "player2": "Alexandra Eala",
-      "odds1": 1.91,
+      "odds1": 1.9,
       "odds2": 2.08,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -226,9 +226,9 @@
       "player1": "Naomi Osaka",
       "player2": "Elise Mertens",
       "odds1": 1.37,
-      "odds2": 3.6,
+      "odds2": 3.7,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -242,8 +242,8 @@
       "player1": "Alexander Zverev",
       "player2": "Alejandro Tabilo",
       "odds1": 1.19,
-      "odds2": 6,
-      "bookmaker1": "Betfair",
+      "odds2": 6.2,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -321,9 +321,9 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Frances Tiafoe",
-      "odds1": 1.75,
-      "odds2": 2.34,
-      "bookmaker1": "Pinnacle",
+      "odds1": 1.72,
+      "odds2": 2.4,
+      "bookmaker1": "Unibet (NL)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
