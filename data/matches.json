@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-09-05T03:18:52.168Z",
+  "generatedAt": "2026-09-05T03:43:50.398Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "386",
-    "remaining": "114"
+    "used": "388",
+    "remaining": "112"
   },
   "matches": [
-    {
-      "id": "b8dd48248ca2a95fd4db08f38c372ddb",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-09-05",
-      "start": "03:28",
-      "startIso": "2026-09-05T01:28:35Z",
-      "status": "live-or-started",
-      "player1": "Elina Svitolina",
-      "player2": "Anna Kalinskaya",
-      "odds1": 1.74,
-      "odds2": 3.85,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Matchbook",
-      "source": "The Odds API"
-    },
     {
       "id": "33c32753620466a1bdfc7d867baccbe4",
       "tour": "ATP",
@@ -33,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
-      "odds1": 1.55,
-      "odds2": 2.88,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "Betfair",
+      "odds1": 1.27,
+      "odds2": 6.8,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -82,9 +66,9 @@
       "player1": "Taylor Fritz",
       "player2": "Francisco Cerundolo",
       "odds1": 1.17,
-      "odds2": 6.6,
+      "odds2": 6.5,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     },
     {
@@ -162,9 +146,9 @@
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
       "odds1": 1.51,
-      "odds2": 2.92,
+      "odds2": 2.9,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -209,9 +193,9 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
-      "odds1": 2.96,
+      "odds1": 2.9,
       "odds2": 1.51,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -385,8 +369,8 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Linda Noskova",
-      "odds1": 1.83,
-      "odds2": 2.28,
+      "odds1": 1.73,
+      "odds2": 2.32,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
