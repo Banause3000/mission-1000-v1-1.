@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T03:43:50.398Z",
+  "generatedAt": "2026-09-05T04:18:39.520Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "388",
-    "remaining": "112"
+    "used": "390",
+    "remaining": "110"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "live-or-started",
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
-      "odds1": 1.27,
-      "odds2": 6.8,
-      "bookmaker1": "Pinnacle",
+      "odds1": 1.07,
+      "odds2": 15.5,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Anastasia Potapova",
       "player2": "Amanda Anisimova",
-      "odds1": 6,
+      "odds1": 6.2,
       "odds2": 1.19,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -52,7 +52,7 @@
       "odds1": 1.66,
       "odds2": 2.48,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -84,7 +84,7 @@
       "odds1": 2.06,
       "odds2": 1.93,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,10 +97,10 @@
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Marie Bouzkova",
-      "odds1": 1.2,
-      "odds2": 6.6,
+      "odds1": 1.19,
+      "odds2": 6.8,
       "bookmaker1": "1xBet",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -145,7 +145,7 @@
       "status": "upcoming",
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
-      "odds1": 1.51,
+      "odds1": 1.52,
       "odds2": 2.9,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -193,7 +193,7 @@
       "status": "upcoming",
       "player1": "Zizou Bergs",
       "player2": "Botic van de Zandschulp",
-      "odds1": 2.9,
+      "odds1": 2.94,
       "odds2": 1.51,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -210,9 +210,9 @@
       "player1": "Yuliia Starodubtseva",
       "player2": "Elena Rybakina",
       "odds1": 11,
-      "odds2": 1.14,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "1xBet",
+      "odds2": 1.09,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -306,9 +306,9 @@
       "player1": "Tommy Paul",
       "player2": "Carlos Alcaraz",
       "odds1": 5.5,
-      "odds2": 1.27,
+      "odds2": 1.23,
       "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -337,9 +337,9 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Taylor Townsend",
-      "odds1": 1.23,
+      "odds1": 1.21,
       "odds2": 5.4,
-      "bookmaker1": "PMU (FR)",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
