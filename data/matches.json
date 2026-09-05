@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T00:29:11.324Z",
+  "generatedAt": "2026-09-05T00:48:45.254Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "374",
-    "remaining": "126"
+    "used": "376",
+    "remaining": "124"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "live-or-started",
       "player1": "Alex Michelsen",
       "player2": "Daniel Merida Aguilar",
-      "odds1": 1.07,
-      "odds2": 30,
+      "odds1": 1.03,
+      "odds2": 60,
       "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -33,26 +33,10 @@
       "status": "live-or-started",
       "player1": "Valentin Vacherot",
       "player2": "Frances Tiafoe",
-      "odds1": 12,
-      "odds2": 1.11,
+      "odds1": 13.5,
+      "odds2": 1.08,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
-    {
-      "id": "b8dd48248ca2a95fd4db08f38c372ddb",
-      "tour": "WTA",
-      "event": "WTA US Open",
-      "date": "2026-09-05",
-      "start": "02:40",
-      "startIso": "2026-09-05T00:40:00Z",
-      "status": "upcoming",
-      "player1": "Elina Svitolina",
-      "player2": "Anna Kalinskaya",
-      "odds1": 1.4,
-      "odds2": 3.55,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "MyBookie.ag",
       "source": "The Odds API"
     },
     {
@@ -60,8 +44,8 @@
       "tour": "ATP",
       "event": "ATP US Open",
       "date": "2026-09-05",
-      "start": "02:50",
-      "startIso": "2026-09-05T00:50:00Z",
+      "start": "03:10",
+      "startIso": "2026-09-05T01:10:00Z",
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Denis Shapovalov",
@@ -69,6 +53,22 @@
       "odds2": 4.7,
       "bookmaker1": "Betclic (FR)",
       "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "b8dd48248ca2a95fd4db08f38c372ddb",
+      "tour": "WTA",
+      "event": "WTA US Open",
+      "date": "2026-09-05",
+      "start": "03:15",
+      "startIso": "2026-09-05T01:15:00Z",
+      "status": "upcoming",
+      "player1": "Elina Svitolina",
+      "player2": "Anna Kalinskaya",
+      "odds1": 1.4,
+      "odds2": 3.6,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -193,8 +193,8 @@
       "status": "upcoming",
       "player1": "Karen Khachanov",
       "player2": "Benjamin Bonzi",
-      "odds1": 1.54,
-      "odds2": 2.78,
+      "odds1": 1.5,
+      "odds2": 2.92,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -211,7 +211,7 @@
       "player2": "Dane Sweeny",
       "odds1": 1.32,
       "odds2": 4.41,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -228,7 +228,7 @@
       "odds1": 23,
       "odds2": 1.04,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -258,7 +258,7 @@
       "player1": "Yuliia Starodubtseva",
       "player2": "Elena Rybakina",
       "odds1": 10,
-      "odds2": 1.13,
+      "odds2": 1.14,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
@@ -305,8 +305,8 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Tabilo",
-      "odds1": 1.17,
-      "odds2": 6.6,
+      "odds1": 1.18,
+      "odds2": 6.4,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -373,6 +373,22 @@
       "odds2": 3.65,
       "bookmaker1": "William Hill",
       "bookmaker2": "Unibet (SE)",
+      "source": "The Odds API"
+    },
+    {
+      "id": "1927673f7016985008a0501efdfd2944",
+      "tour": "WTA",
+      "event": "WTA US Open",
+      "date": "2026-09-06",
+      "start": "17:00",
+      "startIso": "2026-09-06T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Marta Kostyuk",
+      "player2": "Linda Noskova",
+      "odds1": 1.92,
+      "odds2": 2.16,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
