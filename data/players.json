@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T04:24:49.010800+00:00",
+  "generatedAt": "2026-09-05T04:36:05.447200+00:00",
   "source": "Mission 1000 Data Engine",
   "players": [
     {
@@ -73,7 +73,7 @@
       "country": "ESP",
       "playerId": "212588",
       "hand": "U",
-      "height": 191,
+      "height": null,
       "dob": "20060917",
       "age": 19.6
     },
@@ -46999,7 +46999,7 @@
       "hand": "R",
       "height": 185,
       "dob": "19880530",
-      "age": 36.68
+      "age": 36.6
     },
     {
       "playerId": "105157",
@@ -47292,7 +47292,7 @@
       "hand": "R",
       "height": 188,
       "dob": "19880725",
-      "age": 36.52
+      "age": 36.5
     },
     {
       "playerId": "105189",
@@ -54945,7 +54945,7 @@
       "hand": "R",
       "height": 175,
       "dob": "19920804",
-      "age": 33.11
+      "age": 33.0
     },
     {
       "playerId": "106034",
@@ -57070,7 +57070,7 @@
       "hand": "R",
       "height": 183,
       "dob": "19931113",
-      "age": 31.51
+      "age": 31.5
     },
     {
       "playerId": "106265",
@@ -58326,7 +58326,7 @@
       "hand": "R",
       "height": 193,
       "dob": "19950427",
-      "age": 30.7
+      "age": 30.6
     },
     {
       "playerId": "106402",
@@ -82170,7 +82170,7 @@
       "hand": "R",
       "height": 183,
       "dob": "19941106",
-      "age": 30.24
+      "age": 30.2
     },
     {
       "playerId": "109055",
@@ -104804,7 +104804,7 @@
       "hand": "R",
       "height": 188,
       "dob": "19980110",
-      "age": 28.0
+      "age": 27.9
     },
     {
       "playerId": "111582",
@@ -202130,7 +202130,7 @@
       "hand": "U",
       "height": null,
       "dob": "19911101",
-      "age": 33.25
+      "age": 33.2
     },
     {
       "playerId": "122568",
@@ -213235,7 +213235,7 @@
       "hand": "L",
       "height": 191,
       "dob": "19961104",
-      "age": 28.54
+      "age": 28.5
     },
     {
       "playerId": "123810",
@@ -244689,7 +244689,7 @@
       "hand": "R",
       "height": 196,
       "dob": "19980227",
-      "age": 27.22
+      "age": 27.2
     },
     {
       "playerId": "127340",
@@ -285615,7 +285615,7 @@
       "hand": "R",
       "height": 198,
       "dob": "19951115",
-      "age": 29.24
+      "age": 29.2
     },
     {
       "playerId": "131906",
@@ -286031,7 +286031,7 @@
       "hand": "R",
       "height": null,
       "dob": "19950709",
-      "age": 30.18
+      "age": 30.1
     },
     {
       "playerId": "131952",
@@ -296197,7 +296197,7 @@
       "hand": "R",
       "height": 175,
       "dob": "19971113",
-      "age": 27.83
+      "age": 27.8
     },
     {
       "playerId": "133083",
@@ -400679,7 +400679,7 @@
       "hand": "R",
       "height": 193,
       "dob": "19961018",
-      "age": 28.29
+      "age": 28.2
     },
     {
       "playerId": "144748",
@@ -402509,7 +402509,7 @@
       "hand": "R",
       "height": 183,
       "dob": "19990302",
-      "age": 26.54
+      "age": 24.9
     },
     {
       "playerId": "144950",
@@ -440484,7 +440484,7 @@
       "hand": "U",
       "height": null,
       "dob": "20030721",
-      "age": 21.53
+      "age": 21.5
     },
     {
       "playerId": "149284",
@@ -467763,7 +467763,7 @@
       "hand": "L",
       "height": 188,
       "dob": "20000105",
-      "age": 25.07
+      "age": 25.0
     },
     {
       "playerId": "200076",
@@ -470563,7 +470563,7 @@
       "hand": "R",
       "height": 183,
       "dob": "19990413",
-      "age": 26.56
+      "age": 26.5
     },
     {
       "playerId": "200386",
@@ -473101,7 +473101,7 @@
       "hand": "R",
       "height": 183,
       "dob": "19980124",
-      "age": 27.02
+      "age": 27.0
     },
     {
       "playerId": "200667",
@@ -535921,7 +535921,7 @@
       "hand": "U",
       "height": null,
       "dob": "20020305",
-      "age": 22.91
+      "age": 22.8
     },
     {
       "playerId": "207882",
@@ -536736,7 +536736,7 @@
       "hand": "U",
       "height": null,
       "dob": "19981222",
-      "age": 26.11
+      "age": 26.0
     },
     {
       "playerId": "207972",
@@ -541498,7 +541498,7 @@
       "hand": "L",
       "height": 183,
       "dob": "20020816",
-      "age": 22.91
+      "age": 22.9
     },
     {
       "playerId": "208503",
@@ -542408,9 +542408,9 @@
       "tour": "ATP",
       "country": "CAN",
       "hand": "R",
-      "height": 183,
+      "height": 180,
       "dob": "20001224",
-      "age": 24.72
+      "age": 24.7
     },
     {
       "playerId": "208604",
@@ -546643,7 +546643,7 @@
       "hand": "U",
       "height": null,
       "dob": "20040611",
-      "age": 20.64
+      "age": 20.6
     },
     {
       "playerId": "209077",
@@ -548086,7 +548086,7 @@
       "tour": "ATP",
       "country": "MEX",
       "hand": "U",
-      "height": 183,
+      "height": null,
       "dob": "20010526",
       "age": 24.6
     },
@@ -549106,9 +549106,9 @@
       "tour": "ATP",
       "country": "GRE",
       "hand": "R",
-      "height": 193,
+      "height": null,
       "dob": "20010407",
-      "age": 23.82
+      "age": 23.8
     },
     {
       "playerId": "209363",
@@ -553422,7 +553422,7 @@
       "hand": "R",
       "height": 185,
       "dob": "20040713",
-      "age": 21.02
+      "age": 21.0
     },
     {
       "playerId": "209891",
@@ -554407,9 +554407,9 @@
       "tour": "ATP",
       "country": "IND",
       "hand": "R",
-      "height": 185,
+      "height": 188,
       "dob": "20030630",
-      "age": 21.59
+      "age": 21.5
     },
     {
       "playerId": "210001",
@@ -554755,7 +554755,7 @@
       "hand": "R",
       "height": 173,
       "dob": "20030819",
-      "age": 22.07
+      "age": 22.0
     },
     {
       "playerId": "210040",
@@ -555327,7 +555327,7 @@
       "hand": "R",
       "height": 196,
       "dob": "20041107",
-      "age": 20.23
+      "age": 20.2
     },
     {
       "playerId": "210107",
@@ -555520,7 +555520,7 @@
       "hand": "U",
       "height": null,
       "dob": "20030115",
-      "age": 22.05
+      "age": 22.0
     },
     {
       "playerId": "210129",
@@ -556902,7 +556902,7 @@
       "hand": "U",
       "height": null,
       "dob": "20030227",
-      "age": 22.54
+      "age": 22.5
     },
     {
       "playerId": "210285",
@@ -557157,7 +557157,7 @@
       "hand": "R",
       "height": 191,
       "dob": "20050210",
-      "age": 19.97
+      "age": 19.9
     },
     {
       "playerId": "210313",
@@ -558790,7 +558790,7 @@
       "hand": "R",
       "height": 183,
       "dob": "20041001",
-      "age": 20.33
+      "age": 20.3
     },
     {
       "playerId": "210499",
@@ -559169,7 +559169,7 @@
       "tour": "ATP",
       "country": "MEX",
       "hand": "R",
-      "height": 175,
+      "height": null,
       "dob": "20040903",
       "age": 20.8
     },
@@ -560010,7 +560010,7 @@
       "hand": "U",
       "height": null,
       "dob": "20021128",
-      "age": 22.79
+      "age": 22.7
     },
     {
       "playerId": "210641",
@@ -560054,7 +560054,7 @@
       "tour": "ATP",
       "country": "ISR",
       "hand": "U",
-      "height": 178,
+      "height": null,
       "dob": "20050703",
       "age": 20.5
     },
@@ -560838,7 +560838,7 @@
       "tour": "ATP",
       "country": "SLO",
       "hand": "R",
-      "height": 188,
+      "height": null,
       "dob": "20010629",
       "age": 24.5
     },
@@ -567713,7 +567713,7 @@
       "tour": "ATP",
       "country": "GER",
       "hand": "U",
-      "height": 185,
+      "height": null,
       "dob": "20071001",
       "age": 18.6
     },
@@ -568224,7 +568224,7 @@
       "hand": "U",
       "height": null,
       "dob": "20050905",
-      "age": 19.41
+      "age": 19.3
     },
     {
       "playerId": "211572",
@@ -568622,7 +568622,7 @@
       "tour": "ATP",
       "country": "CZE",
       "hand": "U",
-      "height": 178,
+      "height": null,
       "dob": "20070802",
       "age": 18.5
     },
@@ -568930,7 +568930,7 @@
       "tour": "ATP",
       "country": "BUL",
       "hand": "U",
-      "height": 185,
+      "height": null,
       "dob": "20070514",
       "age": 18.7
     },
@@ -574265,7 +574265,7 @@
       "tour": "ATP",
       "country": "USA",
       "hand": "U",
-      "height": 183,
+      "height": null,
       "dob": "20030305",
       "age": 23.0
     },
@@ -576711,7 +576711,7 @@
       "tour": "ATP",
       "country": "EST",
       "hand": "U",
-      "height": 183,
+      "height": null,
       "dob": "20050510",
       "age": 20.7
     },
@@ -580423,10 +580423,10 @@
       "name": "Tsz Fu Wong",
       "tour": "ATP",
       "country": "HKG",
-      "hand": "R",
-      "height": 175,
+      "hand": "U",
+      "height": null,
       "dob": "20050924",
-      "age": 19.97
+      "age": 19.9
     },
     {
       "playerId": "212972",
@@ -586984,7 +586984,7 @@
       "hand": "U",
       "height": null,
       "dob": "19990204",
-      "age": 25.99
+      "age": 25.9
     },
     {
       "playerId": "213730",
@@ -587023,7 +587023,7 @@
       "hand": "U",
       "height": null,
       "dob": "20071216",
-      "age": 17.13
+      "age": 17.1
     },
     {
       "playerId": "213734",
