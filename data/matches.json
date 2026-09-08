@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-08T04:24:33.333Z",
+  "generatedAt": "2026-09-08T09:02:18.658Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "494",
-    "remaining": "6"
+    "used": "496",
+    "remaining": "4"
   },
   "matches": [
     {
@@ -17,8 +17,8 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Linda Noskova",
-      "odds1": 1.45,
-      "odds2": 3.15,
+      "odds1": 1.44,
+      "odds2": 3.2,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Frances Tiafoe",
       "player2": "Alex Michelsen",
-      "odds1": 1.71,
-      "odds2": 2.42,
-      "bookmaker1": "Coolbet",
+      "odds1": 1.72,
+      "odds2": 2.36,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Emma Navarro",
-      "odds1": 1.28,
-      "odds2": 4.4,
+      "odds1": 1.3,
+      "odds2": 4.3,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -65,7 +65,7 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Carlos Alcaraz",
-      "odds1": 4.5,
+      "odds1": 4.4,
       "odds2": 1.28,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -81,10 +81,26 @@
       "status": "upcoming",
       "player1": "Karen Khachanov",
       "player2": "Alexander Blockx",
-      "odds1": 1.72,
-      "odds2": 2.32,
-      "bookmaker1": "Coolbet",
+      "odds1": 1.7,
+      "odds2": 2.46,
+      "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "78400a165e824a6df488266f0d2cf7a6",
+      "tour": "ATP",
+      "event": "ATP US Open",
+      "date": "2026-09-09",
+      "start": "17:30",
+      "startIso": "2026-09-09T15:30:00Z",
+      "status": "upcoming",
+      "player1": "Alexander Zverev",
+      "player2": "Botic van de Zandschulp",
+      "odds1": 1.13,
+      "odds2": 8.2,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -97,10 +113,10 @@
       "status": "upcoming",
       "player1": "Mirra Andreeva",
       "player2": "Coco Gauff",
-      "odds1": 2.62,
-      "odds2": 1.62,
+      "odds1": 2.6,
+      "odds2": 1.59,
       "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -113,10 +129,10 @@
       "status": "upcoming",
       "player1": "Qinwen Zheng",
       "player2": "Elena Rybakina",
-      "odds1": 3.5,
-      "odds2": 1.37,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "odds1": 3.55,
+      "odds2": 1.39,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     }
   ]
