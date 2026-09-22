@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T10:06:31.454203+00:00",
+  "generatedAt": "2026-09-22T09:17:52.928037+00:00",
   "source": "Mission 1000 Data Engine v3.2",
   "players": [
     {
@@ -51,6 +51,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "USA",
       "playerId": "210097"
+    },
+    {
+      "name": "Felix Auger-Aliassime",
+      "tour": "ATP",
+      "rank": 5,
+      "points": 4190,
+      "rankingDate": "20260106",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Felix Auger Aliassime",
@@ -851,6 +859,14 @@
       "playerId": "105902"
     },
     {
+      "name": "Jan-Lennard Struff",
+      "tour": "ATP",
+      "rank": 82,
+      "points": 711,
+      "rankingDate": "20260106",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Giovanni Mpetshi Perricard",
       "tour": "ATP",
       "rank": 58,
@@ -939,6 +955,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "USA",
       "playerId": "200516"
+    },
+    {
+      "name": "Yunchaokete Bu",
+      "tour": "ATP",
+      "rank": 89,
+      "points": 721,
+      "rankingDate": "20250924",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Quentin Halys",
@@ -1091,6 +1115,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "ARG",
       "playerId": "207681"
+    },
+    {
+      "name": "Christopher O'Connell",
+      "tour": "ATP",
+      "rank": 103,
+      "points": 644,
+      "rankingDate": "20250924",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Ilya Ivashka",
@@ -1445,6 +1477,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "CZE",
       "playerId": "144645"
+    },
+    {
+      "name": "Chun-Hsin Tseng",
+      "tour": "ATP",
+      "rank": 120,
+      "points": 531,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Jan Choinski",
@@ -1894,6 +1934,14 @@
       "rank": 142,
       "points": 442,
       "rankingDate": "20220523",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Pierre-Hugues Herbert",
+      "tour": "ATP",
+      "rank": 142,
+      "points": 431,
+      "rankingDate": "20250727",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -2883,6 +2931,16 @@
       "rankingSource": "latest observed match ranking"
     },
     {
+      "name": "Dan Added",
+      "tour": "ATP",
+      "rank": 201,
+      "points": 293,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "FRA",
+      "playerId": "200385"
+    },
+    {
       "name": "Felipe Meligeni Alves",
       "tour": "ATP",
       "rank": 225,
@@ -3041,16 +3099,6 @@
       "rankingSource": "ATP weekly CSV",
       "country": "ARG",
       "playerId": "106044"
-    },
-    {
-      "name": "Dan Added",
-      "tour": "ATP",
-      "rank": 201,
-      "points": 293,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "FRA",
-      "playerId": "200385"
     },
     {
       "name": "Enzo Couacaud",
@@ -3284,6 +3332,14 @@
       "rank": 221,
       "points": 299,
       "rankingDate": "20210918",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Marc-Andrea Huesler",
+      "tour": "ATP",
+      "rank": 222,
+      "points": 248,
+      "rankingDate": "20250912",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -3733,6 +3789,14 @@
       "playerId": "105077"
     },
     {
+      "name": "Albert Ramos-Vinolas",
+      "tour": "ATP",
+      "rank": 251,
+      "points": 224,
+      "rankingDate": "20250526",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Christian Harrison",
       "tour": "ATP",
       "rank": 251,
@@ -3941,6 +4005,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "ROU",
       "playerId": "207660"
+    },
+    {
+      "name": "Abdullah Shelbayh",
+      "tour": "ATP",
+      "rank": 267,
+      "points": 201,
+      "rankingDate": "20250217",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Abedallah Shelbayh",
@@ -4301,6 +4373,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "JPN",
       "playerId": "200677"
+    },
+    {
+      "name": "Tung-Lin Wu",
+      "tour": "ATP",
+      "rank": 291,
+      "points": 179,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Matheus Pucinelli De Almeida",
@@ -4979,6 +5059,14 @@
       "playerId": "124154"
     },
     {
+      "name": "Roberto Cid Subervi",
+      "tour": "ATP",
+      "rank": 367,
+      "points": 136,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Carlos Gimeno Valero",
       "tour": "ATP",
       "rank": 369,
@@ -4992,6 +5080,14 @@
       "rank": 371,
       "points": 131,
       "rankingDate": "20240202",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Diego Dedura-Palomero",
+      "tour": "ATP",
+      "rank": 372,
+      "points": 130,
+      "rankingDate": "20250519",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -5141,6 +5237,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "HUN",
       "playerId": "200218"
+    },
+    {
+      "name": "Khumoyun Sultanov",
+      "tour": "ATP",
+      "rank": 403,
+      "points": 122,
+      "rankingDate": "20250913",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Martin Cuevas",
@@ -5555,6 +5659,14 @@
       "rankingSource": "latest observed match ranking"
     },
     {
+      "name": "Soonwoo Kwon",
+      "tour": "ATP",
+      "rank": 478,
+      "points": 89,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Ergi Kirkin",
       "tour": "ATP",
       "rank": 552,
@@ -5681,6 +5793,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "UZB",
       "playerId": "200672"
+    },
+    {
+      "name": "Alex Hernandez",
+      "tour": "ATP",
+      "rank": 493,
+      "points": 82,
+      "rankingDate": "20250714",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Ernesto Escobedo",
@@ -5830,6 +5950,14 @@
       "rank": 542,
       "points": 63,
       "rankingDate": "20210830",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Fares Zakaria",
+      "tour": "ATP",
+      "rank": 543,
+      "points": 72,
+      "rankingDate": "20250913",
       "rankingSource": "latest observed match ranking"
     },
     {
@@ -6071,6 +6199,16 @@
       "playerId": "209362"
     },
     {
+      "name": "Luis Carlos Alvarez",
+      "tour": "ATP",
+      "rank": 615,
+      "points": 59,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "MEX",
+      "playerId": "210545"
+    },
+    {
       "name": "Zhe Li",
       "tour": "ATP",
       "rank": 1095,
@@ -6309,6 +6447,14 @@
       "playerId": "200321"
     },
     {
+      "name": "Sanhui Shin",
+      "tour": "ATP",
+      "rank": 665,
+      "points": 44,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Ye Cong Mo",
       "tour": "ATP",
       "rank": 641,
@@ -6337,6 +6483,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "IRL",
       "playerId": "210686"
+    },
+    {
+      "name": "Tsung-Hao Huang",
+      "tour": "ATP",
+      "rank": 680,
+      "points": 42,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Skander Mansouri",
@@ -6655,16 +6809,6 @@
       "playerId": "209278"
     },
     {
-      "name": "Luis Carlos Alvarez",
-      "tour": "ATP",
-      "rank": 615,
-      "points": 59,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "MEX",
-      "playerId": "210545"
-    },
-    {
       "name": "Matija Pecotic",
       "tour": "ATP",
       "rank": 1844,
@@ -6753,6 +6897,16 @@
       "points": 26,
       "rankingDate": "20230731",
       "rankingSource": "latest observed match ranking"
+    },
+    {
+      "name": "Joaquin Aguilar Cardozo",
+      "tour": "ATP",
+      "rank": 599,
+      "points": 62,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "URU",
+      "playerId": "212051"
     },
     {
       "name": "Petros Tsitsipas",
@@ -6885,6 +7039,16 @@
       "rankingSource": "latest observed match ranking"
     },
     {
+      "name": "Menelaos Efstathiou",
+      "tour": "ATP",
+      "rank": 789,
+      "points": 35,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "CYP",
+      "playerId": "144949"
+    },
+    {
       "name": "Jurabek Karimov",
       "tour": "ATP",
       "rank": 873,
@@ -6921,6 +7085,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "EGY",
       "playerId": "105747"
+    },
+    {
+      "name": "Karim-Mohamed Maamoun",
+      "tour": "ATP",
+      "rank": 882,
+      "points": 20,
+      "rankingDate": "20250201",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Mert Naci Turker",
@@ -7005,6 +7177,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "EST",
       "playerId": "210312"
+    },
+    {
+      "name": "M Rifki Fitriadi",
+      "tour": "ATP",
+      "rank": 943,
+      "points": 17,
+      "rankingDate": "20250201",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Taym Al Azmeh",
@@ -7287,6 +7467,14 @@
       "playerId": "106175"
     },
     {
+      "name": "Ricardo Rodriguez - Pace",
+      "tour": "ATP",
+      "rank": 1114,
+      "points": 10,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Hugo Nys",
       "tour": "ATP",
       "rank": 1117,
@@ -7399,16 +7587,6 @@
       "playerId": "206716"
     },
     {
-      "name": "Menelaos Efstathiou",
-      "tour": "ATP",
-      "rank": 789,
-      "points": 35,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "CYP",
-      "playerId": "144949"
-    },
-    {
       "name": "Alexander Zgirovsky",
       "tour": "ATP",
       "rank": 1628,
@@ -7499,6 +7677,14 @@
       "rankingSource": "ATP weekly CSV",
       "country": "SLO",
       "playerId": "210753"
+    },
+    {
+      "name": "Osgar O'Hoisin",
+      "tour": "ATP",
+      "rank": 1288,
+      "points": 6,
+      "rankingDate": "20250131",
+      "rankingSource": "latest observed match ranking"
     },
     {
       "name": "Osgar Ohoisin",
@@ -7697,6 +7883,14 @@
       "playerId": "127143"
     },
     {
+      "name": "Alex Santino Nuñez Vera",
+      "tour": "ATP",
+      "rank": 1562,
+      "points": 3,
+      "rankingDate": "20250912",
+      "rankingSource": "latest observed match ranking"
+    },
+    {
       "name": "Federico Zeballos",
       "tour": "ATP",
       "rank": 1430,
@@ -7817,6 +8011,16 @@
       "rankingSource": "ATP weekly CSV",
       "country": "MNE",
       "playerId": "210188"
+    },
+    {
+      "name": "Ammar Alhogbani",
+      "tour": "ATP",
+      "rank": 1115,
+      "points": 12,
+      "rankingDate": "20251229",
+      "rankingSource": "ATP weekly CSV",
+      "country": "USA",
+      "playerId": "205831"
     },
     {
       "name": "Devin Badenhorst",
@@ -8065,210 +8269,6 @@
       "playerId": "210476"
     },
     {
-      "name": "Felix Auger-Aliassime",
-      "tour": "ATP",
-      "rank": 5,
-      "points": 4190,
-      "rankingDate": "20260106",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Jan-Lennard Struff",
-      "tour": "ATP",
-      "rank": 82,
-      "points": 711,
-      "rankingDate": "20260106",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Yunchaokete Bu",
-      "tour": "ATP",
-      "rank": 89,
-      "points": 721,
-      "rankingDate": "20250924",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Christopher O'Connell",
-      "tour": "ATP",
-      "rank": 103,
-      "points": 644,
-      "rankingDate": "20250924",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Chun-Hsin Tseng",
-      "tour": "ATP",
-      "rank": 120,
-      "points": 531,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Pierre-Hugues Herbert",
-      "tour": "ATP",
-      "rank": 142,
-      "points": 431,
-      "rankingDate": "20250727",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Marc-Andrea Huesler",
-      "tour": "ATP",
-      "rank": 222,
-      "points": 248,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Albert Ramos-Vinolas",
-      "tour": "ATP",
-      "rank": 251,
-      "points": 224,
-      "rankingDate": "20250526",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Abdullah Shelbayh",
-      "tour": "ATP",
-      "rank": 267,
-      "points": 201,
-      "rankingDate": "20250217",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Tung-Lin Wu",
-      "tour": "ATP",
-      "rank": 291,
-      "points": 179,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Roberto Cid Subervi",
-      "tour": "ATP",
-      "rank": 367,
-      "points": 136,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Diego Dedura-Palomero",
-      "tour": "ATP",
-      "rank": 372,
-      "points": 130,
-      "rankingDate": "20250519",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Khumoyun Sultanov",
-      "tour": "ATP",
-      "rank": 403,
-      "points": 122,
-      "rankingDate": "20250913",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Soonwoo Kwon",
-      "tour": "ATP",
-      "rank": 478,
-      "points": 89,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Alex Hernandez",
-      "tour": "ATP",
-      "rank": 493,
-      "points": 82,
-      "rankingDate": "20250714",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Fares Zakaria",
-      "tour": "ATP",
-      "rank": 543,
-      "points": 72,
-      "rankingDate": "20250913",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Sanhui Shin",
-      "tour": "ATP",
-      "rank": 665,
-      "points": 44,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Tsung-Hao Huang",
-      "tour": "ATP",
-      "rank": 680,
-      "points": 42,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Joaquin Aguilar Cardozo",
-      "tour": "ATP",
-      "rank": 599,
-      "points": 62,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "URU",
-      "playerId": "212051"
-    },
-    {
-      "name": "Karim-Mohamed Maamoun",
-      "tour": "ATP",
-      "rank": 882,
-      "points": 20,
-      "rankingDate": "20250201",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "M Rifki Fitriadi",
-      "tour": "ATP",
-      "rank": 943,
-      "points": 17,
-      "rankingDate": "20250201",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Ricardo Rodriguez - Pace",
-      "tour": "ATP",
-      "rank": 1114,
-      "points": 10,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Osgar O'Hoisin",
-      "tour": "ATP",
-      "rank": 1288,
-      "points": 6,
-      "rankingDate": "20250131",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Alex Santino Nuñez Vera",
-      "tour": "ATP",
-      "rank": 1562,
-      "points": 3,
-      "rankingDate": "20250912",
-      "rankingSource": "latest observed match ranking"
-    },
-    {
-      "name": "Ammar Alhogbani",
-      "tour": "ATP",
-      "rank": 1115,
-      "points": 12,
-      "rankingDate": "20251229",
-      "rankingSource": "ATP weekly CSV",
-      "country": "USA",
-      "playerId": "205831"
-    },
-    {
       "name": "Iva Jovic",
       "tour": "WTA",
       "rank": 13,
@@ -8281,7 +8281,7 @@
     {
       "name": "Alina Korneeva",
       "tour": "WTA",
-      "rank": 81,
+      "rank": 82,
       "country": "",
       "priorRank": 81,
       "points": 892,
@@ -24881,7 +24881,7 @@
     {
       "name": "Petra Marcinko",
       "tour": "WTA",
-      "rank": 75,
+      "rank": 76,
       "country": "CRO",
       "priorRank": 75,
       "points": 915,
@@ -24911,7 +24911,7 @@
     {
       "name": "Antonia Ruzic",
       "tour": "WTA",
-      "rank": 79,
+      "rank": 80,
       "country": "CRO",
       "priorRank": 79,
       "points": 894,
@@ -24961,7 +24961,7 @@
     {
       "name": "Daria Kasatkina",
       "tour": "WTA",
-      "rank": 84,
+      "rank": 85,
       "country": "AUS",
       "priorRank": 85,
       "points": 883,
@@ -25031,7 +25031,7 @@
     {
       "name": "Magda Linette",
       "tour": "WTA",
-      "rank": 74,
+      "rank": 75,
       "country": "POL",
       "priorRank": 74,
       "points": 916,
@@ -25111,7 +25111,7 @@
     {
       "name": "Panna Udvardy",
       "tour": "WTA",
-      "rank": 73,
+      "rank": 74,
       "country": "HUN",
       "priorRank": 83,
       "points": 919,
@@ -25151,7 +25151,7 @@
     {
       "name": "Tatjana Maria",
       "tour": "WTA",
-      "rank": 80,
+      "rank": 81,
       "country": "GER",
       "priorRank": 80,
       "points": 894,
@@ -25171,7 +25171,7 @@
     {
       "name": "Yulia Putintseva",
       "tour": "WTA",
-      "rank": 78,
+      "rank": 79,
       "country": "KAZ",
       "priorRank": 78,
       "points": 904,
@@ -25181,7 +25181,7 @@
     {
       "name": "Kamilla Rakhimova",
       "tour": "WTA",
-      "rank": 76,
+      "rank": 77,
       "country": "UZB",
       "priorRank": 76,
       "points": 912,
@@ -25251,7 +25251,7 @@
     {
       "name": "Katie Volynets",
       "tour": "WTA",
-      "rank": 77,
+      "rank": 78,
       "country": "USA",
       "priorRank": 77,
       "points": 908,
@@ -25261,7 +25261,7 @@
     {
       "name": "Darja Vidmanova",
       "tour": "WTA",
-      "rank": 85,
+      "rank": 86,
       "country": "CZE",
       "priorRank": 86,
       "points": 877,
@@ -25271,7 +25271,7 @@
     {
       "name": "Hanne Vandewinkel",
       "tour": "WTA",
-      "rank": 83,
+      "rank": 84,
       "country": "BEL",
       "priorRank": 84,
       "points": 887,
@@ -25281,10 +25281,10 @@
     {
       "name": "Kaitlin Quevedo",
       "tour": "WTA",
-      "rank": 90,
+      "rank": 73,
       "country": "ESP",
       "priorRank": 105,
-      "points": 833,
+      "points": 920,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
@@ -25301,7 +25301,7 @@
     {
       "name": "Xiyu Wang",
       "tour": "WTA",
-      "rank": 82,
+      "rank": 83,
       "country": "CHN",
       "priorRank": 82,
       "points": 889,
@@ -25321,7 +25321,7 @@
     {
       "name": "Maria Timofeeva",
       "tour": "WTA",
-      "rank": 87,
+      "rank": 88,
       "country": "UZB",
       "priorRank": 87,
       "points": 873,
@@ -25421,7 +25421,7 @@
     {
       "name": "Anna Blinkova",
       "tour": "WTA",
-      "rank": 86,
+      "rank": 87,
       "country": "FRA",
       "priorRank": 94,
       "points": 875,
@@ -25431,7 +25431,7 @@
     {
       "name": "Mananchaya Sawangkaew",
       "tour": "WTA",
-      "rank": 88,
+      "rank": 89,
       "country": "THA",
       "priorRank": 88,
       "points": 868,
@@ -25441,7 +25441,7 @@
     {
       "name": "Taylor Townsend",
       "tour": "WTA",
-      "rank": 89,
+      "rank": 90,
       "country": "USA",
       "priorRank": 98,
       "points": 843,
@@ -25741,7 +25741,7 @@
     {
       "name": "Marketa Vondrousova",
       "tour": "WTA",
-      "rank": 657,
+      "rank": 659,
       "country": "CZE",
       "priorRank": 661,
       "points": 63,
@@ -28281,7 +28281,7 @@
     {
       "name": "Silvia Ambrosio",
       "tour": "WTA",
-      "rank": 674,
+      "rank": 675,
       "country": "ITA",
       "priorRank": 500,
       "points": 59,
@@ -28431,7 +28431,7 @@
     {
       "name": "Anastasia Pavlyuchenkova",
       "tour": "WTA",
-      "rank": 642,
+      "rank": 643,
       "country": "",
       "priorRank": 640,
       "points": 65,
@@ -28781,7 +28781,7 @@
     {
       "name": "Alana Subasic",
       "tour": "WTA",
-      "rank": 500,
+      "rank": 501,
       "country": "AUS",
       "priorRank": 461,
       "points": 108,
@@ -28801,7 +28801,7 @@
     {
       "name": "Ekaterina Kazionova",
       "tour": "WTA",
-      "rank": 497,
+      "rank": 498,
       "country": "",
       "priorRank": 497,
       "points": 109,
@@ -28831,10 +28831,10 @@
     {
       "name": "Eva Voracek",
       "tour": "WTA",
-      "rank": 487,
+      "rank": 483,
       "country": "GER",
       "priorRank": 516,
-      "points": 113,
+      "points": 115,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
@@ -29031,10 +29031,10 @@
     {
       "name": "Sofia Shapatava",
       "tour": "WTA",
-      "rank": 502,
+      "rank": 497,
       "country": "GEO",
       "priorRank": 506,
-      "points": 108,
+      "points": 110,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
@@ -29051,7 +29051,7 @@
     {
       "name": "Kristina Kroitor",
       "tour": "WTA",
-      "rank": 499,
+      "rank": 500,
       "country": "",
       "priorRank": 498,
       "points": 109,
@@ -29091,7 +29091,7 @@
     {
       "name": "Alana Smith",
       "tour": "WTA",
-      "rank": 484,
+      "rank": 485,
       "country": "USA",
       "priorRank": 484,
       "points": 113,
@@ -29131,7 +29131,7 @@
     {
       "name": "Dana Guzman",
       "tour": "WTA",
-      "rank": 483,
+      "rank": 484,
       "country": "PER",
       "priorRank": 483,
       "points": 114,
@@ -29231,7 +29231,7 @@
     {
       "name": "Katharina Hobgarski",
       "tour": "WTA",
-      "rank": 660,
+      "rank": 662,
       "country": "GER",
       "priorRank": 558,
       "points": 63,
@@ -29371,7 +29371,7 @@
     {
       "name": "Vittoria Paganetti",
       "tour": "WTA",
-      "rank": 485,
+      "rank": 486,
       "country": "ITA",
       "priorRank": 485,
       "points": 113,
@@ -29451,7 +29451,7 @@
     {
       "name": "Ya Yi Yang",
       "tour": "WTA",
-      "rank": 486,
+      "rank": 487,
       "country": "TPE",
       "priorRank": 482,
       "points": 113,
@@ -29551,7 +29551,7 @@
     {
       "name": "Arianne Hartono",
       "tour": "WTA",
-      "rank": 648,
+      "rank": 650,
       "country": "NED",
       "priorRank": 651,
       "points": 64,
@@ -29751,7 +29751,7 @@
     {
       "name": "Ilinca Amariei",
       "tour": "WTA",
-      "rank": 649,
+      "rank": 651,
       "country": "ROU",
       "priorRank": 652,
       "points": 64,
@@ -29831,7 +29831,7 @@
     {
       "name": "Arianna Zucchini",
       "tour": "WTA",
-      "rank": 600,
+      "rank": 601,
       "country": "ITA",
       "priorRank": 595,
       "points": 73,
@@ -29841,7 +29841,7 @@
     {
       "name": "Maria Garcia Cid",
       "tour": "WTA",
-      "rank": 498,
+      "rank": 499,
       "country": "ESP",
       "priorRank": 537,
       "points": 109,
@@ -29911,7 +29911,7 @@
     {
       "name": "Antonia Schmidt",
       "tour": "WTA",
-      "rank": 661,
+      "rank": 663,
       "country": "GER",
       "priorRank": 665,
       "points": 63,
@@ -30041,7 +30041,7 @@
     {
       "name": "Ying Zhang",
       "tour": "WTA",
-      "rank": 681,
+      "rank": 682,
       "country": "CHN",
       "priorRank": 691,
       "points": 58,
@@ -30051,7 +30051,7 @@
     {
       "name": "Cristina Diaz Adrover",
       "tour": "WTA",
-      "rank": 683,
+      "rank": 684,
       "country": "ESP",
       "priorRank": 668,
       "points": 58,
@@ -30081,7 +30081,7 @@
     {
       "name": "Oana Georgeta Simion",
       "tour": "WTA",
-      "rank": 662,
+      "rank": 664,
       "country": "ROU",
       "priorRank": 674,
       "points": 63,
@@ -30151,7 +30151,7 @@
     {
       "name": "Mariia Kozyreva",
       "tour": "WTA",
-      "rank": 921,
+      "rank": 922,
       "country": "",
       "priorRank": 920,
       "points": 28,
@@ -30161,7 +30161,7 @@
     {
       "name": "Valeriya Strakhova",
       "tour": "WTA",
-      "rank": 501,
+      "rank": 502,
       "country": "UKR",
       "priorRank": 501,
       "points": 108,
@@ -30211,7 +30211,7 @@
     {
       "name": "Bianca Barbulescu",
       "tour": "WTA",
-      "rank": 697,
+      "rank": 698,
       "country": "ROU",
       "priorRank": 700,
       "points": 56,
@@ -30251,7 +30251,7 @@
     {
       "name": "Natsuki Yoshimoto",
       "tour": "WTA",
-      "rank": 654,
+      "rank": 656,
       "country": "JPN",
       "priorRank": 597,
       "points": 64,
@@ -30291,7 +30291,7 @@
     {
       "name": "Marie Weckerle",
       "tour": "WTA",
-      "rank": 656,
+      "rank": 658,
       "country": "LUX",
       "priorRank": 658,
       "points": 64,
@@ -30361,7 +30361,7 @@
     {
       "name": "Jana Kolodynska",
       "tour": "WTA",
-      "rank": 698,
+      "rank": 699,
       "country": "",
       "priorRank": 701,
       "points": 55,
@@ -30371,7 +30371,7 @@
     {
       "name": "Daria Lodikova",
       "tour": "WTA",
-      "rank": 677,
+      "rank": 678,
       "country": "",
       "priorRank": 645,
       "points": 59,
@@ -30451,7 +30451,7 @@
     {
       "name": "Ylena In-Albon",
       "tour": "WTA",
-      "rank": 1174,
+      "rank": 1176,
       "country": "SUI",
       "priorRank": 954,
       "points": 11,
@@ -30471,7 +30471,7 @@
     {
       "name": "Kristina Dmitruk",
       "tour": "WTA",
-      "rank": 898,
+      "rank": 899,
       "country": "",
       "priorRank": 761,
       "points": 31,
@@ -30491,7 +30491,7 @@
     {
       "name": "Indianna Spink",
       "tour": "WTA",
-      "rank": 598,
+      "rank": 599,
       "country": "GBR",
       "priorRank": 601,
       "points": 73,
@@ -30581,7 +30581,7 @@
     {
       "name": "Michika Ozeki",
       "tour": "WTA",
-      "rank": 653,
+      "rank": 655,
       "country": "JPN",
       "priorRank": 655,
       "points": 64,
@@ -30621,7 +30621,7 @@
     {
       "name": "Sachia Vickery",
       "tour": "WTA",
-      "rank": 687,
+      "rank": 688,
       "country": "USA",
       "priorRank": 704,
       "points": 57,
@@ -30631,7 +30631,7 @@
     {
       "name": "Cheuk Ying Shek",
       "tour": "WTA",
-      "rank": 641,
+      "rank": 642,
       "country": "HKG",
       "priorRank": 636,
       "points": 66,
@@ -30701,7 +30701,7 @@
     {
       "name": "Emina Bektas",
       "tour": "WTA",
-      "rank": 802,
+      "rank": 803,
       "country": "USA",
       "priorRank": 798,
       "points": 41,
@@ -30731,7 +30731,7 @@
     {
       "name": "Amarni Banks",
       "tour": "WTA",
-      "rank": 676,
+      "rank": 677,
       "country": "GBR",
       "priorRank": 686,
       "points": 59,
@@ -30781,7 +30781,7 @@
     {
       "name": "Tessah Andrianjafitrimo",
       "tour": "WTA",
-      "rank": 863,
+      "rank": 864,
       "country": "FRA",
       "priorRank": 860,
       "points": 34,
@@ -30831,7 +30831,7 @@
     {
       "name": "Alice Gillan",
       "tour": "WTA",
-      "rank": 691,
+      "rank": 692,
       "country": "GBR",
       "priorRank": 695,
       "points": 57,
@@ -30841,7 +30841,7 @@
     {
       "name": "Berta Bonardi",
       "tour": "WTA",
-      "rank": 664,
+      "rank": 666,
       "country": "ARG",
       "priorRank": 670,
       "points": 62,
@@ -30871,7 +30871,7 @@
     {
       "name": "Shannon Lam",
       "tour": "WTA",
-      "rank": 679,
+      "rank": 680,
       "country": "USA",
       "priorRank": 623,
       "points": 59,
@@ -30901,7 +30901,7 @@
     {
       "name": "Marcelina Podlinska",
       "tour": "WTA",
-      "rank": 844,
+      "rank": 845,
       "country": "POL",
       "priorRank": 851,
       "points": 36,
@@ -30911,7 +30911,7 @@
     {
       "name": "Sae Noguchi",
       "tour": "WTA",
-      "rank": 675,
+      "rank": 676,
       "country": "JPN",
       "priorRank": 643,
       "points": 59,
@@ -30931,7 +30931,7 @@
     {
       "name": "Melisa Ercan",
       "tour": "WTA",
-      "rank": 667,
+      "rank": 669,
       "country": "AUS",
       "priorRank": 673,
       "points": 61,
@@ -30941,7 +30941,7 @@
     {
       "name": "Nada Fouad",
       "tour": "WTA",
-      "rank": 686,
+      "rank": 687,
       "country": "EGY",
       "priorRank": 659,
       "points": 58,
@@ -30951,7 +30951,7 @@
     {
       "name": "Camilla Gennaro",
       "tour": "WTA",
-      "rank": 646,
+      "rank": 648,
       "country": "ITA",
       "priorRank": 617,
       "points": 65,
@@ -30961,7 +30961,7 @@
     {
       "name": "Julia Konishi Camargo Silva",
       "tour": "WTA",
-      "rank": 659,
+      "rank": 661,
       "country": "BRA",
       "priorRank": 628,
       "points": 63,
@@ -30971,7 +30971,7 @@
     {
       "name": "Valeria Savinykh",
       "tour": "WTA",
-      "rank": 643,
+      "rank": 644,
       "country": "",
       "priorRank": 641,
       "points": 65,
@@ -31031,7 +31031,7 @@
     {
       "name": "Eliska Tichackova",
       "tour": "WTA",
-      "rank": 644,
+      "rank": 645,
       "country": "CZE",
       "priorRank": 644,
       "points": 65,
@@ -31051,7 +31051,7 @@
     {
       "name": "Amelie Van Impe",
       "tour": "WTA",
-      "rank": 870,
+      "rank": 871,
       "country": "BEL",
       "priorRank": 871,
       "points": 34,
@@ -31061,7 +31061,7 @@
     {
       "name": "Belle Thompson",
       "tour": "WTA",
-      "rank": 647,
+      "rank": 649,
       "country": "AUS",
       "priorRank": 650,
       "points": 65,
@@ -31091,7 +31091,7 @@
     {
       "name": "Merna Refaat",
       "tour": "WTA",
-      "rank": 652,
+      "rank": 654,
       "country": "EGY",
       "priorRank": 654,
       "points": 64,
@@ -31101,7 +31101,7 @@
     {
       "name": "Kisa Yoshioka",
       "tour": "WTA",
-      "rank": 599,
+      "rank": 600,
       "country": "JPN",
       "priorRank": 614,
       "points": 73,
@@ -31111,7 +31111,7 @@
     {
       "name": "Kailey Evans",
       "tour": "WTA",
-      "rank": 655,
+      "rank": 657,
       "country": "USA",
       "priorRank": 657,
       "points": 64,
@@ -31121,7 +31121,7 @@
     {
       "name": "Wakana Sonobe",
       "tour": "WTA",
-      "rank": 658,
+      "rank": 660,
       "country": "JPN",
       "priorRank": 662,
       "points": 63,
@@ -31141,7 +31141,7 @@
     {
       "name": "Olivia Lincer",
       "tour": "WTA",
-      "rank": 666,
+      "rank": 668,
       "country": "USA",
       "priorRank": 675,
       "points": 61,
@@ -31151,7 +31151,7 @@
     {
       "name": "Jaeda Daniel",
       "tour": "WTA",
-      "rank": 682,
+      "rank": 683,
       "country": "USA",
       "priorRank": 669,
       "points": 58,
@@ -31161,7 +31161,7 @@
     {
       "name": "Fiona Ganz",
       "tour": "WTA",
-      "rank": 790,
+      "rank": 791,
       "country": "SUI",
       "priorRank": 748,
       "points": 43,
@@ -31171,7 +31171,7 @@
     {
       "name": "Teah Chavez",
       "tour": "WTA",
-      "rank": 694,
+      "rank": 695,
       "country": "CAN",
       "priorRank": 698,
       "points": 56,
@@ -31181,17 +31181,17 @@
     {
       "name": "Francesca Gandolfi",
       "tour": "WTA",
-      "rank": 672,
+      "rank": 641,
       "country": "ITA",
       "priorRank": 671,
-      "points": 60,
+      "points": 66,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Alina Trynkina",
       "tour": "WTA",
-      "rank": 665,
+      "rank": 667,
       "country": "",
       "priorRank": 672,
       "points": 62,
@@ -31201,7 +31201,7 @@
     {
       "name": "Draginja Vukovic",
       "tour": "WTA",
-      "rank": 1154,
+      "rank": 1155,
       "country": "SRB",
       "priorRank": 915,
       "points": 12,
@@ -31211,7 +31211,7 @@
     {
       "name": "Chenting Zhu",
       "tour": "WTA",
-      "rank": 601,
+      "rank": 602,
       "country": "CHN",
       "priorRank": 604,
       "points": 72,
@@ -31241,17 +31241,17 @@
     {
       "name": "Marta Lombardini",
       "tour": "WTA",
-      "rank": 602,
+      "rank": 598,
       "country": "ITA",
       "priorRank": 679,
-      "points": 72,
+      "points": 73,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Gabriela Lee",
       "tour": "WTA",
-      "rank": 680,
+      "rank": 681,
       "country": "ROU",
       "priorRank": 690,
       "points": 58,
@@ -31261,7 +31261,7 @@
     {
       "name": "Amy Zhu",
       "tour": "WTA",
-      "rank": 688,
+      "rank": 689,
       "country": "USA",
       "priorRank": 680,
       "points": 57,
@@ -31271,7 +31271,7 @@
     {
       "name": "Kristina Novak",
       "tour": "WTA",
-      "rank": 671,
+      "rank": 673,
       "country": "SLO",
       "priorRank": 682,
       "points": 60,
@@ -31301,7 +31301,7 @@
     {
       "name": "Laia Petretic",
       "tour": "WTA",
-      "rank": 696,
+      "rank": 697,
       "country": "FRA",
       "priorRank": 697,
       "points": 56,
@@ -31311,7 +31311,7 @@
     {
       "name": "Zoziya Kardava",
       "tour": "WTA",
-      "rank": 670,
+      "rank": 672,
       "country": "GEO",
       "priorRank": 678,
       "points": 61,
@@ -31321,10 +31321,10 @@
     {
       "name": "Noemi Maines",
       "tour": "WTA",
-      "rank": 699,
+      "rank": 647,
       "country": "ITA",
       "priorRank": 703,
-      "points": 55,
+      "points": 65,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
@@ -31351,7 +31351,7 @@
     {
       "name": "Salma Ewing",
       "tour": "WTA",
-      "rank": 826,
+      "rank": 827,
       "country": "USA",
       "priorRank": 830,
       "points": 38,
@@ -31361,7 +31361,7 @@
     {
       "name": "Jenna Defalco",
       "tour": "WTA",
-      "rank": 895,
+      "rank": 896,
       "country": "USA",
       "priorRank": 893,
       "points": 32,
@@ -31381,7 +31381,7 @@
     {
       "name": "Maria Sholokhova",
       "tour": "WTA",
-      "rank": 845,
+      "rank": 846,
       "country": "",
       "priorRank": 852,
       "points": 36,
@@ -31401,7 +31401,7 @@
     {
       "name": "Ema Burgic",
       "tour": "WTA",
-      "rank": 668,
+      "rank": 670,
       "country": "BIH",
       "priorRank": 676,
       "points": 61,
@@ -31411,7 +31411,7 @@
     {
       "name": "Petra Sedlackova",
       "tour": "WTA",
-      "rank": 669,
+      "rank": 671,
       "country": "CZE",
       "priorRank": 677,
       "points": 61,
@@ -31431,7 +31431,7 @@
     {
       "name": "Ania Hertel",
       "tour": "WTA",
-      "rank": 840,
+      "rank": 841,
       "country": "POL",
       "priorRank": 845,
       "points": 37,
@@ -31441,7 +31441,7 @@
     {
       "name": "Anna Snigireva",
       "tour": "WTA",
-      "rank": 685,
+      "rank": 686,
       "country": "",
       "priorRank": 694,
       "points": 58,
@@ -31511,7 +31511,7 @@
     {
       "name": "Tatum Evans",
       "tour": "WTA",
-      "rank": 695,
+      "rank": 696,
       "country": "USA",
       "priorRank": 699,
       "points": 56,
@@ -31561,7 +31561,7 @@
     {
       "name": "Allegra Korpanec Davies",
       "tour": "WTA",
-      "rank": 663,
+      "rank": 665,
       "country": "GBR",
       "priorRank": 667,
       "points": 63,
@@ -31591,7 +31591,7 @@
     {
       "name": "Haruna Arakawa",
       "tour": "WTA",
-      "rank": 856,
+      "rank": 857,
       "country": "JPN",
       "priorRank": 783,
       "points": 35,
@@ -31601,7 +31601,7 @@
     {
       "name": "Yuliya Hatouka",
       "tour": "WTA",
-      "rank": 684,
+      "rank": 685,
       "country": "",
       "priorRank": 693,
       "points": 58,
@@ -31641,7 +31641,7 @@
     {
       "name": "Alexis Nguyen",
       "tour": "WTA",
-      "rank": 673,
+      "rank": 674,
       "country": "USA",
       "priorRank": 684,
       "points": 60,
@@ -31651,7 +31651,7 @@
     {
       "name": "Mariia Tkacheva",
       "tour": "WTA",
-      "rank": 650,
+      "rank": 652,
       "country": "",
       "priorRank": 653,
       "points": 64,
@@ -31671,7 +31671,7 @@
     {
       "name": "Noelia Bouzo Zanotti",
       "tour": "WTA",
-      "rank": 867,
+      "rank": 868,
       "country": "ESP",
       "priorRank": 812,
       "points": 34,
@@ -31681,7 +31681,7 @@
     {
       "name": "Marine Szostak",
       "tour": "WTA",
-      "rank": 894,
+      "rank": 895,
       "country": "FRA",
       "priorRank": 908,
       "points": 32,
@@ -31711,7 +31711,7 @@
     {
       "name": "Fangzhou Liu",
       "tour": "WTA",
-      "rank": 804,
+      "rank": 805,
       "country": "CHN",
       "priorRank": 802,
       "points": 41,
@@ -31731,7 +31731,7 @@
     {
       "name": "Jenny Duerst",
       "tour": "WTA",
-      "rank": 834,
+      "rank": 835,
       "country": "SUI",
       "priorRank": 840,
       "points": 37,
@@ -31821,7 +31821,7 @@
     {
       "name": "Gyeong Seo Lee",
       "tour": "WTA",
-      "rank": 690,
+      "rank": 691,
       "country": "KOR",
       "priorRank": 702,
       "points": 57,
@@ -31831,7 +31831,7 @@
     {
       "name": "Monique Barry",
       "tour": "WTA",
-      "rank": 887,
+      "rank": 888,
       "country": "NZL",
       "priorRank": 810,
       "points": 32,
@@ -31841,7 +31841,7 @@
     {
       "name": "Ha Eum Lee",
       "tour": "WTA",
-      "rank": 645,
+      "rank": 646,
       "country": "KOR",
       "priorRank": 688,
       "points": 65,
@@ -31861,7 +31861,7 @@
     {
       "name": "Yingqun Sun",
       "tour": "WTA",
-      "rank": 816,
+      "rank": 817,
       "country": "CHN",
       "priorRank": 817,
       "points": 40,
@@ -31871,7 +31871,7 @@
     {
       "name": "Usue Maitane Arconada",
       "tour": "WTA",
-      "rank": 841,
+      "rank": 842,
       "country": "USA",
       "priorRank": 847,
       "points": 36,
@@ -31931,7 +31931,7 @@
     {
       "name": "Anamaria Oana",
       "tour": "WTA",
-      "rank": 874,
+      "rank": 875,
       "country": "ROU",
       "priorRank": 876,
       "points": 33,
@@ -31941,7 +31941,7 @@
     {
       "name": "Vlada Mincheva",
       "tour": "WTA",
-      "rank": 799,
+      "rank": 800,
       "country": "",
       "priorRank": 793,
       "points": 42,
@@ -31951,7 +31951,7 @@
     {
       "name": "Nagi Hanatani",
       "tour": "WTA",
-      "rank": 837,
+      "rank": 838,
       "country": "JPN",
       "priorRank": 832,
       "points": 37,
@@ -31971,7 +31971,7 @@
     {
       "name": "Yuliana Lizarazo",
       "tour": "WTA",
-      "rank": 801,
+      "rank": 802,
       "country": "COL",
       "priorRank": 797,
       "points": 41,
@@ -31991,7 +31991,7 @@
     {
       "name": "Ellie Schoppe",
       "tour": "WTA",
-      "rank": 906,
+      "rank": 907,
       "country": "USA",
       "priorRank": 874,
       "points": 30,
@@ -32001,7 +32001,7 @@
     {
       "name": "Ashley Lahey",
       "tour": "WTA",
-      "rank": 866,
+      "rank": 867,
       "country": "USA",
       "priorRank": 825,
       "points": 34,
@@ -32011,7 +32011,7 @@
     {
       "name": "Ayumi Koshiishi",
       "tour": "WTA",
-      "rank": 843,
+      "rank": 844,
       "country": "JPN",
       "priorRank": 848,
       "points": 36,
@@ -32021,7 +32021,7 @@
     {
       "name": "Ani Amiraghyan",
       "tour": "WTA",
-      "rank": 803,
+      "rank": 804,
       "country": "ARM",
       "priorRank": 800,
       "points": 41,
@@ -32041,7 +32041,7 @@
     {
       "name": "Jimar Gerald Gonzalez",
       "tour": "WTA",
-      "rank": 831,
+      "rank": 832,
       "country": "CHI",
       "priorRank": 849,
       "points": 37,
@@ -32081,7 +32081,7 @@
     {
       "name": "Jo-Yee Chan",
       "tour": "WTA",
-      "rank": 678,
+      "rank": 679,
       "country": "USA",
       "priorRank": 687,
       "points": 59,
@@ -32101,7 +32101,7 @@
     {
       "name": "Sarah Iliev",
       "tour": "WTA",
-      "rank": 693,
+      "rank": 694,
       "country": "FRA",
       "priorRank": 795,
       "points": 57,
@@ -32111,7 +32111,7 @@
     {
       "name": "Ella Haavisto",
       "tour": "WTA",
-      "rank": 893,
+      "rank": 894,
       "country": "FIN",
       "priorRank": 881,
       "points": 32,
@@ -32151,7 +32151,7 @@
     {
       "name": "Ulyana Hrabavets",
       "tour": "WTA",
-      "rank": 825,
+      "rank": 826,
       "country": "BUL",
       "priorRank": 829,
       "points": 38,
@@ -32161,7 +32161,7 @@
     {
       "name": "Honoka Kobayashi",
       "tour": "WTA",
-      "rank": 824,
+      "rank": 825,
       "country": "JPN",
       "priorRank": 828,
       "points": 38,
@@ -32171,7 +32171,7 @@
     {
       "name": "Karine Sarkisova",
       "tour": "WTA",
-      "rank": 889,
+      "rank": 890,
       "country": "",
       "priorRank": 767,
       "points": 32,
@@ -32181,7 +32181,7 @@
     {
       "name": "Xi Luo",
       "tour": "WTA",
-      "rank": 827,
+      "rank": 828,
       "country": "CHN",
       "priorRank": 831,
       "points": 38,
@@ -32191,7 +32191,7 @@
     {
       "name": "Coco Bosman",
       "tour": "WTA",
-      "rank": 792,
+      "rank": 793,
       "country": "NED",
       "priorRank": 786,
       "points": 43,
@@ -32231,7 +32231,7 @@
     {
       "name": "Adelina Lacinova",
       "tour": "WTA",
-      "rank": 808,
+      "rank": 809,
       "country": "LAT",
       "priorRank": 807,
       "points": 40,
@@ -32241,7 +32241,7 @@
     {
       "name": "Lian Tran",
       "tour": "WTA",
-      "rank": 823,
+      "rank": 824,
       "country": "NED",
       "priorRank": 902,
       "points": 38,
@@ -32251,7 +32251,7 @@
     {
       "name": "Meng-Yi Chen",
       "tour": "WTA",
-      "rank": 1013,
+      "rank": 1015,
       "country": "CHN",
       "priorRank": 1020,
       "points": 19,
@@ -32281,7 +32281,7 @@
     {
       "name": "Lorena Solar Donoso",
       "tour": "WTA",
-      "rank": 807,
+      "rank": 808,
       "country": "ESP",
       "priorRank": 806,
       "points": 41,
@@ -32331,7 +32331,7 @@
     {
       "name": "Carmen Lopez Martinez",
       "tour": "WTA",
-      "rank": 842,
+      "rank": 843,
       "country": "ESP",
       "priorRank": 836,
       "points": 36,
@@ -32341,7 +32341,7 @@
     {
       "name": "Alja Senica",
       "tour": "WTA",
-      "rank": 651,
+      "rank": 653,
       "country": "SLO",
       "priorRank": 666,
       "points": 64,
@@ -32351,7 +32351,7 @@
     {
       "name": "Chloe Noel",
       "tour": "WTA",
-      "rank": 798,
+      "rank": 799,
       "country": "FRA",
       "priorRank": 792,
       "points": 42,
@@ -32361,7 +32361,7 @@
     {
       "name": "Shiho Tsujioka",
       "tour": "WTA",
-      "rank": 869,
+      "rank": 870,
       "country": "JPN",
       "priorRank": 865,
       "points": 34,
@@ -32381,7 +32381,7 @@
     {
       "name": "Mariella Thamm",
       "tour": "WTA",
-      "rank": 886,
+      "rank": 887,
       "country": "GER",
       "priorRank": 887,
       "points": 32,
@@ -32401,7 +32401,7 @@
     {
       "name": "Luna Maria Cinalli",
       "tour": "WTA",
-      "rank": 689,
+      "rank": 690,
       "country": "ARG",
       "priorRank": 720,
       "points": 57,
@@ -32411,7 +32411,7 @@
     {
       "name": "Petra Konjikusic",
       "tour": "WTA",
-      "rank": 891,
+      "rank": 892,
       "country": "SRB",
       "priorRank": 774,
       "points": 32,
@@ -32431,7 +32431,7 @@
     {
       "name": "Meiling Wang",
       "tour": "WTA",
-      "rank": 864,
+      "rank": 865,
       "country": "CHN",
       "priorRank": 868,
       "points": 34,
@@ -32441,7 +32441,7 @@
     {
       "name": "Duru Soke",
       "tour": "WTA",
-      "rank": 794,
+      "rank": 795,
       "country": "TUR",
       "priorRank": 788,
       "points": 42,
@@ -32481,7 +32481,7 @@
     {
       "name": "Sara Victoria Balan",
       "tour": "WTA",
-      "rank": 813,
+      "rank": 814,
       "country": "ROU",
       "priorRank": 815,
       "points": 40,
@@ -32491,7 +32491,7 @@
     {
       "name": "Kamilla Bartone",
       "tour": "WTA",
-      "rank": 806,
+      "rank": 807,
       "country": "",
       "priorRank": 805,
       "points": 41,
@@ -32521,7 +32521,7 @@
     {
       "name": "Aishi Das",
       "tour": "WTA",
-      "rank": 820,
+      "rank": 821,
       "country": "NZL",
       "priorRank": 821,
       "points": 39,
@@ -32561,7 +32561,7 @@
     {
       "name": "Sara Mikaca",
       "tour": "WTA",
-      "rank": 815,
+      "rank": 816,
       "country": "BIH",
       "priorRank": 804,
       "points": 40,
@@ -32571,7 +32571,7 @@
     {
       "name": "Julia Stamatova",
       "tour": "WTA",
-      "rank": 880,
+      "rank": 881,
       "country": "BUL",
       "priorRank": 867,
       "points": 33,
@@ -32591,7 +32591,7 @@
     {
       "name": "Zarina Diyas",
       "tour": "WTA",
-      "rank": 821,
+      "rank": 822,
       "country": "KAZ",
       "priorRank": 823,
       "points": 38,
@@ -32621,7 +32621,7 @@
     {
       "name": "Tiana Tian Deng",
       "tour": "WTA",
-      "rank": 819,
+      "rank": 820,
       "country": "SWE",
       "priorRank": 820,
       "points": 39,
@@ -32651,7 +32651,7 @@
     {
       "name": "Amy Stevens",
       "tour": "WTA",
-      "rank": 857,
+      "rank": 858,
       "country": "AUS",
       "priorRank": 863,
       "points": 35,
@@ -32671,7 +32671,7 @@
     {
       "name": "Lauryn John-Baptiste",
       "tour": "WTA",
-      "rank": 814,
+      "rank": 815,
       "country": "GBR",
       "priorRank": 816,
       "points": 40,
@@ -32701,7 +32701,7 @@
     {
       "name": "Ru Xi Wu",
       "tour": "WTA",
-      "rank": 809,
+      "rank": 810,
       "country": "CHN",
       "priorRank": 808,
       "points": 40,
@@ -32721,7 +32721,7 @@
     {
       "name": "Arina Vasilescu",
       "tour": "WTA",
-      "rank": 828,
+      "rank": 829,
       "country": "ROU",
       "priorRank": 833,
       "points": 38,
@@ -32741,7 +32741,7 @@
     {
       "name": "Maria Toma",
       "tour": "WTA",
-      "rank": 871,
+      "rank": 872,
       "country": "ROU",
       "priorRank": 846,
       "points": 34,
@@ -32771,7 +32771,7 @@
     {
       "name": "Mia Slama",
       "tour": "WTA",
-      "rank": 888,
+      "rank": 889,
       "country": "USA",
       "priorRank": 888,
       "points": 32,
@@ -32791,17 +32791,17 @@
     {
       "name": "Linda Sevcikova",
       "tour": "WTA",
-      "rank": 1035,
+      "rank": 1028,
       "country": "CZE",
       "priorRank": 1017,
-      "points": 18,
+      "points": 19,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Jiangxue Han",
       "tour": "WTA",
-      "rank": 791,
+      "rank": 792,
       "country": "CHN",
       "priorRank": 785,
       "points": 43,
@@ -32821,7 +32821,7 @@
     {
       "name": "Christasha Mcneil",
       "tour": "WTA",
-      "rank": 829,
+      "rank": 830,
       "country": "USA",
       "priorRank": 834,
       "points": 37,
@@ -32831,7 +32831,7 @@
     {
       "name": "Ilay Yoruk",
       "tour": "WTA",
-      "rank": 793,
+      "rank": 794,
       "country": "TUR",
       "priorRank": 787,
       "points": 42,
@@ -32841,7 +32841,7 @@
     {
       "name": "Kallista Liu",
       "tour": "WTA",
-      "rank": 810,
+      "rank": 811,
       "country": "HKG",
       "priorRank": 809,
       "points": 40,
@@ -32851,7 +32851,7 @@
     {
       "name": "Francoise Abanda",
       "tour": "WTA",
-      "rank": 835,
+      "rank": 836,
       "country": "CAN",
       "priorRank": 842,
       "points": 37,
@@ -32881,7 +32881,7 @@
     {
       "name": "Yuhan Liu",
       "tour": "WTA",
-      "rank": 901,
+      "rank": 902,
       "country": "CHN",
       "priorRank": 898,
       "points": 31,
@@ -32891,7 +32891,7 @@
     {
       "name": "Salma Drugdova",
       "tour": "WTA",
-      "rank": 902,
+      "rank": 903,
       "country": "SVK",
       "priorRank": 899,
       "points": 31,
@@ -32911,7 +32911,7 @@
     {
       "name": "Ksenia Laskutova",
       "tour": "WTA",
-      "rank": 858,
+      "rank": 859,
       "country": "",
       "priorRank": 864,
       "points": 35,
@@ -32921,7 +32921,7 @@
     {
       "name": "Laura Svatikova",
       "tour": "WTA",
-      "rank": 890,
+      "rank": 891,
       "country": "SVK",
       "priorRank": 906,
       "points": 32,
@@ -32931,7 +32931,7 @@
     {
       "name": "Diana Marcinkevica",
       "tour": "WTA",
-      "rank": 860,
+      "rank": 861,
       "country": "LAT",
       "priorRank": 891,
       "points": 35,
@@ -32941,7 +32941,7 @@
     {
       "name": "Kristina Mladenovic",
       "tour": "WTA",
-      "rank": 822,
+      "rank": 823,
       "country": "FRA",
       "priorRank": 824,
       "points": 38,
@@ -32951,7 +32951,7 @@
     {
       "name": "Alice Robbe",
       "tour": "WTA",
-      "rank": 914,
+      "rank": 915,
       "country": "FRA",
       "priorRank": 903,
       "points": 29,
@@ -32961,7 +32961,7 @@
     {
       "name": "Eszter Meri",
       "tour": "WTA",
-      "rank": 795,
+      "rank": 796,
       "country": "SVK",
       "priorRank": 789,
       "points": 42,
@@ -32971,7 +32971,7 @@
     {
       "name": "Laquisa Khan",
       "tour": "WTA",
-      "rank": 832,
+      "rank": 833,
       "country": "AUS",
       "priorRank": 801,
       "points": 37,
@@ -33001,7 +33001,7 @@
     {
       "name": "Lisa Claeys",
       "tour": "WTA",
-      "rank": 805,
+      "rank": 806,
       "country": "BEL",
       "priorRank": 803,
       "points": 41,
@@ -33011,7 +33011,7 @@
     {
       "name": "Johanna Silva",
       "tour": "WTA",
-      "rank": 892,
+      "rank": 893,
       "country": "GER",
       "priorRank": 890,
       "points": 32,
@@ -33021,7 +33021,7 @@
     {
       "name": "Elena Jamshidi",
       "tour": "WTA",
-      "rank": 879,
+      "rank": 880,
       "country": "DEN",
       "priorRank": 880,
       "points": 33,
@@ -33031,7 +33031,7 @@
     {
       "name": "Marie Villet",
       "tour": "WTA",
-      "rank": 862,
+      "rank": 863,
       "country": "FRA",
       "priorRank": 856,
       "points": 35,
@@ -33071,7 +33071,7 @@
     {
       "name": "Anna Frey",
       "tour": "WTA",
-      "rank": 851,
+      "rank": 852,
       "country": "USA",
       "priorRank": 859,
       "points": 35,
@@ -33081,7 +33081,7 @@
     {
       "name": "Nika Radisic",
       "tour": "WTA",
-      "rank": 896,
+      "rank": 897,
       "country": "SLO",
       "priorRank": 894,
       "points": 31,
@@ -33101,7 +33101,7 @@
     {
       "name": "Marilouise Van Zyl",
       "tour": "WTA",
-      "rank": 854,
+      "rank": 855,
       "country": "RSA",
       "priorRank": 861,
       "points": 35,
@@ -33111,7 +33111,7 @@
     {
       "name": "Jana Hossam Salah",
       "tour": "WTA",
-      "rank": 855,
+      "rank": 856,
       "country": "EGY",
       "priorRank": 862,
       "points": 35,
@@ -33121,7 +33121,7 @@
     {
       "name": "Aspen Schuman",
       "tour": "WTA",
-      "rank": 812,
+      "rank": 813,
       "country": "USA",
       "priorRank": 814,
       "points": 40,
@@ -33131,7 +33131,7 @@
     {
       "name": "Dabin Kim",
       "tour": "WTA",
-      "rank": 836,
+      "rank": 837,
       "country": "KOR",
       "priorRank": 879,
       "points": 37,
@@ -33141,7 +33141,7 @@
     {
       "name": "Misa Malkin",
       "tour": "WTA",
-      "rank": 916,
+      "rank": 917,
       "country": "USA",
       "priorRank": 916,
       "points": 29,
@@ -33161,7 +33161,7 @@
     {
       "name": "Anita Sahdiieva",
       "tour": "WTA",
-      "rank": 849,
+      "rank": 850,
       "country": "UKR",
       "priorRank": 857,
       "points": 36,
@@ -33191,7 +33191,7 @@
     {
       "name": "Maia Ilinca Burcescu",
       "tour": "WTA",
-      "rank": 830,
+      "rank": 831,
       "country": "ROU",
       "priorRank": 835,
       "points": 37,
@@ -33201,7 +33201,7 @@
     {
       "name": "Michaela Bayerlova",
       "tour": "WTA",
-      "rank": 797,
+      "rank": 798,
       "country": "CZE",
       "priorRank": 791,
       "points": 42,
@@ -33231,7 +33231,7 @@
     {
       "name": "Angelina Wirges",
       "tour": "WTA",
-      "rank": 1009,
+      "rank": 1011,
       "country": "GER",
       "priorRank": 1005,
       "points": 20,
@@ -33241,7 +33241,7 @@
     {
       "name": "Astra Sharma",
       "tour": "WTA",
-      "rank": 1170,
+      "rank": 1172,
       "country": "AUS",
       "priorRank": 1170,
       "points": 11,
@@ -33251,7 +33251,7 @@
     {
       "name": "Eudice Chong",
       "tour": "WTA",
-      "rank": 904,
+      "rank": 905,
       "country": "HKG",
       "priorRank": 900,
       "points": 30,
@@ -33261,7 +33261,7 @@
     {
       "name": "Nadiia Kolb",
       "tour": "WTA",
-      "rank": 924,
+      "rank": 925,
       "country": "UKR",
       "priorRank": 923,
       "points": 28,
@@ -33271,7 +33271,7 @@
     {
       "name": "Maria Torres Murcia",
       "tour": "WTA",
-      "rank": 885,
+      "rank": 886,
       "country": "COL",
       "priorRank": 886,
       "points": 32,
@@ -33281,7 +33281,7 @@
     {
       "name": "Victoria Pohle",
       "tour": "WTA",
-      "rank": 853,
+      "rank": 854,
       "country": "GER",
       "priorRank": 850,
       "points": 35,
@@ -33291,7 +33291,7 @@
     {
       "name": "Francesca Mattioli",
       "tour": "WTA",
-      "rank": 928,
+      "rank": 929,
       "country": "ARG",
       "priorRank": 927,
       "points": 28,
@@ -33301,7 +33301,7 @@
     {
       "name": "Chukwumelije Clarke",
       "tour": "WTA",
-      "rank": 875,
+      "rank": 876,
       "country": "USA",
       "priorRank": 877,
       "points": 33,
@@ -33321,7 +33321,7 @@
     {
       "name": "Emma Si Yu Dong",
       "tour": "WTA",
-      "rank": 884,
+      "rank": 885,
       "country": "CAN",
       "priorRank": 885,
       "points": 32,
@@ -33331,7 +33331,7 @@
     {
       "name": "Jizelle Sibai",
       "tour": "WTA",
-      "rank": 907,
+      "rank": 908,
       "country": "AUS",
       "priorRank": 904,
       "points": 30,
@@ -33351,7 +33351,7 @@
     {
       "name": "Alesia Breaz",
       "tour": "WTA",
-      "rank": 796,
+      "rank": 797,
       "country": "ROU",
       "priorRank": 799,
       "points": 42,
@@ -33381,7 +33381,7 @@
     {
       "name": "Klara Veldman",
       "tour": "WTA",
-      "rank": 920,
+      "rank": 921,
       "country": "NED",
       "priorRank": 919,
       "points": 29,
@@ -33391,7 +33391,7 @@
     {
       "name": "Stefania Bojica",
       "tour": "WTA",
-      "rank": 817,
+      "rank": 818,
       "country": "ROU",
       "priorRank": 870,
       "points": 40,
@@ -33401,7 +33401,7 @@
     {
       "name": "Leonie Kung",
       "tour": "WTA",
-      "rank": 1012,
+      "rank": 1014,
       "country": "SUI",
       "priorRank": 1019,
       "points": 19,
@@ -33411,7 +33411,7 @@
     {
       "name": "Jessica Failla",
       "tour": "WTA",
-      "rank": 1030,
+      "rank": 1032,
       "country": "USA",
       "priorRank": 1038,
       "points": 18,
@@ -33421,7 +33421,7 @@
     {
       "name": "Valentina Mediorreal Arias",
       "tour": "WTA",
-      "rank": 852,
+      "rank": 853,
       "country": "COL",
       "priorRank": 819,
       "points": 35,
@@ -33431,7 +33431,7 @@
     {
       "name": "Midori Castillo Meza",
       "tour": "WTA",
-      "rank": 897,
+      "rank": 898,
       "country": "MEX",
       "priorRank": 895,
       "points": 31,
@@ -33441,7 +33441,7 @@
     {
       "name": "Kate Fakih",
       "tour": "WTA",
-      "rank": 899,
+      "rank": 900,
       "country": "USA",
       "priorRank": 896,
       "points": 31,
@@ -33451,7 +33451,7 @@
     {
       "name": "Yujin Kim",
       "tour": "WTA",
-      "rank": 846,
+      "rank": 847,
       "country": "KOR",
       "priorRank": 996,
       "points": 36,
@@ -33481,7 +33481,7 @@
     {
       "name": "Isabella Marton",
       "tour": "WTA",
-      "rank": 883,
+      "rank": 884,
       "country": "CAN",
       "priorRank": 884,
       "points": 32,
@@ -33491,7 +33491,7 @@
     {
       "name": "Danka Kovinic",
       "tour": "WTA",
-      "rank": 882,
+      "rank": 883,
       "country": "MNE",
       "priorRank": 883,
       "points": 32,
@@ -33521,7 +33521,7 @@
     {
       "name": "Kateryna Diatlova",
       "tour": "WTA",
-      "rank": 909,
+      "rank": 910,
       "country": "UKR",
       "priorRank": 918,
       "points": 30,
@@ -33531,7 +33531,7 @@
     {
       "name": "Aya El Sayed",
       "tour": "WTA",
-      "rank": 917,
+      "rank": 918,
       "country": "EGY",
       "priorRank": 905,
       "points": 29,
@@ -33541,7 +33541,7 @@
     {
       "name": "Arina Varaksina",
       "tour": "WTA",
-      "rank": 919,
+      "rank": 920,
       "country": "",
       "priorRank": 909,
       "points": 29,
@@ -33551,7 +33551,7 @@
     {
       "name": "Jaedan Brown",
       "tour": "WTA",
-      "rank": 910,
+      "rank": 911,
       "country": "USA",
       "priorRank": 910,
       "points": 30,
@@ -33601,7 +33601,7 @@
     {
       "name": "Welles Newman",
       "tour": "WTA",
-      "rank": 915,
+      "rank": 916,
       "country": "USA",
       "priorRank": 914,
       "points": 29,
@@ -33631,7 +33631,7 @@
     {
       "name": "Ruby Cooling",
       "tour": "WTA",
-      "rank": 918,
+      "rank": 919,
       "country": "GBR",
       "priorRank": 917,
       "points": 29,
@@ -33661,7 +33661,7 @@
     {
       "name": "Mandegar Farzami",
       "tour": "WTA",
-      "rank": 1020,
+      "rank": 1022,
       "country": "IRN",
       "priorRank": 1026,
       "points": 19,
@@ -33681,7 +33681,7 @@
     {
       "name": "Ustiniya Lekomtseva",
       "tour": "WTA",
-      "rank": 911,
+      "rank": 912,
       "country": "",
       "priorRank": 911,
       "points": 30,
@@ -33691,7 +33691,7 @@
     {
       "name": "Maddalena Giordano",
       "tour": "WTA",
-      "rank": 997,
+      "rank": 998,
       "country": "ITA",
       "priorRank": 976,
       "points": 21,
@@ -33701,7 +33701,7 @@
     {
       "name": "Monika Ekstrand",
       "tour": "WTA",
-      "rank": 850,
+      "rank": 851,
       "country": "USA",
       "priorRank": 858,
       "points": 35,
@@ -33711,7 +33711,7 @@
     {
       "name": "Kennedy Drenser-Hagmann",
       "tour": "WTA",
-      "rank": 923,
+      "rank": 924,
       "country": "USA",
       "priorRank": 922,
       "points": 28,
@@ -33721,7 +33721,7 @@
     {
       "name": "Sabastiani Leon",
       "tour": "WTA",
-      "rank": 913,
+      "rank": 914,
       "country": "MEX",
       "priorRank": 913,
       "points": 29,
@@ -33731,7 +33731,7 @@
     {
       "name": "Lexington Reed",
       "tour": "WTA",
-      "rank": 927,
+      "rank": 928,
       "country": "USA",
       "priorRank": 926,
       "points": 28,
@@ -33761,7 +33761,7 @@
     {
       "name": "Chiara Fornasieri",
       "tour": "WTA",
-      "rank": 878,
+      "rank": 879,
       "country": "ITA",
       "priorRank": 889,
       "points": 33,
@@ -33771,7 +33771,7 @@
     {
       "name": "Iveta Dapkute",
       "tour": "WTA",
-      "rank": 868,
+      "rank": 869,
       "country": "LTU",
       "priorRank": 843,
       "points": 34,
@@ -33781,7 +33781,7 @@
     {
       "name": "Natsuho Arakawa",
       "tour": "WTA",
-      "rank": 908,
+      "rank": 909,
       "country": "JPN",
       "priorRank": 907,
       "points": 30,
@@ -33791,7 +33791,7 @@
     {
       "name": "Eva Marie Desvignes",
       "tour": "WTA",
-      "rank": 872,
+      "rank": 873,
       "country": "SGP",
       "priorRank": 872,
       "points": 34,
@@ -33801,7 +33801,7 @@
     {
       "name": "Asylzhan Arystanbekova",
       "tour": "WTA",
-      "rank": 692,
+      "rank": 693,
       "country": "KAZ",
       "priorRank": 696,
       "points": 57,
@@ -33851,7 +33851,7 @@
     {
       "name": "Akanksha Nitture",
       "tour": "WTA",
-      "rank": 926,
+      "rank": 927,
       "country": "IND",
       "priorRank": 925,
       "points": 28,
@@ -33891,7 +33891,7 @@
     {
       "name": "Emily Sartz-Lunde",
       "tour": "WTA",
-      "rank": 929,
+      "rank": 930,
       "country": "NOR",
       "priorRank": 928,
       "points": 28,
@@ -33921,7 +33921,7 @@
     {
       "name": "Stefaniya Pushkar",
       "tour": "WTA",
-      "rank": 996,
+      "rank": 997,
       "country": "SUI",
       "priorRank": 1015,
       "points": 21,
@@ -33931,7 +33931,7 @@
     {
       "name": "Rikke De Koning",
       "tour": "WTA",
-      "rank": 847,
+      "rank": 848,
       "country": "NED",
       "priorRank": 855,
       "points": 36,
@@ -33941,7 +33941,7 @@
     {
       "name": "Anna Kmiecik",
       "tour": "WTA",
-      "rank": 800,
+      "rank": 801,
       "country": "POL",
       "priorRank": 844,
       "points": 42,
@@ -34011,7 +34011,7 @@
     {
       "name": "Abigail Rencheli",
       "tour": "WTA",
-      "rank": 1021,
+      "rank": 1023,
       "country": "USA",
       "priorRank": 1028,
       "points": 19,
@@ -34031,7 +34031,7 @@
     {
       "name": "Sevil Yuldasheva",
       "tour": "WTA",
-      "rank": 1011,
+      "rank": 1013,
       "country": "UZB",
       "priorRank": 964,
       "points": 20,
@@ -34041,7 +34041,7 @@
     {
       "name": "Wozuko Mdlulwa",
       "tour": "WTA",
-      "rank": 848,
+      "rank": 849,
       "country": "RSA",
       "priorRank": 965,
       "points": 36,
@@ -34091,7 +34091,7 @@
     {
       "name": "Mika Buchnik",
       "tour": "WTA",
-      "rank": 811,
+      "rank": 812,
       "country": "ISR",
       "priorRank": 813,
       "points": 40,
@@ -34101,7 +34101,7 @@
     {
       "name": "Louna Zoppas",
       "tour": "WTA",
-      "rank": 1185,
+      "rank": 1187,
       "country": "FRA",
       "priorRank": 1055,
       "points": 11,
@@ -34121,7 +34121,7 @@
     {
       "name": "Romane Longueville",
       "tour": "WTA",
-      "rank": 859,
+      "rank": 860,
       "country": "BEL",
       "priorRank": 866,
       "points": 35,
@@ -34151,7 +34151,7 @@
     {
       "name": "Irina Fetecau",
       "tour": "WTA",
-      "rank": 922,
+      "rank": 923,
       "country": "ROU",
       "priorRank": 921,
       "points": 28,
@@ -34191,7 +34191,7 @@
     {
       "name": "Krisha Mahendran",
       "tour": "WTA",
-      "rank": 873,
+      "rank": 874,
       "country": "IND",
       "priorRank": 875,
       "points": 33,
@@ -34221,7 +34221,7 @@
     {
       "name": "Kolie Allen",
       "tour": "WTA",
-      "rank": 1108,
+      "rank": 1109,
       "country": "USA",
       "priorRank": 1117,
       "points": 14,
@@ -34261,7 +34261,7 @@
     {
       "name": "Victoria Brand",
       "tour": "WTA",
-      "rank": 905,
+      "rank": 906,
       "country": "GER",
       "priorRank": 901,
       "points": 30,
@@ -34271,7 +34271,7 @@
     {
       "name": "Amina Anshba",
       "tour": "WTA",
-      "rank": 998,
+      "rank": 999,
       "country": "",
       "priorRank": 1001,
       "points": 20,
@@ -34291,7 +34291,7 @@
     {
       "name": "Elyse Tse",
       "tour": "WTA",
-      "rank": 865,
+      "rank": 866,
       "country": "NZL",
       "priorRank": 826,
       "points": 34,
@@ -34331,7 +34331,7 @@
     {
       "name": "Polina Bakhmutkina",
       "tour": "WTA",
-      "rank": 1024,
+      "rank": 1026,
       "country": "BEL",
       "priorRank": 998,
       "points": 19,
@@ -34341,7 +34341,7 @@
     {
       "name": "Victoria Luiza Barros",
       "tour": "WTA",
-      "rank": 818,
+      "rank": 819,
       "country": "BRA",
       "priorRank": 827,
       "points": 39,
@@ -34351,7 +34351,7 @@
     {
       "name": "Malene Helg?",
       "tour": "WTA",
-      "rank": 1146,
+      "rank": 1147,
       "country": "NOR",
       "priorRank": 1153,
       "points": 12,
@@ -34381,7 +34381,7 @@
     {
       "name": "Valeria Bhunu",
       "tour": "WTA",
-      "rank": 1263,
+      "rank": 1264,
       "country": "ZIM",
       "priorRank": 1271,
       "points": 9,
@@ -34411,7 +34411,7 @@
     {
       "name": "Alicia Smith",
       "tour": "WTA",
-      "rank": 1136,
+      "rank": 1137,
       "country": "AUS",
       "priorRank": 1058,
       "points": 13,
@@ -34421,7 +34421,7 @@
     {
       "name": "Astrid Brune Olsen",
       "tour": "WTA",
-      "rank": 1115,
+      "rank": 1116,
       "country": "NOR",
       "priorRank": 1123,
       "points": 14,
@@ -34431,7 +34431,7 @@
     {
       "name": "Lourdes Ayala",
       "tour": "WTA",
-      "rank": 838,
+      "rank": 839,
       "country": "ARG",
       "priorRank": 950,
       "points": 37,
@@ -34441,7 +34441,7 @@
     {
       "name": "Patricia Goina",
       "tour": "WTA",
-      "rank": 881,
+      "rank": 882,
       "country": "ROU",
       "priorRank": 882,
       "points": 33,
@@ -34451,7 +34451,7 @@
     {
       "name": "Elena-Teodora Cadar",
       "tour": "WTA",
-      "rank": 1008,
+      "rank": 1010,
       "country": "ROU",
       "priorRank": 1016,
       "points": 20,
@@ -34471,7 +34471,7 @@
     {
       "name": "Pietra Rivoli",
       "tour": "WTA",
-      "rank": 999,
+      "rank": 1000,
       "country": "BRA",
       "priorRank": 1006,
       "points": 20,
@@ -34481,17 +34481,17 @@
     {
       "name": "Federica Trevisan",
       "tour": "WTA",
-      "rank": 930,
+      "rank": 790,
       "country": "ITA",
       "priorRank": 929,
-      "points": 28,
+      "points": 43,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Elsa Bonelli",
       "tour": "WTA",
-      "rank": 912,
+      "rank": 913,
       "country": "SUI",
       "priorRank": 912,
       "points": 29,
@@ -34501,7 +34501,7 @@
     {
       "name": "Federica Di Sarra",
       "tour": "WTA",
-      "rank": 1031,
+      "rank": 1033,
       "country": "ITA",
       "priorRank": 1039,
       "points": 18,
@@ -34521,7 +34521,7 @@
     {
       "name": "Seda Baslilar",
       "tour": "WTA",
-      "rank": 1117,
+      "rank": 1118,
       "country": "FRA",
       "priorRank": 1208,
       "points": 14,
@@ -34531,7 +34531,7 @@
     {
       "name": "Mutsumi Uemura",
       "tour": "WTA",
-      "rank": 839,
+      "rank": 840,
       "country": "JPN",
       "priorRank": 854,
       "points": 37,
@@ -34541,7 +34541,7 @@
     {
       "name": "Jamilah Snells",
       "tour": "WTA",
-      "rank": 1025,
+      "rank": 1027,
       "country": "USA",
       "priorRank": 1031,
       "points": 19,
@@ -34551,7 +34551,7 @@
     {
       "name": "Viktoria Veleva",
       "tour": "WTA",
-      "rank": 1010,
+      "rank": 1012,
       "country": "BUL",
       "priorRank": 1018,
       "points": 20,
@@ -34571,17 +34571,17 @@
     {
       "name": "Anne Schaefer",
       "tour": "WTA",
-      "rank": 1181,
+      "rank": 1156,
       "country": "GER",
       "priorRank": 1007,
-      "points": 11,
+      "points": 12,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Katja Wiersholm",
       "tour": "WTA",
-      "rank": 1000,
+      "rank": 1001,
       "country": "NOR",
       "priorRank": 1008,
       "points": 20,
@@ -34591,7 +34591,7 @@
     {
       "name": "Ziva Falkner",
       "tour": "WTA",
-      "rank": 1001,
+      "rank": 1002,
       "country": "SLO",
       "priorRank": 1009,
       "points": 20,
@@ -34601,7 +34601,7 @@
     {
       "name": "Isabella Kruger",
       "tour": "WTA",
-      "rank": 1002,
+      "rank": 1003,
       "country": "RSA",
       "priorRank": 1010,
       "points": 20,
@@ -34631,7 +34631,7 @@
     {
       "name": "Anastasiia Gureva",
       "tour": "WTA",
-      "rank": 1014,
+      "rank": 1017,
       "country": "",
       "priorRank": 1022,
       "points": 19,
@@ -34641,7 +34641,7 @@
     {
       "name": "Victoria Mulville",
       "tour": "WTA",
-      "rank": 1004,
+      "rank": 1007,
       "country": "USA",
       "priorRank": 1012,
       "points": 20,
@@ -34651,7 +34651,7 @@
     {
       "name": "Nadia Lagaev",
       "tour": "WTA",
-      "rank": 1005,
+      "rank": 1008,
       "country": "CAN",
       "priorRank": 1013,
       "points": 20,
@@ -34661,7 +34661,7 @@
     {
       "name": "Josefina Estevez",
       "tour": "WTA",
-      "rank": 861,
+      "rank": 862,
       "country": "ARG",
       "priorRank": 892,
       "points": 35,
@@ -34701,7 +34701,7 @@
     {
       "name": "Piper Charney",
       "tour": "WTA",
-      "rank": 833,
+      "rank": 834,
       "country": "USA",
       "priorRank": 839,
       "points": 37,
@@ -34711,17 +34711,17 @@
     {
       "name": "Sara Milanese",
       "tour": "WTA",
-      "rank": 1015,
+      "rank": 1006,
       "country": "ITA",
       "priorRank": 1023,
-      "points": 19,
+      "points": 20,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Amelie Brooks",
       "tour": "WTA",
-      "rank": 1017,
+      "rank": 1019,
       "country": "GBR",
       "priorRank": 1025,
       "points": 19,
@@ -34731,7 +34731,7 @@
     {
       "name": "Heerae Im",
       "tour": "WTA",
-      "rank": 1006,
+      "rank": 1009,
       "country": "KOR",
       "priorRank": 1014,
       "points": 20,
@@ -34751,7 +34751,7 @@
     {
       "name": "Mila Masic",
       "tour": "WTA",
-      "rank": 1130,
+      "rank": 1131,
       "country": "SRB",
       "priorRank": 1072,
       "points": 13,
@@ -34761,7 +34761,7 @@
     {
       "name": "Aliesia Reva",
       "tour": "WTA",
-      "rank": 1022,
+      "rank": 1024,
       "country": "UKR",
       "priorRank": 1029,
       "points": 19,
@@ -34771,7 +34771,7 @@
     {
       "name": "Emma Slavikova",
       "tour": "WTA",
-      "rank": 877,
+      "rank": 878,
       "country": "CZE",
       "priorRank": 869,
       "points": 33,
@@ -34781,7 +34781,7 @@
     {
       "name": "Anna Shkutova",
       "tour": "WTA",
-      "rank": 1033,
+      "rank": 1035,
       "country": "",
       "priorRank": 1044,
       "points": 18,
@@ -34831,7 +34831,7 @@
     {
       "name": "Avery Alexander",
       "tour": "WTA",
-      "rank": 1026,
+      "rank": 1029,
       "country": "CAN",
       "priorRank": 1034,
       "points": 18,
@@ -34841,7 +34841,7 @@
     {
       "name": "Ada Kumru",
       "tour": "WTA",
-      "rank": 1027,
+      "rank": 1030,
       "country": "TUR",
       "priorRank": 1035,
       "points": 18,
@@ -34851,7 +34851,7 @@
     {
       "name": "Maria Portillo Ramirez",
       "tour": "WTA",
-      "rank": 1208,
+      "rank": 1210,
       "country": "MEX",
       "priorRank": 1215,
       "points": 10,
@@ -34861,7 +34861,7 @@
     {
       "name": "Annabelle Xu",
       "tour": "WTA",
-      "rank": 1039,
+      "rank": 1040,
       "country": "CAN",
       "priorRank": 1049,
       "points": 17,
@@ -34871,17 +34871,17 @@
     {
       "name": "Eleonora Alvisi",
       "tour": "WTA",
-      "rank": 1029,
+      "rank": 1016,
       "country": "ITA",
       "priorRank": 1080,
-      "points": 18,
+      "points": 19,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Laura Bohner",
       "tour": "WTA",
-      "rank": 1122,
+      "rank": 1123,
       "country": "GER",
       "priorRank": 1107,
       "points": 13,
@@ -34901,7 +34901,7 @@
     {
       "name": "Polina Skliar",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "UKR",
       "priorRank": 1273,
       "points": 9,
@@ -34911,7 +34911,7 @@
     {
       "name": "Jahnie Van Zyl",
       "tour": "WTA",
-      "rank": 876,
+      "rank": 877,
       "country": "RSA",
       "priorRank": 878,
       "points": 33,
@@ -34921,10 +34921,10 @@
     {
       "name": "Daniela Vismane",
       "tour": "WTA",
-      "rank": 1007,
+      "rank": 996,
       "country": "LAT",
       "priorRank": 1027,
-      "points": 20,
+      "points": 21,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
@@ -34961,7 +34961,7 @@
     {
       "name": "Sofia Martianova",
       "tour": "WTA",
-      "rank": 1113,
+      "rank": 1114,
       "country": "",
       "priorRank": 1121,
       "points": 14,
@@ -34981,7 +34981,7 @@
     {
       "name": "Maaya Rajeshwaran Revathi",
       "tour": "WTA",
-      "rank": 1028,
+      "rank": 1031,
       "country": "IND",
       "priorRank": 1037,
       "points": 18,
@@ -35001,7 +35001,7 @@
     {
       "name": "Tea Kovacevic",
       "tour": "WTA",
-      "rank": 1038,
+      "rank": 1039,
       "country": "BIH",
       "priorRank": 1048,
       "points": 17,
@@ -35041,7 +35041,7 @@
     {
       "name": "Yu Jun Lin",
       "tour": "WTA",
-      "rank": 1003,
+      "rank": 1004,
       "country": "CHN",
       "priorRank": 1011,
       "points": 20,
@@ -35061,7 +35061,7 @@
     {
       "name": "Francesca Parcelli",
       "tour": "WTA",
-      "rank": 1018,
+      "rank": 1020,
       "country": "GER",
       "priorRank": 1040,
       "points": 19,
@@ -35121,7 +35121,7 @@
     {
       "name": "Raquel Gonzalez Vilar",
       "tour": "WTA",
-      "rank": 1191,
+      "rank": 1193,
       "country": "ESP",
       "priorRank": 1195,
       "points": 11,
@@ -35171,7 +35171,7 @@
     {
       "name": "Claudia Sofia Martinez Solis",
       "tour": "WTA",
-      "rank": 1140,
+      "rank": 1141,
       "country": "MEX",
       "priorRank": 1146,
       "points": 13,
@@ -35211,7 +35211,7 @@
     {
       "name": "Mara Gae",
       "tour": "WTA",
-      "rank": 1119,
+      "rank": 1120,
       "country": "ROU",
       "priorRank": 1125,
       "points": 13,
@@ -35261,7 +35261,7 @@
     {
       "name": "Adriana Tkachenko",
       "tour": "WTA",
-      "rank": 1152,
+      "rank": 1153,
       "country": "UKR",
       "priorRank": 1134,
       "points": 12,
@@ -35321,7 +35321,7 @@
     {
       "name": "Sonja Zhenikhova",
       "tour": "WTA",
-      "rank": 1034,
+      "rank": 1036,
       "country": "GER",
       "priorRank": 984,
       "points": 18,
@@ -35361,7 +35361,7 @@
     {
       "name": "Barbara Dessolis",
       "tour": "WTA",
-      "rank": 1111,
+      "rank": 1112,
       "country": "ITA",
       "priorRank": 1095,
       "points": 14,
@@ -35371,7 +35371,7 @@
     {
       "name": "Polina Kaibekova",
       "tour": "WTA",
-      "rank": 1279,
+      "rank": 1280,
       "country": "",
       "priorRank": 1290,
       "points": 9,
@@ -35381,7 +35381,7 @@
     {
       "name": "Fang An Lin",
       "tour": "WTA",
-      "rank": 1199,
+      "rank": 1201,
       "country": "TPE",
       "priorRank": 1250,
       "points": 11,
@@ -35401,7 +35401,7 @@
     {
       "name": "Alisa Danilova",
       "tour": "WTA",
-      "rank": 1036,
+      "rank": 1037,
       "country": "",
       "priorRank": 1045,
       "points": 18,
@@ -35421,7 +35421,7 @@
     {
       "name": "Maria Paulina Perez Garcia",
       "tour": "WTA",
-      "rank": 1144,
+      "rank": 1145,
       "country": "COL",
       "priorRank": 1151,
       "points": 12,
@@ -35481,7 +35481,7 @@
     {
       "name": "Maria Andrienko",
       "tour": "WTA",
-      "rank": 900,
+      "rank": 901,
       "country": "",
       "priorRank": 897,
       "points": 31,
@@ -35491,7 +35491,7 @@
     {
       "name": "Esther Lopez Alcaraz",
       "tour": "WTA",
-      "rank": 1023,
+      "rank": 1025,
       "country": "ESP",
       "priorRank": 1030,
       "points": 19,
@@ -35501,7 +35501,7 @@
     {
       "name": "Summer Yardley",
       "tour": "WTA",
-      "rank": 1107,
+      "rank": 1108,
       "country": "GBR",
       "priorRank": 1116,
       "points": 14,
@@ -35511,7 +35511,7 @@
     {
       "name": "Inka Wawrzkiewicz",
       "tour": "WTA",
-      "rank": 1193,
+      "rank": 1195,
       "country": "POL",
       "priorRank": 1199,
       "points": 11,
@@ -35521,7 +35521,7 @@
     {
       "name": "Giulia Paterno",
       "tour": "WTA",
-      "rank": 1112,
+      "rank": 1113,
       "country": "ITA",
       "priorRank": 1120,
       "points": 14,
@@ -35531,7 +35531,7 @@
     {
       "name": "Maria Mikhailova",
       "tour": "WTA",
-      "rank": 1113,
+      "rank": 1114,
       "country": "",
       "priorRank": 1121,
       "points": 14,
@@ -35541,7 +35541,7 @@
     {
       "name": "Anri Nagata",
       "tour": "WTA",
-      "rank": 1195,
+      "rank": 1197,
       "country": "JPN",
       "priorRank": 1204,
       "points": 11,
@@ -35561,7 +35561,7 @@
     {
       "name": "Paola Lopez",
       "tour": "WTA",
-      "rank": 1200,
+      "rank": 1202,
       "country": "USA",
       "priorRank": 1098,
       "points": 11,
@@ -35591,7 +35591,7 @@
     {
       "name": "Maria Jose Sanchez Uribe",
       "tour": "WTA",
-      "rank": 925,
+      "rank": 926,
       "country": "COL",
       "priorRank": 924,
       "points": 28,
@@ -35611,7 +35611,7 @@
     {
       "name": "Sophie Greiner",
       "tour": "WTA",
-      "rank": 1019,
+      "rank": 1021,
       "country": "GER",
       "priorRank": 1041,
       "points": 19,
@@ -35641,7 +35641,7 @@
     {
       "name": "Cherry Kim",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "KOR",
       "priorRank": 1503,
       "points": 3,
@@ -35671,7 +35671,7 @@
     {
       "name": "Eva Lopez",
       "tour": "WTA",
-      "rank": 1105,
+      "rank": 1106,
       "country": "AUS",
       "priorRank": 1115,
       "points": 14,
@@ -35681,7 +35681,7 @@
     {
       "name": "Warona Mdlulwa",
       "tour": "WTA",
-      "rank": 1106,
+      "rank": 1107,
       "country": "RSA",
       "priorRank": 1094,
       "points": 14,
@@ -35691,7 +35691,7 @@
     {
       "name": "Alexandra Irina Anghel",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "ROU",
       "priorRank": 1184,
       "points": 4,
@@ -35701,7 +35701,7 @@
     {
       "name": "Maria Kononova",
       "tour": "WTA",
-      "rank": 1158,
+      "rank": 1160,
       "country": "",
       "priorRank": 1162,
       "points": 12,
@@ -35721,7 +35721,7 @@
     {
       "name": "Mia Wainwright",
       "tour": "WTA",
-      "rank": 1109,
+      "rank": 1110,
       "country": "GBR",
       "priorRank": 1118,
       "points": 14,
@@ -35731,7 +35731,7 @@
     {
       "name": "Cindy Langlais",
       "tour": "WTA",
-      "rank": 1110,
+      "rank": 1111,
       "country": "FRA",
       "priorRank": 1119,
       "points": 14,
@@ -35741,7 +35741,7 @@
     {
       "name": "Jeong Moon",
       "tour": "WTA",
-      "rank": 1229,
+      "rank": 1230,
       "country": "KOR",
       "priorRank": 1235,
       "points": 10,
@@ -35751,7 +35751,7 @@
     {
       "name": "Georgina Groth",
       "tour": "WTA",
-      "rank": 1284,
+      "rank": 1285,
       "country": "GER",
       "priorRank": 1293,
       "points": 9,
@@ -35761,7 +35761,7 @@
     {
       "name": "Giuliana Bestetti",
       "tour": "WTA",
-      "rank": 1240,
+      "rank": 1241,
       "country": "ITA",
       "priorRank": 1245,
       "points": 10,
@@ -35781,7 +35781,7 @@
     {
       "name": "Emma Van Poppel",
       "tour": "WTA",
-      "rank": 1116,
+      "rank": 1117,
       "country": "NED",
       "priorRank": 1124,
       "points": 14,
@@ -35791,7 +35791,7 @@
     {
       "name": "Mavie Osterreicher",
       "tour": "WTA",
-      "rank": 1143,
+      "rank": 1144,
       "country": "AUT",
       "priorRank": 1148,
       "points": 13,
@@ -35811,7 +35811,7 @@
     {
       "name": "Himari Sato",
       "tour": "WTA",
-      "rank": 1169,
+      "rank": 1171,
       "country": "JPN",
       "priorRank": 1150,
       "points": 12,
@@ -35841,7 +35841,7 @@
     {
       "name": "Freya Christie",
       "tour": "WTA",
-      "rank": 1207,
+      "rank": 1209,
       "country": "GBR",
       "priorRank": 1214,
       "points": 10,
@@ -35851,7 +35851,7 @@
     {
       "name": "Jamie Loeb",
       "tour": "WTA",
-      "rank": 1121,
+      "rank": 1122,
       "country": "USA",
       "priorRank": 1127,
       "points": 13,
@@ -35871,7 +35871,7 @@
     {
       "name": "Ava Beck",
       "tour": "WTA",
-      "rank": 1122,
+      "rank": 1123,
       "country": "AUS",
       "priorRank": 1128,
       "points": 13,
@@ -35891,7 +35891,7 @@
     {
       "name": "Polina Isakova",
       "tour": "WTA",
-      "rank": 1124,
+      "rank": 1125,
       "country": "UKR",
       "priorRank": 1129,
       "points": 13,
@@ -35901,7 +35901,7 @@
     {
       "name": "Mckenna Schaefbauer",
       "tour": "WTA",
-      "rank": 1126,
+      "rank": 1127,
       "country": "USA",
       "priorRank": 1132,
       "points": 13,
@@ -35911,7 +35911,7 @@
     {
       "name": "Carolina Gomez",
       "tour": "WTA",
-      "rank": 1128,
+      "rank": 1129,
       "country": "ESP",
       "priorRank": 1136,
       "points": 13,
@@ -35921,7 +35921,7 @@
     {
       "name": "Joy De Zeeuw",
       "tour": "WTA",
-      "rank": 1218,
+      "rank": 1219,
       "country": "NED",
       "priorRank": 1224,
       "points": 10,
@@ -35941,7 +35941,7 @@
     {
       "name": "Sun Min Ha",
       "tour": "WTA",
-      "rank": 1218,
+      "rank": 1219,
       "country": "KOR",
       "priorRank": 1224,
       "points": 10,
@@ -35951,7 +35951,7 @@
     {
       "name": "Ava Monet Sycamore",
       "tour": "WTA",
-      "rank": 1129,
+      "rank": 1130,
       "country": "AUS",
       "priorRank": 1138,
       "points": 13,
@@ -35961,7 +35961,7 @@
     {
       "name": "Kira Matushkina",
       "tour": "WTA",
-      "rank": 1131,
+      "rank": 1132,
       "country": "",
       "priorRank": 1139,
       "points": 13,
@@ -35971,7 +35971,7 @@
     {
       "name": "Dusica Popovski",
       "tour": "WTA",
-      "rank": 1133,
+      "rank": 1134,
       "country": "SRB",
       "priorRank": 1141,
       "points": 13,
@@ -35981,7 +35981,7 @@
     {
       "name": "Sofia Suslova",
       "tour": "WTA",
-      "rank": 1156,
+      "rank": 1158,
       "country": "",
       "priorRank": 1160,
       "points": 12,
@@ -35991,7 +35991,7 @@
     {
       "name": "Ma Ruoxi",
       "tour": "WTA",
-      "rank": 1134,
+      "rank": 1135,
       "country": "CHN",
       "priorRank": 1142,
       "points": 13,
@@ -36001,7 +36001,7 @@
     {
       "name": "Yujin Ahn",
       "tour": "WTA",
-      "rank": 1184,
+      "rank": 1186,
       "country": "KOR",
       "priorRank": 1183,
       "points": 11,
@@ -36011,7 +36011,7 @@
     {
       "name": "Marcella Dessolis",
       "tour": "WTA",
-      "rank": 1160,
+      "rank": 1162,
       "country": "ITA",
       "priorRank": 1165,
       "points": 12,
@@ -36031,7 +36031,7 @@
     {
       "name": "Kaat Coppez",
       "tour": "WTA",
-      "rank": 1200,
+      "rank": 1202,
       "country": "BEL",
       "priorRank": 1209,
       "points": 11,
@@ -36041,7 +36041,7 @@
     {
       "name": "Jennifer Dourado",
       "tour": "WTA",
-      "rank": 1164,
+      "rank": 1166,
       "country": "BRA",
       "priorRank": 1096,
       "points": 12,
@@ -36051,7 +36051,7 @@
     {
       "name": "Ingrid Millan",
       "tour": "WTA",
-      "rank": 1242,
+      "rank": 1243,
       "country": "MEX",
       "priorRank": 1248,
       "points": 10,
@@ -36071,7 +36071,7 @@
     {
       "name": "Beatris Spasova",
       "tour": "WTA",
-      "rank": 1198,
+      "rank": 1200,
       "country": "BUL",
       "priorRank": 1149,
       "points": 11,
@@ -36091,7 +36091,7 @@
     {
       "name": "Vitalia Diatchenko",
       "tour": "WTA",
-      "rank": 1290,
+      "rank": 1291,
       "country": "",
       "priorRank": 1258,
       "points": 8,
@@ -36101,7 +36101,7 @@
     {
       "name": "Tayisiya Morderger",
       "tour": "WTA",
-      "rank": 1286,
+      "rank": 1287,
       "country": "GER",
       "priorRank": 1257,
       "points": 8,
@@ -36111,7 +36111,7 @@
     {
       "name": "Sara Lanca",
       "tour": "WTA",
-      "rank": 1206,
+      "rank": 1208,
       "country": "POR",
       "priorRank": 1173,
       "points": 10,
@@ -36121,7 +36121,7 @@
     {
       "name": "Mariana Isabel Higuita Barraza",
       "tour": "WTA",
-      "rank": 1145,
+      "rank": 1146,
       "country": "COL",
       "priorRank": 1152,
       "points": 12,
@@ -36131,7 +36131,7 @@
     {
       "name": "Tori Russell",
       "tour": "WTA",
-      "rank": 1148,
+      "rank": 1149,
       "country": "AUS",
       "priorRank": 1154,
       "points": 12,
@@ -36141,7 +36141,7 @@
     {
       "name": "Anastasia Sysoeva",
       "tour": "WTA",
-      "rank": 1150,
+      "rank": 1151,
       "country": "USA",
       "priorRank": 1156,
       "points": 12,
@@ -36161,7 +36161,7 @@
     {
       "name": "Jantje Tilbuerger",
       "tour": "WTA",
-      "rank": 1150,
+      "rank": 1151,
       "country": "GER",
       "priorRank": 1156,
       "points": 12,
@@ -36171,7 +36171,7 @@
     {
       "name": "Gabriella Price",
       "tour": "WTA",
-      "rank": 1037,
+      "rank": 1038,
       "country": "USA",
       "priorRank": 1067,
       "points": 17,
@@ -36181,7 +36181,7 @@
     {
       "name": "Emery Combs",
       "tour": "WTA",
-      "rank": 1153,
+      "rank": 1154,
       "country": "USA",
       "priorRank": 1158,
       "points": 12,
@@ -36221,7 +36221,7 @@
     {
       "name": "Kelly Keller",
       "tour": "WTA",
-      "rank": 1131,
+      "rank": 1132,
       "country": "USA",
       "priorRank": 1139,
       "points": 13,
@@ -36231,7 +36231,7 @@
     {
       "name": "Margaret Sohns",
       "tour": "WTA",
-      "rank": 1157,
+      "rank": 1159,
       "country": "USA",
       "priorRank": 1161,
       "points": 12,
@@ -36241,7 +36241,7 @@
     {
       "name": "Laetitia Pulchartova",
       "tour": "WTA",
-      "rank": 1137,
+      "rank": 1138,
       "country": "CZE",
       "priorRank": 1144,
       "points": 13,
@@ -36251,7 +36251,7 @@
     {
       "name": "Anastasia Safta",
       "tour": "WTA",
-      "rank": 1138,
+      "rank": 1139,
       "country": "ROU",
       "priorRank": 1164,
       "points": 13,
@@ -36261,7 +36261,7 @@
     {
       "name": "Ellie Daniels",
       "tour": "WTA",
-      "rank": 1218,
+      "rank": 1219,
       "country": "CAN",
       "priorRank": 1185,
       "points": 10,
@@ -36271,7 +36271,7 @@
     {
       "name": "Danielle Dai Chapman",
       "tour": "WTA",
-      "rank": 1161,
+      "rank": 1163,
       "country": "RSA",
       "priorRank": 1166,
       "points": 12,
@@ -36291,7 +36291,7 @@
     {
       "name": "Riko Kikawada",
       "tour": "WTA",
-      "rank": 903,
+      "rank": 904,
       "country": "JPN",
       "priorRank": 966,
       "points": 31,
@@ -36301,7 +36301,7 @@
     {
       "name": "Andrea Obradovic",
       "tour": "WTA",
-      "rank": 1196,
+      "rank": 1198,
       "country": "SRB",
       "priorRank": 1205,
       "points": 11,
@@ -36311,7 +36311,7 @@
     {
       "name": "Eugenia Zozaya Menendez",
       "tour": "WTA",
-      "rank": 1142,
+      "rank": 1143,
       "country": "ESP",
       "priorRank": 1147,
       "points": 13,
@@ -36321,7 +36321,7 @@
     {
       "name": "Micol Salvadori",
       "tour": "WTA",
-      "rank": 1164,
+      "rank": 1166,
       "country": "ITA",
       "priorRank": 1168,
       "points": 12,
@@ -36341,7 +36341,7 @@
     {
       "name": "Brandy Walker",
       "tour": "WTA",
-      "rank": 1242,
+      "rank": 1243,
       "country": "USA",
       "priorRank": 1248,
       "points": 10,
@@ -36351,7 +36351,7 @@
     {
       "name": "Liel Marlies Rothensteiner",
       "tour": "WTA",
-      "rank": 1277,
+      "rank": 1278,
       "country": "AUT",
       "priorRank": 1285,
       "points": 9,
@@ -36381,7 +36381,7 @@
     {
       "name": "Marian Gomez Pezuela Cano",
       "tour": "WTA",
-      "rank": 1173,
+      "rank": 1175,
       "country": "MEX",
       "priorRank": 1103,
       "points": 11,
@@ -36401,7 +36401,7 @@
     {
       "name": "Tegan Bush",
       "tour": "WTA",
-      "rank": 1211,
+      "rank": 1213,
       "country": "GBR",
       "priorRank": 1218,
       "points": 10,
@@ -36411,7 +36411,7 @@
     {
       "name": "Leonie Rabl",
       "tour": "WTA",
-      "rank": 1149,
+      "rank": 1150,
       "country": "AUT",
       "priorRank": 1155,
       "points": 12,
@@ -36421,7 +36421,7 @@
     {
       "name": "Leticia Garcia Vidal",
       "tour": "WTA",
-      "rank": 1175,
+      "rank": 1178,
       "country": "BRA",
       "priorRank": 1175,
       "points": 11,
@@ -36431,7 +36431,7 @@
     {
       "name": "Briyana Ivanova",
       "tour": "WTA",
-      "rank": 1177,
+      "rank": 1180,
       "country": "BUL",
       "priorRank": 1177,
       "points": 11,
@@ -36441,7 +36441,7 @@
     {
       "name": "India Houghton",
       "tour": "WTA",
-      "rank": 1177,
+      "rank": 1180,
       "country": "USA",
       "priorRank": 1177,
       "points": 11,
@@ -36461,7 +36461,7 @@
     {
       "name": "Remika Ohashi",
       "tour": "WTA",
-      "rank": 1182,
+      "rank": 1184,
       "country": "JPN",
       "priorRank": 1181,
       "points": 11,
@@ -36471,7 +36471,7 @@
     {
       "name": "Lenka Munzarova",
       "tour": "WTA",
-      "rank": 1183,
+      "rank": 1185,
       "country": "CZE",
       "priorRank": 1182,
       "points": 11,
@@ -36481,7 +36481,7 @@
     {
       "name": "Aleksandra Iankovskaia",
       "tour": "WTA",
-      "rank": 1155,
+      "rank": 1157,
       "country": "",
       "priorRank": 1159,
       "points": 12,
@@ -36491,7 +36491,7 @@
     {
       "name": "Adela Polakovicova",
       "tour": "WTA",
-      "rank": 1185,
+      "rank": 1187,
       "country": "SVK",
       "priorRank": 1185,
       "points": 11,
@@ -36501,7 +36501,7 @@
     {
       "name": "Anastasia Efremova",
       "tour": "WTA",
-      "rank": 1159,
+      "rank": 1161,
       "country": "",
       "priorRank": 1185,
       "points": 12,
@@ -36511,7 +36511,7 @@
     {
       "name": "Charlotte Narti",
       "tour": "WTA",
-      "rank": 1185,
+      "rank": 1187,
       "country": "FRA",
       "priorRank": 1185,
       "points": 11,
@@ -36521,7 +36521,7 @@
     {
       "name": "Dora Miskovic",
       "tour": "WTA",
-      "rank": 1185,
+      "rank": 1187,
       "country": "CRO",
       "priorRank": 1185,
       "points": 11,
@@ -36531,7 +36531,7 @@
     {
       "name": "Iva Marinkovic",
       "tour": "WTA",
-      "rank": 1104,
+      "rank": 1105,
       "country": "SWE",
       "priorRank": 1185,
       "points": 14,
@@ -36561,7 +36561,7 @@
     {
       "name": "Sofiia Bielinska",
       "tour": "WTA",
-      "rank": 1147,
+      "rank": 1148,
       "country": "UKR",
       "priorRank": 1185,
       "points": 12,
@@ -36571,7 +36571,7 @@
     {
       "name": "Maja Pawelska",
       "tour": "WTA",
-      "rank": 1301,
+      "rank": 1302,
       "country": "POL",
       "priorRank": 1196,
       "points": 8,
@@ -36581,7 +36581,7 @@
     {
       "name": "Kseniia Ruchkina",
       "tour": "WTA",
-      "rank": 1162,
+      "rank": 1164,
       "country": "",
       "priorRank": 1167,
       "points": 12,
@@ -36591,7 +36591,7 @@
     {
       "name": "Giulia Alessia Monteleone",
       "tour": "WTA",
-      "rank": 1254,
+      "rank": 1255,
       "country": "ITA",
       "priorRank": 1262,
       "points": 9,
@@ -36601,7 +36601,7 @@
     {
       "name": "Maelle Leclercq",
       "tour": "WTA",
-      "rank": 1223,
+      "rank": 1224,
       "country": "FRA",
       "priorRank": 1228,
       "points": 10,
@@ -36611,7 +36611,7 @@
     {
       "name": "Ciara Moore",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "GBR",
       "priorRank": 1462,
       "points": 4,
@@ -36621,7 +36621,7 @@
     {
       "name": "Vlada Ekshibarova",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "UZB",
       "priorRank": 1462,
       "points": 4,
@@ -36631,7 +36631,7 @@
     {
       "name": "Elizabeth Ionescu",
       "tour": "WTA",
-      "rank": 1226,
+      "rank": 1227,
       "country": "USA",
       "priorRank": 1232,
       "points": 10,
@@ -36651,7 +36651,7 @@
     {
       "name": "Catarina Mellei Ibiaraba Melleiro",
       "tour": "WTA",
-      "rank": 1194,
+      "rank": 1196,
       "country": "BRA",
       "priorRank": 1202,
       "points": 11,
@@ -36661,7 +36661,7 @@
     {
       "name": "Rachael Smith",
       "tour": "WTA",
-      "rank": 1237,
+      "rank": 1238,
       "country": "USA",
       "priorRank": 1242,
       "points": 10,
@@ -36681,7 +36681,7 @@
     {
       "name": "Nika Hurkacz",
       "tour": "WTA",
-      "rank": 1175,
+      "rank": 1178,
       "country": "POL",
       "priorRank": 1175,
       "points": 11,
@@ -36741,7 +36741,7 @@
     {
       "name": "Serena Williams",
       "tour": "WTA",
-      "rank": 1203,
+      "rank": 1205,
       "country": "USA",
       "priorRank": 1211,
       "points": 10,
@@ -36751,7 +36751,7 @@
     {
       "name": "Renee Alame",
       "tour": "WTA",
-      "rank": 1171,
+      "rank": 1173,
       "country": "AUS",
       "priorRank": 1171,
       "points": 11,
@@ -36761,17 +36761,17 @@
     {
       "name": "Paula Ormaechea",
       "tour": "WTA",
-      "rank": 1040,
+      "rank": 1005,
       "country": "ARG",
       "priorRank": 1050,
-      "points": 17,
+      "points": 20,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Maribella Zamarripa",
       "tour": "WTA",
-      "rank": 1204,
+      "rank": 1206,
       "country": "USA",
       "priorRank": 1212,
       "points": 10,
@@ -36781,7 +36781,7 @@
     {
       "name": "Candela Vazquez",
       "tour": "WTA",
-      "rank": 1209,
+      "rank": 1211,
       "country": "ARG",
       "priorRank": 1216,
       "points": 10,
@@ -36791,7 +36791,7 @@
     {
       "name": "Mia Kupres",
       "tour": "WTA",
-      "rank": 1459,
+      "rank": 1460,
       "country": "CAN",
       "priorRank": 1458,
       "points": 4,
@@ -36801,7 +36801,7 @@
     {
       "name": "Sarah Mildren",
       "tour": "WTA",
-      "rank": 1213,
+      "rank": 1214,
       "country": "AUS",
       "priorRank": 1219,
       "points": 10,
@@ -36811,7 +36811,7 @@
     {
       "name": "Doga Turkmen",
       "tour": "WTA",
-      "rank": 1294,
+      "rank": 1295,
       "country": "TUR",
       "priorRank": 1335,
       "points": 8,
@@ -36821,7 +36821,7 @@
     {
       "name": "Anna Bazderova",
       "tour": "WTA",
-      "rank": 1177,
+      "rank": 1180,
       "country": "",
       "priorRank": 1177,
       "points": 11,
@@ -36831,7 +36831,7 @@
     {
       "name": "Ekaterina Dotsenko",
       "tour": "WTA",
-      "rank": 1214,
+      "rank": 1215,
       "country": "",
       "priorRank": 1220,
       "points": 10,
@@ -36841,7 +36841,7 @@
     {
       "name": "Gio Jang",
       "tour": "WTA",
-      "rank": 1215,
+      "rank": 1216,
       "country": "KOR",
       "priorRank": 1221,
       "points": 10,
@@ -36851,7 +36851,7 @@
     {
       "name": "Leticia Romanova",
       "tour": "WTA",
-      "rank": 1217,
+      "rank": 1218,
       "country": "GBR",
       "priorRank": 1223,
       "points": 10,
@@ -36881,7 +36881,7 @@
     {
       "name": "Donna Le Roux",
       "tour": "WTA",
-      "rank": 1221,
+      "rank": 1222,
       "country": "RSA",
       "priorRank": 1226,
       "points": 10,
@@ -36891,7 +36891,7 @@
     {
       "name": "Carolina Dibenedetto",
       "tour": "WTA",
-      "rank": 1222,
+      "rank": 1223,
       "country": "ITA",
       "priorRank": 1227,
       "points": 10,
@@ -36901,7 +36901,7 @@
     {
       "name": "Matylda Burylo",
       "tour": "WTA",
-      "rank": 1223,
+      "rank": 1224,
       "country": "NOR",
       "priorRank": 1228,
       "points": 10,
@@ -36921,7 +36921,7 @@
     {
       "name": "Violeta Martinez",
       "tour": "WTA",
-      "rank": 1251,
+      "rank": 1252,
       "country": "USA",
       "priorRank": 1260,
       "points": 9,
@@ -36931,7 +36931,7 @@
     {
       "name": "Jiho Shin",
       "tour": "WTA",
-      "rank": 1254,
+      "rank": 1255,
       "country": "KOR",
       "priorRank": 1262,
       "points": 9,
@@ -36941,7 +36941,7 @@
     {
       "name": "Yoana Konstantinova",
       "tour": "WTA",
-      "rank": 1229,
+      "rank": 1230,
       "country": "BUL",
       "priorRank": 1235,
       "points": 10,
@@ -36951,7 +36951,7 @@
     {
       "name": "Camila Markus",
       "tour": "WTA",
-      "rank": 1258,
+      "rank": 1259,
       "country": "ARG",
       "priorRank": 1266,
       "points": 9,
@@ -36961,7 +36961,7 @@
     {
       "name": "Daniela Darta Feldmane",
       "tour": "WTA",
-      "rank": 1233,
+      "rank": 1234,
       "country": "LAT",
       "priorRank": 1203,
       "points": 10,
@@ -36971,7 +36971,7 @@
     {
       "name": "Julie Myatovic",
       "tour": "WTA",
-      "rank": 1233,
+      "rank": 1234,
       "country": "FRA",
       "priorRank": 1238,
       "points": 10,
@@ -36981,7 +36981,7 @@
     {
       "name": "Madhurima Sawant",
       "tour": "WTA",
-      "rank": 1166,
+      "rank": 1168,
       "country": "IND",
       "priorRank": 1169,
       "points": 12,
@@ -36991,7 +36991,7 @@
     {
       "name": "Melissa Boyden",
       "tour": "WTA",
-      "rank": 1233,
+      "rank": 1234,
       "country": "GBR",
       "priorRank": 1238,
       "points": 10,
@@ -37001,7 +37001,7 @@
     {
       "name": "Jacqueline Cabaj Awad",
       "tour": "WTA",
-      "rank": 1237,
+      "rank": 1238,
       "country": "SWE",
       "priorRank": 1242,
       "points": 10,
@@ -37011,7 +37011,7 @@
     {
       "name": "Lois Newberry",
       "tour": "WTA",
-      "rank": 1264,
+      "rank": 1265,
       "country": "GBR",
       "priorRank": 1272,
       "points": 9,
@@ -37021,7 +37021,7 @@
     {
       "name": "Lucia Natal Gomez",
       "tour": "WTA",
-      "rank": 1237,
+      "rank": 1238,
       "country": "ESP",
       "priorRank": 1242,
       "points": 10,
@@ -37041,7 +37041,7 @@
     {
       "name": "Mariam Atia",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "EGY",
       "priorRank": 1273,
       "points": 9,
@@ -37051,7 +37051,7 @@
     {
       "name": "Yuka Hosoki",
       "tour": "WTA",
-      "rank": 1306,
+      "rank": 1307,
       "country": "JPN",
       "priorRank": 1311,
       "points": 8,
@@ -37081,7 +37081,7 @@
     {
       "name": "Alba Maria Coromina Boluda",
       "tour": "WTA",
-      "rank": 1246,
+      "rank": 1247,
       "country": "ESP",
       "priorRank": 1251,
       "points": 10,
@@ -37111,7 +37111,7 @@
     {
       "name": "Jordyn Mcbride",
       "tour": "WTA",
-      "rank": 1437,
+      "rank": 1438,
       "country": "USA",
       "priorRank": 1434,
       "points": 5,
@@ -37121,7 +37121,7 @@
     {
       "name": "Aurora Urso",
       "tour": "WTA",
-      "rank": 1247,
+      "rank": 1248,
       "country": "ITA",
       "priorRank": 1253,
       "points": 10,
@@ -37131,7 +37131,7 @@
     {
       "name": "Claudia Gasparovic",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "AUT",
       "priorRank": 1441,
       "points": 5,
@@ -37141,7 +37141,7 @@
     {
       "name": "Nana Kawagishi",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "JPN",
       "priorRank": 1327,
       "points": 5,
@@ -37151,7 +37151,7 @@
     {
       "name": "Karman Thandi",
       "tour": "WTA",
-      "rank": 1249,
+      "rank": 1250,
       "country": "IND",
       "priorRank": 1256,
       "points": 9,
@@ -37171,7 +37171,7 @@
     {
       "name": "Naoko Eto",
       "tour": "WTA",
-      "rank": 1287,
+      "rank": 1288,
       "country": "JPN",
       "priorRank": 1296,
       "points": 8,
@@ -37191,7 +37191,7 @@
     {
       "name": "Yuyao Li",
       "tour": "WTA",
-      "rank": 1289,
+      "rank": 1290,
       "country": "CHN",
       "priorRank": 1298,
       "points": 8,
@@ -37211,17 +37211,17 @@
     {
       "name": "Carla Giambelli",
       "tour": "WTA",
-      "rank": 1212,
+      "rank": 1177,
       "country": "ITA",
       "priorRank": 1259,
-      "points": 10,
+      "points": 11,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Brenda Fruhvirtova",
       "tour": "WTA",
-      "rank": 1293,
+      "rank": 1294,
       "country": "CZE",
       "priorRank": 1174,
       "points": 8,
@@ -37231,7 +37231,7 @@
     {
       "name": "Kashish Bhatia",
       "tour": "WTA",
-      "rank": 1251,
+      "rank": 1252,
       "country": "IND",
       "priorRank": 1260,
       "points": 9,
@@ -37241,7 +37241,7 @@
     {
       "name": "Naomi Mckenzie",
       "tour": "WTA",
-      "rank": 1301,
+      "rank": 1302,
       "country": "AUS",
       "priorRank": 1163,
       "points": 8,
@@ -37261,7 +37261,7 @@
     {
       "name": "Ariadna Garcia Patron Canals",
       "tour": "WTA",
-      "rank": 1254,
+      "rank": 1255,
       "country": "ESP",
       "priorRank": 1262,
       "points": 9,
@@ -37271,7 +37271,7 @@
     {
       "name": "Gaia Squarcialupi",
       "tour": "WTA",
-      "rank": 1295,
+      "rank": 1296,
       "country": "ITA",
       "priorRank": 1302,
       "points": 8,
@@ -37281,7 +37281,7 @@
     {
       "name": "Sara Yoshida",
       "tour": "WTA",
-      "rank": 1254,
+      "rank": 1255,
       "country": "JPN",
       "priorRank": 1262,
       "points": 9,
@@ -37291,7 +37291,7 @@
     {
       "name": "Anika Jaskova",
       "tour": "WTA",
-      "rank": 1139,
+      "rank": 1140,
       "country": "SVK",
       "priorRank": 1145,
       "points": 13,
@@ -37301,7 +37301,7 @@
     {
       "name": "Mariia Drobysheva",
       "tour": "WTA",
-      "rank": 1258,
+      "rank": 1259,
       "country": "UKR",
       "priorRank": 1237,
       "points": 9,
@@ -37321,7 +37321,7 @@
     {
       "name": "Ekaterina Khodzhaeva",
       "tour": "WTA",
-      "rank": 1261,
+      "rank": 1262,
       "country": "",
       "priorRank": 1268,
       "points": 9,
@@ -37331,7 +37331,7 @@
     {
       "name": "Jennifer Luikham",
       "tour": "WTA",
-      "rank": 1261,
+      "rank": 1262,
       "country": "IND",
       "priorRank": 1268,
       "points": 9,
@@ -37341,7 +37341,7 @@
     {
       "name": "Yui Chikaraishi",
       "tour": "WTA",
-      "rank": 1301,
+      "rank": 1302,
       "country": "JPN",
       "priorRank": 1308,
       "points": 8,
@@ -37351,7 +37351,7 @@
     {
       "name": "Jade Otway",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "NZL",
       "priorRank": 1273,
       "points": 9,
@@ -37361,7 +37361,7 @@
     {
       "name": "Pilar Beveraggi Lespiau",
       "tour": "WTA",
-      "rank": 1306,
+      "rank": 1307,
       "country": "ARG",
       "priorRank": 1311,
       "points": 8,
@@ -37371,7 +37371,7 @@
     {
       "name": "Valentina Abril Bruno",
       "tour": "WTA",
-      "rank": 1240,
+      "rank": 1241,
       "country": "ARG",
       "priorRank": 1245,
       "points": 10,
@@ -37381,7 +37381,7 @@
     {
       "name": "Yashaswini Panwar",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "IND",
       "priorRank": 1273,
       "points": 9,
@@ -37391,7 +37391,7 @@
     {
       "name": "Rianna Alame",
       "tour": "WTA",
-      "rank": 1273,
+      "rank": 1274,
       "country": "AUS",
       "priorRank": 1280,
       "points": 9,
@@ -37401,7 +37401,7 @@
     {
       "name": "Feier Hu",
       "tour": "WTA",
-      "rank": 1274,
+      "rank": 1275,
       "country": "CHN",
       "priorRank": 1281,
       "points": 9,
@@ -37411,7 +37411,7 @@
     {
       "name": "Ingkar Dyussebay",
       "tour": "WTA",
-      "rank": 1274,
+      "rank": 1275,
       "country": "KAZ",
       "priorRank": 1281,
       "points": 9,
@@ -37421,7 +37421,7 @@
     {
       "name": "Jensen Diianni",
       "tour": "WTA",
-      "rank": 1274,
+      "rank": 1275,
       "country": "USA",
       "priorRank": 1281,
       "points": 9,
@@ -37431,7 +37431,7 @@
     {
       "name": "Ana Victoria Gobbi Monllau",
       "tour": "WTA",
-      "rank": 1141,
+      "rank": 1142,
       "country": "ARG",
       "priorRank": 1245,
       "points": 13,
@@ -37441,7 +37441,7 @@
     {
       "name": "Barbara Straszewska",
       "tour": "WTA",
-      "rank": 1244,
+      "rank": 1245,
       "country": "POL",
       "priorRank": 1285,
       "points": 10,
@@ -37461,7 +37461,7 @@
     {
       "name": "Kenzie Nguyen",
       "tour": "WTA",
-      "rank": 1277,
+      "rank": 1278,
       "country": "USA",
       "priorRank": 1285,
       "points": 9,
@@ -37481,7 +37481,7 @@
     {
       "name": "Sandeepti Singh Rao",
       "tour": "WTA",
-      "rank": 1244,
+      "rank": 1245,
       "country": "IND",
       "priorRank": 1285,
       "points": 10,
@@ -37491,7 +37491,7 @@
     {
       "name": "Khrystyna Vozniak",
       "tour": "WTA",
-      "rank": 1279,
+      "rank": 1280,
       "country": "UKR",
       "priorRank": 1290,
       "points": 9,
@@ -37511,7 +37511,7 @@
     {
       "name": "Aleksandra Pozarenko",
       "tour": "WTA",
-      "rank": 1196,
+      "rank": 1198,
       "country": "",
       "priorRank": 1205,
       "points": 11,
@@ -37521,7 +37521,7 @@
     {
       "name": "Amanda Nava Elkin",
       "tour": "WTA",
-      "rank": 1247,
+      "rank": 1248,
       "country": "MEX",
       "priorRank": 1253,
       "points": 10,
@@ -37531,7 +37531,7 @@
     {
       "name": "Jenna Dean",
       "tour": "WTA",
-      "rank": 1282,
+      "rank": 1283,
       "country": "USA",
       "priorRank": 1292,
       "points": 9,
@@ -37541,7 +37541,7 @@
     {
       "name": "Mariia Masiianskaia",
       "tour": "WTA",
-      "rank": 1167,
+      "rank": 1169,
       "country": "",
       "priorRank": 1099,
       "points": 12,
@@ -37551,7 +37551,7 @@
     {
       "name": "Tenika Mcgiffin",
       "tour": "WTA",
-      "rank": 1437,
+      "rank": 1438,
       "country": "AUS",
       "priorRank": 1434,
       "points": 5,
@@ -37581,7 +37581,7 @@
     {
       "name": "Yana Morderger",
       "tour": "WTA",
-      "rank": 1491,
+      "rank": 1492,
       "country": "GER",
       "priorRank": 1454,
       "points": 3,
@@ -37591,7 +37591,7 @@
     {
       "name": "Yihan Qu",
       "tour": "WTA",
-      "rank": 1288,
+      "rank": 1289,
       "country": "CHN",
       "priorRank": 1297,
       "points": 8,
@@ -37611,7 +37611,7 @@
     {
       "name": "Maria Eduarda Carbone Dos Santos",
       "tour": "WTA",
-      "rank": 1291,
+      "rank": 1292,
       "country": "BRA",
       "priorRank": 1299,
       "points": 8,
@@ -37621,7 +37621,7 @@
     {
       "name": "Carla Tomai",
       "tour": "WTA",
-      "rank": 1250,
+      "rank": 1251,
       "country": "POR",
       "priorRank": 1301,
       "points": 9,
@@ -37631,7 +37631,7 @@
     {
       "name": "Sana Garakani",
       "tour": "WTA",
-      "rank": 1456,
+      "rank": 1457,
       "country": "POR",
       "priorRank": 1496,
       "points": 4,
@@ -37651,7 +37651,7 @@
     {
       "name": "Brandelyn Fulgenzi",
       "tour": "WTA",
-      "rank": 1295,
+      "rank": 1296,
       "country": "USA",
       "priorRank": 1302,
       "points": 8,
@@ -37671,7 +37671,7 @@
     {
       "name": "Karine Job",
       "tour": "WTA",
-      "rank": 1295,
+      "rank": 1296,
       "country": "CMR",
       "priorRank": 1302,
       "points": 8,
@@ -37681,7 +37681,7 @@
     {
       "name": "Kaya Moe",
       "tour": "WTA",
-      "rank": 1295,
+      "rank": 1296,
       "country": "USA",
       "priorRank": 1302,
       "points": 8,
@@ -37701,7 +37701,7 @@
     {
       "name": "Karolina Mrazikova",
       "tour": "WTA",
-      "rank": 1016,
+      "rank": 1018,
       "country": "SVK",
       "priorRank": 1024,
       "points": 19,
@@ -37721,7 +37721,7 @@
     {
       "name": "Yui Ohwaki",
       "tour": "WTA",
-      "rank": 1304,
+      "rank": 1305,
       "country": "JPN",
       "priorRank": 1309,
       "points": 8,
@@ -37731,17 +37731,17 @@
     {
       "name": "Agnese Gentili",
       "tour": "WTA",
-      "rank": 1306,
+      "rank": 1104,
       "country": "ITA",
       "priorRank": 1336,
-      "points": 8,
+      "points": 14,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     },
     {
       "name": "Laxmisiri Dandu",
       "tour": "WTA",
-      "rank": 1306,
+      "rank": 1307,
       "country": "IND",
       "priorRank": 1311,
       "points": 8,
@@ -37751,7 +37751,7 @@
     {
       "name": "Sophie Triquart",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "GER",
       "priorRank": 1273,
       "points": 9,
@@ -37761,7 +37761,7 @@
     {
       "name": "Teodora Vlajic",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "SRB",
       "priorRank": 1311,
       "points": 9,
@@ -37781,7 +37781,7 @@
     {
       "name": "Oriana Gniewkowska",
       "tour": "WTA",
-      "rank": 1032,
+      "rank": 1034,
       "country": "POL",
       "priorRank": 1003,
       "points": 18,
@@ -37811,7 +37811,7 @@
     {
       "name": "Eva Alvarez Sande",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "ESP",
       "priorRank": 1469,
       "points": 4,
@@ -37831,7 +37831,7 @@
     {
       "name": "Alexa Karatancheva",
       "tour": "WTA",
-      "rank": 1279,
+      "rank": 1280,
       "country": "BUL",
       "priorRank": 1323,
       "points": 9,
@@ -37841,7 +37841,7 @@
     {
       "name": "Camille Allegre",
       "tour": "WTA",
-      "rank": 1134,
+      "rank": 1135,
       "country": "USA",
       "priorRank": 1142,
       "points": 13,
@@ -37901,7 +37901,7 @@
     {
       "name": "Melis Rasim",
       "tour": "WTA",
-      "rank": 1282,
+      "rank": 1283,
       "country": "BUL",
       "priorRank": 1327,
       "points": 9,
@@ -37921,7 +37921,7 @@
     {
       "name": "Emma Mazzoni",
       "tour": "WTA",
-      "rank": 1285,
+      "rank": 1286,
       "country": "FRA",
       "priorRank": 1295,
       "points": 9,
@@ -37961,7 +37961,7 @@
     {
       "name": "Emily Victoria Eigelsbach",
       "tour": "WTA",
-      "rank": 1291,
+      "rank": 1292,
       "country": "GER",
       "priorRank": 1299,
       "points": 8,
@@ -38081,7 +38081,7 @@
     {
       "name": "Warda Ait El Bachir",
       "tour": "WTA",
-      "rank": 1163,
+      "rank": 1165,
       "country": "NED",
       "priorRank": 1197,
       "points": 12,
@@ -38231,7 +38231,7 @@
     {
       "name": "Katherine Hui",
       "tour": "WTA",
-      "rank": 1167,
+      "rank": 1169,
       "country": "USA",
       "priorRank": 1205,
       "points": 12,
@@ -38271,7 +38271,7 @@
     {
       "name": "Carlotta Moccia",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "ITA",
       "priorRank": 1441,
       "points": 5,
@@ -38291,7 +38291,7 @@
     {
       "name": "Aurora Nosei",
       "tour": "WTA",
-      "rank": 1202,
+      "rank": 1204,
       "country": "ITA",
       "priorRank": 1210,
       "points": 11,
@@ -38321,7 +38321,7 @@
     {
       "name": "Vivien Sandberg",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "GER",
       "priorRank": 1441,
       "points": 4,
@@ -38411,7 +38411,7 @@
     {
       "name": "Sofia Meabe",
       "tour": "WTA",
-      "rank": 1226,
+      "rank": 1227,
       "country": "ARG",
       "priorRank": 1232,
       "points": 10,
@@ -38441,7 +38441,7 @@
     {
       "name": "Cai Jialan",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "CHN",
       "priorRank": 1503,
       "points": 3,
@@ -38451,7 +38451,7 @@
     {
       "name": "Camila Rodero Contreras",
       "tour": "WTA",
-      "rank": 1192,
+      "rank": 1194,
       "country": "CHI",
       "priorRank": 1197,
       "points": 11,
@@ -38621,7 +38621,7 @@
     {
       "name": "Cayetana Gay",
       "tour": "WTA",
-      "rank": 1437,
+      "rank": 1438,
       "country": "ESP",
       "priorRank": 1434,
       "points": 5,
@@ -38631,7 +38631,7 @@
     {
       "name": "Sofiia Nagornaia",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "ISR",
       "priorRank": 1434,
       "points": 4,
@@ -38641,7 +38641,7 @@
     {
       "name": "Angelica Sara",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "ITA",
       "priorRank": 1403,
       "points": 5,
@@ -38671,7 +38671,7 @@
     {
       "name": "Xichen Zhao",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "CHN",
       "priorRank": 1503,
       "points": 3,
@@ -38701,7 +38701,7 @@
     {
       "name": "Saumya Vig",
       "tour": "WTA",
-      "rank": 1456,
+      "rank": 1457,
       "country": "IND",
       "priorRank": 1456,
       "points": 4,
@@ -38971,7 +38971,7 @@
     {
       "name": "Anastasia Mozgaleva",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "",
       "priorRank": 1503,
       "points": 3,
@@ -38981,7 +38981,7 @@
     {
       "name": "Dominika Pirohova",
       "tour": "WTA",
-      "rank": 1437,
+      "rank": 1438,
       "country": "SVK",
       "priorRank": 1434,
       "points": 5,
@@ -38991,7 +38991,7 @@
     {
       "name": "Iulia Bucea",
       "tour": "WTA",
-      "rank": 1437,
+      "rank": 1438,
       "country": "CAN",
       "priorRank": 1434,
       "points": 5,
@@ -39001,7 +39001,7 @@
     {
       "name": "Tori Kinard",
       "tour": "WTA",
-      "rank": 1437,
+      "rank": 1438,
       "country": "USA",
       "priorRank": 1434,
       "points": 5,
@@ -39011,7 +39011,7 @@
     {
       "name": "Agustina Soto Neira",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "CHI",
       "priorRank": 1441,
       "points": 5,
@@ -39031,7 +39031,7 @@
     {
       "name": "Chrystal Lopez",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "BEL",
       "priorRank": 1441,
       "points": 4,
@@ -39041,7 +39041,7 @@
     {
       "name": "Denise Valente",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "ITA",
       "priorRank": 1469,
       "points": 4,
@@ -39061,7 +39061,7 @@
     {
       "name": "Kurumi Tamura",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "JPN",
       "priorRank": 1441,
       "points": 5,
@@ -39071,7 +39071,7 @@
     {
       "name": "Lexue Xiao",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "CHN",
       "priorRank": 1469,
       "points": 4,
@@ -39081,7 +39081,7 @@
     {
       "name": "Melina Maruca",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "ARG",
       "priorRank": 1503,
       "points": 3,
@@ -39091,7 +39091,7 @@
     {
       "name": "Milena Ciocan",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "FRA",
       "priorRank": 1469,
       "points": 4,
@@ -39101,7 +39101,7 @@
     {
       "name": "Na Kang",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "KOR",
       "priorRank": 1503,
       "points": 3,
@@ -39111,7 +39111,7 @@
     {
       "name": "Prathyusha Rachapudi",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "IND",
       "priorRank": 1441,
       "points": 5,
@@ -39121,7 +39121,7 @@
     {
       "name": "Soha Sadiq",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "IND",
       "priorRank": 1441,
       "points": 5,
@@ -39131,7 +39131,7 @@
     {
       "name": "Sol Ailin Larraya Guidi",
       "tour": "WTA",
-      "rank": 1265,
+      "rank": 1266,
       "country": "ARG",
       "priorRank": 1273,
       "points": 9,
@@ -39141,7 +39141,7 @@
     {
       "name": "Tia Messerli",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "USA",
       "priorRank": 1441,
       "points": 5,
@@ -39151,7 +39151,7 @@
     {
       "name": "Yuka Naito",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "JPN",
       "priorRank": 1441,
       "points": 5,
@@ -39161,7 +39161,7 @@
     {
       "name": "Analu Freitas",
       "tour": "WTA",
-      "rank": 1455,
+      "rank": 1456,
       "country": "POR",
       "priorRank": 1455,
       "points": 4,
@@ -39171,7 +39171,7 @@
     {
       "name": "Diana Ilie",
       "tour": "WTA",
-      "rank": 1459,
+      "rank": 1460,
       "country": "USA",
       "priorRank": 1458,
       "points": 4,
@@ -39191,7 +39191,7 @@
     {
       "name": "Carlota Corte",
       "tour": "WTA",
-      "rank": 1461,
+      "rank": 1462,
       "country": "ESP",
       "priorRank": 1460,
       "points": 4,
@@ -39201,7 +39201,7 @@
     {
       "name": "June Bjork",
       "tour": "WTA",
-      "rank": 1461,
+      "rank": 1462,
       "country": "SWE",
       "priorRank": 1460,
       "points": 4,
@@ -39211,7 +39211,7 @@
     {
       "name": "Miroslava Medvedeva",
       "tour": "WTA",
-      "rank": 1495,
+      "rank": 1496,
       "country": "",
       "priorRank": 1496,
       "points": 3,
@@ -39231,7 +39231,7 @@
     {
       "name": "Delia Gaillard",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "FRA",
       "priorRank": 1462,
       "points": 4,
@@ -39251,7 +39251,7 @@
     {
       "name": "Gurmanat Kaur Sandhu",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "AUS",
       "priorRank": 1462,
       "points": 4,
@@ -39281,7 +39281,7 @@
     {
       "name": "Olympe Lancelot",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "FRA",
       "priorRank": 1462,
       "points": 4,
@@ -39301,7 +39301,7 @@
     {
       "name": "Victoria Borodulina",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "",
       "priorRank": 1462,
       "points": 4,
@@ -39311,7 +39311,7 @@
     {
       "name": "Ylenia Zocco",
       "tour": "WTA",
-      "rank": 1463,
+      "rank": 1464,
       "country": "ITA",
       "priorRank": 1462,
       "points": 4,
@@ -39341,7 +39341,7 @@
     {
       "name": "Carolann Delaunay",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "",
       "priorRank": 1503,
       "points": 3,
@@ -39351,7 +39351,7 @@
     {
       "name": "Chiara Di Genova",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "ARG",
       "priorRank": 1469,
       "points": 4,
@@ -39361,7 +39361,7 @@
     {
       "name": "Ekaterina Kuznetsova",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "",
       "priorRank": 1441,
       "points": 5,
@@ -39371,7 +39371,7 @@
     {
       "name": "Elizabeth Jurna",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "EST",
       "priorRank": 1503,
       "points": 3,
@@ -39381,7 +39381,7 @@
     {
       "name": "Elsa Wan",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "MAS",
       "priorRank": 1469,
       "points": 4,
@@ -39391,7 +39391,7 @@
     {
       "name": "Gloria Pop",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "ROU",
       "priorRank": 1469,
       "points": 3,
@@ -39401,7 +39401,7 @@
     {
       "name": "Isabelle Cherny",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "GBR",
       "priorRank": 1469,
       "points": 4,
@@ -39411,7 +39411,7 @@
     {
       "name": "Josephine Kunz",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "SUI",
       "priorRank": 1469,
       "points": 4,
@@ -39421,7 +39421,7 @@
     {
       "name": "Lily Hutchings",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "GBR",
       "priorRank": 1503,
       "points": 3,
@@ -39431,7 +39431,7 @@
     {
       "name": "Luana Plaza Araujo",
       "tour": "WTA",
-      "rank": 1443,
+      "rank": 1444,
       "country": "BRA",
       "priorRank": 1441,
       "points": 5,
@@ -39451,7 +39451,7 @@
     {
       "name": "Malwina Rowinska",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "POL",
       "priorRank": 1469,
       "points": 4,
@@ -39461,7 +39461,7 @@
     {
       "name": "Maria Eduarda Lages",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "BRA",
       "priorRank": 1469,
       "points": 3,
@@ -39471,7 +39471,7 @@
     {
       "name": "Massiva Boukirat",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "FRA",
       "priorRank": 1469,
       "points": 4,
@@ -39511,7 +39511,7 @@
     {
       "name": "Zoe Ulrich",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "FRA",
       "priorRank": 1469,
       "points": 4,
@@ -39521,7 +39521,7 @@
     {
       "name": "Maryna Kolb",
       "tour": "WTA",
-      "rank": 1491,
+      "rank": 1492,
       "country": "UKR",
       "priorRank": 1493,
       "points": 3,
@@ -39541,7 +39541,7 @@
     {
       "name": "Anna Yang",
       "tour": "WTA",
-      "rank": 1493,
+      "rank": 1494,
       "country": "CHN",
       "priorRank": 1494,
       "points": 3,
@@ -39551,7 +39551,7 @@
     {
       "name": "Daniela Martinez Guerrero",
       "tour": "WTA",
-      "rank": 1493,
+      "rank": 1494,
       "country": "MEX",
       "priorRank": 1494,
       "points": 3,
@@ -39561,7 +39561,7 @@
     {
       "name": "Milana Ivantsiv",
       "tour": "WTA",
-      "rank": 1456,
+      "rank": 1457,
       "country": "POR",
       "priorRank": 1456,
       "points": 4,
@@ -39591,7 +39591,7 @@
     {
       "name": "Eleni Tsetsou",
       "tour": "WTA",
-      "rank": 1495,
+      "rank": 1496,
       "country": "GRE",
       "priorRank": 1496,
       "points": 3,
@@ -39621,7 +39621,7 @@
     {
       "name": "Vlada Kozak",
       "tour": "WTA",
-      "rank": 1495,
+      "rank": 1496,
       "country": "GBR",
       "priorRank": 1496,
       "points": 3,
@@ -39631,7 +39631,7 @@
     {
       "name": "Abhilasha Bista",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "NEP",
       "priorRank": 1503,
       "points": 3,
@@ -39641,7 +39641,7 @@
     {
       "name": "Alessia Marinescu",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "ROU",
       "priorRank": 1503,
       "points": 3,
@@ -39651,7 +39651,7 @@
     {
       "name": "Allison Nicole Isaacs",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "USA",
       "priorRank": 1503,
       "points": 3,
@@ -39671,7 +39671,7 @@
     {
       "name": "Anna Ozerova",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "LAT",
       "priorRank": 1469,
       "points": 3,
@@ -39681,7 +39681,7 @@
     {
       "name": "Antonina Sushkova",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "UKR",
       "priorRank": 1503,
       "points": 3,
@@ -39691,7 +39691,7 @@
     {
       "name": "Ava Catanzarite",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "USA",
       "priorRank": 1503,
       "points": 3,
@@ -39721,7 +39721,7 @@
     {
       "name": "Caitlin Baker",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "AUS",
       "priorRank": 1503,
       "points": 3,
@@ -39731,7 +39731,7 @@
     {
       "name": "Cristina Tiglea",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "ITA",
       "priorRank": 1469,
       "points": 4,
@@ -39741,7 +39741,7 @@
     {
       "name": "Farah Heddar",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "DZA",
       "priorRank": 1503,
       "points": 3,
@@ -39751,7 +39751,7 @@
     {
       "name": "Havah Kaur Kaler",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "CAN",
       "priorRank": 1469,
       "points": 3,
@@ -39771,7 +39771,7 @@
     {
       "name": "Ho Ching Wu",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "HKG",
       "priorRank": 1503,
       "points": 3,
@@ -39781,7 +39781,7 @@
     {
       "name": "Ingrid Vojcinakova",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "SVK",
       "priorRank": 1469,
       "points": 4,
@@ -39791,7 +39791,7 @@
     {
       "name": "Isabel Arabarco",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "ARG",
       "priorRank": 1503,
       "points": 3,
@@ -39801,7 +39801,7 @@
     {
       "name": "Isabella Foshee",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "USA",
       "priorRank": 1469,
       "points": 4,
@@ -39831,7 +39831,7 @@
     {
       "name": "Kiara Nina Kucikova",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "SVK",
       "priorRank": 1503,
       "points": 3,
@@ -39841,7 +39841,7 @@
     {
       "name": "Kitti Molnar",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "HUN",
       "priorRank": 1503,
       "points": 3,
@@ -39851,7 +39851,7 @@
     {
       "name": "Ksenia Meshcheryakova",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "",
       "priorRank": 1503,
       "points": 3,
@@ -39871,7 +39871,7 @@
     {
       "name": "Larisa Arnautovic",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "AUS",
       "priorRank": 1503,
       "points": 3,
@@ -39901,7 +39901,7 @@
     {
       "name": "Luciana Blatter",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "ARG",
       "priorRank": 1503,
       "points": 3,
@@ -39921,7 +39921,7 @@
     {
       "name": "Maria Luisa Oliveira",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "BRA",
       "priorRank": 1503,
       "points": 3,
@@ -39951,7 +39951,7 @@
     {
       "name": "Michelle Dzjachangirova",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "NED",
       "priorRank": 1503,
       "points": 3,
@@ -39961,7 +39961,7 @@
     {
       "name": "Nahjime Dho",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "FRA",
       "priorRank": 1503,
       "points": 3,
@@ -39971,7 +39971,7 @@
     {
       "name": "Niehua Tian",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "CHN",
       "priorRank": 1503,
       "points": 3,
@@ -39981,7 +39981,7 @@
     {
       "name": "Noemi La Cagnina",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "ITA",
       "priorRank": 1503,
       "points": 3,
@@ -40001,7 +40001,7 @@
     {
       "name": "Petra Hule",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "AUS",
       "priorRank": 1503,
       "points": 3,
@@ -40011,7 +40011,7 @@
     {
       "name": "Polina Skopintseva",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "",
       "priorRank": 1503,
       "points": 3,
@@ -40021,7 +40021,7 @@
     {
       "name": "Samantha Imbo Nloga",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "USA",
       "priorRank": 1503,
       "points": 3,
@@ -40031,7 +40031,7 @@
     {
       "name": "Saoirse Breen",
       "tour": "WTA",
-      "rank": 1229,
+      "rank": 1230,
       "country": "FIJ",
       "priorRank": 1469,
       "points": 10,
@@ -40041,7 +40041,7 @@
     {
       "name": "Silvia Husarova",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "SVK",
       "priorRank": 1503,
       "points": 3,
@@ -40051,7 +40051,7 @@
     {
       "name": "Stela Dzimovic",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "SRB",
       "priorRank": 1503,
       "points": 3,
@@ -40071,7 +40071,7 @@
     {
       "name": "Tasnim Ismali",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "TUN",
       "priorRank": 1503,
       "points": 3,
@@ -40081,7 +40081,7 @@
     {
       "name": "Victoria Kapcia",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "SWE",
       "priorRank": 1503,
       "points": 3,
@@ -40091,7 +40091,7 @@
     {
       "name": "Virginia Crocker",
       "tour": "WTA",
-      "rank": 1472,
+      "rank": 1473,
       "country": "USA",
       "priorRank": 1469,
       "points": 4,
@@ -40101,7 +40101,7 @@
     {
       "name": "Wenfei Yu",
       "tour": "WTA",
-      "rank": 1502,
+      "rank": 1503,
       "country": "CHN",
       "priorRank": 1503,
       "points": 3,
@@ -40122,7 +40122,7 @@
       "tour": "WTA",
       "name": "Marianne Angel",
       "country": "MEX",
-      "rank": 1119,
+      "rank": 1120,
       "priorRank": 1125,
       "points": 13,
       "rankingDate": "2026-09-21",
@@ -40132,7 +40132,7 @@
       "tour": "WTA",
       "name": "Carlota Moreno",
       "country": "USA",
-      "rank": 1185,
+      "rank": 1187,
       "priorRank": 1185,
       "points": 11,
       "rankingDate": "2026-09-21",
@@ -40142,7 +40142,7 @@
       "tour": "WTA",
       "name": "Eva Korysheva",
       "country": "KAZ",
-      "rank": 1185,
+      "rank": 1187,
       "priorRank": 1185,
       "points": 11,
       "rankingDate": "2026-09-21",
@@ -40152,7 +40152,7 @@
       "tour": "WTA",
       "name": "Eunchae Kim",
       "country": "KOR",
-      "rank": 1223,
+      "rank": 1224,
       "priorRank": 1228,
       "points": 10,
       "rankingDate": "2026-09-21",
@@ -40162,7 +40162,7 @@
       "tour": "WTA",
       "name": "Jordyn Hazelitt",
       "country": "USA",
-      "rank": 1172,
+      "rank": 1174,
       "priorRank": 1172,
       "points": 11,
       "rankingDate": "2026-09-21",
@@ -40172,7 +40172,7 @@
       "tour": "WTA",
       "name": "Sophia Ksandinov",
       "country": "GER",
-      "rank": 1295,
+      "rank": 1296,
       "priorRank": 1302,
       "points": 8,
       "rankingDate": "2026-09-21",
@@ -40182,7 +40182,7 @@
       "tour": "WTA",
       "name": "Klara Kajabova",
       "country": "CZE",
-      "rank": 1304,
+      "rank": 1305,
       "priorRank": 1309,
       "points": 8,
       "rankingDate": "2026-09-21",
@@ -40192,7 +40192,7 @@
       "tour": "WTA",
       "name": "Aya El Aouni",
       "country": "MAR",
-      "rank": 1228,
+      "rank": 1229,
       "priorRank": 1234,
       "points": 10,
       "rankingDate": "2026-09-21",
@@ -40262,7 +40262,7 @@
       "tour": "WTA",
       "name": "Manon Favier",
       "country": "FRA",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40272,7 +40272,7 @@
       "tour": "WTA",
       "name": "Zi Ying Ruan",
       "country": "CHN",
-      "rank": 1472,
+      "rank": 1473,
       "priorRank": 1469,
       "points": 4,
       "rankingDate": "2026-09-21",
@@ -40292,7 +40292,7 @@
       "tour": "WTA",
       "name": "Elena Milutinovic",
       "country": "SRB",
-      "rank": 1126,
+      "rank": 1127,
       "priorRank": 1132,
       "points": 13,
       "rankingDate": "2026-09-21",
@@ -40332,7 +40332,7 @@
       "tour": "WTA",
       "name": "Alice Soulie",
       "country": "FRA",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40362,7 +40362,7 @@
       "tour": "WTA",
       "name": "Doroteja Petrovic",
       "country": "SRB",
-      "rank": 1215,
+      "rank": 1216,
       "priorRank": 1221,
       "points": 10,
       "rankingDate": "2026-09-21",
@@ -40392,7 +40392,7 @@
       "tour": "WTA",
       "name": "Victoria Bervid",
       "country": "CZE",
-      "rank": 1495,
+      "rank": 1496,
       "priorRank": 1496,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40412,7 +40412,7 @@
       "tour": "WTA",
       "name": "Nelli Ivanova",
       "country": "",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40432,7 +40432,7 @@
       "tour": "WTA",
       "name": "Luisa Hrda",
       "country": "GER",
-      "rank": 1258,
+      "rank": 1259,
       "priorRank": 1266,
       "points": 9,
       "rankingDate": "2026-09-21",
@@ -40442,7 +40442,7 @@
       "tour": "WTA",
       "name": "Valentina Vargas",
       "country": "ECU",
-      "rank": 1495,
+      "rank": 1496,
       "priorRank": 1496,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40452,7 +40452,7 @@
       "tour": "WTA",
       "name": "Daria Shubina",
       "country": "UZB",
-      "rank": 1472,
+      "rank": 1473,
       "priorRank": 1469,
       "points": 4,
       "rankingDate": "2026-09-21",
@@ -40462,7 +40462,7 @@
       "tour": "WTA",
       "name": "Galatea Ferro",
       "country": "ITA",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40472,7 +40472,7 @@
       "tour": "WTA",
       "name": "Juliana Nicole Singeorzan",
       "country": "USA",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40482,7 +40482,7 @@
       "tour": "WTA",
       "name": "Lejla Hana Golubovic",
       "country": "USA",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40492,7 +40492,7 @@
       "tour": "WTA",
       "name": "Nalah Kaler",
       "country": "CAN",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40512,7 +40512,7 @@
       "tour": "WTA",
       "name": "Daria Lopatetska",
       "country": "UKR",
-      "rank": 1125,
+      "rank": 1126,
       "priorRank": 1131,
       "points": 13,
       "rankingDate": "2026-09-21",
@@ -40522,7 +40522,7 @@
       "tour": "WTA",
       "name": "Emilia Carlotta Brune",
       "country": "GER",
-      "rank": 1177,
+      "rank": 1180,
       "priorRank": 1177,
       "points": 11,
       "rankingDate": "2026-09-21",
@@ -40532,7 +40532,7 @@
       "tour": "WTA",
       "name": "Hyojoo Jeong",
       "country": "KOR",
-      "rank": 1229,
+      "rank": 1230,
       "priorRank": 1201,
       "points": 10,
       "rankingDate": "2026-09-21",
@@ -40542,7 +40542,7 @@
       "tour": "WTA",
       "name": "Noelia Manta",
       "country": "SUI",
-      "rank": 1210,
+      "rank": 1212,
       "priorRank": 1217,
       "points": 10,
       "rankingDate": "2026-09-21",
@@ -40552,7 +40552,7 @@
       "tour": "WTA",
       "name": "Ioana Maria Sandru",
       "country": "ROU",
-      "rank": 1295,
+      "rank": 1296,
       "priorRank": 1302,
       "points": 8,
       "rankingDate": "2026-09-21",
@@ -40572,7 +40572,7 @@
       "tour": "WTA",
       "name": "Salma Djoubri",
       "country": "FRA",
-      "rank": 1306,
+      "rank": 1307,
       "priorRank": 1336,
       "points": 8,
       "rankingDate": "2026-09-21",
@@ -40632,7 +40632,7 @@
       "tour": "WTA",
       "name": "Adriana Monlleo Ramos",
       "country": "ESP",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40642,7 +40642,7 @@
       "tour": "WTA",
       "name": "Carol Plakk",
       "country": "EST",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40652,7 +40652,7 @@
       "tour": "WTA",
       "name": "Joulia Cristian Cirstea",
       "country": "ROU",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40662,7 +40662,7 @@
       "tour": "WTA",
       "name": "Klara Blazkova",
       "country": "CZE",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40672,7 +40672,7 @@
       "tour": "WTA",
       "name": "Tinatini Mtvarelishvili",
       "country": "GEO",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 1503,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40712,7 +40712,7 @@
       "tour": "WTA",
       "name": "Nadiia Kichenok",
       "country": "UKR",
-      "rank": 1118,
+      "rank": 1119,
       "priorRank": 9999,
       "points": 13,
       "rankingDate": "2026-09-21",
@@ -40722,7 +40722,7 @@
       "tour": "WTA",
       "name": "Qiuyu Ye",
       "country": "CHN",
-      "rank": 1205,
+      "rank": 1207,
       "priorRank": 1213,
       "points": 10,
       "rankingDate": "2026-09-21",
@@ -40732,7 +40732,7 @@
       "tour": "WTA",
       "name": "Sophie Luescher",
       "country": "SUI",
-      "rank": 1251,
+      "rank": 1252,
       "priorRank": 9999,
       "points": 9,
       "rankingDate": "2026-09-21",
@@ -40762,7 +40762,7 @@
       "tour": "WTA",
       "name": "Kaja Najzer",
       "country": "SLO",
-      "rank": 1495,
+      "rank": 1496,
       "priorRank": 9999,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40772,7 +40772,7 @@
       "tour": "WTA",
       "name": "Nuria Sarganella Verdu",
       "country": "ESP",
-      "rank": 1495,
+      "rank": 1496,
       "priorRank": 9999,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40782,7 +40782,7 @@
       "tour": "WTA",
       "name": "Greta Nemcsek",
       "country": "HUN",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 9999,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40792,7 +40792,7 @@
       "tour": "WTA",
       "name": "Ninon Carpentier",
       "country": "FRA",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 9999,
       "points": 3,
       "rankingDate": "2026-09-21",
@@ -40802,9 +40802,19 @@
       "tour": "WTA",
       "name": "Rira Kosaka",
       "country": "JPN",
-      "rank": 1502,
+      "rank": 1503,
       "priorRank": 9999,
       "points": 3,
+      "rankingDate": "2026-09-21",
+      "rankingSource": "WTA official Singles_Numeric.pdf"
+    },
+    {
+      "tour": "WTA",
+      "name": "Carolina Gasparini",
+      "country": "ITA",
+      "rank": 1413,
+      "priorRank": 9999,
+      "points": 5,
       "rankingDate": "2026-09-21",
       "rankingSource": "WTA official Singles_Numeric.pdf"
     }
