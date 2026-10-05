@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-04T21:54:32.665Z",
+  "generatedAt": "2026-10-05T00:47:34.139Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "60",
-    "remaining": "440"
+    "used": "63",
+    "remaining": "437"
   },
   "matches": [
     {
@@ -50,9 +50,9 @@
       "player1": "Marie Bouzkova",
       "player2": "Qinwen Zheng",
       "odds1": 2.36,
-      "odds2": 1.73,
+      "odds2": 1.72,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Alina Charaeva",
       "player2": "Sonay Kartal",
-      "odds1": 2.76,
+      "odds1": 2.78,
       "odds2": 1.56,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -81,8 +81,8 @@
       "status": "upcoming",
       "player1": "Alex de Minaur",
       "player2": "Hubert Hurkacz",
-      "odds1": 1.82,
-      "odds2": 2.2,
+      "odds1": 1.79,
+      "odds2": 2.24,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -97,7 +97,7 @@
       "status": "upcoming",
       "player1": "Carlos Alcaraz",
       "player2": "Jaume Munar",
-      "odds1": 1.14,
+      "odds1": 1.13,
       "odds2": 8,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -129,9 +129,9 @@
       "status": "upcoming",
       "player1": "Maria Sakkari",
       "player2": "Elina Svitolina",
-      "odds1": 3.85,
+      "odds1": 3.9,
       "odds2": 1.34,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
@@ -145,10 +145,10 @@
       "status": "upcoming",
       "player1": "Jelena Ostapenko",
       "player2": "Elise Mertens",
-      "odds1": 2.78,
+      "odds1": 2.82,
       "odds2": 1.55,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -161,10 +161,10 @@
       "status": "upcoming",
       "player1": "Jiri Lehecka",
       "player2": "Valentin Vacherot",
-      "odds1": 1.55,
-      "odds2": 2.79,
+      "odds1": 1.53,
+      "odds2": 2.84,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -180,7 +180,7 @@
       "odds1": 2.3,
       "odds2": 1.75,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -194,7 +194,7 @@
       "player1": "Coco Gauff",
       "player2": "Sun Xinran",
       "odds1": 1.06,
-      "odds2": 15,
+      "odds2": 16,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
