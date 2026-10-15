@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-10-15T14:22:17.572Z",
+  "generatedAt": "2026-10-15T18:35:29.466Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "165",
-    "remaining": "335"
+    "used": "167",
+    "remaining": "333"
   },
   "matches": [
-    {
-      "id": "17f1b87340ae28fa6ddb8bdcdbe83c07",
-      "tour": "WTA",
-      "event": "WTA Wuhan Open",
-      "date": "2026-10-15",
-      "start": "15:15",
-      "startIso": "2026-10-15T13:15:00Z",
-      "status": "live-or-started",
-      "player1": "Ann Li",
-      "player2": "Janice Tjen",
-      "odds1": 1.25,
-      "odds2": 6,
-      "bookmaker1": "Unibet (SE)",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "9289b5c0affcb229b5ab33881b4aca00",
       "tour": "WTA",
@@ -33,10 +17,10 @@
       "status": "upcoming",
       "player1": "Diana Shnaider",
       "player2": "Jelena Ostapenko",
-      "odds1": 1.44,
-      "odds2": 3.2,
+      "odds1": 1.47,
+      "odds2": 3.1,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Unibet (SE)",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Elina Svitolina",
       "player2": "Sonay Kartal",
-      "odds1": 1.53,
-      "odds2": 2.86,
+      "odds1": 1.55,
+      "odds2": 2.81,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -65,8 +49,8 @@
       "status": "upcoming",
       "player1": "Maja Chwalinska",
       "player2": "Maria Sakkari",
-      "odds1": 2.22,
-      "odds2": 1.8,
+      "odds1": 2.2,
+      "odds2": 1.81,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -81,10 +65,10 @@
       "status": "upcoming",
       "player1": "Rafael Jodar",
       "player2": "Casper Ruud",
-      "odds1": 1.8,
-      "odds2": 2.25,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "LeoVegas (SE)",
+      "odds1": 1.84,
+      "odds2": 2.16,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -104,6 +88,22 @@
       "source": "The Odds API"
     },
     {
+      "id": "ffdb70ac625d38ce6f39d3e9f9f9f69e",
+      "tour": "WTA",
+      "event": "WTA Wuhan Open",
+      "date": "2026-10-16",
+      "start": "13:00",
+      "startIso": "2026-10-16T11:00:00Z",
+      "status": "upcoming",
+      "player1": "Ann Li",
+      "player2": "Iga Swiatek",
+      "odds1": 5.2,
+      "odds2": 1.22,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
       "id": "85243da216a4bb91389e3da1f356f52c",
       "tour": "ATP",
       "event": "ATP Shanghai Masters",
@@ -113,10 +113,10 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Davidovich Fokina",
-      "odds1": 1.28,
-      "odds2": 4.05,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.34,
+      "odds2": 3.9,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     }
   ]
