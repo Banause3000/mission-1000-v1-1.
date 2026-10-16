@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-16T14:45:18.252Z",
+  "generatedAt": "2026-10-16T18:45:07.546Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "177",
-    "remaining": "323"
+    "used": "179",
+    "remaining": "321"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Davidovich Fokina",
-      "odds1": 1.31,
-      "odds2": 4.1,
-      "bookmaker1": "Betfair",
+      "odds1": 1.3,
+      "odds2": 4.2,
+      "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,7 +33,7 @@
       "status": "upcoming",
       "player1": "Sonay Kartal",
       "player2": "Jelena Ostapenko",
-      "odds1": 1.76,
+      "odds1": 1.77,
       "odds2": 2.28,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -50,9 +50,9 @@
       "player1": "Iga Swiatek",
       "player2": "Maja Chwalinska",
       "odds1": 1.17,
-      "odds2": 6.53,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Pinnacle",
+      "odds2": 6.6,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Rafael Jodar",
       "player2": "Daniil Medvedev",
-      "odds1": 2.72,
-      "odds2": 1.55,
+      "odds1": 2.76,
+      "odds2": 1.56,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     }
   ]
