@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-17T04:55:21.950Z",
+  "generatedAt": "2026-10-17T09:12:32.843Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "185",
-    "remaining": "315"
+    "used": "187",
+    "remaining": "313"
   },
   "matches": [
     {
@@ -12,14 +12,14 @@
       "tour": "ATP",
       "event": "ATP Shanghai Masters",
       "date": "2026-10-17",
-      "start": "10:30",
-      "startIso": "2026-10-17T08:30:00Z",
-      "status": "upcoming",
+      "start": "10:37",
+      "startIso": "2026-10-17T08:37:00Z",
+      "status": "live-or-started",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Davidovich Fokina",
-      "odds1": 1.28,
-      "odds2": 4.5,
-      "bookmaker1": "Unibet (SE)",
+      "odds1": 1.35,
+      "odds2": 3.85,
+      "bookmaker1": "Coolbet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -28,15 +28,15 @@
       "tour": "WTA",
       "event": "WTA Wuhan Open",
       "date": "2026-10-17",
-      "start": "11:00",
-      "startIso": "2026-10-17T09:00:00Z",
-      "status": "upcoming",
+      "start": "11:05",
+      "startIso": "2026-10-17T09:05:00Z",
+      "status": "live-or-started",
       "player1": "Sonay Kartal",
       "player2": "Jelena Ostapenko",
-      "odds1": 1.8,
-      "odds2": 2.22,
+      "odds1": 2.62,
+      "odds2": 2.16,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     },
     {
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Iga Swiatek",
       "player2": "Maja Chwalinska",
-      "odds1": 1.18,
-      "odds2": 6.4,
+      "odds1": 1.19,
+      "odds2": 6,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -65,7 +65,7 @@
       "status": "upcoming",
       "player1": "Rafael Jodar",
       "player2": "Daniil Medvedev",
-      "odds1": 2.78,
+      "odds1": 2.74,
       "odds2": 1.56,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
