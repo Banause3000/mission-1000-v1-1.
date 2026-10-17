@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-16T22:01:13.296Z",
+  "generatedAt": "2026-10-17T00:20:32.722Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "181",
-    "remaining": "319"
+    "used": "183",
+    "remaining": "317"
   },
   "matches": [
     {
@@ -17,8 +17,8 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alejandro Davidovich Fokina",
-      "odds1": 1.3,
-      "odds2": 4.3,
+      "odds1": 1.28,
+      "odds2": 4.4,
       "bookmaker1": "Unibet (SE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -50,7 +50,7 @@
       "player1": "Iga Swiatek",
       "player2": "Maja Chwalinska",
       "odds1": 1.17,
-      "odds2": 6.6,
+      "odds2": 6.4,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -67,7 +67,7 @@
       "player2": "Daniil Medvedev",
       "odds1": 2.74,
       "odds2": 1.56,
-      "bookmaker1": "Betfair",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
