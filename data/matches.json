@@ -1,74 +1,26 @@
 {
-  "generatedAt": "2026-10-17T09:12:32.843Z",
+  "generatedAt": "2026-10-17T13:08:19.122Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "187",
-    "remaining": "313"
+    "used": "188",
+    "remaining": "312"
   },
   "matches": [
-    {
-      "id": "85243da216a4bb91389e3da1f356f52c",
-      "tour": "ATP",
-      "event": "ATP Shanghai Masters",
-      "date": "2026-10-17",
-      "start": "10:37",
-      "startIso": "2026-10-17T08:37:00Z",
-      "status": "live-or-started",
-      "player1": "Alexander Zverev",
-      "player2": "Alejandro Davidovich Fokina",
-      "odds1": 1.35,
-      "odds2": 3.85,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
-    {
-      "id": "3dd021eb08a07ee593039b5f1c6c8be1",
-      "tour": "WTA",
-      "event": "WTA Wuhan Open",
-      "date": "2026-10-17",
-      "start": "11:05",
-      "startIso": "2026-10-17T09:05:00Z",
-      "status": "live-or-started",
-      "player1": "Sonay Kartal",
-      "player2": "Jelena Ostapenko",
-      "odds1": 2.62,
-      "odds2": 2.16,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "BetOnline.ag",
-      "source": "The Odds API"
-    },
     {
       "id": "ab648a948516e13d5f2ca038684780ca",
       "tour": "WTA",
       "event": "WTA Wuhan Open",
       "date": "2026-10-17",
-      "start": "12:30",
-      "startIso": "2026-10-17T10:30:00Z",
-      "status": "upcoming",
+      "start": "13:40",
+      "startIso": "2026-10-17T11:40:01Z",
+      "status": "live-or-started",
       "player1": "Iga Swiatek",
       "player2": "Maja Chwalinska",
-      "odds1": 1.19,
-      "odds2": 6,
+      "odds1": 2.96,
+      "odds2": 2.38,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
-    {
-      "id": "ec7b2ed5ca42a47451864cedfd5b61d3",
-      "tour": "ATP",
-      "event": "ATP Shanghai Masters",
-      "date": "2026-10-17",
-      "start": "13:00",
-      "startIso": "2026-10-17T11:00:00Z",
-      "status": "upcoming",
-      "player1": "Rafael Jodar",
-      "player2": "Daniil Medvedev",
-      "odds1": 2.74,
-      "odds2": 1.56,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "William Hill",
       "source": "The Odds API"
     }
   ]
