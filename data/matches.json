@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-17T19:15:14.690Z",
+  "generatedAt": "2026-10-17T21:41:02.497Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "192",
-    "remaining": "308"
+    "used": "194",
+    "remaining": "306"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Alejandro Davidovich Fokina",
       "player2": "Rafael Jodar",
-      "odds1": 2.26,
-      "odds2": 1.78,
+      "odds1": 2.24,
+      "odds2": 1.8,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -33,10 +33,10 @@
       "status": "upcoming",
       "player1": "Maja Chwalinska",
       "player2": "Sonay Kartal",
-      "odds1": 2.14,
-      "odds2": 1.88,
+      "odds1": 2.06,
+      "odds2": 1.91,
       "bookmaker1": "Betfair",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
