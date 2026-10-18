@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-17T23:57:26.590Z",
+  "generatedAt": "2026-10-18T04:18:47.154Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "196",
-    "remaining": "304"
+    "used": "198",
+    "remaining": "302"
   },
   "matches": [
     {
@@ -17,8 +17,8 @@
       "status": "upcoming",
       "player1": "Alejandro Davidovich Fokina",
       "player2": "Rafael Jodar",
-      "odds1": 2.24,
-      "odds2": 1.79,
+      "odds1": 2.26,
+      "odds2": 1.78,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
