@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-18T04:18:47.154Z",
+  "generatedAt": "2026-10-18T09:01:17.694Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "198",
-    "remaining": "302"
+    "used": "200",
+    "remaining": "300"
   },
   "matches": [
     {
@@ -12,15 +12,15 @@
       "tour": "ATP",
       "event": "ATP Shanghai Masters",
       "date": "2026-10-18",
-      "start": "10:30",
-      "startIso": "2026-10-18T08:30:00Z",
-      "status": "upcoming",
+      "start": "10:37",
+      "startIso": "2026-10-18T08:37:25Z",
+      "status": "live-or-started",
       "player1": "Alejandro Davidovich Fokina",
       "player2": "Rafael Jodar",
-      "odds1": 2.26,
-      "odds2": 1.78,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Matchbook",
+      "odds1": 3.65,
+      "odds2": 1.43,
+      "bookmaker1": "Nordic Bet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
