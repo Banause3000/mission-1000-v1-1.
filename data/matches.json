@@ -1,41 +1,25 @@
 {
-  "generatedAt": "2026-10-18T09:01:17.694Z",
+  "generatedAt": "2026-10-18T13:10:49.724Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "200",
-    "remaining": "300"
+    "used": "201",
+    "remaining": "299"
   },
   "matches": [
-    {
-      "id": "558c4df94e8e9d970b74c5213c82675c",
-      "tour": "ATP",
-      "event": "ATP Shanghai Masters",
-      "date": "2026-10-18",
-      "start": "10:37",
-      "startIso": "2026-10-18T08:37:25Z",
-      "status": "live-or-started",
-      "player1": "Alejandro Davidovich Fokina",
-      "player2": "Rafael Jodar",
-      "odds1": 3.65,
-      "odds2": 1.43,
-      "bookmaker1": "Nordic Bet",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "6c0df7365e0bd69dc2354b2fa6434919",
       "tour": "WTA",
       "event": "WTA Wuhan Open",
       "date": "2026-10-18",
-      "start": "12:30",
-      "startIso": "2026-10-18T10:30:00Z",
-      "status": "upcoming",
+      "start": "12:38",
+      "startIso": "2026-10-18T10:38:00Z",
+      "status": "live-or-started",
       "player1": "Maja Chwalinska",
       "player2": "Sonay Kartal",
-      "odds1": 2.02,
-      "odds2": 1.96,
-      "bookmaker1": "Betfair",
+      "odds1": 1.29,
+      "odds2": 32,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
