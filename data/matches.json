@@ -1,44 +1,12 @@
 {
-  "generatedAt": "2026-10-19T11:10:34.427Z",
+  "generatedAt": "2026-10-19T17:43:22.681Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "207",
-    "remaining": "293"
+    "used": "208",
+    "remaining": "292"
   },
   "matches": [
-    {
-      "id": "e14d2742a814f1339e5e25c31eb964ee",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-19",
-      "start": "11:47",
-      "startIso": "2026-10-19T09:47:00Z",
-      "status": "live-or-started",
-      "player1": "Kamilla Rakhimova",
-      "player2": "Marie Bouzkova",
-      "odds1": 9,
-      "odds2": 1.13,
-      "bookmaker1": "Unibet (NL)",
-      "bookmaker2": "Matchbook",
-      "source": "The Odds API"
-    },
-    {
-      "id": "0f805964444e0fb6b3352edfabf4a7f1",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-19",
-      "start": "13:30",
-      "startIso": "2026-10-19T11:30:00Z",
-      "status": "upcoming",
-      "player1": "Alexandra Eala",
-      "player2": "Diane Parry",
-      "odds1": 1.37,
-      "odds2": 3.6,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "382e298ed707ab99e1aea406cebbb42f",
       "tour": "WTA",
@@ -49,10 +17,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Xiyu Wang",
-      "odds1": 1.95,
-      "odds2": 1.93,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Pinnacle",
+      "odds1": 1.93,
+      "odds2": 1.85,
+      "bookmaker1": "Unibet (NL)",
+      "bookmaker2": "Unibet (NL)",
       "source": "The Odds API"
     },
     {
@@ -65,10 +33,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Alycia Parks",
-      "odds1": 1.18,
-      "odds2": 5.1,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Winamax (DE)",
+      "odds1": 1.2,
+      "odds2": 5.4,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -81,7 +49,7 @@
       "status": "upcoming",
       "player1": "Yulia Putintseva",
       "player2": "Diana Shnaider",
-      "odds1": 3.7,
+      "odds1": 3.75,
       "odds2": 1.33,
       "bookmaker1": "Matchbook",
       "bookmaker2": "888sport",
@@ -113,8 +81,8 @@
       "status": "upcoming",
       "player1": "Cristina Bucsa",
       "player2": "Polina Kudermetova",
-      "odds1": 1.88,
-      "odds2": 2.06,
+      "odds1": 1.89,
+      "odds2": 2.1,
       "bookmaker1": "Betfair",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -129,10 +97,10 @@
       "status": "upcoming",
       "player1": "Jelena Ostapenko",
       "player2": "Belinda Bencic",
-      "odds1": 2.2,
-      "odds2": 1.75,
-      "bookmaker1": "BetAnything",
-      "bookmaker2": "Pinnacle",
+      "odds1": 2.24,
+      "odds2": 1.79,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -146,9 +114,9 @@
       "player1": "Katarzyna Kawa",
       "player2": "Daria Snigur",
       "odds1": 4.1,
-      "odds2": 1.3,
-      "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "Betfair",
+      "odds2": 1.31,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -164,7 +132,7 @@
       "odds1": 4.3,
       "odds2": 1.29,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -177,10 +145,26 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Aliaksandra Sasnovich",
-      "odds1": 1.44,
-      "odds2": 2.88,
+      "odds1": 1.5,
+      "odds2": 2.67,
       "bookmaker1": "888sport",
-      "bookmaker2": "Marathon Bet",
+      "bookmaker2": "Coolbet",
+      "source": "The Odds API"
+    },
+    {
+      "id": "411cad841b8b18dcf7a01bd7fc976575",
+      "tour": "WTA",
+      "event": "WTA Ningbo Open",
+      "date": "2026-10-21",
+      "start": "06:00",
+      "startIso": "2026-10-21T04:00:00Z",
+      "status": "upcoming",
+      "player1": "Marie Bouzkova",
+      "player2": "Iga Swiatek",
+      "odds1": 3.7,
+      "odds2": 1.33,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
