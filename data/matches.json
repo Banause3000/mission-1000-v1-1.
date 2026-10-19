@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-10-19T17:43:22.681Z",
+  "generatedAt": "2026-10-19T22:16:33.698Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "208",
-    "remaining": "292"
+    "used": "209",
+    "remaining": "291"
   },
   "matches": [
-    {
-      "id": "382e298ed707ab99e1aea406cebbb42f",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-20",
-      "start": "06:00",
-      "startIso": "2026-10-20T04:00:00Z",
-      "status": "upcoming",
-      "player1": "Sara Bejlek",
-      "player2": "Xiyu Wang",
-      "odds1": 1.93,
-      "odds2": 1.85,
-      "bookmaker1": "Unibet (NL)",
-      "bookmaker2": "Unibet (NL)",
-      "source": "The Odds API"
-    },
     {
       "id": "4dc8a78bf312b434b8be532e510e9231",
       "tour": "WTA",
@@ -33,10 +17,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Alycia Parks",
-      "odds1": 1.2,
-      "odds2": 5.4,
+      "odds1": 1.19,
+      "odds2": 5.9,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Yulia Putintseva",
       "player2": "Diana Shnaider",
-      "odds1": 3.75,
-      "odds2": 1.33,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "888sport",
+      "odds1": 3.66,
+      "odds2": 1.37,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,8 +49,8 @@
       "status": "upcoming",
       "player1": "Jasmine Paolini",
       "player2": "Anhelina Kalinina",
-      "odds1": 1.51,
-      "odds2": 2.84,
+      "odds1": 1.5,
+      "odds2": 2.98,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -81,9 +65,9 @@
       "status": "upcoming",
       "player1": "Cristina Bucsa",
       "player2": "Polina Kudermetova",
-      "odds1": 1.89,
-      "odds2": 2.1,
-      "bookmaker1": "Betfair",
+      "odds1": 1.92,
+      "odds2": 2.06,
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -97,10 +81,10 @@
       "status": "upcoming",
       "player1": "Jelena Ostapenko",
       "player2": "Belinda Bencic",
-      "odds1": 2.24,
-      "odds2": 1.79,
+      "odds1": 2.36,
+      "odds2": 1.73,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Unibet (NL)",
       "source": "The Odds API"
     },
     {
@@ -113,8 +97,8 @@
       "status": "upcoming",
       "player1": "Katarzyna Kawa",
       "player2": "Daria Snigur",
-      "odds1": 4.1,
-      "odds2": 1.31,
+      "odds1": 3.7,
+      "odds2": 1.36,
       "bookmaker1": "Betfair",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -129,7 +113,7 @@
       "status": "upcoming",
       "player1": "Guo Hanyu",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 4.3,
+      "odds1": 4.5,
       "odds2": 1.29,
       "bookmaker1": "Betfair",
       "bookmaker2": "1xBet",
@@ -145,9 +129,9 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Aliaksandra Sasnovich",
-      "odds1": 1.5,
-      "odds2": 2.67,
-      "bookmaker1": "888sport",
+      "odds1": 1.47,
+      "odds2": 2.78,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
@@ -161,8 +145,8 @@
       "status": "upcoming",
       "player1": "Marie Bouzkova",
       "player2": "Iga Swiatek",
-      "odds1": 3.7,
-      "odds2": 1.33,
+      "odds1": 3.55,
+      "odds2": 1.34,
       "bookmaker1": "Coolbet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
