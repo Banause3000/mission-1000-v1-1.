@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-21T18:13:51.181Z",
+  "generatedAt": "2026-10-21T21:56:52.165Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "219",
-    "remaining": "281"
+    "used": "220",
+    "remaining": "280"
   },
   "matches": [
     {
@@ -18,7 +18,7 @@
       "player1": "Iva Jović",
       "player2": "Jasmine Paolini",
       "odds1": 1.52,
-      "odds2": 2.86,
+      "odds2": 2.88,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Alexandra Eala",
       "player2": "Diana Shnaider",
-      "odds1": 2.36,
-      "odds2": 1.71,
+      "odds1": 2.3,
+      "odds2": 1.75,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Elena Rybakina",
       "player2": "Polina Kudermetova",
-      "odds1": 1.12,
-      "odds2": 8.2,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.13,
+      "odds2": 8.4,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -81,9 +81,9 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 2.13,
-      "odds2": 1.75,
-      "bookmaker1": "1xBet",
+      "odds1": 2.25,
+      "odds2": 1.72,
+      "bookmaker1": "BetOnline.ag",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -97,9 +97,9 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Marie Bouzkova",
-      "odds1": 2.29,
+      "odds1": 2.46,
       "odds2": 1.68,
-      "bookmaker1": "1xBet",
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Unibet (SE)",
       "source": "The Odds API"
     }
