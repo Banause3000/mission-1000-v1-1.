@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-22T00:36:32.430Z",
+  "generatedAt": "2026-10-22T05:20:08.650Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "221",
-    "remaining": "279"
+    "used": "222",
+    "remaining": "278"
   },
   "matches": [
     {
@@ -12,14 +12,14 @@
       "tour": "WTA",
       "event": "WTA Ningbo Open",
       "date": "2026-10-22",
-      "start": "07:00",
-      "startIso": "2026-10-22T05:00:00Z",
-      "status": "upcoming",
+      "start": "07:03",
+      "startIso": "2026-10-22T05:03:21Z",
+      "status": "live-or-started",
       "player1": "Iva Jović",
       "player2": "Jasmine Paolini",
-      "odds1": 1.52,
-      "odds2": 2.88,
-      "bookmaker1": "Betfair",
+      "odds1": 1.63,
+      "odds2": 3.1,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -34,7 +34,7 @@
       "player1": "Katarzyna Kawa",
       "player2": "Belinda Bencic",
       "odds1": 9,
-      "odds2": 1.12,
+      "odds2": 1.11,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -49,7 +49,7 @@
       "status": "upcoming",
       "player1": "Alexandra Eala",
       "player2": "Diana Shnaider",
-      "odds1": 2.3,
+      "odds1": 2.32,
       "odds2": 1.75,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -65,9 +65,9 @@
       "status": "upcoming",
       "player1": "Elena Rybakina",
       "player2": "Polina Kudermetova",
-      "odds1": 1.13,
-      "odds2": 8.4,
-      "bookmaker1": "1xBet",
+      "odds1": 1.14,
+      "odds2": 7.8,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -99,7 +99,7 @@
       "player2": "Marie Bouzkova",
       "odds1": 2.46,
       "odds2": 1.68,
-      "bookmaker1": "Pinnacle",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Unibet (SE)",
       "source": "The Odds API"
     }
