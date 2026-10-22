@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-22T19:27:42.705Z",
+  "generatedAt": "2026-10-22T22:41:57.220Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "225",
-    "remaining": "275"
+    "used": "226",
+    "remaining": "274"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Sara Bejlek",
       "player2": "Marie Bouzkova",
-      "odds1": 2.45,
-      "odds2": 1.69,
-      "bookmaker1": "Winamax (DE)",
-      "bookmaker2": "Matchbook",
+      "odds1": 2.46,
+      "odds2": 1.67,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Ekaterina Alexandrova",
-      "odds1": 2.32,
+      "odds1": 2.3,
       "odds2": 1.75,
-      "bookmaker1": "Matchbook",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Iva Jović",
       "player2": "Diana Shnaider",
-      "odds1": 1.92,
-      "odds2": 2.04,
+      "odds1": 1.83,
+      "odds2": 2.18,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -67,8 +67,8 @@
       "player2": "Katarzyna Kawa",
       "odds1": 1.09,
       "odds2": 12,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Unibet (NL)",
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     }
   ]
