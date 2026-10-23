@@ -1,44 +1,12 @@
 {
-  "generatedAt": "2026-10-23T12:00:03.472Z",
+  "generatedAt": "2026-10-23T16:57:57.290Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "229",
-    "remaining": "271"
+    "used": "230",
+    "remaining": "270"
   },
   "matches": [
-    {
-      "id": "70d2acd96d31199e701797e524beb6f4",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-23",
-      "start": "11:35",
-      "startIso": "2026-10-23T09:35:00Z",
-      "status": "live-or-started",
-      "player1": "Iva Jović",
-      "player2": "Diana Shnaider",
-      "odds1": 55,
-      "odds2": 2.4,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Unibet (FR)",
-      "source": "The Odds API"
-    },
-    {
-      "id": "af18854b3c532d504418cd5e5b28ddf2",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-23",
-      "start": "14:10",
-      "startIso": "2026-10-23T12:10:00Z",
-      "status": "upcoming",
-      "player1": "Elena Rybakina",
-      "player2": "Katarzyna Kawa",
-      "odds1": 1.09,
-      "odds2": 11.5,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "3849e1db276f31bcb15aad1cca44184d",
       "tour": "WTA",
@@ -49,10 +17,26 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Marie Bouzkova",
-      "odds1": 2.1,
-      "odds2": 1.83,
-      "bookmaker1": "888sport",
-      "bookmaker2": "Unibet (NL)",
+      "odds1": 2,
+      "odds2": 1.94,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Matchbook",
+      "source": "The Odds API"
+    },
+    {
+      "id": "ae319b5b7c6cbef88dda71720672c0c6",
+      "tour": "WTA",
+      "event": "WTA Ningbo Open",
+      "date": "2026-10-24",
+      "start": "11:30",
+      "startIso": "2026-10-24T09:30:00Z",
+      "status": "upcoming",
+      "player1": "Elena Rybakina",
+      "player2": "Diana Shnaider",
+      "odds1": 1.58,
+      "odds2": 2.7,
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
