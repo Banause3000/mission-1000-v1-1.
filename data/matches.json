@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-23T16:57:57.290Z",
+  "generatedAt": "2026-10-23T20:20:15.936Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "230",
-    "remaining": "270"
+    "used": "231",
+    "remaining": "269"
   },
   "matches": [
     {
@@ -17,8 +17,8 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Marie Bouzkova",
-      "odds1": 2,
-      "odds2": 1.94,
+      "odds1": 1.98,
+      "odds2": 1.95,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Elena Rybakina",
       "player2": "Diana Shnaider",
-      "odds1": 1.58,
-      "odds2": 2.7,
-      "bookmaker1": "Winamax (DE)",
+      "odds1": 1.56,
+      "odds2": 2.72,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
