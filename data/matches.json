@@ -1,10 +1,27 @@
 {
-  "generatedAt": "2026-10-24T12:11:34.844Z",
+  "generatedAt": "2026-10-24T16:11:59.668Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "234",
-    "remaining": "266"
+    "used": "235",
+    "remaining": "265"
   },
-  "matches": []
+  "matches": [
+    {
+      "id": "ead4ea2496e3d0568f317b68ae24c916",
+      "tour": "WTA",
+      "event": "WTA Ningbo Open",
+      "date": "2026-10-25",
+      "start": "10:00",
+      "startIso": "2026-10-25T09:00:00Z",
+      "status": "upcoming",
+      "player1": "Elena Rybakina",
+      "player2": "Leylah Fernandez",
+      "odds1": 1.3,
+      "odds2": 3.9,
+      "bookmaker1": "888sport",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    }
+  ]
 }
