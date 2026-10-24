@@ -1,43 +1,10 @@
 {
-  "generatedAt": "2026-10-24T07:11:53.518Z",
+  "generatedAt": "2026-10-24T12:11:34.844Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
     "used": "234",
     "remaining": "266"
   },
-  "matches": [
-    {
-      "id": "3849e1db276f31bcb15aad1cca44184d",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-24",
-      "start": "09:30",
-      "startIso": "2026-10-24T07:30:00Z",
-      "status": "upcoming",
-      "player1": "Leylah Fernandez",
-      "player2": "Marie Bouzkova",
-      "odds1": 2.14,
-      "odds2": 1.88,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Pinnacle",
-      "source": "The Odds API"
-    },
-    {
-      "id": "ae319b5b7c6cbef88dda71720672c0c6",
-      "tour": "WTA",
-      "event": "WTA Ningbo Open",
-      "date": "2026-10-24",
-      "start": "11:30",
-      "startIso": "2026-10-24T09:30:00Z",
-      "status": "upcoming",
-      "player1": "Elena Rybakina",
-      "player2": "Diana Shnaider",
-      "odds1": 1.57,
-      "odds2": 2.72,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    }
-  ]
+  "matches": []
 }
