@@ -1,42 +1,26 @@
 {
-  "generatedAt": "2026-10-27T23:42:51.505Z",
+  "generatedAt": "2026-10-28T05:26:45.265Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "267",
-    "remaining": "233"
+    "used": "270",
+    "remaining": "230"
   },
   "matches": [
-    {
-      "id": "25ce39ca9e48b2351cf2d7163f921bb7",
-      "tour": "WTA",
-      "event": "WTA Pan Pacific Open",
-      "date": "2026-10-28",
-      "start": "02:30",
-      "startIso": "2026-10-28T01:30:00Z",
-      "status": "upcoming",
-      "player1": "Kamilla Rakhimova",
-      "player2": "Ekaterina Alexandrova",
-      "odds1": 3.75,
-      "odds2": 1.35,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "890be98a36df8c80a2d9cf81b180b48a",
       "tour": "WTA",
       "event": "WTA Pan Pacific Open",
       "date": "2026-10-28",
-      "start": "03:30",
-      "startIso": "2026-10-28T02:30:00Z",
-      "status": "upcoming",
+      "start": "05:40",
+      "startIso": "2026-10-28T04:40:16Z",
+      "status": "live-or-started",
       "player1": "Cristina Bucsa",
       "player2": "Maya Joint",
-      "odds1": 2.18,
-      "odds2": 1.82,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "odds1": 4.93,
+      "odds2": 1.57,
+      "bookmaker1": "Pinnacle",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -44,15 +28,15 @@
       "tour": "WTA",
       "event": "WTA Pan Pacific Open",
       "date": "2026-10-28",
-      "start": "05:00",
-      "startIso": "2026-10-28T04:00:00Z",
+      "start": "06:30",
+      "startIso": "2026-10-28T05:30:00Z",
       "status": "upcoming",
       "player1": "Aliaksandra Sasnovich",
       "player2": "Diana Shnaider",
-      "odds1": 4.1,
-      "odds2": 1.31,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 4,
+      "odds2": 1.35,
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +49,10 @@
       "status": "upcoming",
       "player1": "Alexandra Eala",
       "player2": "Talia Gibson",
-      "odds1": 1.4,
-      "odds2": 3.45,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Winamax (DE)",
+      "odds1": 1.42,
+      "odds2": 3.37,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "BetOnline.ag",
       "source": "The Odds API"
     },
     {
@@ -81,8 +65,8 @@
       "status": "upcoming",
       "player1": "Yannick Hanfmann",
       "player2": "Jan-Lennard Struff",
-      "odds1": 2.2,
-      "odds2": 1.82,
+      "odds1": 2.16,
+      "odds2": 1.85,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -113,9 +97,9 @@
       "status": "upcoming",
       "player1": "Tallon Griekspoor",
       "player2": "Brandon Nakashima",
-      "odds1": 2.95,
+      "odds1": 2.9,
       "odds2": 1.52,
-      "bookmaker1": "Tipico",
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -129,10 +113,10 @@
       "status": "upcoming",
       "player1": "Daniel Merida Aguilar",
       "player2": "Daniil Medvedev",
-      "odds1": 4.3,
-      "odds2": 1.35,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "Matchbook",
+      "odds1": 4,
+      "odds2": 1.33,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "LeoVegas (SE)",
       "source": "The Odds API"
     },
     {
@@ -161,8 +145,8 @@
       "status": "upcoming",
       "player1": "Lorenzo Musetti",
       "player2": "Frances Tiafoe",
-      "odds1": 2.16,
-      "odds2": 1.87,
+      "odds1": 2.14,
+      "odds2": 1.92,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Coolbet",
       "source": "The Odds API"
@@ -178,7 +162,7 @@
       "player1": "Novak Djokovic",
       "player2": "Ugo Humbert",
       "odds1": 1.42,
-      "odds2": 3.3,
+      "odds2": 3.35,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -193,8 +177,8 @@
       "status": "upcoming",
       "player1": "Jakub Mensik",
       "player2": "Adrian Mannarino",
-      "odds1": 1.24,
-      "odds2": 4.9,
+      "odds1": 1.23,
+      "odds2": 5.1,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -209,8 +193,8 @@
       "status": "upcoming",
       "player1": "Jurij Rodionov",
       "player2": "Nikoloz Basilashvili",
-      "odds1": 2.32,
-      "odds2": 1.75,
+      "odds1": 2.36,
+      "odds2": 1.73,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -225,7 +209,7 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Rinky Hijikata",
-      "odds1": 1.17,
+      "odds1": 1.15,
       "odds2": 7.25,
       "bookmaker1": "Betfair",
       "bookmaker2": "Winamax (DE)",
@@ -241,8 +225,8 @@
       "status": "upcoming",
       "player1": "Hubert Hurkacz",
       "player2": "Holger Rune",
-      "odds1": 1.57,
-      "odds2": 2.68,
+      "odds1": 1.56,
+      "odds2": 2.74,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -258,7 +242,7 @@
       "player1": "Learner Tien",
       "player2": "Alex de Minaur",
       "odds1": 2.06,
-      "odds2": 1.9,
+      "odds2": 1.93,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -274,7 +258,7 @@
       "player1": "Alycia Parks",
       "player2": "Kimberly Birrell",
       "odds1": 2.48,
-      "odds2": 1.67,
+      "odds2": 1.65,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -289,10 +273,10 @@
       "status": "upcoming",
       "player1": "Elena Rybakina",
       "player2": "Yulia Putintseva",
-      "odds1": 1.13,
-      "odds2": 7.32,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "BetOnline.ag",
+      "odds1": 1.14,
+      "odds2": 7.6,
+      "bookmaker1": "LeoVegas (SE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -305,10 +289,10 @@
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Elise Mertens",
-      "odds1": 2.04,
-      "odds2": 1.91,
+      "odds1": 2.08,
+      "odds2": 1.94,
       "bookmaker1": "Betfair",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -322,9 +306,9 @@
       "player1": "Naomi Osaka",
       "player2": "Mia Pohánková",
       "odds1": 1.29,
-      "odds2": 4.2,
-      "bookmaker1": "William Hill",
-      "bookmaker2": "Betfair",
+      "odds2": 4.31,
+      "bookmaker1": "Unibet (SE)",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -337,10 +321,10 @@
       "status": "upcoming",
       "player1": "Alex Michelsen",
       "player2": "Arthur Fils",
-      "odds1": 2.84,
+      "odds1": 2.85,
       "odds2": 1.47,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Nordic Bet",
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -360,6 +344,22 @@
       "source": "The Odds API"
     },
     {
+      "id": "381536c46bd1e16a9236502df3f748e5",
+      "tour": "ATP",
+      "event": "ATP Swiss Indoors Basel",
+      "date": "2026-10-29",
+      "start": "11:00",
+      "startIso": "2026-10-29T10:00:00Z",
+      "status": "upcoming",
+      "player1": "Daniel Altmaier",
+      "player2": "Jiri Lehecka",
+      "odds1": 5.1,
+      "odds2": 1.19,
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Winamax (DE)",
+      "source": "The Odds API"
+    },
+    {
       "id": "f7fa6060659fec573d7a7df3881aff82",
       "tour": "ATP",
       "event": "ATP Swiss Indoors Basel",
@@ -369,10 +369,26 @@
       "status": "upcoming",
       "player1": "Valentin Vacherot",
       "player2": "Rafael Jodar",
-      "odds1": 3.6,
+      "odds1": 3.7,
       "odds2": 1.35,
-      "bookmaker1": "Tipico",
+      "bookmaker1": "Winamax (DE)",
       "bookmaker2": "Pinnacle",
+      "source": "The Odds API"
+    },
+    {
+      "id": "3b65bc657a2d7391944d9e343c189c52",
+      "tour": "ATP",
+      "event": "ATP Vienna Open",
+      "date": "2026-10-29",
+      "start": "13:00",
+      "startIso": "2026-10-29T12:00:00Z",
+      "status": "upcoming",
+      "player1": "Flavio Cobolli",
+      "player2": "Matteo Berrettini",
+      "odds1": 2,
+      "odds2": 1.91,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     },
     {
@@ -386,9 +402,9 @@
       "player1": "Tommy Paul",
       "player2": "Luciano Darderi",
       "odds1": 1.29,
-      "odds2": 3.96,
+      "odds2": 4,
       "bookmaker1": "William Hill",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     }
   ]
