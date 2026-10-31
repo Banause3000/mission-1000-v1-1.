@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-30T22:55:19.735Z",
+  "generatedAt": "2026-10-31T02:15:35.074Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "306",
-    "remaining": "194"
+    "used": "309",
+    "remaining": "191"
   },
   "matches": [
     {
@@ -12,14 +12,14 @@
       "tour": "WTA",
       "event": "WTA Pan Pacific Open",
       "date": "2026-10-31",
-      "start": "04:00",
-      "startIso": "2026-10-31T03:00:00Z",
+      "start": "04:10",
+      "startIso": "2026-10-31T03:10:00Z",
       "status": "upcoming",
       "player1": "Leylah Fernandez",
       "player2": "Kamilla Rakhimova",
-      "odds1": 1.37,
-      "odds2": 3.7,
-      "bookmaker1": "Matchbook",
+      "odds1": 1.35,
+      "odds2": 3.75,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Diana Shnaider",
       "player2": "Mia Pohánková",
-      "odds1": 1.4,
-      "odds2": 3.45,
-      "bookmaker1": "William Hill",
+      "odds1": 1.38,
+      "odds2": 3.6,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,7 +49,7 @@
       "status": "upcoming",
       "player1": "Valentin Vacherot",
       "player2": "Taylor Fritz",
-      "odds1": 3.75,
+      "odds1": 3.7,
       "odds2": 1.35,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Carlos Alcaraz",
-      "odds1": 3,
-      "odds2": 1.48,
+      "odds1": 2.92,
+      "odds2": 1.5,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     },
     {
@@ -81,10 +81,10 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Alex de Minaur",
-      "odds1": 1.4,
-      "odds2": 3.4,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Tipico",
+      "odds1": 1.45,
+      "odds2": 3.2,
+      "bookmaker1": "BetOnline.ag",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,8 +97,8 @@
       "status": "upcoming",
       "player1": "Jiri Lehecka",
       "player2": "Jan-Lennard Struff",
-      "odds1": 1.56,
-      "odds2": 2.76,
+      "odds1": 1.48,
+      "odds2": 3.05,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
