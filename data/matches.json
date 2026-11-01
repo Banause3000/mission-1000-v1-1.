@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-11-01T09:08:21.885Z",
+  "generatedAt": "2026-11-01T16:16:47.863Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "7",
-    "remaining": "493"
+    "used": "9",
+    "remaining": "491"
   },
   "matches": [
     {
-      "id": "39b752c46a334d801ef2449710faa164",
+      "id": "ffcb837b0caf57b860936111d914874c",
       "tour": "ATP",
-      "event": "ATP Vienna Open",
+      "event": "ATP Paris Masters",
       "date": "2026-11-01",
-      "start": "14:00",
-      "startIso": "2026-11-01T13:00:00Z",
-      "status": "upcoming",
-      "player1": "Alex de Minaur",
-      "player2": "Carlos Alcaraz",
-      "odds1": 5.3,
-      "odds2": 1.22,
+      "start": "15:00",
+      "startIso": "2026-11-01T14:00:00Z",
+      "status": "live-or-started",
+      "player1": "Adolfo Daniel Vallejo",
+      "player2": "Lorenzo Sonego",
+      "odds1": 6.4,
+      "odds2": 1.93,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -28,14 +28,30 @@
       "tour": "ATP",
       "event": "ATP Swiss Indoors Basel",
       "date": "2026-11-01",
-      "start": "15:30",
-      "startIso": "2026-11-01T14:30:00Z",
-      "status": "upcoming",
+      "start": "15:40",
+      "startIso": "2026-11-01T14:40:27Z",
+      "status": "live-or-started",
       "player1": "Jiri Lehecka",
       "player2": "Valentin Vacherot",
-      "odds1": 1.58,
-      "odds2": 2.68,
+      "odds1": 4.3,
+      "odds2": 1.38,
       "bookmaker1": "Matchbook",
+      "bookmaker2": "Pinnacle",
+      "source": "The Odds API"
+    },
+    {
+      "id": "b04959d8930aba4535db09fe57f9d093",
+      "tour": "ATP",
+      "event": "ATP Paris Masters",
+      "date": "2026-11-02",
+      "start": "11:00",
+      "startIso": "2026-11-02T10:00:00Z",
+      "status": "upcoming",
+      "player1": "Alejandro Davidovich Fokina",
+      "player2": "Moise Kouame",
+      "odds1": 1.37,
+      "odds2": 3.55,
+      "bookmaker1": "Coolbet",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -49,10 +65,26 @@
       "status": "upcoming",
       "player1": "Alejandro Tabilo",
       "player2": "Rafael Jodar",
-      "odds1": 4.5,
+      "odds1": 4.6,
       "odds2": 1.25,
-      "bookmaker1": "Coolbet",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "888sport",
+      "source": "The Odds API"
+    },
+    {
+      "id": "766892f0324922ef7aab73a2713af3c2",
+      "tour": "ATP",
+      "event": "ATP Paris Masters",
+      "date": "2026-11-02",
+      "start": "11:00",
+      "startIso": "2026-11-02T10:00:00Z",
+      "status": "upcoming",
+      "player1": "Alex Michelsen",
+      "player2": "Jiri Lehecka",
+      "odds1": 2.65,
+      "odds2": 1.59,
+      "bookmaker1": "BetAnything",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -65,10 +97,10 @@
       "status": "upcoming",
       "player1": "Daniel Merida Aguilar",
       "player2": "Alexander Blockx",
-      "odds1": 2.4,
-      "odds2": 1.65,
-      "bookmaker1": "Unibet (NL)",
-      "bookmaker2": "GTbets",
+      "odds1": 2.48,
+      "odds2": 1.66,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -82,9 +114,9 @@
       "player1": "Andrey Rublev",
       "player2": "Tomas Martin Etcheverry",
       "odds1": 1.43,
-      "odds2": 3.09,
-      "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "BetOnline.ag",
+      "odds2": 3.2,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -97,10 +129,10 @@
       "status": "upcoming",
       "player1": "Quentin Halys",
       "player2": "Arthur Fery",
-      "odds1": 1.69,
-      "odds2": 2.3,
-      "bookmaker1": "Betsson",
-      "bookmaker2": "BetAnything",
+      "odds1": 1.7,
+      "odds2": 2.42,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -114,9 +146,9 @@
       "player1": "Arthur Rinderknech",
       "player2": "Francisco Cerundolo",
       "odds1": 3.05,
-      "odds2": 1.42,
+      "odds2": 1.45,
       "bookmaker1": "Coolbet",
-      "bookmaker2": "1xBet",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -129,10 +161,10 @@
       "status": "upcoming",
       "player1": "Ugo Humbert",
       "player2": "Botic van de Zandschulp",
-      "odds1": 1.63,
-      "odds2": 2.44,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "BetOnline.ag",
+      "odds1": 1.62,
+      "odds2": 2.5,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -145,10 +177,10 @@
       "status": "upcoming",
       "player1": "Brandon Nakashima",
       "player2": "Matteo Berrettini",
-      "odds1": 1.68,
-      "odds2": 2.34,
-      "bookmaker1": "BetOnline.ag",
-      "bookmaker2": "GTbets",
+      "odds1": 1.69,
+      "odds2": 2.35,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "BetAnything",
       "source": "The Odds API"
     },
     {
@@ -161,10 +193,10 @@
       "status": "upcoming",
       "player1": "Cameron Norrie",
       "player2": "Matteo Arnaldi",
-      "odds1": 1.46,
-      "odds2": 2.9,
-      "bookmaker1": "Coolbet",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.47,
+      "odds2": 3.02,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -177,10 +209,10 @@
       "status": "upcoming",
       "player1": "Denis Shapovalov",
       "player2": "Karen Khachanov",
-      "odds1": 2.51,
-      "odds2": 1.62,
-      "bookmaker1": "GTbets",
-      "bookmaker2": "BetAnything",
+      "odds1": 2.52,
+      "odds2": 1.64,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -193,10 +225,10 @@
       "status": "upcoming",
       "player1": "Tommy Paul",
       "player2": "Holger Rune",
-      "odds1": 1.5,
-      "odds2": 2.8,
-      "bookmaker1": "888sport",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.54,
+      "odds2": 2.82,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -210,9 +242,9 @@
       "player1": "Lorenzo Musetti",
       "player2": "Hubert Hurkacz",
       "odds1": 2.05,
-      "odds2": 1.91,
+      "odds2": 1.92,
       "bookmaker1": "BetAnything",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -225,10 +257,10 @@
       "status": "upcoming",
       "player1": "Ignacio Buse",
       "player2": "Zizou Bergs",
-      "odds1": 3.5,
-      "odds2": 1.37,
-      "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "GTbets",
+      "odds1": 3.55,
+      "odds2": 1.38,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     },
     {
@@ -241,10 +273,10 @@
       "status": "upcoming",
       "player1": "Stefanos Tsitsipas",
       "player2": "Learner Tien",
-      "odds1": 2.16,
-      "odds2": 1.77,
-      "bookmaker1": "BetOnline.ag",
-      "bookmaker2": "Coolbet",
+      "odds1": 2.2,
+      "odds2": 1.79,
+      "bookmaker1": "BetAnything",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -260,7 +292,23 @@
       "odds1": 1.65,
       "odds2": 2.51,
       "bookmaker1": "GTbets",
-      "bookmaker2": "BetOnline.ag",
+      "bookmaker2": "Pinnacle",
+      "source": "The Odds API"
+    },
+    {
+      "id": "1ead1ee3704640aea824a5759ad1cc28",
+      "tour": "ATP",
+      "event": "ATP Paris Masters",
+      "date": "2026-11-02",
+      "start": "11:00",
+      "startIso": "2026-11-02T10:00:00Z",
+      "status": "upcoming",
+      "player1": "Novak Djokovic",
+      "player2": "Valentin Vacherot",
+      "odds1": 1.45,
+      "odds2": 3.15,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     }
   ]
