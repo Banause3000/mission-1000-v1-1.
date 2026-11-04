@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-04T01:13:55.549Z",
+  "generatedAt": "2026-11-04T07:56:59.689Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "18",
-    "remaining": "482"
+    "used": "19",
+    "remaining": "481"
   },
   "matches": [
     {
@@ -17,8 +17,8 @@
       "status": "upcoming",
       "player1": "Mattia Bellucci",
       "player2": "Arthur Rinderknech",
-      "odds1": 1.78,
-      "odds2": 2.24,
+      "odds1": 1.75,
+      "odds2": 2.3,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -33,8 +33,8 @@
       "status": "upcoming",
       "player1": "Quentin Halys",
       "player2": "Frances Tiafoe",
-      "odds1": 2.44,
-      "odds2": 1.69,
+      "odds1": 2.4,
+      "odds2": 1.71,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -65,9 +65,9 @@
       "status": "upcoming",
       "player1": "Tommy Paul",
       "player2": "Daniel Merida Aguilar",
-      "odds1": 1.31,
-      "odds2": 4.6,
-      "bookmaker1": "GTbets",
+      "odds1": 1.25,
+      "odds2": 5,
+      "bookmaker1": "Winamax (DE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -81,7 +81,7 @@
       "status": "upcoming",
       "player1": "Ignacio Buse",
       "player2": "Daniil Medvedev",
-      "odds1": 6.6,
+      "odds1": 7,
       "odds2": 1.16,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
@@ -97,8 +97,8 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Lorenzo Musetti",
-      "odds1": 1.46,
-      "odds2": 3.1,
+      "odds1": 1.44,
+      "odds2": 3.2,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -113,8 +113,8 @@
       "status": "upcoming",
       "player1": "Tomas Martin Etcheverry",
       "player2": "Alex de Minaur",
-      "odds1": 5.1,
-      "odds2": 1.24,
+      "odds1": 5.6,
+      "odds2": 1.23,
       "bookmaker1": "Matchbook",
       "bookmaker2": "LeoVegas (SE)",
       "source": "The Odds API"
@@ -129,9 +129,9 @@
       "status": "upcoming",
       "player1": "Novak Djokovic",
       "player2": "Rinky Hijikata",
-      "odds1": 1.29,
-      "odds2": 4.5,
-      "bookmaker1": "William Hill",
+      "odds1": 1.27,
+      "odds2": 5,
+      "bookmaker1": "Unibet (SE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -145,7 +145,7 @@
       "status": "upcoming",
       "player1": "Alex Molcan",
       "player2": "Taylor Fritz",
-      "odds1": 4.4,
+      "odds1": 4.7,
       "odds2": 1.27,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -161,9 +161,9 @@
       "status": "upcoming",
       "player1": "Nuno Borges",
       "player2": "Karen Khachanov",
-      "odds1": 2.8,
-      "odds2": 1.52,
-      "bookmaker1": "BetOnline.ag",
+      "odds1": 2.9,
+      "odds2": 1.51,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -177,9 +177,9 @@
       "status": "upcoming",
       "player1": "Thiago Agustin Tirante",
       "player2": "Jan-Lennard Struff",
-      "odds1": 3.2,
-      "odds2": 1.5,
-      "bookmaker1": "Winamax (DE)",
+      "odds1": 3,
+      "odds2": 1.48,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -193,10 +193,10 @@
       "status": "upcoming",
       "player1": "Matteo Berrettini",
       "player2": "Ugo Humbert",
-      "odds1": 2.08,
-      "odds2": 1.89,
+      "odds1": 2.1,
+      "odds2": 1.91,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -209,9 +209,9 @@
       "status": "upcoming",
       "player1": "Alex Michelsen",
       "player2": "Carlos Alcaraz",
-      "odds1": 5.6,
+      "odds1": 6,
       "odds2": 1.19,
-      "bookmaker1": "Unibet (NL)",
+      "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -226,9 +226,9 @@
       "player1": "Arthur Fils",
       "player2": "Tomas Machac",
       "odds1": 1.6,
-      "odds2": 2.66,
+      "odds2": 2.62,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "GTbets",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     }
   ]
