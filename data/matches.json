@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-05T02:43:16.733Z",
+  "generatedAt": "2026-11-05T10:43:23.694Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "22",
-    "remaining": "478"
+    "used": "23",
+    "remaining": "477"
   },
   "matches": [
     {
@@ -12,15 +12,15 @@
       "tour": "ATP",
       "event": "ATP Paris Masters",
       "date": "2026-11-05",
-      "start": "11:00",
-      "startIso": "2026-11-05T10:00:00Z",
-      "status": "upcoming",
+      "start": "11:08",
+      "startIso": "2026-11-05T10:08:02Z",
+      "status": "live-or-started",
       "player1": "Tommy Paul",
       "player2": "Quentin Halys",
-      "odds1": 1.35,
-      "odds2": 3.8,
+      "odds1": 1.53,
+      "odds2": 3.15,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Unibet (SE)",
       "source": "The Odds API"
     },
     {
@@ -33,7 +33,7 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Arthur Rinderknech",
-      "odds1": 1.36,
+      "odds1": 1.37,
       "odds2": 3.69,
       "bookmaker1": "Betfair",
       "bookmaker2": "GTbets",
@@ -50,9 +50,9 @@
       "player1": "Lorenzo Musetti",
       "player2": "Luca Van Assche",
       "odds1": 1.38,
-      "odds2": 3.55,
+      "odds2": 3.65,
       "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Winamax (DE)",
       "source": "The Odds API"
     },
     {
@@ -65,8 +65,8 @@
       "status": "upcoming",
       "player1": "Rinky Hijikata",
       "player2": "Tomas Martin Etcheverry",
-      "odds1": 2.18,
-      "odds2": 1.81,
+      "odds1": 2.24,
+      "odds2": 1.79,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -81,10 +81,10 @@
       "status": "upcoming",
       "player1": "Nuno Borges",
       "player2": "Ignacio Buse",
-      "odds1": 1.69,
-      "odds2": 2.42,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.65,
+      "odds2": 2.62,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -97,8 +97,8 @@
       "status": "upcoming",
       "player1": "Jan-Lennard Struff",
       "player2": "Casper Ruud",
-      "odds1": 2.68,
-      "odds2": 1.57,
+      "odds1": 2.84,
+      "odds2": 1.54,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -113,9 +113,9 @@
       "status": "upcoming",
       "player1": "Matteo Berrettini",
       "player2": "Carlos Alcaraz",
-      "odds1": 6.02,
-      "odds2": 1.2,
-      "bookmaker1": "GTbets",
+      "odds1": 6.5,
+      "odds2": 1.18,
+      "bookmaker1": "888sport",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
@@ -129,8 +129,8 @@
       "status": "upcoming",
       "player1": "Arthur Fils",
       "player2": "Taylor Fritz",
-      "odds1": 1.81,
-      "odds2": 2.18,
+      "odds1": 1.86,
+      "odds2": 2.14,
       "bookmaker1": "Matchbook",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
