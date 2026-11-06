@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-06T06:31:47.425Z",
+  "generatedAt": "2026-11-06T14:32:53.934Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "26",
-    "remaining": "474"
+    "used": "27",
+    "remaining": "473"
   },
   "matches": [
     {
@@ -12,15 +12,15 @@
       "tour": "ATP",
       "event": "ATP Paris Masters",
       "date": "2026-11-06",
-      "start": "14:00",
-      "startIso": "2026-11-06T13:00:00Z",
-      "status": "upcoming",
+      "start": "14:07",
+      "startIso": "2026-11-06T13:07:19Z",
+      "status": "live-or-started",
       "player1": "Ben Shelton",
       "player2": "Tommy Paul",
-      "odds1": 2.2,
-      "odds2": 1.83,
-      "bookmaker1": "Winamax (DE)",
-      "bookmaker2": "Betfair",
+      "odds1": 1.65,
+      "odds2": 2.85,
+      "bookmaker1": "Betsson",
+      "bookmaker2": "Nordic Bet",
       "source": "The Odds API"
     },
     {
@@ -28,15 +28,15 @@
       "tour": "ATP",
       "event": "ATP Paris Masters",
       "date": "2026-11-06",
-      "start": "15:10",
-      "startIso": "2026-11-06T14:10:00Z",
+      "start": "15:50",
+      "startIso": "2026-11-06T14:50:00Z",
       "status": "upcoming",
       "player1": "Luca Van Assche",
       "player2": "Rinky Hijikata",
-      "odds1": 1.63,
-      "odds2": 2.56,
+      "odds1": 1.65,
+      "odds2": 2.55,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "BetAnything",
       "source": "The Odds API"
     },
     {
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Carlos Alcaraz",
-      "odds1": 3.65,
-      "odds2": 1.36,
+      "odds1": 3.7,
+      "odds2": 1.37,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -66,7 +66,7 @@
       "player1": "Casper Ruud",
       "player2": "Nuno Borges",
       "odds1": 1.52,
-      "odds2": 2.88,
+      "odds2": 3,
       "bookmaker1": "GTbets",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
