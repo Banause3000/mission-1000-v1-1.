@@ -1,44 +1,12 @@
 {
-  "generatedAt": "2026-11-05T18:40:10.652Z",
+  "generatedAt": "2026-11-06T00:06:27.705Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "24",
-    "remaining": "476"
+    "used": "25",
+    "remaining": "475"
   },
   "matches": [
-    {
-      "id": "6a03e950601f142942705acfb764d107",
-      "tour": "ATP",
-      "event": "ATP Paris Masters",
-      "date": "2026-11-05",
-      "start": "19:15",
-      "startIso": "2026-11-05T18:15:37Z",
-      "status": "live-or-started",
-      "player1": "Arthur Fils",
-      "player2": "Taylor Fritz",
-      "odds1": 3.3,
-      "odds2": 1.93,
-      "bookmaker1": "Unibet (SE)",
-      "bookmaker2": "Betclic (FR)",
-      "source": "The Odds API"
-    },
-    {
-      "id": "47d9edba7490e876194504362c877fe3",
-      "tour": "ATP",
-      "event": "ATP Paris Masters",
-      "date": "2026-11-05",
-      "start": "20:30",
-      "startIso": "2026-11-05T19:30:00Z",
-      "status": "upcoming",
-      "player1": "Jan-Lennard Struff",
-      "player2": "Casper Ruud",
-      "odds1": 3.05,
-      "odds2": 1.5,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "GTbets",
-      "source": "The Odds API"
-    },
     {
       "id": "10a66a309af482f75813cc0d9ce0bdd1",
       "tour": "ATP",
@@ -49,10 +17,10 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Tommy Paul",
-      "odds1": 2.2,
-      "odds2": 1.83,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Unibet (NL)",
+      "odds1": 2.18,
+      "odds2": 1.84,
+      "bookmaker1": "Coolbet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +33,42 @@
       "status": "upcoming",
       "player1": "Luca Van Assche",
       "player2": "Rinky Hijikata",
-      "odds1": 1.76,
-      "odds2": 2.44,
-      "bookmaker1": "GTbets",
+      "odds1": 1.64,
+      "odds2": 2.52,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "e4e0781ebc80c47d216dd73609a3c8e0",
+      "tour": "ATP",
+      "event": "ATP Paris Masters",
+      "date": "2026-11-06",
+      "start": "19:00",
+      "startIso": "2026-11-06T18:00:00Z",
+      "status": "upcoming",
+      "player1": "Taylor Fritz",
+      "player2": "Carlos Alcaraz",
+      "odds1": 3.55,
+      "odds2": 1.38,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "0adc47c275819823d018232033a6de7f",
+      "tour": "ATP",
+      "event": "ATP Paris Masters",
+      "date": "2026-11-06",
+      "start": "20:30",
+      "startIso": "2026-11-06T19:30:00Z",
+      "status": "upcoming",
+      "player1": "Casper Ruud",
+      "player2": "Nuno Borges",
+      "odds1": 1.56,
+      "odds2": 2.65,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Coolbet",
       "source": "The Odds API"
     }
   ]
