@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-06T00:06:27.705Z",
+  "generatedAt": "2026-11-06T06:31:47.425Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "25",
-    "remaining": "475"
+    "used": "26",
+    "remaining": "474"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Tommy Paul",
-      "odds1": 2.18,
-      "odds2": 1.84,
-      "bookmaker1": "Coolbet",
+      "odds1": 2.2,
+      "odds2": 1.83,
+      "bookmaker1": "Winamax (DE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,8 +33,8 @@
       "status": "upcoming",
       "player1": "Luca Van Assche",
       "player2": "Rinky Hijikata",
-      "odds1": 1.64,
-      "odds2": 2.52,
+      "odds1": 1.63,
+      "odds2": 2.56,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Taylor Fritz",
       "player2": "Carlos Alcaraz",
-      "odds1": 3.55,
-      "odds2": 1.38,
+      "odds1": 3.65,
+      "odds2": 1.36,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Casper Ruud",
       "player2": "Nuno Borges",
-      "odds1": 1.56,
-      "odds2": 2.65,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Coolbet",
+      "odds1": 1.52,
+      "odds2": 2.88,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
