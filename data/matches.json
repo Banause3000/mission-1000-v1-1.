@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-08T01:45:58.663Z",
+  "generatedAt": "2026-11-08T08:53:00.003Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "33",
-    "remaining": "467"
+    "used": "34",
+    "remaining": "466"
   },
   "matches": [
     {
@@ -19,8 +19,8 @@
       "player2": "Carlos Alcaraz",
       "odds1": 4.3,
       "odds2": 1.3,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "GTbets",
+      "bookmaker1": "Winamax (DE)",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
