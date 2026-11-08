@@ -1,27 +1,10 @@
 {
-  "generatedAt": "2026-11-08T15:54:48.720Z",
+  "generatedAt": "2026-11-08T20:23:53.079Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
     "used": "35",
     "remaining": "465"
   },
-  "matches": [
-    {
-      "id": "2c1005d01a3f63cd2249facf4ce5f5ed",
-      "tour": "ATP",
-      "event": "ATP Paris Masters",
-      "date": "2026-11-08",
-      "start": "15:14",
-      "startIso": "2026-11-08T14:14:41Z",
-      "status": "live-or-started",
-      "player1": "Ben Shelton",
-      "player2": "Carlos Alcaraz",
-      "odds1": 8.08,
-      "odds2": 1.48,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    }
-  ]
+  "matches": []
 }
