@@ -1,10 +1,75 @@
 {
-  "generatedAt": "2026-11-10T07:41:18.880Z",
+  "generatedAt": "2026-11-10T16:22:06.110Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "35",
-    "remaining": "465"
+    "used": "36",
+    "remaining": "464"
   },
-  "matches": []
+  "matches": [
+    {
+      "id": "ef9c0fc8fc1cd492cac4edd668d60a72",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-10",
+      "start": "21:00",
+      "startIso": "2026-11-10T20:00:00Z",
+      "status": "upcoming",
+      "player1": "Marta Kostyuk",
+      "player2": "Jessica Pegula",
+      "odds1": 2.74,
+      "odds2": 1.58,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "0066b4bf94846e710339ce11591e33f8",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-10",
+      "start": "22:10",
+      "startIso": "2026-11-10T21:10:00Z",
+      "status": "upcoming",
+      "player1": "Coco Gauff",
+      "player2": "Linda Noskova",
+      "odds1": 1.63,
+      "odds2": 2.56,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "d87ade1e56f0c96e3b28b59dea344837",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-11",
+      "start": "21:00",
+      "startIso": "2026-11-11T20:00:00Z",
+      "status": "upcoming",
+      "player1": "Elina Svitolina",
+      "player2": "Karolina Muchova",
+      "odds1": 2.38,
+      "odds2": 1.67,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "d1549c8585e649677db3579affc1da2e",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-11",
+      "start": "22:10",
+      "startIso": "2026-11-11T21:10:00Z",
+      "status": "upcoming",
+      "player1": "Aryna Sabalenka",
+      "player2": "Mirra Andreeva",
+      "odds1": 1.84,
+      "odds2": 2.14,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    }
+  ]
 }
