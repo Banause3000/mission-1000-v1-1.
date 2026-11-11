@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-11T09:13:52.130Z",
+  "generatedAt": "2026-11-11T17:24:09.903Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "39",
-    "remaining": "461"
+    "used": "40",
+    "remaining": "460"
   },
   "matches": [
     {
@@ -18,9 +18,9 @@
       "player1": "Elina Svitolina",
       "player2": "Karolina Muchova",
       "odds1": 2.36,
-      "odds2": 1.76,
+      "odds2": 1.72,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -33,8 +33,8 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Mirra Andreeva",
-      "odds1": 1.96,
-      "odds2": 2.04,
+      "odds1": 2,
+      "odds2": 1.99,
       "bookmaker1": "Betfair",
       "bookmaker2": "Matchbook",
       "source": "The Odds API"
@@ -50,9 +50,9 @@
       "player1": "Marta Kostyuk",
       "player2": "Coco Gauff",
       "odds1": 3.56,
-      "odds2": 1.37,
+      "odds2": 1.39,
       "bookmaker1": "1xBet",
-      "bookmaker2": "Matchbook",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Linda Noskova",
-      "odds1": 2,
-      "odds2": 1.88,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "GTbets",
+      "odds1": 2.12,
+      "odds2": 1.89,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     }
   ]
