@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-11-11T23:40:08.630Z",
+  "generatedAt": "2026-11-12T06:59:40.955Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "41",
-    "remaining": "459"
+    "used": "42",
+    "remaining": "458"
   },
   "matches": [
-    {
-      "id": "d1549c8585e649677db3579affc1da2e",
-      "tour": "WTA",
-      "event": "WTA Finals",
-      "date": "2026-11-11",
-      "start": "23:38",
-      "startIso": "2026-11-11T22:38:00Z",
-      "status": "live-or-started",
-      "player1": "Aryna Sabalenka",
-      "player2": "Mirra Andreeva",
-      "odds1": 55,
-      "odds2": 1.18,
-      "bookmaker1": "Matchbook",
-      "bookmaker2": "Unibet (FR)",
-      "source": "The Odds API"
-    },
     {
       "id": "b8a1b5d0077794775db0a2ca6b15baf7",
       "tour": "WTA",
@@ -33,10 +17,10 @@
       "status": "upcoming",
       "player1": "Marta Kostyuk",
       "player2": "Coco Gauff",
-      "odds1": 3.5,
-      "odds2": 1.42,
+      "odds1": 3.7,
+      "odds2": 1.4,
       "bookmaker1": "Betfair",
-      "bookmaker2": "LeoVegas (SE)",
+      "bookmaker2": "GTbets",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,42 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Linda Noskova",
-      "odds1": 2.08,
-      "odds2": 1.9,
+      "odds1": 2.1,
+      "odds2": 1.88,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "GTbets",
+      "source": "The Odds API"
+    },
+    {
+      "id": "6b92a67eab021047017da9d42e1e1fae",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-13",
+      "start": "21:00",
+      "startIso": "2026-11-13T20:00:00Z",
+      "status": "upcoming",
+      "player1": "Mirra Andreeva",
+      "player2": "Karolina Muchova",
+      "odds1": 1.58,
+      "odds2": 2.53,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Marathon Bet",
+      "source": "The Odds API"
+    },
+    {
+      "id": "29a6e4e35a3b385e9666473ad68f2084",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-13",
+      "start": "22:10",
+      "startIso": "2026-11-13T21:10:00Z",
+      "status": "upcoming",
+      "player1": "Aryna Sabalenka",
+      "player2": "Elina Svitolina",
+      "odds1": 1.57,
+      "odds2": 2.52,
+      "bookmaker1": "888sport",
+      "bookmaker2": "Marathon Bet",
       "source": "The Odds API"
     }
   ]
