@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-11-12T22:11:41.591Z",
+  "generatedAt": "2026-11-13T02:52:01.695Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "44",
-    "remaining": "456"
+    "used": "45",
+    "remaining": "455"
   },
   "matches": [
-    {
-      "id": "7d0fa680caf6f5718ca51b421754252d",
-      "tour": "WTA",
-      "event": "WTA Finals",
-      "date": "2026-11-12",
-      "start": "23:10",
-      "startIso": "2026-11-12T22:10:00Z",
-      "status": "live-or-started",
-      "player1": "Jessica Pegula",
-      "player2": "Linda Noskova",
-      "odds1": 2.32,
-      "odds2": 1.8,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "BetAnything",
-      "source": "The Odds API"
-    },
     {
       "id": "6b92a67eab021047017da9d42e1e1fae",
       "tour": "WTA",
@@ -33,10 +17,10 @@
       "status": "upcoming",
       "player1": "Mirra Andreeva",
       "player2": "Karolina Muchova",
-      "odds1": 1.41,
-      "odds2": 3.5,
+      "odds1": 1.4,
+      "odds2": 3.55,
       "bookmaker1": "1xBet",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Elina Svitolina",
-      "odds1": 1.57,
-      "odds2": 2.7,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.55,
+      "odds2": 2.82,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
