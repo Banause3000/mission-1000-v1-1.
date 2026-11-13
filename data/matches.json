@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-13T10:50:01.292Z",
+  "generatedAt": "2026-11-13T18:28:48.371Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "47",
-    "remaining": "453"
+    "used": "49",
+    "remaining": "451"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Mirra Andreeva",
       "player2": "Karolina Muchova",
-      "odds1": 1.38,
-      "odds2": 3.65,
-      "bookmaker1": "GTbets",
+      "odds1": 1.41,
+      "odds2": 3.4,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,10 +33,26 @@
       "status": "upcoming",
       "player1": "Aryna Sabalenka",
       "player2": "Elina Svitolina",
-      "odds1": 1.55,
-      "odds2": 2.8,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.52,
+      "odds2": 2.96,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "53d87628f7d7ae2c16b9b10ab1be03ab",
+      "tour": "WTA",
+      "event": "WTA Finals",
+      "date": "2026-11-14",
+      "start": "16:00",
+      "startIso": "2026-11-14T15:00:00Z",
+      "status": "upcoming",
+      "player1": "Jessica Pegula",
+      "player2": "Mirra Andreeva",
+      "odds1": 2.6,
+      "odds2": 1.56,
+      "bookmaker1": "Nordic Bet",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
     {
@@ -49,7 +65,7 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Rafael Jodar",
-      "odds1": 1.45,
+      "odds1": 1.44,
       "odds2": 3,
       "bookmaker1": "BetAnything",
       "bookmaker2": "Unibet (NL)",
@@ -65,10 +81,26 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Arthur Fils",
-      "odds1": 1.67,
-      "odds2": 2.3,
+      "odds1": 1.59,
+      "odds2": 2.46,
       "bookmaker1": "BetAnything",
-      "bookmaker2": "BetAnything",
+      "bookmaker2": "BetOnline.ag",
+      "source": "The Odds API"
+    },
+    {
+      "id": "c81851847baf5e3a479993ec167a8e2a",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-16",
+      "start": "14:00",
+      "startIso": "2026-11-16T13:00:00Z",
+      "status": "upcoming",
+      "player1": "Carlos Alcaraz",
+      "player2": "Frances Tiafoe",
+      "odds1": 1.14,
+      "odds2": 7,
+      "bookmaker1": "Unibet (NL)",
+      "bookmaker2": "William Hill",
       "source": "The Odds API"
     }
   ]
