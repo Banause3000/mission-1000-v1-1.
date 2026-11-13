@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-13T02:52:01.695Z",
+  "generatedAt": "2026-11-13T10:50:01.292Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "45",
-    "remaining": "455"
+    "used": "47",
+    "remaining": "453"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Mirra Andreeva",
       "player2": "Karolina Muchova",
-      "odds1": 1.4,
-      "odds2": 3.55,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Matchbook",
+      "odds1": 1.38,
+      "odds2": 3.65,
+      "bookmaker1": "GTbets",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -34,9 +34,41 @@
       "player1": "Aryna Sabalenka",
       "player2": "Elina Svitolina",
       "odds1": 1.55,
-      "odds2": 2.82,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Betfair",
+      "odds2": 2.8,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Matchbook",
+      "source": "The Odds API"
+    },
+    {
+      "id": "a09dfd51fadc5c32dd0adb4f799b8628",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-15",
+      "start": "14:00",
+      "startIso": "2026-11-15T13:00:00Z",
+      "status": "upcoming",
+      "player1": "Alexander Zverev",
+      "player2": "Rafael Jodar",
+      "odds1": 1.45,
+      "odds2": 3,
+      "bookmaker1": "BetAnything",
+      "bookmaker2": "Unibet (NL)",
+      "source": "The Odds API"
+    },
+    {
+      "id": "2e7a66dfb5caacad9c224d3eaf230dee",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-15",
+      "start": "20:30",
+      "startIso": "2026-11-15T19:30:00Z",
+      "status": "upcoming",
+      "player1": "Ben Shelton",
+      "player2": "Arthur Fils",
+      "odds1": 1.67,
+      "odds2": 2.3,
+      "bookmaker1": "BetAnything",
+      "bookmaker2": "BetAnything",
       "source": "The Odds API"
     }
   ]
