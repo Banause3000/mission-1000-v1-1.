@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-14T13:25:21.983Z",
+  "generatedAt": "2026-11-14T18:49:25.529Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "55",
-    "remaining": "445"
+    "used": "57",
+    "remaining": "443"
   },
   "matches": [
     {
@@ -17,10 +17,10 @@
       "status": "upcoming",
       "player1": "Jessica Pegula",
       "player2": "Mirra Andreeva",
-      "odds1": 3.35,
-      "odds2": 1.41,
+      "odds1": 3.3,
+      "odds2": 1.43,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -33,10 +33,10 @@
       "status": "upcoming",
       "player1": "Linda Noskova",
       "player2": "Elina Svitolina",
-      "odds1": 1.63,
+      "odds1": 1.64,
       "odds2": 2.54,
       "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Matchbook",
       "source": "The Odds API"
     },
     {
@@ -49,8 +49,8 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Rafael Jodar",
-      "odds1": 1.46,
-      "odds2": 3.1,
+      "odds1": 1.45,
+      "odds2": 3.15,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Arthur Fils",
-      "odds1": 1.6,
-      "odds2": 2.58,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
+      "odds1": 1.61,
+      "odds2": 2.6,
+      "bookmaker1": "BetOnline.ag",
+      "bookmaker2": "Unibet (NL)",
       "source": "The Odds API"
     },
     {
@@ -81,9 +81,9 @@
       "status": "upcoming",
       "player1": "Carlos Alcaraz",
       "player2": "Frances Tiafoe",
-      "odds1": 1.14,
+      "odds1": 1.13,
       "odds2": 7.84,
-      "bookmaker1": "Unibet (NL)",
+      "bookmaker1": "Betfair",
       "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
