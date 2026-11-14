@@ -1,42 +1,26 @@
 {
-  "generatedAt": "2026-11-14T18:49:25.529Z",
+  "generatedAt": "2026-11-14T22:55:38.525Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "57",
-    "remaining": "443"
+    "used": "59",
+    "remaining": "441"
   },
   "matches": [
-    {
-      "id": "53d87628f7d7ae2c16b9b10ab1be03ab",
-      "tour": "WTA",
-      "event": "WTA Finals",
-      "date": "2026-11-14",
-      "start": "21:00",
-      "startIso": "2026-11-14T20:00:00Z",
-      "status": "upcoming",
-      "player1": "Jessica Pegula",
-      "player2": "Mirra Andreeva",
-      "odds1": 3.3,
-      "odds2": 1.43,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
-      "source": "The Odds API"
-    },
     {
       "id": "57cede457aa62785e8460c5b2a052ac6",
       "tour": "WTA",
       "event": "WTA Finals",
       "date": "2026-11-14",
-      "start": "22:30",
-      "startIso": "2026-11-14T21:30:00Z",
-      "status": "upcoming",
+      "start": "22:45",
+      "startIso": "2026-11-14T21:45:00Z",
+      "status": "live-or-started",
       "player1": "Linda Noskova",
       "player2": "Elina Svitolina",
-      "odds1": 1.64,
-      "odds2": 2.54,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Matchbook",
+      "odds1": 29,
+      "odds2": 2.33,
+      "bookmaker1": "Matchbook",
+      "bookmaker2": "Codere (IT)",
       "source": "The Odds API"
     },
     {
@@ -65,10 +49,10 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Arthur Fils",
-      "odds1": 1.61,
+      "odds1": 1.62,
       "odds2": 2.6,
-      "bookmaker1": "BetOnline.ag",
-      "bookmaker2": "Unibet (NL)",
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -99,7 +83,7 @@
       "player2": "Flavio Cobolli",
       "odds1": 1.29,
       "odds2": 4.1,
-      "bookmaker1": "William Hill",
+      "bookmaker1": "BetAnything",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
