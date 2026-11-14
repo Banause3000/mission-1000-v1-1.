@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-14T06:06:34.784Z",
+  "generatedAt": "2026-11-14T13:25:21.983Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "53",
-    "remaining": "447"
+    "used": "55",
+    "remaining": "445"
   },
   "matches": [
     {
@@ -18,7 +18,7 @@
       "player1": "Jessica Pegula",
       "player2": "Mirra Andreeva",
       "odds1": 3.35,
-      "odds2": 1.42,
+      "odds2": 1.41,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -28,15 +28,15 @@
       "tour": "WTA",
       "event": "WTA Finals",
       "date": "2026-11-14",
-      "start": "22:10",
-      "startIso": "2026-11-14T21:10:00Z",
+      "start": "22:30",
+      "startIso": "2026-11-14T21:30:00Z",
       "status": "upcoming",
       "player1": "Linda Noskova",
       "player2": "Elina Svitolina",
       "odds1": 1.63,
-      "odds2": 2.6,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Matchbook",
+      "odds2": 2.54,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -49,10 +49,10 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Rafael Jodar",
-      "odds1": 1.44,
-      "odds2": 3,
-      "bookmaker1": "William Hill",
-      "bookmaker2": "Unibet (NL)",
+      "odds1": 1.46,
+      "odds2": 3.1,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Arthur Fils",
-      "odds1": 1.58,
-      "odds2": 2.52,
+      "odds1": 1.6,
+      "odds2": 2.58,
       "bookmaker1": "Pinnacle",
-      "bookmaker2": "Pinnacle",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -82,9 +82,9 @@
       "player1": "Carlos Alcaraz",
       "player2": "Frances Tiafoe",
       "odds1": 1.14,
-      "odds2": 7,
+      "odds2": 7.84,
       "bookmaker1": "Unibet (NL)",
-      "bookmaker2": "William Hill",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -97,10 +97,10 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Flavio Cobolli",
-      "odds1": 1.23,
-      "odds2": 4.5,
-      "bookmaker1": "Unibet (NL)",
-      "bookmaker2": "William Hill",
+      "odds1": 1.29,
+      "odds2": 4.1,
+      "bookmaker1": "William Hill",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
