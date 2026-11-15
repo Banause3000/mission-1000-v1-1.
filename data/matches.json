@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-15T16:58:45.189Z",
+  "generatedAt": "2026-11-15T21:40:45.026Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "65",
-    "remaining": "435"
+    "used": "67",
+    "remaining": "433"
   },
   "matches": [
     {
@@ -12,15 +12,15 @@
       "tour": "ATP",
       "event": "ATP Finals",
       "date": "2026-11-15",
-      "start": "20:30",
-      "startIso": "2026-11-15T19:30:00Z",
-      "status": "upcoming",
+      "start": "20:37",
+      "startIso": "2026-11-15T19:37:00Z",
+      "status": "live-or-started",
       "player1": "Ben Shelton",
       "player2": "Arthur Fils",
-      "odds1": 1.64,
-      "odds2": 2.54,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
+      "odds1": 1.15,
+      "odds2": 21,
+      "bookmaker1": "888sport",
+      "bookmaker2": "William Hill",
       "source": "The Odds API"
     },
     {
@@ -28,15 +28,15 @@
       "tour": "WTA",
       "event": "WTA Finals",
       "date": "2026-11-15",
-      "start": "21:00",
-      "startIso": "2026-11-15T20:00:00Z",
-      "status": "upcoming",
+      "start": "21:10",
+      "startIso": "2026-11-15T20:10:00Z",
+      "status": "live-or-started",
       "player1": "Elina Svitolina",
       "player2": "Mirra Andreeva",
-      "odds1": 3.55,
-      "odds2": 1.39,
+      "odds1": 10,
+      "odds2": 1.2,
       "bookmaker1": "Matchbook",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "Pinnacle",
       "source": "The Odds API"
     },
     {
@@ -50,8 +50,8 @@
       "player1": "Carlos Alcaraz",
       "player2": "Frances Tiafoe",
       "odds1": 1.13,
-      "odds2": 8.8,
-      "bookmaker1": "Unibet (NL)",
+      "odds2": 8.6,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
