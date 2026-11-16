@@ -1,40 +1,24 @@
 {
-  "generatedAt": "2026-11-16T09:28:04.989Z",
+  "generatedAt": "2026-11-16T19:48:09.854Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "69",
-    "remaining": "431"
+    "used": "70",
+    "remaining": "430"
   },
   "matches": [
-    {
-      "id": "c81851847baf5e3a479993ec167a8e2a",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-16",
-      "start": "14:00",
-      "startIso": "2026-11-16T13:00:00Z",
-      "status": "upcoming",
-      "player1": "Carlos Alcaraz",
-      "player2": "Frances Tiafoe",
-      "odds1": 1.12,
-      "odds2": 8.8,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "7ac3bf138012785e65835d1481524d5c",
       "tour": "ATP",
       "event": "ATP Finals",
       "date": "2026-11-16",
-      "start": "20:30",
-      "startIso": "2026-11-16T19:30:00Z",
+      "start": "20:55",
+      "startIso": "2026-11-16T19:55:00Z",
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Flavio Cobolli",
-      "odds1": 1.31,
-      "odds2": 4.2,
+      "odds1": 1.28,
+      "odds2": 4.5,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Arthur Fils",
       "player2": "Rafael Jodar",
-      "odds1": 2.12,
-      "odds2": 1.8,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "Coolbet",
+      "odds1": 2,
+      "odds2": 1.98,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +49,10 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Ben Shelton",
-      "odds1": 1.56,
-      "odds2": 2.75,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "William Hill",
+      "odds1": 1.54,
+      "odds2": 2.82,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
