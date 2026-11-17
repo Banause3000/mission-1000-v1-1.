@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-11-16T19:48:09.854Z",
+  "generatedAt": "2026-11-17T02:52:49.165Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "70",
-    "remaining": "430"
+    "used": "71",
+    "remaining": "429"
   },
   "matches": [
-    {
-      "id": "7ac3bf138012785e65835d1481524d5c",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-16",
-      "start": "20:55",
-      "startIso": "2026-11-16T19:55:00Z",
-      "status": "upcoming",
-      "player1": "Daniil Medvedev",
-      "player2": "Flavio Cobolli",
-      "odds1": 1.28,
-      "odds2": 4.5,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "b347b8bd2e85f10eca7dc7160026443b",
       "tour": "ATP",
@@ -49,10 +33,42 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Ben Shelton",
-      "odds1": 1.54,
-      "odds2": 2.82,
+      "odds1": 1.53,
+      "odds2": 2.84,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "a3e64105988f48f4c6447c9ca6de0030",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-18",
+      "start": "14:00",
+      "startIso": "2026-11-18T13:00:00Z",
+      "status": "upcoming",
+      "player1": "Carlos Alcaraz",
+      "player2": "Daniil Medvedev",
+      "odds1": 1.29,
+      "odds2": 4.4,
+      "bookmaker1": "888sport",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "5f11f792535a031c557f8a33a8093f18",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-18",
+      "start": "20:30",
+      "startIso": "2026-11-18T19:30:00Z",
+      "status": "upcoming",
+      "player1": "Flavio Cobolli",
+      "player2": "Frances Tiafoe",
+      "odds1": 2.04,
+      "odds2": 1.85,
+      "bookmaker1": "1xBet",
+      "bookmaker2": "1xBet",
       "source": "The Odds API"
     }
   ]
