@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-11-17T20:47:00.871Z",
+  "generatedAt": "2026-11-18T02:50:17.923Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "73",
-    "remaining": "427"
+    "used": "74",
+    "remaining": "426"
   },
   "matches": [
-    {
-      "id": "f0a6612a0e894025a58459b04ecd02c9",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-17",
-      "start": "20:38",
-      "startIso": "2026-11-17T19:38:00Z",
-      "status": "live-or-started",
-      "player1": "Alexander Zverev",
-      "player2": "Ben Shelton",
-      "odds1": 1.18,
-      "odds2": 7.2,
-      "bookmaker1": "Pinnacle",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "a3e64105988f48f4c6447c9ca6de0030",
       "tour": "ATP",
@@ -33,9 +17,9 @@
       "status": "upcoming",
       "player1": "Carlos Alcaraz",
       "player2": "Daniil Medvedev",
-      "odds1": 1.29,
-      "odds2": 4.3,
-      "bookmaker1": "Betfair",
+      "odds1": 1.28,
+      "odds2": 4.7,
+      "bookmaker1": "Unibet (NL)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,10 +33,42 @@
       "status": "upcoming",
       "player1": "Flavio Cobolli",
       "player2": "Frances Tiafoe",
-      "odds1": 2.2,
-      "odds2": 1.8,
+      "odds1": 2.26,
+      "odds2": 1.78,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "91d621e106bf38d41c61739852993840",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-19",
+      "start": "14:00",
+      "startIso": "2026-11-19T13:00:00Z",
+      "status": "upcoming",
+      "player1": "Ben Shelton",
+      "player2": "Rafael Jodar",
+      "odds1": 1.5,
+      "odds2": 2.8,
+      "bookmaker1": "888sport",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "66cc3b98e9e67560a34198715ee78d75",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-19",
+      "start": "20:30",
+      "startIso": "2026-11-19T19:30:00Z",
+      "status": "upcoming",
+      "player1": "Alexander Zverev",
+      "player2": "Arthur Fils",
+      "odds1": 1.39,
+      "odds2": 3.6,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "888sport",
       "source": "The Odds API"
     }
   ]
