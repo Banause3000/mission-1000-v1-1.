@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-19T01:26:15.084Z",
+  "generatedAt": "2026-11-19T09:25:53.549Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "77",
-    "remaining": "423"
+    "used": "78",
+    "remaining": "422"
   },
   "matches": [
     {
@@ -17,9 +17,9 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Rafael Jodar",
-      "odds1": 1.5,
-      "odds2": 3.05,
-      "bookmaker1": "1xBet",
+      "odds1": 1.39,
+      "odds2": 3.5,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -33,9 +33,9 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Arthur Fils",
-      "odds1": 1.42,
-      "odds2": 3.3,
-      "bookmaker1": "Betfair",
+      "odds1": 1.41,
+      "odds2": 3.4,
+      "bookmaker1": "Pinnacle",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -50,8 +50,8 @@
       "player1": "Carlos Alcaraz",
       "player2": "Flavio Cobolli",
       "odds1": 1.14,
-      "odds2": 6.44,
-      "bookmaker1": "Betsson",
+      "odds2": 6.58,
+      "bookmaker1": "1xBet",
       "bookmaker2": "1xBet",
       "source": "The Odds API"
     },
@@ -65,10 +65,10 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Frances Tiafoe",
-      "odds1": 1.47,
-      "odds2": 3.2,
+      "odds1": 1.4,
+      "odds2": 3.4,
       "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "Betfair",
+      "bookmaker2": "BetAnything",
       "source": "The Odds API"
     }
   ]
