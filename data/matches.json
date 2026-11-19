@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-11-18T19:31:49.130Z",
+  "generatedAt": "2026-11-19T01:26:15.084Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "76",
-    "remaining": "424"
+    "used": "77",
+    "remaining": "423"
   },
   "matches": [
-    {
-      "id": "5f11f792535a031c557f8a33a8093f18",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-18",
-      "start": "20:40",
-      "startIso": "2026-11-18T19:40:00Z",
-      "status": "upcoming",
-      "player1": "Flavio Cobolli",
-      "player2": "Frances Tiafoe",
-      "odds1": 2.38,
-      "odds2": 1.74,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Winamax (DE)",
-      "source": "The Odds API"
-    },
     {
       "id": "91d621e106bf38d41c61739852993840",
       "tour": "ATP",
@@ -33,8 +17,8 @@
       "status": "upcoming",
       "player1": "Ben Shelton",
       "player2": "Rafael Jodar",
-      "odds1": 1.51,
-      "odds2": 3,
+      "odds1": 1.5,
+      "odds2": 3.05,
       "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
@@ -52,6 +36,38 @@
       "odds1": 1.42,
       "odds2": 3.3,
       "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "1cd25143408ea45a393e8267ccd3afeb",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-20",
+      "start": "14:00",
+      "startIso": "2026-11-20T13:00:00Z",
+      "status": "upcoming",
+      "player1": "Carlos Alcaraz",
+      "player2": "Flavio Cobolli",
+      "odds1": 1.14,
+      "odds2": 6.44,
+      "bookmaker1": "Betsson",
+      "bookmaker2": "1xBet",
+      "source": "The Odds API"
+    },
+    {
+      "id": "1acdb2047defbe0439ef3b1961a60010",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-20",
+      "start": "20:30",
+      "startIso": "2026-11-20T19:30:00Z",
+      "status": "upcoming",
+      "player1": "Daniil Medvedev",
+      "player2": "Frances Tiafoe",
+      "odds1": 1.47,
+      "odds2": 3.2,
+      "bookmaker1": "LeoVegas (SE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
