@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2026-11-19T09:25:53.549Z",
+  "generatedAt": "2026-11-19T18:36:38.085Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "78",
-    "remaining": "422"
+    "used": "79",
+    "remaining": "421"
   },
   "matches": [
-    {
-      "id": "91d621e106bf38d41c61739852993840",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-19",
-      "start": "14:00",
-      "startIso": "2026-11-19T13:00:00Z",
-      "status": "upcoming",
-      "player1": "Ben Shelton",
-      "player2": "Rafael Jodar",
-      "odds1": 1.39,
-      "odds2": 3.5,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "66cc3b98e9e67560a34198715ee78d75",
       "tour": "ATP",
@@ -33,9 +17,9 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Arthur Fils",
-      "odds1": 1.41,
-      "odds2": 3.4,
-      "bookmaker1": "Pinnacle",
+      "odds1": 1.36,
+      "odds2": 3.9,
+      "bookmaker1": "Unibet (SE)",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
@@ -49,10 +33,10 @@
       "status": "upcoming",
       "player1": "Carlos Alcaraz",
       "player2": "Flavio Cobolli",
-      "odds1": 1.14,
-      "odds2": 6.58,
-      "bookmaker1": "1xBet",
-      "bookmaker2": "1xBet",
+      "odds1": 1.24,
+      "odds2": 5.1,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     },
     {
@@ -65,10 +49,10 @@
       "status": "upcoming",
       "player1": "Daniil Medvedev",
       "player2": "Frances Tiafoe",
-      "odds1": 1.4,
-      "odds2": 3.4,
-      "bookmaker1": "LeoVegas (SE)",
-      "bookmaker2": "BetAnything",
+      "odds1": 1.45,
+      "odds2": 3.15,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
