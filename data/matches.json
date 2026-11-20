@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-11-20T17:11:55.428Z",
+  "generatedAt": "2026-11-20T23:18:14.108Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "80",
-    "remaining": "420"
+    "used": "81",
+    "remaining": "419"
   },
   "matches": [
-    {
-      "id": "1acdb2047defbe0439ef3b1961a60010",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-20",
-      "start": "20:30",
-      "startIso": "2026-11-20T19:30:00Z",
-      "status": "upcoming",
-      "player1": "Daniil Medvedev",
-      "player2": "Frances Tiafoe",
-      "odds1": 1.43,
-      "odds2": 3.3,
-      "bookmaker1": "BetAnything",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    },
     {
       "id": "81c3faeaadd3d42734cd831b32b32597",
       "tour": "ATP",
       "event": "ATP Finals",
       "date": "2026-11-21",
-      "start": "14:00",
-      "startIso": "2026-11-21T13:00:00Z",
+      "start": "14:30",
+      "startIso": "2026-11-21T13:30:00Z",
       "status": "upcoming",
       "player1": "Carlos Alcaraz",
       "player2": "Ben Shelton",
-      "odds1": 1.35,
-      "odds2": 3.5,
+      "odds1": 1.3,
+      "odds2": 4.2,
+      "bookmaker1": "Betfair",
+      "bookmaker2": "Betfair",
+      "source": "The Odds API"
+    },
+    {
+      "id": "32e23a0b745bed6c0a23f60fab451adb",
+      "tour": "ATP",
+      "event": "ATP Finals",
+      "date": "2026-11-21",
+      "start": "20:30",
+      "startIso": "2026-11-21T19:30:00Z",
+      "status": "upcoming",
+      "player1": "Alexander Zverev",
+      "player2": "Daniil Medvedev",
+      "odds1": 1.57,
+      "odds2": 2.62,
       "bookmaker1": "1xBet",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
