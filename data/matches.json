@@ -1,42 +1,26 @@
 {
-  "generatedAt": "2026-11-21T12:56:53.460Z",
+  "generatedAt": "2026-11-21T20:01:24.103Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "83",
-    "remaining": "417"
+    "used": "84",
+    "remaining": "416"
   },
   "matches": [
-    {
-      "id": "81c3faeaadd3d42734cd831b32b32597",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-21",
-      "start": "14:30",
-      "startIso": "2026-11-21T13:30:00Z",
-      "status": "upcoming",
-      "player1": "Carlos Alcaraz",
-      "player2": "Ben Shelton",
-      "odds1": 1.26,
-      "odds2": 4.8,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Unibet (FR)",
-      "source": "The Odds API"
-    },
     {
       "id": "32e23a0b745bed6c0a23f60fab451adb",
       "tour": "ATP",
       "event": "ATP Finals",
       "date": "2026-11-21",
-      "start": "20:30",
-      "startIso": "2026-11-21T19:30:00Z",
-      "status": "upcoming",
+      "start": "20:40",
+      "startIso": "2026-11-21T19:40:00Z",
+      "status": "live-or-started",
       "player1": "Alexander Zverev",
       "player2": "Daniil Medvedev",
-      "odds1": 1.64,
-      "odds2": 2.63,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Unibet (SE)",
+      "odds1": 1.71,
+      "odds2": 2.48,
+      "bookmaker1": "Marathon Bet",
+      "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
   ]
