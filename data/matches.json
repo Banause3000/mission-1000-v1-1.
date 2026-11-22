@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-11-21T20:01:24.103Z",
+  "generatedAt": "2026-11-22T00:16:13.885Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "84",
-    "remaining": "416"
+    "used": "85",
+    "remaining": "415"
   },
   "matches": [
     {
-      "id": "32e23a0b745bed6c0a23f60fab451adb",
+      "id": "61fd3eff03d345615f08909e038728e7",
       "tour": "ATP",
       "event": "ATP Finals",
-      "date": "2026-11-21",
-      "start": "20:40",
-      "startIso": "2026-11-21T19:40:00Z",
-      "status": "live-or-started",
+      "date": "2026-11-22",
+      "start": "18:00",
+      "startIso": "2026-11-22T17:00:00Z",
+      "status": "upcoming",
       "player1": "Alexander Zverev",
-      "player2": "Daniil Medvedev",
-      "odds1": 1.71,
-      "odds2": 2.48,
-      "bookmaker1": "Marathon Bet",
+      "player2": "Carlos Alcaraz",
+      "odds1": 2.98,
+      "odds2": 1.49,
+      "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
     }
