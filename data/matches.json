@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-22T00:16:13.885Z",
+  "generatedAt": "2026-11-22T07:21:56.729Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
-    "used": "85",
-    "remaining": "415"
+    "used": "86",
+    "remaining": "414"
   },
   "matches": [
     {
@@ -17,8 +17,8 @@
       "status": "upcoming",
       "player1": "Alexander Zverev",
       "player2": "Carlos Alcaraz",
-      "odds1": 2.98,
-      "odds2": 1.49,
+      "odds1": 2.96,
+      "odds2": 1.5,
       "bookmaker1": "Betfair",
       "bookmaker2": "Betfair",
       "source": "The Odds API"
