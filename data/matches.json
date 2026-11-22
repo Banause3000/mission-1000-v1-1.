@@ -1,27 +1,10 @@
 {
-  "generatedAt": "2026-11-22T15:37:06.918Z",
+  "generatedAt": "2026-11-22T21:15:11.571Z",
   "source": "The Odds API",
   "timezone": "Europe/Berlin",
   "quota": {
     "used": "87",
     "remaining": "413"
   },
-  "matches": [
-    {
-      "id": "61fd3eff03d345615f08909e038728e7",
-      "tour": "ATP",
-      "event": "ATP Finals",
-      "date": "2026-11-22",
-      "start": "18:00",
-      "startIso": "2026-11-22T17:00:00Z",
-      "status": "upcoming",
-      "player1": "Alexander Zverev",
-      "player2": "Carlos Alcaraz",
-      "odds1": 2.88,
-      "odds2": 1.52,
-      "bookmaker1": "Betfair",
-      "bookmaker2": "Betfair",
-      "source": "The Odds API"
-    }
-  ]
+  "matches": []
 }
